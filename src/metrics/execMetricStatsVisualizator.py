@@ -30,12 +30,13 @@ class ExecMetricStatsVisualizator:
 
         self.output_dir.mkdir(parents=True, exist_ok=True)
 
-        self.metrics = ["CPU_usage", "RAM_usage", "execution_time_ms", "pass_rate"]
+        self.metrics = ["CPU_usage", "RAM_usage", "execution_time_ms", "pass_rate", "energy_joules"]
         self.metric_labels = {
             "CPU_usage": "CPU Usage (%)",
             "RAM_usage": "RAM Usage (KB)",
             "execution_time_ms": "Execution Time (ms)",
-            "pass_rate": "Pass Rate (%)"
+            "pass_rate": "Pass Rate (%)",
+            "energy_joules": "Energy Consumption (J)"
         }
 
         # Color schemes
@@ -46,8 +47,26 @@ class ExecMetricStatsVisualizator:
             "gemini": "#e74c3c"
         }
 
-    def _remove_outliers_for_ylim(self, data: List, percentile: float = 95) -> tuple:
-        """Calculate reasonable ylim by removing extreme outliers"""
+        # Blues gradient for prompt versions (v1=light, v4=dark)
+        self.prompt_colors = {
+            'v1': '#deebf7',  # Light blue
+            'v2': '#9ecae1',  # Medium-light blue
+            'v3': '#3182bd',  # Medium-dark blue
+            'v4': '#08519c'   # Dark blue
+        }
+
+    def _remove_outliers_for_ylim(self, data: List, percentile: float = 95, force_include_zero: bool = True) -> tuple:
+        """
+        Calculate reasonable ylim by removing extreme outliers
+
+        Args:
+            data: List of data points or list of lists
+            percentile: Upper percentile to use for max limit
+            force_include_zero: If True, ensures 0 is always in the visible range
+
+        Returns:
+            Tuple of (min, max) for ylim
+        """
         if not data:
             return (0, 1)
 
@@ -64,9 +83,14 @@ class ExecMetricStatsVisualizator:
         q_low = np.percentile(flat_data, 1)
         q_high = np.percentile(flat_data, percentile)
 
+        # Force include zero if requested (important for improvement plots)
+        if force_include_zero:
+            q_low = min(q_low, 0)
+            q_high = max(q_high, 0)
+
         # Add some padding
         padding = (q_high - q_low) * 0.1
-        return (max(0, q_low - padding), q_high + padding)
+        return (q_low - padding, q_high + padding)
 
     def visualize_objective_1(self, data: Dict):
         """
@@ -101,7 +125,8 @@ class ExecMetricStatsVisualizator:
                 if metric in version_metrics and version_metrics[metric]:
                     plot_data.append(version_metrics[metric])
                     labels.append(f"Prompt {version.upper()}")
-                    colors.append("#3498db")
+                    # Use Blues gradient palette for prompt versions
+                    colors.append(self.prompt_colors.get(version, "#3498db"))
 
             if not plot_data:
                 self.logger.warning(f"No data for {metric} in Objective 1")
@@ -130,14 +155,17 @@ class ExecMetricStatsVisualizator:
                        fontsize=14, fontweight='bold', pad=20)
             ax.grid(True, alpha=0.3, axis='y')
 
-            # Add legend
+            # Add legend with Blues gradient
             from matplotlib.patches import Patch
             legend_elements = [
                 Patch(facecolor=self.model_colors["base"], alpha=0.7, label='Base Code (100% pass rate)'),
-                Patch(facecolor="#3498db", alpha=0.7, label='LLM Generated Code'),
+                Patch(facecolor=self.prompt_colors['v1'], alpha=0.7, label='Prompt v1 (lightest)'),
+                Patch(facecolor=self.prompt_colors['v2'], alpha=0.7, label='Prompt v2'),
+                Patch(facecolor=self.prompt_colors['v3'], alpha=0.7, label='Prompt v3'),
+                Patch(facecolor=self.prompt_colors['v4'], alpha=0.7, label='Prompt v4 (darkest)'),
                 plt.Line2D([0], [0], color='red', linestyle='--', linewidth=2, label='Mean')
             ]
-            ax.legend(handles=legend_elements, loc='upper right', fontsize=10)
+            ax.legend(handles=legend_elements, loc='upper right', fontsize=9, ncol=2)
 
             plt.xticks(rotation=45, ha='right')
             plt.tight_layout()
@@ -521,13 +549,8 @@ class ExecMetricStatsVisualizator:
             # Add improvement percentages as text
             for i, (label, improvement) in enumerate(zip(labels, improvements), 1):
                 if improvement is not None:
-                    # Determine if improvement is good or bad
-                    # For CPU/RAM/time: negative is good (reduction)
-                    # For pass_rate: positive is good (increase)
-                    if metric == "pass_rate":
-                        is_good = improvement >= 0
-                    else:
-                        is_good = improvement <= 0  # Changed: negative values are improvements
+                    # NEW SEMANTIC: Positive = improvement for ALL metrics (formula inverted in calculator)
+                    is_good = improvement >= 0
 
                     text_color = 'green' if is_good else 'red'
                     # Always show the sign for clarity
@@ -542,7 +565,7 @@ class ExecMetricStatsVisualizator:
 
             ax.set_ylabel(self.metric_labels[metric], fontsize=13, fontweight='bold')
             ax.set_xlabel('Model + Prompt Version', fontsize=13, fontweight='bold')
-            ax.set_title(f'{self.metric_labels[metric]} by Model and Prompt Version\n(Green = improvement, Red = degradation. Base code: 100% pass rate only)',
+            ax.set_title(f'{self.metric_labels[metric]} by Model and Prompt Version\n(+ = improvement, - = degradation. Base code: 100% pass rate only)',
                        fontsize=14, fontweight='bold', pad=20)
             ax.grid(True, alpha=0.3, axis='y')
 
@@ -608,11 +631,9 @@ class ExecMetricStatsVisualizator:
                     improvements_text.append(improvement)
 
                     # Color based on improvement
+                    # NEW SEMANTIC: Positive = improvement for ALL metrics (formula inverted in calculator)
                     if improvement is not None:
-                        if metric == "pass_rate":
-                            is_good = improvement >= 0
-                        else:
-                            is_good = improvement < 0
+                        is_good = improvement >= 0
 
                         # Use model colors but adjust alpha based on good/bad
                         if 'openai' in combo_key:
@@ -642,9 +663,9 @@ class ExecMetricStatsVisualizator:
             ax.set_xlabel('Base Code + Model + Prompt Version', fontsize=14, fontweight='bold')
 
             if metric == "pass_rate":
-                title_text = f'{self.metric_labels[metric]} - Mean Comparison\n(Green % = improvement, Red % = degradation)'
+                title_text = f'{self.metric_labels[metric]} - Mean Comparison\n(+ = improvement for all metrics, - = degradation)'
             else:
-                title_text = f'{self.metric_labels[metric]} - Mean Comparison\n(Green % = improvement/reduction, Red % = degradation/increase)'
+                title_text = f'{self.metric_labels[metric]} - Mean Comparison\n(+ = improvement for all metrics, - = degradation)'
 
             ax.set_title(title_text, fontsize=15, fontweight='bold', pad=20)
 
@@ -676,10 +697,8 @@ class ExecMetricStatsVisualizator:
 
                 # Improvement percentage (only for LLM combinations)
                 if improvement is not None:
-                    if metric == "pass_rate":
-                        is_good = improvement >= 0
-                    else:
-                        is_good = improvement <= 0  # Negative is good for CPU/RAM/time
+                    # NEW SEMANTIC: Positive = improvement for ALL metrics (formula inverted in calculator)
+                    is_good = improvement >= 0
 
                     color = 'green' if is_good else 'red'
                     sign = '+' if improvement >= 0 else ''
@@ -787,6 +806,114 @@ class ExecMetricStatsVisualizator:
 
             self.logger.info(f"Saved: {filename}")
 
+    def plot_energy_pass_rate_tradeoff(self, all_data: Dict):
+        """
+        Scatter plot: Energy Improvement (X) vs Pass Rate (Y)
+        Aggregato per model+prompt (media su 7 linguaggi)
+        """
+        import pandas as pd
+
+        self.logger.info("Creating Energy vs Pass Rate trade-off scatter plot")
+
+        # Verifica che i dati di objective_3 esistano
+        if "objective_3" not in all_data or "mean_improvements" not in all_data["objective_3"]:
+            self.logger.warning("No objective_3 data found for energy-pass_rate plot")
+            return
+
+        # Prepara i dati
+        plot_data = []
+        mean_improvements = all_data["objective_3"]["mean_improvements"]
+        model_version_stats = all_data["objective_3"]["model_version_stats"]
+
+        for model_prompt_key, improvements in mean_improvements.items():
+            if '_' in model_prompt_key:  # es. "openai_v1"
+                parts = model_prompt_key.split('_')
+                model = parts[0]
+                prompt_version = '_'.join(parts[1:])  # Gestisce casi come "v1" o versioni più complesse
+
+                # Estrai improvement energetico e pass rate
+                energy_improvement = improvements.get('energy_joules', None)
+
+                # Calcola pass rate medio per questa combinazione model+prompt
+                if model_prompt_key in model_version_stats:
+                    pass_rates = model_version_stats[model_prompt_key].get('pass_rate', [])
+                    if pass_rates:
+                        mean_pass_rate = np.mean(pass_rates)
+                    else:
+                        mean_pass_rate = None
+                else:
+                    mean_pass_rate = None
+
+                if energy_improvement is not None and mean_pass_rate is not None:
+                    plot_data.append({
+                        'model': model,
+                        'prompt_version': prompt_version,
+                        'energy_improvement': energy_improvement,
+                        'pass_rate': mean_pass_rate
+                    })
+
+        if not plot_data:
+            self.logger.warning("No valid data points for energy-pass_rate plot")
+            return
+
+        df = pd.DataFrame(plot_data)
+
+        # Crea scatter plot
+        fig, ax = plt.subplots(figsize=(12, 8))
+
+        # Mappa i marker per le versioni prompt
+        markers = {'v1': 'o', 'v2': 's', 'v3': '^', 'v4': 'D'}
+
+        # Plotta per ogni modello
+        for model in df['model'].unique():
+            model_data = df[df['model'] == model]
+            for version in model_data['prompt_version'].unique():
+                version_data = model_data[model_data['prompt_version'] == version]
+                ax.scatter(
+                    version_data['energy_improvement'],
+                    version_data['pass_rate'],
+                    c=self.model_colors.get(model, '#000000'),
+                    marker=markers.get(version, 'o'),
+                    s=200,
+                    alpha=0.7,
+                    edgecolors='black',
+                    linewidth=1.5,
+                    label=f'{model.capitalize()} {version}'
+                )
+
+        # Linee di riferimento
+        ax.axvline(0, color='gray', linestyle='--', alpha=0.5, linewidth=2, label='No energy change')
+        ax.axhline(100, color='green', linestyle='--', alpha=0.5, linewidth=2, label='100% pass rate')
+
+        # Etichette e titolo
+        ax.set_xlabel('Energy Improvement (%)\n(+ = reduction, - = increase)', fontsize=14, fontweight='bold')
+        ax.set_ylabel('Pass Rate (%)', fontsize=14, fontweight='bold')
+        ax.set_title(
+            'Trade-off: Energy Improvement vs Test Pass Rate\n'
+            '(Aggregated by Model + Prompt Version across all languages)',
+            fontsize=16,
+            fontweight='bold',
+            pad=20
+        )
+
+        # Legenda
+        ax.legend(bbox_to_anchor=(1.05, 1), loc='upper left', fontsize=10, frameon=True, shadow=True)
+
+        # Griglia
+        ax.grid(True, alpha=0.3, linestyle=':', linewidth=0.8)
+
+        # Tight layout
+        plt.tight_layout()
+
+        # Salva
+        output_dir = self.output_dir / "tradeoff_analysis"
+        output_dir.mkdir(parents=True, exist_ok=True)
+        filepath = output_dir / "energy_vs_pass_rate_tradeoff.png"
+        plt.savefig(filepath, dpi=300, bbox_inches='tight')
+        plt.close(fig)
+
+        self.logger.info(f"Saved: energy_vs_pass_rate_tradeoff.png")
+
     def visualize_all_objectives(self, all_data: Dict):
         """Visualizza tutte le statistiche aggregate per tutti gli obiettivi."""
         self.logger.info("Starting visualization of all objectives")
@@ -806,6 +933,9 @@ class ExecMetricStatsVisualizator:
         # Objective 4
         if "objective_4" in all_data:
             self.visualize_objective_4(all_data["objective_4"])
+
+        # Trade-off analysis: Energy vs Pass Rate
+        self.plot_energy_pass_rate_tradeoff(all_data)
 
         self.logger.info("Completed visualization of all objectives")
 
@@ -857,8 +987,8 @@ class ExecMetricStatsVisualizator:
                     if "mean_improvements" in data:
                         report_lines.append("- Improvement percentages calculated\n")
                         report_lines.append("- **Improvement interpretation**:\n")
-                        report_lines.append("  - For CPU/RAM/Execution Time: **Negative is GOOD** (lower is better)\n")
-                        report_lines.append("  - For Pass Rate: **Positive is GOOD** (higher is better)\n")
+                        report_lines.append("  - For ALL metrics: **Positive (+) is GOOD** (improvement), **Negative (-) is BAD** (degradation)\n")
+                        report_lines.append("  - Formula inverted in calculator: CPU/RAM/Time improvements show as positive percentages\n")
 
                 elif i == 4:
                     report_lines.append("**Metrics by Language + Model**\n\n")
@@ -888,7 +1018,8 @@ class ExecMetricStatsVisualizator:
         report_lines.append("- **CPU Usage (%)**: CPU utilization during execution\n")
         report_lines.append("- **RAM Usage (KB)**: Memory consumption\n")
         report_lines.append("- **Execution Time (ms)**: Time taken to execute tests\n")
-        report_lines.append("- **Pass Rate (%)**: Percentage of tests passed\n\n")
+        report_lines.append("- **Pass Rate (%)**: Percentage of tests passed\n")
+        report_lines.append("- **Energy Consumption (J)**: Total energy in Joules (calculated from CPU, RAM, time with TDP/PUE factors)\n\n")
 
         report_lines.append("## Data Filtering\n\n")
         report_lines.append("**Base Code**: Only entries with 100% pass rate (across all 5 executions) are included.\n\n")
@@ -899,9 +1030,10 @@ class ExecMetricStatsVisualizator:
         report_lines.append("- Red dashed line indicates mean value\n")
         report_lines.append("- Outliers are shown but axis limits are adjusted for clarity\n")
         report_lines.append("- For improvement percentages (Objective 3):\n")
-        report_lines.append("  - **Negative values are GOOD** for CPU, RAM, and Execution Time (lower is better)\n")
-        report_lines.append("  - **Positive values are GOOD** for Pass Rate (higher is better)\n")
+        report_lines.append("  - **Positive (+) values are GOOD** for ALL metrics (improvement)\n")
+        report_lines.append("  - **Negative (-) values are BAD** for ALL metrics (degradation)\n")
         report_lines.append("  - Green text = improvement, Red text = degradation\n")
+        report_lines.append("  - Formula inverted in calculator: reductions in CPU/RAM/Time show as positive %\n")
 
         # Save report
         report_path = self.output_dir / "summary_report.md"

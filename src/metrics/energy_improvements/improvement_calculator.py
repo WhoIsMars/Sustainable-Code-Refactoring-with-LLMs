@@ -11,6 +11,7 @@ from collections import defaultdict
 # Add parent dirs to path to find utility_dir
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "../.."))
 from utility_dir import utility_paths, general_utils  # noqa: E402
+from metrics.energy_improvements.energy_analyzer import EnergyConfig, calculate_energy_joules  # noqa: E402
 
 METRICS = general_utils.METRICS
 
@@ -40,6 +41,7 @@ class MetricData:
     execution_time_ms: float
     CPU_usage: float
     RAM_usage: float
+    energy_joules: float  # NEW: Energy consumption
     regressionTestPassed: bool
     language : str
     model : str | None
@@ -52,6 +54,7 @@ class MetricData:
             self.execution_time_ms > 0 and
             self.CPU_usage is not None and
             self.RAM_usage is not None and
+            self.energy_joules is not None and
             self.regressionTestPassed
         )
 
@@ -61,14 +64,15 @@ class MetricData:
             'execution_time_ms': self.execution_time_ms,
             'CPU_usage': self.CPU_usage,
             'RAM_usage': self.RAM_usage,
+            'energy_joules': self.energy_joules,
             'regressionTestPassed': self.regressionTestPassed,
-            'language' : self.language,                        
+            'language' : self.language,
         }
 
-        if self.model : 
+        if self.model :
             res['model'] = self.model
 
-        if self.prompt_v: 
+        if self.prompt_v:
             res['prompt_v'] = self.prompt_v
 
         return res
@@ -106,6 +110,7 @@ class ImprovementCalculator:
         self.base_clusters = 0
         self.invalid_LLM_clusters = 0
         self.LLM_clusters = 0
+        self.energy_config = EnergyConfig()  # Initialize energy configuration
         print(f"ImprovementCalculator initialized with outlier threshold: ±{self.outlier_threshold}%")
 
     def extract_base_metrics(self, execution_data: Dict) -> Dict[str, List[MetricData]]:
@@ -135,10 +140,20 @@ class ImprovementCalculator:
                     print(f"❌ No entry if found for entry:\n{entry}")
                     continue
 
+                cpu = MetricData.safe_float_conversion(entry.get('CPU_usage'))
+                ram = MetricData.safe_float_conversion(entry.get('RAM_usage'))
+                time_ms = MetricData.safe_float_conversion(entry.get('execution_time_ms'))
+
+                # Calculate energy
+                energy = None
+                if cpu is not None and ram is not None and time_ms is not None:
+                    energy = calculate_energy_joules(cpu, ram, time_ms, self.energy_config)
+
                 metric_data = MetricData(
-                    execution_time_ms=MetricData.safe_float_conversion(entry.get('execution_time_ms')),
-                    CPU_usage=MetricData.safe_float_conversion(entry.get('CPU_usage')),
-                    RAM_usage=MetricData.safe_float_conversion(entry.get('RAM_usage')),
+                    execution_time_ms=time_ms,
+                    CPU_usage=cpu,
+                    RAM_usage=ram,
+                    energy_joules=energy,
                     regressionTestPassed=entry.get('regressionTestPassed', False),
                     language=entry.get('language',language),
                     model=None,
@@ -182,10 +197,20 @@ class ImprovementCalculator:
                     if not llm_type:
                         continue
 
+                    cpu = MetricData.safe_float_conversion(llm_result.get('CPU_usage'))
+                    ram = MetricData.safe_float_conversion(llm_result.get('RAM_usage'))
+                    time_ms = MetricData.safe_float_conversion(llm_result.get('execution_time_ms'))
+
+                    # Calculate energy
+                    energy = None
+                    if cpu is not None and ram is not None and time_ms is not None:
+                        energy = calculate_energy_joules(cpu, ram, time_ms, self.energy_config)
+
                     metric_data = MetricData(
-                        execution_time_ms=MetricData.safe_float_conversion(llm_result.get('execution_time_ms')),
-                        CPU_usage=MetricData.safe_float_conversion(llm_result.get('CPU_usage')),
-                        RAM_usage=MetricData.safe_float_conversion(llm_result.get('RAM_usage')),
+                        execution_time_ms=time_ms,
+                        CPU_usage=cpu,
+                        RAM_usage=ram,
+                        energy_joules=energy,
                         regressionTestPassed=llm_result.get('regressionTestPassed', False),
                         language=llm_result.get("language",entry.get("language",language)),
                         model=llm_type,
@@ -230,22 +255,26 @@ class ImprovementCalculator:
             cpu_usage_sum = sum(m.CPU_usage for m in metric_list)
             RAM_usage_sum = sum(m.RAM_usage for m in metric_list)
             execution_time_ms_sum = sum(m.execution_time_ms for m in metric_list)
+            energy_joules_sum = sum(m.energy_joules for m in metric_list)
 
             # Calculate means for each metric
             means = {
                 'execution_time_ms':  execution_time_ms_sum / len(metric_list),
                 'CPU_usage': cpu_usage_sum  / len(metric_list),
                 'RAM_usage': RAM_usage_sum / len(metric_list),
+                'energy_joules': energy_joules_sum / len(metric_list),
                 'raw_values': {
                     'execution_time_ms': [m.execution_time_ms for m in metric_list],
                     'CPU_usage': [m.CPU_usage for m in metric_list],
-                    'RAM_usage': [m.RAM_usage for m in metric_list]
+                    'RAM_usage': [m.RAM_usage for m in metric_list],
+                    'energy_joules': [m.energy_joules for m in metric_list]
                 },
                 'exec_quantity': len(metric_list),
                 'execution_files': execution_files,
                 "sum_CPU_usage": cpu_usage_sum,
                 "sum_RAM_usage": RAM_usage_sum,
-                "sum_execution_time_ms": execution_time_ms_sum,                
+                "sum_execution_time_ms": execution_time_ms_sum,
+                "sum_energy_joules": energy_joules_sum,
                 "languages": [m.language for m in metric_list],
             }
 
@@ -294,10 +323,12 @@ class ImprovementCalculator:
                 'execution_time_ms': sum(m.execution_time_ms for m in metric_list) / len(metric_list),
                 'CPU_usage': sum(m.CPU_usage for m in metric_list) / len(metric_list),
                 'RAM_usage': sum(m.RAM_usage for m in metric_list) / len(metric_list),
+                'energy_joules': sum(m.energy_joules for m in metric_list) / len(metric_list),
                 'raw_values': {
                     'execution_time_ms': [m.execution_time_ms for m in metric_list],
                     'CPU_usage': [m.CPU_usage for m in metric_list],
-                    'RAM_usage': [m.RAM_usage for m in metric_list]
+                    'RAM_usage': [m.RAM_usage for m in metric_list],
+                    'energy_joules': [m.energy_joules for m in metric_list]
                 },
                 'num_executions': len(metric_list),
                 'execution_files': execution_files,
@@ -329,24 +360,24 @@ class ImprovementCalculator:
         return structure
 
     def calculate_improvement_percentage(self, base_value: float, llm_value: float) -> float:
-        """       
-        Formula: ((llm_value - base_value) / base_value) * 100
+        """
+        Formula: ((base_value - llm_value) / base_value) * 100
 
-        Interpretazione:
-        - Valore negativo: MIGLIORAMENTO (riduzione di CPU/RAM/Time)
-        - Valore positivo: PEGGIORAMENTO (aumento di CPU/RAM/Time)
+        NUOVA SEMANTICA INVERTITA (allineata con exec_metrics_calculator.py):
+        - Valore POSITIVO: MIGLIORAMENTO (riduzione di CPU/RAM/Time)
+        - Valore NEGATIVO: PEGGIORAMENTO (aumento di CPU/RAM/Time)
 
         Args:
             base_value: Valore medio del codice base
             llm_value: Valore medio del codice LLM
 
         Returns:
-            Percentuale di improvement (negativo = buono, positivo = cattivo)
+            Percentuale di improvement (positivo = buono, negativo = cattivo)
         """
         if base_value == 0:
             return 0.0
 
-        return ((llm_value - base_value) / base_value) * 100.0
+        return ((base_value - llm_value) / base_value) * 100.0
 
     def is_outlier(self, improvement_percentage: float) -> bool:
         """
@@ -511,7 +542,7 @@ class ImprovementCalculator:
                     improvements_section["language"] = llm_exec_section["language"]
 
                     # Calcola improvement per ogni metrica
-                    for metric_name in ['CPU_usage', 'RAM_usage', 'execution_time_ms']:
+                    for metric_name in ['CPU_usage', 'RAM_usage', 'execution_time_ms', 'energy_joules']:
                         base_mean = base_data[metric_name]
                         llm_mean = llm_data[metric_name]
 
@@ -524,7 +555,8 @@ class ImprovementCalculator:
                         else:
                             # Calcola improvement
                             improvement = self.calculate_improvement_percentage(base_mean, llm_mean)
-                            label = "reduction" if improvement < 0 else "degradation"
+                            # NUOVA SEMANTICA: positivo = improvement (reduction)
+                            label = "reduction" if improvement > 0 else "degradation"
                             is_outlier_flag = self.is_outlier(improvement)
 
                             improvements_section[metric_name] = self._create_metric_improvement_data(
@@ -611,7 +643,8 @@ class ImprovementCalculator:
 
         return {
             "improvement_percentage": improvement,
-            "label": label if label else ("reduction" if improvement < 0 else "degradation"),
+            # NUOVA SEMANTICA: positivo = improvement (reduction)
+            "label": label if label else ("reduction" if improvement > 0 else "degradation"),
             "is_outlier": is_outlier,
             "base_value": base_value,
             "llm_value": llm_value

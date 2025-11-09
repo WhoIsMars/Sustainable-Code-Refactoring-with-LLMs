@@ -18,8 +18,8 @@ Data Processing:
 - Valid improvements: label='reduction' or 'degradation', is_outlier=False, label!='invalid'
 - Invalid improvements: label='invalid'
 - Outliers: is_outlier=True
-- Negative improvement % = reduction (better)
-- Positive improvement % = degradation (worse)
+- Positive improvement % = reduction (better) - NUOVA SEMANTICA INVERTITA
+- Negative improvement % = degradation (worse)
 
 Output:
 - Statistics JSON files in current directory
@@ -81,15 +81,57 @@ class EnergyImprovementsAnalyzer:
     def __init__(self, data_dir: str):
         self.data_dir = Path(data_dir)
         self.output_dir = Path(__file__).parent
-        self.metrics = ['CPU_usage', 'RAM_usage', 'execution_time_ms']
+        self.metrics = ['CPU_usage', 'RAM_usage', 'execution_time_ms', 'energy_joules']
         self.models = ['openAI', 'gemini', 'claude']
         self.prompts = ['prompt_v1', 'prompt_v2', 'prompt_v3', 'prompt_v4']
+
+        # Language normalization mapping
+        self.language_normalization = {
+            'java': 'java',
+            'Java': 'java',
+            'python': 'python',
+            'Python': 'python',
+            'javascript': 'javascript',
+            'JavaScript': 'javascript',
+            'typescript': 'typescript',
+            'TypeScript': 'typescript',
+            'go': 'go',
+            'Go': 'go',
+            'c': 'c',
+            'C': 'c',
+            'cpp': 'cpp',
+            'Cpp': 'cpp',
+            'CPP': 'cpp',
+            'C++': 'cpp',
+        }
+
+        # Display names for plots (capitalized, proper formatting)
+        self.language_display_names = {
+            'java': 'Java',
+            'python': 'Python',
+            'javascript': 'JavaScript',
+            'typescript': 'TypeScript',
+            'go': 'Go',
+            'c': 'C',
+            'cpp': 'C++',
+        }
 
         # Data containers
         self.all_data = []
         self.valid_improvements = defaultdict(list)
         self.invalid_improvements = defaultdict(list)
         self.outliers = defaultdict(list)
+
+    def normalize_language(self, language: str) -> str:
+        """Normalize language name to consistent lowercase format"""
+        if not language or language == 'unknown':
+            return language
+        return self.language_normalization.get(language, language.lower())
+
+    def get_display_language(self, language: str) -> str:
+        """Get properly formatted display name for a language"""
+        normalized = self.normalize_language(language)
+        return self.language_display_names.get(normalized, normalized.capitalize())
 
     def load_all_data(self):
         """Load all improvement data from JSON files"""
@@ -120,6 +162,8 @@ class EnergyImprovementsAnalyzer:
 
                         prompt_data = improvements[model][prompt]
                         language = prompt_data.get('language', base_language)
+                        # Normalize language name for consistency
+                        language = self.normalize_language(language)
 
                         for metric in self.metrics:
                             if metric not in prompt_data:
@@ -431,39 +475,90 @@ class EnergyImprovementsAnalyzer:
         print("All visualizations created successfully")
 
     def _plot_improvements_by_language(self):
-        """Create box plots for improvements by language"""
-        fig, axes = plt.subplots(1, 3, figsize=(18, 6))
+        """Create box plots for improvements by language with distinct colors"""
+        fig, axes = plt.subplots(2, 2, figsize=(18, 12))
+        axes = axes.flatten()
 
+        # Define distinct colors for each language
+        language_colors = {
+            'C': '#e74c3c',         # Red
+            'C++': '#e67e22',       # Orange
+            'Go': '#3498db',        # Blue
+            'Java': '#f39c12',      # Yellow-orange
+            'Python': '#2ecc71',    # Green
+            'JavaScript': '#f1c40f', # Yellow
+            'TypeScript': '#9b59b6'  # Purple
+        }
+
+        # Fixed language order (consistent across all subplots)
+        lang_order_fixed = ['JavaScript', 'C', 'Python', 'C++', 'TypeScript', 'Go', 'Java']
+
+        # First pass: collect all data to find global y-axis limits
+        all_data_by_metric = {}
         for idx, metric in enumerate(self.metrics):
-            ax = axes[idx]
-
-            # Collect data
             data_for_plot = []
-            languages = set()
-
             for key, records in self.valid_improvements.items():
                 model, prompt, language, rec_metric = key
                 if rec_metric != metric or not language or language == 'unknown':
                     continue
-
-                languages.add(language)
+                display_lang = self.get_display_language(language)
                 for record in records:
                     data_for_plot.append({
-                        'Language': language,
+                        'Language': display_lang,
                         'Improvement %': record['improvement_percentage']
                     })
+            all_data_by_metric[metric] = data_for_plot
+
+        # Find global min and max across all metrics for consistent scales
+        all_values = []
+        for data in all_data_by_metric.values():
+            if data:
+                df_temp = pd.DataFrame(data)
+                all_values.extend(df_temp['Improvement %'].values)
+
+        if all_values:
+            global_min = min(all_values)
+            global_max = max(all_values)
+            # Add padding
+            y_range = global_max - global_min
+            y_min = global_min - 0.1 * y_range
+            y_max = global_max + 0.1 * y_range
+
+        # Second pass: create plots with consistent order and scales
+        for idx, metric in enumerate(self.metrics):
+            ax = axes[idx]
+            data_for_plot = all_data_by_metric[metric]
 
             if data_for_plot:
                 df = pd.DataFrame(data_for_plot)
 
-                # Sort by median improvement
-                lang_order = df.groupby('Language')['Improvement %'].median().sort_values().index
+                # Filter to only include languages that have data
+                lang_order = [lang for lang in lang_order_fixed if lang in df['Language'].unique()]
 
-                sns.boxplot(data=df, x='Language', y='Improvement %', order=lang_order, ax=ax)
-                ax.axhline(y=0, color='red', linestyle='--', linewidth=1, alpha=0.7)
-                ax.set_title(f'{metric.replace("_", " ").title()}')
-                ax.set_xlabel('Programming Language')
-                ax.set_ylabel('Improvement %\n(negative = better)')
+                # Create box plot with custom colors
+                bp = ax.boxplot(
+                    [df[df['Language'] == lang]['Improvement %'].values for lang in lang_order],
+                    labels=lang_order,
+                    patch_artist=True,
+                    showmeans=True,
+                    meanline=True,
+                    meanprops=dict(linestyle='--', linewidth=1.5, color='darkred'),
+                    flierprops=dict(marker='o', markerfacecolor='gray', markersize=3, alpha=0.3)
+                )
+
+                # Apply colors
+                for patch, lang in zip(bp['boxes'], lang_order):
+                    color = language_colors.get(lang, '#95a5a6')
+                    patch.set_facecolor(color)
+                    patch.set_alpha(0.7)
+
+                # Set consistent y-axis limits so 0 is at the same height
+                ax.set_ylim(y_min, y_max)
+
+                ax.axhline(y=0, color='black', linestyle='-', linewidth=2, alpha=0.8)
+                ax.set_title(f'{metric.replace("_", " ").title()}', fontsize=14, fontweight='bold')
+                ax.set_xlabel('Programming Language', fontsize=12)
+                ax.set_ylabel('Improvement %\n(+ = better)', fontsize=12)
                 ax.tick_params(axis='x', rotation=45)
                 ax.grid(True, alpha=0.3)
 
@@ -475,7 +570,8 @@ class EnergyImprovementsAnalyzer:
 
     def _plot_improvements_by_model(self):
         """Create box plots for improvements by model"""
-        fig, axes = plt.subplots(1, 3, figsize=(15, 5))
+        fig, axes = plt.subplots(2, 2, figsize=(15, 10))
+        axes = axes.flatten()
 
         for idx, metric in enumerate(self.metrics):
             ax = axes[idx]
@@ -497,11 +593,37 @@ class EnergyImprovementsAnalyzer:
             if data_for_plot:
                 df = pd.DataFrame(data_for_plot)
 
-                sns.boxplot(data=df, x='Model', y='Improvement %', ax=ax)
+                # Define model-specific base colors
+                model_colors = {
+                    'openAI': '#1976d2',   # Dark blue
+                    'gemini': '#2e7d32',   # Dark green
+                    'claude': '#6a1b9a'    # Dark purple
+                }
+
+                # Order models
+                model_order = ['openAI', 'gemini', 'claude']
+
+                # Create box plot with custom colors
+                bp = ax.boxplot(
+                    [df[df['Model'] == model]['Improvement %'].values for model in model_order],
+                    labels=model_order,
+                    patch_artist=True,
+                    showmeans=True,
+                    meanline=True,
+                    meanprops=dict(linestyle='--', linewidth=1.5, color='darkred'),
+                    flierprops=dict(marker='o', markerfacecolor='gray', markersize=3, alpha=0.3)
+                )
+
+                # Apply colors to each model's box
+                for patch, model in zip(bp['boxes'], model_order):
+                    color = model_colors.get(model, '#95a5a6')
+                    patch.set_facecolor(color)
+                    patch.set_alpha(0.7)
+
                 ax.axhline(y=0, color='red', linestyle='--', linewidth=1, alpha=0.7)
                 ax.set_title(f'{metric.replace("_", " ").title()}')
                 ax.set_xlabel('LLM Model')
-                ax.set_ylabel('Improvement %\n(negative = better)')
+                ax.set_ylabel('Improvement %\n(+ = better)')
                 ax.grid(True, alpha=0.3)
 
         plt.tight_layout()
@@ -512,7 +634,8 @@ class EnergyImprovementsAnalyzer:
 
     def _plot_improvements_by_prompt(self):
         """Create box plots for improvements by prompt version"""
-        fig, axes = plt.subplots(1, 3, figsize=(15, 5))
+        fig, axes = plt.subplots(2, 2, figsize=(15, 10))
+        axes = axes.flatten()
 
         for idx, metric in enumerate(self.metrics):
             ax = axes[idx]
@@ -537,11 +660,35 @@ class EnergyImprovementsAnalyzer:
                 # Order prompts
                 prompt_order = ['prompt_v1', 'prompt_v2', 'prompt_v3', 'prompt_v4']
 
-                sns.boxplot(data=df, x='Prompt', y='Improvement %', order=prompt_order, ax=ax)
+                # Define Blues gradient for prompt versions (light to dark)
+                prompt_colors = {
+                    'prompt_v1': '#e3f2fd',  # Lightest blue
+                    'prompt_v2': '#90caf9',  # Light blue
+                    'prompt_v3': '#42a5f5',  # Medium blue
+                    'prompt_v4': '#1976d2'   # Dark blue
+                }
+
+                # Create box plot with custom colors
+                bp = ax.boxplot(
+                    [df[df['Prompt'] == prompt]['Improvement %'].values for prompt in prompt_order],
+                    labels=['v1', 'v2', 'v3', 'v4'],
+                    patch_artist=True,
+                    showmeans=True,
+                    meanline=True,
+                    meanprops=dict(linestyle='--', linewidth=1.5, color='darkred'),
+                    flierprops=dict(marker='o', markerfacecolor='gray', markersize=3, alpha=0.3)
+                )
+
+                # Apply gradient colors to each prompt version's box
+                for patch, prompt in zip(bp['boxes'], prompt_order):
+                    color = prompt_colors.get(prompt, '#95a5a6')
+                    patch.set_facecolor(color)
+                    patch.set_alpha(0.7)
+
                 ax.axhline(y=0, color='red', linestyle='--', linewidth=1, alpha=0.7)
                 ax.set_title(f'{metric.replace("_", " ").title()}')
                 ax.set_xlabel('Prompt Version')
-                ax.set_ylabel('Improvement %\n(negative = better)')
+                ax.set_ylabel('Improvement %\n(+ = better)')
                 ax.grid(True, alpha=0.3)
 
         plt.tight_layout()
@@ -552,7 +699,8 @@ class EnergyImprovementsAnalyzer:
 
     def _plot_improvements_by_model_prompt(self):
         """Create heatmap for improvements by model + prompt version"""
-        fig, axes = plt.subplots(1, 3, figsize=(18, 6))
+        fig, axes = plt.subplots(2, 2, figsize=(18, 12))
+        axes = axes.flatten()
 
         for idx, metric in enumerate(self.metrics):
             ax = axes[idx]
@@ -583,10 +731,11 @@ class EnergyImprovementsAnalyzer:
                         matrix[i, j] = np.nan
 
             # Create heatmap
-            sns.heatmap(matrix, annot=True, fmt='.2f', cmap='RdYlGn_r',
-                       xticklabels=[p.replace('prompt_', 'v') for p in prompts_list],
+            # NEW SEMANTIC: positive=green (good), negative=red (bad) → use RdYlGn (NOT _r)
+            sns.heatmap(matrix, annot=True, fmt='.2f', cmap='RdYlGn',
+                       xticklabels=[p.replace('prompt_', '') for p in prompts_list],  # FIX: vv1→v1
                        yticklabels=models_list, ax=ax, center=0,
-                       cbar_kws={'label': 'Mean Improvement %'})
+                       cbar_kws={'label': 'Mean Improvement %\n(+ = better)'})
             ax.set_title(f'{metric.replace("_", " ").title()}')
             ax.set_xlabel('Prompt Version')
             ax.set_ylabel('LLM Model')
@@ -598,8 +747,66 @@ class EnergyImprovementsAnalyzer:
         print(f"Saved {output_file}")
 
     def _plot_improvements_by_model_prompt_boxplots(self):
-        """Create box plots for all model + prompt combinations (3 subplots, one per metric)"""
-        fig, axes = plt.subplots(1, 3, figsize=(20, 6))
+        """
+        Create box plots for all model + prompt combinations (4 subplots, one per metric)
+
+        Features:
+        - Blues gradient for prompt versions BUT different shades per model
+        - Consistent y-axis scale (0 at same height across all subplots)
+        - Clear model separations
+        """
+        fig, axes = plt.subplots(2, 2, figsize=(20, 12))
+        axes = axes.flatten()
+
+        # Define Blues gradient for each MODEL (different base colors)
+        # OpenAI: Light Blues, Gemini: Medium Blues/Greens, Claude: Dark Blues/Purples
+        model_gradients = {
+            'openAI': {
+                'v1': '#e3f2fd',  # Very light blue
+                'v2': '#90caf9',  # Light blue
+                'v3': '#42a5f5',  # Medium blue
+                'v4': '#1976d2'   # Blue
+            },
+            'gemini': {
+                'v1': '#e8f5e9',  # Very light green
+                'v2': '#81c784',  # Light green
+                'v3': '#4caf50',  # Green
+                'v4': '#2e7d32'   # Dark green
+            },
+            'claude': {
+                'v1': '#f3e5f5',  # Very light purple
+                'v2': '#ba68c8',  # Light purple
+                'v3': '#9c27b0',  # Purple
+                'v4': '#6a1b9a'   # Dark purple
+            }
+        }
+
+        # First pass: collect all data to determine global y-axis limits
+        all_improvements = []
+        metric_data = {metric: [] for metric in self.metrics}
+
+        for key, records in self.valid_improvements.items():
+            model, prompt, language, rec_metric = key
+            if rec_metric in self.metrics:
+                for record in records:
+                    all_improvements.append(record['improvement_percentage'])
+                    metric_data[rec_metric].append(record['improvement_percentage'])
+
+        # Calculate global y-limits to ensure 0 is at the same height
+        if all_improvements:
+            import numpy as np
+            y_min = np.percentile(all_improvements, 1)
+            y_max = np.percentile(all_improvements, 99)
+
+            # Force include 0
+            y_min = min(y_min, 0)
+            y_max = max(y_max, 0)
+
+            # Add padding
+            padding = (y_max - y_min) * 0.1
+            global_ylim = (y_min - padding, y_max + padding)
+        else:
+            global_ylim = (-50, 50)
 
         for idx, metric in enumerate(self.metrics):
             ax = axes[idx]
@@ -620,7 +827,7 @@ class EnergyImprovementsAnalyzer:
                     data_for_plot.append({
                         'Model_Prompt': combo_label,
                         'Model': model,
-                        'Prompt': prompt,
+                        'Prompt': prompt_short,
                         'Improvement %': record['improvement_percentage']
                     })
 
@@ -636,33 +843,59 @@ class EnergyImprovementsAnalyzer:
                 # Filter to only existing combinations
                 existing_combos = [c for c in combo_order if c in df['Model_Prompt'].unique()]
 
-                # Create box plot
-                sns.boxplot(data=df, x='Model_Prompt', y='Improvement %',
-                           order=existing_combos, ax=ax, hue='Model_Prompt',
-                           palette='Set2', legend=False)
+                # Create color palette with model-specific gradients
+                palette = []
+                for combo in existing_combos:
+                    model_name = combo.split('_')[0]  # Extract openAI, gemini, claude
+                    prompt_version = combo.split('_')[1]  # Extract v1, v2, v3, v4
+                    color = model_gradients.get(model_name, {}).get(prompt_version, '#3498db')
+                    palette.append(color)
+
+                # Create box plot with custom palette
+                bp = ax.boxplot(
+                    [df[df['Model_Prompt'] == combo]['Improvement %'].values for combo in existing_combos],
+                    labels=existing_combos,
+                    patch_artist=True,
+                    showmeans=True,
+                    meanline=True,
+                    meanprops=dict(linestyle='--', linewidth=1.5, color='darkred'),
+                    flierprops=dict(marker='o', markerfacecolor='gray', markersize=3, alpha=0.3)
+                )
+
+                # Apply Blues gradient colors
+                for patch, color in zip(bp['boxes'], palette):
+                    patch.set_facecolor(color)
+                    patch.set_alpha(0.8)
 
                 # Add horizontal line at y=0
-                ax.axhline(y=0, color='red', linestyle='--', linewidth=1.5, alpha=0.7)
+                ax.axhline(y=0, color='black', linestyle='-', linewidth=2, alpha=0.8, zorder=10)
+
+                # Apply global y-limits
+                ax.set_ylim(global_ylim)
 
                 # Styling
                 ax.set_title(f'{metric.replace("_", " ").title()}', fontsize=14, fontweight='bold')
                 ax.set_xlabel('Model + Prompt Version', fontsize=12)
-                ax.set_ylabel('Improvement %\n(negative = better)', fontsize=12)
+                ax.set_ylabel('Improvement %\n(+ = better)', fontsize=12)  # UPDATED SEMANTIC
 
                 # Rotate x-axis labels
                 ax.tick_params(axis='x', rotation=45)
 
                 # Add vertical lines to separate models
-                ax.axvline(x=3.5, color='gray', linestyle=':', linewidth=1, alpha=0.5)
-                ax.axvline(x=7.5, color='gray', linestyle=':', linewidth=1, alpha=0.5)
+                ax.axvline(x=4.5, color='gray', linestyle=':', linewidth=1.5, alpha=0.7)
+                ax.axvline(x=8.5, color='gray', linestyle=':', linewidth=1.5, alpha=0.7)
 
                 # Add model labels at the top
-                ax.text(1.5, ax.get_ylim()[1] * 0.95, 'OpenAI',
-                       ha='center', fontsize=10, fontweight='bold', color='darkblue')
-                ax.text(5.5, ax.get_ylim()[1] * 0.95, 'Gemini',
-                       ha='center', fontsize=10, fontweight='bold', color='darkgreen')
-                ax.text(9.5, ax.get_ylim()[1] * 0.95, 'Claude',
-                       ha='center', fontsize=10, fontweight='bold', color='darkred')
+                y_pos = global_ylim[1] * 0.95
+                ax.text(2.5, y_pos, 'OpenAI',
+                       ha='center', fontsize=11, fontweight='bold', color='darkblue',
+                       bbox=dict(boxstyle='round,pad=0.3', facecolor='white', alpha=0.7))
+                ax.text(6.5, y_pos, 'Gemini',
+                       ha='center', fontsize=11, fontweight='bold', color='darkgreen',
+                       bbox=dict(boxstyle='round,pad=0.3', facecolor='white', alpha=0.7))
+                ax.text(10.5, y_pos, 'Claude',
+                       ha='center', fontsize=11, fontweight='bold', color='darkred',
+                       bbox=dict(boxstyle='round,pad=0.3', facecolor='white', alpha=0.7))
 
                 ax.grid(True, alpha=0.3, axis='y')
 
@@ -794,7 +1027,8 @@ class EnergyImprovementsAnalyzer:
 
     def _plot_distribution_by_metric(self):
         """Create distribution plots for each metric"""
-        fig, axes = plt.subplots(1, 3, figsize=(18, 5))
+        fig, axes = plt.subplots(2, 2, figsize=(18, 10))
+        axes = axes.flatten()
 
         for idx, metric in enumerate(self.metrics):
             ax = axes[idx]
@@ -816,7 +1050,7 @@ class EnergyImprovementsAnalyzer:
                 ax.axvline(x=np.median(values), color='green', linestyle='-', linewidth=2, label=f'Median: {np.median(values):.2f}%')
 
                 ax.set_title(f'{metric.replace("_", " ").title()} Distribution')
-                ax.set_xlabel('Improvement % (negative = better)')
+                ax.set_xlabel('Improvement % (+ = better)')
                 ax.set_ylabel('Frequency')
                 ax.legend()
                 ax.grid(True, alpha=0.3)

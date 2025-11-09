@@ -1,4 +1,4 @@
-#used by main exec metric analysis 
+#used by main exec metric analysis
 import sys
 import os
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "../.."))
@@ -8,6 +8,7 @@ from pathlib import Path
 from typing import Dict, List, Tuple
 import numpy as np
 from collections import defaultdict
+from metrics.energy_improvements.energy_analyzer import EnergyConfig, calculate_energy_joules
 
 
 class ExecMetricCalculator:
@@ -32,10 +33,14 @@ class ExecMetricCalculator:
 
         self.metrics = ["CPU_usage", "RAM_usage", "execution_time_ms"]
         self.pass_rate_metric = "pass_rate"
-        self.all_metrics = self.metrics + [self.pass_rate_metric]
+        self.energy_metric = "energy_joules"
+        self.all_metrics = self.metrics + [self.pass_rate_metric, self.energy_metric]
         self.llm_types = ["openAI", "claude", "gemini"]
         self.prompt_versions = ["v1", "v2", "v3", "v4"]
         self.languages = ["c", "c++", "go", "java", "python", "javascript", "typescript"]
+
+        # Initialize energy configuration
+        self.energy_config = EnergyConfig()
 
         # Paths
         self.execution_outputs_dir = utility_paths.OUTPUT_DIR_FILEPATH
@@ -110,10 +115,20 @@ class ExecMetricCalculator:
                         except (ValueError, TypeError):
                             return None
 
+                    cpu = to_numeric(entry.get("CPU_usage"))
+                    ram = to_numeric(entry.get("RAM_usage"))
+                    time_ms = to_numeric(entry.get("execution_time_ms"))
+
+                    # Calculate energy consumption in Joules
+                    energy = None
+                    if cpu is not None and ram is not None and time_ms is not None:
+                        energy = calculate_energy_joules(cpu, ram, time_ms, self.energy_config)
+
                     metrics = {
-                        "CPU_usage": to_numeric(entry.get("CPU_usage")),
-                        "RAM_usage": to_numeric(entry.get("RAM_usage")),
-                        "execution_time_ms": to_numeric(entry.get("execution_time_ms")),
+                        "CPU_usage": cpu,
+                        "RAM_usage": ram,
+                        "execution_time_ms": time_ms,
+                        "energy_joules": energy,
                     }
                 else:
                     # Entry non passa: niente metriche
@@ -121,6 +136,7 @@ class ExecMetricCalculator:
                         "CPU_usage": None,
                         "RAM_usage": None,
                         "execution_time_ms": None,
+                        "energy_joules": None,
                     }
 
                 extracted[entry_id] = {
@@ -170,10 +186,20 @@ class ExecMetricCalculator:
                             except (ValueError, TypeError):
                                 return None
 
+                        cpu = to_numeric(llm_result.get("CPU_usage"))
+                        ram = to_numeric(llm_result.get("RAM_usage"))
+                        time_ms = to_numeric(llm_result.get("execution_time_ms"))
+
+                        # Calculate energy consumption in Joules
+                        energy = None
+                        if cpu is not None and ram is not None and time_ms is not None:
+                            energy = calculate_energy_joules(cpu, ram, time_ms, self.energy_config)
+
                         metrics = {
-                            "CPU_usage": to_numeric(llm_result.get("CPU_usage")),
-                            "RAM_usage": to_numeric(llm_result.get("RAM_usage")),
-                            "execution_time_ms": to_numeric(llm_result.get("execution_time_ms")),
+                            "CPU_usage": cpu,
+                            "RAM_usage": ram,
+                            "execution_time_ms": time_ms,
+                            "energy_joules": energy,
                         }
                     else:
                         # Entry non passa: niente metriche
@@ -181,6 +207,7 @@ class ExecMetricCalculator:
                             "CPU_usage": None,
                             "RAM_usage": None,
                             "execution_time_ms": None,
+                            "energy_joules": None,
                         }
 
                     # Create unique key for each LLM variant
@@ -293,7 +320,13 @@ class ExecMetricCalculator:
                     llm_val = llm_metrics[metric]
 
                     if base_val != 0:
-                        improvement = ((llm_val - base_val) / base_val) * 100
+                        # Inversione semantica: positivo = miglioramento
+                        # Per CPU/RAM/Time: riduzione è miglioramento → (base - llm) / base
+                        # Per pass_rate: aumento è miglioramento → (llm - base) / base
+                        if metric == self.pass_rate_metric:
+                            improvement = ((llm_val - base_val) / base_val) * 100
+                        else:
+                            improvement = ((base_val - llm_val) / base_val) * 100
                         improvements[variant_key]["improvements"][metric] = improvement
 
         return improvements
@@ -441,8 +474,13 @@ class ExecMetricCalculator:
                     base_mean = base_means_agg[metric]
 
                     if base_mean != 0:
-                        # Improvement calcolato sulle medie aggregate
-                        improvement = ((llm_mean - base_mean) / base_mean) * 100
+                        # Inversione semantica: positivo = miglioramento
+                        # Per CPU/RAM/Time: riduzione è miglioramento → (base - llm) / base
+                        # Per pass_rate: aumento è miglioramento → (llm - base) / base
+                        if metric == self.pass_rate_metric:
+                            improvement = ((llm_mean - base_mean) / base_mean) * 100
+                        else:
+                            improvement = ((base_mean - llm_mean) / base_mean) * 100
                         mean_improvements_corrected[combo][metric] = float(improvement)
 
         result = {

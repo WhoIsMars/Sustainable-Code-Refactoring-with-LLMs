@@ -1,6 +1,6 @@
 # Execution Metrics Analysis Report
 
-**Generated:** 2025-10-31 15:48:24
+**Generated:** 2025-11-09 18:22:46
 
 ## Overview
 
@@ -12,14 +12,14 @@ This report summarizes execution metrics aggregated across all clusters.
 
 **Metrics by Prompt Version**
 
-- Base code entries (100% pass rate): 962
+- Base code entries (100% pass rate): 973
 - Prompt versions analyzed: v1, v2, v3, v4
 
 ### Objective 2
 
 **Metrics by Programming Language**
 
-- Languages (base code): python, java, typescript, cpp, go, c, javascript
+- Languages (base code): python, cpp, typescript, go, c, java, javascript
 - Languages (LLM code): python, java, javascript, cpp, typescript, go, c
 
 ### Objective 3
@@ -29,8 +29,8 @@ This report summarizes execution metrics aggregated across all clusters.
 - Model combinations analyzed: 12
 - Improvement percentages calculated
 - **Improvement interpretation**:
-  - For CPU/RAM/Execution Time: **Negative is GOOD** (lower is better)
-  - For Pass Rate: **Positive is GOOD** (higher is better)
+  - For ALL metrics: **Positive (+) is GOOD** (improvement), **Negative (-) is BAD** (degradation)
+  - Formula inverted in calculator: CPU/RAM/Time improvements show as positive percentages
 
 ### Objective 4
 
@@ -62,6 +62,7 @@ The following metrics are analyzed:
 - **RAM Usage (KB)**: Memory consumption
 - **Execution Time (ms)**: Time taken to execute tests
 - **Pass Rate (%)**: Percentage of tests passed
+- **Energy Consumption (J)**: Total energy in Joules (calculated from CPU, RAM, time with TDP/PUE factors)
 
 ## Data Filtering
 
@@ -75,6 +76,7 @@ This ensures we compare LLM-generated code against known-good baseline implement
 - Red dashed line indicates mean value
 - Outliers are shown but axis limits are adjusted for clarity
 - For improvement percentages (Objective 3):
-  - **Negative values are GOOD** for CPU, RAM, and Execution Time (lower is better)
-  - **Positive values are GOOD** for Pass Rate (higher is better)
+  - **Positive (+) values are GOOD** for ALL metrics (improvement)
+  - **Negative (-) values are BAD** for ALL metrics (degradation)
   - Green text = improvement, Red text = degradation
+  - Formula inverted in calculator: reductions in CPU/RAM/Time show as positive %

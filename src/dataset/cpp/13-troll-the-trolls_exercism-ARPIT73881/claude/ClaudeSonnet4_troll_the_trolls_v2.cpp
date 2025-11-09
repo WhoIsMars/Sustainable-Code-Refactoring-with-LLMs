@@ -1,0 +1,65 @@
+namespace hellmath
+{
+
+    // Task 1: Define an `AccountStatus` enumeration to represent the four account types
+    enum class AccountStatus : uint8_t
+    {
+        troll = 0,
+        guest = 1,
+        user = 2,
+        mod = 3
+    };
+
+    // Task 1: Define an `Action` enumeration to represent the three permission types
+    enum class Action : uint8_t
+    {
+        read = 0,
+        write = 1,
+        remove = 2
+    };
+
+    // Task 2: Implement the `display_post` function
+    bool display_post(AccountStatus poster, AccountStatus viewer)
+    {
+        return poster != AccountStatus::troll || viewer == AccountStatus::troll;
+    }
+
+    // Task 3: Implement the `permission_check` function
+    bool permission_check(Action action, AccountStatus status)
+    {
+        static constexpr bool permissions[4][3] = {
+            {true, true, false},   // troll: read, write, no remove
+            {true, false, false},  // guest: read only
+            {true, true, false},   // user: read, write, no remove
+            {true, true, true}     // mod: all actions
+        };
+        
+        return permissions[static_cast<uint8_t>(status)][static_cast<uint8_t>(action)];
+    }
+
+    // Task 4: Implement the `valid_player_combination` function
+    bool valid_player_combination(AccountStatus player1, AccountStatus player2)
+    {
+        // Guests cannot play with anyone
+        if (player1 == AccountStatus::guest || player2 == AccountStatus::guest)
+        {
+            return false;
+        }
+
+        // Trolls can only play with other trolls
+        if (player1 == AccountStatus::troll || player2 == AccountStatus::troll)
+        {
+            return player1 == AccountStatus::troll && player2 == AccountStatus::troll;
+        }
+
+        // Users and mods can play together
+        return true;
+    }
+
+    // Task 5: Implement the `has_priority` function
+    bool has_priority(AccountStatus player1, AccountStatus player2)
+    {
+        return static_cast<uint8_t>(player1) > static_cast<uint8_t>(player2);
+    }
+
+} // namespace hellmath

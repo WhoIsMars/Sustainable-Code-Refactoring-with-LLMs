@@ -1,0 +1,24 @@
+#include "reverse_string.h"
+#include <algorithm>
+
+namespace reverse_string {
+    std::string reverse_string(std::string str) {
+        std::reverse(str.begin(), str.end());
+        return str;
+    }
+
+    std::string reverse_string_iter(const std::string& str) {
+        return std::string(str.crbegin(), str.crend());
+    }
+
+    std::string reverse_string_manual(std::string str) {
+        const size_t len = str.length();
+        const size_t half_len = len >> 1;
+        
+        for (size_t i = 0; i < half_len; ++i) {
+            std::swap(str[i], str[len - 1 - i]);
+        }
+        
+        return str;
+    }
+}

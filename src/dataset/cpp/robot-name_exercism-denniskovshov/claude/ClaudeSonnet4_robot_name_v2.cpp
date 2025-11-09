@@ -1,0 +1,50 @@
+#include "robot_name.h"
+
+#include <random>
+
+namespace robot_name {
+    std::unordered_set<std::string> robot::_existing_names = {};
+    thread_local std::mt19937 generator(std::random_device{}());
+    thread_local std::uniform_int_distribution<int> char_dist(0, 25);
+    thread_local std::uniform_int_distribution<int> digit_dist(0, 9);
+
+    robot::robot() {
+        _name = _generate_name();
+    }
+
+    std::string robot::name() const {
+        return _name;
+    }
+
+    void robot::reset() {
+        _name = _generate_name();
+    }
+
+    std::string robot::_generate_name() {
+        std::string name;
+        name.reserve(5);
+
+        while (true) {
+            name.clear();
+            name += static_cast<char>('A' + char_dist(generator));
+            name += static_cast<char>('A' + char_dist(generator));
+            name += static_cast<char>('0' + digit_dist(generator));
+            name += static_cast<char>('0' + digit_dist(generator));
+            name += static_cast<char>('0' + digit_dist(generator));
+
+            if (robot::_existing_names.insert(name).second) {
+                break;
+            }
+        }
+
+        return name;
+    }
+
+    char robot::_generate_rand_char() {
+        return static_cast<char>('A' + char_dist(generator));
+    }
+
+    char robot::_generate_rand_digit() {
+        return static_cast<char>('0' + digit_dist(generator));
+    }
+}  // namespace robot_name

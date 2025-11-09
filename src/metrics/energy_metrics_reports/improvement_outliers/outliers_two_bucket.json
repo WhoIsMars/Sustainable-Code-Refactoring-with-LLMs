@@ -1,21 +1,21 @@
 {
   "metadata": {
-    "generation_date": "2025-10-22T17:44:39.611224",
+    "generation_date": "2025-11-09T09:54:47.623650",
     "threshold_percentage": 200.0,
-    "total_outliers": 6,
+    "total_outliers": 8,
     "cluster_name": "two_bucket"
   },
   "outliers": [
     {
       "entry_id": "typescript_two-bucket_Exercism-typescript-shybyte_shybyte",
       "cluster_name": "two_bucket",
-      "llm_model": "openAI",
+      "llm_model": "gemini",
       "prompt_version": "prompt_v1",
       "language": "typescript",
       "metric_name": "execution_time_ms",
-      "improvement_percentage": 210.03706871970346,
+      "improvement_percentage": -234.04619332763045,
       "base_mean": 1169.0,
-      "llm_mean": 3624.3333333333335,
+      "llm_mean": 3905.0,
       "base_exec_files": [
         "two_bucket_results_1.json",
         "two_bucket_results_2.json",
@@ -38,9 +38,9 @@
       "prompt_version": "prompt_v1",
       "language": "typescript",
       "metric_name": "execution_time_ms",
-      "improvement_percentage": 206.25891074992867,
+      "improvement_percentage": -211.09923011120614,
       "base_mean": 1169.0,
-      "llm_mean": 3580.1666666666665,
+      "llm_mean": 3636.75,
       "base_exec_files": [
         "two_bucket_results_1.json",
         "two_bucket_results_2.json",
@@ -59,13 +59,13 @@
     {
       "entry_id": "typescript_two-bucket_Exercism-typescript-shybyte_shybyte",
       "cluster_name": "two_bucket",
-      "llm_model": "gemini",
+      "llm_model": "openAI",
       "prompt_version": "prompt_v1",
       "language": "typescript",
       "metric_name": "execution_time_ms",
-      "improvement_percentage": 235.42914171656685,
+      "improvement_percentage": -225.71998859424008,
       "base_mean": 1169.0,
-      "llm_mean": 3921.1666666666665,
+      "llm_mean": 3807.6666666666665,
       "base_exec_files": [
         "two_bucket_results_1.json",
         "two_bucket_results_2.json",
@@ -88,9 +88,34 @@
       "prompt_version": "prompt_v2",
       "language": "typescript",
       "metric_name": "execution_time_ms",
-      "improvement_percentage": 2271.2362478286045,
+      "improvement_percentage": -2271.2362478286045,
       "base_mean": 1381.6,
       "llm_mean": 32761.0,
+      "base_exec_files": [
+        "two_bucket_results_1.json",
+        "two_bucket_results_2.json",
+        "two_bucket_results_3.json",
+        "two_bucket_results_4.json",
+        "two_bucket_results_5.json"
+      ],
+      "llm_exec_files": [
+        "two_bucket_results_v2_1.json",
+        "two_bucket_results_v2_2.json",
+        "two_bucket_results_v2_3.json",
+        "two_bucket_results_v2_4.json",
+        "two_bucket_results_v2_5.json"
+      ]
+    },
+    {
+      "entry_id": "typescript_two-bucket_Exercism-typescript-thewanionly_thewanionly",
+      "cluster_name": "two_bucket",
+      "llm_model": "gemini",
+      "prompt_version": "prompt_v2",
+      "language": "typescript",
+      "metric_name": "energy_joules",
+      "improvement_percentage": -669.2934236709732,
+      "base_mean": 32.66552695798874,
+      "llm_mean": 251.29375069527626,
       "base_exec_files": [
         "two_bucket_results_1.json",
         "two_bucket_results_2.json",
@@ -113,9 +138,9 @@
       "prompt_version": "prompt_v1",
       "language": "typescript",
       "metric_name": "execution_time_ms",
-      "improvement_percentage": 282.0342396777442,
+      "improvement_percentage": -285.49848942598186,
       "base_mean": 1241.25,
-      "llm_mean": 4742.0,
+      "llm_mean": 4785.0,
       "base_exec_files": [
         "two_bucket_results_1.json",
         "two_bucket_results_2.json",
@@ -138,9 +163,34 @@
       "prompt_version": "prompt_v2",
       "language": "typescript",
       "metric_name": "execution_time_ms",
-      "improvement_percentage": 2666.6465256797583,
+      "improvement_percentage": -2666.6465256797583,
       "base_mean": 1241.25,
       "llm_mean": 34341.0,
+      "base_exec_files": [
+        "two_bucket_results_1.json",
+        "two_bucket_results_2.json",
+        "two_bucket_results_3.json",
+        "two_bucket_results_4.json",
+        "two_bucket_results_5.json"
+      ],
+      "llm_exec_files": [
+        "two_bucket_results_v2_1.json",
+        "two_bucket_results_v2_2.json",
+        "two_bucket_results_v2_3.json",
+        "two_bucket_results_v2_4.json",
+        "two_bucket_results_v2_5.json"
+      ]
+    },
+    {
+      "entry_id": "typescript_two-bucket_Exercism-typescript-thewanionly",
+      "cluster_name": "two_bucket",
+      "llm_model": "gemini",
+      "prompt_version": "prompt_v2",
+      "language": "typescript",
+      "metric_name": "energy_joules",
+      "improvement_percentage": -792.1210596849638,
+      "base_mean": 33.10730437771082,
+      "llm_mean": 295.3572346475602,
       "base_exec_files": [
         "two_bucket_results_1.json",
         "two_bucket_results_2.json",
@@ -159,22 +209,23 @@
   ],
   "summary": {
     "by_cluster": {
-      "two_bucket": 6
+      "two_bucket": 8
     },
     "by_llm_model": {
-      "openAI": 1,
+      "gemini": 5,
       "claude": 2,
-      "gemini": 3
+      "openAI": 1
     },
     "by_prompt_version": {
       "prompt_v1": 4,
-      "prompt_v2": 2
+      "prompt_v2": 4
     },
     "by_metric": {
-      "execution_time_ms": 6
+      "execution_time_ms": 6,
+      "energy_joules": 2
     },
     "by_language": {
-      "typescript": 6
+      "typescript": 8
     }
   }
 }

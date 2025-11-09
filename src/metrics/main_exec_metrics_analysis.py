@@ -13,10 +13,14 @@ import logging
 try:
     from .exec_metrics_calculator import ExecMetricCalculator
     from .execMetricStatsVisualizator import ExecMetricStatsVisualizator
+    from .pass_rate_analyzer import PassRateAnalyzer
+    from .pass_rate_visualizator import PassRateVisualizator
 except ImportError:
     # Fallback for direct execution
     from exec_metrics_calculator import ExecMetricCalculator
     from execMetricStatsVisualizator import ExecMetricStatsVisualizator
+    from pass_rate_analyzer import PassRateAnalyzer
+    from pass_rate_visualizator import PassRateVisualizator
 
 
 def main():
@@ -58,6 +62,44 @@ def main():
 
         # Crea summary report
         visualizator.create_summary_report(aggregated_data)
+
+        # === NEW: Pass Rate Analysis (Section 4.1) ===
+        logger.info("\n" + "=" * 80)
+        logger.info("Starting Pass Rate Analysis (Section 4.1)")
+        logger.info("=" * 80)
+
+        try:
+            # Initialize pass rate analyzer
+            pass_rate_analyzer = PassRateAnalyzer()
+            logger.info("Pass rate analyzer initialized")
+
+            # Run pass rate analysis
+            logger.info("Analyzing pass rates across all clusters...")
+            pass_rate_data = pass_rate_analyzer.aggregate_across_clusters()
+
+            # Save pass rate results
+            pass_rate_analyzer.save_results()
+
+            # Print pass rate summary
+            pass_rate_analyzer.print_summary()
+
+            # Initialize pass rate visualizator
+            pass_rate_visualizator = PassRateVisualizator()
+            logger.info("Pass rate visualizator initialized")
+
+            # Generate pass rate visualizations
+            logger.info("Generating pass rate visualizations...")
+            pass_rate_visualizator.generate_all_visualizations()
+
+            # Generate pass rate summary report
+            pass_rate_visualizator.generate_summary_report()
+
+            logger.info("✓ Pass rate analysis completed successfully!")
+            logger.info(f"Pass rate plots saved to: {pass_rate_visualizator.output_dir}")
+
+        except Exception as e:
+            logger.error(f"Error during pass rate analysis: {e}", exc_info=True)
+            logger.warning("Continuing with main analysis despite pass rate analysis error")
 
         logger.info("=" * 80)
         logger.info("Analysis completed successfully!")

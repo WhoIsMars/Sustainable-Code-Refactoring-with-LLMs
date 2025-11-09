@@ -1,0 +1,115 @@
+[
+  {
+    "case_study_rank": 1,
+    "entry_id": "go_bottle_song_Exercism (go_rootulp)",
+    "cluster_name": "bottle_song",
+    "language": "go",
+    "llm_type": "openAI",
+    "prompt_version": "prompt_v2",
+    "patterns_introduced": [
+      {
+        "name": "G2_reduced_allocations",
+        "formatted_name": "(generic) reduced allocations",
+        "regex_to_highlight": "\\b(new|malloc|calloc|make)\\s*\\("
+      },
+      {
+        "name": "GO5_preallocation",
+        "formatted_name": "(go) preallocation",
+        "regex_to_highlight": "\\bmake\\s*\\(\\s*\\[\\s*\\]"
+      }
+    ],
+    "metrics": {
+      "CPU_usage": {
+        "base_avg_5_exec": 163.2,
+        "llm_avg_5_exec": 50.0,
+        "improvement_perc": -69.36274509803921
+      },
+      "RAM_usage": {
+        "base_avg_5_exec": 207316.0,
+        "llm_avg_5_exec": 80000.0,
+        "improvement_perc": -61.41156495398329
+      },
+      "execution_time_ms": {
+        "base_avg_5_exec": 5789.8,
+        "llm_avg_5_exec": 1000.0,
+        "improvement_perc": -82.7282462261218
+      }
+    },
+    "code_base": "package bottlesong\n\nimport (\n\t\"fmt\"\n\t\"strings\"\n)\n\nvar numberToCardinal = map[int]string{\n\t10: \"ten\",\n\t9:  \"nine\",\n\t8:  \"eight\",\n\t7:  \"seven\",\n\t6:  \"six\",\n\t5:  \"five\",\n\t4:  \"four\",\n\t3:  \"three\",\n\t2:  \"two\",\n\t1:  \"one\",\n\t0:  \"no\",\n}\n\nfunc Recite(startBottles, takeDown int) (song []string) {\n\tfor i := startBottles; i > startBottles-takeDown; i-- {\n\t\tsong = append(song, verse(i)...)\n\t\tsong = append(song, \"\")\n\t}\n\treturn song[:len(song)-1] // trim the last \"\"\n}\n\nfunc verse(bottles int) []string {\n\tstartCardinal := cardinal(bottles)\n\tendCardinal := cardinal(bottles - 1)\n\n\treturn []string{\n\t\tfmt.Sprintf(\"%v green %v hanging on the wall,\", capitalize(startCardinal), maybePluralize(bottles, \"bottle\", \"bottles\")),\n\t\tfmt.Sprintf(\"%v green %v hanging on the wall,\", capitalize(startCardinal), maybePluralize(bottles, \"bottle\", \"bottles\")),\n\t\t\"And if one green bottle should accidentally fall,\",\n\t\tfmt.Sprintf(\"There'll be %v green %v hanging on the wall.\", endCardinal, maybePluralize(bottles-1, \"bottle\", \"bottles\")),\n\t}\n}\n\nfunc cardinal(number int) string {\n\treturn numberToCardinal[number]\n}\n\n// capitalize capitalizes the first letter of a given string\nfunc capitalize(str string) string {\n\tif str == \"\" {\n\t\treturn \"\"\n\t}\n\treturn strings.ToUpper(string(str[0])) + str[1:]\n}\n\n// maybePluralize returns the plural version of word if number is > 1. Returns\n// the singular version of word if number == 1.\nfunc maybePluralize(number int, singularWord string, pluralWord string) string {\n\tif number == 1 {\n\t\treturn singularWord\n\t}\n\treturn pluralWord\n}\n",
+    "code_llm": "package bottlesong\n\nimport (\n\t\"fmt\"\n)\n\nvar numberToCardinal = []string{\n\t\"no\", \"one\", \"two\", \"three\", \"four\", \"five\", \"six\", \"seven\", \"eight\", \"nine\", \"ten\",\n}\n\nfunc Recite(startBottles, takeDown int) []string {\n\tsong := make([]string, 0, takeDown*5-1) // Preallocate slice with exact size\n\tfor i := startBottles; i > startBottles-takeDown; i-- {\n\t\tsong = append(song, verse(i)...)\n\t}\n\treturn song\n}\n\nfunc verse(bottles int) []string {\n\tstartCardinal := numberToCardinal[bottles]\n\tendCardinal := numberToCardinal[max(0, bottles-1)]\n\n\treturn []string{\n\t\tfmt.Sprintf(\"%s green %s hanging on the wall,\", capitalize(startCardinal), maybePluralize(bottles, \"bottle\", \"bottles\")),\n\t\tfmt.Sprintf(\"%s green %s hanging on the wall,\", capitalize(startCardinal), maybePluralize(bottles, \"bottle\", \"bottles\")),\n\t\t\"And if one green bottle should accidentally fall,\",\n\t\tfmt.Sprintf(\"There'll be %s green %s hanging on the wall.\", endCardinal, maybePluralize(bottles-1, \"bottle\", \"bottles\")),\n\t\t\"\",\n\t}\n}\n\nfunc capitalize(str string) string {\n\treturn string(str[0]-32) + str[1:] // Inline capitalization without extra function calls\n}\n\nfunc maybePluralize(number int, singularWord, pluralWord string) string {\n\tif number == 1 {\n\t\treturn singularWord\n\t}\n\treturn pluralWord\n}\n\nfunc max(a, b int) int {\n\tif a > b {\n\t\treturn a\n\t}\n\treturn b\n}",
+    "base_code_path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/bottle_song_Exercism_go_rootulp/bottle_song.go",
+    "llm_code_path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/bottle_song_Exercism_go_rootulp/openAI/ChatGPT4_bottle_song_v2.go"
+  },
+  {
+    "case_study_rank": 2,
+    "entry_id": "typescript_luhn_exercism-javascript-samajammin_samajammin",
+    "cluster_name": "luhn",
+    "language": "typescript",
+    "llm_type": "claude",
+    "prompt_version": "prompt_v3",
+    "patterns_introduced": [
+      {
+        "name": "generic_early_return",
+        "formatted_name": "generic early return",
+        "regex_to_highlight": "^\\s*(if|when)\\s*\\([^)]+\\)\\s*\\{?\\s*return"
+      }
+    ],
+    "metrics": {
+      "CPU_usage": {
+        "base_avg_5_exec": 67.6,
+        "llm_avg_5_exec": 50.0,
+        "improvement_perc": -26.035502958579876
+      },
+      "RAM_usage": {
+        "base_avg_5_exec": 223545.6,
+        "llm_avg_5_exec": 80000.0,
+        "improvement_perc": -64.21311803945146
+      },
+      "execution_time_ms": {
+        "base_avg_5_exec": 6930.4,
+        "llm_avg_5_exec": 1000.0,
+        "improvement_perc": -85.57081842317903
+      }
+    },
+    "code_base": "\"use strict\";\nObject.defineProperty(exports, \"__esModule\", { value: true });\nclass Luhn {\n    static valid(input) {\n        let sum = 0;\n        let alt = false;\n        let n = input.length;\n        for (let i = n - 1; i >= 0; i--) {\n            const char = input[i];\n            if (char === ' ') {\n                continue;\n            }\n            const digit = parseInt(char, 10);\n            if (isNaN(digit)) {\n                return false;\n            }\n            if (alt) {\n                let doubledDigit = digit * 2;\n                if (doubledDigit > 9) {\n                    doubledDigit -= 9;\n                }\n                sum += doubledDigit;\n            }\n            else {\n                sum += digit;\n            }\n            alt = !alt;\n        }\n        let count = 0;\n        for (let i = 0; i < n; i++) {\n            if (input[i] !== ' ') {\n                count++;\n            }\n        }\n        return count > 1 && sum % 10 === 0;\n    }\n}\nexports.default = Luhn;\n",
+    "code_llm": "\"use strict\";\nObject.defineProperty(exports, \"__esModule\", { value: true });\nclass Luhn {\n    static valid(input) {\n        let stripped = '';\n        for (let i = 0; i < input.length; i++) {\n            if (input[i] !== ' ') {\n                stripped += input[i];\n            }\n        }\n        if (stripped.length <= 1) {\n            return false;\n        }\n        let sum = 0;\n        let isEven = false;\n        for (let i = stripped.length - 1; i >= 0; i--) {\n            const char = stripped[i];\n            if (char < '0' || char > '9') {\n                return false;\n            }\n            let digit = char.charCodeAt(0) - 48;\n            if (isEven) {\n                digit *= 2;\n                if (digit > 9) {\n                    digit -= 9;\n                }\n            }\n            sum += digit;\n            isEven = !isEven;\n        }\n        return sum % 10 === 0;\n    }\n}\nexports.default = Luhn;\n",
+    "base_code_path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/luhn_exercism-javascript-samajammin/luhn.ts",
+    "llm_code_path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/luhn_exercism-javascript-samajammin/claude/ClaudeSonnet4_luhn_v3.js"
+  },
+  {
+    "case_study_rank": 3,
+    "entry_id": "c_raindrops_Exercism (vlzware)",
+    "cluster_name": "raindrops",
+    "language": "c",
+    "llm_type": "openAI",
+    "prompt_version": "prompt_v4",
+    "patterns_introduced": [
+      {
+        "name": "C3_string_operations",
+        "formatted_name": "(c) string operations",
+        "regex_to_highlight": "\\b(strlen|strcpy|strcat|strcmp|strncpy|strncat|strncmp)\\s*\\("
+      }
+    ],
+    "metrics": {
+      "CPU_usage": {
+        "base_avg_5_exec": 32.6,
+        "llm_avg_5_exec": 20.0,
+        "improvement_perc": -38.650306748466264
+      },
+      "RAM_usage": {
+        "base_avg_5_exec": 8678.4,
+        "llm_avg_5_exec": 8704.0,
+        "improvement_perc": 0.29498525073746734
+      },
+      "execution_time_ms": {
+        "base_avg_5_exec": 6.2532858000000004,
+        "llm_avg_5_exec": 1.2047935,
+        "improvement_perc": -80.73343297374957
+      }
+    },
+    "code_base": "#include \"raindrops.h\"\n#include <stdio.h>\n\nvoid mcat(int *pos, const char *dst, const char *src_);\nint check_mod(int a, int b);\n\nvoid convert(char *buf, int drops)\n{\n\tint found = 0;\n\tint pos = 0;\n\tif (check_mod(drops, 3)) {\n\t\tmcat(&pos, buf, \"Pling\");\n\t\tfound = 1;\n\t}\n\tif (check_mod(drops, 5)) {\n\t\tmcat(&pos, buf, \"Plang\");\n\t\tfound = 1;\n\t}\n\tif (check_mod(drops, 7)) {\n\t\tmcat(&pos, buf, \"Plong\");\n\t\tfound = 1;\n\t}\n\n\tif (!found)\n\t\tsprintf(buf, \"%i\", drops);\n}\n\n/**\n * mcat: concatenate strings, puts the new length in pos,\n * assumes dst is big enough\n */\nvoid mcat(int *pos, const char *dst, const char *src_)\n{\n\tchar *src = (char*) src_;\n\tchar *tmp = (char*) dst + *pos;\n\twhile ((*tmp++ = *src++))\n\t\t(*pos)++;\n\t*tmp = '\\0';\n}\n\nint check_mod(int a, int b)\n{\n\treturn (a % b == 0);\n}\n",
+    "code_llm": "#include \"raindrops.h\"\n#include <stdio.h>\n#include <string.h>\n\nvoid mcat(int *pos, char *dst, const char *src);\nstatic inline int check_mod(int a, int b);\n\nvoid convert(char *buf, int drops)\n{\n\tint pos = 0;\n\n\tif (check_mod(drops, 3)) {\n\t\tmcat(&pos, buf, \"Pling\");\n\t}\n\tif (check_mod(drops, 5)) {\n\t\tmcat(&pos, buf, \"Plang\");\n\t}\n\tif (check_mod(drops, 7)) {\n\t\tmcat(&pos, buf, \"Plong\");\n\t}\n\n\tif (pos == 0)\n\t\tsprintf(buf, \"%i\", drops);\n}\n\nvoid mcat(int *pos, char *dst, const char *src)\n{\n\tsize_t len = strlen(src);\n\tmemcpy(dst + *pos, src, len);\n\t*pos += len;\n\tdst[*pos] = '\\0';\n}\n\nstatic inline int check_mod(int a, int b)\n{\n\treturn a % b == 0;\n}\n",
+    "base_code_path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/raindrops_Exercism_vlzware/src/raindrops.c",
+    "llm_code_path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/raindrops_Exercism_vlzware/openAI/ChatGPT4_raindrops_v4.c"
+  }
+]
