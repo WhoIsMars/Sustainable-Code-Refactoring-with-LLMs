@@ -1982,6 +1982,8 @@ class ClusterRunner:
         # set of entry ids of entries not valid / not executed
         cluster_base_not_completed_entries_ids = set()
         cluster_LLM_not_completed_entries_ids = set()
+        # Track completed (entry_id, llm_type) combinations to avoid missing LLM variants
+        cluster_LLM_completed_combinations = set()
 
         # Prepare test tasks
         base_tasks = []
@@ -2115,6 +2117,10 @@ class ClusterRunner:
                                 llm_results.append(entry)
 
                                 for res in entry.LLM_results:
+                                    # Track completed (entry_id, llm_type) combination
+                                    llm_type = res.LLM_type if hasattr(res, 'LLM_type') else getattr(res, 'type', 'unknown')
+                                    cluster_LLM_completed_combinations.add((entry.id, llm_type))
+
                                     # adjust execution state :
                                     with self.lock:
                                         self.execution_state.completed_tests += 1
@@ -2172,20 +2178,29 @@ class ClusterRunner:
                 if (
                     (llm_only or full)
                     and "LLMs" in entry
-                    and entry["id"] in cluster_LLM_not_completed_entries_ids
                 ):
+                    # Check if entry needs execution (either marked for rerun or has incomplete combinations)
+                    entry_needs_execution = entry["id"] in cluster_LLM_not_completed_entries_ids
+
                     for llm in entry["LLMs"]:
                         if f"_v{prompt_version}" in llm.get("filename", ""):
-                            llm_tasks.append(
-                                {
-                                    "entry": entry,
-                                    "language": language,
-                                    "test_type": "llm",
-                                    "llm_info": llm,
-                                    "use_cache": use_cache,
-                                    "debug_mode": debug_mode,
-                                }
-                            )
+                            llm_type = llm.get("type", "unknown")
+                            combination = (entry["id"], llm_type)
+
+                            # Execute if: entry is marked for rerun OR this specific combination is not completed
+                            should_execute = entry_needs_execution or (combination not in cluster_LLM_completed_combinations)
+
+                            if should_execute:
+                                llm_tasks.append(
+                                    {
+                                        "entry": entry,
+                                        "language": language,
+                                        "test_type": "llm",
+                                        "llm_info": llm,
+                                        "use_cache": use_cache,
+                                        "debug_mode": debug_mode,
+                                    }
+                                )
 
         total_tasks = len(base_tasks) + len(llm_tasks)
         self.logger.info(

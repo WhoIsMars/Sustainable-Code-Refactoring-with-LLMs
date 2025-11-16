@@ -271,51 +271,122 @@ class LanguageSelectiveResultMerger:
             # Get existing results for this language
             existing_lang_results = existing_results.get(lang_key, [])
 
-            # Create a map of existing results by ID
-            existing_by_id = {
-                entry['id']: entry
-                for entry in existing_lang_results
-            }
+            if is_llm:
+                # For LLM results, track by (entry_id, llm_type) to preserve all variants
+                existing_by_combo = {}
+                for entry in existing_lang_results:
+                    entry_id = entry['id']
+                    for llm_result in entry.get('LLM_results', []):
+                        llm_type = llm_result.get('LLM_type', 'unknown')
+                        combo_key = (entry_id, llm_type)
+                        existing_by_combo[combo_key] = entry
 
-            # Merge new results
-            updated_results = []
-            for new_result in new_lang_results:
-                new_result_dict = new_result.to_json() if hasattr(new_result, 'to_json') else new_result
-                entry_id = new_result_dict.get('id')
+                # Track which combos we've added (to avoid duplicates)
+                added_combos = set()
+                updated_results = []
 
-                report.total_entries += 1
-                report.executed_entries += 1
+                # First, add all new results
+                for new_result in new_lang_results:
+                    new_result_dict = new_result.to_json() if hasattr(new_result, 'to_json') else new_result
+                    entry_id = new_result_dict.get('id')
 
-                # Validate new result
-                if self.validate_new_result(new_result_dict, is_llm):
-                    # Use new valid result
-                    updated_results.append(new_result_dict)
-                    report.successful_entries += 1
-                    report.valid_new_results += 1
-                    self.logger.debug(f"✓ Valid new result for {entry_id}")
-                else:
-                    # New result invalid, preserve old if available
-                    if entry_id in existing_by_id:
-                        updated_results.append(existing_by_id[entry_id])
-                        report.preserved_old_results += 1
-                        report.invalid_new_results += 1
-                        self.logger.warning(f"⚠ Invalid new result for {entry_id}, preserved old")
-                        report.add_error(
-                            entry_id,
-                            "invalid_metrics",
-                            "New result has invalid metrics, preserved old result"
-                        )
-                    else:
-                        # No old result, keep invalid new one with error note
+                    report.total_entries += 1
+                    report.executed_entries += 1
+
+                    # Get LLM type for this result
+                    llm_type = 'unknown'
+                    if new_result_dict.get('LLM_results'):
+                        llm_type = new_result_dict['LLM_results'][0].get('LLM_type', 'unknown')
+
+                    combo_key = (entry_id, llm_type)
+
+                    # Validate new result
+                    if self.validate_new_result(new_result_dict, is_llm):
+                        # Use new valid result
                         updated_results.append(new_result_dict)
-                        report.failed_entries += 1
-                        report.invalid_new_results += 1
-                        self.logger.error(f"✗ Invalid new result for {entry_id}, no old result available")
-                        report.add_error(
-                            entry_id,
-                            "invalid_metrics_no_fallback",
-                            "New result invalid and no previous result available"
-                        )
+                        added_combos.add(combo_key)
+                        report.successful_entries += 1
+                        report.valid_new_results += 1
+                        self.logger.debug(f"✓ Valid new result for {entry_id} ({llm_type})")
+                    else:
+                        # New result invalid, preserve old if available
+                        if combo_key in existing_by_combo:
+                            updated_results.append(existing_by_combo[combo_key])
+                            added_combos.add(combo_key)
+                            report.preserved_old_results += 1
+                            report.invalid_new_results += 1
+                            self.logger.warning(f"⚠ Invalid new result for {entry_id} ({llm_type}), preserved old")
+                            report.add_error(
+                                entry_id,
+                                "invalid_metrics",
+                                f"New result has invalid metrics for {llm_type}, preserved old result"
+                            )
+                        else:
+                            # No old result, keep invalid new one with error note
+                            updated_results.append(new_result_dict)
+                            added_combos.add(combo_key)
+                            report.failed_entries += 1
+                            report.invalid_new_results += 1
+                            self.logger.error(f"✗ Invalid new result for {entry_id} ({llm_type}), no old result available")
+                            report.add_error(
+                                entry_id,
+                                "invalid_metrics_no_fallback",
+                                f"New result invalid for {llm_type} and no previous result available"
+                            )
+
+                # Then, preserve existing results for combos not in new results
+                for combo_key, existing_entry in existing_by_combo.items():
+                    if combo_key not in added_combos:
+                        updated_results.append(existing_entry)
+                        report.preserved_old_results += 1
+                        self.logger.debug(f"Preserved existing result for {combo_key[0]} ({combo_key[1]})")
+
+            else:
+                # For base results, use simple ID-based merging (original behavior)
+                existing_by_id = {
+                    entry['id']: entry
+                    for entry in existing_lang_results
+                }
+
+                # Merge new results
+                updated_results = []
+                for new_result in new_lang_results:
+                    new_result_dict = new_result.to_json() if hasattr(new_result, 'to_json') else new_result
+                    entry_id = new_result_dict.get('id')
+
+                    report.total_entries += 1
+                    report.executed_entries += 1
+
+                    # Validate new result
+                    if self.validate_new_result(new_result_dict, is_llm):
+                        # Use new valid result
+                        updated_results.append(new_result_dict)
+                        report.successful_entries += 1
+                        report.valid_new_results += 1
+                        self.logger.debug(f"✓ Valid new result for {entry_id}")
+                    else:
+                        # New result invalid, preserve old if available
+                        if entry_id in existing_by_id:
+                            updated_results.append(existing_by_id[entry_id])
+                            report.preserved_old_results += 1
+                            report.invalid_new_results += 1
+                            self.logger.warning(f"⚠ Invalid new result for {entry_id}, preserved old")
+                            report.add_error(
+                                entry_id,
+                                "invalid_metrics",
+                                "New result has invalid metrics, preserved old result"
+                            )
+                        else:
+                            # No old result, keep invalid new one with error note
+                            updated_results.append(new_result_dict)
+                            report.failed_entries += 1
+                            report.invalid_new_results += 1
+                            self.logger.error(f"✗ Invalid new result for {entry_id}, no old result available")
+                            report.add_error(
+                                entry_id,
+                                "invalid_metrics_no_fallback",
+                                "New result invalid and no previous result available"
+                            )
 
             # Update merged data
             merged_data['results'][lang_key] = updated_results
