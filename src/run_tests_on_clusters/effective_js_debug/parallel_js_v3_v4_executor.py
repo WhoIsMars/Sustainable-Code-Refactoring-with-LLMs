@@ -58,6 +58,97 @@ def get_all_js_clusters() -> List[str]:
     return clusters
 
 
+def is_valid_llm_result(llm_result: dict) -> bool:
+    """Check if an LLM result has all valid metrics."""
+    return (llm_result.get('execution_time_ms') is not None and
+            llm_result.get('CPU_usage') is not None and
+            llm_result.get('RAM_usage') is not None and
+            llm_result.get('RAM_usage') != 0 and
+            llm_result.get('execution_time_ms', 0) > 0)
+
+
+def copy_backup_result_to_outputs(
+    cluster_name: str,
+    entry_id: str,
+    llm_type: str,
+    prompt_version: int,
+    exec_number: int,
+    backup_entry_data: dict
+) -> bool:
+    """
+    Copy a valid backup result to the execution_outputs file.
+
+    Args:
+        cluster_name: Name of the cluster
+        entry_id: ID of the entry
+        llm_type: Type of LLM (claude, gemini, openAI)
+        prompt_version: Prompt version (3 or 4)
+        exec_number: Execution number (1-5)
+        backup_entry_data: The entry data from the backup file
+
+    Returns:
+        True if successfully copied, False otherwise.
+    """
+    outputs_dir = utility_paths.OUTPUT_DIR_FILEPATH
+    result_file = outputs_dir / f"{cluster_name}_results_v{prompt_version}_{exec_number}.json"
+
+    try:
+        # Load or create the output file
+        if result_file.exists():
+            with open(result_file, 'r') as f:
+                output_data = json.load(f)
+        else:
+            # Create new structure
+            output_data = {
+                "execution_date": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                "execution_metadata": {
+                    "total_tests": 0,
+                    "successful_tests": 0,
+                    "execution_time": "restored_from_backup",
+                    "cluster": f"cluster_{cluster_name}",
+                    "test_type": f"llm_v{prompt_version}"
+                },
+                "results": {}
+            }
+
+        # Ensure results structure exists
+        if 'results' not in output_data:
+            output_data['results'] = {}
+        if 'javascript' not in output_data['results']:
+            output_data['results']['javascript'] = []
+
+        # Check if this (entry_id, llm_type) combination already exists
+        found = False
+        for existing_entry in output_data['results']['javascript']:
+            if existing_entry.get('id') == entry_id:
+                for existing_llm_result in existing_entry.get('LLM_results', []):
+                    if existing_llm_result.get('LLM_type') == llm_type:
+                        # Already exists, don't overwrite
+                        found = True
+                        break
+                if not found:
+                    # Same entry_id but different llm_type - this shouldn't happen for our case
+                    # Just add the new entry as a separate one
+                    pass
+                break
+
+        if not found:
+            # Add the backup entry to the output file
+            output_data['results']['javascript'].append(backup_entry_data)
+
+            # Save the updated file
+            with open(result_file, 'w') as f:
+                json.dump(output_data, f, indent=2, ensure_ascii=False)
+
+            return True
+
+        return False
+
+    except Exception as e:
+        print(f"Warning: Failed to copy backup result to outputs: {e}")
+        return False
+
+
 def check_entry_has_valid_results(
     cluster_name: str,
     entry_id: str,
@@ -72,13 +163,17 @@ def check_entry_has_valid_results(
     1. execution_outputs for existing valid results
     2. backup_executions for backup files
 
-    Returns True if valid results exist, False otherwise.
+    If valid results are found in backup but not in execution_outputs,
+    they are automatically copied to execution_outputs.
+
+    Returns True if valid results exist (or were restored), False otherwise.
     """
     outputs_dir = utility_paths.OUTPUT_DIR_FILEPATH
     backup_dir = utility_paths.SRC_DIR / "backup_executions"
 
     # Check 1: Look in execution_outputs
     result_file = outputs_dir / f"{cluster_name}_results_v{prompt_version}_{exec_number}.json"
+    found_in_outputs = False
 
     if result_file.exists():
         try:
@@ -89,12 +184,8 @@ def check_entry_has_valid_results(
                         if entry.get('id') == entry_id:
                             for llm_result in entry.get('LLM_results', []):
                                 if llm_result.get('LLM_type') == llm_type:
-                                    # Check if result is valid (has all required metrics)
-                                    if (llm_result.get('execution_time_ms') is not None and
-                                        llm_result.get('CPU_usage') is not None and
-                                        llm_result.get('RAM_usage') is not None and
-                                        llm_result.get('RAM_usage') != 0 and
-                                        llm_result.get('execution_time_ms', 0) > 0):
+                                    if is_valid_llm_result(llm_result):
+                                        found_in_outputs = True
                                         return True
         except Exception:
             pass
@@ -120,12 +211,15 @@ def check_entry_has_valid_results(
                         if entry.get('id') == entry_id:
                             for llm_result in entry.get('LLM_results', []):
                                 if llm_result.get('LLM_type') == llm_type:
-                                    # Check if result is valid
-                                    if (llm_result.get('execution_time_ms') is not None and
-                                        llm_result.get('CPU_usage') is not None and
-                                        llm_result.get('RAM_usage') is not None and
-                                        llm_result.get('RAM_usage') != 0 and
-                                        llm_result.get('execution_time_ms', 0) > 0):
+                                    if is_valid_llm_result(llm_result):
+                                        # Valid result found in backup but not in outputs
+                                        # Copy it to the output file
+                                        if not found_in_outputs:
+                                            if copy_backup_result_to_outputs(
+                                                cluster_name, entry_id, llm_type,
+                                                prompt_version, exec_number, entry
+                                            ):
+                                                print(f"    Restored from backup: {entry_id} ({llm_type}) v{prompt_version} exec#{exec_number}")
                                         return True
         except Exception:
             pass
