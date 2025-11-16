@@ -15,7 +15,8 @@ namespace scrabble_score
         int sum = 0;
         for (char c : word)
         {
-            sum += values[std::toupper(c) - 'A'];
+            if (std::isalpha(c))
+                sum += values[std::toupper(c) - 'A'];
         }
 
         return sum;

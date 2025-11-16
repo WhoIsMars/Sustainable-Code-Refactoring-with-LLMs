@@ -14,9 +14,9 @@ map<int, vector<string> > school::roster() const
 
 void school::add(const string& n, int no)
 {
-    auto& grade_list = grades[no];
-    grade_list.push_back(n);
-    sort(grade_list.begin(), grade_list.end());
+    auto& grade_level = grades[no];
+    grade_level.push_back(n);
+    inplace_merge(grade_level.begin(), prev(grade_level.end()), grade_level.end());
 }
 
 vector<string> school::grade(int n) const

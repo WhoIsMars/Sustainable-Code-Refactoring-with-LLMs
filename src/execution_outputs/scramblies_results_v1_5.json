@@ -1,11 +1,18 @@
 {
-  "execution_date": "2025-10-03 11:51:36",
+  "execution_date": "2025-11-15 03:22:54",
   "execution_metadata": {
     "total_tests": 1,
     "successful_tests": 1,
     "execution_time": "00h 00m 36s",
     "cluster": "cluster_scramblies",
-    "test_type": "llm_v1"
+    "test_type": "llm_v1",
+    "last_updated": "2025-11-15 03:22:54",
+    "selective_execution": {
+      "languages": [
+        "javascript"
+      ],
+      "timestamp": "2025-11-15 03:22:54"
+    }
   },
   "results": {
     "javascript": [
@@ -15,28 +22,51 @@
         "language": "javascript",
         "LLM_results": [
           {
-            "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/scramblies/gemini/GeminiFlash_scramblies_v1.js",
-            "execution_time_ms": 300,
-            "CPU_usage": 5.0,
-            "RAM_usage": 81736,
-            "regressionTestPassed": false
-          },
-          {
             "LLM_type": "claude",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/scramblies/claude/ClaudeSonnet4_scramblies_v1.js",
-            "execution_time_ms": 280,
-            "CPU_usage": 6.0,
-            "RAM_usage": 82200,
-            "regressionTestPassed": false
-          },
+            "log": "",
+            "execution_time_ms": 530.0,
+            "CPU_usage": 60.0,
+            "RAM_usage": 81532,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 1"
+          }
+        ]
+      },
+      {
+        "id": "scramblies_122",
+        "filename": "scramblies.js",
+        "language": "javascript",
+        "LLM_results": [
           {
             "LLM_type": "openAI",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/scramblies/openAI/ChatGPT4_scramblies_v1.js",
-            "execution_time_ms": 300,
-            "CPU_usage": 5.0,
-            "RAM_usage": 81500,
-            "regressionTestPassed": false
+            "log": "",
+            "execution_time_ms": 550.0,
+            "CPU_usage": 53.0,
+            "RAM_usage": 80184,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 1"
+          }
+        ]
+      },
+      {
+        "id": "scramblies_122",
+        "filename": "scramblies.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/scramblies/gemini/GeminiFlash_scramblies_v1.js",
+            "log": "",
+            "execution_time_ms": 550.0,
+            "CPU_usage": 51.0,
+            "RAM_usage": 81948,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 1"
           }
         ]
       }

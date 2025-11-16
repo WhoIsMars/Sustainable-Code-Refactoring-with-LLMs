@@ -1,11 +1,9 @@
 #include "grade_school.h"
-#include <map>
-#include <vector>
-#include <string>
+#include <algorithm>
 using namespace std;
 using namespace grade_school;
 
-map<int, vector<string>> school::roster() const
+map<int, vector<string>> school::roster()
 {
     return grades;
 }
@@ -22,5 +20,8 @@ void school::add(const string& n, int no)
 vector<string> school::grade(int n) const
 {
     auto it = grades.find(n);
-    return it != grades.end() ? it->second : vector<string>{};
+    if (it != grades.end()) {
+        return it->second;
+    }
+    return {};
 }

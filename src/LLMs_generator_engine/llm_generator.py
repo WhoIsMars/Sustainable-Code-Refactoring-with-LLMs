@@ -7,7 +7,7 @@ import sys
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
 from utility_dir import utility_paths
-from api import gemini_api_gestor, claude_api_gestor, openai_api_gestor
+from LLMs_generator_engine.api import gemini_api_gestor, claude_api_gestor, openai_api_gestor
 from discordInteraction import DiscordWebhookReporter
 from dotenv import load_dotenv
 from datetime import datetime

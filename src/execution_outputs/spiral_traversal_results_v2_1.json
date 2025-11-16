@@ -1,11 +1,18 @@
 {
-  "execution_date": "2025-10-07 12:27:33",
+  "execution_date": "2025-11-15 13:37:33",
   "execution_metadata": {
     "total_tests": 1,
     "successful_tests": 1,
     "execution_time": "00h 00m 00s",
     "cluster": "cluster_spiral_traversal",
-    "test_type": "llm_v2"
+    "test_type": "llm_v2",
+    "last_updated": "2025-11-15 13:37:33",
+    "selective_execution": {
+      "languages": [
+        "javascript"
+      ],
+      "timestamp": "2025-11-15 13:37:33"
+    }
   },
   "results": {
     "javascript": [
@@ -15,37 +22,51 @@
         "language": "javascript",
         "LLM_results": [
           {
-            "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/spiralTraversal/openAI/ChatGPT4_spiralTraversal_v2.js",
-            "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
-            "regressionTestPassed": true,
-            "success": null,
-            "error_message": null
-          },
-          {
             "LLM_type": "claude",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/spiralTraversal/claude/ClaudeSonnet4_spiralTraversal_v2.js",
             "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
-            "regressionTestPassed": true,
-            "success": null,
-            "error_message": null
-          },
+            "execution_time_ms": 590.0,
+            "CPU_usage": 19.0,
+            "RAM_usage": 81832,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 1"
+          }
+        ]
+      },
+      {
+        "id": "spiralTraversal_123",
+        "filename": "spiralTraversal.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/spiralTraversal/openAI/ChatGPT4_spiralTraversal_v2.js",
+            "log": "",
+            "execution_time_ms": 680.0,
+            "CPU_usage": 18.0,
+            "RAM_usage": 80180,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 1"
+          }
+        ]
+      },
+      {
+        "id": "spiralTraversal_123",
+        "filename": "spiralTraversal.js",
+        "language": "javascript",
+        "LLM_results": [
           {
             "LLM_type": "gemini",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/spiralTraversal/gemini/GeminiFlash_spiralTraversal_v2.js",
             "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
-            "regressionTestPassed": true,
-            "success": null,
-            "error_message": null
+            "execution_time_ms": 700.0,
+            "CPU_usage": 17.0,
+            "RAM_usage": 81532,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 1"
           }
         ]
       }

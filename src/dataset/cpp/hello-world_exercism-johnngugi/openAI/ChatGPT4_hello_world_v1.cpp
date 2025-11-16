@@ -1,11 +1,7 @@
 #include "hello_world.h"
 #include <string>
 
-namespace hello_world {
-
-std::string hello() noexcept {
+std::string hello_world::hello() noexcept {
     static const std::string message = "Hello, World!";
     return message;
-}
-
 }

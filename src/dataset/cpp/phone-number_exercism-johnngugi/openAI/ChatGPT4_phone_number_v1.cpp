@@ -1,6 +1,5 @@
 #include "phone_number.h"
 #include <cctype>
-#include <string>
 
 phone_number::phone_number(const std::string& n) {
     final.reserve(n.size());
@@ -22,7 +21,7 @@ std::string phone_number::check_valid(const std::string& n) const {
 }
 
 std::string phone_number::area_code() const {
-    return final.substr(0, 3);
+    return final.size() >= 10 ? final.substr(0, 3) : "000";
 }
 
 phone_number::operator std::string() const {

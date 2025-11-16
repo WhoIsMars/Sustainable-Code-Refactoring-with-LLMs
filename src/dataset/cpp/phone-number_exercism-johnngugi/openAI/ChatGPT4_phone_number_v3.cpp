@@ -4,9 +4,9 @@
 
 phone_number::phone_number(const std::string& n) {
     final.reserve(n.size());
-    for (char c : n) {
-        if (std::isdigit(c)) {
-            final += c;
+    for (char ch : n) {
+        if (std::isdigit(ch)) {
+            final += ch;
         }
     }
 }

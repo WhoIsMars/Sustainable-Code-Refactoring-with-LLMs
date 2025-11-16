@@ -1,26 +1,60 @@
 #include "scrabble_score.h"
-#include <string>
 #include <cctype>
+#include <string>
 
 using namespace std;
 
-namespace scrabble_score
-{
-    int score(string word)
-    {
-        int sum = 0;
-        static const int values[26] = {
-            1, 3, 3, 2, 1, 4, 2, 4, 1, 8, 5, 1, 3, 1, 1, 3, 10, 1, 1, 1, 1, 4, 4, 8, 4, 10};
+namespace scrabble_score {
 
-        for (char c : word)
-        {
-            char upper_c = toupper(c);
-            if (upper_c >= 'A' && upper_c <= 'Z')
-            {
-                sum += values[upper_c - 'A'];
-            }
-        }
-
-        return sum;
+int score(string word) {
+  int sum = 0;
+  for (char c : word) {
+    c = toupper(c);
+    switch (c) {
+      case 'A':
+      case 'E':
+      case 'I':
+      case 'O':
+      case 'U':
+      case 'L':
+      case 'N':
+      case 'R':
+      case 'S':
+      case 'T':
+        sum += 1;
+        break;
+      case 'D':
+      case 'G':
+        sum += 2;
+        break;
+      case 'B':
+      case 'C':
+      case 'M':
+      case 'P':
+        sum += 3;
+        break;
+      case 'F':
+      case 'H':
+      case 'V':
+      case 'W':
+      case 'Y':
+        sum += 4;
+        break;
+      case 'K':
+        sum += 5;
+        break;
+      case 'J':
+      case 'X':
+        sum += 8;
+        break;
+      case 'Q':
+      case 'Z':
+        sum += 10;
+        break;
+      default:
+        break; // Ignore characters not in the scoring table
     }
+  }
+  return sum;
 }
+} // namespace scrabble_score

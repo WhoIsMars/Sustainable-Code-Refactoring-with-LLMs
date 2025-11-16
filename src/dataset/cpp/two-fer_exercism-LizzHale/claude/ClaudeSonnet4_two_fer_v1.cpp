@@ -1,0 +1,15 @@
+#include "two_fer.h"
+
+namespace two_fer
+{
+
+    std::string two_fer(const std::string& name) {
+        std::string result;
+        result.reserve(14 + name.size()); // "One for " + name + ", one for me." = 14 + name.size()
+        result += "One for ";
+        result += name;
+        result += ", one for me.";
+        return result;
+    }
+
+} // namespace two_fer

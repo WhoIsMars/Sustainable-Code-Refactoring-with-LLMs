@@ -1,0 +1,50 @@
+/**
+ * Given a person's allergy score, determine whether or not they're allergic to
+ * a specific allergy and their full list of allergies.
+ */
+
+#include "allergies.h"
+
+#include <algorithm>
+#include <array>
+#include <numeric>
+
+using std::string;
+using std::unordered_set;
+
+namespace allergies {
+
+    constexpr std::array<const char*, 8> allergy_names = {
+        "eggs",
+        "peanuts",
+        "shellfish",
+        "strawberries",
+        "tomatoes",
+        "chocolate",
+        "pollen",
+        "cats"
+    };
+
+    allergy_test::allergy_test(int score_value) : score(score_value) {
+        int remaining_score = score_value;
+        for (size_t i = 0; i < allergy_names.size(); ++i) {
+            int allergy_score = 1 << i;
+            if (remaining_score >= allergy_score) {
+                if (remaining_score & allergy_score) {
+                    allergy_set.emplace(allergy_names[i]);
+                    remaining_score -= allergy_score;
+                }
+            } else {
+                break; // Optimization: No need to check further if the remaining score is less than the current allergy score
+            }
+        }
+    }
+
+    bool allergy_test::is_allergic_to(string allergy_name) {
+        return allergy_set.find(allergy_name) != allergy_set.end();
+    }
+
+    unordered_set<string> allergy_test::get_allergies() {
+        return allergy_set;
+    }
+}  // namespace allergies

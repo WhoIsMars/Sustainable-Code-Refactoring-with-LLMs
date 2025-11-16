@@ -35,7 +35,9 @@ phone_number::phone_number(const string n)
 
 string phone_number::check_valid(string n) const
 {
-	return n; // No validation needed since it's done in constructor
+	// This method is now redundant since validation happens in constructor
+	// But keeping for interface compatibility
+	return n;
 }
 
 string phone_number::area_code() const

@@ -1653,6 +1653,13 @@ class PatternPerformanceAnalyzer:
                 logger.info("CASE STUDY VISUALIZATIONS COMPLETE")
                 logger.info("=" * 80 + "\n")
 
+            # ENHANCED: Create generic patterns only pie chart for thesis section 4.2.5
+            logger.info("\n" + "=" * 80)
+            logger.info("GENERATING GENERIC PATTERNS PIE CHART")
+            logger.info("=" * 80)
+            visualizer.plot_generic_patterns_distribution(corr_dicts)
+            logger.info("=" * 80 + "\n")
+
         except Exception as e:
             logger.error(f"Error creating visualizations: {e}")
             import traceback

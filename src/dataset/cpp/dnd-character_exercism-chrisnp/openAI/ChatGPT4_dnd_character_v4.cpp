@@ -1,0 +1,35 @@
+#include "dnd_character.h"
+#include <algorithm>
+#include <array>
+#include <numeric>
+#include <random>
+
+using std::array;
+
+namespace {
+    int roll_die() {
+        static thread_local std::mt19937 generator(std::random_device{}());
+        static std::uniform_int_distribution<int> distribution(1, 6);
+        return distribution(generator);
+    }
+}
+
+auto dnd_character::ability() -> int {
+    array<int, 4> dice_rolls { roll_die(), roll_die(), roll_die(), roll_die() };
+    auto min_roll = *std::min_element(dice_rolls.begin(), dice_rolls.end());
+    return std::accumulate(dice_rolls.begin(), dice_rolls.end(), 0) - min_roll;
+}
+
+auto dnd_character::modifier(int score) -> int {
+    return (score - 10) / 2;
+}
+
+dnd_character::Character::Character() 
+                          : strength{ ability() }
+                          , dexterity{ ability() }
+                          , constitution{ ability() }
+                          , intelligence{ ability() }
+                          , wisdom{ ability() }
+                          , charisma{ ability() }
+                          , hitpoints{ 10 + modifier(constitution) }
+                          {}

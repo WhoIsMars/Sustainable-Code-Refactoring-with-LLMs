@@ -1,0 +1,28 @@
+#include "difference_of_squares.h"
+
+namespace squares{
+    long square_of_sums(long N){
+        if(N < 1)
+            return 0;
+        
+        long sum = (N * (N + 1)) >> 1;
+        return sum * sum;
+    }
+
+    long sum_of_squares(long N){
+        if(N < 1)
+            return 0;
+        
+        return (N * (N + 1) * ((N << 1) + 1)) / 6;
+    }
+
+    long difference(long N)
+    {
+        if(N < 1)
+            return 0;
+        
+        long sum = (N * (N + 1)) >> 1;
+        long sum_sq = (N * (N + 1) * ((N << 1) + 1)) / 6;
+        return (sum * sum) - sum_sq;
+    }
+}

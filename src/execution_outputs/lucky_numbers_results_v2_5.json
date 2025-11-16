@@ -1,11 +1,18 @@
 {
-  "execution_date": "2025-10-28 20:38:18",
+  "execution_date": "2025-11-15 09:42:27",
   "execution_metadata": {
     "total_tests": 1,
     "successful_tests": 1,
     "execution_time": "00h 00m 00s",
     "cluster": "cluster_lucky_numbers",
-    "test_type": "llm_v2"
+    "test_type": "llm_v2",
+    "last_updated": "2025-11-15 09:42:27",
+    "selective_execution": {
+      "languages": [
+        "javascript"
+      ],
+      "timestamp": "2025-11-15 09:42:27"
+    }
   },
   "results": {
     "javascript": [
@@ -15,15 +22,51 @@
         "language": "javascript",
         "LLM_results": [
           {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/lucky-numbers_exercism-javascript-PhymasSC/claude/ClaudeSonnet4_lucky-numbers_v2.js",
+            "log": "",
+            "execution_time_ms": 830.0,
+            "CPU_usage": 21.0,
+            "RAM_usage": 82608,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_lucky-numbers_exercism-javascript-PhymasSC_PhymasSC",
+        "filename": "lucky-numbers.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
             "LLM_type": "openAI",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/lucky-numbers_exercism-javascript-PhymasSC/openAI/ChatGPT4_lucky-numbers_v2.js",
             "log": "",
-            "execution_time_ms": 170,
-            "CPU_usage": 19.0,
-            "RAM_usage": 65576,
-            "regressionTestPassed": false,
-            "success": false,
-            "error_message": "Docker exit code: 1"
+            "execution_time_ms": 740.0,
+            "CPU_usage": 22.0,
+            "RAM_usage": 83356,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_lucky-numbers_exercism-javascript-PhymasSC_PhymasSC",
+        "filename": "lucky-numbers.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/lucky-numbers_exercism-javascript-PhymasSC/gemini/GeminiFlash_lucky-numbers_v2.js",
+            "log": "",
+            "execution_time_ms": 780.0,
+            "CPU_usage": 21.0,
+            "RAM_usage": 82276,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
           }
         ]
       }

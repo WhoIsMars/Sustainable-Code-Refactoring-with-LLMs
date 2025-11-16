@@ -1,0 +1,72 @@
+#include <array>
+#include <string>
+#include <vector>
+#include <iostream>
+
+// Round down all provided student scores.
+std::vector<int> round_down_scores(std::vector<double> student_scores) {
+    std::vector<int> rounded_down_scores;
+    rounded_down_scores.reserve(student_scores.size());
+
+    for (const double score : student_scores) {
+        rounded_down_scores.push_back(static_cast<int>(score));
+    }
+
+    return rounded_down_scores;
+}
+
+// Count the number of failing students out of the group provided.
+int count_failed_students(std::vector<int> student_scores) {
+    int count = 0;
+
+    for (const int score : student_scores) {
+        if (score <= 40) {
+            ++count;
+        }
+    }
+    
+    return count;
+}
+
+// Create a list of grade thresholds based on the provided highest grade.
+std::array<int, 4> letter_grades(int highest_score) {
+    const int interval = (highest_score - 40) / 4;
+    const int base = 41;
+
+    return {base, base + interval, base + 2 * interval, base + 3 * interval};
+}
+
+// Organize the student's rank, name, and grade information in ascending order.
+std::vector<std::string> student_ranking(
+    std::vector<int> student_scores, std::vector<std::string> student_names) {
+
+    std::vector<std::string> results;
+    results.reserve(student_scores.size());
+
+    const size_t size = student_scores.size();
+    for (size_t i = 0; i < size; ++i) {
+        results.push_back(std::to_string(i + 1) + ". " + student_names[i] + ": " + 
+                          std::to_string(student_scores[i]));
+    }
+
+    for (const std::string& str : results) {
+        std::cout << str << std::endl;
+    }
+    
+    return results;
+}
+
+// Create a string that contains the name of the first student to make a perfect
+// score on the exam.
+std::string perfect_score(std::vector<int> student_scores,
+                          std::vector<std::string> student_names) {
+
+    const size_t size = student_scores.size();
+    for (size_t i = 0; i < size; ++i) {
+        if (student_scores[i] == 100) {
+            return student_names[i];
+        }
+    }                               
+
+    return "";
+}

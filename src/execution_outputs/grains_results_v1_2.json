@@ -1,11 +1,18 @@
 {
-  "execution_date": "2025-11-09 15:08:08",
+  "execution_date": "2025-11-15 01:04:13",
   "execution_metadata": {
-    "total_tests": 64,
+    "total_tests": 62,
     "successful_tests": 62,
-    "execution_time": "00h 00m 03s",
+    "execution_time": "00h 00m 00s",
     "cluster": "cluster_grains",
-    "test_type": "llm_v1"
+    "test_type": "llm_v1",
+    "last_updated": "2025-11-15 01:04:13",
+    "selective_execution": {
+      "languages": [
+        "javascript"
+      ],
+      "timestamp": "2025-11-15 01:04:13"
+    }
   },
   "results": {
     "python": [
@@ -586,42 +593,6 @@
         ]
       },
       {
-        "id": "cpp_grains_Exercism (johnngugi)",
-        "filename": "grains.cpp",
-        "language": "cpp",
-        "LLM_results": [
-          {
-            "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/grains_Exercism_johnngugi/gemini/GeminiFlash_grains_v1.cpp",
-            "log": "",
-            "execution_time_ms": null,
-            "CPU_usage": null,
-            "RAM_usage": null,
-            "regressionTestPassed": false,
-            "success": false,
-            "error_message": "Docker exit code: 1"
-          }
-        ]
-      },
-      {
-        "id": "cpp_grains_Exercism (MaxyMoos)",
-        "filename": "grains.cpp",
-        "language": "cpp",
-        "LLM_results": [
-          {
-            "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/grains_Exercism_MaxyMoos/gemini/GeminiFlash_grains_v1.cpp",
-            "log": "",
-            "execution_time_ms": null,
-            "CPU_usage": null,
-            "RAM_usage": null,
-            "regressionTestPassed": false,
-            "success": false,
-            "error_message": "Docker exit code: 1"
-          }
-        ]
-      },
-      {
         "id": "cpp_grains_Exercism (MaxyMoos)",
         "filename": "grains.cpp",
         "language": "cpp",
@@ -809,12 +780,12 @@
         "language": "javascript",
         "LLM_results": [
           {
-            "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/grains_exercism-javascript-ThomasZumsteg/gemini/GeminiFlash_grains_v1.js",
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/grains_exercism-javascript-ThomasZumsteg/openAI/ChatGPT4_grains_v1.js",
             "log": "",
-            "execution_time_ms": 180,
-            "CPU_usage": 7.0,
-            "RAM_usage": 66172,
+            "execution_time_ms": 580.0,
+            "CPU_usage": 20.0,
+            "RAM_usage": 81016,
             "regressionTestPassed": false,
             "success": false,
             "error_message": "Docker exit code: 1"
@@ -830,63 +801,9 @@
             "LLM_type": "claude",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/grains_exercism-javascript-bearguns/claude/ClaudeSonnet4_grains_v1.js",
             "log": "",
-            "execution_time_ms": 180,
-            "CPU_usage": 7.0,
-            "RAM_usage": 64264,
-            "regressionTestPassed": false,
-            "success": false,
-            "error_message": "Docker exit code: 1"
-          }
-        ]
-      },
-      {
-        "id": "javascript_grains_exercism-javascript-ThomasZumsteg_ThomasZumsteg",
-        "filename": "grains.js",
-        "language": "javascript",
-        "LLM_results": [
-          {
-            "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/grains_exercism-javascript-ThomasZumsteg/openAI/ChatGPT4_grains_v1.js",
-            "log": "",
-            "execution_time_ms": 190,
-            "CPU_usage": 7.0,
-            "RAM_usage": 66084,
-            "regressionTestPassed": false,
-            "success": false,
-            "error_message": "Docker exit code: 1"
-          }
-        ]
-      },
-      {
-        "id": "javascript_grains_exercism-javascript-ThomasZumsteg_ThomasZumsteg",
-        "filename": "grains.js",
-        "language": "javascript",
-        "LLM_results": [
-          {
-            "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/grains_exercism-javascript-ThomasZumsteg/claude/ClaudeSonnet4_grains_v1.js",
-            "log": "",
-            "execution_time_ms": 190,
-            "CPU_usage": 6.0,
-            "RAM_usage": 64100,
-            "regressionTestPassed": false,
-            "success": false,
-            "error_message": "Docker exit code: 1"
-          }
-        ]
-      },
-      {
-        "id": "javascript_grains_exercism-javascript-bearguns_bearguns",
-        "filename": "grains.js",
-        "language": "javascript",
-        "LLM_results": [
-          {
-            "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/grains_exercism-javascript-bearguns/openAI/ChatGPT4_grains_v1.js",
-            "log": "",
-            "execution_time_ms": 190,
-            "CPU_usage": 6.0,
-            "RAM_usage": 65524,
+            "execution_time_ms": 560.0,
+            "CPU_usage": 21.0,
+            "RAM_usage": 80620,
             "regressionTestPassed": false,
             "success": false,
             "error_message": "Docker exit code: 1"
@@ -902,9 +819,63 @@
             "LLM_type": "gemini",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/grains_exercism-javascript-bearguns/gemini/GeminiFlash_grains_v1.js",
             "log": "",
-            "execution_time_ms": 180,
-            "CPU_usage": 6.0,
-            "RAM_usage": 66080,
+            "execution_time_ms": 590.0,
+            "CPU_usage": 19.0,
+            "RAM_usage": 80380,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 1"
+          }
+        ]
+      },
+      {
+        "id": "javascript_grains_exercism-javascript-bearguns_bearguns",
+        "filename": "grains.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/grains_exercism-javascript-bearguns/openAI/ChatGPT4_grains_v1.js",
+            "log": "",
+            "execution_time_ms": 590.0,
+            "CPU_usage": 21.0,
+            "RAM_usage": 81152,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 1"
+          }
+        ]
+      },
+      {
+        "id": "javascript_grains_exercism-javascript-ThomasZumsteg_ThomasZumsteg",
+        "filename": "grains.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/grains_exercism-javascript-ThomasZumsteg/claude/ClaudeSonnet4_grains_v1.js",
+            "log": "",
+            "execution_time_ms": 530.0,
+            "CPU_usage": 19.0,
+            "RAM_usage": 81272,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 1"
+          }
+        ]
+      },
+      {
+        "id": "javascript_grains_exercism-javascript-ThomasZumsteg_ThomasZumsteg",
+        "filename": "grains.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/grains_exercism-javascript-ThomasZumsteg/gemini/GeminiFlash_grains_v1.js",
+            "log": "",
+            "execution_time_ms": 500.0,
+            "CPU_usage": 20.0,
+            "RAM_usage": 81660,
             "regressionTestPassed": false,
             "success": false,
             "error_message": "Docker exit code: 1"

@@ -1,7 +1,6 @@
 #include "hamming.h"
 #include <string>
 #include <stdexcept>
-#include <algorithm>
 using namespace std;
 
 int hamming::compute(const string& a, const string& b)
@@ -9,7 +8,9 @@ int hamming::compute(const string& a, const string& b)
     if (a.size() != b.size())
         throw domain_error("Error");
 
-    return count_if(a.begin(), a.end(), [&, it = b.begin()](char c) mutable {
-        return c != *it++;
-    });
+    int distance = 0;
+    for (size_t i = 0; i < a.size(); ++i) {
+        distance += (a[i] != b[i]);
+    }
+    return distance;
 }

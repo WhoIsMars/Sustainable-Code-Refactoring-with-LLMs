@@ -15,6 +15,7 @@ phone_number::phone_number(const string n)
 	}
 	
 	int num_length = final.length();
+	
 	if (num_length == 11)
 	{
 		if (final[0] == '1')
@@ -44,7 +45,7 @@ string phone_number::area_code() const
 
 phone_number::operator std::string() const
 {
-	return "(" + final.substr(0, 3) + ") " + final.substr(3, 3) + "-" + final.substr(6, 4);
+	return "(" + final.substr(0, 3) + ") " + final.substr(3, 3) + "-" + final.substr(6);
 }
 
 string phone_number::number() const

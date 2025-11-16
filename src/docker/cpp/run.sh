@@ -62,9 +62,69 @@ if [ "$BUILD_SYSTEM" = "cmake" ]; then
     # CMake build
     CMAKE_SUCCESS=0
     CMAKE_FLAGS=""
-    if grep -q "EXERCISM_TEST_SUITE" CMakeLists.txt 2>/dev/null; then
+
+    # Fix CMakeLists.txt paths FIRST (before any other processing)
+    if [ -f "CMakeLists.txt" ] && [ -d "src" ] && [ -d "test" ]; then
+        echo "🔧 Fixing CMakeLists.txt paths for src/ and test/ subdirectories..." | tee -a "$LOG_FILE"
+
+        # Fix variable-based filenames
+        sed -i 's|\${file}\.cpp|src/\${file}.cpp|g; s|\${file}\.h|src/\${file}.h|g; s|\${file}_test\.cpp|test/\${file}_test.cpp|g' CMakeLists.txt 2>/dev/null || true
+
+        # Add include directories for src/ and test/ (CRITICAL for finding catch.hpp)
+        if ! grep -q "include_directories(src)" CMakeLists.txt 2>/dev/null; then
+            sed -i '/^project(/a include_directories(src)\ninclude_directories(test)\ninclude_directories(${CMAKE_SOURCE_DIR})' CMakeLists.txt 2>/dev/null || true
+            echo "✓ Added include_directories for src/, test/, and source root" | tee -a "$LOG_FILE"
+        fi
+
+        # Fix hardcoded app_test.cpp (common in Exercism CMakeLists.txt)
+        if grep -q "app_test\.cpp" CMakeLists.txt 2>/dev/null; then
+            echo "🔧 Detected hardcoded app_test.cpp, replacing with actual test file..." | tee -a "$LOG_FILE"
+
+            # Find the actual test file
+            ACTUAL_TEST_FILE=$(find test -maxdepth 1 -name "*_test.cpp" -o -name "*_test.c" 2>/dev/null | head -1 | xargs basename 2>/dev/null || echo "")
+
+            if [ -n "$ACTUAL_TEST_FILE" ]; then
+                echo "✓ Found test file: $ACTUAL_TEST_FILE, replacing app_test.cpp references" | tee -a "$LOG_FILE"
+                sed -i "s|app_test\.cpp|test/$ACTUAL_TEST_FILE|g" CMakeLists.txt
+
+                # Also fix app.cpp if present (source file)
+                ACTUAL_SRC_FILE=$(find src -maxdepth 1 -name "*.cpp" -o -name "*.c" 2>/dev/null | head -1 | xargs basename 2>/dev/null || echo "")
+                if [ -n "$ACTUAL_SRC_FILE" ] && grep -q "app\.cpp" CMakeLists.txt 2>/dev/null; then
+                    echo "✓ Found source file: $ACTUAL_SRC_FILE, replacing app.cpp references" | tee -a "$LOG_FILE"
+                    sed -i "s|app\.cpp|src/$ACTUAL_SRC_FILE|g" CMakeLists.txt
+                fi
+            else
+                echo "⚠️  Could not find actual test file to replace app_test.cpp" | tee -a "$LOG_FILE"
+            fi
+        fi
+    fi
+
+    if grep -q "EXERCISM_TEST_SUITE\|EXERCISM_RUN_ALL_TESTS" CMakeLists.txt 2>/dev/null; then
+        # Use ONLY EXERCISM_RUN_ALL_TESTS=1 (NOT EXERCISM_TEST_SUITE)
+        # EXERCISM_TEST_SUITE requires system-wide Catch2 installation which we don't have
         CMAKE_FLAGS="-DEXERCISM_RUN_ALL_TESTS=1"
         echo "🎯 Detected Exercism CMakeLists, using flags: $CMAKE_FLAGS" | tee -a "$LOG_FILE"
+
+        # Create test/tests-main.cpp if CMakeLists.txt references it but it doesn't exist
+        # This file is needed when NOT using EXERCISM_TEST_SUITE (the else branch in CMakeLists.txt)
+        if grep -q "test/tests-main.cpp" CMakeLists.txt 2>/dev/null; then
+            if [ ! -f "test/tests-main.cpp" ]; then
+                echo "🔧 Creating missing test/tests-main.cpp for Catch2..." | tee -a "$LOG_FILE"
+                mkdir -p test
+                cat > test/tests-main.cpp << 'EOF'
+#define CATCH_CONFIG_MAIN
+#include "catch.hpp"
+EOF
+            fi
+        fi
+
+        # Copy Catch2 header to test/ if it doesn't exist (for Exercism tests)
+        # Do this BEFORE cd to WORK_DIR
+        if [ ! -f "test/catch.hpp" ]; then
+            echo "📋 Copying Catch2 header to test/catch.hpp" | tee -a "$LOG_FILE"
+            mkdir -p test
+            cp /usr/local/include/catch2/catch.hpp test/catch.hpp
+        fi
 
         if [ -n "$EXERCISM_EXERCISE_NAME" ]; then
             echo "📝 Using exercise name from environment: $EXERCISM_EXERCISE_NAME" | tee -a "$LOG_FILE"
@@ -88,29 +148,32 @@ if [ "$BUILD_SYSTEM" = "cmake" ]; then
             cd "$WORK_DIR" # Ora siamo in /app/hello-world (o simile)
             echo "✓ Now in directory: $(pwd)" | tee -a "$LOG_FILE"
 
-            # Fix CMakeLists.txt paths
-            if [ -f "CMakeLists.txt" ] && [ -d "src" ] && [ -d "test" ]; then
-                echo "🔧 Fixing CMakeLists.txt paths for src/ and test/ subdirectories..." | tee -a "$LOG_FILE"
-                sed -i 's|\${file}\.cpp|src/\${file}.cpp|g; s|\${file}\.h|src/\${file}.h|g; s|\${file}_test\.cpp|test/\${file}_test.cpp|g' CMakeLists.txt
-                sed -i '/^project(/a include_directories(src)' CMakeLists.txt
-
-                if [ ! -f "test/tests-main.cpp" ]; then
-                    cat > test/tests-main.cpp << 'EOF'
-#define CATCH_CONFIG_MAIN
-#include "catch.hpp"
-EOF
-                fi
-                cat > test/catch.hpp << 'EOF'
-#include <catch2/catch.hpp>
-EOF
-                sed -i '/^include_directories(src)/a include_directories(.)' CMakeLists.txt
-            fi
+            # Always copy Catch2 header to test/ in the new directory
+            echo "📋 Copying Catch2 header to $WORK_DIR/test/catch.hpp" | tee -a "$LOG_FILE"
+            mkdir -p test
+            cp /usr/local/include/catch2/catch.hpp test/catch.hpp
         else
             echo "⚠️  EXERCISM_EXERCISE_NAME not set, using current directory" | tee -a "$LOG_FILE"
         fi
     fi
 
+    # Ensure Catch2 header is available BEFORE building
+    # Copy to test/ if it doesn't exist yet (might not be copied in WORK_DIR scenario)
+    if [ ! -f "test/catch.hpp" ] && [ -f "/usr/local/include/catch2/catch.hpp" ]; then
+        echo "📋 Ensuring Catch2 header is in test/catch.hpp before build" | tee -a "$LOG_FILE"
+        mkdir -p test
+        cp /usr/local/include/catch2/catch.hpp test/catch.hpp
+    fi
+
     mkdir -p build
+
+    # CRITICAL FIX: Copy catch.hpp to build/test/ so compiler can find it from build directory
+    if [ -f "test/catch.hpp" ]; then
+        echo "📋 Copying catch.hpp to build/test/ for CMake accessibility" | tee -a "$LOG_FILE"
+        mkdir -p build/test
+        cp test/catch.hpp build/test/catch.hpp
+    fi
+
     cd build
 
     export CXXFLAGS="-O0 -g0"

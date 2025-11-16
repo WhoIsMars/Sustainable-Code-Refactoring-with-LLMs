@@ -8,6 +8,7 @@ Extended with:
 - plot_code_comparison_highlight: Side-by-side code with pattern highlighting
 
 Date: 2025-10-22
+(MODIFIED: 2025-11-13 for enhanced generic pattern distribution chart)
 """
 
 import logging
@@ -22,7 +23,7 @@ from collections import defaultdict
 logger = logging.getLogger(__name__)
 
 # ============================================================================
-# STYLING (unchanged from original)
+# STYLING (Professional Theme)
 # ============================================================================
 
 STYLE_CONFIG = {
@@ -50,20 +51,21 @@ STYLE_CONFIG = {
 plt.rcParams.update(STYLE_CONFIG)
 
 COLORS = {
-    'selected': '#E63946',
+    'selected': '#D62828',  # Darker Red
     'not_selected': '#B8B8B8',
-    'excellent': '#06A77D',
+    'excellent': '#06A77D', # Dark Green
     'good': '#52B788',
     'moderate': '#95D5B2',
-    'neutral': '#FCA311',
-    'bad': '#E76F51',
+    'neutral': '#FCA311', # Orange
+    'bad': '#E76F51',     # Salmon Red
 }
 
 METRIC_COLORS = {
-    'cpu': '#E63946',
-    'ram': '#457B9D',
-    'time': '#2A9D8F',
+    'cpu': '#D62828',   # Dark Red
+    'ram': '#005f73',   # Dark Blue/Teal
+    'time': '#2A9D8F',  # Teal Green
 }
+
 
 def format_pattern_name(pattern_name: str) -> str:
     """
@@ -406,7 +408,7 @@ class PatternVisualizerV4:
         sorted_cats = sorted(categories.items(), key=lambda x: x[1], reverse=True)
         labels = [cat for cat, _ in sorted_cats]
         sizes = [freq for _, freq in sorted_cats]
-        colors_pie = ['#2E86AB', '#A23B72', '#F18F01', '#06A77D', '#6C757D'][:len(labels)]
+        colors_pie = ['#003049', '#D62828', '#F77F00', '#FCBF49', '#EAE2B7'][:len(labels)] # Darker colors
 
         wedges, texts, autotexts = ax1.pie(
             sizes, labels=labels, autopct='%1.1f%%',
@@ -427,7 +429,7 @@ class PatternVisualizerV4:
         lang_labels = [lang for lang, _ in sorted_langs]
         lang_counts = [count for _, count in sorted_langs]
 
-        bars = ax2.barh(lang_labels, lang_counts, color='#457B9D', alpha=0.8, edgecolor='black')
+        bars = ax2.barh(lang_labels, lang_counts, color='#005f73', alpha=0.8, edgecolor='black')
 
         for bar, count in zip(bars, lang_counts):
             width = bar.get_width()
@@ -791,6 +793,174 @@ class PatternVisualizerV4:
             logger.info(f"✓ Case Study #{rank}: metrics chart created")
 
         logger.info(f"✓ Created {len(case_studies_data)} individual case study metrics charts")
+
+    def plot_generic_patterns_distribution(self, correlations: List[Dict]):
+        """
+        MODIFIED: Create combined pie chart + bar chart showing generic patterns distribution.
+        
+        - Groups small slices (< 2%) into "Others" for pie chart readability.
+        - Uses darker, professional colors (defined manually for compatibility).
+        - Adds 'Total Entries' to the title.
+        """
+        logger.info("Creating GENERIC patterns distribution (pie + bar) for section 4.2.5...")
+
+        # Filter only generic patterns (G1, G2, G3, etc.)
+        generic_patterns = []
+        for corr in correlations:
+            pattern_name = corr['pattern']
+            # Check if pattern is generic (starts with 'G' followed by digit)
+            if pattern_name.startswith('G') and len(pattern_name) > 1 and pattern_name[1].isdigit():
+                generic_patterns.append(corr)
+
+        if not generic_patterns:
+            logger.warning("No generic patterns found!")
+            return
+
+        # Sort by frequency for bar chart
+        generic_patterns_sorted = sorted(generic_patterns, key=lambda x: x['frequency'], reverse=True)
+        
+        # Prepare data for BAR CHART (full data)
+        bar_pattern_names = []
+        bar_frequencies = []
+        for corr in generic_patterns_sorted:
+            clean_name = format_pattern_name(corr['pattern'])
+            clean_name = clean_name.replace('(generic) ', '').strip()
+            bar_pattern_names.append(clean_name)
+            bar_frequencies.append(corr['frequency'])
+
+        total_occurrences = sum(bar_frequencies)
+        if total_occurrences == 0:
+            logger.warning("Total occurrences for generic patterns is 0. Skipping chart.")
+            return
+            
+        # --- NEW LOGIC FOR PIE CHART ---
+        OTHERS_THRESHOLD_PERC = 2.0  # Group patterns below 2.0%
+        
+        pie_labels_with_freq = []
+        pie_frequencies = []
+        others_freq = 0
+        others_count = 0
+
+        # Calculate percentages
+        percentages = [(f / total_occurrences) * 100 for f in bar_frequencies]
+        
+        # Group small slices
+        for (name, freq, perc) in zip(bar_pattern_names, bar_frequencies, percentages):
+            if perc < OTHERS_THRESHOLD_PERC:
+                others_freq += freq
+                others_count += 1
+            else:
+                pie_labels_with_freq.append(f"{name}\n({freq})")
+                pie_frequencies.append(freq)
+
+        # Add the 'Others' slice if it exists
+        if others_freq > 0:
+            pie_labels_with_freq.append(f"Others ({others_count} patterns < {OTHERS_THRESHOLD_PERC}% each)\n({others_freq})")
+            pie_frequencies.append(others_freq)
+        # --- END NEW LOGIC ---
+
+        # Create figure
+        fig = plt.figure(figsize=(20, 8))
+        gs = fig.add_gridspec(1, 2, width_ratios=[1, 1.2], wspace=0.3)
+        ax_pie = fig.add_subplot(gs[0])
+        ax_bar = fig.add_subplot(gs[1])
+
+        # ========== LEFT: PIE CHART (Modified) ==========
+        # Define a professional, dark color palette (Tableau10-inspired, but manually defined for compatibility)
+        PROFESSIONAL_COLORS = [
+            '#003f5c',  # Dark Blue
+            '#bc5090',  # Magenta
+            '#ff6361',  # Red/Salmon
+            '#ffa600',  # Orange
+            '#58508d',  # Indigo
+            '#00798c',  # Teal
+            '#7a5c58',  # Brown
+            '#8d99ae'   # Grey
+        ]
+        # Select colors from the list, repeating if necessary
+        colors_pie = [PROFESSIONAL_COLORS[i % len(PROFESSIONAL_COLORS)] for i in range(len(pie_frequencies))]
+
+
+        wedges, texts, autotexts = ax_pie.pie(
+            pie_frequencies,  # Use grouped frequencies
+            labels=pie_labels_with_freq,  # Use grouped labels
+            colors=colors_pie,
+            autopct='%1.1f%%',
+            startangle=90,
+            textprops={'fontsize': 9, 'weight': 'bold'},
+            pctdistance=0.85,
+            wedgeprops={'edgecolor': 'white', 'linewidth': 1} # Add border
+        )
+
+        for autotext in autotexts:
+            autotext.set_color('white')
+            autotext.set_fontsize(9)
+            autotext.set_weight('bold')
+
+        ax_pie.set_title(
+            'Generic Patterns Distribution',
+            fontsize=14,
+            fontweight='bold',
+            pad=15
+        )
+
+        # ========== RIGHT: BAR CHART (Modified Colors) ==========
+        # Create a color map to match pie slices (including 'Others')
+        color_map = {}
+        pie_labels_raw = [l.split('\n')[0] for l in pie_labels_with_freq]
+        for i, label in enumerate(pie_labels_raw):
+            if not label.startswith("Others"):
+                color_map[label] = colors_pie[i]
+            else:
+                # Color all 'Others' patterns with the same 'Others' color
+                others_color = colors_pie[i]
+                for (name, perc) in zip(bar_pattern_names, percentages):
+                    if perc < OTHERS_THRESHOLD_PERC:
+                        color_map[name] = others_color
+
+        # Create the color list for the bar chart in the correct (sorted) order
+        bar_colors = [color_map[name] for name in bar_pattern_names]
+        
+        y_pos = np.arange(len(bar_pattern_names))
+        bars = ax_bar.barh(y_pos, bar_frequencies, color=bar_colors, edgecolor='black', linewidth=1.2)
+
+        for i, (bar, freq) in enumerate(zip(bars, bar_frequencies)):
+            width = bar.get_width()
+            percentage = (freq / total_occurrences) * 100
+            ax_bar.text(width + total_occurrences * 0.02, bar.get_y() + bar.get_height()/2,
+                       f'{freq} ({percentage:.1f}%)',
+                       ha='left', va='center', fontsize=10, fontweight='bold')
+
+        ax_bar.set_yticks(y_pos)
+        ax_bar.set_yticklabels(bar_pattern_names, fontsize=10)
+        ax_bar.set_xlabel('Number of Occurrences', fontsize=12, fontweight='bold')
+        ax_bar.set_title('Pattern Frequency Distribution', fontsize=14, fontweight='bold', pad=15)
+        ax_bar.grid(axis='x', alpha=0.3, linestyle='--')
+        ax_bar.invert_yaxis()  # Most frequent at top
+
+        ax_bar.set_xlim(0, max(bar_frequencies) * 1.25)
+
+        # ========== Overall Title (Modified) ==========
+        fig.suptitle(
+            f'Generic Refactoring Patterns Analysis\n'
+            f'(Total Entries: {self.total_entries} | Similarity ≤75% | Improvement ≥15% | Total: {total_occurrences} occurrences on {len(generic_patterns)} patterns)',
+            fontsize=16,
+            fontweight='bold',
+            y=0.98
+        )
+
+        plt.tight_layout(rect=[0, 0, 1, 0.95])
+
+        # Save
+        output_path = self.output_dir / "generic_patterns_distribution.png"
+        plt.savefig(output_path, dpi=300, bbox_inches='tight')
+        plt.close()
+
+        logger.info(f"✓ Generic patterns distribution (pie+bar) saved: {output_path}")
+        logger.info(f"  Total generic patterns: {len(generic_patterns)}")
+        logger.info(f"  Total occurrences: {total_occurrences}")
+        logger.info(f"  Analysis criteria: similarity ≤75%, improvement ≥15%")
+
 
     # ========================================================================
     # MAIN WORKFLOW

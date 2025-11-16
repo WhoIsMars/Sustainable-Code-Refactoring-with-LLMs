@@ -1,11 +1,18 @@
 {
-  "execution_date": "2025-10-28 20:31:16",
+  "execution_date": "2025-11-15 09:05:12",
   "execution_metadata": {
     "total_tests": 4,
     "successful_tests": 4,
     "execution_time": "00h 00m 00s",
     "cluster": "cluster_lasagna",
-    "test_type": "llm_v2"
+    "test_type": "llm_v2",
+    "last_updated": "2025-11-15 09:05:12",
+    "selective_execution": {
+      "languages": [
+        "javascript"
+      ],
+      "timestamp": "2025-11-15 09:05:12"
+    }
   },
   "results": {
     "javascript": [
@@ -15,15 +22,51 @@
         "language": "javascript",
         "LLM_results": [
           {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/lasagna_exercism-javascript-PhymasSC/openAI/ChatGPT4_lasagna_v2.js",
+            "log": "",
+            "execution_time_ms": 530.0,
+            "CPU_usage": 22.0,
+            "RAM_usage": 82032,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_lasagna_exercism-javascript-PhymasSC_PhymasSC",
+        "filename": "lasagna.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
             "LLM_type": "claude",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/lasagna_exercism-javascript-PhymasSC/claude/ClaudeSonnet4_lasagna_v2.js",
             "log": "",
-            "execution_time_ms": 180,
-            "CPU_usage": 16.0,
-            "RAM_usage": 66300,
-            "regressionTestPassed": false,
-            "success": false,
-            "error_message": "Docker exit code: 1"
+            "execution_time_ms": 530.0,
+            "CPU_usage": 19.0,
+            "RAM_usage": 80436,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_lasagna_exercism-javascript-PhymasSC_PhymasSC",
+        "filename": "lasagna.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/lasagna_exercism-javascript-PhymasSC/gemini/GeminiFlash_lasagna_v2.js",
+            "log": "",
+            "execution_time_ms": 500.0,
+            "CPU_usage": 19.0,
+            "RAM_usage": 81076,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
           }
         ]
       }

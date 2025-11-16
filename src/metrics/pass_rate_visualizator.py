@@ -401,9 +401,24 @@ class PassRateVisualizator:
             if 'global' in self.data:
                 global_stats = self.data['global']
                 f.write("## Global Statistics\n\n")
-                f.write(f"- **Base Code Mean Pass Rate**: {global_stats['base']['mean']:.2f}%\n")
-                f.write(f"- **LLM Aggregated Mean Pass Rate**: {global_stats['llm_aggregated']['mean']:.2f}%\n")
-                f.write(f"- **Overall Degradation**: {global_stats['overall_degradation_percent']:.2f}%\n\n")
+                base_mean = global_stats.get('base', {}).get('mean')
+                llm_mean = global_stats.get('llm_aggregated', {}).get('mean')
+                degradation = global_stats.get('overall_degradation_percent')
+
+                if base_mean is not None:
+                    f.write(f"- **Base Code Mean Pass Rate**: {base_mean:.2f}%\n")
+                else:
+                    f.write(f"- **Base Code Mean Pass Rate**: No data\n")
+
+                if llm_mean is not None:
+                    f.write(f"- **LLM Aggregated Mean Pass Rate**: {llm_mean:.2f}%\n")
+                else:
+                    f.write(f"- **LLM Aggregated Mean Pass Rate**: No data\n")
+
+                if degradation is not None:
+                    f.write(f"- **Overall Degradation**: {degradation:.2f}%\n\n")
+                else:
+                    f.write(f"- **Overall Degradation**: No data\n\n")
 
             # By language
             if 'by_language' in self.data:

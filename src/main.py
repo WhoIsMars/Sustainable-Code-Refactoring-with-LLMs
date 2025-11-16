@@ -3,7 +3,7 @@
 Main Entry Point - Sustainable Code Refactoring with LLMs
 Professional TUI (Text User Interface) for orchestrating research workflow
 
-Author: [Your Name]
+Author: [Gabriele Marsili]
 Version: 2.0.0 (Post-Refactoring)
 Date: 2025-10-28
 """

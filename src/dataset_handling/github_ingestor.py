@@ -9,14 +9,16 @@ Author: AI Engineer for Sustainable Code Refactoring with LLMs
 """
 
 import requests
-import json
 import logging
 import time
 import base64
+import shutil
 from pathlib import Path
 from typing import List, Dict, Optional, Set, Tuple
 from dataclasses import dataclass
 from datetime import datetime
+from concurrent.futures import ThreadPoolExecutor, as_completed
+from threading import Lock
 import sys
 import os
 
@@ -25,8 +27,7 @@ sys.path.append(str(Path(__file__).parent.parent))
 
 from utility_dir.utility_paths import (
     DATASET_DIR,
-    CLUSTERS_DIR_FILEPATH,
-    SRC_DIR
+    CLUSTERS_DIR_FILEPATH,    
 )
 from utility_dir.general_utils import (
     read_json,
@@ -34,6 +35,16 @@ from utility_dir.general_utils import (
     load_github_token,
     RateLimiter
 )
+
+# Import test execution components
+try:
+    from run_tests_on_clusters.run_tests_on_cluster import (
+        TestExecutor,
+        ContainerManager,        
+    )
+    TEST_VALIDATION_AVAILABLE = True
+except ImportError as _e:    
+    TEST_VALIDATION_AVAILABLE = False
 
 
 # Configure logging
@@ -66,6 +77,15 @@ class GitHubAPIClient:
     """Handles GitHub API interactions with rate limiting and authentication"""
 
     def __init__(self, token: Optional[str] = None):
+        if not token:
+            from dotenv import load_dotenv
+            # Load from src/.env (parent directory of this file's parent)
+            env_path = Path(__file__).parent.parent / '.env'
+            load_dotenv(env_path)
+            token = os.getenv('GITHUB_TOKEN')
+            if not token:
+                logger.warning("GitHub token not found in .env file")
+
         self.token = token
         self.session = requests.Session()
         self.rate_limiter = RateLimiter(max_requests=50, time_window=60)
@@ -312,6 +332,107 @@ class GitHubIngestor:
         self.validator = ExercismValidator()
         self.duplicate_checker = DuplicateChecker(clusters_dir)
         self.ingested_count = {'c': 0, 'cpp': 0}
+        self.cluster_write_lock = Lock()  # For thread-safe cluster JSON updates
+
+    def generate_fallback_makefile(self, entry_dir: Path, language: str) -> bool:
+        """
+        Generate a standard Makefile for C/C++ when the original is incompatible
+
+        Args:
+            entry_dir: Directory containing src/ and test/ subdirectories
+            language: 'c' or 'cpp'
+
+        Returns:
+            True if Makefile created successfully, False otherwise
+        """
+        try:
+            if language == 'c':
+                makefile_content = """# Auto-generated Makefile for C
+CC = gcc
+CFLAGS = -Wall -Wextra -std=c11 -g
+LDFLAGS = -lm
+
+SRC_DIR = src
+TEST_DIR = test
+BUILD_DIR = .
+
+# Find all .c files in src and test directories
+SRC_FILES = $(wildcard $(SRC_DIR)/*.c)
+TEST_FILES = $(wildcard $(TEST_DIR)/*.c)
+ALL_FILES = $(SRC_FILES) $(TEST_FILES)
+
+# Default target: compile and run tests
+test: $(ALL_FILES)
+\t$(CC) $(CFLAGS) -o tests.out $(ALL_FILES) $(LDFLAGS)
+\t./tests.out
+
+# Clean build artifacts
+clean:
+\trm -f tests.out $(SRC_DIR)/*.o $(TEST_DIR)/*.o
+
+.PHONY: test clean
+"""
+            else:  # cpp
+                makefile_content = """# Auto-generated Makefile for C++
+CXX = g++
+CXXFLAGS = -Wall -Wextra -std=c++17 -g
+LDFLAGS = -lm
+
+SRC_DIR = src
+TEST_DIR = test
+BUILD_DIR = .
+
+# Find all .cpp files in src and test directories
+SRC_FILES = $(wildcard $(SRC_DIR)/*.cpp)
+TEST_FILES = $(wildcard $(TEST_DIR)/*.cpp)
+ALL_FILES = $(SRC_FILES) $(TEST_FILES)
+
+# Default target: compile and run tests
+test: $(ALL_FILES)
+\t$(CXX) $(CXXFLAGS) -o tests.out $(ALL_FILES) $(LDFLAGS)
+\t./tests.out
+
+# Clean build artifacts
+clean:
+\trm -f tests.out $(SRC_DIR)/*.o $(TEST_DIR)/*.o
+
+.PHONY: test clean
+"""
+
+            makefile_path = entry_dir / "Makefile"
+            makefile_path.write_text(makefile_content, encoding='utf-8')
+            logger.info(f"  ✓ Generated fallback Makefile for {language}")
+            return True
+
+        except Exception as e:
+            logger.error(f"  ✗ Failed to generate fallback Makefile: {e}")
+            return False
+
+    def cleanup_failed_entry(self, entry_dir_name: str, language: str) -> bool:
+        """
+        Remove entry directory after validation failure
+
+        Args:
+            entry_dir_name: Name of entry directory to remove
+            language: 'c' or 'cpp'
+
+        Returns:
+            True if cleanup successful, False otherwise
+        """
+        entry_path = self.dataset_dir / language / entry_dir_name
+
+        try:
+            if entry_path.exists():
+                shutil.rmtree(entry_path)
+                logger.info(f"  ✓ Cleaned up failed entry: {entry_dir_name}")
+                return True
+            else:
+                logger.warning(f"  ⚠️  Entry directory does not exist: {entry_path}")
+                return False
+
+        except Exception as e:
+            logger.error(f"  ✗ Failed to cleanup entry {entry_dir_name}: {e}")
+            return False
 
     def search_exercism_repos(self, language: str, max_repos: int = 20) -> List[Dict]:
         """
@@ -415,6 +536,141 @@ class GitHubIngestor:
 
         return valid_entries
 
+    def validate_entry_with_tests(
+        self,
+        entry: ExercismEntry,
+        entry_dir_name: str,
+        num_executions: int = 5
+    ) -> Tuple[bool, List]:
+        """
+        Validate entry by running tests multiple times (default: 5)
+
+        This function executes the test suite for an entry N times and verifies
+        that ALL executions pass with 100% success rate.
+
+        Args:
+            entry: ExercismEntry object containing metadata
+            entry_dir_name: Directory name where files were saved
+            num_executions: Number of test executions (default: 5)
+
+        Returns:
+            Tuple of (success: bool, results: List[BaseEntryResult])
+            - success: True if all tests pass in all executions (100% pass rate)
+            - results: List of BaseEntryResult objects from test executions
+        """
+        if not TEST_VALIDATION_AVAILABLE:
+            logger.warning("Test validation not available - skipping validation")
+            return True, []  # Fallback: assume valid if validation unavailable
+
+        logger.info(f"🧪 Validating {entry.exercise_name} with {num_executions} test executions...")
+
+        try:
+            # Setup test executor
+            container_manager = ContainerManager()
+            test_executor = TestExecutor(container_manager)
+
+            # Build entry metadata dict as expected by execute_test
+            main_source_file = entry.source_files[0] if entry.source_files else None
+            if not main_source_file:
+                logger.error(f"  ✗ No source file found for {entry.exercise_name}")
+                return False, []
+
+            entry_dict = {
+                "id": entry.get_unique_id(),
+                "filename": main_source_file['name'],
+                "language": entry.language,
+                "codeSnippetFilePath": f"{entry.language}/{entry_dir_name}/src",
+                "testUnitFilePath": f"{entry.language}/{entry_dir_name}/test"
+            }
+
+            # Verify directories exist
+            entry_base_dir = self.dataset_dir / entry.language / entry_dir_name
+            src_path = self.dataset_dir / entry_dict["codeSnippetFilePath"]
+            test_path = self.dataset_dir / entry_dict["testUnitFilePath"]
+
+            if not src_path.exists() or not test_path.exists():
+                logger.error(f"  ✗ Source/test directories not found: {entry_dir_name}")
+                return False, []
+
+            # Check if Makefile exists, generate fallback if needed
+            makefile_path = entry_base_dir / "Makefile"
+            cmakelists_path = entry_base_dir / "CMakeLists.txt"
+
+            if not makefile_path.exists() and not cmakelists_path.exists():
+                logger.warning("  ⚠️  No build file found, generating fallback Makefile...")
+                if not self.generate_fallback_makefile(entry_base_dir, entry.language):
+                    logger.error("  ✗ Failed to generate fallback Makefile")
+                    return False, []
+
+            # Execute tests multiple times
+            passed_count = 0
+            failed_count = 0
+            results = []
+
+            for i in range(num_executions):
+                logger.info(f"  Execution {i+1}/{num_executions}...")
+
+                try:
+                    result = test_executor.execute_test(
+                        entry=entry_dict,
+                        language=entry.language,
+                        test_type="base",
+                        llm_info=None,
+                        use_cache=True,
+                        debug_mode=False
+                    )
+
+                    results.append(result)
+
+                    # Check if test passed AND metrics are valid
+                    if result.regressionTestPassed and result.success:
+                        passed_count += 1
+                        logger.debug(
+                            f"    ✓ Execution {i+1}: PASS "
+                            f"(CPU: {result.CPU_usage:.2f}%, RAM: {result.RAM_usage} bytes, "
+                            f"Time: {result.execution_time_ms}ms)"
+                        )
+                    else:
+                        failed_count += 1
+                        logger.warning(
+                            f"    ✗ Execution {i+1}: FAIL "
+                            f"(passed={result.regressionTestPassed}, success={result.success}, "
+                            f"error={result.error_message})"
+                        )
+                        # Early exit on first failure (100% pass rate required)
+                        break
+
+                except Exception as e:
+                    logger.error(f"    ✗ Execution {i+1} threw exception: {e}")
+                    failed_count += 1
+                    break
+
+            # Calculate pass rate
+            pass_rate = (passed_count / num_executions) * 100 if num_executions > 0 else 0
+
+            # Log summary
+            if passed_count == num_executions:
+                # Calculate average metrics
+                avg_cpu = sum(r.CPU_usage for r in results if r.CPU_usage) / len(results)
+                avg_ram = sum(r.RAM_usage for r in results if r.RAM_usage) / len(results)
+                avg_time = sum(r.execution_time_ms for r in results if r.execution_time_ms) / len(results)
+
+                logger.info(
+                    f"  ✅ All tests passed ({passed_count}/{num_executions} = {pass_rate:.1f}%)\n"
+                    f"     Avg metrics - CPU: {avg_cpu:.2f}%, RAM: {avg_ram:.0f} bytes, Time: {avg_time:.2f}ms"
+                )
+                return True, results
+            else:
+                logger.warning(
+                    f"  ❌ Tests failed ({passed_count}/{num_executions} = {pass_rate:.1f}%) - "
+                    f"Required: 100% pass rate"
+                )
+                return False, results  # Return partial results even on failure
+
+        except Exception as e:
+            logger.error(f"  ✗ Validation error for {entry.exercise_name}: {e}")
+            return False, []
+
     def download_and_save_entry(self, entry: ExercismEntry) -> bool:
         """
         Download entry files and save to dataset structure
@@ -515,7 +771,7 @@ class GitHubIngestor:
 
     def update_cluster_json(self, entry: ExercismEntry, entry_dir_name: str) -> bool:
         """
-        Update or create cluster JSON file for the exercise
+        Update or create cluster JSON file for the exercise (thread-safe)
 
         Args:
             entry: ExercismEntry object
@@ -527,72 +783,327 @@ class GitHubIngestor:
         cluster_name = entry.exercise_name.lower().replace("-", "_").replace(" ", "_")
         cluster_file = self.clusters_dir / f"cluster_{cluster_name}.json"
 
+        # Use lock for thread-safe cluster file updates
+        with self.cluster_write_lock:
+            try:
+                # Load existing cluster or create new
+                if cluster_file.exists():
+                    cluster_data = read_json(cluster_file)
+                else:
+                    cluster_data = {}
+
+                # Ensure language key exists
+                if entry.language not in cluster_data:
+                    cluster_data[entry.language] = []
+
+                # Create new entry metadata
+                source_clean = entry.repo_owner.replace(" ", "_").replace("(", "").replace(")", "")
+
+                # Find main source file
+                main_source_file = entry.source_files[0] if entry.source_files else None
+                main_test_file = entry.test_files[0] if entry.test_files else None
+
+                if not main_source_file or not main_test_file:
+                    logger.error(f"Missing source or test file for {entry.exercise_name}")
+                    return False
+
+                # Count characters and words
+                content = self.api_client.get_file_content(
+                    entry.repo_owner,
+                    entry.repo_name,
+                    main_source_file['path']
+                )
+                char_count = len(content) if content else 0
+                word_count = len(content.split()) if content else 0
+
+                # Reject entries with empty source files
+                if char_count == 0:
+                    logger.error(f"Source file is empty for {entry.exercise_name}. Skipping.")
+                    return False
+
+                new_entry = {
+                    "id": entry.get_unique_id(),
+                    "filename": main_source_file['name'],
+                    "language": entry.language,
+                    "source": f"exercism-{source_clean}",
+                    "codeSnippetFilePath": f"{entry.language}/{entry_dir_name}/src",
+                    "testUnitFilePath": f"{entry.language}/{entry_dir_name}/test",
+                    "downloadDate": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                    "characterQuantity": char_count,
+                    "wordQuantity": word_count,
+                    "licenseType": entry.license_type,
+                    "LLMs": []
+                }
+
+                # Add to cluster
+                cluster_data[entry.language].append(new_entry)
+
+                # Save cluster file
+                write_json(cluster_file, cluster_data)
+                logger.info(f"✓ Updated cluster file: {cluster_file.name}")
+
+                return True
+
+            except Exception as e:
+                logger.error(f"Error updating cluster JSON for {entry.exercise_name}: {e}")
+                return False
+
+    def save_base_test_results(
+        self,
+        entry: ExercismEntry,
+        entry_dir_name: str,  # noqa: ARG002
+        test_results: List
+    ) -> bool:
+        """
+        Save base test execution results to execution_outputs directory
+
+        This method saves the 5 test execution results from validation to JSON files
+        in the format expected by the metrics analysis pipeline.
+
+        Args:
+            entry: ExercismEntry object
+            entry_dir_name: Directory name where files were saved
+            test_results: List of BaseEntryResult objects from validate_entry_with_tests
+
+        Returns:
+            True if all results saved successfully, False otherwise
+        """
+        if not test_results:
+            logger.warning(f"No test results to save for {entry.exercise_name}")
+            return False
+
         try:
-            # Load existing cluster or create new
-            if cluster_file.exists():
-                cluster_data = read_json(cluster_file)
-            else:
-                cluster_data = {}
+            # Get execution_outputs directory from project structure
+            execution_outputs_dir = self.dataset_dir.parent / "execution_outputs"
+            execution_outputs_dir.mkdir(parents=True, exist_ok=True)
 
-            # Ensure language key exists
-            if entry.language not in cluster_data:
-                cluster_data[entry.language] = []
+            # Determine cluster name from exercise name
+            cluster_name = entry.exercise_name.lower().replace("-", "_").replace(" ", "_")
 
-            # Create new entry metadata
-            source_clean = entry.repo_owner.replace(" ", "_").replace("(", "").replace(")", "")
+            # Save each execution result in AGGREGATED format
+            saved_count = 0
+            for i, result in enumerate(test_results, start=1):
+                # Create result filename: {cluster}_results_{1-5}.json
+                result_filename = f"{cluster_name}_results_{i}.json"
+                result_path = execution_outputs_dir / result_filename
 
-            # Find main source file
-            main_source_file = entry.source_files[0] if entry.source_files else None
-            main_test_file = entry.test_files[0] if entry.test_files else None
+                # Convert BaseEntryResult to dict format
+                result_entry = {
+                    "id": result.id,
+                    "filename": result.filename,
+                    "language": result.language,
+                    "base_log": result.base_log,
+                    "execution_time_ms": result.execution_time_ms,
+                    "CPU_usage": result.CPU_usage,
+                    "RAM_usage": result.RAM_usage,
+                    "regressionTestPassed": result.regressionTestPassed,
+                    "success": result.success,
+                    "error_message": result.error_message
+                }
 
-            if not main_source_file or not main_test_file:
-                logger.error(f"Missing source or test file for {entry.exercise_name}")
-                return False
+                # Load existing data if file exists and merge intelligently
+                if result_path.exists():
+                    existing_data = read_json(result_path)
 
-            # Count characters and words
-            content = self.api_client.get_file_content(
-                entry.repo_owner,
-                entry.repo_name,
-                main_source_file['path']
+                    # Initialize AGGREGATED format if needed
+                    if not existing_data or "results" not in existing_data:
+                        # File exists but wrong format or corrupted - create AGGREGATED structure
+                        output_data = {"results": {}}
+                        logger.debug(f"  Converting {result_filename} to AGGREGATED format")
+                    else:
+                        # Already in AGGREGATED format
+                        output_data = existing_data
+
+                    # Ensure language key exists
+                    lang = result.language
+                    if lang not in output_data["results"]:
+                        output_data["results"][lang] = []
+
+                    # Check if this entry already exists (by ID)
+                    entry_exists = False
+                    for idx, existing_entry in enumerate(output_data["results"][lang]):
+                        if existing_entry.get("id") == result.id:
+                            # Update existing entry
+                            output_data["results"][lang][idx] = result_entry
+                            entry_exists = True
+                            logger.debug(f"  ✓ Updated existing entry: {result.id}")
+                            break
+
+                    if not entry_exists:
+                        # Add new entry to the language's result list
+                        output_data["results"][lang].append(result_entry)
+                        logger.debug(f"  ✓ Added new entry: {result.id}")
+
+                else:
+                    # New file - create AGGREGATED format structure
+                    output_data = {
+                        "results": {
+                            result.language: [result_entry]
+                        }
+                    }
+                    logger.debug(f"  ✓ Created new file: {result_filename}")
+
+                # Write to JSON file in AGGREGATED format
+                write_json(result_path, output_data)
+                saved_count += 1
+
+            logger.info(
+                f"💾 Saved {saved_count}/{len(test_results)} base test results to execution_outputs/"
             )
-            char_count = len(content) if content else 0
-            word_count = len(content.split()) if content else 0
+            return True
 
-            # Reject entries with empty source files
-            if char_count == 0:
-                logger.error(f"Source file is empty for {entry.exercise_name}. Skipping.")
-                return False
+        except Exception as e:
+            logger.error(f"Error saving base test results for {entry.exercise_name}: {e}")
+            return False
 
-            new_entry = {
-                "id": entry.get_unique_id(),
-                "filename": main_source_file['name'],
-                "language": entry.language,
-                "source": f"exercism-{source_clean}",
-                "codeSnippetFilePath": f"{entry.language}/{entry_dir_name}/src",
-                "testUnitFilePath": f"{entry.language}/{entry_dir_name}/test",
-                "downloadDate": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-                "characterQuantity": char_count,
-                "wordQuantity": word_count,
-                "licenseType": entry.license_type,
-                "LLMs": []
+    def save_ingestion_manifest(
+        self,
+        language: str,
+        ingested_clusters: List[str],
+        ingested_count: int,
+        validated_count: int,
+        failed_count: int
+    ) -> bool:
+        """
+        Save ingestion manifest for pipeline tracking
+
+        Creates a JSON manifest file with metadata about the ingestion session,
+        including which clusters were modified and statistics.
+
+        Args:
+            language: 'c' or 'cpp'
+            ingested_clusters: List of cluster names that were modified
+            ingested_count: Number of entries successfully ingested
+            validated_count: Number of entries that passed validation
+            failed_count: Number of entries that failed validation
+
+        Returns:
+            True if manifest saved successfully, False otherwise
+        """
+        try:
+            # Create logs directory if it doesn't exist
+            logs_dir = self.dataset_dir.parent / "logs"
+            logs_dir.mkdir(parents=True, exist_ok=True)
+
+            # Generate timestamp for unique filename
+            timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+            manifest_filename = f"ingestion_manifest_{language}_{timestamp}.json"
+            manifest_path = logs_dir / manifest_filename
+
+            # Create manifest data
+            manifest = {
+                "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                "language": language,
+                "clusters": ingested_clusters,
+                "entry_count": ingested_count,
+                "validated_count": validated_count,
+                "failed_count": failed_count,
+                "success_rate": f"{(ingested_count / validated_count * 100):.1f}%" if validated_count > 0 else "0%"
             }
 
-            # Add to cluster
-            cluster_data[entry.language].append(new_entry)
-
-            # Save cluster file
-            write_json(cluster_file, cluster_data)
-            logger.info(f"✓ Updated cluster file: {cluster_file.name}")
+            # Save manifest
+            write_json(manifest_path, manifest)
+            logger.info(f"📝 Saved ingestion manifest: {manifest_filename}")
+            logger.info(f"   Clusters modified: {len(ingested_clusters)}")
+            logger.info(f"   Entries ingested: {ingested_count}")
 
             return True
 
         except Exception as e:
-            logger.error(f"Error updating cluster JSON for {entry.exercise_name}: {e}")
+            logger.error(f"Error saving ingestion manifest: {e}")
             return False
+
+    def _process_single_entry(
+        self,
+        entry: ExercismEntry,
+        language: str
+    ) -> Tuple[bool, str, Dict]:
+        """
+        Process a single entry: download, validate, and update cluster
+
+        Args:
+            entry: ExercismEntry object
+            language: 'c' or 'cpp'
+
+        Returns:
+            Tuple of (success, entry_dir_name, stats_dict)
+        """
+        source_clean = entry.repo_owner.replace(" ", "_").replace("(", "").replace(")", "")
+        entry_dir_name = f"{entry.exercise_name}_exercism-{source_clean}"
+
+        stats = {
+            'entry_name': entry.exercise_name,
+            'downloaded': False,
+            'validated': False,
+            'ingested': False,
+            'error': None
+        }
+
+        try:
+            # Step 1: Download files
+            logger.info(f"📥 Downloading: {entry.exercise_name}")
+            if not self.download_and_save_entry(entry):
+                stats['error'] = 'Download failed'
+                logger.error(f"  ❌ Download failed: {entry.exercise_name}")
+                return False, entry_dir_name, stats
+
+            stats['downloaded'] = True
+
+            # Step 2: Validate with tests (5 executions)
+            logger.info(f"🧪 Validating: {entry.exercise_name}")
+            validation_success, test_results = self.validate_entry_with_tests(
+                entry, entry_dir_name, num_executions=5
+            )
+
+            if not validation_success:
+                stats['error'] = 'Test validation failed'
+                logger.warning(f"  ⚠️  Validation failed: {entry.exercise_name}")
+
+                # Cleanup failed entry
+                self.cleanup_failed_entry(entry_dir_name, language)
+                return False, entry_dir_name, stats
+
+            stats['validated'] = True
+
+            # Step 3: Update cluster JSON (only if validation passed)
+            logger.info(f"💾 Saving to cluster: {entry.exercise_name}")
+            if not self.update_cluster_json(entry, entry_dir_name):
+                stats['error'] = 'Cluster update failed'
+                logger.warning(f"  ⚠️  Cluster update failed: {entry.exercise_name}")
+
+                # Cleanup since it won't be in cluster
+                self.cleanup_failed_entry(entry_dir_name, language)
+                return False, entry_dir_name, stats
+
+            stats['ingested'] = True
+
+            # Step 4: Save base test results to execution_outputs (NEW!)
+            logger.info(f"💾 Saving base test results: {entry.exercise_name}")
+            if not self.save_base_test_results(entry, entry_dir_name, test_results):
+                logger.warning("  ⚠️  Failed to save test results (entry still valid)")
+                # Don't fail the entire process if saving results fails
+                stats['test_results_saved'] = False
+            else:
+                stats['test_results_saved'] = True
+
+            logger.info(f"  ✅ Successfully ingested and validated: {entry.exercise_name}")
+            return True, entry_dir_name, stats
+
+        except Exception as e:
+            stats['error'] = str(e)
+            logger.error(f"  ✗ Exception processing {entry.exercise_name}: {e}")
+
+            # Cleanup on exception
+            try:
+                self.cleanup_failed_entry(entry_dir_name, language)
+            except Exception:  # noqa: S110
+                pass
+
+            return False, entry_dir_name, stats
 
     def ingest_entries(self, language: str, max_repos: int = 10, max_entries_per_lang: int = 20) -> int:
         """
-        Main ingestion workflow for a language
+        Main ingestion workflow with test validation and parallelization
 
         Args:
             language: 'c' or 'cpp'
@@ -603,7 +1114,7 @@ class GitHubIngestor:
             Number of entries successfully ingested
         """
         logger.info(f"\n{'='*60}")
-        logger.info(f"Starting ingestion for {language.upper()}")
+        logger.info(f"Starting ingestion for {language.upper()} with test validation")
         logger.info(f"{'='*60}\n")
 
         # Search repositories
@@ -613,43 +1124,107 @@ class GitHubIngestor:
             logger.warning(f"No repositories found for {language}")
             return 0
 
-        ingested = 0
-
-        # Process each repository
+        # Collect all valid entries from all repos
+        all_valid_entries = []
         for repo in repos:
-            if ingested >= max_entries_per_lang:
-                logger.info(f"Reached maximum entries limit ({max_entries_per_lang}) for {language}")
+            valid_entries = self.explore_repo_for_exercises(repo, language)
+            all_valid_entries.extend(valid_entries)
+
+            # Stop if we have enough candidates
+            if len(all_valid_entries) >= max_entries_per_lang * 2:
+                logger.info(f"Collected {len(all_valid_entries)} candidates (enough for processing)")
                 break
 
-            # Find valid exercises in repo
-            valid_entries = self.explore_repo_for_exercises(repo, language)
+        logger.info(f"Found {len(all_valid_entries)} total candidate entries")
 
-            # Process each valid entry
-            for entry in valid_entries:
+        if not all_valid_entries:
+            logger.warning(f"No valid entries found for {language}")
+            return 0
+
+        # Limit to max_entries to process
+        entries_to_process = all_valid_entries[:max_entries_per_lang * 2]  # Process 2x to account for failures
+
+        # Statistics tracking
+        ingested = 0
+        downloaded_count = 0
+        validated_count = 0
+        failed_validation_count = 0
+        failed_download_count = 0
+        ingested_clusters = set()  # Track unique cluster names
+
+        # Process entries in parallel using ThreadPoolExecutor
+        logger.info(f"\n🚀 Processing {len(entries_to_process)} entries in parallel (max 3 workers)...\n")
+
+        with ThreadPoolExecutor(max_workers=3) as executor:
+            # Submit all tasks
+            future_to_entry = {
+                executor.submit(self._process_single_entry, entry, language): entry
+                for entry in entries_to_process
+            }
+
+            # Process results as they complete
+            for future in as_completed(future_to_entry):
+                entry = future_to_entry[future]
+
+                # Check if we've reached the limit
                 if ingested >= max_entries_per_lang:
+                    logger.info(f"✓ Reached target: {ingested}/{max_entries_per_lang} entries ingested")
                     break
 
-                # Download and save
-                source_clean = entry.repo_owner.replace(" ", "_").replace("(", "").replace(")", "")
-                entry_dir_name = f"{entry.exercise_name}_exercism-{source_clean}"
+                try:
+                    success, _entry_dir_name, stats = future.result()
 
-                if self.download_and_save_entry(entry):
-                    # Update cluster
-                    if self.update_cluster_json(entry, entry_dir_name):
+                    # Update statistics
+                    if stats['downloaded']:
+                        downloaded_count += 1
+                    if stats['validated']:
+                        validated_count += 1
+                    if stats['ingested']:
                         ingested += 1
                         self.ingested_count[language] += 1
-                        logger.info(f"✅ Successfully ingested: {entry.exercise_name} ({ingested}/{max_entries_per_lang})")
-                    else:
-                        logger.warning(f"⚠️  Downloaded but failed to update cluster for: {entry.exercise_name}")
-                else:
-                    logger.error(f"❌ Failed to download: {entry.exercise_name}")
 
-                # Small delay between entries
-                time.sleep(1)
+                        # Track cluster name for manifest
+                        cluster_name = entry.exercise_name.lower().replace("-", "_").replace(" ", "_")
+                        ingested_clusters.add(cluster_name)
+                    elif stats['validated'] and not stats['ingested']:
+                        failed_validation_count += 1
+                    elif not stats['downloaded']:
+                        failed_download_count += 1
 
+                    # Log progress
+                    if success:
+                        logger.info(
+                            f"📊 Progress: {ingested}/{max_entries_per_lang} ingested | "
+                            f"{validated_count} validated | {failed_validation_count} failed validation"
+                        )
+
+                except Exception as e:
+                    logger.error(f"Error processing entry {entry.exercise_name}: {e}")
+                    failed_download_count += 1
+
+                # Small delay to avoid overwhelming the system
+                time.sleep(0.5)
+
+        # Final summary
         logger.info(f"\n{'='*60}")
-        logger.info(f"Ingestion complete for {language.upper()}: {ingested} new entries added")
+        logger.info(f"INGESTION COMPLETE FOR {language.upper()}")
+        logger.info(f"{'='*60}")
+        logger.info(f"✅ Successfully ingested:      {ingested}/{max_entries_per_lang}")
+        logger.info(f"📥 Downloaded:                 {downloaded_count}")
+        logger.info(f"✓  Validated (passed tests):   {validated_count}")
+        logger.info(f"✗  Failed validation:          {failed_validation_count}")
+        logger.info(f"✗  Failed download:            {failed_download_count}")
         logger.info(f"{'='*60}\n")
+
+        # Save ingestion manifest for pipeline tracking
+        if ingested > 0:
+            self.save_ingestion_manifest(
+                language=language,
+                ingested_clusters=sorted(list(ingested_clusters)),
+                ingested_count=ingested,
+                validated_count=validated_count,
+                failed_count=failed_validation_count + failed_download_count
+            )
 
         return ingested
 
@@ -717,19 +1292,22 @@ def main():
         type=str,
         help='GitHub API token (optional, will try to load from .github_token if not provided)'
     )
+    parser.add_argument(
+        '--no-interactive',
+        action='store_true',
+        help='Run without interactive prompts (for automation/scripts)'
+    )
 
     args = parser.parse_args()
 
-    # Get GitHub token
+    # Get GitHub token (GitHubAPIClient will auto-load from .env if not provided)
     token = args.token
     if not token:
+        # Try legacy .github_token file for backward compatibility
         token = load_github_token()
-        if not token:
-            logger.warning("No GitHub token provided. API rate limits will be strict (60 requests/hour)")
-            response = input("Continue without token? (y/n): ")
-            if response.lower() != 'y':
-                logger.info("Exiting...")
-                return
+
+    # Note: If token is still None, GitHubAPIClient.__init__ will try loading from .env
+    # So we don't need to prompt here - let the client handle it
 
     # Initialize ingestor
     ingestor = GitHubIngestor(

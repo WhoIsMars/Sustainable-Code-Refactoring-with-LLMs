@@ -1,0 +1,242 @@
+================================================================================
+PARALLEL JAVASCRIPT EXECUTION - V2
+================================================================================
+Started: 2025-11-15 15:22:25
+
+System CPUs: 10
+Parallel workers: 6
+
+Work Summary:
+  Retries (v1/v2 timeouts): 14
+  New (v3/v4 full):         206
+  TOTAL:                    220
+
+Estimated completion time:
+  Sequential: ~3.1 hours
+  Parallel (6 workers): ~0.5 hours (30 minutes)
+
+Start parallel execution? (y/n): 
+================================================================================
+EXECUTION STARTED
+================================================================================
+
+[16:13:27] [1/220 0.5%] ✓ alphametics v1 (3061.6s) [retry] | Elapsed: 51min
+[16:13:30] [2/220 0.9%] ✓ alphametics v2 (3064.3s) [retry] | Elapsed: 51min
+[17:43:18] [3/220 1.4%] ✗ etl v2 (8452.1s) [retry] | Elapsed: 140min
+[17:43:18] [4/220 1.8%] ✗ linked_list v2 (5387.8s) [retry] | Elapsed: 140min
+[17:43:18] [5/220 2.3%] ✗ etl v1 (8452.1s) [retry] | Elapsed: 140min
+[17:43:18] [6/220 2.7%] ✗ grade_school v2 (8452.1s) [retry] | Elapsed: 140min
+[17:43:18] [7/220 3.2%] ✗ bob v2 (8452.1s) [retry] | Elapsed: 140min
+[17:43:18] [8/220 3.6%] ✗ hello_world v2 (5390.5s) [retry] | Elapsed: 140min
+[17:43:46] [9/220 4.1%] ✗ matrix v2 (28.7s) [retry] | Elapsed: 141min
+[17:43:46] [10/220 4.5%] ✗ rna_transcription v2 (28.7s) [retry] | Elapsed: 141min
+[17:43:46] [11/220 5.0%] ✗ pascals_triangle v2 (28.7s) [retry] | Elapsed: 141min
+[17:43:46] [12/220 5.5%] ✗ two_fer v2 (28.7s) [retry] | Elapsed: 141min
+[17:43:46] [13/220 5.9%] ✗ sum_of_multiples v1 (28.7s) [retry] | Elapsed: 141min
+[17:43:46] [14/220 6.4%] ✗ sum_of_multiples v2 (28.7s) [retry] | Elapsed: 141min
+Process SpawnPoolWorker-5:
+Process SpawnPoolWorker-1:
+Process SpawnPoolWorker-2:
+Process SpawnPoolWorker-6:
+Process SpawnPoolWorker-4:
+Process SpawnPoolWorker-3:
+Traceback (most recent call last):
+Traceback (most recent call last):
+Traceback (most recent call last):
+Traceback (most recent call last):
+Traceback (most recent call last):
+Traceback (most recent call last):
+  File "/Users/piccoletto/.pyenv/versions/3.12.6/lib/python3.12/multiprocessing/pool.py", line 131, in worker
+    put((job, i, result))
+  File "/Users/piccoletto/.pyenv/versions/3.12.6/lib/python3.12/multiprocessing/queues.py", line 399, in put
+    self._writer.send_bytes(obj)
+  File "/Users/piccoletto/.pyenv/versions/3.12.6/lib/python3.12/multiprocessing/connection.py", line 200, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+  File "/Users/piccoletto/.pyenv/versions/3.12.6/lib/python3.12/multiprocessing/connection.py", line 427, in _send_bytes
+    self._send(header + buf)
+  File "/Users/piccoletto/.pyenv/versions/3.12.6/lib/python3.12/multiprocessing/connection.py", line 384, in _send
+    n = write(self._handle, buf)
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+BrokenPipeError: [Errno 32] Broken pipe
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/piccoletto/.pyenv/versions/3.12.6/lib/python3.12/multiprocessing/pool.py", line 131, in worker
+    put((job, i, result))
+  File "/Users/piccoletto/.pyenv/versions/3.12.6/lib/python3.12/multiprocessing/queues.py", line 399, in put
+    self._writer.send_bytes(obj)
+  File "/Users/piccoletto/.pyenv/versions/3.12.6/lib/python3.12/multiprocessing/connection.py", line 200, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+  File "/Users/piccoletto/.pyenv/versions/3.12.6/lib/python3.12/multiprocessing/connection.py", line 427, in _send_bytes
+    self._send(header + buf)
+  File "/Users/piccoletto/.pyenv/versions/3.12.6/lib/python3.12/multiprocessing/connection.py", line 384, in _send
+    n = write(self._handle, buf)
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/piccoletto/.pyenv/versions/3.12.6/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/Users/piccoletto/.pyenv/versions/3.12.6/lib/python3.12/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/Users/piccoletto/.pyenv/versions/3.12.6/lib/python3.12/multiprocessing/pool.py", line 136, in worker
+    put((job, i, (False, wrapped)))
+  File "/Users/piccoletto/.pyenv/versions/3.12.6/lib/python3.12/multiprocessing/queues.py", line 399, in put
+    self._writer.send_bytes(obj)
+  File "/Users/piccoletto/.pyenv/versions/3.12.6/lib/python3.12/multiprocessing/connection.py", line 200, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+  File "/Users/piccoletto/.pyenv/versions/3.12.6/lib/python3.12/multiprocessing/connection.py", line 427, in _send_bytes
+    self._send(header + buf)
+  File "/Users/piccoletto/.pyenv/versions/3.12.6/lib/python3.12/multiprocessing/connection.py", line 384, in _send
+    n = write(self._handle, buf)
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+BrokenPipeError: [Errno 32] Broken pipe
+BrokenPipeError: [Errno 32] Broken pipe
+  File "/Users/piccoletto/.pyenv/versions/3.12.6/lib/python3.12/multiprocessing/pool.py", line 131, in worker
+    put((job, i, result))
+  File "/Users/piccoletto/.pyenv/versions/3.12.6/lib/python3.12/multiprocessing/queues.py", line 399, in put
+    self._writer.send_bytes(obj)
+  File "/Users/piccoletto/.pyenv/versions/3.12.6/lib/python3.12/multiprocessing/connection.py", line 200, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+  File "/Users/piccoletto/.pyenv/versions/3.12.6/lib/python3.12/multiprocessing/connection.py", line 427, in _send_bytes
+    self._send(header + buf)
+  File "/Users/piccoletto/.pyenv/versions/3.12.6/lib/python3.12/multiprocessing/connection.py", line 384, in _send
+    n = write(self._handle, buf)
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+BrokenPipeError: [Errno 32] Broken pipe
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/piccoletto/.pyenv/versions/3.12.6/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/Users/piccoletto/.pyenv/versions/3.12.6/lib/python3.12/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/Users/piccoletto/.pyenv/versions/3.12.6/lib/python3.12/multiprocessing/pool.py", line 136, in worker
+    put((job, i, (False, wrapped)))
+  File "/Users/piccoletto/.pyenv/versions/3.12.6/lib/python3.12/multiprocessing/queues.py", line 399, in put
+    self._writer.send_bytes(obj)
+  File "/Users/piccoletto/.pyenv/versions/3.12.6/lib/python3.12/multiprocessing/connection.py", line 200, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+  File "/Users/piccoletto/.pyenv/versions/3.12.6/lib/python3.12/multiprocessing/connection.py", line 427, in _send_bytes
+    self._send(header + buf)
+  File "/Users/piccoletto/.pyenv/versions/3.12.6/lib/python3.12/multiprocessing/connection.py", line 384, in _send
+    n = write(self._handle, buf)
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+BrokenPipeError: [Errno 32] Broken pipe
+  File "/Users/piccoletto/.pyenv/versions/3.12.6/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/Users/piccoletto/.pyenv/versions/3.12.6/lib/python3.12/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/Users/piccoletto/.pyenv/versions/3.12.6/lib/python3.12/multiprocessing/pool.py", line 136, in worker
+    put((job, i, (False, wrapped)))
+  File "/Users/piccoletto/.pyenv/versions/3.12.6/lib/python3.12/multiprocessing/queues.py", line 399, in put
+    self._writer.send_bytes(obj)
+  File "/Users/piccoletto/.pyenv/versions/3.12.6/lib/python3.12/multiprocessing/connection.py", line 200, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+  File "/Users/piccoletto/.pyenv/versions/3.12.6/lib/python3.12/multiprocessing/connection.py", line 427, in _send_bytes
+    self._send(header + buf)
+  File "/Users/piccoletto/.pyenv/versions/3.12.6/lib/python3.12/multiprocessing/connection.py", line 384, in _send
+    n = write(self._handle, buf)
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+BrokenPipeError: [Errno 32] Broken pipe
+  File "/Users/piccoletto/.pyenv/versions/3.12.6/lib/python3.12/multiprocessing/pool.py", line 131, in worker
+    put((job, i, result))
+  File "/Users/piccoletto/.pyenv/versions/3.12.6/lib/python3.12/multiprocessing/queues.py", line 399, in put
+    self._writer.send_bytes(obj)
+  File "/Users/piccoletto/.pyenv/versions/3.12.6/lib/python3.12/multiprocessing/connection.py", line 200, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+  File "/Users/piccoletto/.pyenv/versions/3.12.6/lib/python3.12/multiprocessing/connection.py", line 427, in _send_bytes
+    self._send(header + buf)
+  File "/Users/piccoletto/.pyenv/versions/3.12.6/lib/python3.12/multiprocessing/connection.py", line 384, in _send
+    n = write(self._handle, buf)
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+BrokenPipeError: [Errno 32] Broken pipe
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/piccoletto/.pyenv/versions/3.12.6/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/Users/piccoletto/.pyenv/versions/3.12.6/lib/python3.12/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/Users/piccoletto/.pyenv/versions/3.12.6/lib/python3.12/multiprocessing/pool.py", line 136, in worker
+    put((job, i, (False, wrapped)))
+  File "/Users/piccoletto/.pyenv/versions/3.12.6/lib/python3.12/multiprocessing/queues.py", line 399, in put
+    self._writer.send_bytes(obj)
+  File "/Users/piccoletto/.pyenv/versions/3.12.6/lib/python3.12/multiprocessing/connection.py", line 200, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+  File "/Users/piccoletto/.pyenv/versions/3.12.6/lib/python3.12/multiprocessing/connection.py", line 427, in _send_bytes
+    self._send(header + buf)
+  File "/Users/piccoletto/.pyenv/versions/3.12.6/lib/python3.12/multiprocessing/connection.py", line 384, in _send
+    n = write(self._handle, buf)
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+BrokenPipeError: [Errno 32] Broken pipe
+  File "/Users/piccoletto/.pyenv/versions/3.12.6/lib/python3.12/multiprocessing/pool.py", line 131, in worker
+    put((job, i, result))
+  File "/Users/piccoletto/.pyenv/versions/3.12.6/lib/python3.12/multiprocessing/queues.py", line 399, in put
+    self._writer.send_bytes(obj)
+  File "/Users/piccoletto/.pyenv/versions/3.12.6/lib/python3.12/multiprocessing/connection.py", line 200, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+  File "/Users/piccoletto/.pyenv/versions/3.12.6/lib/python3.12/multiprocessing/connection.py", line 427, in _send_bytes
+    self._send(header + buf)
+  File "/Users/piccoletto/.pyenv/versions/3.12.6/lib/python3.12/multiprocessing/pool.py", line 131, in worker
+    put((job, i, result))
+  File "/Users/piccoletto/.pyenv/versions/3.12.6/lib/python3.12/multiprocessing/connection.py", line 384, in _send
+    n = write(self._handle, buf)
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/piccoletto/.pyenv/versions/3.12.6/lib/python3.12/multiprocessing/queues.py", line 399, in put
+    self._writer.send_bytes(obj)
+BrokenPipeError: [Errno 32] Broken pipe
+  File "/Users/piccoletto/.pyenv/versions/3.12.6/lib/python3.12/multiprocessing/connection.py", line 200, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+  File "/Users/piccoletto/.pyenv/versions/3.12.6/lib/python3.12/multiprocessing/connection.py", line 427, in _send_bytes
+    self._send(header + buf)
+  File "/Users/piccoletto/.pyenv/versions/3.12.6/lib/python3.12/multiprocessing/connection.py", line 384, in _send
+    n = write(self._handle, buf)
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+BrokenPipeError: [Errno 32] Broken pipe
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/piccoletto/.pyenv/versions/3.12.6/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/piccoletto/.pyenv/versions/3.12.6/lib/python3.12/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/Users/piccoletto/.pyenv/versions/3.12.6/lib/python3.12/multiprocessing/pool.py", line 136, in worker
+    put((job, i, (False, wrapped)))
+  File "/Users/piccoletto/.pyenv/versions/3.12.6/lib/python3.12/multiprocessing/queues.py", line 399, in put
+    self._writer.send_bytes(obj)
+  File "/Users/piccoletto/.pyenv/versions/3.12.6/lib/python3.12/multiprocessing/connection.py", line 200, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+  File "/Users/piccoletto/.pyenv/versions/3.12.6/lib/python3.12/multiprocessing/connection.py", line 427, in _send_bytes
+    self._send(header + buf)
+  File "/Users/piccoletto/.pyenv/versions/3.12.6/lib/python3.12/multiprocessing/connection.py", line 384, in _send
+    n = write(self._handle, buf)
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+BrokenPipeError: [Errno 32] Broken pipe
+  File "/Users/piccoletto/.pyenv/versions/3.12.6/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/Users/piccoletto/.pyenv/versions/3.12.6/lib/python3.12/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/Users/piccoletto/.pyenv/versions/3.12.6/lib/python3.12/multiprocessing/pool.py", line 136, in worker
+    put((job, i, (False, wrapped)))
+  File "/Users/piccoletto/.pyenv/versions/3.12.6/lib/python3.12/multiprocessing/queues.py", line 399, in put
+    self._writer.send_bytes(obj)
+  File "/Users/piccoletto/.pyenv/versions/3.12.6/lib/python3.12/multiprocessing/connection.py", line 200, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+  File "/Users/piccoletto/.pyenv/versions/3.12.6/lib/python3.12/multiprocessing/connection.py", line 427, in _send_bytes
+    self._send(header + buf)
+  File "/Users/piccoletto/.pyenv/versions/3.12.6/lib/python3.12/multiprocessing/connection.py", line 384, in _send
+    n = write(self._handle, buf)
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+BrokenPipeError: [Errno 32] Broken pipe
+/Users/piccoletto/.pyenv/versions/3.12.6/lib/python3.12/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 7 leaked semaphore objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '

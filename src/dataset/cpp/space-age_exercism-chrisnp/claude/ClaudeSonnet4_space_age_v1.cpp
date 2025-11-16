@@ -1,0 +1,39 @@
+#include "space_age.h"
+
+enum planet { MERCURY, VENUS, EARTH, MARS, JUPITER, SATURN, URANUS, NEPTUNE };
+
+static constexpr double Orbital_Period_Seconds[] {
+    0.2408467 * 31557600.0, 0.61519726 * 31557600.0, 1.0000000 * 31557600.0, 1.8808158 * 31557600.0, 
+    11.862615 * 31557600.0, 29.447498 * 31557600.0, 84.016846 * 31557600.0, 164.79132 * 31557600.0
+};
+
+[[nodiscard]]
+space_age::space_age::space_age(const uint_fast64_t _seconds): age(_seconds) {}
+
+uint_fast64_t space_age::space_age::seconds() const noexcept {
+    return age;
+}
+float space_age::space_age::on_mercury() const noexcept { 
+    return age / Orbital_Period_Seconds[MERCURY];
+}
+float space_age::space_age::on_venus() const noexcept { 
+    return age / Orbital_Period_Seconds[VENUS];
+}
+float space_age::space_age::on_earth() const noexcept { 
+    return age / Orbital_Period_Seconds[EARTH];
+}
+float space_age::space_age::on_mars() const noexcept { 
+    return age / Orbital_Period_Seconds[MARS];
+}
+float space_age::space_age::on_jupiter() const noexcept { 
+    return age / Orbital_Period_Seconds[JUPITER];
+}
+float space_age::space_age::on_saturn() const noexcept { 
+    return age / Orbital_Period_Seconds[SATURN];
+}
+float space_age::space_age::on_uranus() const noexcept { 
+    return age / Orbital_Period_Seconds[URANUS];
+}
+float space_age::space_age::on_neptune() const noexcept { 
+    return age / Orbital_Period_Seconds[NEPTUNE];
+}

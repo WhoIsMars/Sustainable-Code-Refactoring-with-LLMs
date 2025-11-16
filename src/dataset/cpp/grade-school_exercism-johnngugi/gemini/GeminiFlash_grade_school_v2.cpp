@@ -7,20 +7,20 @@
 using namespace std;
 using namespace grade_school;
 
-map<int, vector<string> > school::roster() const
+map<int, vector<string>> school::roster() const
 {
     return grades;
 }
 
-void school::add(const string& name, int grade_level)
+void school::add(const string& name, int grade)
 {
-    grades[grade_level].push_back(name);
-    sort(grades[grade_level].begin(), grades[grade_level].end());
+    grades[grade].push_back(name);
+    sort(grades[grade].begin(), grades[grade].end());
 }
 
-vector<string> school::grade(int grade_level) const
+vector<string> school::grade(int grade) const
 {
-    auto it = grades.find(grade_level);
+    auto it = grades.find(grade);
     if (it != grades.end()) {
         return it->second;
     } else {

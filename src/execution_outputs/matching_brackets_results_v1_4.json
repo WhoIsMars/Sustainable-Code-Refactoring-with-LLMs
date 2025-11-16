@@ -1,11 +1,18 @@
 {
-  "execution_date": "2025-11-09 15:08:45",
+  "execution_date": "2025-11-15 01:55:09",
   "execution_metadata": {
     "total_tests": 5,
     "successful_tests": 5,
     "execution_time": "00h 00m 00s",
     "cluster": "cluster_matching_brackets",
-    "test_type": "llm_v1"
+    "test_type": "llm_v1",
+    "last_updated": "2025-11-15 01:55:09",
+    "selective_execution": {
+      "languages": [
+        "javascript"
+      ],
+      "timestamp": "2025-11-15 01:55:09"
+    }
   },
   "results": {
     "javascript": [
@@ -15,36 +22,50 @@
         "language": "javascript",
         "LLM_results": [
           {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/matching-brackets_exercism-javascript-ffflorian/gemini/GeminiFlash_matching-brackets_v1.js",
+            "log": "",
+            "execution_time_ms": 510.0,
+            "CPU_usage": 57.0,
+            "RAM_usage": 82864,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 1"
+          }
+        ]
+      },
+      {
+        "id": "javascript_matching-brackets_exercism-javascript-ffflorian_ffflorian",
+        "filename": "matching-brackets.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
             "LLM_type": "openAI",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/matching-brackets_exercism-javascript-ffflorian/openAI/ChatGPT4_matching-brackets_v1.js",
             "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
+            "execution_time_ms": 540.0,
+            "CPU_usage": 56.0,
+            "RAM_usage": 82632,
             "regressionTestPassed": true,
-            "success": null,
+            "success": true,
             "error_message": null
-          },
+          }
+        ]
+      },
+      {
+        "id": "javascript_matching-brackets_exercism-javascript-ffflorian_ffflorian",
+        "filename": "matching-brackets.js",
+        "language": "javascript",
+        "LLM_results": [
           {
             "LLM_type": "claude",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/matching-brackets_exercism-javascript-ffflorian/claude/ClaudeSonnet4_matching-brackets_v1.js",
             "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
+            "execution_time_ms": 560.0,
+            "CPU_usage": 55.0,
+            "RAM_usage": 82904,
             "regressionTestPassed": true,
-            "success": null,
-            "error_message": null
-          },
-          {
-            "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/matching-brackets_exercism-javascript-ffflorian/gemini/GeminiFlash_matching-brackets_v1.js",
-            "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
-            "regressionTestPassed": true,
-            "success": null,
+            "success": true,
             "error_message": null
           }
         ]

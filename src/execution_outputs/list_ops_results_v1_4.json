@@ -1,11 +1,18 @@
 {
-  "execution_date": "2025-10-31 15:46:00",
+  "execution_date": "2025-11-15 01:50:53",
   "execution_metadata": {
     "total_tests": 17,
     "successful_tests": 17,
     "execution_time": "00h 00m 00s",
     "cluster": "cluster_list_ops",
-    "test_type": "llm_v1"
+    "test_type": "llm_v1",
+    "last_updated": "2025-11-15 01:50:53",
+    "selective_execution": {
+      "languages": [
+        "javascript"
+      ],
+      "timestamp": "2025-11-15 01:50:53"
+    }
   },
   "results": {
     "javascript": [
@@ -15,36 +22,68 @@
         "language": "javascript",
         "LLM_results": [
           {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/list-ops_exercism-javascript-ffflorian/gemini/GeminiFlash_list-ops_v1.js",
+            "log": "",
+            "execution_time_ms": 510.0,
+            "CPU_usage": 49.0,
+            "RAM_usage": 80936,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_list-ops_exercism-javascript-ThomasZumsteg_ThomasZumsteg",
+        "filename": "list-ops.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/list-ops_exercism-javascript-ThomasZumsteg/openAI/ChatGPT4_list-ops_v1.js",
+            "log": "",
+            "execution_time_ms": 590.0,
+            "CPU_usage": 40.0,
+            "RAM_usage": 82580,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 1"
+          }
+        ]
+      },
+      {
+        "id": "javascript_list-ops_exercism-javascript-ffflorian_ffflorian",
+        "filename": "list-ops.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
             "LLM_type": "openAI",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/list-ops_exercism-javascript-ffflorian/openAI/ChatGPT4_list-ops_v1.js",
-            "log": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/list-ops_exercism-javascript-ffflorian/openAI/output.log",
-            "execution_time_ms": 450,
-            "CPU_usage": 30.0,
-            "RAM_usage": 81472,
+            "log": "",
+            "execution_time_ms": 570.0000000000001,
+            "CPU_usage": 39.0,
+            "RAM_usage": 81660,
             "regressionTestPassed": true,
-            "success": null,
+            "success": true,
             "error_message": null
-          },
+          }
+        ]
+      },
+      {
+        "id": "javascript_list-ops_exercism-javascript-ffflorian_ffflorian",
+        "filename": "list-ops.js",
+        "language": "javascript",
+        "LLM_results": [
           {
             "LLM_type": "claude",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/list-ops_exercism-javascript-ffflorian/claude/ClaudeSonnet4_list-ops_v1.js",
-            "log": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/list-ops_exercism-javascript-ffflorian/claude/output.log",
-            "execution_time_ms": 300,
-            "CPU_usage": 34.0,
-            "RAM_usage": 81668,
+            "log": "",
+            "execution_time_ms": 550.0,
+            "CPU_usage": 46.0,
+            "RAM_usage": 82868,
             "regressionTestPassed": true,
-            "success": null,
-            "error_message": null
-          },
-          {
-            "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/list-ops_exercism-javascript-ffflorian/gemini/GeminiFlash_list-ops_v1.js",
-            "log": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/list-ops_exercism-javascript-ffflorian/gemini/output.log",
-            "execution_time_ms": 330,
-            "CPU_usage": 42.0,
-            "RAM_usage": 82696,
-            "regressionTestPassed": true,
-            "success": null,
+            "success": true,
             "error_message": null
           }
         ]
@@ -58,9 +97,9 @@
             "LLM_type": "claude",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/list-ops_exercism-javascript-ThomasZumsteg/claude/ClaudeSonnet4_list-ops_v1.js",
             "log": "",
-            "execution_time_ms": 190,
-            "CPU_usage": 5.0,
-            "RAM_usage": 66192,
+            "execution_time_ms": 510.0,
+            "CPU_usage": 66.0,
+            "RAM_usage": 83936,
             "regressionTestPassed": false,
             "success": false,
             "error_message": "Docker exit code: 1"
@@ -76,27 +115,9 @@
             "LLM_type": "gemini",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/list-ops_exercism-javascript-ThomasZumsteg/gemini/GeminiFlash_list-ops_v1.js",
             "log": "",
-            "execution_time_ms": 190,
-            "CPU_usage": 5.0,
-            "RAM_usage": 64852,
-            "regressionTestPassed": false,
-            "success": false,
-            "error_message": "Docker exit code: 1"
-          }
-        ]
-      },
-      {
-        "id": "javascript_list-ops_exercism-javascript-ThomasZumsteg_ThomasZumsteg",
-        "filename": "list-ops.js",
-        "language": "javascript",
-        "LLM_results": [
-          {
-            "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/list-ops_exercism-javascript-ThomasZumsteg/openAI/ChatGPT4_list-ops_v1.js",
-            "log": "",
-            "execution_time_ms": 180,
-            "CPU_usage": 6.0,
-            "RAM_usage": 66344,
+            "execution_time_ms": 490.0,
+            "CPU_usage": 70.0,
+            "RAM_usage": 83576,
             "regressionTestPassed": false,
             "success": false,
             "error_message": "Docker exit code: 1"

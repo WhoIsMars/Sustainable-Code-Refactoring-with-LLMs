@@ -1,11 +1,18 @@
 {
-  "execution_date": "2025-10-28 23:10:47",
+  "execution_date": "2025-11-15 21:42:53",
   "execution_metadata": {
     "total_tests": 54,
     "successful_tests": 48,
     "execution_time": "00h 00m 47s",
     "cluster": "cluster_allergies",
-    "test_type": "llm_v4"
+    "test_type": "llm_v4",
+    "last_updated": "2025-11-15 21:42:53",
+    "selective_execution": {
+      "languages": [
+        "javascript"
+      ],
+      "timestamp": "2025-11-15 21:42:53"
+    }
   },
   "results": {
     "typescript": [
@@ -233,15 +240,33 @@
         "language": "javascript",
         "LLM_results": [
           {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/allergies_exercism-javascript-ThomasZumsteg/gemini/GeminiFlash_allergies_v4.js",
+            "log": "",
+            "execution_time_ms": 1890.0000000000002,
+            "CPU_usage": 6.0,
+            "RAM_usage": 82876,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_allergies_exercism-javascript-ThomasZumsteg_ThomasZumsteg",
+        "filename": "allergies.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
             "LLM_type": "claude",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/allergies_exercism-javascript-ThomasZumsteg/claude/ClaudeSonnet4_allergies_v4.js",
             "log": "",
-            "execution_time_ms": 180,
-            "CPU_usage": 28.0,
-            "RAM_usage": 66692,
-            "regressionTestPassed": false,
-            "success": false,
-            "error_message": "Docker exit code: 1"
+            "execution_time_ms": 2190.0,
+            "CPU_usage": 5.0,
+            "RAM_usage": 86244,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
           }
         ]
       },
@@ -254,30 +279,12 @@
             "LLM_type": "openAI",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/allergies_exercism-javascript-ThomasZumsteg/openAI/ChatGPT4_allergies_v4.js",
             "log": "",
-            "execution_time_ms": 180,
-            "CPU_usage": 31.0,
-            "RAM_usage": 66528,
-            "regressionTestPassed": false,
-            "success": false,
-            "error_message": "Docker exit code: 1"
-          }
-        ]
-      },
-      {
-        "id": "javascript_allergies_exercism-javascript-ThomasZumsteg_ThomasZumsteg",
-        "filename": "allergies.js",
-        "language": "javascript",
-        "LLM_results": [
-          {
-            "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/allergies_exercism-javascript-ThomasZumsteg/gemini/GeminiFlash_allergies_v4.js",
-            "log": "",
-            "execution_time_ms": 190,
-            "CPU_usage": 37.0,
-            "RAM_usage": 66004,
-            "regressionTestPassed": false,
-            "success": false,
-            "error_message": "Docker exit code: 1"
+            "execution_time_ms": 2080.0,
+            "CPU_usage": 5.0,
+            "RAM_usage": 81404,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
           }
         ]
       }

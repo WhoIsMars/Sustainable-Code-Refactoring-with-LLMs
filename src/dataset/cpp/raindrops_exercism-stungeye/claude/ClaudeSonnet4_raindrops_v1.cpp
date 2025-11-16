@@ -1,0 +1,23 @@
+#include "raindrops.h"
+
+namespace raindrops {
+
+	std::string convert(int number) {
+		std::string raindrops;
+		raindrops.reserve(15); // Reserve space for "PlingPlangPlong"
+
+		if (number % 3 == 0) {
+			raindrops += "Pling";
+		}
+
+		if (number % 5 == 0) {
+			raindrops += "Plang";
+		}
+
+		if (number % 7 == 0) {
+			raindrops += "Plong";
+		}
+
+		return raindrops.empty() ? std::to_string(number) : raindrops;
+	}
+} // namespace raindrops

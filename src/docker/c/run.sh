@@ -55,7 +55,12 @@ if [ "$BUILD_SYSTEM" = "cmake" ]; then
             if [ -f "CMakeLists.txt" ] && [ -d "src" ] && [ -d "test" ]; then
                 echo "🔧 Fixing CMakeLists.txt paths for src/ and test/ subdirectories..." | tee -a "$LOG_FILE"
                 sed -i 's|\${file}\.c|src/\${file}.c|g; s|\${file}\.h|src/\${file}.h|g; s|\${file}_test\.c|test/\${file}_test.c|g' CMakeLists.txt
-                sed -i '/^project(/a include_directories(src)' CMakeLists.txt
+
+                # Add include directories for src/ and test/ (CRITICAL for finding headers)
+                if ! grep -q "include_directories(src)" CMakeLists.txt 2>/dev/null; then
+                    sed -i '/^project(/a include_directories(src)\ninclude_directories(test)\ninclude_directories(${CMAKE_SOURCE_DIR})' CMakeLists.txt
+                    echo "✓ Added include_directories for src/, test/, and source root" | tee -a "$LOG_FILE"
+                fi
             fi
         else
             echo "⚠️  EXERCISM_EXERCISE_NAME not set, using current directory" | tee -a "$LOG_FILE"
@@ -187,4 +192,8 @@ if python3 /usr/local/bin/time_wrapper.py ./tests.out >> "$LOG_FILE" 2>&1; then
     echo "✅ Test eseguiti con successo" | tee -a "$LOG_FILE"
 else
     EXIT_CODE=$?
-    echo "❌ Test falliti (exit code: $EXIT_CODE)" | tee -
+    echo "❌ Test falliti (exit code: $EXIT_CODE)" | tee -a "$LOG_FILE"
+    exit $EXIT_CODE
+fi
+
+echo "🎉 Tutti i controlli completati" | tee -a "$LOG_FILE"

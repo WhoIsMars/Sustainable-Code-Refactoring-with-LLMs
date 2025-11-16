@@ -154,6 +154,7 @@ class EnergyCarbonStatsVisualizator:
         categories = []
         values_list = []
         colors = []
+        mean_improvements = []  # ENHANCED FOR FIG 4.4: Track mean improvements
 
         for item in plot_data:
             category = item["category"]
@@ -162,8 +163,20 @@ class EnergyCarbonStatsVisualizator:
             if not values:
                 continue
 
+            # Keep original values for stats calculation, but filter for plotting
+            values_array = np.array(values)
+            filtered_values = values_array[values_array <= 1700].tolist()
+
+            # If all values filtered out, keep at least median for visualization
+            if not filtered_values and values:
+                filtered_values = [np.median(values_array)]
+
             categories.append(category)
-            values_list.append(values)
+            values_list.append(filtered_values)
+
+            # Calculate mean improvement for annotation (using ORIGINAL unfiltered data)
+            improvement_text = self._get_improvement_annotation(category, metric='energy')
+            mean_improvements.append(improvement_text)
 
             # Assign color
             if "Base" in category:
@@ -178,42 +191,55 @@ class EnergyCarbonStatsVisualizator:
                 colors.append("#95a5a6")  # Gray for LLM (Avg)
 
         # Create figure
-        fig, ax = plt.subplots(figsize=(16, 8))
+        fig, ax = plt.subplots(figsize=(18, 9))
 
         # Create box plot
         bp = ax.boxplot(values_list, labels=categories, patch_artist=True,
                         showmeans=True, meanline=True,
                         boxprops=dict(linewidth=1.5),
                         medianprops=dict(color='black', linewidth=2),
-                        meanprops=dict(color='red', linewidth=2, linestyle='--'))
+                        meanprops=dict(color='red', linewidth=2, linestyle='--'),
+                        flierprops=dict(marker='o', markerfacecolor='gray', markersize=3, alpha=0.3))
 
         # Color boxes
         for patch, color in zip(bp['boxes'], colors):
             patch.set_facecolor(color)
             patch.set_alpha(0.7)
 
-        # Add improvement annotations
-        for i, category in enumerate(categories):
-            if i >= 2:  # Skip "Base Code (Avg)" and "LLM (Avg)"
-                improvement = self._get_improvement_annotation(category, metric='energy')
-                if improvement:
-                    # Position annotation at Q3 (75th percentile) for better visibility
-                    # This positions it above the box but below outliers
-                    q3 = np.percentile(values_list[i], 75) if values_list[i] else 0
-                    median = np.median(values_list[i]) if values_list[i] else 0
-                    # Position slightly above Q3
-                    y_pos = q3 + (q3 - median) * 0.5
-                    ax.text(i + 1, y_pos, improvement,
-                           ha='center', va='bottom', fontsize=9,
-                           color='green' if '-' in improvement else 'red',
-                           fontweight='bold',
-                           bbox=dict(boxstyle='round,pad=0.3', facecolor='white', alpha=0.7, edgecolor='none'))
+        # ENHANCED FOR FIG 4.4: Add mean improvement % annotations with better visibility
+        for i, (category, improvement_text) in enumerate(zip(categories, mean_improvements)):
+            if i >= 2 and improvement_text:  # Skip "Base Code (Avg)" and "LLM (Avg)"
+                # Determine color based on improvement semantics
+                # Negative improvement = GOOD (reduction in energy)
+                # Positive improvement = BAD (increase in energy)
+                is_negative = '-' in improvement_text
+                text_color = 'green' if is_negative else 'red'
+                edge_color = 'darkgreen' if is_negative else 'darkred'
+
+                # Position annotation above the box
+                # Get max value in the box (Q3 or max non-outlier)
+                if values_list[i]:
+                    q3 = np.percentile(values_list[i], 75)
+                    max_val = np.max(values_list[i])
+                    # Position above Q3
+                    y_pos = q3 + (max_val - q3) * 0.3
+                else:
+                    y_pos = 0
+
+                # ENHANCED: Larger, bolder annotations
+                ax.text(i + 1, y_pos, improvement_text,
+                       ha='center', va='bottom', fontsize=10, fontweight='bold',
+                       color=text_color,
+                       bbox=dict(boxstyle='round,pad=0.4', facecolor='white',
+                                alpha=0.95, edgecolor=edge_color, linewidth=2))
 
         # Labels and title
         ax.set_xlabel('Category', fontsize=12, fontweight='bold')
         ax.set_ylabel('Energy Consumption (Joules)', fontsize=12, fontweight='bold')
+        # ENHANCED FOR FIG 4.4: Add note about outlier filtering
         ax.set_title('Energy Distribution: Base Code vs LLM-Generated Code\n'
-                    '(By Model and Prompt Version)', fontsize=14, fontweight='bold')
+                    '(By Model and Prompt Version',
+                    fontsize=14, fontweight='bold')
 
         # Rotate x-axis labels for readability
         plt.xticks(rotation=45, ha='right')

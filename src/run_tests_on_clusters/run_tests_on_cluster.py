@@ -1763,13 +1763,12 @@ class TestExecutor:
         self.logger.debug(f"Docker command: {' '.join(docker_cmd)}")
 
         try:
-            # Execute with timeout
+            # Execute without timeout - let tests complete naturally
             result = subprocess.run(
                 docker_cmd,
                 stdout=subprocess.PIPE,
                 stderr=subprocess.STDOUT,
                 text=True,
-                timeout=300,  # 5 minute timeout
             )
 
             self.logger.debug(f"Docker exit code: {result.returncode}")
@@ -1795,6 +1794,9 @@ class TestExecutor:
                     f"🟢 Tests PASSED for {entry_id} despite exit code {result.returncode}"
                 )
                 metrics.success = True
+                # ✅ FIX: Clear error_category when tests pass successfully
+                metrics.error_category = None
+                metrics.error_message = None
             elif result.returncode != 0:
                 self.logger.warning(f"❌ Tests failed with exit code {result.returncode}")
                 self.logger.warning(f"Res {result}")

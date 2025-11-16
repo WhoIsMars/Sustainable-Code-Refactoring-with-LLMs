@@ -1,0 +1,25 @@
+#include "triangle.h"
+
+namespace triangle {
+  flavor kind(double a, double b, double c) {
+    if ((a <= 0) || (b <= 0) || (c <= 0)) {
+      throw std::domain_error("All triangle sides must have a length greater than zero.");
+    }
+
+    if ((a + b <= c) || (a + c <= b) || (b + c <= a)) { 
+      throw std::domain_error("Combined length of any two triangle sides much be greater or equal to length of third side.");
+    }
+
+    const bool ab_equal = (a == b);
+    const bool bc_equal = (b == c);
+    const bool ac_equal = (a == c);
+
+    if (ab_equal && bc_equal) {
+      return flavor::equilateral;
+    } else if (ab_equal || bc_equal || ac_equal) {
+      return flavor::isosceles;
+    }
+
+    return flavor::scalene;
+  }
+}  // namespace triangle

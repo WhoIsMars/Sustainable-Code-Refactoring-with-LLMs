@@ -1,11 +1,18 @@
 {
-  "execution_date": "2025-10-28 22:09:38",
+  "execution_date": "2025-11-15 11:46:01",
   "execution_metadata": {
     "total_tests": 4,
     "successful_tests": 4,
     "execution_time": "00h 00m 00s",
     "cluster": "cluster_rational_numbers",
-    "test_type": "llm_v2"
+    "test_type": "llm_v2",
+    "last_updated": "2025-11-15 11:46:01",
+    "selective_execution": {
+      "languages": [
+        "javascript"
+      ],
+      "timestamp": "2025-11-15 11:46:01"
+    }
   },
   "results": {
     "javascript": [
@@ -15,37 +22,51 @@
         "language": "javascript",
         "LLM_results": [
           {
-            "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/rational-numbers_exercism-javascript-ThomasZumsteg/openAI/ChatGPT4_rational-numbers_v2.js",
-            "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
-            "regressionTestPassed": true,
-            "success": null,
-            "error_message": null
-          },
-          {
             "LLM_type": "claude",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/rational-numbers_exercism-javascript-ThomasZumsteg/claude/ClaudeSonnet4_rational-numbers_v2.js",
             "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
-            "regressionTestPassed": true,
-            "success": null,
-            "error_message": null
-          },
+            "execution_time_ms": 640.0,
+            "CPU_usage": 21.0,
+            "RAM_usage": 81800,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 1"
+          }
+        ]
+      },
+      {
+        "id": "javascript_rational-numbers_exercism-javascript-ThomasZumsteg_ThomasZumsteg",
+        "filename": "rational-numbers.js",
+        "language": "javascript",
+        "LLM_results": [
           {
             "LLM_type": "gemini",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/rational-numbers_exercism-javascript-ThomasZumsteg/gemini/GeminiFlash_rational-numbers_v2.js",
             "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
-            "regressionTestPassed": true,
-            "success": null,
-            "error_message": null
+            "execution_time_ms": 640.0,
+            "CPU_usage": 20.0,
+            "RAM_usage": 82464,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 1"
+          }
+        ]
+      },
+      {
+        "id": "javascript_rational-numbers_exercism-javascript-ThomasZumsteg_ThomasZumsteg",
+        "filename": "rational-numbers.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/rational-numbers_exercism-javascript-ThomasZumsteg/openAI/ChatGPT4_rational-numbers_v2.js",
+            "log": "",
+            "execution_time_ms": 620.0,
+            "CPU_usage": 19.0,
+            "RAM_usage": 83816,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 1"
           }
         ]
       }

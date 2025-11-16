@@ -630,31 +630,68 @@ class ExecMetricStatsVisualizator:
                     values.append(llm_mean)
                     improvements_text.append(improvement)
 
-                    # Color based on improvement
-                    # NEW SEMANTIC: Positive = improvement for ALL metrics (formula inverted in calculator)
-                    if improvement is not None:
-                        is_good = improvement >= 0
+                    # ENHANCED FOR FIG 4.3: Color with gradient based on prompt version
+                    # For pass_rate, use gradient colors showing prompt version progression
+                    if metric == "pass_rate":
+                        # Extract version number (v1, v2, v3, v4)
+                        version_key = parts[1] if len(parts) > 1 else "v1"
 
-                        # Use model colors but adjust alpha based on good/bad
-                        if 'openai' in combo_key:
-                            base_color = '#3498db'
-                        elif 'claude' in combo_key:
-                            base_color = '#9b59b6'
-                        elif 'gemini' in combo_key:
-                            base_color = '#e74c3c'
+                        # Model-specific gradient palettes
+                        model_gradients = {
+                            'openai': {
+                                'v1': '#e3f2fd',  # Very light blue
+                                'v2': '#90caf9',  # Light blue
+                                'v3': '#42a5f5',  # Medium blue
+                                'v4': '#1976d2'   # Dark blue
+                            },
+                            'gemini': {
+                                'v1': '#ffebee',  # Very light red
+                                'v2': '#ef9a9a',  # Light red
+                                'v3': '#ef5350',  # Medium red
+                                'v4': '#c62828'   # Dark red
+                            },
+                            'claude': {
+                                'v1': '#f3e5f5',  # Very light purple
+                                'v2': '#ba68c8',  # Light purple
+                                'v3': '#9c27b0',  # Medium purple
+                                'v4': '#6a1b9a'   # Dark purple
+                            }
+                        }
+
+                        model_key = parts[0].lower()
+                        if model_key in model_gradients and version_key in model_gradients[model_key]:
+                            colors_list.append(model_gradients[model_key][version_key])
                         else:
-                            base_color = '#95a5a6'
-
-                        colors_list.append(base_color)
+                            colors_list.append('#95a5a6')
                     else:
-                        colors_list.append('#95a5a6')
+                        # Original color logic for other metrics
+                        # Color based on improvement
+                        # NEW SEMANTIC: Positive = improvement for ALL metrics (formula inverted in calculator)
+                        if improvement is not None:
+                            is_good = improvement >= 0
+
+                            # Use model colors but adjust alpha based on good/bad
+                            if 'openai' in combo_key:
+                                base_color = '#3498db'
+                            elif 'claude' in combo_key:
+                                base_color = '#9b59b6'
+                            elif 'gemini' in combo_key:
+                                base_color = '#e74c3c'
+                            else:
+                                base_color = '#95a5a6'
+
+                            colors_list.append(base_color)
+                        else:
+                            colors_list.append('#95a5a6')
 
             if len(values) <= 1:
                 plt.close(fig)
                 return
 
             x_pos = np.arange(len(labels))
-            bars = ax.bar(x_pos, values, alpha=0.8, color=colors_list, edgecolor='black', linewidth=1.2)
+            # ENHANCED FOR FIG 4.3: Increase bar width for pass_rate for better readability
+            bar_width = 0.85 if metric == "pass_rate" else 0.8
+            bars = ax.bar(x_pos, values, width=bar_width, alpha=0.8, color=colors_list, edgecolor='black', linewidth=1.5)
 
             # Reference line at base mean
             ax.axhline(y=base_mean, color='#2ecc71', linestyle='--', linewidth=2, alpha=0.7, label=f'Base Mean: {base_mean:.2f}')
@@ -677,13 +714,26 @@ class ExecMetricStatsVisualizator:
             _y_range = max(values) - min(values) if values else 1
             max_val = max(values) if values else 1
 
-            # Use adaptive offsets based on scale
-            value_offset = max_val * 0.01  # 1% of max value for value text
-            improvement_offset = max_val * 0.06  # 6% of max value for improvement text
+            # ENHANCED FOR PASS_RATE: Larger annotations for better visibility
+            if metric == "pass_rate":
+                value_offset = max_val * 0.005  # 0.5% for value text
+                improvement_offset = max_val * 0.08  # 8% for improvement text (INCREASED)
+                value_fontsize = 8  # Slightly larger
+                improvement_fontsize = 9  # MUCH larger for degradation visibility
+                improvement_padding = 0.25  # More padding
+                improvement_linewidth = 2.0  # Thicker border
+            else:
+                value_offset = max_val * 0.01
+                improvement_offset = max_val * 0.06
+                value_fontsize = 7
+                improvement_fontsize = 6.5
+                improvement_padding = 0.15
+                improvement_linewidth = 1.2
 
             # Adjust plot limits to accommodate text
             current_ylim = ax.get_ylim()
-            ax.set_ylim(current_ylim[0], max_val * 1.15)  # Add 15% headroom
+            headroom = 1.20 if metric == "pass_rate" else 1.15  # More space for pass_rate
+            ax.set_ylim(current_ylim[0], max_val * headroom)
 
             # Add value labels and improvement percentages
             for i, (bar, val, improvement) in enumerate(zip(bars, values, improvements_text)):
@@ -693,7 +743,7 @@ class ExecMetricStatsVisualizator:
                 ax.text(bar.get_x() + bar.get_width()/2., height + value_offset,
                        f'{val:.1f}',
                        ha='center', va='bottom',
-                       fontsize=7, fontweight='bold')
+                       fontsize=value_fontsize, fontweight='bold')
 
                 # Improvement percentage (only for LLM combinations)
                 if improvement is not None:
@@ -703,14 +753,33 @@ class ExecMetricStatsVisualizator:
                     color = 'green' if is_good else 'red'
                     sign = '+' if improvement >= 0 else ''
 
+                    # ENHANCED FOR PASS_RATE: Much more visible degradation annotations
                     # Place improvement text above the value label with more spacing
                     ax.text(bar.get_x() + bar.get_width()/2., height + improvement_offset,
                            f'{sign}{improvement:.1f}%',
                            ha='center', va='bottom',
-                           fontsize=6.5, fontweight='bold', color=color,
-                           bbox=dict(boxstyle='round,pad=0.15', facecolor='white', edgecolor=color, alpha=0.9, linewidth=1.2))
+                           fontsize=improvement_fontsize, fontweight='bold', color=color,
+                           bbox=dict(boxstyle='round,pad=' + str(improvement_padding),
+                                   facecolor='white', edgecolor=color, alpha=0.95,
+                                   linewidth=improvement_linewidth))
 
-            ax.legend(loc='upper left', fontsize=11)
+            # ENHANCED FOR FIG 4.3: Add legend with gradient explanation for pass_rate
+            if metric == "pass_rate":
+                from matplotlib.patches import Patch
+                legend_elements = [
+                    Patch(facecolor='#2ecc71', alpha=0.8, label='Base Code (100% pass rate)'),
+                    Patch(facecolor='#e3f2fd', alpha=0.8, label='OpenAI - v1 (lightest)'),
+                    Patch(facecolor='#1976d2', alpha=0.8, label='OpenAI - v4 (darkest)'),
+                    Patch(facecolor='#ffebee', alpha=0.8, label='Gemini - v1 (lightest)'),
+                    Patch(facecolor='#c62828', alpha=0.8, label='Gemini - v4 (darkest)'),
+                    Patch(facecolor='#f3e5f5', alpha=0.8, label='Claude - v1 (lightest)'),
+                    Patch(facecolor='#6a1b9a', alpha=0.8, label='Claude - v4 (darkest)'),
+                ]
+                ax.legend(handles=legend_elements, loc='upper right', fontsize=9, ncol=2,
+                         title="Color Gradient: lighter → darker = v1 → v4", title_fontsize=10)
+            else:
+                ax.legend(loc='upper left', fontsize=11)
+
             plt.tight_layout()
             filename = f"mean_comparison_{metric}_barplot.png"
             plt.savefig(output_dir / filename, dpi=300, bbox_inches='tight')
@@ -884,6 +953,38 @@ class ExecMetricStatsVisualizator:
         # Linee di riferimento
         ax.axvline(0, color='gray', linestyle='--', alpha=0.5, linewidth=2, label='No energy change')
         ax.axhline(100, color='green', linestyle='--', alpha=0.5, linewidth=2, label='100% pass rate')
+
+        # ENHANCED FOR FIG 4.6: Add trend line (diagonal showing average behavior)
+        # Calculate linear regression or LOWESS trend
+        try:
+            from scipy import stats
+            # Extract x and y data
+            x_data = df['energy_improvement'].values
+            y_data = df['pass_rate'].values
+
+            # Linear regression
+            slope, intercept, r_value, p_value, std_err = stats.linregress(x_data, y_data)
+
+            # Create trend line
+            x_trend = np.linspace(x_data.min(), x_data.max(), 100)
+            y_trend = slope * x_trend + intercept
+
+            # Plot trend line
+            ax.plot(x_trend, y_trend, 'r--', linewidth=2.5, alpha=0.7,
+                   label=f'Average Trend (R²={r_value**2:.3f})')
+
+            self.logger.info(f"Trend line added: slope={slope:.4f}, R²={r_value**2:.3f}")
+        except ImportError:
+            # Fallback: simple mean line if scipy not available
+            mean_energy = df['energy_improvement'].mean()
+            mean_pass_rate = df['pass_rate'].mean()
+            ax.plot([x_data.min(), x_data.max()],
+                   [mean_pass_rate, mean_pass_rate],
+                   'r--', linewidth=2.5, alpha=0.7,
+                   label=f'Average Pass Rate ({mean_pass_rate:.1f}%)')
+            self.logger.warning("scipy not available, using simple mean line")
+        except Exception as e:
+            self.logger.warning(f"Could not add trend line: {e}")
 
         # Etichette e titolo
         ax.set_xlabel('Energy Improvement (%)\n(+ = reduction, - = increase)', fontsize=14, fontweight='bold')

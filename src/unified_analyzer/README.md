@@ -625,4 +625,4 @@ Part of the Sustainable Code Refactoring with LLMs research project.
 
 **Version:** 2.0.0  
 **Last Updated:** 2025-10-28  
-**Maintainer:** [Your Name]
+**Maintainer:** [Gabriele Marsili]

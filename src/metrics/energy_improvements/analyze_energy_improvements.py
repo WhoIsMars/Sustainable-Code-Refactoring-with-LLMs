@@ -637,6 +637,38 @@ class EnergyImprovementsAnalyzer:
         fig, axes = plt.subplots(2, 2, figsize=(15, 10))
         axes = axes.flatten()
 
+        # ENHANCED FOR FIG 4.7: Collect all data first to calculate global y-limits for CPU and RAM
+        metric_data = {metric: [] for metric in self.metrics}
+
+        for metric in self.metrics:
+            for key, records in self.valid_improvements.items():
+                model, prompt, language, rec_metric = key
+                if rec_metric != metric:
+                    continue
+
+                for record in records:
+                    metric_data[metric].append(record['improvement_percentage'])
+
+        # Calculate synchronized y-limits for CPU_usage and RAM_usage to ensure 0 is at same height
+        cpu_data = metric_data.get('CPU_usage', [])
+        ram_data = metric_data.get('RAM_usage', [])
+
+        if cpu_data and ram_data:
+            # Combine CPU and RAM data to find global range
+            combined_data = cpu_data + ram_data
+            y_min_combined = np.percentile(combined_data, 1)
+            y_max_combined = np.percentile(combined_data, 99)
+
+            # Force include 0
+            y_min_combined = min(y_min_combined, 0)
+            y_max_combined = max(y_max_combined, 0)
+
+            # Add padding
+            padding = (y_max_combined - y_min_combined) * 0.1
+            global_ylim_cpu_ram = (y_min_combined - padding, y_max_combined + padding)
+        else:
+            global_ylim_cpu_ram = (-50, 50)
+
         for idx, metric in enumerate(self.metrics):
             ax = axes[idx]
 
@@ -685,10 +717,15 @@ class EnergyImprovementsAnalyzer:
                     patch.set_facecolor(color)
                     patch.set_alpha(0.7)
 
-                ax.axhline(y=0, color='red', linestyle='--', linewidth=1, alpha=0.7)
-                ax.set_title(f'{metric.replace("_", " ").title()}')
-                ax.set_xlabel('Prompt Version')
-                ax.set_ylabel('Improvement %\n(+ = better)')
+                # ENHANCED FOR FIG 4.7: Apply synchronized y-limits for CPU and RAM
+                if metric in ['CPU_usage', 'RAM_usage']:
+                    ax.set_ylim(global_ylim_cpu_ram)
+
+                # Make the y=0 line more prominent
+                ax.axhline(y=0, color='black', linestyle='-', linewidth=2, alpha=0.8, zorder=10)
+                ax.set_title(f'{metric.replace("_", " ").title()}', fontweight='bold')
+                ax.set_xlabel('Prompt Version', fontweight='bold')
+                ax.set_ylabel('Improvement %\n(+ = better)', fontweight='bold')
                 ax.grid(True, alpha=0.3)
 
         plt.tight_layout()

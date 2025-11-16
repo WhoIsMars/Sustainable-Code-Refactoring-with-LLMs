@@ -1,0 +1,20 @@
+#include <unordered_set>
+#include <cctype>
+#include "isogram.h"
+
+bool isogram::is_isogram(std::string const& text_to_test)
+{
+    std::unordered_set<char> seen_chars;
+    seen_chars.reserve(26);
+    
+    for (char c : text_to_test) {
+        if (std::isalpha(c)) {
+            char lower_c = std::tolower(c);
+            if (!seen_chars.insert(lower_c).second) {
+                return false;
+            }
+        }
+    }
+    
+    return true;
+}

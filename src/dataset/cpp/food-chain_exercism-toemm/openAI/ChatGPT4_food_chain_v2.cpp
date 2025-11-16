@@ -1,0 +1,64 @@
+#include "food_chain.h"
+
+#include <vector>
+#include <string>
+
+namespace food_chain {
+
+using namespace std;
+
+const vector<pair<string, pair<string, string>>> lyrics{
+    {"fly", {"I know an old lady who swallowed a fly.\n", "I don't know why she swallowed the fly. Perhaps she'll die.\n"}},
+    {"spider", {"I know an old lady who swallowed a spider.\n", "It wriggled and jiggled and tickled inside her.\n"}},
+    {"bird", {"I know an old lady who swallowed a bird.\n", "How absurd to swallow a bird!\n"}},
+    {"cat", {"I know an old lady who swallowed a cat.\n", "Imagine that, to swallow a cat!\n"}},
+    {"dog", {"I know an old lady who swallowed a dog.\n", "What a hog, to swallow a dog!\n"}},
+    {"goat", {"I know an old lady who swallowed a goat.\n", "Just opened her throat and swallowed a goat!\n"}},
+    {"cow", {"I know an old lady who swallowed a cow.\n", "I don't know how she swallowed a cow!\n"}},
+    {"horse", {"I know an old lady who swallowed a horse.\n", "She's dead, of course!\n"}}
+};
+
+const string alt_bird = " that wriggled and jiggled and tickled inside her.\n";
+
+string verse(int num) {
+    string out;
+
+    if (num == 8) {
+        return lyrics[7].second.first + lyrics[7].second.second;
+    }
+
+    out.reserve(500); // Reserve memory to avoid multiple reallocations
+    out += lyrics[num - 1].second.first + lyrics[num - 1].second.second;
+
+    for (int j = num - 1; j > 0; --j) {
+        out += "She swallowed the " + lyrics[j].first + " to catch the " + lyrics[j - 1].first;
+        if (j == 2) {
+            out += alt_bird;
+        } else {
+            out += ".\n";
+        }
+    }
+
+    out += lyrics[0].second.second;
+    return out;
+}
+
+string verses(int from, int to) {
+    string out;
+    out.reserve(1500); // Reserve memory for concatenated verses
+
+    for (int i = from; i <= to; ++i) {
+        out += verse(i);
+        if (i != to) {
+            out += "\n";
+        }
+    }
+
+    return out;
+}
+
+string sing() {
+    return verses(1, 8);
+}
+
+}  // namespace food_chain

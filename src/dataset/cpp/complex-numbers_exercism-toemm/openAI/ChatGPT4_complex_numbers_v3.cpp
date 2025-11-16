@@ -1,0 +1,86 @@
+#include "complex_numbers.h"
+
+#include <cmath>
+#include <iostream>
+
+namespace complex_numbers {
+
+    Complex::Complex(const double real, const double imag) noexcept : _real(real), _imag(imag) {}
+
+    double Complex::real() const noexcept {
+        return _real;
+    }
+
+    double Complex::imag() const noexcept {
+        return _imag;
+    }
+
+    double Complex::abs() const noexcept {
+        return std::hypot(_real, _imag);
+    }
+
+    Complex Complex::conj() const noexcept {
+        return {_real, -_imag};
+    }
+
+    Complex Complex::exp() const noexcept {
+        const double A = std::exp(_real);
+        double cos_val, sin_val;
+        sincos(_imag, &sin_val, &cos_val);
+        return {A * cos_val, A * sin_val};
+    }
+
+    Complex Complex::operator*(const Complex& rhs) const noexcept {
+        return {_real * rhs._real - _imag * rhs._imag,
+                _imag * rhs._real + _real * rhs._imag};
+    }
+
+    Complex Complex::operator*(const double& rhs) const noexcept {
+        return {_real * rhs, _imag * rhs};
+    }
+
+    Complex Complex::operator+(const Complex& rhs) const noexcept {
+        return {_real + rhs._real, _imag + rhs._imag};
+    }
+
+    Complex Complex::operator+(const double& rhs) const noexcept {
+        return {_real + rhs, _imag};
+    }
+
+    Complex Complex::operator-(const Complex& rhs) const noexcept {
+        return {_real - rhs._real, _imag - rhs._imag};
+    }
+
+    Complex Complex::operator-(const double& rhs) const noexcept {
+        return {_real - rhs, _imag};
+    }
+
+    Complex Complex::operator/(const Complex& rhs) const noexcept {
+        const double denom = rhs._real * rhs._real + rhs._imag * rhs._imag;
+        return {(_real * rhs._real + _imag * rhs._imag) / denom,
+                (_imag * rhs._real - _real * rhs._imag) / denom};
+    }
+
+    Complex Complex::operator/(const double& rhs) const noexcept {
+        const double inv_rhs = 1.0 / rhs;
+        return {_real * inv_rhs, _imag * inv_rhs};
+    }
+
+    Complex operator-(const double& lhs, const Complex& rhs) noexcept {
+        return {lhs - rhs.real(), -rhs.imag()};
+    }
+
+    Complex operator*(const double& lhs, const Complex& rhs) noexcept {
+        return {lhs * rhs.real(), lhs * rhs.imag()};
+    }
+
+    Complex operator+(const double& lhs, const Complex& rhs) noexcept {
+        return {lhs + rhs.real(), rhs.imag()};
+    }
+
+    Complex operator/(const double& lhs, const Complex& rhs) noexcept {
+        const double denom = rhs.real() * rhs.real() + rhs.imag() * rhs.imag();
+        return {(lhs * rhs.real()) / denom, (-lhs * rhs.imag()) / denom};
+    }
+
+}  // namespace complex_numbers
