@@ -1763,13 +1763,20 @@ class TestExecutor:
         self.logger.debug(f"Docker command: {' '.join(docker_cmd)}")
 
         try:
-            # Execute without timeout - let tests complete naturally
+            # Execute with timeout to prevent hanging
+            self.logger.info(f"🚀 Starting Docker execution for {entry_id}...")
+            start_time = time.time()
+
             result = subprocess.run(
                 docker_cmd,
                 stdout=subprocess.PIPE,
                 stderr=subprocess.STDOUT,
                 text=True,
+                timeout=300,  # 5 minute timeout per test
             )
+
+            elapsed = time.time() - start_time
+            self.logger.info(f"✅ Docker completed in {elapsed:.1f}s (exit code: {result.returncode})")
 
             self.logger.debug(f"Docker exit code: {result.returncode}")
             if debug_mode:
@@ -2141,7 +2148,7 @@ class ClusterRunner:
             )
 
         self.logger.info(
-            f"\nCluster {cluster_path.stem} version : {prompt_version} run# : {run_number}\nCluster path: {cluster_path}\n{len(base_results)} base entries already executed | {len(cluster_base_not_completed_entries_ids)} to execute\n{len(llm_results)} LLM entries already executed | {len(cluster_LLM_not_completed_entries_ids)} to execute\n\n"
+            f"\nCluster {cluster_path.stem} version : {prompt_version} run# : {run_number}\nCluster path: {cluster_path}\n{len(base_results)} base entries already executed | {len(cluster_base_not_completed_entries_ids)} to execute\n{len(llm_results)} LLM entries already executed | {len(cluster_LLM_not_completed_entries_ids)} to execute\nLLM (entry_id, llm_type) combinations completed: {len(cluster_LLM_completed_combinations)}\n\n"
         )
 
         # Log selective execution mode if active
@@ -2152,6 +2159,15 @@ class ClusterRunner:
             )
 
         # add base and llm task (entries to run)
+        # Count expected combinations for better logging
+        expected_combinations = 0
+        for language, entries in cluster_data.items():
+            for entry in entries:
+                if "LLMs" in entry:
+                    for llm in entry["LLMs"]:
+                        if f"_v{prompt_version}" in llm.get("filename", ""):
+                            expected_combinations += 1
+
         for language, entries in cluster_data.items():
             for entry in entries:
                 # Apply entry_ids_filter if provided (selective execution)
@@ -2203,9 +2219,12 @@ class ClusterRunner:
                                 )
 
         total_tasks = len(base_tasks) + len(llm_tasks)
+        missing_combinations = expected_combinations - len(cluster_LLM_completed_combinations)
         self.logger.info(
             f"Starting {total_tasks} tests for cluster {cluster_path.stem} "
-            f"(Base: {len(base_tasks)}, LLM: {len(llm_tasks)})"
+            f"(Base: {len(base_tasks)}, LLM: {len(llm_tasks)})\n"
+            f"Expected LLM combinations: {expected_combinations}, Completed: {len(cluster_LLM_completed_combinations)}, "
+            f"Missing: {missing_combinations}"
         )
 
         if (
@@ -3359,14 +3378,45 @@ def main():
                             r for r in llm_results if r.language in selected_languages
                         ]
 
+                        # CRITICAL FIX: Separate existing results from newly executed ones
+                        # Existing results were loaded from file, new ones were just executed
+                        # We need to identify which (entry_id, llm_type) combinations are NEW
+                        existing_combos = set()
+                        for _lang, entries in existing_data.get('results', {}).items():
+                            if _lang in selected_languages:
+                                for entry in entries:
+                                    for llm_result in entry.get('LLM_results', []):
+                                        llm_type = llm_result.get('LLM_type', 'unknown')
+                                        existing_combos.add((entry['id'], llm_type))
+
+                        # Only keep results that are NOT already in existing_data
+                        # These are the truly new execution results
+                        new_only_results = []
+                        for result in filtered_llm_results:
+                            result_dict = result.to_json() if hasattr(result, 'to_json') else result
+                            entry_id = result_dict.get('id') if isinstance(result_dict, dict) else result.id
+                            llm_type = 'unknown'
+                            if isinstance(result_dict, dict) and result_dict.get('LLM_results'):
+                                llm_type = result_dict['LLM_results'][0].get('LLM_type', 'unknown')
+                            elif hasattr(result, 'LLM_results') and result.LLM_results:
+                                llm_type = result.LLM_results[0].LLM_type if hasattr(result.LLM_results[0], 'LLM_type') else 'unknown'
+
+                            combo = (entry_id, llm_type)
+                            if combo not in existing_combos:
+                                new_only_results.append(result)
+
                         print(
                             f"    Executed {len(filtered_llm_results)} entries in {elapsed:.1f}s"
                         )
+                        print(
+                            f"    New combinations: {len(new_only_results)}, Existing preserved: {len(existing_combos)}"
+                        )
 
-                        # Merge results
+                        # Merge results - ONLY pass truly new results
+                        # The merger will preserve existing results and add new ones
                         merged_data, lang_report = merger.merge_results(
                             existing_data=existing_data,
-                            new_results=filtered_llm_results,
+                            new_results=new_only_results,  # FIXED: Use only new results
                             selected_languages=list(selected_languages),
                             is_llm=True,
                         )
@@ -3437,14 +3487,31 @@ def main():
                         r for r in base_results if r.language in selected_languages
                     ]
 
+                    # CRITICAL FIX: Separate existing results from newly executed ones
+                    existing_ids = set()
+                    for _lang, entries in existing_data.get('results', {}).items():
+                        if _lang in selected_languages:
+                            for entry in entries:
+                                existing_ids.add(entry['id'])
+
+                    # Only keep results that are NOT already in existing_data
+                    new_only_base_results = []
+                    for result in filtered_base_results:
+                        entry_id = result.id if hasattr(result, 'id') else result.get('id')
+                        if entry_id not in existing_ids:
+                            new_only_base_results.append(result)
+
                     print(
                         f"    Executed {len(filtered_base_results)} entries in {elapsed:.1f}s"
                     )
+                    print(
+                        f"    New entries: {len(new_only_base_results)}, Existing preserved: {len(existing_ids)}"
+                    )
 
-                    # Merge results
+                    # Merge results - ONLY pass truly new results
                     merged_data, lang_report = merger.merge_results(
                         existing_data=existing_data,
-                        new_results=filtered_base_results,
+                        new_results=new_only_base_results,  # FIXED: Use only new results
                         selected_languages=list(selected_languages),
                         is_llm=False,
                     )
