@@ -697,17 +697,18 @@ class MetricsParser:
 class ContainerManager:
     """Manage Docker containers"""
 
-    def __init__(self):
+    def __init__(self, container_prefix: str = "test_runner"):
         self.active_containers: Dict[str, str] = {}
         self.container_health: Dict[str, bool] = {}
         self.container_usage: Dict[str, int] = {}
         self.max_usage_before_refresh = 50
         self.lock = threading.RLock()
         self.logger = logging.getLogger(__name__ + ".ContainerManager")
+        self.container_prefix = container_prefix
 
     def get_container_name(self, language: str) -> str:
         """Generate consistent container name for language"""
-        return f"test_runner_{language.lower()}_persistent"
+        return f"{self.container_prefix}_{language.lower()}_persistent"
 
     def is_container_healthy(self, container_name: str) -> bool:
         """Check if container is running and healthy"""
@@ -1808,9 +1809,9 @@ class TestExecutor:
 class ClusterRunner:
     """Main orchestrator for cluster testing"""
 
-    def __init__(self, max_workers: int = 4, is_debug: bool = False):
+    def __init__(self, max_workers: int = 4, is_debug: bool = False, container_prefix: str = "test_runner"):
         self.max_workers = max_workers
-        self.container_manager = ContainerManager()
+        self.container_manager = ContainerManager(container_prefix=container_prefix)
         self.test_executor = TestExecutor(self.container_manager)
         self.execution_state = ExecutionState()
         self.results_cache: Dict[str, BaseEntryResult | LLMentryResult] = {}
@@ -2596,6 +2597,12 @@ def main():
         help="Specific cluster to run (without cluster_ prefix)",
     )
     parser.add_argument(
+        "--cluster-names",
+        type=str,
+        nargs='+',
+        help="List of cluster names to run (without cluster_ prefix). Uses single container per language for efficiency.",
+    )
+    parser.add_argument(
         "--clusters-dir",
         type=Path,
         default=CLUSTERS_DIR,
@@ -2666,6 +2673,20 @@ def main():
         help="Run in debug mode with verbose prints",
     )
 
+    parser.add_argument(
+        "--run-cleanup",
+        action="store_true",
+        default=False,
+        help="Run cleanup_docker.sh after execution to clean Docker containers and processes",
+    )
+
+    parser.add_argument(
+        "--container-prefix",
+        type=str,
+        default="test_runner",
+        help="Prefix for Docker container names (default: test_runner). Useful for parallel executions to avoid conflicts.",
+    )
+
     args = parser.parse_args()
 
     # Setup logging level
@@ -2681,7 +2702,7 @@ def main():
 
     # Initialize managers
     cluster_manager = ClusterManager(args.clusters_dir, args.output_dir)
-    test_runner = ClusterRunner(max_workers=args.max_workers)
+    test_runner = ClusterRunner(max_workers=args.max_workers, container_prefix=args.container_prefix)
 
     selected_languages = parse_language_selection(args.languages)
 
@@ -3493,6 +3514,152 @@ def main():
 
         return 0
 
+    # Handle multiple cluster names (batch execution mode)
+    if args.cluster_names:
+        print("\n" + "=" * 80)
+        print("BATCH CLUSTER EXECUTION MODE")
+        print("=" * 80)
+        print(f"Processing {len(args.cluster_names)} clusters: {', '.join(args.cluster_names[:10])}{'...' if len(args.cluster_names) > 10 else ''}")
+
+        # Validate all cluster files exist
+        clusters_to_process = []
+        for cluster_name in args.cluster_names:
+            cluster_path = args.clusters_dir / f"cluster_{cluster_name}.json"
+            if not cluster_path.exists():
+                print(f"Warning: Cluster file not found: {cluster_path}")
+                continue
+            clusters_to_process.append(cluster_path)
+
+        if not clusters_to_process:
+            print("Error: No valid cluster files found")
+            return 1
+
+        print(f"Valid clusters: {len(clusters_to_process)}")
+
+        # Determine test type
+        if args.full:
+            test_types = ["base", "llm"]
+        elif args.base_only:
+            test_types = ["base"]
+        elif args.llm_only:
+            test_types = ["llm"]
+        else:
+            print("Error: Must specify one of --base-only, --llm-only, or --full")
+            return 1
+
+        merger = LanguageSelectiveResultMerger(logger=logging.getLogger(__name__)) if SELECTIVE_RUNNER_AVAILABLE else None
+        total_entries_executed = 0
+        total_entries_preserved = 0
+
+        # Process each cluster
+        for cluster_idx, cluster_path in enumerate(clusters_to_process, 1):
+            cluster_name = cluster_path.stem.replace("cluster_", "")
+            print(f"\n{'='*80}")
+            print(f"[{cluster_idx}/{len(clusters_to_process)}] Processing cluster: {cluster_name}")
+            print(f"{'='*80}")
+
+            for test_type in test_types:
+                is_llm = test_type == "llm"
+
+                if is_llm:
+                    # Process each prompt version
+                    prompt_versions = (
+                        range(1, 5) if args.prompt_version == -1 else [args.prompt_version]
+                    )
+
+                    for p_v in prompt_versions:
+                        print(f"\n  LLM prompt v{p_v}:")
+
+                        # Process each run
+                        for run_num in range(1, args.run_quantity + 1):
+                            print(f"    Run {run_num}/{args.run_quantity}")
+
+                            output_filename = f"{cluster_name}_results_v{p_v}_{run_num}.json"
+                            output_path = args.output_dir / output_filename
+
+                            # Execute tests
+                            start_time = time.time()
+
+                            _, llm_results = test_runner.run_cluster_tests(
+                                cluster_path=cluster_path,
+                                base_only=False,
+                                llm_only=True,
+                                prompt_version=p_v,
+                                use_cache=not args.no_cache,
+                                full=False,
+                                run_number=run_num,
+                                cluster_name=cluster_name,
+                                selected_languages=list(selected_languages),
+                                overwrite_results=overwrite_results,
+                                debug_mode=args.debug_mode,
+                            )
+
+                            elapsed = time.time() - start_time
+
+                            # Save results
+                            test_runner.save_results(
+                                llm_results, output_path, f"llm_v{p_v}", True
+                            )
+
+                            print(f"      Executed {len(llm_results)} entries in {elapsed:.1f}s")
+                            total_entries_executed += len(llm_results)
+
+                            # Reset state for next run
+                            test_runner.execution_state = ExecutionState()
+
+                else:  # Base code execution
+                    print(f"\n  Base code:")
+
+                    for run_num in range(1, args.run_quantity + 1):
+                        print(f"    Run {run_num}/{args.run_quantity}")
+
+                        output_filename = f"{cluster_name}_results_{run_num}.json"
+                        output_path = args.output_dir / output_filename
+
+                        # Execute tests
+                        start_time = time.time()
+
+                        base_results, _ = test_runner.run_cluster_tests(
+                            cluster_path=cluster_path,
+                            base_only=True,
+                            llm_only=False,
+                            prompt_version=-1,
+                            use_cache=not args.no_cache,
+                            full=False,
+                            run_number=run_num,
+                            cluster_name=cluster_name,
+                            selected_languages=list(selected_languages),
+                            overwrite_results=overwrite_results,
+                            debug_mode=args.debug_mode,
+                        )
+
+                        elapsed = time.time() - start_time
+
+                        # Save results
+                        test_runner.save_results(
+                            base_results, output_path, "base"
+                        )
+
+                        print(f"      Executed {len(base_results)} entries in {elapsed:.1f}s")
+                        total_entries_executed += len(base_results)
+
+                        # Reset state for next run
+                        test_runner.execution_state = ExecutionState()
+
+        # Print final summary
+        print("\n" + "=" * 80)
+        print("BATCH CLUSTER EXECUTION COMPLETE")
+        print("=" * 80)
+        print(f"Total clusters processed: {len(clusters_to_process)}")
+        print(f"Total entries executed: {total_entries_executed}")
+        print("=" * 80)
+
+        # Run cleanup if requested
+        if args.run_cleanup:
+            run_cleanup()
+
+        return 0
+
     try:
         # Determine clusters to process
         if args.cluster_name:
@@ -3838,6 +4005,11 @@ def main():
                     test_runner.execution_state = ExecutionState()
 
         print("\nAll clusters processed successfully!")
+
+        # Run cleanup if requested
+        if args.run_cleanup:
+            run_cleanup()
+
         return 0
 
     except KeyboardInterrupt:
