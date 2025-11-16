@@ -147,9 +147,9 @@ def run_prompt_version(prompt_version, dry_run=False):
         try:
             result = subprocess.run(
                 cmd,
-                capture_output=True,
+                capture_output=False,
                 text=True,
-                timeout=900,  # 15 minutes per cluster
+                #timeout=900,  # 15 minutes per cluster
                 cwd=Path(__file__).parent
             )
 
