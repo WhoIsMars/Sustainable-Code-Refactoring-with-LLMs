@@ -23,7 +23,6 @@ import multiprocessing as mp
 from datetime import datetime
 from pathlib import Path
 import time
-import signal
 
 
 def get_js_clusters():
@@ -167,7 +166,7 @@ def run_version(prompt_version, resume=True):
         print(f"✓ All clusters already complete for v{prompt_version}!")
         return 0
 
-    print(f"\nClusters to process:")
+    print("\nClusters to process:")
     for i, (cluster_name, missing_count) in enumerate(clusters[:10], 1):
         print(f"  {i}. {cluster_name} ({missing_count} missing)")
     if len(clusters) > 10:
@@ -198,7 +197,7 @@ def run_version(prompt_version, resume=True):
     print(f"Failed: {failed_count}")
 
     if failed_clusters:
-        print(f"\nFailed clusters:")
+        print("\nFailed clusters:")
         for c in failed_clusters[:20]:
             print(f"  - {c}")
         if len(failed_clusters) > 20:
@@ -269,7 +268,7 @@ def main():
             print(f"  Clusters with missing combinations: {len(missing)}")
             print(f"  Total missing (entry_id, llm_type) combinations: {total_missing_combos}")
             if missing:
-                print(f"  First 10:")
+                print("  First 10:")
                 for name, count in missing[:10]:
                     print(f"    {name}: {count} missing")
         return 0

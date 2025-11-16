@@ -33,10 +33,8 @@ from dotenv import load_dotenv
 try:
     from language_selective_runner import (
         LanguageSelectiveResultMerger,
-        SelectiveExecutionReport,
-        LanguageExecutionReport,
-        parse_language_selection,
-        get_available_languages,
+        SelectiveExecutionReport,        
+        parse_language_selection,        
     )
 
     SELECTIVE_RUNNER_AVAILABLE = True
@@ -107,7 +105,7 @@ class ExecutionMetrics:
     error_message: Optional[str] = None
     log_path: Optional[str] = None
 
-    # ✅ NEW: Enhanced diagnostic fields
+    #  Enhanced diagnostic fields
     docker_exit_code: Optional[int] = None
     docker_stdout: Optional[str] = None
     docker_stderr: Optional[str] = None
@@ -139,7 +137,7 @@ class ExecutionMetrics:
             "log_path": self.log_path,
         }
 
-        # ✅ NEW: Add diagnostic info if available (only when there's an error)
+        #  Add diagnostic info if available (only when there's an error)
         if not self.success or not self.is_valid():
             diagnostic_dict = {
                 "docker_exit_code": self.docker_exit_code,
@@ -279,7 +277,7 @@ class MetricsParser:
         try:
             # Log del contenuto per debug
             logger.debug(
-                f"\n📝Parsing log content (first 500 chars): {log_content[:500]}"
+                f"\nParsing log content (first 500 chars): {log_content[:500]}"
             )
 
             # Strategy 1: User + System time (most accurate)
@@ -291,7 +289,7 @@ class MetricsParser:
                 system_time = float(system_match.group(1))
                 metrics.execution_time_ms = (
                     user_time + system_time
-                ) * 1000  # ✅ FIXED: Keep as float
+                ) * 1000  
                 logger.debug(
                     f"Strategy 1 - User+System time: {metrics.execution_time_ms}ms"
                 )
@@ -312,7 +310,7 @@ class MetricsParser:
                     seconds = float(wall_match.group(2))
                     metrics.execution_time_ms = (
                         minutes * 60 + seconds
-                    ) * 1000  # ✅ FIXED: Keep as float
+                    ) * 1000  
                     logger.debug(
                         f"Strategy 2 - Wall clock: {metrics.execution_time_ms}ms"
                     )
@@ -327,7 +325,7 @@ class MetricsParser:
                     seconds = float(real_match.group(2))
                     metrics.execution_time_ms = (
                         minutes * 60 + seconds
-                    ) * 1000  # ✅ FIXED: Keep as float
+                    ) * 1000  
                     logger.debug(
                         f"Strategy 3 - Real time: {metrics.execution_time_ms}ms"
                     )
@@ -341,7 +339,7 @@ class MetricsParser:
                     seconds = float(jest_match.group(1))
                     metrics.execution_time_ms = (
                         seconds * 1000
-                    )  # ✅ FIXED: Keep as float
+                    )  
                     logger.debug(
                         f"Strategy 4 - Jest time: {metrics.execution_time_ms}ms"
                     )
@@ -431,17 +429,19 @@ class MetricsParser:
                         break
 
             metrics.regression_test_passed = test_passed and not test_failed
-            metrics.success = metrics.is_valid() and metrics.regression_test_passed
+            m_valid = metrics.is_valid()
+            metrics.success = m_valid and metrics.regression_test_passed
 
+            emj = "✅" if m_valid else "❌"
             logger.info(
-                f"👀 Parsing complete - Metrics are valid: {metrics.is_valid()}, "
+                f"{emj} Parsing complete - Metrics are valid: {m_valid}, "
                 f"Tests passed: {metrics.regression_test_passed}, "
                 f"Time: {metrics.execution_time_ms}ms, "
                 f"CPU: {metrics.cpu_usage}%, "
                 f"RAM: {metrics.ram_usage}KB"
             )
 
-            if not metrics.is_valid() : 
+            if not m_valid : 
                 logger.warning(f"Log of invalid metrics: {log_content}")
 
         except Exception as e:
@@ -471,14 +471,14 @@ class MetricsParser:
             # elapsed_us = elapsed_ns / 1_000
             elapsed_ms = elapsed_ns / 1_000_000
 
-            metrics.execution_time_ms = elapsed_ms  # ✅ FIXED: Keep as float to preserve precision (e.g., 0.888ms)
+            metrics.execution_time_ms = elapsed_ms   
         else:
             # Fallback to system time if available
             if system_match:
                 system_time = float(system_match.group(1))
                 metrics.execution_time_ms = (
                     system_time * 1000
-                )  # ✅ FIXED: Keep as float
+                )  
             else:
                 metrics.execution_time_ms = None
 
@@ -510,14 +510,14 @@ class MetricsParser:
                 (r"Tests:\s+(\d+)\s+passed,\s+\d+\s+total", "jest_passed"),
                 (r"Test Suites:.*(\d+)\s+passed", "jest_suites_passed"),
                 (r"PASS\s+", "pass_marker"),
-                # ✅ NEW: C Unity test framework patterns
+                #  C Unity test framework patterns
                 (
                     r"(\d+)\s+Tests\s+0\s+Failures",
                     "c_unity_success",
                 ),  # "4 Tests 0 Failures 0 Ignored"
                 (r"^OK$", "c_unity_ok"),  # "OK" on separate line
                 (r"Exit_code:\s*0", "exit_code_zero"),  # "Exit_code: 0"
-                # ✅ NEW: Catch2 test framework patterns
+                #  Catch2 test framework patterns
                 (r"All tests passed \((\d+) assertion", "catch2_success"),  # "All tests passed (1 assertion in 1 test case)"
                 (r"test cases?:\s*\d+\s*\|\s*\d+\s*passed", "catch2_passed"),  # Alternative Catch2 format
             ]
@@ -1043,85 +1043,6 @@ class TestExecutor:
         else:
             self.logger.debug(f"Makefile already exists, not overwriting: {makefile_dest}")
 
-    """
-    def execute_test(
-        self,
-        entry: Dict,
-        language: str,
-        test_type: str = "base",
-        llm_info: Optional[Dict] = None,
-        use_cache: bool = True,
-    ) -> BaseEntryResult | LLMentryResult:
-
-        # Get test path (dir path of dir in with there is the test file)
-        test_path = DATASET_DIR / Path(entry["testUnitFilePath"]).parent
-        container_name = self.container_manager.get_or_create_container(
-            language, use_cache
-        )
-
-        # Handle LLM code substitution if needed
-        original_file_backup = None
-        llm_dir = ""
-        if llm_info and test_type == "llm":
-            llm_dir = Path(llm_info["path"]).parent.name
-            original_file_backup = self._substitute_llm_code(entry, llm_info, test_path)
-
-        try:
-            # Setup environment AFTER potential LLM substitution
-            self.setup_test_environment(language, test_path, llm_dir)
-
-            # Execute the test
-            metrics = self._run_container_test(
-                language,
-                test_path,
-                container_name,
-                entry["id"],
-                entry["filename"],
-                llm_dir,
-            )
-
-            # Create result
-            if llm_info:
-                result = LLMentryResult(
-                    entry["id"],
-                    entry["filename"],
-                    language,
-                    LLM_results=[
-                        LLMresult(
-                            llm_info["type"],
-                            llm_info["path"],
-                            llm_info.get("log", ""),
-                            metrics.execution_time_ms,
-                            metrics.cpu_usage,
-                            metrics.ram_usage,
-                            metrics.regression_test_passed,
-                            llm_info.get("success", None),
-                            llm_info.get("error_message", None),
-                        )
-                    ],
-                )
-            else:
-                result = BaseEntryResult(
-                    entry["id"],
-                    entry["filename"],
-                    language,
-                    metrics.log_path,
-                    metrics.execution_time_ms,
-                    metrics.cpu_usage,
-                    metrics.ram_usage,
-                    metrics.regression_test_passed,
-                    metrics.is_valid(),
-                    metrics.error_message,
-                    metrics.log_path,
-                )
-            return result
-
-        finally:
-            # Restore original file if LLM substitution was made
-            if original_file_backup:
-                self._restore_original_code(original_file_backup)
-    """
-
     def _substitute_llm_code_in_temp(
         self, entry: Dict, llm_info: Dict, temp_path: Path, debug=False
     ):
@@ -1182,7 +1103,7 @@ class TestExecutor:
     ) -> BaseEntryResult | LLMentryResult:
         """Execute single test with comprehensive error handling"""
 
-        # ✅ Fix per Colima: usare directory temporanee montabili da Docker
+        # Fix per Colima: usare directory temporanee montabili da Docker
         base_temp = Path.home() / "docker_tmp"
         base_temp.mkdir(parents=True, exist_ok=True)
 
@@ -1559,7 +1480,7 @@ class TestExecutor:
         if DEBUG_MODE :
             debug_mode = True
 
-        # ✅ NEW: Store docker output for diagnostics
+        # Store docker output for diagnostics
         metrics.docker_exit_code = result.returncode
         metrics.docker_stdout = result.stdout if result.stdout else ""
         # Note: stderr is merged with stdout in subprocess call
@@ -1586,7 +1507,7 @@ class TestExecutor:
             if debug_mode:
                 print("Using stdout as log content")
 
-        # ✅ NEW: Store raw log content for diagnostics
+        # Store raw log content for diagnostics
         metrics.raw_log_content = log_content
 
         if not log_content:
@@ -1594,7 +1515,7 @@ class TestExecutor:
             if debug_mode:
                 print("No log content available for parsing")
             metrics.error_message = "No log content generated"
-            # ✅ NEW: Categorize error
+            #  Categorize error
             metrics.error_category = MetricsParser.categorize_error(
                 log_content, metrics.docker_stdout, metrics.docker_exit_code
             )
@@ -1637,7 +1558,7 @@ class TestExecutor:
             # Altri linguaggi
             metrics = MetricsParser.parse_time_output(log_content, debug_mode)
 
-        # ✅ NEW: Categorize errors for failed tests
+        #  Categorize errors for failed tests
         if not metrics.is_valid() or not metrics.regression_test_passed or metrics.docker_exit_code != 0:
             metrics.error_category = MetricsParser.categorize_error(
                 log_content, metrics.docker_stdout, metrics.docker_exit_code
@@ -1801,7 +1722,7 @@ class TestExecutor:
                     f"🟢 Tests PASSED for {entry_id} despite exit code {result.returncode}"
                 )
                 metrics.success = True
-                # ✅ FIX: Clear error_category when tests pass successfully
+                
                 metrics.error_category = None
                 metrics.error_message = None
             elif result.returncode != 0:
@@ -1822,7 +1743,7 @@ class TestExecutor:
                 metrics.log_path = str(log_archive)
                 self.logger.debug(f"Log archived to: {log_archive}")
 
-                # ✅ NEW: Save detailed diagnostic log for failures
+                #  Save detailed diagnostic log for failures
                 if not metrics.is_valid() or not metrics.regression_test_passed:
                     diagnostic_log = log_archive.parent / f"{log_archive.stem}_diagnostic.json"
                     diagnostic_data = {
@@ -2567,6 +2488,30 @@ class ClusterManager:
             v = f"v {prompt_version}"
         self.logger.info(f"Found {len(pending)} pending clusters for {test_type} {v}")
         return pending
+
+
+#run cleanup -> file .sh per pulizia docker e processi : 
+def run_cleanup():
+    """Esegue lo script cleanup_docker.sh."""
+    print("\n--- Esecuzione di cleanup_docker.sh chiamata da run_test_on_clusters.py ---")
+        
+    try:     
+        script_path = './cleanup_docker.sh' 
+        
+        #permessi : 
+        os.chmod(script_path, 0o755) 
+         
+        subprocess.run([script_path], check=True)
+        print("--- Cleanup completato. ---")
+        
+    except FileNotFoundError:
+        print("ERRORE: Script 'cleanup_docker.sh' non trovato.")
+    except subprocess.CalledProcessError as e:
+        print(f"ERRORE durante l'esecuzione di cleanup_docker.sh: {e}")
+    except Exception as e:
+        print(f"ERRORE inatteso durante il cleanup_docker: {e}")
+
+atexit.register(run_cleanup)
 
 
 def send_webhook_notification(webhook_url: str, results_summary: Dict):
