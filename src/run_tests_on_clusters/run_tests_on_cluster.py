@@ -1763,13 +1763,20 @@ class TestExecutor:
         self.logger.debug(f"Docker command: {' '.join(docker_cmd)}")
 
         try:
-            # Execute without timeout - let tests complete naturally
+            # Execute with timeout to prevent hanging
+            self.logger.info(f"🚀 Starting Docker execution for {entry_id}...")
+            start_time = time.time()
+
             result = subprocess.run(
                 docker_cmd,
                 stdout=subprocess.PIPE,
                 stderr=subprocess.STDOUT,
                 text=True,
+                timeout=300,  # 5 minute timeout per test
             )
+
+            elapsed = time.time() - start_time
+            self.logger.info(f"✅ Docker completed in {elapsed:.1f}s (exit code: {result.returncode})")
 
             self.logger.debug(f"Docker exit code: {result.returncode}")
             if debug_mode:
