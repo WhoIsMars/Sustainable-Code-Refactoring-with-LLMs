@@ -1888,6 +1888,7 @@ class ClusterRunner:
         cluster_name="",
         selected_languages=["all"],
         overwrite_results=False,
+        force_missing_language_entries=False,
         outlier_filter=None,
         entry_ids_filter: Optional[List[str]] = None,
         debug_mode=False,
@@ -1957,9 +1958,18 @@ class ClusterRunner:
                             / f"cluster_{cluster_name}.json"
                         )
 
-                        for _lang, entries in out_base_cluster_content.items():
-                            for entry in entries:
-                                cluster_base_not_completed_entries_ids.add(entry["id"])
+                        # If force_missing_language_entries, add only selected languages
+                        # Otherwise add all entries from all languages
+                        if force_missing_language_entries:
+                            languages_to_add = selected_languages if selected_languages != ["all"] else cluster_data.keys()
+                            for lang in languages_to_add:
+                                if lang in out_base_cluster_content:
+                                    for entry in out_base_cluster_content[lang]:
+                                        cluster_base_not_completed_entries_ids.add(entry["id"])
+                        else:
+                            for _lang, entries in out_base_cluster_content.items():
+                                for entry in entries:
+                                    cluster_base_not_completed_entries_ids.add(entry["id"])
 
                         skip_check_res_base = True
 
@@ -1986,6 +1996,29 @@ class ClusterRunner:
                                         self.execution_state.successful_tests += 1
                                     else:
                                         self.execution_state.failed_tests += 1
+
+                    # CRITICAL FIX: If force_missing_language_entries is enabled,
+                    # identify entries from selected languages that are NOT in the output file
+                    if force_missing_language_entries:
+                        # Get all entry IDs present in the output file for selected languages
+                        existing_entry_ids_by_lang = defaultdict(set)
+                        for lang, entries in out_base_cluster_content.get("results", {}).items():
+                            for json_entry in entries:
+                                existing_entry_ids_by_lang[lang].add(json_entry.get('id'))
+
+                        # Check cluster data for entries that should exist but don't
+                        languages_to_check = selected_languages if selected_languages != ["all"] else cluster_data.keys()
+
+                        for lang in languages_to_check:
+                            if lang not in cluster_data:
+                                continue
+
+                            for entry in cluster_data[lang]:
+                                entry_id = entry.get('id')
+                                if entry_id and entry_id not in existing_entry_ids_by_lang.get(lang, set()):
+                                    # This entry exists in cluster but NOT in output file for this language
+                                    cluster_base_not_completed_entries_ids.add(entry_id)
+                                    self.logger.info(f"Force-adding missing {lang} entry: {entry_id}")
 
             except Exception as e:
                 print(f"exception :\n{e}")
@@ -2645,6 +2678,14 @@ def main():
         action="store_true",
         default=False,
         help="Force to overwrite results for each entry even if it's valid",
+    )
+
+    parser.add_argument(
+        "--force-missing-language-entries",
+        action="store_true",
+        default=False,
+        help="Force execution of entries for specified languages that are completely missing from output files. "
+             "Useful for adding missing language results without re-executing existing entries.",
     )
 
     # Outlier-selective execution
@@ -3630,6 +3671,7 @@ def main():
                             cluster_name=cluster_name,
                             selected_languages=list(selected_languages),
                             overwrite_results=overwrite_results,
+                            force_missing_language_entries=args.force_missing_language_entries,
                             debug_mode=args.debug_mode,
                         )
 
@@ -3884,6 +3926,7 @@ def main():
                         cluster_name=cluster_name,
                         selected_languages=list(selected_languages),
                         overwrite_results=overwrite_results,
+                        force_missing_language_entries=args.force_missing_language_entries,
                         debug_mode=args.debug_mode,
                     )
 

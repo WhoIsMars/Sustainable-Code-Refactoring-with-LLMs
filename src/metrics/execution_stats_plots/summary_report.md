@@ -1,6 +1,6 @@
 # Execution Metrics Analysis Report
 
-**Generated:** 2025-11-17 11:09:34
+**Generated:** 2025-11-17 13:07:24
 
 ## Overview
 
@@ -12,14 +12,14 @@ This report summarizes execution metrics aggregated across all clusters.
 
 **Metrics by Prompt Version**
 
-- Base code entries (100% pass rate): 550
+- Base code entries (100% pass rate): 1061
 - Prompt versions analyzed: v1, v2, v3, v4
 
 ### Objective 2
 
 **Metrics by Programming Language**
 
-- Languages (base code): python, cpp, javascript, go, java, typescript, c
+- Languages (base code): python, cpp, typescript, go, javascript, c, java
 - Languages (LLM code): python, java, javascript, cpp, typescript, go, c
 
 ### Objective 3
