@@ -3549,7 +3549,7 @@ def main():
 
         merger = LanguageSelectiveResultMerger(logger=logging.getLogger(__name__)) if SELECTIVE_RUNNER_AVAILABLE else None
         total_entries_executed = 0
-        total_entries_preserved = 0
+        #total_entries_preserved = 0
 
         # Process each cluster
         for cluster_idx, cluster_path in enumerate(clusters_to_process, 1):
@@ -3608,7 +3608,7 @@ def main():
                             test_runner.execution_state = ExecutionState()
 
                 else:  # Base code execution
-                    print(f"\n  Base code:")
+                    print("\n  Base code:")
 
                     for run_num in range(1, args.run_quantity + 1):
                         print(f"    Run {run_num}/{args.run_quantity}")

@@ -24,13 +24,13 @@ import argparse
 import multiprocessing as mp
 from datetime import datetime
 from pathlib import Path
-from typing import Dict, List, Set, Tuple, Optional
-from collections import defaultdict
+from typing import Dict, List, Tuple
+
 
 
 # Add parent directory to path for imports
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", ".."))
-from utility_dir import utility_paths, general_utils
+from utility_dir import utility_paths
 
 
 def get_all_js_clusters() -> List[str]:
@@ -327,7 +327,7 @@ def run_version_execution(prompt_version: int, cluster_names: List[str]) -> int:
         '--cluster-names'
     ] + cluster_names
 
-    print(f"Executing command:")
+    print("Executing command:")
     print(f"  {' '.join(cmd[:12])}... [+{len(cluster_names)} cluster names]")
     print(f"  Container prefix: {container_prefix}")
     print()
@@ -407,7 +407,7 @@ def analyze_missing_executions():
         print(f"  Total missing (entry, llm_type, exec_num) combinations: {total_missing_for_version}")
 
         if clusters:
-            print(f"  Top 10 clusters by missing count:")
+            print("  Top 10 clusters by missing count:")
             # Sort by missing count
             sorted_clusters = sorted(clusters, key=lambda c: missing_counts[c], reverse=True)
             for name in sorted_clusters[:10]:

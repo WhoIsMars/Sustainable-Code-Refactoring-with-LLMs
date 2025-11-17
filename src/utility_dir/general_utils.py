@@ -19,6 +19,8 @@ logger = logging.getLogger(__name__)
 METRICS = ["CPU_usage", "RAM_usage", "execution_time_ms"]
 LLM_METRICS = ["CPU_usage", "RAM_usage", "execution_time_ms", "regressionTestPassed"]
 
+SKIP_PATTERNS = ['debug', 'test', 'bad_entries', 'focused_', 'with_metrics']
+
 
 def get_cluster_path_list(CLUSTERS_DIR_FILEPATH:Path) -> List[Path]:
     """Get the list of all path of the clusters"""
