@@ -28,3 +28,4 @@ function parse(phrase) {
 
     return result;
 }
+export { parse };

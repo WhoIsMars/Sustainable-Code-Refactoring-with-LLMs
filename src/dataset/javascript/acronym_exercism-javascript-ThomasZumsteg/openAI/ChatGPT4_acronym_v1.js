@@ -10,3 +10,4 @@ function parse(phrase) {
         })
         .join('');
 }
+export { parse };

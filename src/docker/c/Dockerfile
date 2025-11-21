@@ -7,6 +7,9 @@ RUN apt-get update && apt-get install -y \
     valgrind \
     time \
     python3 \
+    wget \
+    curl \
+    ca-certificates \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app

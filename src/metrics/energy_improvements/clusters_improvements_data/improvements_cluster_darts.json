@@ -1,4 +1,517 @@
 {
+  "cpp_darts_toemm": {
+    "base_5_exec_data": {
+      "exec_quantity": 5,
+      "language": "cpp",
+      "avg_exec_CPU_usage": 57.8,
+      "avg_exec_RAM_usage": 10419.2,
+      "avg_exec_execution_time_ms": 4.7690798
+    },
+    "LLM_5_exec_data": {
+      "openAI": {
+        "prompt_v1": {
+          "exec_quantity": 5,
+          "successfully_exec_quantity": 5,
+          "language": "cpp",
+          "avg_exec_CPU_usage": 55.8,
+          "avg_exec_RAM_usage": 10470.4,
+          "avg_exec_execution_time_ms": 2.9026718,
+          "avg_exec_regressionTestPassed": 100.0
+        },
+        "prompt_v2": {
+          "exec_quantity": 5,
+          "successfully_exec_quantity": 5,
+          "language": "cpp",
+          "avg_exec_CPU_usage": 56.8,
+          "avg_exec_RAM_usage": 10496.0,
+          "avg_exec_execution_time_ms": 2.9754206,
+          "avg_exec_regressionTestPassed": 100.0
+        },
+        "prompt_v3": {
+          "exec_quantity": 5,
+          "successfully_exec_quantity": 5,
+          "language": "cpp",
+          "avg_exec_CPU_usage": 55.6,
+          "avg_exec_RAM_usage": 10470.4,
+          "avg_exec_execution_time_ms": 3.2122194,
+          "avg_exec_regressionTestPassed": 100.0
+        },
+        "prompt_v4": {
+          "exec_quantity": 5,
+          "successfully_exec_quantity": 5,
+          "language": "cpp",
+          "avg_exec_CPU_usage": 70.8,
+          "avg_exec_RAM_usage": 10496.0,
+          "avg_exec_execution_time_ms": 2.1906728,
+          "avg_exec_regressionTestPassed": 100.0
+        }
+      },
+      "gemini": {
+        "prompt_v1": {
+          "exec_quantity": 0,
+          "successfully_exec_quantity": 0,
+          "language": "",
+          "avg_exec_CPU_usage": -1,
+          "avg_exec_RAM_usage": -1,
+          "avg_exec_execution_time_ms": -1,
+          "avg_exec_regressionTestPassed": 0
+        },
+        "prompt_v2": {
+          "exec_quantity": 0,
+          "successfully_exec_quantity": 0,
+          "language": "",
+          "avg_exec_CPU_usage": -1,
+          "avg_exec_RAM_usage": -1,
+          "avg_exec_execution_time_ms": -1,
+          "avg_exec_regressionTestPassed": 0
+        },
+        "prompt_v3": {
+          "exec_quantity": 0,
+          "successfully_exec_quantity": 0,
+          "language": "",
+          "avg_exec_CPU_usage": -1,
+          "avg_exec_RAM_usage": -1,
+          "avg_exec_execution_time_ms": -1,
+          "avg_exec_regressionTestPassed": 0
+        },
+        "prompt_v4": {
+          "exec_quantity": 0,
+          "successfully_exec_quantity": 0,
+          "language": "",
+          "avg_exec_CPU_usage": -1,
+          "avg_exec_RAM_usage": -1,
+          "avg_exec_execution_time_ms": -1,
+          "avg_exec_regressionTestPassed": 0
+        }
+      },
+      "claude": {
+        "prompt_v1": {
+          "exec_quantity": 5,
+          "successfully_exec_quantity": 5,
+          "language": "cpp",
+          "avg_exec_CPU_usage": 54.0,
+          "avg_exec_RAM_usage": 10470.4,
+          "avg_exec_execution_time_ms": 3.1529990000000003,
+          "avg_exec_regressionTestPassed": 100.0
+        },
+        "prompt_v2": {
+          "exec_quantity": 5,
+          "successfully_exec_quantity": 5,
+          "language": "cpp",
+          "avg_exec_CPU_usage": 66.6,
+          "avg_exec_RAM_usage": 10496.0,
+          "avg_exec_execution_time_ms": 2.2439936,
+          "avg_exec_regressionTestPassed": 100.0
+        },
+        "prompt_v3": {
+          "exec_quantity": 5,
+          "successfully_exec_quantity": 5,
+          "language": "cpp",
+          "avg_exec_CPU_usage": 59.2,
+          "avg_exec_RAM_usage": 10496.0,
+          "avg_exec_execution_time_ms": 3.1276894,
+          "avg_exec_regressionTestPassed": 100.0
+        },
+        "prompt_v4": {
+          "exec_quantity": 5,
+          "successfully_exec_quantity": 5,
+          "language": "cpp",
+          "avg_exec_CPU_usage": 52.8,
+          "avg_exec_RAM_usage": 10470.4,
+          "avg_exec_execution_time_ms": 4.3305082,
+          "avg_exec_regressionTestPassed": 100.0
+        }
+      }
+    },
+    "improvements_data": {
+      "openAI": {
+        "prompt_v1": {
+          "LLM_successfully_exec_quantity": 5,
+          "LLM_exec_quantity": 5,
+          "language": "cpp",
+          "CPU_usage": {
+            "improvement_percentage": 3.4602076124567476,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 57.8,
+            "llm_value": 55.8
+          },
+          "RAM_usage": {
+            "improvement_percentage": -0.4914004914004809,
+            "label": "degradation",
+            "is_outlier": false,
+            "base_value": 10419.2,
+            "llm_value": 10470.4
+          },
+          "execution_time_ms": {
+            "improvement_percentage": 39.13560012143223,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 4.7690798,
+            "llm_value": 2.9026718
+          },
+          "regressionTestPassed": -0.0,
+          "energy_joules": {
+            "improvement_percentage": 44.27795009394862,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 0.3705310741139053,
+            "llm_value": 0.20646751003517855
+          }
+        },
+        "prompt_v2": {
+          "LLM_successfully_exec_quantity": 5,
+          "LLM_exec_quantity": 5,
+          "language": "cpp",
+          "CPU_usage": {
+            "improvement_percentage": 1.7301038062283738,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 57.8,
+            "llm_value": 56.8
+          },
+          "RAM_usage": {
+            "improvement_percentage": -0.7371007371007301,
+            "label": "degradation",
+            "is_outlier": false,
+            "base_value": 10419.2,
+            "llm_value": 10496.0
+          },
+          "execution_time_ms": {
+            "improvement_percentage": 37.610173769790975,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 4.7690798,
+            "llm_value": 2.9754206
+          },
+          "regressionTestPassed": -0.0,
+          "energy_joules": {
+            "improvement_percentage": 41.47874693265545,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 0.3705310741139053,
+            "llm_value": 0.21683942757534852
+          }
+        },
+        "prompt_v3": {
+          "LLM_successfully_exec_quantity": 5,
+          "LLM_exec_quantity": 5,
+          "language": "cpp",
+          "CPU_usage": {
+            "improvement_percentage": 3.806228373702415,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 57.8,
+            "llm_value": 55.6
+          },
+          "RAM_usage": {
+            "improvement_percentage": -0.4914004914004809,
+            "label": "degradation",
+            "is_outlier": false,
+            "base_value": 10419.2,
+            "llm_value": 10470.4
+          },
+          "execution_time_ms": {
+            "improvement_percentage": 32.64488046520002,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 4.7690798,
+            "llm_value": 3.2122194
+          },
+          "regressionTestPassed": -0.0,
+          "energy_joules": {
+            "improvement_percentage": 37.792395409618926,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 0.3705310741139053,
+            "llm_value": 0.23049850546927003
+          }
+        },
+        "prompt_v4": {
+          "LLM_successfully_exec_quantity": 5,
+          "LLM_exec_quantity": 5,
+          "language": "cpp",
+          "CPU_usage": {
+            "improvement_percentage": -22.491349480968857,
+            "label": "degradation",
+            "is_outlier": false,
+            "base_value": 57.8,
+            "llm_value": 70.8
+          },
+          "RAM_usage": {
+            "improvement_percentage": -0.7371007371007301,
+            "label": "degradation",
+            "is_outlier": false,
+            "base_value": 10419.2,
+            "llm_value": 10496.0
+          },
+          "execution_time_ms": {
+            "improvement_percentage": 54.06508400215907,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 4.7690798,
+            "llm_value": 2.1906728
+          },
+          "regressionTestPassed": -0.0,
+          "energy_joules": {
+            "improvement_percentage": 40.70461944153042,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 0.3705310741139053,
+            "llm_value": 0.21970781048322513
+          }
+        }
+      },
+      "gemini": {
+        "prompt_v1": {
+          "LLM_successfully_exec_quantity": 0,
+          "LLM_exec_quantity": 0,
+          "language": "",
+          "CPU_usage": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "RAM_usage": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "execution_time_ms": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "regressionTestPassed": -0.0
+        },
+        "prompt_v2": {
+          "LLM_successfully_exec_quantity": 0,
+          "LLM_exec_quantity": 0,
+          "language": "",
+          "CPU_usage": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "RAM_usage": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "execution_time_ms": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "regressionTestPassed": -0.0
+        },
+        "prompt_v3": {
+          "LLM_successfully_exec_quantity": 0,
+          "LLM_exec_quantity": 0,
+          "language": "",
+          "CPU_usage": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "RAM_usage": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "execution_time_ms": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "regressionTestPassed": -0.0
+        },
+        "prompt_v4": {
+          "LLM_successfully_exec_quantity": 0,
+          "LLM_exec_quantity": 0,
+          "language": "",
+          "CPU_usage": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "RAM_usage": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "execution_time_ms": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "regressionTestPassed": -0.0
+        }
+      },
+      "claude": {
+        "prompt_v1": {
+          "LLM_successfully_exec_quantity": 5,
+          "LLM_exec_quantity": 5,
+          "language": "cpp",
+          "CPU_usage": {
+            "improvement_percentage": 6.574394463667815,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 57.8,
+            "llm_value": 54.0
+          },
+          "RAM_usage": {
+            "improvement_percentage": -0.4914004914004809,
+            "label": "degradation",
+            "is_outlier": false,
+            "base_value": 10419.2,
+            "llm_value": 10470.4
+          },
+          "execution_time_ms": {
+            "improvement_percentage": 33.886637837345475,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 4.7690798,
+            "llm_value": 3.1529990000000003
+          },
+          "regressionTestPassed": -0.0,
+          "energy_joules": {
+            "improvement_percentage": 43.13751003876952,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 0.3705310741139053,
+            "llm_value": 0.21069319482125887
+          }
+        },
+        "prompt_v2": {
+          "LLM_successfully_exec_quantity": 5,
+          "LLM_exec_quantity": 5,
+          "language": "cpp",
+          "CPU_usage": {
+            "improvement_percentage": -15.224913494809684,
+            "label": "degradation",
+            "is_outlier": false,
+            "base_value": 57.8,
+            "llm_value": 66.6
+          },
+          "RAM_usage": {
+            "improvement_percentage": -0.7371007371007301,
+            "label": "degradation",
+            "is_outlier": false,
+            "base_value": 10419.2,
+            "llm_value": 10496.0
+          },
+          "execution_time_ms": {
+            "improvement_percentage": 52.94703183620454,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 4.7690798,
+            "llm_value": 2.2439936
+          },
+          "regressionTestPassed": -0.0,
+          "energy_joules": {
+            "improvement_percentage": 42.68827034724112,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 0.3705310741139053,
+            "llm_value": 0.21235776747562501
+          }
+        },
+        "prompt_v3": {
+          "LLM_successfully_exec_quantity": 5,
+          "LLM_exec_quantity": 5,
+          "language": "cpp",
+          "CPU_usage": {
+            "improvement_percentage": -2.422145328719733,
+            "label": "degradation",
+            "is_outlier": false,
+            "base_value": 57.8,
+            "llm_value": 59.2
+          },
+          "RAM_usage": {
+            "improvement_percentage": -0.7371007371007301,
+            "label": "degradation",
+            "is_outlier": false,
+            "base_value": 10419.2,
+            "llm_value": 10496.0
+          },
+          "execution_time_ms": {
+            "improvement_percentage": 34.41733979792077,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 4.7690798,
+            "llm_value": 3.1276894
+          },
+          "regressionTestPassed": -0.0,
+          "energy_joules": {
+            "improvement_percentage": 44.61755712134889,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 0.3705310741139053,
+            "llm_value": 0.205209160468786
+          }
+        },
+        "prompt_v4": {
+          "LLM_successfully_exec_quantity": 5,
+          "LLM_exec_quantity": 5,
+          "language": "cpp",
+          "CPU_usage": {
+            "improvement_percentage": 8.650519031141869,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 57.8,
+            "llm_value": 52.8
+          },
+          "RAM_usage": {
+            "improvement_percentage": -0.4914004914004809,
+            "label": "degradation",
+            "is_outlier": false,
+            "base_value": 10419.2,
+            "llm_value": 10470.4
+          },
+          "execution_time_ms": {
+            "improvement_percentage": 9.196147231589633,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 4.7690798,
+            "llm_value": 4.3305082
+          },
+          "regressionTestPassed": -0.0,
+          "energy_joules": {
+            "improvement_percentage": 37.470015084953765,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 0.3705310741139053,
+            "llm_value": 0.23169302474898376
+          }
+        }
+      }
+    }
+  },
   "typescript_darts_Exercism-typescript-alemarr": {
     "base_5_exec_data": {
       "exec_quantity": 5,
@@ -1081,6 +1594,1088 @@
       }
     }
   },
+  "Java_darts_exercism-java-uzilan_robiworks": {
+    "base_5_exec_data": {
+      "exec_quantity": 5,
+      "language": "java",
+      "avg_exec_CPU_usage": 7.8,
+      "avg_exec_RAM_usage": 46135.2,
+      "avg_exec_execution_time_ms": 388.0
+    },
+    "LLM_5_exec_data": {
+      "openAI": {
+        "prompt_v1": {
+          "exec_quantity": 5,
+          "successfully_exec_quantity": 5,
+          "language": "java",
+          "avg_exec_CPU_usage": 72.4,
+          "avg_exec_RAM_usage": 46180.8,
+          "avg_exec_execution_time_ms": 148.0,
+          "avg_exec_regressionTestPassed": 100.0
+        },
+        "prompt_v2": {
+          "exec_quantity": 5,
+          "successfully_exec_quantity": 5,
+          "language": "java",
+          "avg_exec_CPU_usage": 77.0,
+          "avg_exec_RAM_usage": 46184.8,
+          "avg_exec_execution_time_ms": 134.0,
+          "avg_exec_regressionTestPassed": 100.0
+        },
+        "prompt_v3": {
+          "exec_quantity": 5,
+          "successfully_exec_quantity": 5,
+          "language": "java",
+          "avg_exec_CPU_usage": 75.4,
+          "avg_exec_RAM_usage": 46210.4,
+          "avg_exec_execution_time_ms": 128.0,
+          "avg_exec_regressionTestPassed": 100.0
+        },
+        "prompt_v4": {
+          "exec_quantity": 5,
+          "successfully_exec_quantity": 5,
+          "language": "java",
+          "avg_exec_CPU_usage": 73.8,
+          "avg_exec_RAM_usage": 46184.0,
+          "avg_exec_execution_time_ms": 116.0,
+          "avg_exec_regressionTestPassed": 100.0
+        }
+      },
+      "gemini": {
+        "prompt_v1": {
+          "exec_quantity": 5,
+          "successfully_exec_quantity": 5,
+          "language": "java",
+          "avg_exec_CPU_usage": 76.6,
+          "avg_exec_RAM_usage": 46276.0,
+          "avg_exec_execution_time_ms": 144.0,
+          "avg_exec_regressionTestPassed": 100.0
+        },
+        "prompt_v2": {
+          "exec_quantity": 5,
+          "successfully_exec_quantity": 5,
+          "language": "java",
+          "avg_exec_CPU_usage": 76.0,
+          "avg_exec_RAM_usage": 46326.4,
+          "avg_exec_execution_time_ms": 126.0,
+          "avg_exec_regressionTestPassed": 100.0
+        },
+        "prompt_v3": {
+          "exec_quantity": 5,
+          "successfully_exec_quantity": 5,
+          "language": "java",
+          "avg_exec_CPU_usage": 74.8,
+          "avg_exec_RAM_usage": 46281.6,
+          "avg_exec_execution_time_ms": 120.0,
+          "avg_exec_regressionTestPassed": 100.0
+        },
+        "prompt_v4": {
+          "exec_quantity": 5,
+          "successfully_exec_quantity": 5,
+          "language": "java",
+          "avg_exec_CPU_usage": 87.2,
+          "avg_exec_RAM_usage": 46271.2,
+          "avg_exec_execution_time_ms": 112.0,
+          "avg_exec_regressionTestPassed": 100.0
+        }
+      },
+      "claude": {
+        "prompt_v1": {
+          "exec_quantity": 5,
+          "successfully_exec_quantity": 5,
+          "language": "java",
+          "avg_exec_CPU_usage": 91.4,
+          "avg_exec_RAM_usage": 46311.2,
+          "avg_exec_execution_time_ms": 158.0,
+          "avg_exec_regressionTestPassed": 100.0
+        },
+        "prompt_v2": {
+          "exec_quantity": 5,
+          "successfully_exec_quantity": 5,
+          "language": "java",
+          "avg_exec_CPU_usage": 87.8,
+          "avg_exec_RAM_usage": 46157.6,
+          "avg_exec_execution_time_ms": 126.0,
+          "avg_exec_regressionTestPassed": 100.0
+        },
+        "prompt_v3": {
+          "exec_quantity": 5,
+          "successfully_exec_quantity": 5,
+          "language": "java",
+          "avg_exec_CPU_usage": 77.2,
+          "avg_exec_RAM_usage": 46220.0,
+          "avg_exec_execution_time_ms": 118.0,
+          "avg_exec_regressionTestPassed": 100.0
+        },
+        "prompt_v4": {
+          "exec_quantity": 5,
+          "successfully_exec_quantity": 5,
+          "language": "java",
+          "avg_exec_CPU_usage": 85.6,
+          "avg_exec_RAM_usage": 46219.2,
+          "avg_exec_execution_time_ms": 106.0,
+          "avg_exec_regressionTestPassed": 100.0
+        }
+      }
+    },
+    "improvements_data": {
+      "openAI": {
+        "prompt_v1": {
+          "LLM_successfully_exec_quantity": 5,
+          "LLM_exec_quantity": 5,
+          "language": "java",
+          "CPU_usage": {
+            "improvement_percentage": -828.2051282051283,
+            "label": "degradation",
+            "is_outlier": true,
+            "base_value": 7.8,
+            "llm_value": 72.4
+          },
+          "RAM_usage": {
+            "improvement_percentage": -0.09883993133227086,
+            "label": "degradation",
+            "is_outlier": false,
+            "base_value": 46135.2,
+            "llm_value": 46180.8
+          },
+          "execution_time_ms": {
+            "improvement_percentage": 61.855670103092784,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 388.0,
+            "llm_value": 148.0
+          },
+          "regressionTestPassed": -0.0,
+          "energy_joules": {
+            "improvement_percentage": -266.8220486556841,
+            "label": "degradation",
+            "is_outlier": true,
+            "base_value": 4.142108432292939,
+            "llm_value": 15.1941670088768
+          }
+        },
+        "prompt_v2": {
+          "LLM_successfully_exec_quantity": 5,
+          "LLM_exec_quantity": 5,
+          "language": "java",
+          "CPU_usage": {
+            "improvement_percentage": -887.1794871794872,
+            "label": "degradation",
+            "is_outlier": true,
+            "base_value": 7.8,
+            "llm_value": 77.0
+          },
+          "RAM_usage": {
+            "improvement_percentage": -0.10751010074738124,
+            "label": "degradation",
+            "is_outlier": false,
+            "base_value": 46135.2,
+            "llm_value": 46184.8
+          },
+          "execution_time_ms": {
+            "improvement_percentage": 65.4639175257732,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 388.0,
+            "llm_value": 134.0
+          },
+          "regressionTestPassed": -0.0,
+          "energy_joules": {
+            "improvement_percentage": -253.2589834500167,
+            "label": "degradation",
+            "is_outlier": true,
+            "base_value": 4.142108432292939,
+            "llm_value": 14.632370141315459
+          }
+        },
+        "prompt_v3": {
+          "LLM_successfully_exec_quantity": 5,
+          "LLM_exec_quantity": 5,
+          "language": "java",
+          "CPU_usage": {
+            "improvement_percentage": -866.6666666666667,
+            "label": "degradation",
+            "is_outlier": true,
+            "base_value": 7.8,
+            "llm_value": 75.4
+          },
+          "RAM_usage": {
+            "improvement_percentage": -0.16299918500408445,
+            "label": "degradation",
+            "is_outlier": false,
+            "base_value": 46135.2,
+            "llm_value": 46210.4
+          },
+          "execution_time_ms": {
+            "improvement_percentage": 67.0103092783505,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 388.0,
+            "llm_value": 128.0
+          },
+          "regressionTestPassed": -0.0,
+          "energy_joules": {
+            "improvement_percentage": -233.92107803550738,
+            "label": "degradation",
+            "is_outlier": true,
+            "base_value": 4.142108432292939,
+            "llm_value": 13.831373130512237
+          }
+        },
+        "prompt_v4": {
+          "LLM_successfully_exec_quantity": 5,
+          "LLM_exec_quantity": 5,
+          "language": "java",
+          "CPU_usage": {
+            "improvement_percentage": -846.1538461538462,
+            "label": "degradation",
+            "is_outlier": true,
+            "base_value": 7.8,
+            "llm_value": 73.8
+          },
+          "RAM_usage": {
+            "improvement_percentage": -0.10577606686435284,
+            "label": "degradation",
+            "is_outlier": false,
+            "base_value": 46135.2,
+            "llm_value": 46184.0
+          },
+          "execution_time_ms": {
+            "improvement_percentage": 70.10309278350515,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 388.0,
+            "llm_value": 116.0
+          },
+          "regressionTestPassed": -0.0,
+          "energy_joules": {
+            "improvement_percentage": -193.73142901470487,
+            "label": "degradation",
+            "is_outlier": false,
+            "base_value": 4.142108432292939,
+            "llm_value": 12.166674289512637
+          }
+        }
+      },
+      "gemini": {
+        "prompt_v1": {
+          "LLM_successfully_exec_quantity": 5,
+          "LLM_exec_quantity": 5,
+          "language": "java",
+          "CPU_usage": {
+            "improvement_percentage": -882.0512820512821,
+            "label": "degradation",
+            "is_outlier": true,
+            "base_value": 7.8,
+            "llm_value": 76.6
+          },
+          "RAM_usage": {
+            "improvement_percentage": -0.3051899634118914,
+            "label": "degradation",
+            "is_outlier": false,
+            "base_value": 46135.2,
+            "llm_value": 46276.0
+          },
+          "execution_time_ms": {
+            "improvement_percentage": 62.88659793814433,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 388.0,
+            "llm_value": 144.0
+          },
+          "regressionTestPassed": -0.0,
+          "energy_joules": {
+            "improvement_percentage": -267.2325891548695,
+            "label": "degradation",
+            "is_outlier": true,
+            "base_value": 4.142108432292939,
+            "llm_value": 15.211172041511535
+          }
+        },
+        "prompt_v2": {
+          "LLM_successfully_exec_quantity": 5,
+          "LLM_exec_quantity": 5,
+          "language": "java",
+          "CPU_usage": {
+            "improvement_percentage": -874.3589743589745,
+            "label": "degradation",
+            "is_outlier": true,
+            "base_value": 7.8,
+            "llm_value": 76.0
+          },
+          "RAM_usage": {
+            "improvement_percentage": -0.4144340980422852,
+            "label": "degradation",
+            "is_outlier": false,
+            "base_value": 46135.2,
+            "llm_value": 46326.4
+          },
+          "execution_time_ms": {
+            "improvement_percentage": 67.5257731958763,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 388.0,
+            "llm_value": 126.0
+          },
+          "regressionTestPassed": -0.0,
+          "energy_joules": {
+            "improvement_percentage": -231.78710415584368,
+            "label": "degradation",
+            "is_outlier": true,
+            "base_value": 4.142108432292939,
+            "llm_value": 13.742981618499758
+          }
+        },
+        "prompt_v3": {
+          "LLM_successfully_exec_quantity": 5,
+          "LLM_exec_quantity": 5,
+          "language": "java",
+          "CPU_usage": {
+            "improvement_percentage": -858.9743589743589,
+            "label": "degradation",
+            "is_outlier": true,
+            "base_value": 7.8,
+            "llm_value": 74.8
+          },
+          "RAM_usage": {
+            "improvement_percentage": -0.31732820059304273,
+            "label": "degradation",
+            "is_outlier": false,
+            "base_value": 46135.2,
+            "llm_value": 46281.6
+          },
+          "execution_time_ms": {
+            "improvement_percentage": 69.0721649484536,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 388.0,
+            "llm_value": 120.0
+          },
+          "regressionTestPassed": -0.0,
+          "energy_joules": {
+            "improvement_percentage": -207.63267803475878,
+            "label": "degradation",
+            "is_outlier": true,
+            "base_value": 4.142108432292939,
+            "llm_value": 12.742479097366331
+          }
+        },
+        "prompt_v4": {
+          "LLM_successfully_exec_quantity": 5,
+          "LLM_exec_quantity": 5,
+          "language": "java",
+          "CPU_usage": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": 7.8,
+            "llm_value": 87.2
+          },
+          "RAM_usage": {
+            "improvement_percentage": -0.2947857601137526,
+            "label": "degradation",
+            "is_outlier": false,
+            "base_value": 46135.2,
+            "llm_value": 46271.2
+          },
+          "execution_time_ms": {
+            "improvement_percentage": 71.1340206185567,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 388.0,
+            "llm_value": 112.0
+          },
+          "regressionTestPassed": -0.0,
+          "energy_joules": {
+            "improvement_percentage": -236.45739965238252,
+            "label": "degradation",
+            "is_outlier": true,
+            "base_value": 4.142108432292939,
+            "llm_value": 13.936430322074889
+          }
+        }
+      },
+      "claude": {
+        "prompt_v1": {
+          "LLM_successfully_exec_quantity": 5,
+          "LLM_exec_quantity": 5,
+          "language": "java",
+          "CPU_usage": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": 7.8,
+            "llm_value": 91.4
+          },
+          "RAM_usage": {
+            "improvement_percentage": -0.38148745426485636,
+            "label": "degradation",
+            "is_outlier": false,
+            "base_value": 46135.2,
+            "llm_value": 46311.2
+          },
+          "execution_time_ms": {
+            "improvement_percentage": 59.27835051546392,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 388.0,
+            "llm_value": 158.0
+          },
+          "regressionTestPassed": -0.0,
+          "energy_joules": {
+            "improvement_percentage": -380.8390963095203,
+            "label": "degradation",
+            "is_outlier": true,
+            "base_value": 4.142108432292939,
+            "llm_value": 19.916876753997805
+          }
+        },
+        "prompt_v2": {
+          "LLM_successfully_exec_quantity": 5,
+          "LLM_exec_quantity": 5,
+          "language": "java",
+          "CPU_usage": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": 7.8,
+            "llm_value": 87.8
+          },
+          "RAM_usage": {
+            "improvement_percentage": -0.04855294872462124,
+            "label": "degradation",
+            "is_outlier": false,
+            "base_value": 46135.2,
+            "llm_value": 46157.6
+          },
+          "execution_time_ms": {
+            "improvement_percentage": 67.5257731958763,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 388.0,
+            "llm_value": 126.0
+          },
+          "regressionTestPassed": -0.0,
+          "energy_joules": {
+            "improvement_percentage": -280.4323123691278,
+            "label": "degradation",
+            "is_outlier": true,
+            "base_value": 4.142108432292939,
+            "llm_value": 15.757918889808655
+          }
+        },
+        "prompt_v3": {
+          "LLM_successfully_exec_quantity": 5,
+          "LLM_exec_quantity": 5,
+          "language": "java",
+          "CPU_usage": {
+            "improvement_percentage": -889.7435897435898,
+            "label": "degradation",
+            "is_outlier": true,
+            "base_value": 7.8,
+            "llm_value": 77.2
+          },
+          "RAM_usage": {
+            "improvement_percentage": -0.18380759160034618,
+            "label": "degradation",
+            "is_outlier": false,
+            "base_value": 46135.2,
+            "llm_value": 46220.0
+          },
+          "execution_time_ms": {
+            "improvement_percentage": 69.58762886597938,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 388.0,
+            "llm_value": 118.0
+          },
+          "regressionTestPassed": -0.0,
+          "energy_joules": {
+            "improvement_percentage": -211.41567562776254,
+            "label": "degradation",
+            "is_outlier": true,
+            "base_value": 4.142108432292939,
+            "llm_value": 12.899174959659579
+          }
+        },
+        "prompt_v4": {
+          "LLM_successfully_exec_quantity": 5,
+          "LLM_exec_quantity": 5,
+          "language": "java",
+          "CPU_usage": {
+            "improvement_percentage": -997.4358974358975,
+            "label": "degradation",
+            "is_outlier": true,
+            "base_value": 7.8,
+            "llm_value": 85.6
+          },
+          "RAM_usage": {
+            "improvement_percentage": -0.1820735577173178,
+            "label": "degradation",
+            "is_outlier": false,
+            "base_value": 46135.2,
+            "llm_value": 46219.2
+          },
+          "execution_time_ms": {
+            "improvement_percentage": 72.68041237113401,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 388.0,
+            "llm_value": 106.0
+          },
+          "regressionTestPassed": -0.0,
+          "energy_joules": {
+            "improvement_percentage": -207.07376578563697,
+            "label": "degradation",
+            "is_outlier": true,
+            "base_value": 4.142108432292939,
+            "llm_value": 12.719328345966337
+          }
+        }
+      }
+    }
+  },
+  "Java_darts_exercism-java-blogscot_blogscot": {
+    "base_5_exec_data": {
+      "exec_quantity": 5,
+      "language": "java",
+      "avg_exec_CPU_usage": 7.8,
+      "avg_exec_RAM_usage": 46135.2,
+      "avg_exec_execution_time_ms": 322.0
+    },
+    "LLM_5_exec_data": {
+      "openAI": {
+        "prompt_v1": {
+          "exec_quantity": 5,
+          "successfully_exec_quantity": 5,
+          "language": "java",
+          "avg_exec_CPU_usage": 76.4,
+          "avg_exec_RAM_usage": 46088.8,
+          "avg_exec_execution_time_ms": 132.0,
+          "avg_exec_regressionTestPassed": 100.0
+        },
+        "prompt_v2": {
+          "exec_quantity": 5,
+          "successfully_exec_quantity": 5,
+          "language": "java",
+          "avg_exec_CPU_usage": 79.6,
+          "avg_exec_RAM_usage": 46157.6,
+          "avg_exec_execution_time_ms": 126.0,
+          "avg_exec_regressionTestPassed": 100.0
+        },
+        "prompt_v3": {
+          "exec_quantity": 5,
+          "successfully_exec_quantity": 5,
+          "language": "java",
+          "avg_exec_CPU_usage": 69.8,
+          "avg_exec_RAM_usage": 46176.0,
+          "avg_exec_execution_time_ms": 127.99999999999997,
+          "avg_exec_regressionTestPassed": 100.0
+        },
+        "prompt_v4": {
+          "exec_quantity": 5,
+          "successfully_exec_quantity": 5,
+          "language": "java",
+          "avg_exec_CPU_usage": 75.2,
+          "avg_exec_RAM_usage": 46199.2,
+          "avg_exec_execution_time_ms": 114.0,
+          "avg_exec_regressionTestPassed": 100.0
+        }
+      },
+      "gemini": {
+        "prompt_v1": {
+          "exec_quantity": 5,
+          "successfully_exec_quantity": 5,
+          "language": "java",
+          "avg_exec_CPU_usage": 114.2,
+          "avg_exec_RAM_usage": 46049.6,
+          "avg_exec_execution_time_ms": 102.0,
+          "avg_exec_regressionTestPassed": 100.0
+        },
+        "prompt_v2": {
+          "exec_quantity": 5,
+          "successfully_exec_quantity": 5,
+          "language": "java",
+          "avg_exec_CPU_usage": 121.0,
+          "avg_exec_RAM_usage": 46140.0,
+          "avg_exec_execution_time_ms": 104.0,
+          "avg_exec_regressionTestPassed": 100.0
+        },
+        "prompt_v3": {
+          "exec_quantity": 5,
+          "successfully_exec_quantity": 5,
+          "language": "java",
+          "avg_exec_CPU_usage": 108.6,
+          "avg_exec_RAM_usage": 46137.6,
+          "avg_exec_execution_time_ms": 108.0,
+          "avg_exec_regressionTestPassed": 100.0
+        },
+        "prompt_v4": {
+          "exec_quantity": 5,
+          "successfully_exec_quantity": 5,
+          "language": "java",
+          "avg_exec_CPU_usage": 122.2,
+          "avg_exec_RAM_usage": 46108.8,
+          "avg_exec_execution_time_ms": 104.0,
+          "avg_exec_regressionTestPassed": 100.0
+        }
+      },
+      "claude": {
+        "prompt_v1": {
+          "exec_quantity": 5,
+          "successfully_exec_quantity": 5,
+          "language": "java",
+          "avg_exec_CPU_usage": 109.0,
+          "avg_exec_RAM_usage": 46112.8,
+          "avg_exec_execution_time_ms": 106.0,
+          "avg_exec_regressionTestPassed": 100.0
+        },
+        "prompt_v2": {
+          "exec_quantity": 5,
+          "successfully_exec_quantity": 5,
+          "language": "java",
+          "avg_exec_CPU_usage": 104.8,
+          "avg_exec_RAM_usage": 46186.4,
+          "avg_exec_execution_time_ms": 104.0,
+          "avg_exec_regressionTestPassed": 100.0
+        },
+        "prompt_v3": {
+          "exec_quantity": 5,
+          "successfully_exec_quantity": 5,
+          "language": "java",
+          "avg_exec_CPU_usage": 98.4,
+          "avg_exec_RAM_usage": 46180.0,
+          "avg_exec_execution_time_ms": 106.0,
+          "avg_exec_regressionTestPassed": 100.0
+        },
+        "prompt_v4": {
+          "exec_quantity": 5,
+          "successfully_exec_quantity": 5,
+          "language": "java",
+          "avg_exec_CPU_usage": 111.4,
+          "avg_exec_RAM_usage": 46030.4,
+          "avg_exec_execution_time_ms": 110.0,
+          "avg_exec_regressionTestPassed": 100.0
+        }
+      }
+    },
+    "improvements_data": {
+      "openAI": {
+        "prompt_v1": {
+          "LLM_successfully_exec_quantity": 5,
+          "LLM_exec_quantity": 5,
+          "language": "java",
+          "CPU_usage": {
+            "improvement_percentage": -879.4871794871796,
+            "label": "degradation",
+            "is_outlier": true,
+            "base_value": 7.8,
+            "llm_value": 76.4
+          },
+          "RAM_usage": {
+            "improvement_percentage": 0.1005739652152677,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 46135.2,
+            "llm_value": 46088.8
+          },
+          "execution_time_ms": {
+            "improvement_percentage": 59.006211180124225,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 322.0,
+            "llm_value": 132.0
+          },
+          "regressionTestPassed": -0.0,
+          "energy_joules": {
+            "improvement_percentage": -296.00252585793436,
+            "label": "degradation",
+            "is_outlier": true,
+            "base_value": 3.5676189974784855,
+            "llm_value": 14.127861343002317
+          }
+        },
+        "prompt_v2": {
+          "LLM_successfully_exec_quantity": 5,
+          "LLM_exec_quantity": 5,
+          "language": "java",
+          "CPU_usage": {
+            "improvement_percentage": -920.5128205128204,
+            "label": "degradation",
+            "is_outlier": true,
+            "base_value": 7.8,
+            "llm_value": 79.6
+          },
+          "RAM_usage": {
+            "improvement_percentage": -0.04855294872462124,
+            "label": "degradation",
+            "is_outlier": false,
+            "base_value": 46135.2,
+            "llm_value": 46157.6
+          },
+          "execution_time_ms": {
+            "improvement_percentage": 60.86956521739131,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 322.0,
+            "llm_value": 126.0
+          },
+          "regressionTestPassed": -0.0,
+          "energy_joules": {
+            "improvement_percentage": -296.95718071465086,
+            "label": "degradation",
+            "is_outlier": true,
+            "base_value": 3.5676189974784855,
+            "llm_value": 14.161919791030886
+          }
+        },
+        "prompt_v3": {
+          "LLM_successfully_exec_quantity": 5,
+          "LLM_exec_quantity": 5,
+          "language": "java",
+          "CPU_usage": {
+            "improvement_percentage": -794.8717948717949,
+            "label": "degradation",
+            "is_outlier": true,
+            "base_value": 7.8,
+            "llm_value": 69.8
+          },
+          "RAM_usage": {
+            "improvement_percentage": -0.0884357280341321,
+            "label": "degradation",
+            "is_outlier": false,
+            "base_value": 46135.2,
+            "llm_value": 46176.0
+          },
+          "execution_time_ms": {
+            "improvement_percentage": 60.248447204968954,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 322.0,
+            "llm_value": 127.99999999999997
+          },
+          "regressionTestPassed": -0.0,
+          "energy_joules": {
+            "improvement_percentage": -257.49532045303,
+            "label": "degradation",
+            "is_outlier": true,
+            "base_value": 3.5676189974784855,
+            "llm_value": 12.754070967578887
+          }
+        },
+        "prompt_v4": {
+          "LLM_successfully_exec_quantity": 5,
+          "LLM_exec_quantity": 5,
+          "language": "java",
+          "CPU_usage": {
+            "improvement_percentage": -864.1025641025642,
+            "label": "degradation",
+            "is_outlier": true,
+            "base_value": 7.8,
+            "llm_value": 75.2
+          },
+          "RAM_usage": {
+            "improvement_percentage": -0.13872271064176595,
+            "label": "degradation",
+            "is_outlier": false,
+            "base_value": 46135.2,
+            "llm_value": 46199.2
+          },
+          "execution_time_ms": {
+            "improvement_percentage": 64.59627329192547,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 322.0,
+            "llm_value": 114.0
+          },
+          "regressionTestPassed": -0.0,
+          "energy_joules": {
+            "improvement_percentage": -239.27180120796038,
+            "label": "degradation",
+            "is_outlier": true,
+            "base_value": 3.5676189974784855,
+            "llm_value": 12.103925232982636
+          }
+        }
+      },
+      "gemini": {
+        "prompt_v1": {
+          "LLM_successfully_exec_quantity": 5,
+          "LLM_exec_quantity": 5,
+          "language": "java",
+          "CPU_usage": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": 7.8,
+            "llm_value": 114.2
+          },
+          "RAM_usage": {
+            "improvement_percentage": 0.18554162548335879,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 46135.2,
+            "llm_value": 46049.6
+          },
+          "execution_time_ms": {
+            "improvement_percentage": 68.32298136645963,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 322.0,
+            "llm_value": 102.0
+          },
+          "regressionTestPassed": -0.0,
+          "energy_joules": {
+            "improvement_percentage": -363.8042691283,
+            "label": "degradation",
+            "is_outlier": true,
+            "base_value": 3.5676189974784855,
+            "llm_value": 16.546769216537474
+          }
+        },
+        "prompt_v2": {
+          "LLM_successfully_exec_quantity": 5,
+          "LLM_exec_quantity": 5,
+          "language": "java",
+          "CPU_usage": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": 7.8,
+            "llm_value": 121.0
+          },
+          "RAM_usage": {
+            "improvement_percentage": -0.010404203298138756,
+            "label": "degradation",
+            "is_outlier": false,
+            "base_value": 46135.2,
+            "llm_value": 46140.0
+          },
+          "execution_time_ms": {
+            "improvement_percentage": 67.70186335403726,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 322.0,
+            "llm_value": 104.0
+          },
+          "regressionTestPassed": -0.0,
+          "energy_joules": {
+            "improvement_percentage": -400.3932324707625,
+            "label": "degradation",
+            "is_outlier": true,
+            "base_value": 3.5676189974784855,
+            "llm_value": 17.852124023723604
+          }
+        },
+        "prompt_v3": {
+          "LLM_successfully_exec_quantity": 5,
+          "LLM_exec_quantity": 5,
+          "language": "java",
+          "CPU_usage": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": 7.8,
+            "llm_value": 108.6
+          },
+          "RAM_usage": {
+            "improvement_percentage": -0.005202101649069378,
+            "label": "degradation",
+            "is_outlier": false,
+            "base_value": 46135.2,
+            "llm_value": 46137.6
+          },
+          "execution_time_ms": {
+            "improvement_percentage": 66.45962732919256,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 322.0,
+            "llm_value": 108.0
+          },
+          "regressionTestPassed": -0.0,
+          "energy_joules": {
+            "improvement_percentage": -367.24365218289967,
+            "label": "degradation",
+            "is_outlier": true,
+            "base_value": 3.5676189974784855,
+            "llm_value": 16.669473299789427
+          }
+        },
+        "prompt_v4": {
+          "LLM_successfully_exec_quantity": 5,
+          "LLM_exec_quantity": 5,
+          "language": "java",
+          "CPU_usage": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": 7.8,
+            "llm_value": 122.2
+          },
+          "RAM_usage": {
+            "improvement_percentage": 0.05722311813971583,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 46135.2,
+            "llm_value": 46108.8
+          },
+          "execution_time_ms": {
+            "improvement_percentage": 67.70186335403726,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 322.0,
+            "llm_value": 104.0
+          },
+          "regressionTestPassed": -0.0,
+          "energy_joules": {
+            "improvement_percentage": -408.30182720027557,
+            "label": "degradation",
+            "is_outlier": true,
+            "base_value": 3.5676189974784855,
+            "llm_value": 18.134272551727292
+          }
+        }
+      },
+      "claude": {
+        "prompt_v1": {
+          "LLM_successfully_exec_quantity": 5,
+          "LLM_exec_quantity": 5,
+          "language": "java",
+          "CPU_usage": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": 7.8,
+            "llm_value": 109.0
+          },
+          "RAM_usage": {
+            "improvement_percentage": 0.048552948724605464,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 46135.2,
+            "llm_value": 46112.8
+          },
+          "execution_time_ms": {
+            "improvement_percentage": 67.08074534161491,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 322.0,
+            "llm_value": 106.0
+          },
+          "regressionTestPassed": -0.0,
+          "energy_joules": {
+            "improvement_percentage": -362.52900511670197,
+            "label": "degradation",
+            "is_outlier": true,
+            "base_value": 3.5676189974784855,
+            "llm_value": 16.501272655391695
+          }
+        },
+        "prompt_v2": {
+          "LLM_successfully_exec_quantity": 5,
+          "LLM_exec_quantity": 5,
+          "language": "java",
+          "CPU_usage": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": 7.8,
+            "llm_value": 104.8
+          },
+          "RAM_usage": {
+            "improvement_percentage": -0.11097816851342221,
+            "label": "degradation",
+            "is_outlier": false,
+            "base_value": 46135.2,
+            "llm_value": 46186.4
+          },
+          "execution_time_ms": {
+            "improvement_percentage": 67.70186335403726,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 322.0,
+            "llm_value": 104.0
+          },
+          "regressionTestPassed": -0.0,
+          "energy_joules": {
+            "improvement_percentage": -334.96733212480467,
+            "label": "degradation",
+            "is_outlier": true,
+            "base_value": 3.5676189974784855,
+            "llm_value": 15.51797717370987
+          }
+        },
+        "prompt_v3": {
+          "LLM_successfully_exec_quantity": 5,
+          "LLM_exec_quantity": 5,
+          "language": "java",
+          "CPU_usage": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": 7.8,
+            "llm_value": 98.4
+          },
+          "RAM_usage": {
+            "improvement_percentage": -0.09710589744924247,
+            "label": "degradation",
+            "is_outlier": false,
+            "base_value": 46135.2,
+            "llm_value": 46180.0
+          },
+          "execution_time_ms": {
+            "improvement_percentage": 67.08074534161491,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 322.0,
+            "llm_value": 106.0
+          },
+          "regressionTestPassed": -0.0,
+          "energy_joules": {
+            "improvement_percentage": -314.59796981062556,
+            "label": "degradation",
+            "is_outlier": true,
+            "base_value": 3.5676189974784855,
+            "llm_value": 14.791275934123993
+          }
+        },
+        "prompt_v4": {
+          "LLM_successfully_exec_quantity": 5,
+          "LLM_exec_quantity": 5,
+          "language": "java",
+          "CPU_usage": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": 7.8,
+            "llm_value": 111.4
+          },
+          "RAM_usage": {
+            "improvement_percentage": 0.2271584386758823,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 46135.2,
+            "llm_value": 46030.4
+          },
+          "execution_time_ms": {
+            "improvement_percentage": 65.83850931677019,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 322.0,
+            "llm_value": 110.0
+          },
+          "regressionTestPassed": -0.0,
+          "energy_joules": {
+            "improvement_percentage": -386.8167326406349,
+            "label": "degradation",
+            "is_outlier": true,
+            "base_value": 3.5676189974784855,
+            "llm_value": 17.367766236591336
+          }
+        }
+      }
+    }
+  },
   "go_darts_Exercism (go_rootulp)": {
     "base_5_exec_data": {
       "exec_quantity": 5,
@@ -2082,6 +3677,2417 @@
             "base_value": 1564.8581610114097,
             "llm_value": 820.503473538208
           }
+        }
+      }
+    }
+  },
+  "javascript_darts_exercism-javascript-programmiri_programmiri": {
+    "base_5_exec_data": {
+      "exec_quantity": 5,
+      "language": "javascript",
+      "avg_exec_CPU_usage": 30.6,
+      "avg_exec_RAM_usage": 81027.2,
+      "avg_exec_execution_time_ms": 598.0
+    },
+    "LLM_5_exec_data": {
+      "openAI": {
+        "prompt_v1": {
+          "exec_quantity": 5,
+          "successfully_exec_quantity": 5,
+          "language": "javascript",
+          "avg_exec_CPU_usage": 14.6,
+          "avg_exec_RAM_usage": 80462.4,
+          "avg_exec_execution_time_ms": 538.0,
+          "avg_exec_regressionTestPassed": 100.0
+        },
+        "prompt_v2": {
+          "exec_quantity": 5,
+          "successfully_exec_quantity": 5,
+          "language": "javascript",
+          "avg_exec_CPU_usage": 14.6,
+          "avg_exec_RAM_usage": 81471.2,
+          "avg_exec_execution_time_ms": 526.0,
+          "avg_exec_regressionTestPassed": 100.0
+        },
+        "prompt_v3": {
+          "exec_quantity": 0,
+          "successfully_exec_quantity": 0,
+          "language": "",
+          "avg_exec_CPU_usage": -1,
+          "avg_exec_RAM_usage": -1,
+          "avg_exec_execution_time_ms": -1,
+          "avg_exec_regressionTestPassed": 0
+        },
+        "prompt_v4": {
+          "exec_quantity": 0,
+          "successfully_exec_quantity": 0,
+          "language": "",
+          "avg_exec_CPU_usage": -1,
+          "avg_exec_RAM_usage": -1,
+          "avg_exec_execution_time_ms": -1,
+          "avg_exec_regressionTestPassed": 0
+        }
+      },
+      "gemini": {
+        "prompt_v1": {
+          "exec_quantity": 5,
+          "successfully_exec_quantity": 5,
+          "language": "javascript",
+          "avg_exec_CPU_usage": 14.0,
+          "avg_exec_RAM_usage": 80838.4,
+          "avg_exec_execution_time_ms": 514.0,
+          "avg_exec_regressionTestPassed": 100.0
+        },
+        "prompt_v2": {
+          "exec_quantity": 5,
+          "successfully_exec_quantity": 5,
+          "language": "javascript",
+          "avg_exec_CPU_usage": 11.0,
+          "avg_exec_RAM_usage": 80721.6,
+          "avg_exec_execution_time_ms": 522.0,
+          "avg_exec_regressionTestPassed": 100.0
+        },
+        "prompt_v3": {
+          "exec_quantity": 0,
+          "successfully_exec_quantity": 0,
+          "language": "",
+          "avg_exec_CPU_usage": -1,
+          "avg_exec_RAM_usage": -1,
+          "avg_exec_execution_time_ms": -1,
+          "avg_exec_regressionTestPassed": 0
+        },
+        "prompt_v4": {
+          "exec_quantity": 0,
+          "successfully_exec_quantity": 0,
+          "language": "",
+          "avg_exec_CPU_usage": -1,
+          "avg_exec_RAM_usage": -1,
+          "avg_exec_execution_time_ms": -1,
+          "avg_exec_regressionTestPassed": 0
+        }
+      },
+      "claude": {
+        "prompt_v1": {
+          "exec_quantity": 5,
+          "successfully_exec_quantity": 5,
+          "language": "javascript",
+          "avg_exec_CPU_usage": 15.2,
+          "avg_exec_RAM_usage": 80402.4,
+          "avg_exec_execution_time_ms": 524.0,
+          "avg_exec_regressionTestPassed": 100.0
+        },
+        "prompt_v2": {
+          "exec_quantity": 5,
+          "successfully_exec_quantity": 5,
+          "language": "javascript",
+          "avg_exec_CPU_usage": 10.4,
+          "avg_exec_RAM_usage": 81228.8,
+          "avg_exec_execution_time_ms": 518.0,
+          "avg_exec_regressionTestPassed": 100.0
+        },
+        "prompt_v3": {
+          "exec_quantity": 0,
+          "successfully_exec_quantity": 0,
+          "language": "",
+          "avg_exec_CPU_usage": -1,
+          "avg_exec_RAM_usage": -1,
+          "avg_exec_execution_time_ms": -1,
+          "avg_exec_regressionTestPassed": 0
+        },
+        "prompt_v4": {
+          "exec_quantity": 0,
+          "successfully_exec_quantity": 0,
+          "language": "",
+          "avg_exec_CPU_usage": -1,
+          "avg_exec_RAM_usage": -1,
+          "avg_exec_execution_time_ms": -1,
+          "avg_exec_regressionTestPassed": 0
+        }
+      }
+    },
+    "improvements_data": {
+      "openAI": {
+        "prompt_v1": {
+          "LLM_successfully_exec_quantity": 5,
+          "LLM_exec_quantity": 5,
+          "language": "javascript",
+          "CPU_usage": {
+            "improvement_percentage": 52.28758169934641,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 30.6,
+            "llm_value": 14.6
+          },
+          "RAM_usage": {
+            "improvement_percentage": 0.697049879546625,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 81027.2,
+            "llm_value": 80462.4
+          },
+          "execution_time_ms": {
+            "improvement_percentage": 10.033444816053512,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 598.0,
+            "llm_value": 538.0
+          },
+          "regressionTestPassed": -0.0,
+          "energy_joules": {
+            "improvement_percentage": 57.32452804738723,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 26.066433944892886,
+            "llm_value": 11.123973707199095
+          }
+        },
+        "prompt_v2": {
+          "LLM_successfully_exec_quantity": 5,
+          "LLM_exec_quantity": 5,
+          "language": "javascript",
+          "CPU_usage": {
+            "improvement_percentage": 52.28758169934641,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 30.6,
+            "llm_value": 14.6
+          },
+          "RAM_usage": {
+            "improvement_percentage": -0.5479641404367916,
+            "label": "degradation",
+            "is_outlier": false,
+            "base_value": 81027.2,
+            "llm_value": 81471.2
+          },
+          "execution_time_ms": {
+            "improvement_percentage": 12.040133779264215,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 598.0,
+            "llm_value": 526.0
+          },
+          "regressionTestPassed": -0.0,
+          "energy_joules": {
+            "improvement_percentage": 58.20011737727155,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 26.066433944892886,
+            "llm_value": 10.895738792896271
+          }
+        },
+        "prompt_v3": {
+          "LLM_successfully_exec_quantity": 0,
+          "LLM_exec_quantity": 0,
+          "language": "",
+          "CPU_usage": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "RAM_usage": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "execution_time_ms": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "regressionTestPassed": -0.0
+        },
+        "prompt_v4": {
+          "LLM_successfully_exec_quantity": 0,
+          "LLM_exec_quantity": 0,
+          "language": "",
+          "CPU_usage": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "RAM_usage": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "execution_time_ms": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "regressionTestPassed": -0.0
+        }
+      },
+      "gemini": {
+        "prompt_v1": {
+          "LLM_successfully_exec_quantity": 5,
+          "LLM_exec_quantity": 5,
+          "language": "javascript",
+          "CPU_usage": {
+            "improvement_percentage": 54.2483660130719,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 30.6,
+            "llm_value": 14.0
+          },
+          "RAM_usage": {
+            "improvement_percentage": 0.23300817503258525,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 81027.2,
+            "llm_value": 80838.4
+          },
+          "execution_time_ms": {
+            "improvement_percentage": 14.046822742474916,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 598.0,
+            "llm_value": 514.0
+          },
+          "regressionTestPassed": -0.0,
+          "energy_joules": {
+            "improvement_percentage": 60.630079404803524,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 26.066433944892886,
+            "llm_value": 10.262334346103668
+          }
+        },
+        "prompt_v2": {
+          "LLM_successfully_exec_quantity": 5,
+          "LLM_exec_quantity": 5,
+          "language": "javascript",
+          "CPU_usage": {
+            "improvement_percentage": 64.05228758169935,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 30.6,
+            "llm_value": 11.0
+          },
+          "RAM_usage": {
+            "improvement_percentage": 0.37715730026459177,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 81027.2,
+            "llm_value": 80721.6
+          },
+          "execution_time_ms": {
+            "improvement_percentage": 12.709030100334449,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 598.0,
+            "llm_value": 522.0
+          },
+          "regressionTestPassed": -0.0,
+          "energy_joules": {
+            "improvement_percentage": 68.53388308325091,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 26.066433944892886,
+            "llm_value": 8.202094581127167
+          }
+        },
+        "prompt_v3": {
+          "LLM_successfully_exec_quantity": 0,
+          "LLM_exec_quantity": 0,
+          "language": "",
+          "CPU_usage": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "RAM_usage": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "execution_time_ms": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "regressionTestPassed": -0.0
+        },
+        "prompt_v4": {
+          "LLM_successfully_exec_quantity": 0,
+          "LLM_exec_quantity": 0,
+          "language": "",
+          "CPU_usage": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "RAM_usage": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "execution_time_ms": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "regressionTestPassed": -0.0
+        }
+      },
+      "claude": {
+        "prompt_v1": {
+          "LLM_successfully_exec_quantity": 5,
+          "LLM_exec_quantity": 5,
+          "language": "javascript",
+          "CPU_usage": {
+            "improvement_percentage": 50.32679738562093,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 30.6,
+            "llm_value": 15.2
+          },
+          "RAM_usage": {
+            "improvement_percentage": 0.771099087713759,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 81027.2,
+            "llm_value": 80402.4
+          },
+          "execution_time_ms": {
+            "improvement_percentage": 12.37458193979933,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 598.0,
+            "llm_value": 524.0
+          },
+          "regressionTestPassed": -0.0,
+          "energy_joules": {
+            "improvement_percentage": 56.27731506651378,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 26.066433944892886,
+            "llm_value": 11.39694478712082
+          }
+        },
+        "prompt_v2": {
+          "LLM_successfully_exec_quantity": 5,
+          "LLM_exec_quantity": 5,
+          "language": "javascript",
+          "CPU_usage": {
+            "improvement_percentage": 66.01307189542484,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 30.6,
+            "llm_value": 10.4
+          },
+          "RAM_usage": {
+            "improvement_percentage": -0.24880533944157743,
+            "label": "degradation",
+            "is_outlier": false,
+            "base_value": 81027.2,
+            "llm_value": 81228.8
+          },
+          "execution_time_ms": {
+            "improvement_percentage": 13.377926421404682,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 598.0,
+            "llm_value": 518.0
+          },
+          "regressionTestPassed": -0.0,
+          "energy_joules": {
+            "improvement_percentage": 70.4473424129555,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 26.066433944892886,
+            "llm_value": 7.70332396888733
+          }
+        },
+        "prompt_v3": {
+          "LLM_successfully_exec_quantity": 0,
+          "LLM_exec_quantity": 0,
+          "language": "",
+          "CPU_usage": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "RAM_usage": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "execution_time_ms": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "regressionTestPassed": -0.0
+        },
+        "prompt_v4": {
+          "LLM_successfully_exec_quantity": 0,
+          "LLM_exec_quantity": 0,
+          "language": "",
+          "CPU_usage": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "RAM_usage": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "execution_time_ms": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "regressionTestPassed": -0.0
+        }
+      }
+    }
+  },
+  "javascript_darts_exercism-javascript-ffflorian_ffflorian": {
+    "base_5_exec_data": {
+      "exec_quantity": 5,
+      "language": "javascript",
+      "avg_exec_CPU_usage": 30.0,
+      "avg_exec_RAM_usage": 82631.2,
+      "avg_exec_execution_time_ms": 606.0
+    },
+    "LLM_5_exec_data": {
+      "openAI": {
+        "prompt_v1": {
+          "exec_quantity": 5,
+          "successfully_exec_quantity": 5,
+          "language": "javascript",
+          "avg_exec_CPU_usage": 14.4,
+          "avg_exec_RAM_usage": 81468.0,
+          "avg_exec_execution_time_ms": 536.0,
+          "avg_exec_regressionTestPassed": 100.0
+        },
+        "prompt_v2": {
+          "exec_quantity": 5,
+          "successfully_exec_quantity": 5,
+          "language": "javascript",
+          "avg_exec_CPU_usage": 11.6,
+          "avg_exec_RAM_usage": 82872.0,
+          "avg_exec_execution_time_ms": 510.0,
+          "avg_exec_regressionTestPassed": 100.0
+        },
+        "prompt_v3": {
+          "exec_quantity": 0,
+          "successfully_exec_quantity": 0,
+          "language": "",
+          "avg_exec_CPU_usage": -1,
+          "avg_exec_RAM_usage": -1,
+          "avg_exec_execution_time_ms": -1,
+          "avg_exec_regressionTestPassed": 0
+        },
+        "prompt_v4": {
+          "exec_quantity": 0,
+          "successfully_exec_quantity": 0,
+          "language": "",
+          "avg_exec_CPU_usage": -1,
+          "avg_exec_RAM_usage": -1,
+          "avg_exec_execution_time_ms": -1,
+          "avg_exec_regressionTestPassed": 0
+        }
+      },
+      "gemini": {
+        "prompt_v1": {
+          "exec_quantity": 5,
+          "successfully_exec_quantity": 5,
+          "language": "javascript",
+          "avg_exec_CPU_usage": 18.6,
+          "avg_exec_RAM_usage": 82055.2,
+          "avg_exec_execution_time_ms": 494.0,
+          "avg_exec_regressionTestPassed": 100.0
+        },
+        "prompt_v2": {
+          "exec_quantity": 5,
+          "successfully_exec_quantity": 5,
+          "language": "javascript",
+          "avg_exec_CPU_usage": 16.6,
+          "avg_exec_RAM_usage": 82666.4,
+          "avg_exec_execution_time_ms": 480.0,
+          "avg_exec_regressionTestPassed": 100.0
+        },
+        "prompt_v3": {
+          "exec_quantity": 0,
+          "successfully_exec_quantity": 0,
+          "language": "",
+          "avg_exec_CPU_usage": -1,
+          "avg_exec_RAM_usage": -1,
+          "avg_exec_execution_time_ms": -1,
+          "avg_exec_regressionTestPassed": 0
+        },
+        "prompt_v4": {
+          "exec_quantity": 0,
+          "successfully_exec_quantity": 0,
+          "language": "",
+          "avg_exec_CPU_usage": -1,
+          "avg_exec_RAM_usage": -1,
+          "avg_exec_execution_time_ms": -1,
+          "avg_exec_regressionTestPassed": 0
+        }
+      },
+      "claude": {
+        "prompt_v1": {
+          "exec_quantity": 5,
+          "successfully_exec_quantity": 5,
+          "language": "javascript",
+          "avg_exec_CPU_usage": 16.0,
+          "avg_exec_RAM_usage": 81679.2,
+          "avg_exec_execution_time_ms": 522.0,
+          "avg_exec_regressionTestPassed": 100.0
+        },
+        "prompt_v2": {
+          "exec_quantity": 5,
+          "successfully_exec_quantity": 5,
+          "language": "javascript",
+          "avg_exec_CPU_usage": 9.8,
+          "avg_exec_RAM_usage": 82112.8,
+          "avg_exec_execution_time_ms": 520.0,
+          "avg_exec_regressionTestPassed": 100.0
+        },
+        "prompt_v3": {
+          "exec_quantity": 0,
+          "successfully_exec_quantity": 0,
+          "language": "",
+          "avg_exec_CPU_usage": -1,
+          "avg_exec_RAM_usage": -1,
+          "avg_exec_execution_time_ms": -1,
+          "avg_exec_regressionTestPassed": 0
+        },
+        "prompt_v4": {
+          "exec_quantity": 0,
+          "successfully_exec_quantity": 0,
+          "language": "",
+          "avg_exec_CPU_usage": -1,
+          "avg_exec_RAM_usage": -1,
+          "avg_exec_execution_time_ms": -1,
+          "avg_exec_regressionTestPassed": 0
+        }
+      }
+    },
+    "improvements_data": {
+      "openAI": {
+        "prompt_v1": {
+          "LLM_successfully_exec_quantity": 5,
+          "LLM_exec_quantity": 5,
+          "language": "javascript",
+          "CPU_usage": {
+            "improvement_percentage": 52.0,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 30.0,
+            "llm_value": 14.4
+          },
+          "RAM_usage": {
+            "improvement_percentage": 1.4077007232135044,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 82631.2,
+            "llm_value": 81468.0
+          },
+          "execution_time_ms": {
+            "improvement_percentage": 11.55115511551155,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 606.0,
+            "llm_value": 536.0
+          },
+          "regressionTestPassed": -0.0,
+          "energy_joules": {
+            "improvement_percentage": 57.31393851372513,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 25.873501736068725,
+            "llm_value": 11.044378859710694
+          }
+        },
+        "prompt_v2": {
+          "LLM_successfully_exec_quantity": 5,
+          "LLM_exec_quantity": 5,
+          "language": "javascript",
+          "CPU_usage": {
+            "improvement_percentage": 61.33333333333333,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 30.0,
+            "llm_value": 11.6
+          },
+          "RAM_usage": {
+            "improvement_percentage": -0.291415349165936,
+            "label": "degradation",
+            "is_outlier": false,
+            "base_value": 82631.2,
+            "llm_value": 82872.0
+          },
+          "execution_time_ms": {
+            "improvement_percentage": 15.841584158415841,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 606.0,
+            "llm_value": 510.0
+          },
+          "regressionTestPassed": -0.0,
+          "energy_joules": {
+            "improvement_percentage": 67.51690925333416,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 25.873501736068725,
+            "llm_value": 8.404513048267365
+          }
+        },
+        "prompt_v3": {
+          "LLM_successfully_exec_quantity": 0,
+          "LLM_exec_quantity": 0,
+          "language": "",
+          "CPU_usage": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "RAM_usage": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "execution_time_ms": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "regressionTestPassed": -0.0
+        },
+        "prompt_v4": {
+          "LLM_successfully_exec_quantity": 0,
+          "LLM_exec_quantity": 0,
+          "language": "",
+          "CPU_usage": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "RAM_usage": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "execution_time_ms": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "regressionTestPassed": -0.0
+        }
+      },
+      "gemini": {
+        "prompt_v1": {
+          "LLM_successfully_exec_quantity": 5,
+          "LLM_exec_quantity": 5,
+          "language": "javascript",
+          "CPU_usage": {
+            "improvement_percentage": 37.99999999999999,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 30.0,
+            "llm_value": 18.6
+          },
+          "RAM_usage": {
+            "improvement_percentage": 0.6970732604633602,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 82631.2,
+            "llm_value": 82055.2
+          },
+          "execution_time_ms": {
+            "improvement_percentage": 18.48184818481848,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 606.0,
+            "llm_value": 494.0
+          },
+          "regressionTestPassed": -0.0,
+          "energy_joules": {
+            "improvement_percentage": 49.27940557598692,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 25.873501736068725,
+            "llm_value": 13.1231938788414
+          }
+        },
+        "prompt_v2": {
+          "LLM_successfully_exec_quantity": 5,
+          "LLM_exec_quantity": 5,
+          "language": "javascript",
+          "CPU_usage": {
+            "improvement_percentage": 44.66666666666666,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 30.0,
+            "llm_value": 16.6
+          },
+          "RAM_usage": {
+            "improvement_percentage": -0.04259892147275737,
+            "label": "degradation",
+            "is_outlier": false,
+            "base_value": 82631.2,
+            "llm_value": 82666.4
+          },
+          "execution_time_ms": {
+            "improvement_percentage": 20.792079207920793,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 606.0,
+            "llm_value": 480.0
+          },
+          "regressionTestPassed": -0.0,
+          "energy_joules": {
+            "improvement_percentage": 56.24273385778874,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 25.873501736068725,
+            "llm_value": 11.321537014961242
+          }
+        },
+        "prompt_v3": {
+          "LLM_successfully_exec_quantity": 0,
+          "LLM_exec_quantity": 0,
+          "language": "",
+          "CPU_usage": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "RAM_usage": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "execution_time_ms": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "regressionTestPassed": -0.0
+        },
+        "prompt_v4": {
+          "LLM_successfully_exec_quantity": 0,
+          "LLM_exec_quantity": 0,
+          "language": "",
+          "CPU_usage": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "RAM_usage": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "execution_time_ms": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "regressionTestPassed": -0.0
+        }
+      },
+      "claude": {
+        "prompt_v1": {
+          "LLM_successfully_exec_quantity": 5,
+          "LLM_exec_quantity": 5,
+          "language": "javascript",
+          "CPU_usage": {
+            "improvement_percentage": 46.666666666666664,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 30.0,
+            "llm_value": 16.0
+          },
+          "RAM_usage": {
+            "improvement_percentage": 1.1521071943769425,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 82631.2,
+            "llm_value": 81679.2
+          },
+          "execution_time_ms": {
+            "improvement_percentage": 13.861386138613863,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 606.0,
+            "llm_value": 522.0
+          },
+          "regressionTestPassed": -0.0,
+          "energy_joules": {
+            "improvement_percentage": 53.98951402675164,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 25.873501736068725,
+            "llm_value": 11.904523887062073
+          }
+        },
+        "prompt_v2": {
+          "LLM_successfully_exec_quantity": 5,
+          "LLM_exec_quantity": 5,
+          "language": "javascript",
+          "CPU_usage": {
+            "improvement_percentage": 67.33333333333333,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 30.0,
+            "llm_value": 9.8
+          },
+          "RAM_usage": {
+            "improvement_percentage": 0.627365934417017,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 82631.2,
+            "llm_value": 82112.8
+          },
+          "execution_time_ms": {
+            "improvement_percentage": 14.19141914191419,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 606.0,
+            "llm_value": 520.0
+          },
+          "regressionTestPassed": -0.0,
+          "energy_joules": {
+            "improvement_percentage": 71.80087228382041,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 25.873501736068725,
+            "llm_value": 7.296101799201965
+          }
+        },
+        "prompt_v3": {
+          "LLM_successfully_exec_quantity": 0,
+          "LLM_exec_quantity": 0,
+          "language": "",
+          "CPU_usage": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "RAM_usage": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "execution_time_ms": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "regressionTestPassed": -0.0
+        },
+        "prompt_v4": {
+          "LLM_successfully_exec_quantity": 0,
+          "LLM_exec_quantity": 0,
+          "language": "",
+          "CPU_usage": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "RAM_usage": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "execution_time_ms": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "regressionTestPassed": -0.0
+        }
+      }
+    }
+  },
+  "javascript_darts_exercism-javascript-ffflorian": {
+    "base_5_exec_data": {
+      "exec_quantity": 5,
+      "language": "javascript",
+      "avg_exec_CPU_usage": 29.0,
+      "avg_exec_RAM_usage": 82997.6,
+      "avg_exec_execution_time_ms": 610.0
+    },
+    "LLM_5_exec_data": {
+      "openAI": {
+        "prompt_v1": {
+          "exec_quantity": 5,
+          "successfully_exec_quantity": 5,
+          "language": "javascript",
+          "avg_exec_CPU_usage": 15.6,
+          "avg_exec_RAM_usage": 82009.6,
+          "avg_exec_execution_time_ms": 536.0,
+          "avg_exec_regressionTestPassed": 100.0
+        },
+        "prompt_v2": {
+          "exec_quantity": 5,
+          "successfully_exec_quantity": 5,
+          "language": "javascript",
+          "avg_exec_CPU_usage": 10.8,
+          "avg_exec_RAM_usage": 83121.6,
+          "avg_exec_execution_time_ms": 596.0,
+          "avg_exec_regressionTestPassed": 100.0
+        },
+        "prompt_v3": {
+          "exec_quantity": 0,
+          "successfully_exec_quantity": 0,
+          "language": "",
+          "avg_exec_CPU_usage": -1,
+          "avg_exec_RAM_usage": -1,
+          "avg_exec_execution_time_ms": -1,
+          "avg_exec_regressionTestPassed": 0
+        },
+        "prompt_v4": {
+          "exec_quantity": 0,
+          "successfully_exec_quantity": 0,
+          "language": "",
+          "avg_exec_CPU_usage": -1,
+          "avg_exec_RAM_usage": -1,
+          "avg_exec_execution_time_ms": -1,
+          "avg_exec_regressionTestPassed": 0
+        }
+      },
+      "gemini": {
+        "prompt_v1": {
+          "exec_quantity": 5,
+          "successfully_exec_quantity": 5,
+          "language": "javascript",
+          "avg_exec_CPU_usage": 15.0,
+          "avg_exec_RAM_usage": 82455.2,
+          "avg_exec_execution_time_ms": 510.0,
+          "avg_exec_regressionTestPassed": 100.0
+        },
+        "prompt_v2": {
+          "exec_quantity": 5,
+          "successfully_exec_quantity": 5,
+          "language": "javascript",
+          "avg_exec_CPU_usage": 13.0,
+          "avg_exec_RAM_usage": 82480.8,
+          "avg_exec_execution_time_ms": 602.0,
+          "avg_exec_regressionTestPassed": 100.0
+        },
+        "prompt_v3": {
+          "exec_quantity": 0,
+          "successfully_exec_quantity": 0,
+          "language": "",
+          "avg_exec_CPU_usage": -1,
+          "avg_exec_RAM_usage": -1,
+          "avg_exec_execution_time_ms": -1,
+          "avg_exec_regressionTestPassed": 0
+        },
+        "prompt_v4": {
+          "exec_quantity": 0,
+          "successfully_exec_quantity": 0,
+          "language": "",
+          "avg_exec_CPU_usage": -1,
+          "avg_exec_RAM_usage": -1,
+          "avg_exec_execution_time_ms": -1,
+          "avg_exec_regressionTestPassed": 0
+        }
+      },
+      "claude": {
+        "prompt_v1": {
+          "exec_quantity": 5,
+          "successfully_exec_quantity": 5,
+          "language": "javascript",
+          "avg_exec_CPU_usage": 14.0,
+          "avg_exec_RAM_usage": 81720.0,
+          "avg_exec_execution_time_ms": 516.0,
+          "avg_exec_regressionTestPassed": 100.0
+        },
+        "prompt_v2": {
+          "exec_quantity": 5,
+          "successfully_exec_quantity": 5,
+          "language": "javascript",
+          "avg_exec_CPU_usage": 12.8,
+          "avg_exec_RAM_usage": 82472.8,
+          "avg_exec_execution_time_ms": 606.0,
+          "avg_exec_regressionTestPassed": 100.0
+        },
+        "prompt_v3": {
+          "exec_quantity": 0,
+          "successfully_exec_quantity": 0,
+          "language": "",
+          "avg_exec_CPU_usage": -1,
+          "avg_exec_RAM_usage": -1,
+          "avg_exec_execution_time_ms": -1,
+          "avg_exec_regressionTestPassed": 0
+        },
+        "prompt_v4": {
+          "exec_quantity": 0,
+          "successfully_exec_quantity": 0,
+          "language": "",
+          "avg_exec_CPU_usage": -1,
+          "avg_exec_RAM_usage": -1,
+          "avg_exec_execution_time_ms": -1,
+          "avg_exec_regressionTestPassed": 0
+        }
+      }
+    },
+    "improvements_data": {
+      "openAI": {
+        "prompt_v1": {
+          "LLM_successfully_exec_quantity": 5,
+          "LLM_exec_quantity": 5,
+          "language": "javascript",
+          "CPU_usage": {
+            "improvement_percentage": 46.20689655172414,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 29.0,
+            "llm_value": 15.6
+          },
+          "RAM_usage": {
+            "improvement_percentage": 1.1903958668684396,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 82997.6,
+            "llm_value": 82009.6
+          },
+          "execution_time_ms": {
+            "improvement_percentage": 12.131147540983607,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 610.0,
+            "llm_value": 536.0
+          },
+          "regressionTestPassed": -0.0,
+          "energy_joules": {
+            "improvement_percentage": 53.34282159757136,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 25.23541429710388,
+            "llm_value": 11.774132269191742
+          }
+        },
+        "prompt_v2": {
+          "LLM_successfully_exec_quantity": 5,
+          "LLM_exec_quantity": 5,
+          "language": "javascript",
+          "CPU_usage": {
+            "improvement_percentage": 62.75862068965517,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 29.0,
+            "llm_value": 10.8
+          },
+          "RAM_usage": {
+            "improvement_percentage": -0.14940191041668674,
+            "label": "degradation",
+            "is_outlier": false,
+            "base_value": 82997.6,
+            "llm_value": 83121.6
+          },
+          "execution_time_ms": {
+            "improvement_percentage": 2.2950819672131146,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 610.0,
+            "llm_value": 596.0
+          },
+          "regressionTestPassed": -0.0,
+          "energy_joules": {
+            "improvement_percentage": 63.96955161548914,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 25.23541429710388,
+            "llm_value": 9.092432922935485
+          }
+        },
+        "prompt_v3": {
+          "LLM_successfully_exec_quantity": 0,
+          "LLM_exec_quantity": 0,
+          "language": "",
+          "CPU_usage": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "RAM_usage": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "execution_time_ms": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "regressionTestPassed": -0.0
+        },
+        "prompt_v4": {
+          "LLM_successfully_exec_quantity": 0,
+          "LLM_exec_quantity": 0,
+          "language": "",
+          "CPU_usage": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "RAM_usage": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "execution_time_ms": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "regressionTestPassed": -0.0
+        }
+      },
+      "gemini": {
+        "prompt_v1": {
+          "LLM_successfully_exec_quantity": 5,
+          "LLM_exec_quantity": 5,
+          "language": "javascript",
+          "CPU_usage": {
+            "improvement_percentage": 48.275862068965516,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 29.0,
+            "llm_value": 15.0
+          },
+          "RAM_usage": {
+            "improvement_percentage": 0.6535128726613887,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 82997.6,
+            "llm_value": 82455.2
+          },
+          "execution_time_ms": {
+            "improvement_percentage": 16.39344262295082,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 610.0,
+            "llm_value": 510.0
+          },
+          "regressionTestPassed": -0.0,
+          "energy_joules": {
+            "improvement_percentage": 57.1189526028412,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 25.23541429710388,
+            "llm_value": 10.821209965610503
+          }
+        },
+        "prompt_v2": {
+          "LLM_successfully_exec_quantity": 5,
+          "LLM_exec_quantity": 5,
+          "language": "javascript",
+          "CPU_usage": {
+            "improvement_percentage": 55.172413793103445,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 29.0,
+            "llm_value": 13.0
+          },
+          "RAM_usage": {
+            "improvement_percentage": 0.6226686072850334,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 82997.6,
+            "llm_value": 82480.8
+          },
+          "execution_time_ms": {
+            "improvement_percentage": 1.3114754098360655,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 610.0,
+            "llm_value": 602.0
+          },
+          "regressionTestPassed": -0.0,
+          "energy_joules": {
+            "improvement_percentage": 55.6007233653345,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 25.23541429710388,
+            "llm_value": 11.204341403675079
+          }
+        },
+        "prompt_v3": {
+          "LLM_successfully_exec_quantity": 0,
+          "LLM_exec_quantity": 0,
+          "language": "",
+          "CPU_usage": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "RAM_usage": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "execution_time_ms": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "regressionTestPassed": -0.0
+        },
+        "prompt_v4": {
+          "LLM_successfully_exec_quantity": 0,
+          "LLM_exec_quantity": 0,
+          "language": "",
+          "CPU_usage": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "RAM_usage": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "execution_time_ms": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "regressionTestPassed": -0.0
+        }
+      },
+      "claude": {
+        "prompt_v1": {
+          "LLM_successfully_exec_quantity": 5,
+          "LLM_exec_quantity": 5,
+          "language": "javascript",
+          "CPU_usage": {
+            "improvement_percentage": 51.724137931034484,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 29.0,
+            "llm_value": 14.0
+          },
+          "RAM_usage": {
+            "improvement_percentage": 1.5393216189383858,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 82997.6,
+            "llm_value": 81720.0
+          },
+          "execution_time_ms": {
+            "improvement_percentage": 15.40983606557377,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 610.0,
+            "llm_value": 516.0
+          },
+          "regressionTestPassed": -0.0,
+          "energy_joules": {
+            "improvement_percentage": 59.42262508967384,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 25.23541429710388,
+            "llm_value": 10.239868669509889
+          }
+        },
+        "prompt_v2": {
+          "LLM_successfully_exec_quantity": 5,
+          "LLM_exec_quantity": 5,
+          "language": "javascript",
+          "CPU_usage": {
+            "improvement_percentage": 55.86206896551724,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 29.0,
+            "llm_value": 12.8
+          },
+          "RAM_usage": {
+            "improvement_percentage": 0.6323074402151422,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 82997.6,
+            "llm_value": 82472.8
+          },
+          "execution_time_ms": {
+            "improvement_percentage": 0.6557377049180327,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 610.0,
+            "llm_value": 606.0
+          },
+          "regressionTestPassed": -0.0,
+          "energy_joules": {
+            "improvement_percentage": 56.40195673619449,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 25.23541429710388,
+            "llm_value": 11.00214684305191
+          }
+        },
+        "prompt_v3": {
+          "LLM_successfully_exec_quantity": 0,
+          "LLM_exec_quantity": 0,
+          "language": "",
+          "CPU_usage": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "RAM_usage": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "execution_time_ms": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "regressionTestPassed": -0.0
+        },
+        "prompt_v4": {
+          "LLM_successfully_exec_quantity": 0,
+          "LLM_exec_quantity": 0,
+          "language": "",
+          "CPU_usage": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "RAM_usage": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "execution_time_ms": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "regressionTestPassed": -0.0
+        }
+      }
+    }
+  },
+  "c_darts_Manoloon": {
+    "base_5_exec_data": {
+      "exec_quantity": 5,
+      "language": "c",
+      "avg_exec_CPU_usage": 47.4,
+      "avg_exec_RAM_usage": 8806.4,
+      "avg_exec_execution_time_ms": 1.048876
+    },
+    "LLM_5_exec_data": {
+      "openAI": {
+        "prompt_v1": {
+          "exec_quantity": 0,
+          "successfully_exec_quantity": 0,
+          "language": "",
+          "avg_exec_CPU_usage": -1,
+          "avg_exec_RAM_usage": -1,
+          "avg_exec_execution_time_ms": -1,
+          "avg_exec_regressionTestPassed": 0
+        },
+        "prompt_v2": {
+          "exec_quantity": 0,
+          "successfully_exec_quantity": 0,
+          "language": "",
+          "avg_exec_CPU_usage": -1,
+          "avg_exec_RAM_usage": -1,
+          "avg_exec_execution_time_ms": -1,
+          "avg_exec_regressionTestPassed": 0
+        },
+        "prompt_v3": {
+          "exec_quantity": 0,
+          "successfully_exec_quantity": 0,
+          "language": "",
+          "avg_exec_CPU_usage": -1,
+          "avg_exec_RAM_usage": -1,
+          "avg_exec_execution_time_ms": -1,
+          "avg_exec_regressionTestPassed": 0
+        },
+        "prompt_v4": {
+          "exec_quantity": 0,
+          "successfully_exec_quantity": 0,
+          "language": "",
+          "avg_exec_CPU_usage": -1,
+          "avg_exec_RAM_usage": -1,
+          "avg_exec_execution_time_ms": -1,
+          "avg_exec_regressionTestPassed": 0
+        }
+      },
+      "gemini": {
+        "prompt_v1": {
+          "exec_quantity": 0,
+          "successfully_exec_quantity": 0,
+          "language": "",
+          "avg_exec_CPU_usage": -1,
+          "avg_exec_RAM_usage": -1,
+          "avg_exec_execution_time_ms": -1,
+          "avg_exec_regressionTestPassed": 0
+        },
+        "prompt_v2": {
+          "exec_quantity": 0,
+          "successfully_exec_quantity": 0,
+          "language": "",
+          "avg_exec_CPU_usage": -1,
+          "avg_exec_RAM_usage": -1,
+          "avg_exec_execution_time_ms": -1,
+          "avg_exec_regressionTestPassed": 0
+        },
+        "prompt_v3": {
+          "exec_quantity": 0,
+          "successfully_exec_quantity": 0,
+          "language": "",
+          "avg_exec_CPU_usage": -1,
+          "avg_exec_RAM_usage": -1,
+          "avg_exec_execution_time_ms": -1,
+          "avg_exec_regressionTestPassed": 0
+        },
+        "prompt_v4": {
+          "exec_quantity": 0,
+          "successfully_exec_quantity": 0,
+          "language": "",
+          "avg_exec_CPU_usage": -1,
+          "avg_exec_RAM_usage": -1,
+          "avg_exec_execution_time_ms": -1,
+          "avg_exec_regressionTestPassed": 0
+        }
+      },
+      "claude": {
+        "prompt_v1": {
+          "exec_quantity": 0,
+          "successfully_exec_quantity": 0,
+          "language": "",
+          "avg_exec_CPU_usage": -1,
+          "avg_exec_RAM_usage": -1,
+          "avg_exec_execution_time_ms": -1,
+          "avg_exec_regressionTestPassed": 0
+        },
+        "prompt_v2": {
+          "exec_quantity": 0,
+          "successfully_exec_quantity": 0,
+          "language": "",
+          "avg_exec_CPU_usage": -1,
+          "avg_exec_RAM_usage": -1,
+          "avg_exec_execution_time_ms": -1,
+          "avg_exec_regressionTestPassed": 0
+        },
+        "prompt_v3": {
+          "exec_quantity": 0,
+          "successfully_exec_quantity": 0,
+          "language": "",
+          "avg_exec_CPU_usage": -1,
+          "avg_exec_RAM_usage": -1,
+          "avg_exec_execution_time_ms": -1,
+          "avg_exec_regressionTestPassed": 0
+        },
+        "prompt_v4": {
+          "exec_quantity": 0,
+          "successfully_exec_quantity": 0,
+          "language": "",
+          "avg_exec_CPU_usage": -1,
+          "avg_exec_RAM_usage": -1,
+          "avg_exec_execution_time_ms": -1,
+          "avg_exec_regressionTestPassed": 0
+        }
+      }
+    },
+    "improvements_data": {
+      "openAI": {
+        "prompt_v1": {
+          "LLM_successfully_exec_quantity": 0,
+          "LLM_exec_quantity": 0,
+          "language": "",
+          "CPU_usage": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "RAM_usage": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "execution_time_ms": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "regressionTestPassed": -0.0
+        },
+        "prompt_v2": {
+          "LLM_successfully_exec_quantity": 0,
+          "LLM_exec_quantity": 0,
+          "language": "",
+          "CPU_usage": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "RAM_usage": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "execution_time_ms": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "regressionTestPassed": -0.0
+        },
+        "prompt_v3": {
+          "LLM_successfully_exec_quantity": 0,
+          "LLM_exec_quantity": 0,
+          "language": "",
+          "CPU_usage": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "RAM_usage": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "execution_time_ms": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "regressionTestPassed": -0.0
+        },
+        "prompt_v4": {
+          "LLM_successfully_exec_quantity": 0,
+          "LLM_exec_quantity": 0,
+          "language": "",
+          "CPU_usage": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "RAM_usage": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "execution_time_ms": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "regressionTestPassed": -0.0
+        }
+      },
+      "gemini": {
+        "prompt_v1": {
+          "LLM_successfully_exec_quantity": 0,
+          "LLM_exec_quantity": 0,
+          "language": "",
+          "CPU_usage": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "RAM_usage": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "execution_time_ms": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "regressionTestPassed": -0.0
+        },
+        "prompt_v2": {
+          "LLM_successfully_exec_quantity": 0,
+          "LLM_exec_quantity": 0,
+          "language": "",
+          "CPU_usage": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "RAM_usage": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "execution_time_ms": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "regressionTestPassed": -0.0
+        },
+        "prompt_v3": {
+          "LLM_successfully_exec_quantity": 0,
+          "LLM_exec_quantity": 0,
+          "language": "",
+          "CPU_usage": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "RAM_usage": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "execution_time_ms": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "regressionTestPassed": -0.0
+        },
+        "prompt_v4": {
+          "LLM_successfully_exec_quantity": 0,
+          "LLM_exec_quantity": 0,
+          "language": "",
+          "CPU_usage": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "RAM_usage": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "execution_time_ms": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "regressionTestPassed": -0.0
+        }
+      },
+      "claude": {
+        "prompt_v1": {
+          "LLM_successfully_exec_quantity": 0,
+          "LLM_exec_quantity": 0,
+          "language": "",
+          "CPU_usage": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "RAM_usage": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "execution_time_ms": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "regressionTestPassed": -0.0
+        },
+        "prompt_v2": {
+          "LLM_successfully_exec_quantity": 0,
+          "LLM_exec_quantity": 0,
+          "language": "",
+          "CPU_usage": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "RAM_usage": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "execution_time_ms": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "regressionTestPassed": -0.0
+        },
+        "prompt_v3": {
+          "LLM_successfully_exec_quantity": 0,
+          "LLM_exec_quantity": 0,
+          "language": "",
+          "CPU_usage": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "RAM_usage": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "execution_time_ms": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "regressionTestPassed": -0.0
+        },
+        "prompt_v4": {
+          "LLM_successfully_exec_quantity": 0,
+          "LLM_exec_quantity": 0,
+          "language": "",
+          "CPU_usage": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "RAM_usage": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "execution_time_ms": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "regressionTestPassed": -0.0
+        }
+      }
+    }
+  },
+  "c_darts_leleah": {
+    "base_5_exec_data": {
+      "exec_quantity": 5,
+      "language": "c",
+      "avg_exec_CPU_usage": 40.6,
+      "avg_exec_RAM_usage": 8832.0,
+      "avg_exec_execution_time_ms": 1.7461324
+    },
+    "LLM_5_exec_data": {
+      "openAI": {
+        "prompt_v1": {
+          "exec_quantity": 0,
+          "successfully_exec_quantity": 0,
+          "language": "",
+          "avg_exec_CPU_usage": -1,
+          "avg_exec_RAM_usage": -1,
+          "avg_exec_execution_time_ms": -1,
+          "avg_exec_regressionTestPassed": 0
+        },
+        "prompt_v2": {
+          "exec_quantity": 0,
+          "successfully_exec_quantity": 0,
+          "language": "",
+          "avg_exec_CPU_usage": -1,
+          "avg_exec_RAM_usage": -1,
+          "avg_exec_execution_time_ms": -1,
+          "avg_exec_regressionTestPassed": 0
+        },
+        "prompt_v3": {
+          "exec_quantity": 0,
+          "successfully_exec_quantity": 0,
+          "language": "",
+          "avg_exec_CPU_usage": -1,
+          "avg_exec_RAM_usage": -1,
+          "avg_exec_execution_time_ms": -1,
+          "avg_exec_regressionTestPassed": 0
+        },
+        "prompt_v4": {
+          "exec_quantity": 0,
+          "successfully_exec_quantity": 0,
+          "language": "",
+          "avg_exec_CPU_usage": -1,
+          "avg_exec_RAM_usage": -1,
+          "avg_exec_execution_time_ms": -1,
+          "avg_exec_regressionTestPassed": 0
+        }
+      },
+      "gemini": {
+        "prompt_v1": {
+          "exec_quantity": 0,
+          "successfully_exec_quantity": 0,
+          "language": "",
+          "avg_exec_CPU_usage": -1,
+          "avg_exec_RAM_usage": -1,
+          "avg_exec_execution_time_ms": -1,
+          "avg_exec_regressionTestPassed": 0
+        },
+        "prompt_v2": {
+          "exec_quantity": 0,
+          "successfully_exec_quantity": 0,
+          "language": "",
+          "avg_exec_CPU_usage": -1,
+          "avg_exec_RAM_usage": -1,
+          "avg_exec_execution_time_ms": -1,
+          "avg_exec_regressionTestPassed": 0
+        },
+        "prompt_v3": {
+          "exec_quantity": 0,
+          "successfully_exec_quantity": 0,
+          "language": "",
+          "avg_exec_CPU_usage": -1,
+          "avg_exec_RAM_usage": -1,
+          "avg_exec_execution_time_ms": -1,
+          "avg_exec_regressionTestPassed": 0
+        },
+        "prompt_v4": {
+          "exec_quantity": 0,
+          "successfully_exec_quantity": 0,
+          "language": "",
+          "avg_exec_CPU_usage": -1,
+          "avg_exec_RAM_usage": -1,
+          "avg_exec_execution_time_ms": -1,
+          "avg_exec_regressionTestPassed": 0
+        }
+      },
+      "claude": {
+        "prompt_v1": {
+          "exec_quantity": 0,
+          "successfully_exec_quantity": 0,
+          "language": "",
+          "avg_exec_CPU_usage": -1,
+          "avg_exec_RAM_usage": -1,
+          "avg_exec_execution_time_ms": -1,
+          "avg_exec_regressionTestPassed": 0
+        },
+        "prompt_v2": {
+          "exec_quantity": 0,
+          "successfully_exec_quantity": 0,
+          "language": "",
+          "avg_exec_CPU_usage": -1,
+          "avg_exec_RAM_usage": -1,
+          "avg_exec_execution_time_ms": -1,
+          "avg_exec_regressionTestPassed": 0
+        },
+        "prompt_v3": {
+          "exec_quantity": 0,
+          "successfully_exec_quantity": 0,
+          "language": "",
+          "avg_exec_CPU_usage": -1,
+          "avg_exec_RAM_usage": -1,
+          "avg_exec_execution_time_ms": -1,
+          "avg_exec_regressionTestPassed": 0
+        },
+        "prompt_v4": {
+          "exec_quantity": 0,
+          "successfully_exec_quantity": 0,
+          "language": "",
+          "avg_exec_CPU_usage": -1,
+          "avg_exec_RAM_usage": -1,
+          "avg_exec_execution_time_ms": -1,
+          "avg_exec_regressionTestPassed": 0
+        }
+      }
+    },
+    "improvements_data": {
+      "openAI": {
+        "prompt_v1": {
+          "LLM_successfully_exec_quantity": 0,
+          "LLM_exec_quantity": 0,
+          "language": "",
+          "CPU_usage": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "RAM_usage": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "execution_time_ms": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "regressionTestPassed": -0.0
+        },
+        "prompt_v2": {
+          "LLM_successfully_exec_quantity": 0,
+          "LLM_exec_quantity": 0,
+          "language": "",
+          "CPU_usage": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "RAM_usage": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "execution_time_ms": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "regressionTestPassed": -0.0
+        },
+        "prompt_v3": {
+          "LLM_successfully_exec_quantity": 0,
+          "LLM_exec_quantity": 0,
+          "language": "",
+          "CPU_usage": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "RAM_usage": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "execution_time_ms": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "regressionTestPassed": -0.0
+        },
+        "prompt_v4": {
+          "LLM_successfully_exec_quantity": 0,
+          "LLM_exec_quantity": 0,
+          "language": "",
+          "CPU_usage": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "RAM_usage": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "execution_time_ms": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "regressionTestPassed": -0.0
+        }
+      },
+      "gemini": {
+        "prompt_v1": {
+          "LLM_successfully_exec_quantity": 0,
+          "LLM_exec_quantity": 0,
+          "language": "",
+          "CPU_usage": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "RAM_usage": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "execution_time_ms": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "regressionTestPassed": -0.0
+        },
+        "prompt_v2": {
+          "LLM_successfully_exec_quantity": 0,
+          "LLM_exec_quantity": 0,
+          "language": "",
+          "CPU_usage": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "RAM_usage": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "execution_time_ms": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "regressionTestPassed": -0.0
+        },
+        "prompt_v3": {
+          "LLM_successfully_exec_quantity": 0,
+          "LLM_exec_quantity": 0,
+          "language": "",
+          "CPU_usage": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "RAM_usage": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "execution_time_ms": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "regressionTestPassed": -0.0
+        },
+        "prompt_v4": {
+          "LLM_successfully_exec_quantity": 0,
+          "LLM_exec_quantity": 0,
+          "language": "",
+          "CPU_usage": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "RAM_usage": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "execution_time_ms": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "regressionTestPassed": -0.0
+        }
+      },
+      "claude": {
+        "prompt_v1": {
+          "LLM_successfully_exec_quantity": 0,
+          "LLM_exec_quantity": 0,
+          "language": "",
+          "CPU_usage": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "RAM_usage": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "execution_time_ms": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "regressionTestPassed": -0.0
+        },
+        "prompt_v2": {
+          "LLM_successfully_exec_quantity": 0,
+          "LLM_exec_quantity": 0,
+          "language": "",
+          "CPU_usage": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "RAM_usage": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "execution_time_ms": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "regressionTestPassed": -0.0
+        },
+        "prompt_v3": {
+          "LLM_successfully_exec_quantity": 0,
+          "LLM_exec_quantity": 0,
+          "language": "",
+          "CPU_usage": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "RAM_usage": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "execution_time_ms": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "regressionTestPassed": -0.0
+        },
+        "prompt_v4": {
+          "LLM_successfully_exec_quantity": 0,
+          "LLM_exec_quantity": 0,
+          "language": "",
+          "CPU_usage": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "RAM_usage": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "execution_time_ms": {
+            "improvement_percentage": -999,
+            "label": "invalid",
+            "is_outlier": false,
+            "base_value": -999,
+            "llm_value": -999
+          },
+          "regressionTestPassed": -0.0
         }
       }
     }

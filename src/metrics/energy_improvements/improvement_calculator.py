@@ -225,8 +225,11 @@ class ImprovementCalculator:
 
     
     def calculate_mean_on_exec_base(self, cluster_name):
-        """Calcola la media su 5 esecuzioni per ogni entry del codice base."""
-   
+        """
+        Calcola la media su 5 esecuzioni per ogni entry del codice base.
+        IMPORTANTE: Filtra solo entries con 100% pass rate (tutte le 5 esecuzioni passano).
+        """
+
         base_means = {}
 
         # Collect metrics from all 5 executions
@@ -250,6 +253,14 @@ class ImprovementCalculator:
         for entry_id, metric_list in all_metrics.items():
             if not metric_list:
                 print(f"🔺 no metric list for entry {entry_id}")
+                continue
+
+            # CRITICAL FILTER: Calculate pass rate and skip entries with < 100% pass rate
+            pass_count = sum(1 for m in metric_list if m.regressionTestPassed)
+            pass_rate = (pass_count / len(metric_list)) * 100.0 if metric_list else 0.0
+
+            if pass_rate < 100.0:
+                print(f"🔵 Skipping base entry {entry_id} with pass_rate {pass_rate:.1f}% ({pass_count}/{len(metric_list)} passed)")
                 continue
 
             cpu_usage_sum = sum(m.CPU_usage for m in metric_list)
@@ -276,6 +287,7 @@ class ImprovementCalculator:
                 "sum_execution_time_ms": execution_time_ms_sum,
                 "sum_energy_joules": energy_joules_sum,
                 "languages": [m.language for m in metric_list],
+                "pass_rate": pass_rate  # Added for debugging
             }
 
             base_means[entry_id] = means

@@ -23,7 +23,7 @@ import tempfile
 import sys
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
-from utility_dir import utility_paths, general_utils
+from utility_dir import utility_paths, general_utils, js_export_adjuster
 from utility_dir.general_utils import LLMresult, LLMentryResult, BaseEntryResult
 from discordInteraction import create_webhook_reporter
 from dotenv import load_dotenv
@@ -61,6 +61,35 @@ DOCKER_DIR = BASE_DIR / "docker"
 LOGS_DIR = BASE_DIR / "logs"
 
 DEBUG_MODE = False
+
+
+def resolve_cluster_path(cluster_name: str, clusters_dir: Path) -> Optional[Path]:
+    """
+    Resolve cluster file path with fallback for JavaScript naming conventions.
+
+    Tries multiple patterns:
+    1. cluster_{name}.json (standard)
+    2. cluster_{name}.test.js.json (JavaScript-specific)
+
+    Args:
+        cluster_name: Name of the cluster
+        clusters_dir: Directory containing cluster files
+
+    Returns:
+        Path to cluster file if found, None otherwise
+    """
+    # Try standard naming first
+    standard_path = clusters_dir / f"cluster_{cluster_name}.json"
+    if standard_path.exists():
+        return standard_path
+
+    # Try JavaScript naming convention
+    js_path = clusters_dir / f"cluster_{cluster_name}.test.js.json"
+    if js_path.exists():
+        return js_path
+
+    return None
+
 
 @dataclass
 class ExecutionState:
@@ -382,6 +411,8 @@ class MetricsParser:
                 (r"● .* ›", "jest_test_fail"),  # Correzione carattere
                 (r"(\d+) failed", "count_failed"),
                 (r"Test Suites:.*failed", "jest_suite_fail"),
+                (r"=+\s*\d+\s+failed\s*in\s*[\d\.]+s\s*=+", "pytest_failed_summary"),
+                (r"\s(\d+)\s+failed", "pytest_failed_simple"),
             ]
 
             for pattern, pattern_name in failure_patterns:
@@ -396,6 +427,15 @@ class MetricsParser:
                     (r"Tests:\s+(\d+)\s+passed,\s+\d+\s+total", "jest_passed"),
                     (r"Test Suites:.*(\d+)\s+passed", "jest_suites_passed"),
                     (r"PASS\s+", "pass_marker"),
+                    (r"Ran \d+ tests? in .*s\s+OK", "unittest_passed"),  # nuovo pattern
+                    (r"(\d+)\s+passed\s+in\s+[\d\.]+s", "pytest_passed_clean"),
+                    (r"=+\s*([\d]+) passed\s*in\s*([\d\.]+)s\s*=+","OK"),
+                    (r"OK \(\d+ tests?\)", "junit4_passed"),
+                    # 🔧 FIX: JUnit 5 (Jupiter) success patterns
+                    (r"(\d+) containers successful.*0 containers failed", "junit5_containers_success"),
+                    (r"\[\s*(\d+) containers successful\s*\]", "junit5_success"),
+                    (r"Test run finished after \d+.*0 failures", "junit5_finished_no_failures"),
+
                 ]
 
                 for pattern, pattern_name in success_patterns:
@@ -407,6 +447,13 @@ class MetricsParser:
                             if passed_count > 0:
                                 test_passed = True
                                 logger.debug(f"Success: {passed_count} tests passed")
+                                break
+                        elif pattern_name in ["junit5_containers_success", "junit5_success"]:
+                            # JUnit 5: controlla che ci siano containers successful
+                            container_count = int(match.group(1))
+                            if container_count > 0:
+                                test_passed = True
+                                logger.debug(f"JUnit 5 Success: {container_count} containers successful")
                                 break
                         else:
                             test_passed = True
@@ -433,13 +480,17 @@ class MetricsParser:
             metrics.success = m_valid and metrics.regression_test_passed
 
             emj = "✅" if m_valid else "❌"
+            emj_tp = "✅" if metrics.regression_test_passed else "❌"
             logger.info(
-                f"{emj} Parsing complete - Metrics are valid: {m_valid}, "
-                f"Tests passed: {metrics.regression_test_passed}, "
+                f"👀 Parsing complete - Metrics are valid: {m_valid} {emj},\n"
+                f"Tests passed: {metrics.regression_test_passed} {emj_tp},\n"
                 f"Time: {metrics.execution_time_ms}ms, "
                 f"CPU: {metrics.cpu_usage}%, "
                 f"RAM: {metrics.ram_usage}KB"
             )
+
+            
+
 
             if not m_valid : 
                 logger.warning(f"Log of invalid metrics: {log_content}")
@@ -569,17 +620,20 @@ class MetricsParser:
                     break
 
         metrics.regression_test_passed = test_passed and not test_failed
-        metrics.success = metrics.is_valid() and metrics.regression_test_passed
+        m_valid = metrics.is_valid()
+        metrics.success = m_valid and metrics.regression_test_passed
 
+        emj = "✅" if m_valid else "❌"
+        emj_tp = "✅" if metrics.regression_test_passed else "❌"
         logger.info(
-            f"👀 Parsing complete - Metrics are valid: {metrics.is_valid()}, "
-            f"Tests passed: {metrics.regression_test_passed}, "
+            f"👀 Parsing complete - Metrics are valid: {m_valid} {emj},\n"
+            f"Tests passed: {metrics.regression_test_passed} {emj_tp},\n"
             f"Time: {metrics.execution_time_ms}ms, "
             f"CPU: {metrics.cpu_usage}%, "
             f"RAM: {metrics.ram_usage}KB"
         )
 
-        if not metrics.is_valid() : 
+        if not m_valid : 
                 logger.warning(f"Log of invalid metrics: {log_content}")
 
         return metrics
@@ -679,12 +733,15 @@ class MetricsParser:
 
             metrics.success = metrics.is_valid()
 
-            logger.debug(
-                f"TypeScript parsing complete - Valid: {metrics.is_valid()}, "
+
+            emj = "✅" if metrics.success else "❌"
+            emj_tp = "✅" if metrics.regression_test_passed else "❌"
+            logger.info(
+                f"👀TypeScript Parsing complete - Metrics are valid: {metrics.success} {emj},\n"
+                f"Tests passed: {metrics.regression_test_passed} {emj_tp},\n"
                 f"Time: {metrics.execution_time_ms}ms, "
                 f"CPU: {metrics.cpu_usage}%, "
-                f"RAM: {metrics.ram_usage}KB, "
-                f"Tests passed: {metrics.regression_test_passed}"
+                f"RAM: {metrics.ram_usage}KB"
             )
 
         except Exception as e:
@@ -934,7 +991,7 @@ class TestExecutor:
         elif language == "python":
             self._setup_python(dockerfile_path, mount_path)
         elif language in ["cpp", "c"]:
-            self._setup_cpp_or_c(dockerfile_path, mount_path)
+            self._setup_cpp_or_c(dockerfile_path, mount_path, language == "c")
         elif language == "java":
             self._setup_java(dockerfile_path, mount_path)
         elif language == "go":
@@ -947,7 +1004,40 @@ class TestExecutor:
             src_file = dockerfile_path / filename
             dest_file = mount_path / filename
             if src_file.exists():
+                # CRITICAL: Force overwrite to ensure correct configuration
+                if dest_file.exists():
+                    dest_file.unlink()  # Remove existing file first
                 shutil.copy2(src_file, dest_file)
+                self.logger.debug(f"✅ Copied and replaced {filename} from docker/ to {mount_path}")
+            else:
+                self.logger.warning(f"⚠️ Source file not found: {src_file}")
+
+    def _verify_javascript_config(self, mount_path: Path) -> bool:
+        """Verify that jest.config.js has correct testMatch patterns for testSuite files"""
+        jest_config_path = mount_path / "jest.config.js"
+
+        if not jest_config_path.exists():
+            self.logger.error(f"❌ jest.config.js not found at {jest_config_path}")
+            return False
+
+        try:
+            config_content = jest_config_path.read_text()
+
+            # Check if testMatch is present and includes testSuite pattern
+            if "testMatch" not in config_content:
+                self.logger.error("❌ jest.config.js missing 'testMatch' field")
+                return False
+
+            if "testSuite" not in config_content:
+                self.logger.error("❌ jest.config.js testMatch missing 'testSuite' pattern")
+                return False
+
+            self.logger.debug("✅ jest.config.js verified with correct testMatch patterns")
+            return True
+
+        except Exception as e:
+            self.logger.error(f"❌ Failed to read jest.config.js: {e}")
+            return False
 
     def _setup_java(self, dockerfile_path: Path, mount_path: Path):
         """Setup Java environment"""
@@ -1010,7 +1100,7 @@ class TestExecutor:
         if utils_src.exists() and not utils_dest.exists():
             shutil.copytree(utils_src, utils_dest)
 
-    def _setup_cpp_or_c(self, dockerfile_path: Path, mount_path: Path):
+    def _setup_cpp_or_c(self, dockerfile_path: Path, mount_path: Path, is_c : bool):
         """Setup C/C++ environment"""
 
         # Copy time_wrapper.py (se esiste)
@@ -1023,6 +1113,24 @@ class TestExecutor:
         else:
             print(f"wrapper_src does not exists : {wrapper_src}")
 
+        # Copy unity files (in /test dir of the mounted path): 
+        if is_c : 
+            target_unity_path = mount_path / "test"             
+            target_unity_path_2 = target_unity_path / "test-framework"             
+            target_unity_path_2.mkdir(parents=True, exist_ok=True)
+            src_u_internals_s = dockerfile_path / "unity_internals.h"
+            src_u_c = dockerfile_path / "unity.c"
+            src_u_h = dockerfile_path / "unity.h"                        
+            
+            shutil.copy2(src_u_internals_s, target_unity_path)
+            shutil.copy2(src_u_c, target_unity_path)
+            shutil.copy2(src_u_h, target_unity_path)
+            
+            shutil.copy2(src_u_internals_s, target_unity_path_2)
+            #shutil.copy2(src_u_c, target_unity_path_2)
+            shutil.copy2(src_u_h, target_unity_path_2)
+
+        
         # Copy universal Makefile as fallback (always copy, never overwrite)
         universal_makefile = dockerfile_path / "Makefile.universal"
         if universal_makefile.exists():
@@ -1093,6 +1201,9 @@ class TestExecutor:
                 f"Failed to substitute LLM code in temp: {e}", exc_info=True
             )
 
+    def _adjust_export_javascript(self,code_path, test_code_path) : 
+        return js_export_adjuster.process(code_path, test_code_path)
+    
     def execute_test(
         self,
         entry: Dict,
@@ -1103,6 +1214,34 @@ class TestExecutor:
         debug_mode: bool = False,
     ) -> BaseEntryResult | LLMentryResult:
         """Execute single test with comprehensive error handling"""
+
+        #fix export in js files :
+        if language == "javascript" :
+            try:
+                code_path = DATASET_DIR / entry['codeSnippetFilePath'] #base code (default)
+                if llm_info and test_type == "llm": #use LLM code                     
+                    code_path = DATASET_DIR / llm_info["path"]
+
+                test_path = DATASET_DIR / Path(entry["testUnitFilePath"])
+                
+                str_test_p = str(test_path)
+                if not test_path.exists():                    
+                    raise Exception(f"Test code path does not exist : {str_test_p}")
+
+                str_p = str(code_path)
+                if not code_path.exists():
+                    
+                    raise Exception(f"Code path does not exist : {str_p}")
+
+                self._adjust_export_javascript(str_p, str_test_p)
+
+            except Exception as e:
+                print(f"Error adjusting js export:\n{e}")
+
+
+        file_name_for_diagnostic = entry['filename']
+        if llm_info and test_type == "llm" : 
+            file_name_for_diagnostic = llm_info['filename']
 
         # Fix per Colima: usare directory temporanee montabili da Docker
         base_temp = Path.home() / "docker_tmp"
@@ -1141,8 +1280,8 @@ class TestExecutor:
             # Copia con gestione errori robusta
             try:
                 shutil.copytree(
-                    test_path,
-                    temp_path,
+                    test_path, #src
+                    temp_path, #dest
                     dirs_exist_ok=True,
                     ignore=ignore_items,
                     symlinks=False,
@@ -1199,6 +1338,14 @@ class TestExecutor:
                 # Setup environment
                 self.setup_test_environment(language, temp_path)
 
+                # CRITICAL: Verify JavaScript configuration is correct
+                if language == "javascript":
+                    if not self._verify_javascript_config(temp_path):
+                        self.logger.error(f"JavaScript configuration verification failed for {entry['id']}")
+                        metrics = ExecutionMetrics()
+                        metrics.error_message = "jest.config.js missing testMatch patterns"
+                        return self._create_result(entry, language, llm_info, metrics)
+
                 # Verifica finale esistenza file
                 if not self._verify_test_files(language, temp_path, entry["filename"]):
                     self.logger.error(
@@ -1216,6 +1363,7 @@ class TestExecutor:
                     entry["id"],
                     entry["filename"],
                     debug_mode,
+                    file_name_for_diagnostic
                 )
 
                 
@@ -1559,14 +1707,27 @@ class TestExecutor:
             # Altri linguaggi
             metrics = MetricsParser.parse_time_output(log_content, debug_mode)
 
+        # 🔧 FIX: Restore fields lost when parse_time_output creates new metrics object
+        # These fields were set before calling parse functions but get lost because
+        # parse functions return a NEW ExecutionMetrics object instead of modifying
+        # the existing one. Without these fields, the error categorization logic at
+        # line 1700 incorrectly triggers (None != 0 is True).
+        metrics.docker_exit_code = result.returncode
+        metrics.docker_stdout = result.stdout if result.stdout else ""
+        metrics.raw_log_content = log_content
+
         #  Categorize errors for failed tests
         if not metrics.is_valid() or not metrics.regression_test_passed or metrics.docker_exit_code != 0:
             metrics.error_category = MetricsParser.categorize_error(
                 log_content, metrics.docker_stdout, metrics.docker_exit_code
             )
-            self.logger.info(f"Error categorized as: {metrics.error_category}")
+            
 
         return metrics
+
+    def _test_suite_failed(self, log: str) -> bool:
+        pattern = r"(?mi)(^|\n)\s*(fail|failed|failure|failures|errors|error:|tests?\s+failed)\b"
+        return re.search(pattern, log) is not None
 
     def _run_container_test(
         self,
@@ -1576,7 +1737,8 @@ class TestExecutor:
         entry_id: str,
         filename: str,
         llm_dir: str = "",
-        debug_mode=False,
+        debug_mode=False,   
+        file_name_for_diagnostic : str = ""             
     ) -> ExecutionMetrics:
         """Run container test with comprehensive metrics collection"""
 
@@ -1689,13 +1851,20 @@ class TestExecutor:
             self.logger.info(f"🚀 Starting Docker execution for {entry_id}...")
             start_time = time.time()
 
+            # Set timeout based on language: JavaScript gets 2 minutes, others get 5 minutes
+            timeout_seconds = 120 if language.lower() == "javascript" else 300
+
             result = subprocess.run(
                 docker_cmd,
                 stdout=subprocess.PIPE,
                 stderr=subprocess.STDOUT,
                 text=True,
-                timeout=300,  # 5 minute timeout per test
+                timeout=timeout_seconds,
             )
+
+            docker_stdout = result.stdout
+            docker_stderr = result.stderr
+            exit_code = result.returncode
 
             elapsed = time.time() - start_time
             self.logger.info(f"✅ Docker completed in {elapsed:.1f}s (exit code: {result.returncode})")
@@ -1717,6 +1886,7 @@ class TestExecutor:
             metrics = self._parse_metrics_from_log(
                 log_file, language, result, debug_mode
             )
+            
 
             if metrics.regression_test_passed and metrics.is_valid():
                 self.logger.info(
@@ -1745,8 +1915,11 @@ class TestExecutor:
                 self.logger.debug(f"Log archived to: {log_archive}")
 
                 #  Save detailed diagnostic log for failures
+                log_file_p = str(log_file)
+
                 if not metrics.is_valid() or not metrics.regression_test_passed:
-                    diagnostic_log = log_archive.parent / f"{log_archive.stem}_diagnostic.json"
+                    parsed_l = str(log_archive.stem).replace(" ","_")
+                    diagnostic_log = log_archive.parent / f"{parsed_l}_diagnostic.json"
                     diagnostic_data = {
                         "entry_id": entry_id,
                         "language": language,
@@ -1760,12 +1933,37 @@ class TestExecutor:
                             "execution_time_ms": metrics.execution_time_ms,
                             "cpu_usage": metrics.cpu_usage,
                             "ram_usage": metrics.ram_usage,
-                        }
+                        },
+                        "LOG_file_path":log_file_p,
+                        "filename" : file_name_for_diagnostic
                     }
+                    diagnostic_data["docker_stdout_full"] = docker_stdout
+                    diagnostic_data["docker_stderr_full"] = docker_stderr
+                    diagnostic_data["exit_code"] = exit_code
+
+                            # Read content of output.log
+                    try:
+                        with open(log_file, "r") as lf:
+                            diagnostic_data["LOG_file_content"] = lf.read()
+                    except Exception as read_err:
+                        diagnostic_data["LOG_file_content"] = f"<<Could not read log file: {read_err}>>"
+
+
+                    #check if error is test suite failed 
+                    if self._test_suite_failed(diagnostic_data["LOG_file_content"]) : 
+                        diagnostic_data["error_category"] = "test_suite_execute_and_failed"
+                        self.logger.info("🟠 Test suite executed correctly, but failed")
+                    elif "Test suite failed to run" in diagnostic_data["LOG_file_content"] or "Tests:       0 total" in diagnostic_data["LOG_file_content"]:
+                            diagnostic_data["error_category"] = "CODE_ERROR_setup_or_import_error"
+                            self.logger.info("🟠 Code error: setup or import error")
+
+
+                    self.logger.info(f"Error categorized as: {diagnostic_data["error_category"]}")
+
                     try:
                         with open(diagnostic_log, "w") as f:
                             json.dump(diagnostic_data, f, indent=2)
-                        self.logger.info(f"Diagnostic log saved to: {diagnostic_log}")
+                        self.logger.info(f"🟡 Diagnostic log saved to: {diagnostic_log}")
                     except Exception as diag_err:
                         self.logger.warning(f"Could not save diagnostic log: {diag_err}")
 
@@ -1984,7 +2182,21 @@ class ClusterRunner:
                             entry: BaseEntryResult = BaseEntryResult.from_json(
                                 json_entry
                             )
-                            if overwrite_results or not entry.is_valid():
+                            # Check if this language should be re-executed
+                            should_reexecute = False
+                            if overwrite_results:
+                                # If selected_languages is specified, only overwrite those languages
+                                if selected_languages and selected_languages != ["all"]:
+                                    should_reexecute = _lang in selected_languages
+                                else:
+                                    # If no language filter, overwrite all
+                                    should_reexecute = True
+
+                            # Force reexecution if entry is in entry_ids_filter
+                            if entry_ids_filter is not None and entry.id in entry_ids_filter:
+                                should_reexecute = True
+
+                            if should_reexecute or not entry.is_valid():
                                 cluster_base_not_completed_entries_ids.add(entry.id)
                             else:
                                 base_results.append(entry)
@@ -2072,7 +2284,22 @@ class ClusterRunner:
                     for _lang, entries in out_LLM_cluster_content["results"].items():
                         for json_entry in entries:
                             entry: LLMentryResult = LLMentryResult.from_json(json_entry)
-                            if overwrite_results or not entry.is_valid():
+
+                            # Check if this language should be re-executed
+                            should_reexecute = False
+                            if overwrite_results:
+                                # If selected_languages is specified, only overwrite those languages
+                                if selected_languages and selected_languages != ["all"]:
+                                    should_reexecute = _lang in selected_languages
+                                else:
+                                    # If no language filter, overwrite all
+                                    should_reexecute = True
+
+                            # Force reexecution if entry is in entry_ids_filter
+                            if entry_ids_filter is not None and entry.id in entry_ids_filter:
+                                should_reexecute = True
+
+                            if should_reexecute or not entry.is_valid():
                                 cluster_LLM_not_completed_entries_ids.add(entry.id)
 
                             else:
@@ -2708,6 +2935,20 @@ def main():
     )
 
     parser.add_argument(
+        "--entry-ids",
+        type=str,
+        nargs='+',
+        help="Specific entry IDs to execute (enables selective execution mode with result merging)",
+    )
+
+    parser.add_argument(
+        "--entry-clusters",
+        type=str,
+        nargs='+',
+        help="Cluster names corresponding to each entry ID (parallel list, 1:1 mapping with --entry-ids)",
+    )
+
+    parser.add_argument(
         "--debug-mode",
         action="store_true",
         default=False,
@@ -3064,7 +3305,6 @@ def main():
         print(f"Generated at: {rerun_queue.get('generated_at', 'unknown')}")
 
         # Group entries by cluster and test type
-        from collections import defaultdict
         entries_by_cluster = defaultdict(lambda: defaultdict(list))
 
         for entry in entries:
@@ -3271,6 +3511,276 @@ def main():
         print("=" * 80)
         print(f"Total entries executed: {total_entries_executed}")
         print(f"Clusters processed: {len(entries_by_cluster)}")
+        print("=" * 80)
+
+        return 0
+
+    # Handle entry-specific execution mode
+    if args.entry_ids:
+        if not SELECTIVE_RUNNER_AVAILABLE:
+            print("Error: Language-selective runner module not available.")
+            print("Please ensure language_selective_runner.py is in the same directory.")
+            return 1
+
+        print("\n" + "=" * 80)
+        print("ENTRY-SPECIFIC EXECUTION MODE")
+        print("=" * 80)
+
+        # Build entry-to-cluster mapping
+        entry_to_cluster = {}
+
+        if args.entry_clusters:
+            # Use parallel lists (1:1 mapping)
+            if len(args.entry_ids) != len(args.entry_clusters):
+                print(f"Error: --entry-ids ({len(args.entry_ids)}) and --entry-clusters ({len(args.entry_clusters)}) must have the same length")
+                return 1
+
+            for entry_id, cluster_name in zip(args.entry_ids, args.entry_clusters):
+                entry_to_cluster[entry_id] = cluster_name
+
+            print(f"Executing {len(args.entry_ids)} entries across multiple clusters")
+
+        elif args.cluster_name:
+            # All entries belong to the same cluster
+            for entry_id in args.entry_ids:
+                entry_to_cluster[entry_id] = args.cluster_name
+
+            print(f"Executing {len(args.entry_ids)} entries from cluster: {args.cluster_name}")
+
+        else:
+            print("Error: Must specify either --cluster-name (for single cluster) or --entry-clusters (for multiple clusters)")
+            return 1
+
+        # Group entries by cluster
+        entries_by_cluster = defaultdict(list)
+        for entry_id, cluster_name in entry_to_cluster.items():
+            entries_by_cluster[cluster_name].append(entry_id)
+
+        print("\nEntry distribution:")
+        for cluster_name, entry_ids in sorted(entries_by_cluster.items()):
+            print(f"  {cluster_name}: {len(entry_ids)} entries")
+
+        # Validate all cluster files exist
+        for cluster_name in entries_by_cluster.keys():
+            cluster_path = resolve_cluster_path(cluster_name, args.clusters_dir)
+            if cluster_path is None:
+                print(f"Error: Cluster file not found for: {cluster_name}")
+                print(f"  Tried: cluster_{cluster_name}.json and cluster_{cluster_name}.test.js.json")
+                return 1
+
+        # Initialize selective execution components
+        merger = LanguageSelectiveResultMerger(logger=logging.getLogger(__name__))
+
+        # Determine test type
+        if args.full:
+            test_types = ["base", "llm"]
+        elif args.base_only:
+            test_types = ["base"]
+        elif args.llm_only:
+            test_types = ["llm"]
+        else:
+            print("Error: Must specify one of --base-only, --llm-only, or --full")
+            return 1
+
+        # Process each cluster
+        total_clusters = len(entries_by_cluster)
+        cluster_idx = 0
+
+        for cluster_name, entry_ids_to_execute in sorted(entries_by_cluster.items()):
+            cluster_idx += 1
+            print(f"\n{'='*80}")
+            print(f"[{cluster_idx}/{total_clusters}] Processing cluster: {cluster_name}")
+            print(f"{'='*80}")
+            print(f"Entries to execute: {len(entry_ids_to_execute)}")
+
+            cluster_path = resolve_cluster_path(cluster_name, args.clusters_dir)
+            if cluster_path is None:
+                print(f"Error: Cluster file not found for: {cluster_name}")
+                continue
+
+            # Create report for this cluster
+            report = SelectiveExecutionReport(
+                cluster_name=cluster_name,
+                execution_timestamp=time.strftime("%Y-%m-%d %H:%M:%S"),
+                selected_languages=list(selected_languages),
+            )
+
+            # Process each test type
+            for test_type in test_types:
+                is_llm = test_type == "llm"
+
+                if is_llm:
+                    # Process each prompt version
+                    prompt_versions = (
+                        range(1, 5) if args.prompt_version == -1 else [args.prompt_version]
+                    )
+
+                    for p_v in prompt_versions:
+                        print(f"\n  Processing LLM results (prompt v{p_v})...")
+
+                        # Process each run
+                        for run_num in range(1, args.run_quantity + 1):
+                            print(f"    Run {run_num}/{args.run_quantity}")
+
+                            # Determine output file path
+                            output_filename = f"{cluster_name}_results_v{p_v}_{run_num}.json"
+                            output_path = args.output_dir / output_filename
+
+                            # Load existing results
+                            existing_data = merger.load_existing_results(output_path)
+
+                            if existing_data is None:
+                                print(f"      Warning: No existing results found at {output_path}")
+                                print("      Creating new results file")
+                                existing_data = {
+                                    "execution_date": time.strftime("%Y-%m-%d %H:%M:%S"),
+                                    "execution_metadata": {
+                                        "cluster": cluster_name,
+                                        "test_type": "llm",
+                                    },
+                                    "results": {}
+                                }
+
+                            # Create backup if file exists
+                            if output_path.exists():
+                                backup_path = merger.create_backup(output_path)
+                                if backup_path:
+                                    report.backup_file = str(backup_path)
+
+                            # Execute tests for specific entries only
+                            print(f"      Executing {len(entry_ids_to_execute)} specific entries...")
+                            start_time = time.time()
+
+                            _, llm_results = test_runner.run_cluster_tests(
+                                cluster_path=cluster_path,
+                                base_only=False,
+                                llm_only=True,
+                                prompt_version=p_v,
+                                use_cache=not args.no_cache,
+                                full=False,
+                                run_number=run_num,
+                                cluster_name=cluster_name,
+                                selected_languages=list(selected_languages),
+                                overwrite_results=False,  # Never overwrite when using entry_ids
+                                entry_ids_filter=entry_ids_to_execute,  # KEY: Pass entry IDs filter
+                                debug_mode=args.debug_mode,
+                            )
+
+                            elapsed = time.time() - start_time
+                            print(f"      Executed in {elapsed:.1f}s")
+
+                            # Merge results
+                            merged_data, lang_report = merger.merge_results(
+                                existing_data=existing_data,
+                                new_results=llm_results,
+                                selected_languages=selected_languages,
+                                is_llm=True,
+                            )
+
+                            # Save merged results
+                            merger.save_merged_results(merged_data, output_path)
+                            print(f"      ✓ Saved merged results: {output_path.name}")
+                            print(
+                                f"        Valid new: {lang_report.valid_new_results}, "
+                                f"Preserved old: {lang_report.preserved_old_results}, "
+                                f"Invalid new: {lang_report.invalid_new_results}"
+                            )
+
+                            # Add to report
+                            report.add_language_report(lang_report)
+
+                            # Reset state for next run
+                            test_runner.execution_state = ExecutionState()
+
+                else:  # base code execution
+                    print("\n  Processing base code results...")
+
+                    # Process each run
+                    for run_num in range(1, args.run_quantity + 1):
+                        print(f"    Run {run_num}/{args.run_quantity}")
+
+                        # Determine output file path
+                        output_filename = f"{cluster_name}_results_{run_num}.json"
+                        output_path = args.output_dir / output_filename
+
+                        # Load existing results
+                        existing_data = merger.load_existing_results(output_path)
+
+                        if existing_data is None:
+                            print(f"      Warning: No existing results found at {output_path}")
+                            print("      Creating new results file")
+                            existing_data = {
+                                "execution_date": time.strftime("%Y-%m-%d %H:%M:%S"),
+                                "execution_metadata": {
+                                    "cluster": cluster_name,
+                                    "test_type": "base",
+                                },
+                                "results": {}
+                            }
+
+                        # Create backup if file exists
+                        if output_path.exists():
+                            backup_path = merger.create_backup(output_path)
+                            if backup_path:
+                                report.backup_file = str(backup_path)
+
+                        # Execute tests for specific entries only
+                        print(f"      Executing {len(entry_ids_to_execute)} specific entries...")
+                        start_time = time.time()
+
+                        base_results, _ = test_runner.run_cluster_tests(
+                            cluster_path=cluster_path,
+                            base_only=True,
+                            llm_only=False,
+                            prompt_version=args.prompt_version,
+                            use_cache=not args.no_cache,
+                            full=False,
+                            run_number=run_num,
+                            cluster_name=cluster_name,
+                            selected_languages=list(selected_languages),
+                            overwrite_results=False,  # Never overwrite when using entry_ids
+                            entry_ids_filter=entry_ids_to_execute,  # KEY: Pass entry IDs filter
+                            debug_mode=args.debug_mode,
+                        )
+
+                        elapsed = time.time() - start_time
+                        print(f"      Executed in {elapsed:.1f}s")
+
+                        # Merge results
+                        merged_data, lang_report = merger.merge_results(
+                            existing_data=existing_data,
+                            new_results=base_results,
+                            selected_languages=selected_languages,
+                            is_llm=False,
+                        )
+
+                        # Save merged results
+                        merger.save_merged_results(merged_data, output_path)
+                        print(f"      ✓ Saved merged results: {output_path.name}")
+                        print(
+                            f"        Valid new: {lang_report.valid_new_results}, "
+                            f"Preserved old: {lang_report.preserved_old_results}, "
+                            f"Invalid new: {lang_report.invalid_new_results}"
+                        )
+
+                        # Add to report
+                        report.add_language_report(lang_report)
+
+                        # Reset state for next run
+                        test_runner.execution_state = ExecutionState()
+
+            # Save execution report for this cluster
+            report_filename = f"{cluster_name}_entry_execution_{int(time.time())}.json"
+            report_path = args.execution_report_dir / report_filename
+            report.save_to_file(report_path)
+            print(f"  ✓ Report saved to: {report_path}")
+
+        # Print final summary
+        print("\n" + "=" * 80)
+        print("ENTRY-SPECIFIC EXECUTION COMPLETED")
+        print("=" * 80)
+        print(f"Total clusters processed: {total_clusters}")
+        print(f"Total entries executed: {len(args.entry_ids)}")
         print("=" * 80)
 
         return 0

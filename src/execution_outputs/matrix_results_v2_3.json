@@ -1,17 +1,17 @@
 {
-  "execution_date": "2025-11-15 10:07:14",
+  "execution_date": "2025-11-19 01:24:19",
   "execution_metadata": {
     "total_tests": 18,
     "successful_tests": 18,
     "execution_time": "00h 00m 00s",
     "cluster": "cluster_matrix",
     "test_type": "llm_v2",
-    "last_updated": "2025-11-15 10:07:14",
+    "last_updated": "2025-11-19 01:24:19",
     "selective_execution": {
       "languages": [
-        "javascript"
+        "python"
       ],
-      "timestamp": "2025-11-15 10:07:14"
+      "timestamp": "2025-11-19 01:24:19"
     }
   },
   "results": {
@@ -22,15 +22,51 @@
         "language": "python",
         "LLM_results": [
           {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/matrix/openAI/ChatGPT4_matrix_v2.py",
+            "log": "",
+            "execution_time_ms": 40.0,
+            "CPU_usage": 83.0,
+            "RAM_usage": 13696,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "matrix_25",
+        "filename": "matrix.py",
+        "language": "python",
+        "LLM_results": [
+          {
             "LLM_type": "gemini",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/matrix/gemini/GeminiFlash_matrix_v2.py",
             "log": "",
-            "execution_time_ms": 40,
-            "CPU_usage": 14.0,
-            "RAM_usage": 13824,
+            "execution_time_ms": 40.0,
+            "CPU_usage": 69.0,
+            "RAM_usage": 13952,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "matrix_25",
+        "filename": "matrix.py",
+        "language": "python",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/matrix/claude/ClaudeSonnet4_matrix_v2.py",
+            "log": "",
+            "execution_time_ms": 50.0,
+            "CPU_usage": 79.0,
+            "RAM_usage": 13952,
             "regressionTestPassed": false,
             "success": false,
-            "error_message": null
+            "error_message": "Docker exit code: 1"
           }
         ]
       }

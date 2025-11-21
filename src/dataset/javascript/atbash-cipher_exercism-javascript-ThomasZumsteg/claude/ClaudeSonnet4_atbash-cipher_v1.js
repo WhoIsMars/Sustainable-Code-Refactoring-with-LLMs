@@ -27,3 +27,10 @@ function encode(clear_text) {
 }
 
 export { encode };
+export { atbash };
+
+export { testing };
+
+export { dog };
+
+export { fiction };

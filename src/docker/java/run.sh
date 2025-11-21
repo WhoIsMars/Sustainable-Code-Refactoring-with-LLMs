@@ -35,14 +35,14 @@ if grep -l "org.junit.jupiter.api" *.java > /dev/null 2>&1; then
     echo "🔍 Trovata classe JUnit 5: $TEST_CLASS"
     
     # Esegui con JUnit Platform Console Launcher
-    /usr/bin/time -v java -cp "$CLASSPATH" org.junit.platform.console.ConsoleLauncher --class-path . --select-class "$TEST_CLASS" > output.log 2>&1 || true
+    /usr/bin/time -v java -cp "$CLASSPATH" org.junit.platform.console.ConsoleLauncher --class-path . --select-class "$TEST_CLASS" &> output.log 2>&1 || true
 elif grep -l "@Test" *.java > /dev/null 2>&1; then
     # Fallback a JUnit 4
     TEST_CLASS=$(grep -l "@Test" *.java | sed 's/\.java//' | head -n 1)
     echo "🔍 Trovata classe JUnit 4: $TEST_CLASS"
     
     # Esegui con JUnit 4
-    /usr/bin/time -v java -cp "$CLASSPATH" org.junit.runner.JUnitCore "$TEST_CLASS" > output.log 2>&1 || true
+    /usr/bin/time -v java -cp "$CLASSPATH" org.junit.runner.JUnitCore "$TEST_CLASS" &> output.log 2>&1 || true
 else
     echo "❌ Nessuna classe di test trovata con @Test annotation" > output.log
 fi

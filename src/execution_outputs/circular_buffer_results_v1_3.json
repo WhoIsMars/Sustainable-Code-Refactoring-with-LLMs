@@ -1,17 +1,17 @@
 {
-  "execution_date": "2025-11-14 23:26:07",
+  "execution_date": "2025-11-21 00:07:59",
   "execution_metadata": {
     "total_tests": 53,
     "successful_tests": 53,
     "execution_time": "00h 00m 00s",
     "cluster": "cluster_circular_buffer",
     "test_type": "llm_v1",
-    "last_updated": "2025-11-14 23:26:07",
+    "last_updated": "2025-11-21 00:07:59",
     "selective_execution": {
       "languages": [
-        "javascript"
+        "cpp"
       ],
-      "timestamp": "2025-11-14 23:26:07"
+      "timestamp": "2025-11-21 00:07:59"
     }
   },
   "results": {
@@ -564,15 +564,33 @@
         "language": "javascript",
         "LLM_results": [
           {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/circular-buffer_exercism-javascript-ThomasZumsteg/claude/ClaudeSonnet4_circular-buffer_v1.js",
+            "log": "",
+            "execution_time_ms": 450.0,
+            "CPU_usage": 66.0,
+            "RAM_usage": 80156,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_circular-buffer_exercism-javascript-ThomasZumsteg_ThomasZumsteg",
+        "filename": "circular-buffer.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
             "LLM_type": "openAI",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/circular-buffer_exercism-javascript-ThomasZumsteg/openAI/ChatGPT4_circular-buffer_v1.js",
             "log": "",
-            "execution_time_ms": 490.0,
-            "CPU_usage": 16.0,
-            "RAM_usage": 81020,
+            "execution_time_ms": 450.0,
+            "CPU_usage": 62.0,
+            "RAM_usage": 81100,
             "regressionTestPassed": false,
             "success": false,
-            "error_message": "Docker exit code: 1"
+            "error_message": null
           }
         ]
       },
@@ -585,30 +603,12 @@
             "LLM_type": "gemini",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/circular-buffer_exercism-javascript-ThomasZumsteg/gemini/GeminiFlash_circular-buffer_v1.js",
             "log": "",
-            "execution_time_ms": 460.0,
-            "CPU_usage": 16.0,
-            "RAM_usage": 80324,
+            "execution_time_ms": 440.00000000000006,
+            "CPU_usage": 61.0,
+            "RAM_usage": 80432,
             "regressionTestPassed": false,
             "success": false,
-            "error_message": "Docker exit code: 1"
-          }
-        ]
-      },
-      {
-        "id": "javascript_circular-buffer_exercism-javascript-ThomasZumsteg_ThomasZumsteg",
-        "filename": "circular-buffer.js",
-        "language": "javascript",
-        "LLM_results": [
-          {
-            "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/circular-buffer_exercism-javascript-ThomasZumsteg/claude/ClaudeSonnet4_circular-buffer_v1.js",
-            "log": "",
-            "execution_time_ms": 490.0,
-            "CPU_usage": 16.0,
-            "RAM_usage": 80200,
-            "regressionTestPassed": false,
-            "success": false,
-            "error_message": "Docker exit code: 1"
+            "error_message": null
           }
         ]
       }
@@ -807,6 +807,42 @@
             "log": "",
             "execution_time_ms": 3.625322,
             "CPU_usage": 52.0,
+            "RAM_usage": 10496,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "cpp_circular-buffer_toemm",
+        "filename": "circular_buffer.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "cpp/circular-buffer_exercism-toemm/openAI/ChatGPT4_circular_buffer_v1.cpp",
+            "log": "",
+            "execution_time_ms": 2.301725,
+            "CPU_usage": 71.0,
+            "RAM_usage": 10496,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "cpp_circular-buffer_toemm",
+        "filename": "circular_buffer.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "cpp/circular-buffer_exercism-toemm/claude/ClaudeSonnet4_circular_buffer_v1.cpp",
+            "log": "",
+            "execution_time_ms": 2.759804,
+            "CPU_usage": 75.0,
             "RAM_usage": 10496,
             "regressionTestPassed": true,
             "success": true,

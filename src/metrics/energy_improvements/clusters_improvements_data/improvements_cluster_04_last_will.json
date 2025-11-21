@@ -66,13 +66,13 @@
           "avg_exec_regressionTestPassed": 0
         },
         "prompt_v3": {
-          "exec_quantity": 0,
-          "successfully_exec_quantity": 0,
-          "language": "",
-          "avg_exec_CPU_usage": -1,
-          "avg_exec_RAM_usage": -1,
-          "avg_exec_execution_time_ms": -1,
-          "avg_exec_regressionTestPassed": 0
+          "exec_quantity": 5,
+          "successfully_exec_quantity": 5,
+          "language": "cpp",
+          "avg_exec_CPU_usage": 67.0,
+          "avg_exec_RAM_usage": 10496.0,
+          "avg_exec_execution_time_ms": 2.2115650000000002,
+          "avg_exec_regressionTestPassed": 100.0
         },
         "prompt_v4": {
           "exec_quantity": 0,
@@ -290,31 +290,38 @@
           "regressionTestPassed": -0.0
         },
         "prompt_v3": {
-          "LLM_successfully_exec_quantity": 0,
-          "LLM_exec_quantity": 0,
-          "language": "",
+          "LLM_successfully_exec_quantity": 5,
+          "LLM_exec_quantity": 5,
+          "language": "cpp",
           "CPU_usage": {
-            "improvement_percentage": -999,
-            "label": "invalid",
+            "improvement_percentage": -5.345911949685532,
+            "label": "degradation",
             "is_outlier": false,
-            "base_value": -999,
-            "llm_value": -999
+            "base_value": 63.6,
+            "llm_value": 67.0
           },
           "RAM_usage": {
-            "improvement_percentage": -999,
-            "label": "invalid",
+            "improvement_percentage": 0.0,
+            "label": "degradation",
             "is_outlier": false,
-            "base_value": -999,
-            "llm_value": -999
+            "base_value": 10496.0,
+            "llm_value": 10496.0
           },
           "execution_time_ms": {
-            "improvement_percentage": -999,
-            "label": "invalid",
+            "improvement_percentage": 10.648661551037073,
+            "label": "reduction",
             "is_outlier": false,
-            "base_value": -999,
-            "llm_value": -999
+            "base_value": 2.4751336,
+            "llm_value": 2.2115650000000002
           },
-          "regressionTestPassed": -0.0
+          "regressionTestPassed": -0.0,
+          "energy_joules": {
+            "improvement_percentage": 4.4979377571967865,
+            "label": "reduction",
+            "is_outlier": false,
+            "base_value": 0.22099865466781496,
+            "llm_value": 0.21105827273661437
+          }
         },
         "prompt_v4": {
           "LLM_successfully_exec_quantity": 0,

@@ -1,17 +1,17 @@
 {
-  "execution_date": "2025-11-15 11:03:40",
+  "execution_date": "2025-11-21 11:02:35",
   "execution_metadata": {
     "total_tests": 33,
     "successful_tests": 27,
     "execution_time": "00h 00m 04s",
     "cluster": "cluster_perfect_numbers",
     "test_type": "llm_v2",
-    "last_updated": "2025-11-15 11:03:40",
+    "last_updated": "2025-11-21 11:02:35",
     "selective_execution": {
       "languages": [
-        "javascript"
+        "cpp"
       ],
-      "timestamp": "2025-11-15 11:03:40"
+      "timestamp": "2025-11-21 11:02:35"
     }
   },
   "results": {
@@ -22,14 +22,14 @@
         "language": "python",
         "LLM_results": [
           {
-            "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/perfect-numbers/openAI/ChatGPT4_perfect-numbers_v2.py",
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/perfect-numbers/gemini/GeminiFlash_perfect-numbers_v2.py",
             "log": "",
-            "execution_time_ms": 30,
-            "CPU_usage": 15.0,
+            "execution_time_ms": 50.0,
+            "CPU_usage": 80.0,
             "RAM_usage": 13952,
-            "regressionTestPassed": false,
-            "success": false,
+            "regressionTestPassed": true,
+            "success": true,
             "error_message": null
           }
         ]
@@ -43,11 +43,11 @@
             "LLM_type": "claude",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/perfect-numbers/claude/ClaudeSonnet4_perfect-numbers_v2.py",
             "log": "",
-            "execution_time_ms": 30,
-            "CPU_usage": 11.0,
+            "execution_time_ms": 50.0,
+            "CPU_usage": 78.0,
             "RAM_usage": 13824,
             "regressionTestPassed": true,
-            "success": null,
+            "success": true,
             "error_message": null
           }
         ]
@@ -58,14 +58,14 @@
         "language": "python",
         "LLM_results": [
           {
-            "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/perfect-numbers/gemini/GeminiFlash_perfect-numbers_v2.py",
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/perfect-numbers/openAI/ChatGPT4_perfect-numbers_v2.py",
             "log": "",
-            "execution_time_ms": 30,
-            "CPU_usage": 7.0,
-            "RAM_usage": 13820,
+            "execution_time_ms": 50.0,
+            "CPU_usage": 85.0,
+            "RAM_usage": 13952,
             "regressionTestPassed": true,
-            "success": null,
+            "success": true,
             "error_message": null
           }
         ]
@@ -507,6 +507,62 @@
             "regressionTestPassed": false,
             "success": false,
             "error_message": "Docker exit code: 1"
+          }
+        ]
+      }
+    ],
+    "cpp": [
+      {
+        "id": "cpp_perfect-numbers_toemm",
+        "filename": "perfect_numbers.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/perfect-numbers_exercism-toemm/gemini/GeminiFlash_perfect_numbers_v2.cpp",
+            "log": "",
+            "execution_time_ms": 5.091426,
+            "CPU_usage": 76.0,
+            "RAM_usage": 10496,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "cpp_perfect-numbers_toemm",
+        "filename": "perfect_numbers.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/perfect-numbers_exercism-toemm/claude/ClaudeSonnet4_perfect_numbers_v2.cpp",
+            "log": "",
+            "execution_time_ms": 3.929173,
+            "CPU_usage": 46.0,
+            "RAM_usage": 10496,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "cpp_perfect-numbers_toemm",
+        "filename": "perfect_numbers.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/perfect-numbers_exercism-toemm/openAI/ChatGPT4_perfect_numbers_v2.cpp",
+            "log": "",
+            "execution_time_ms": null,
+            "CPU_usage": null,
+            "RAM_usage": null,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 2"
           }
         ]
       }

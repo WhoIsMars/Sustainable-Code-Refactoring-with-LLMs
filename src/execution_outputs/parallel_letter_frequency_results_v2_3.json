@@ -1,11 +1,18 @@
 {
-  "execution_date": "2025-10-28 21:20:19",
+  "execution_date": "2025-11-21 10:57:30",
   "execution_metadata": {
     "total_tests": 2,
     "successful_tests": 2,
     "execution_time": "00h 00m 00s",
     "cluster": "cluster_parallel_letter_frequency",
-    "test_type": "llm_v2"
+    "test_type": "llm_v2",
+    "last_updated": "2025-11-21 10:57:30",
+    "selective_execution": {
+      "languages": [
+        "cpp"
+      ],
+      "timestamp": "2025-11-21 10:57:30"
+    }
   },
   "results": {
     "go": [
@@ -86,6 +93,62 @@
             "regressionTestPassed": true,
             "success": null,
             "error_message": null
+          }
+        ]
+      }
+    ],
+    "cpp": [
+      {
+        "id": "cpp_parallel-letter-frequency_toemm",
+        "filename": "parallel_letter_frequency.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/parallel-letter-frequency_exercism-toemm/gemini/GeminiFlash_parallel_letter_frequency_v2.cpp",
+            "log": "",
+            "execution_time_ms": null,
+            "CPU_usage": null,
+            "RAM_usage": null,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 2"
+          }
+        ]
+      },
+      {
+        "id": "cpp_parallel-letter-frequency_toemm",
+        "filename": "parallel_letter_frequency.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/parallel-letter-frequency_exercism-toemm/claude/ClaudeSonnet4_parallel_letter_frequency_v2.cpp",
+            "log": "",
+            "execution_time_ms": 1.916213,
+            "CPU_usage": 66.0,
+            "RAM_usage": 10496,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "cpp_parallel-letter-frequency_toemm",
+        "filename": "parallel_letter_frequency.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/parallel-letter-frequency_exercism-toemm/openAI/ChatGPT4_parallel_letter_frequency_v2.cpp",
+            "log": "",
+            "execution_time_ms": null,
+            "CPU_usage": null,
+            "RAM_usage": null,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 2"
           }
         ]
       }

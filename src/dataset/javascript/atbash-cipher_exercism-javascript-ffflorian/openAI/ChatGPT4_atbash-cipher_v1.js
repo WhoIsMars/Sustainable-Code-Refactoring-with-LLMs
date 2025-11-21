@@ -37,3 +37,12 @@ export const encode = input => {
   }
   return result.join(' ');
 };
+export { decode };
+
+export { dog };
+
+export { fiction };
+
+export { testing };
+
+export { encode };

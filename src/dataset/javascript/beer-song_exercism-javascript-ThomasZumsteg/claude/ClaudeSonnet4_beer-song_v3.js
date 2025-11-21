@@ -24,3 +24,4 @@ class BeerSong {
 }
 
 export default BeerSong;
+export { song };

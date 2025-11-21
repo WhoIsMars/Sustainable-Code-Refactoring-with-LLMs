@@ -1,17 +1,17 @@
 {
-  "execution_date": "2025-11-15 10:15:59",
+  "execution_date": "2025-11-21 10:47:09",
   "execution_metadata": {
     "total_tests": 11,
     "successful_tests": 11,
     "execution_time": "00h 00m 00s",
     "cluster": "cluster_minesweeper",
     "test_type": "llm_v2",
-    "last_updated": "2025-11-15 10:15:59",
+    "last_updated": "2025-11-21 10:47:09",
     "selective_execution": {
       "languages": [
-        "javascript"
+        "cpp"
       ],
-      "timestamp": "2025-11-15 10:15:59"
+      "timestamp": "2025-11-21 10:47:09"
     }
   },
   "results": {
@@ -670,6 +670,62 @@
             "RAM_usage": 80000,
             "regressionTestPassed": true,
             "success": null,
+            "error_message": null
+          }
+        ]
+      }
+    ],
+    "cpp": [
+      {
+        "id": "cpp_minesweeper_toemm",
+        "filename": "minesweeper.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/minesweeper_exercism-toemm/gemini/GeminiFlash_minesweeper_v2.cpp",
+            "log": "",
+            "execution_time_ms": null,
+            "CPU_usage": null,
+            "RAM_usage": null,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 2"
+          }
+        ]
+      },
+      {
+        "id": "cpp_minesweeper_toemm",
+        "filename": "minesweeper.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/minesweeper_exercism-toemm/claude/ClaudeSonnet4_minesweeper_v2.cpp",
+            "log": "",
+            "execution_time_ms": 5.580701,
+            "CPU_usage": 30.0,
+            "RAM_usage": 10496,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "cpp_minesweeper_toemm",
+        "filename": "minesweeper.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/minesweeper_exercism-toemm/openAI/ChatGPT4_minesweeper_v2.cpp",
+            "log": "",
+            "execution_time_ms": 3.044393,
+            "CPU_usage": 72.0,
+            "RAM_usage": 10496,
+            "regressionTestPassed": true,
+            "success": true,
             "error_message": null
           }
         ]

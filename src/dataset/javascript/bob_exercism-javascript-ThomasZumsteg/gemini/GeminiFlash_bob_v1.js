@@ -69,3 +69,4 @@ Bob.prototype.hey = function(input) {
 };
 
 export default Bob;
+export { to };

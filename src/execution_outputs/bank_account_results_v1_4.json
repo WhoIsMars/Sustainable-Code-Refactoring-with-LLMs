@@ -1,17 +1,17 @@
 {
-  "execution_date": "2025-11-14 22:55:05",
+  "execution_date": "2025-11-21 09:28:19",
   "execution_metadata": {
     "total_tests": 33,
     "successful_tests": 33,
     "execution_time": "00h 00m 00s",
     "cluster": "cluster_bank_account",
     "test_type": "llm_v1",
-    "last_updated": "2025-11-14 22:55:05",
+    "last_updated": "2025-11-21 09:28:19",
     "selective_execution": {
       "languages": [
-        "javascript"
+        "cpp"
       ],
-      "timestamp": "2025-11-14 22:55:05"
+      "timestamp": "2025-11-21 09:28:19"
     }
   },
   "results": {
@@ -22,32 +22,14 @@
         "language": "python",
         "LLM_results": [
           {
-            "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/bank-account/gemini/GeminiFlash_bank-account_v1.py",
-            "log": "",
-            "execution_time_ms": 20,
-            "CPU_usage": 57.0,
-            "RAM_usage": 13824,
-            "regressionTestPassed": false,
-            "success": false,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "bank-account_3",
-        "filename": "bank-account.py",
-        "language": "python",
-        "LLM_results": [
-          {
             "LLM_type": "claude",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/bank-account/claude/ClaudeSonnet4_bank-account_v1.py",
             "log": "",
-            "execution_time_ms": 30,
-            "CPU_usage": 35.0,
-            "RAM_usage": 13824,
-            "regressionTestPassed": false,
-            "success": false,
+            "execution_time_ms": 60.0,
+            "CPU_usage": 73.0,
+            "RAM_usage": 13952,
+            "regressionTestPassed": true,
+            "success": true,
             "error_message": null
           }
         ]
@@ -61,71 +43,35 @@
             "LLM_type": "openAI",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/bank-account/openAI/ChatGPT4_bank-account_v1.py",
             "log": "",
-            "execution_time_ms": 30,
-            "CPU_usage": 58.0,
-            "RAM_usage": 13824,
-            "regressionTestPassed": false,
-            "success": false,
+            "execution_time_ms": 50.0,
+            "CPU_usage": 65.0,
+            "RAM_usage": 13952,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "bank-account_3",
+        "filename": "bank-account.py",
+        "language": "python",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/bank-account/gemini/GeminiFlash_bank-account_v1.py",
+            "log": "",
+            "execution_time_ms": 60.0,
+            "CPU_usage": 80.0,
+            "RAM_usage": 13696,
+            "regressionTestPassed": true,
+            "success": true,
             "error_message": null
           }
         ]
       }
     ],
     "javascript": [
-      {
-        "id": "javascript_bank-account_exercism-javascript-ffflorian",
-        "filename": "bank-account.js",
-        "language": "javascript",
-        "LLM_results": [
-          {
-            "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/bank-account_exercism-javascript-ffflorian/openAI/ChatGPT4_bank-account_v1.js",
-            "log": "",
-            "execution_time_ms": 540.0,
-            "CPU_usage": 15.0,
-            "RAM_usage": 83756,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "javascript_bank-account_exercism-javascript-ffflorian",
-        "filename": "bank-account.js",
-        "language": "javascript",
-        "LLM_results": [
-          {
-            "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/bank-account_exercism-javascript-ffflorian/gemini/GeminiFlash_bank-account_v1.js",
-            "log": "",
-            "execution_time_ms": 570.0000000000001,
-            "CPU_usage": 12.0,
-            "RAM_usage": 83984,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "javascript_bank-account_exercism-javascript-ffflorian",
-        "filename": "bank-account.js",
-        "language": "javascript",
-        "LLM_results": [
-          {
-            "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/bank-account_exercism-javascript-ffflorian/claude/ClaudeSonnet4_bank-account_v1.js",
-            "log": "",
-            "execution_time_ms": 550.0,
-            "CPU_usage": 11.0,
-            "RAM_usage": 82144,
-            "regressionTestPassed": false,
-            "success": false,
-            "error_message": "Docker exit code: 1"
-          }
-        ]
-      },
       {
         "id": "javascript_bank-account_exercism-javascript-irvingbennett_irvingbennett",
         "filename": "bank-account.js",
@@ -141,42 +87,6 @@
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "javascript_bank-account_exercism-javascript-ffflorian_ffflorian",
-        "filename": "bank-account.js",
-        "language": "javascript",
-        "LLM_results": [
-          {
-            "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/bank-account_exercism-javascript-ffflorian/openAI/ChatGPT4_bank-account_v1.js",
-            "log": "",
-            "execution_time_ms": 560.0,
-            "CPU_usage": 8.0,
-            "RAM_usage": 84132,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "javascript_bank-account_exercism-javascript-ffflorian_ffflorian",
-        "filename": "bank-account.js",
-        "language": "javascript",
-        "LLM_results": [
-          {
-            "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/bank-account_exercism-javascript-ffflorian/claude/ClaudeSonnet4_bank-account_v1.js",
-            "log": "",
-            "execution_time_ms": 510.0,
-            "CPU_usage": 9.0,
-            "RAM_usage": 81688,
-            "regressionTestPassed": false,
-            "success": false,
-            "error_message": "Docker exit code: 1"
           }
         ]
       },
@@ -217,6 +127,96 @@
         ]
       },
       {
+        "id": "javascript_bank-account_exercism-javascript-ffflorian",
+        "filename": "bank-account.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/bank-account_exercism-javascript-ffflorian/openAI/ChatGPT4_bank-account_v1.js",
+            "log": "",
+            "execution_time_ms": 500.0,
+            "CPU_usage": 48.0,
+            "RAM_usage": 81032,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_bank-account_exercism-javascript-ffflorian",
+        "filename": "bank-account.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/bank-account_exercism-javascript-ffflorian/claude/ClaudeSonnet4_bank-account_v1.js",
+            "log": "",
+            "execution_time_ms": 520.0,
+            "CPU_usage": 44.0,
+            "RAM_usage": 82104,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_bank-account_exercism-javascript-ffflorian",
+        "filename": "bank-account.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/bank-account_exercism-javascript-ffflorian/gemini/GeminiFlash_bank-account_v1.js",
+            "log": "",
+            "execution_time_ms": 520.0,
+            "CPU_usage": 45.0,
+            "RAM_usage": 82516,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_bank-account_exercism-javascript-ffflorian_ffflorian",
+        "filename": "bank-account.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/bank-account_exercism-javascript-ffflorian/openAI/ChatGPT4_bank-account_v1.js",
+            "log": "",
+            "execution_time_ms": 520.0,
+            "CPU_usage": 42.0,
+            "RAM_usage": 81440,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_bank-account_exercism-javascript-ffflorian_ffflorian",
+        "filename": "bank-account.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/bank-account_exercism-javascript-ffflorian/claude/ClaudeSonnet4_bank-account_v1.js",
+            "log": "",
+            "execution_time_ms": 460.0,
+            "CPU_usage": 70.0,
+            "RAM_usage": 80288,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": null
+          }
+        ]
+      },
+      {
         "id": "javascript_bank-account_exercism-javascript-ffflorian_ffflorian",
         "filename": "bank-account.js",
         "language": "javascript",
@@ -225,9 +225,9 @@
             "LLM_type": "gemini",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/bank-account_exercism-javascript-ffflorian/gemini/GeminiFlash_bank-account_v1.js",
             "log": "",
-            "execution_time_ms": 510.0,
-            "CPU_usage": 19.0,
-            "RAM_usage": 83924,
+            "execution_time_ms": 460.0,
+            "CPU_usage": 74.0,
+            "RAM_usage": 82900,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -610,6 +610,62 @@
             "execution_time_ms": 5659,
             "CPU_usage": 179.0,
             "RAM_usage": 208836,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      }
+    ],
+    "cpp": [
+      {
+        "id": "cpp_bank-account_toemm",
+        "filename": "bank_account.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/bank-account_exercism-toemm/claude/ClaudeSonnet4_bank_account_v1.cpp",
+            "log": "",
+            "execution_time_ms": 38.798683,
+            "CPU_usage": 83.0,
+            "RAM_usage": 12416,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "cpp_bank-account_toemm",
+        "filename": "bank_account.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/bank-account_exercism-toemm/gemini/GeminiFlash_bank_account_v1.cpp",
+            "log": "",
+            "execution_time_ms": 35.933956,
+            "CPU_usage": 89.0,
+            "RAM_usage": 12416,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "cpp_bank-account_toemm",
+        "filename": "bank_account.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/bank-account_exercism-toemm/openAI/ChatGPT4_bank_account_v1.cpp",
+            "log": "",
+            "execution_time_ms": 35.392638,
+            "CPU_usage": 113.0,
+            "RAM_usage": 12288,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null

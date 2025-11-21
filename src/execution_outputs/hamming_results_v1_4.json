@@ -1,17 +1,17 @@
 {
-  "execution_date": "2025-11-15 01:09:00",
+  "execution_date": "2025-11-21 10:00:21",
   "execution_metadata": {
     "total_tests": 55,
     "successful_tests": 55,
     "execution_time": "00h 00m 00s",
     "cluster": "cluster_hamming",
     "test_type": "llm_v1",
-    "last_updated": "2025-11-15 01:09:00",
+    "last_updated": "2025-11-21 10:00:21",
     "selective_execution": {
       "languages": [
-        "javascript"
+        "cpp"
       ],
-      "timestamp": "2025-11-15 01:09:00"
+      "timestamp": "2025-11-21 10:00:21"
     }
   },
   "results": {
@@ -22,36 +22,50 @@
         "language": "python",
         "LLM_results": [
           {
-            "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/hamming/openAI/ChatGPT4_hamming_v1.py",
-            "log": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/hamming/openAI/output.log",
-            "execution_time_ms": 40,
-            "CPU_usage": 55.0,
-            "RAM_usage": 13824,
-            "regressionTestPassed": true,
-            "success": null,
-            "error_message": null
-          },
-          {
             "LLM_type": "claude",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/hamming/claude/ClaudeSonnet4_hamming_v1.py",
-            "log": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/hamming/claude/output.log",
-            "execution_time_ms": 60,
-            "CPU_usage": 53.0,
-            "RAM_usage": 13696,
+            "log": "",
+            "execution_time_ms": 50.0,
+            "CPU_usage": 76.0,
+            "RAM_usage": 13952,
             "regressionTestPassed": true,
-            "success": null,
+            "success": true,
             "error_message": null
-          },
+          }
+        ]
+      },
+      {
+        "id": "hamming_15",
+        "filename": "hamming.py",
+        "language": "python",
+        "LLM_results": [
           {
             "LLM_type": "gemini",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/hamming/gemini/GeminiFlash_hamming_v1.py",
-            "log": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/hamming/gemini/output.log",
-            "execution_time_ms": 30,
-            "CPU_usage": 45.0,
+            "log": "",
+            "execution_time_ms": 60.0,
+            "CPU_usage": 78.0,
             "RAM_usage": 13952,
             "regressionTestPassed": true,
-            "success": null,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "hamming_15",
+        "filename": "hamming.py",
+        "language": "python",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/hamming/openAI/ChatGPT4_hamming_v1.py",
+            "log": "",
+            "execution_time_ms": 60.00000000000001,
+            "CPU_usage": 79.0,
+            "RAM_usage": 13824,
+            "regressionTestPassed": true,
+            "success": true,
             "error_message": null
           }
         ]
@@ -61,8 +75,74 @@
       {
         "id": "Java_hamming_exercism-java-ThomasZumsteg",
         "filename": "hamming.java",
-        "language": "Java",
-        "LLM_results": []
+        "language": "java",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/hamming_exercism-java-ThomasZumsteg/gemini/GeminiFlash_hamming_v1.java",
+            "log": "",
+            "execution_time_ms": 90.0,
+            "CPU_usage": 85.0,
+            "RAM_usage": 46404,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "Java_hamming_exercism-java-ThomasZumsteg_ThomasZumsteg",
+        "filename": "hamming.java",
+        "language": "java",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/hamming_exercism-java-ThomasZumsteg/gemini/GeminiFlash_hamming_v1.java",
+            "log": "",
+            "execution_time_ms": 99.99999999999999,
+            "CPU_usage": 55.0,
+            "RAM_usage": 46416,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "Java_hamming_exercism-java-ThomasZumsteg_ThomasZumsteg",
+        "filename": "hamming.java",
+        "language": "java",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/hamming_exercism-java-ThomasZumsteg/claude/ClaudeSonnet4_hamming_v1.java",
+            "log": "",
+            "execution_time_ms": 99.99999999999999,
+            "CPU_usage": 95.0,
+            "RAM_usage": 46432,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "Java_hamming_exercism-java-ThomasZumsteg",
+        "filename": "hamming.java",
+        "language": "java",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/hamming_exercism-java-ThomasZumsteg/claude/ClaudeSonnet4_hamming_v1.java",
+            "log": "",
+            "execution_time_ms": 99.99999999999999,
+            "CPU_usage": 100.0,
+            "RAM_usage": 46176,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
       },
       {
         "id": "Java_hamming_exercism-java-blogscot_blogscot",
@@ -105,10 +185,84 @@
         ]
       },
       {
-        "id": "Java_hamming_exercism-java-ThomasZumsteg_ThomasZumsteg",
+        "id": "Java_hamming_exercism-java-blogscot_blogscot",
         "filename": "hamming.java",
         "language": "Java",
-        "LLM_results": []
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/hamming_exercism-java-blogscot/openAI/ChatGPT4_hamming_v1.java",
+            "log": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/hamming_exercism-java-blogscot/openAI/output.log",
+            "execution_time_ms": 99,
+            "CPU_usage": 105.0,
+            "RAM_usage": 46428,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/hamming_exercism-java-blogscot/claude/ClaudeSonnet4_hamming_v1.java",
+            "log": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/hamming_exercism-java-blogscot/claude/output.log",
+            "execution_time_ms": 99,
+            "CPU_usage": 98.0,
+            "RAM_usage": 46540,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/hamming_exercism-java-blogscot/gemini/GeminiFlash_hamming_v1.java",
+            "log": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/hamming_exercism-java-blogscot/gemini/output.log",
+            "execution_time_ms": 90,
+            "CPU_usage": 75.0,
+            "RAM_usage": 46280,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "Java_hamming_exercism-java-blogscot_blogscot",
+        "filename": "hamming.java",
+        "language": "Java",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/hamming_exercism-java-blogscot/openAI/ChatGPT4_hamming_v1.java",
+            "log": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/hamming_exercism-java-blogscot/openAI/output.log",
+            "execution_time_ms": 99,
+            "CPU_usage": 105.0,
+            "RAM_usage": 46428,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/hamming_exercism-java-blogscot/claude/ClaudeSonnet4_hamming_v1.java",
+            "log": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/hamming_exercism-java-blogscot/claude/output.log",
+            "execution_time_ms": 99,
+            "CPU_usage": 98.0,
+            "RAM_usage": 46540,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/hamming_exercism-java-blogscot/gemini/GeminiFlash_hamming_v1.java",
+            "log": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/hamming_exercism-java-blogscot/gemini/output.log",
+            "execution_time_ms": 90,
+            "CPU_usage": 75.0,
+            "RAM_usage": 46280,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
       },
       {
         "id": "Java_hamming_Exercism (java_rabestro)",
@@ -144,6 +298,166 @@
             "execution_time_ms": 650,
             "CPU_usage": 80.0,
             "RAM_usage": 80300,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "Java_hamming_Exercism (java_rabestro)",
+        "filename": "Hamming.java",
+        "language": "Java",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/hamming_Exercism_java_rabestro/openAI/ChatGPT4_Hamming_v1.java",
+            "log": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/hamming_Exercism_java_rabestro/openAI/output.log",
+            "execution_time_ms": 640,
+            "CPU_usage": 63.0,
+            "RAM_usage": 80240,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/hamming_Exercism_java_rabestro/claude/ClaudeSonnet4_Hamming_v1.java",
+            "log": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/hamming_Exercism_java_rabestro/claude/output.log",
+            "execution_time_ms": 550,
+            "CPU_usage": 89.0,
+            "RAM_usage": 81780,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/hamming_Exercism_java_rabestro/gemini/GeminiFlash_Hamming_v1.java",
+            "log": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/hamming_Exercism_java_rabestro/gemini/output.log",
+            "execution_time_ms": 650,
+            "CPU_usage": 80.0,
+            "RAM_usage": 80300,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "Java_hamming_Exercism (java_rabestro)",
+        "filename": "Hamming.java",
+        "language": "Java",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/hamming_Exercism_java_rabestro/openAI/ChatGPT4_Hamming_v1.java",
+            "log": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/hamming_Exercism_java_rabestro/openAI/output.log",
+            "execution_time_ms": 640,
+            "CPU_usage": 63.0,
+            "RAM_usage": 80240,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/hamming_Exercism_java_rabestro/claude/ClaudeSonnet4_Hamming_v1.java",
+            "log": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/hamming_Exercism_java_rabestro/claude/output.log",
+            "execution_time_ms": 550,
+            "CPU_usage": 89.0,
+            "RAM_usage": 81780,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/hamming_Exercism_java_rabestro/gemini/GeminiFlash_Hamming_v1.java",
+            "log": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/hamming_Exercism_java_rabestro/gemini/output.log",
+            "execution_time_ms": 650,
+            "CPU_usage": 80.0,
+            "RAM_usage": 80300,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "Java_hamming_Exercism (java_tusktenon)",
+        "filename": "Hamming.java",
+        "language": "Java",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/hamming_Exercism_java_tusktenon/openAI/ChatGPT4_Hamming_v1.java",
+            "log": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/hamming_Exercism_java_tusktenon/openAI/output.log",
+            "execution_time_ms": 580,
+            "CPU_usage": 50.0,
+            "RAM_usage": 79584,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/hamming_Exercism_java_tusktenon/claude/ClaudeSonnet4_Hamming_v1.java",
+            "log": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/hamming_Exercism_java_tusktenon/claude/output.log",
+            "execution_time_ms": 679,
+            "CPU_usage": 59.0,
+            "RAM_usage": 80532,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/hamming_Exercism_java_tusktenon/gemini/GeminiFlash_Hamming_v1.java",
+            "log": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/hamming_Exercism_java_tusktenon/gemini/output.log",
+            "execution_time_ms": 600,
+            "CPU_usage": 53.0,
+            "RAM_usage": 80844,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "Java_hamming_Exercism (java_tusktenon)",
+        "filename": "Hamming.java",
+        "language": "Java",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/hamming_Exercism_java_tusktenon/openAI/ChatGPT4_Hamming_v1.java",
+            "log": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/hamming_Exercism_java_tusktenon/openAI/output.log",
+            "execution_time_ms": 580,
+            "CPU_usage": 50.0,
+            "RAM_usage": 79584,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/hamming_Exercism_java_tusktenon/claude/ClaudeSonnet4_Hamming_v1.java",
+            "log": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/hamming_Exercism_java_tusktenon/claude/output.log",
+            "execution_time_ms": 679,
+            "CPU_usage": 59.0,
+            "RAM_usage": 80532,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/hamming_Exercism_java_tusktenon/gemini/GeminiFlash_Hamming_v1.java",
+            "log": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/hamming_Exercism_java_tusktenon/gemini/output.log",
+            "execution_time_ms": 600,
+            "CPU_usage": 53.0,
+            "RAM_usage": 80844,
             "regressionTestPassed": true,
             "success": null,
             "error_message": null
@@ -1161,6 +1475,60 @@
             "log": "",
             "execution_time_ms": 1.846081,
             "CPU_usage": 78.0,
+            "RAM_usage": 10496,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "cpp_hamming_stungeye",
+        "filename": "hamming.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/hamming_exercism-stungeye/gemini/GeminiFlash_hamming_v1.cpp",
+            "log": "",
+            "execution_time_ms": 3.090509,
+            "CPU_usage": 62.0,
+            "RAM_usage": 10496,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "cpp_hamming_stungeye",
+        "filename": "hamming.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/hamming_exercism-stungeye/claude/ClaudeSonnet4_hamming_v1.cpp",
+            "log": "",
+            "execution_time_ms": 2.542602,
+            "CPU_usage": 66.0,
+            "RAM_usage": 10496,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "cpp_hamming_stungeye",
+        "filename": "hamming.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/hamming_exercism-stungeye/openAI/ChatGPT4_hamming_v1.cpp",
+            "log": "",
+            "execution_time_ms": 3.260143,
+            "CPU_usage": 56.0,
             "RAM_usage": 10496,
             "regressionTestPassed": true,
             "success": true,

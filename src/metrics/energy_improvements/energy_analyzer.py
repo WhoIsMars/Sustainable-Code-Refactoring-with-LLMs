@@ -246,6 +246,9 @@ def load_and_filter_execution_data(logger) -> Dict:
     base_executions = defaultdict(list)  # key: entry_id, value: list of execution dicts
     llm_executions = defaultdict(list)   # key: (entry_id, llm_type, prompt_v), value: list of execution dicts
 
+    # Track pass status for base entries to filter for 100% pass rate
+    base_pass_status = defaultdict(lambda: {"passed": 0, "total": 0})
+
     # Process each cluster
     for cluster_name in cluster_names:
         # Load base code results (5 files: cluster_results_1.json to cluster_results_5.json)
@@ -265,7 +268,16 @@ def load_and_filter_execution_data(logger) -> Dict:
                     continue
 
                 for entry in entries:
-                    # Filter out invalid entries
+                    entry_id = entry.get("id")
+                    if not entry_id:
+                        continue
+
+                    # Track pass status (do this for ALL entries to calculate pass rate)
+                    base_pass_status[entry_id]["total"] += 1
+                    if entry.get("regressionTestPassed", False):
+                        base_pass_status[entry_id]["passed"] += 1
+
+                    # Filter out invalid entries (but only AFTER tracking pass status)
                     if not is_valid_metric_value(entry.get("execution_time_ms")):
                         continue
                     if not is_valid_metric_value(entry.get("CPU_usage")):
@@ -273,8 +285,8 @@ def load_and_filter_execution_data(logger) -> Dict:
                     if not is_valid_metric_value(entry.get("RAM_usage")):
                         continue
 
-                    entry_id = entry.get("id")
-                    if not entry_id:
+                    # Also filter for passed regression test
+                    if not entry.get("regressionTestPassed", False):
                         continue
 
                     # Store execution data
@@ -345,9 +357,25 @@ def load_and_filter_execution_data(logger) -> Dict:
     logger.info(f"Loaded raw executions: {len(base_executions)} base entries, {len(llm_executions)} LLM entries")
 
     # Aggregate: calculate means across the 5 executions
+    # CRITICAL FILTER: Only include base entries with 100% pass rate
     base_entries = []
+    filtered_count = 0
+
     for entry_id, executions in base_executions.items():
         if not executions:
+            continue
+
+        # Check pass rate for this entry
+        pass_info = base_pass_status[entry_id]
+        if pass_info["total"] == 0:
+            continue
+
+        pass_rate = (pass_info["passed"] / pass_info["total"]) * 100.0
+
+        # Filter: only include entries with 100% pass rate
+        if pass_rate < 100.0:
+            filtered_count += 1
+            logger.debug(f"Filtered base entry {entry_id}: pass_rate={pass_rate:.1f}% ({pass_info['passed']}/{pass_info['total']})")
             continue
 
         # Calculate means
@@ -364,6 +392,8 @@ def load_and_filter_execution_data(logger) -> Dict:
             "mean_exec_time_ms": mean_exec_time_ms,
             "num_valid_executions": len(executions)
         })
+
+    logger.info(f"Filtered {filtered_count} base entries with pass_rate < 100%")
 
     llm_entries = []
     for (entry_id, llm_type, prompt_v), executions in llm_executions.items():

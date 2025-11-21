@@ -72,3 +72,4 @@ export function recite(begin = 99, times = 0) {
   }
   return verses;
 }
+export { wall };

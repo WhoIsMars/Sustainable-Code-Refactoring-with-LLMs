@@ -1,11 +1,18 @@
 {
-  "execution_date": "2025-11-16 20:31:29",
+  "execution_date": "2025-11-21 10:07:00",
   "execution_metadata": {
     "total_tests": 9,
     "successful_tests": 9,
     "execution_time": "00h 00m 23s",
     "cluster": "cluster_high_scores",
-    "test_type": "llm_v4"
+    "test_type": "llm_v4",
+    "last_updated": "2025-11-21 10:07:00",
+    "selective_execution": {
+      "languages": [
+        "cpp"
+      ],
+      "timestamp": "2025-11-21 10:07:00"
+    }
   },
   "results": {
     "python": [
@@ -18,11 +25,47 @@
             "LLM_type": "gemini",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/high-scores/gemini/GeminiFlash_high-scores_v4.py",
             "log": "",
-            "execution_time_ms": 30,
-            "CPU_usage": 12.0,
-            "RAM_usage": 13696,
-            "regressionTestPassed": false,
-            "success": false,
+            "execution_time_ms": 30.0,
+            "CPU_usage": 81.0,
+            "RAM_usage": 13952,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "high-scores_16",
+        "filename": "high-scores.py",
+        "language": "python",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/high-scores/openAI/ChatGPT4_high-scores_v4.py",
+            "log": "",
+            "execution_time_ms": 30.0,
+            "CPU_usage": 84.0,
+            "RAM_usage": 13952,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "high-scores_16",
+        "filename": "high-scores.py",
+        "language": "python",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/high-scores/claude/ClaudeSonnet4_high-scores_v4.py",
+            "log": "",
+            "execution_time_ms": 40.0,
+            "CPU_usage": 73.0,
+            "RAM_usage": 13952,
+            "regressionTestPassed": true,
+            "success": true,
             "error_message": null
           }
         ]
@@ -218,6 +261,62 @@
             "regressionTestPassed": true,
             "success": null,
             "error_message": null
+          }
+        ]
+      }
+    ],
+    "cpp": [
+      {
+        "id": "cpp_high-scores_toemm",
+        "filename": "high_scores.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/high-scores_exercism-toemm/claude/ClaudeSonnet4_high_scores_v4.cpp",
+            "log": "",
+            "execution_time_ms": null,
+            "CPU_usage": null,
+            "RAM_usage": null,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 2"
+          }
+        ]
+      },
+      {
+        "id": "cpp_high-scores_toemm",
+        "filename": "high_scores.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/high-scores_exercism-toemm/gemini/GeminiFlash_high_scores_v4.cpp",
+            "log": "",
+            "execution_time_ms": 3.110451,
+            "CPU_usage": 52.0,
+            "RAM_usage": 10496,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "cpp_high-scores_toemm",
+        "filename": "high_scores.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/high-scores_exercism-toemm/openAI/ChatGPT4_high_scores_v4.cpp",
+            "log": "",
+            "execution_time_ms": null,
+            "CPU_usage": null,
+            "RAM_usage": null,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 2"
           }
         ]
       }

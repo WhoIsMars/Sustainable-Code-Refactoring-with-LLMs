@@ -21,3 +21,10 @@ function encode(clear_text) {
 }
 
 export const encode = encode;
+export { atbash };
+
+export { testing };
+
+export { dog };
+
+export { fiction };

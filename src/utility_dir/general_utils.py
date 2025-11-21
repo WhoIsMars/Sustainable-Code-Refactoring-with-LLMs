@@ -61,9 +61,9 @@ class LLMEntry:
     word_quantity: int
     char_quantity: int
     filename: str
-    fuzzy_score: float
-    cosine_similarity_score: float
-    similarity_index: float
+    fuzzy_score: float = 0.0
+    cosine_similarity_score: float = 0.0
+    similarity_index: float = 0.0
 @dataclass
 class CodeEntry:
     id: str

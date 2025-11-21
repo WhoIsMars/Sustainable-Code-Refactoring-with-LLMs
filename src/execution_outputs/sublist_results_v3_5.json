@@ -1,11 +1,18 @@
 {
-  "execution_date": "2025-11-16 22:27:57",
+  "execution_date": "2025-11-21 12:04:48",
   "execution_metadata": {
     "total_tests": 16,
     "successful_tests": 16,
     "execution_time": "00h 00m 39s",
     "cluster": "cluster_sublist",
-    "test_type": "llm_v3"
+    "test_type": "llm_v3",
+    "last_updated": "2025-11-21 12:04:48",
+    "selective_execution": {
+      "languages": [
+        "cpp"
+      ],
+      "timestamp": "2025-11-21 12:04:48"
+    }
   },
   "results": {
     "javascript": [
@@ -584,6 +591,62 @@
             "regressionTestPassed": true,
             "success": null,
             "error_message": null
+          }
+        ]
+      }
+    ],
+    "cpp": [
+      {
+        "id": "cpp_sublist_toemm",
+        "filename": "sublist.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/sublist_exercism-toemm/gemini/GeminiFlash_sublist_v3.cpp",
+            "log": "",
+            "execution_time_ms": 2.565386,
+            "CPU_usage": 73.0,
+            "RAM_usage": 10496,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "cpp_sublist_toemm",
+        "filename": "sublist.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/sublist_exercism-toemm/openAI/ChatGPT4_sublist_v3.cpp",
+            "log": "",
+            "execution_time_ms": null,
+            "CPU_usage": null,
+            "RAM_usage": null,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 2"
+          }
+        ]
+      },
+      {
+        "id": "cpp_sublist_toemm",
+        "filename": "sublist.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/sublist_exercism-toemm/claude/ClaudeSonnet4_sublist_v3.cpp",
+            "log": "",
+            "execution_time_ms": null,
+            "CPU_usage": null,
+            "RAM_usage": null,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 2"
           }
         ]
       }

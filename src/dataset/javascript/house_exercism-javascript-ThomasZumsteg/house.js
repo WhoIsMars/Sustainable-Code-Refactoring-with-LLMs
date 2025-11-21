@@ -35,7 +35,7 @@ function verses(start, end) {
   return result;
 }
 
-export default {;
+export default {
   verse: verse,
   verses: verses
 }

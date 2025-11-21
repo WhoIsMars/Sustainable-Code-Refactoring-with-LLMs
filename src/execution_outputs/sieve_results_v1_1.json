@@ -1,17 +1,17 @@
 {
-  "execution_date": "2025-11-15 03:24:15",
+  "execution_date": "2025-11-21 11:51:52",
   "execution_metadata": {
     "total_tests": 7,
     "successful_tests": 7,
     "execution_time": "00h 00m 00s",
     "cluster": "cluster_sieve",
     "test_type": "llm_v1",
-    "last_updated": "2025-11-15 03:24:15",
+    "last_updated": "2025-11-21 11:51:52",
     "selective_execution": {
       "languages": [
-        "javascript"
+        "cpp"
       ],
-      "timestamp": "2025-11-15 03:24:15"
+      "timestamp": "2025-11-21 11:51:52"
     }
   },
   "results": {
@@ -362,7 +362,62 @@
         ]
       }
     ],
-    "cpp": [],
+    "cpp": [
+      {
+        "id": "cpp_sieve_toemm",
+        "filename": "sieve.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/sieve_exercism-toemm/claude/ClaudeSonnet4_sieve_v1.cpp",
+            "log": "",
+            "execution_time_ms": null,
+            "CPU_usage": null,
+            "RAM_usage": null,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 2"
+          }
+        ]
+      },
+      {
+        "id": "cpp_sieve_toemm",
+        "filename": "sieve.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/sieve_exercism-toemm/gemini/GeminiFlash_sieve_v1.cpp",
+            "log": "",
+            "execution_time_ms": 1.778637,
+            "CPU_usage": 73.0,
+            "RAM_usage": 10496,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "cpp_sieve_toemm",
+        "filename": "sieve.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/sieve_exercism-toemm/openAI/ChatGPT4_sieve_v1.cpp",
+            "log": "",
+            "execution_time_ms": 2.237474,
+            "CPU_usage": 74.0,
+            "RAM_usage": 10496,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      }
+    ],
     "c": [],
     "java": []
   }

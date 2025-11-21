@@ -60,3 +60,20 @@ export function simpleTicketStatus(tickets, ticketId) {
 export function gtcVersion(visitor) {
   return visitor?.gtc?.version;
 }
+export {  };
+
+export { revokeTicket };
+
+export { jestjs };
+
+export { Object };
+
+export { not };
+
+export { simpleTicketStatus };
+
+export { gtcVersion };
+
+export { ticketStatus };
+
+export { createVisitor };

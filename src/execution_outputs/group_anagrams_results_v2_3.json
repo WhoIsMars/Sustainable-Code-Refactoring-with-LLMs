@@ -1,11 +1,18 @@
 {
-  "execution_date": "2025-10-28 19:56:13",
+  "execution_date": "2025-11-19 01:22:25",
   "execution_metadata": {
     "total_tests": 1,
     "successful_tests": 1,
     "execution_time": "00h 00m 00s",
     "cluster": "cluster_group_anagrams",
-    "test_type": "llm_v2"
+    "test_type": "llm_v2",
+    "last_updated": "2025-11-19 01:22:25",
+    "selective_execution": {
+      "languages": [
+        "python"
+      ],
+      "timestamp": "2025-11-19 01:22:25"
+    }
   },
   "results": {
     "python": [
@@ -15,37 +22,51 @@
         "language": "python",
         "LLM_results": [
           {
-            "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/group_anagrams/openAI/ChatGPT4_group_anagrams_v2.py",
-            "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
-            "regressionTestPassed": true,
-            "success": null,
-            "error_message": null
-          },
-          {
             "LLM_type": "claude",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/group_anagrams/claude/ClaudeSonnet4_group_anagrams_v2.py",
             "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
-            "regressionTestPassed": true,
-            "success": null,
-            "error_message": null
-          },
+            "execution_time_ms": 60.0,
+            "CPU_usage": 71.0,
+            "RAM_usage": 14080,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 1"
+          }
+        ]
+      },
+      {
+        "id": "group_anagrams_137",
+        "filename": "group_anagrams.py",
+        "language": "python",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/group_anagrams/openAI/ChatGPT4_group_anagrams_v2.py",
+            "log": "",
+            "execution_time_ms": 40.0,
+            "CPU_usage": 77.0,
+            "RAM_usage": 14080,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 1"
+          }
+        ]
+      },
+      {
+        "id": "group_anagrams_137",
+        "filename": "group_anagrams.py",
+        "language": "python",
+        "LLM_results": [
           {
             "LLM_type": "gemini",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/group_anagrams/gemini/GeminiFlash_group_anagrams_v2.py",
             "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
-            "regressionTestPassed": true,
-            "success": null,
-            "error_message": null
+            "execution_time_ms": 60.0,
+            "CPU_usage": 76.0,
+            "RAM_usage": 14080,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 1"
           }
         ]
       }

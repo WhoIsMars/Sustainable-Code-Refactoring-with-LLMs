@@ -8,6 +8,8 @@ module.exports = {
     '**/*.test.js',
     '**/*testSuite.ts',
     '**/*testSuite.js',
+    '**/*_testSuite.ts',   // Pattern with underscore
+    '**/*_testSuite.js',   // Pattern with underscore
     '**/*_test.ts',
     '**/*_test.js'
   ],

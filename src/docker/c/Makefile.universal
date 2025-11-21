@@ -13,12 +13,16 @@ CFLAGS = -std=c11 -Wall -Wextra -O0 -g0
 # AUTO-DETECTION: Find all source and test files
 # ============================================================================
 
-# Find all .c files, excluding build directories and common excludes
+# Find all .c files, excluding build directories and LLM-generated folders
 ALL_C_FILES = $(shell find . -type f -name "*.c" 2>/dev/null | \
               grep -v "/build/" | \
               grep -v "/obj/" | \
               grep -v "/.git/" | \
-              grep -v "/node_modules/")
+              grep -v "/node_modules/" | \
+              grep -v "/claude/" | \
+              grep -v "/gemini/" | \
+              grep -v "/openAI/")
+
 
 # Separate source files from test files
 TEST_FILES = $(filter %test.c %_test.c %-test.c %Test.c, $(ALL_C_FILES))

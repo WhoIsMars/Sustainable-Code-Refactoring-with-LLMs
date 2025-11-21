@@ -18,3 +18,4 @@ export function parse(text) {
   }
   return result.replace(/[^A-Z]/g, '').toUpperCase();
 }
+export { parse };

@@ -15,7 +15,6 @@ from typing import Dict, List
 from collections import defaultdict
 import statistics
 
-
 class PassRateAnalyzer:
     """
     Analyzes pass rates across all execution results.
@@ -25,16 +24,22 @@ class PassRateAnalyzer:
     """
 
     def __init__(self, clusters_dir: str = "../clusters/",
-                 execution_output_dir: str = "../execution_outputs/"):
+                 execution_output_dir: str = "../execution_outputs/",
+                 min_pass_rate_threshold: float = 100.0):
         """
         Initialize the analyzer.
 
         Args:
             clusters_dir: Path to clusters directory
             execution_output_dir: Path to execution output directory
+            min_pass_rate_threshold: Minimum pass rate (%) required for base code to be included
+                                    - 100.0 = 5/5 executions must pass (strictest)
+                                    - 60.0 = at least 3/5 executions must pass
+                                    - 20.0 = at least 1/5 execution must pass (most permissive)
         """
         self.clusters_dir = Path(clusters_dir)
         self.execution_output_dir = Path(execution_output_dir)
+        self.min_pass_rate_threshold = min_pass_rate_threshold
 
         # Storage for results
         self.pass_rate_data = {
@@ -65,9 +70,14 @@ class PassRateAnalyzer:
             # Extract cluster name from filename
             # Format: {cluster}_results_{num}.json or {cluster}_results_v{version}_{num}.json
             filename = file.stem
+
+          
+
             parts = filename.split('_results_')
             if len(parts) >= 2:
                 cluster_name = parts[0]
+
+             
                 cluster_names.add(cluster_name)
 
         return sorted(list(cluster_names))
@@ -134,6 +144,10 @@ class PassRateAnalyzer:
             if language not in execution['results']:
                 continue
 
+            # FIX: For LLM code, there may be multiple entries with the same ID
+            # (one per LLM type). We need to check all of them, not just the first.
+            found_in_this_execution = False
+
             for entry in execution['results'][language]:
                 if entry.get('id') != entry_id:
                     continue
@@ -148,14 +162,19 @@ class PassRateAnalyzer:
                             total_count += 1
                             if llm_result.get('regressionTestPassed', False):
                                 passed_count += 1
-                            break  # Found the LLM result we're looking for
+                            found_in_this_execution = True
+                            break  # Found the LLM result in this entry
+
+                    # If we found the LLM in this entry, no need to check other entries
+                    # in this execution (there should only be one result per LLM per execution)
+                    if found_in_this_execution:
+                        break
                 else:
-                    # For base code
+                    # For base code, there should only be one entry per ID
                     total_count += 1
                     if entry.get('regressionTestPassed', False):
                         passed_count += 1
-
-                break  # Found the entry
+                    break  # Found the entry
 
         if total_count == 0:
             return None  # No data available
@@ -166,8 +185,8 @@ class PassRateAnalyzer:
         """
         Analyze pass rates for a single cluster.
 
-        CRITICAL FILTER: Only includes base code entries with 100% pass rate.
-        This ensures we only compare LLM code against known-good baseline.
+        CRITICAL FILTER: Only includes base code entries meeting the min_pass_rate_threshold.
+        This ensures we only compare LLM code against sufficiently reliable baseline.
 
         Returns:
             Dictionary with pass rate data for this cluster
@@ -176,7 +195,7 @@ class PassRateAnalyzer:
             'cluster_name': cluster_name,
             'base': {},
             'llm': {},
-            'valid_entries': {}  # Track which entries have 100% base pass rate
+            'valid_entries': {}  # Track which entries meet the pass rate threshold
         }
 
         # Load cluster metadata to get entry IDs
@@ -195,7 +214,7 @@ class PassRateAnalyzer:
             print(f"Warning: Could not load cluster {cluster_name}: {e}")
             return cluster_results
 
-        # PHASE 1: Analyze base code and identify entries with 100% pass rate
+        # PHASE 1: Analyze base code and identify entries meeting the threshold
         base_executions = self.load_execution_results(cluster_name, test_type="base")
         valid_entries_by_language = defaultdict(set)  # language -> set of valid entry_ids
 
@@ -213,14 +232,14 @@ class PassRateAnalyzer:
                         base_executions, language, entry_id, is_llm=False
                     )
 
-                    # CRITICAL FILTER: Only include if pass_rate is exactly 100%
-                    if pass_rate is not None and pass_rate == 100.0:
+                    # CRITICAL FILTER: Only include if pass_rate meets or exceeds threshold
+                    if pass_rate is not None and pass_rate >= self.min_pass_rate_threshold:
                         if language not in cluster_results['base']:
                             cluster_results['base'][language] = {}
                         cluster_results['base'][language][entry_id] = pass_rate
                         valid_entries_by_language[language].add(entry_id)
 
-        # PHASE 2: Analyze LLM code ONLY for entries with 100% base pass rate
+        # PHASE 2: Analyze LLM code ONLY for entries meeting base pass rate threshold
         for prompt_version in self.prompt_versions:
             llm_executions = self.load_execution_results(
                 cluster_name, test_type="llm", prompt_version=prompt_version
@@ -265,13 +284,13 @@ class PassRateAnalyzer:
         """
         Main analysis function: aggregates pass rates across all clusters.
 
-        CRITICAL: Only analyzes entries where base code has 100% pass rate.
+        CRITICAL: Only analyzes entries where base code meets minimum pass rate threshold.
 
         Returns:
             Dictionary with aggregated statistics at multiple levels
         """
         print("Starting pass rate analysis across all clusters...")
-        print("CRITICAL FILTER: Only analyzing entries with 100% base code pass rate")
+        print(f"CRITICAL FILTER: Only analyzing entries with base code pass rate >= {self.min_pass_rate_threshold}%")
 
         cluster_names = self.get_cluster_names()
         print(f"Found {len(cluster_names)} clusters")
@@ -289,8 +308,9 @@ class PassRateAnalyzer:
         }
 
         # Track filtering statistics
-        total_base_entries = 0
-        filtered_base_entries = 0
+        total_base_entries_by_language = defaultdict(int)  # Total entries seen per language
+        valid_base_entries_by_language = defaultdict(int)  # Entries with 100% pass rate per language
+        filtered_base_entries = 0  # Total valid entries (all languages)
 
         # Process each cluster
         for i, cluster_name in enumerate(cluster_names, 1):
@@ -300,7 +320,25 @@ class PassRateAnalyzer:
 
             # Count entries for filtering statistics
             for language, entries in cluster_results['base'].items():
-                filtered_base_entries += len(entries)  # These passed the filter (100%)
+                num_valid = len(entries)
+                filtered_base_entries += num_valid  # These passed the filter (100%)
+                valid_base_entries_by_language[language] += num_valid
+
+            # Also count total entries seen (before filtering) for comparison
+            # We need to reload cluster metadata to count all entries
+            cluster_file = self.clusters_dir / f"cluster_{cluster_name}.json"
+            if not cluster_file.exists():
+                cluster_file = self.clusters_dir / f"cluster_{cluster_name}.with_metrics.json"
+
+            if cluster_file.exists():
+                try:
+                    with open(cluster_file, 'r') as f:
+                        cluster_data = json.load(f)
+                        for language in self.languages:
+                            if language in cluster_data:
+                                total_base_entries_by_language[language] += len(cluster_data[language])
+                except Exception:
+                    pass  # Skip on error
 
             # Aggregate base code pass rates
             for language, entries in cluster_results['base'].items():
@@ -328,8 +366,45 @@ class PassRateAnalyzer:
 
         # Calculate statistics for each aggregation level
         print("\nCalculating statistics...")
-        print(f"✓ Included {filtered_base_entries} base code entries with 100% pass rate")
+        print(f"✓ Included {filtered_base_entries} base code entries with pass rate >= {self.min_pass_rate_threshold}%")
         print(f"  (These are the ONLY entries analyzed for LLM comparison)")
+
+        # Determine threshold label for display
+        if self.min_pass_rate_threshold == 100.0:
+            threshold_label = "Valid (5/5)"
+        elif self.min_pass_rate_threshold == 60.0:
+            threshold_label = "Valid (≥3/5)"
+        elif self.min_pass_rate_threshold == 20.0:
+            threshold_label = "Valid (≥1/5)"
+        else:
+            threshold_label = f"Valid (≥{self.min_pass_rate_threshold}%)"
+
+        # Print filtering statistics per language
+        print("\nFILTERING STATISTICS BY LANGUAGE:")
+        print(f"{'Language':<15} {'Total Entries':<15} {threshold_label:<15} {'Percentage':<15}")
+        print("-" * 60)
+        for language in sorted(self.languages):
+            total = total_base_entries_by_language.get(language, 0)
+            valid = valid_base_entries_by_language.get(language, 0)
+            percentage = (valid / total * 100) if total > 0 else 0.0
+            print(f"{language.upper():<15} {total:<15} {valid:<15} {percentage:>6.1f}%")
+
+        total_all = sum(total_base_entries_by_language.values())
+        valid_all = sum(valid_base_entries_by_language.values())
+        percentage_all = (valid_all / total_all * 100) if total_all > 0 else 0.0
+        print("-" * 60)
+        print(f"{'TOTAL':<15} {total_all:<15} {valid_all:<15} {percentage_all:>6.1f}%")
+        print()
+
+        # Save filtering statistics in results
+        self.pass_rate_data['filtering_statistics'] = {
+            'threshold': self.min_pass_rate_threshold,
+            'total_entries_by_language': dict(total_base_entries_by_language),
+            'valid_entries_by_language': dict(valid_base_entries_by_language),
+            'total_entries': total_all,
+            'valid_entries': valid_all,
+            'validity_percentage': percentage_all
+        }
 
         # Global statistics
         self.pass_rate_data['global'] = self._calculate_statistics(all_pass_rates)
@@ -480,6 +555,24 @@ class PassRateAnalyzer:
         print("\n" + "="*80)
         print("PASS RATE ANALYSIS SUMMARY")
         print("="*80)
+        print(f"(Only entries with base code pass rate >= {self.min_pass_rate_threshold}%)")
+        print("="*80)
+
+        # Filtering statistics
+        if 'filtering_statistics' in self.pass_rate_data:
+            stats = self.pass_rate_data['filtering_statistics']
+            threshold = stats.get('threshold', self.min_pass_rate_threshold)
+            print("\nFILTERING STATISTICS:")
+            print(f"  Threshold: >= {threshold}% pass rate")
+            print(f"  Total Base Entries Analyzed: {stats.get('total_entries', 0)}")
+            print(f"  Valid Entries (>= {threshold}% pass rate): {stats.get('valid_entries', 0)}")
+            print(f"  Validity Rate: {stats.get('validity_percentage', 0):.1f}%")
+            print()
+            print("  Valid Entries by Language:")
+            for language, count in sorted(stats.get('valid_entries_by_language', {}).items()):
+                total = stats.get('total_entries_by_language', {}).get(language, 0)
+                pct = (count / total * 100) if total > 0 else 0
+                print(f"    {language.upper():<12}: {count:>4}/{total:<4} ({pct:>5.1f}%)")
 
         # Global statistics
         if 'global' in self.pass_rate_data and self.pass_rate_data['global']:
@@ -552,18 +645,121 @@ class PassRateAnalyzer:
 
 
 def main():
-    """Main execution function."""
-    # Initialize analyzer
-    analyzer = PassRateAnalyzer()
+    """Main execution function with multiple threshold analysis."""
+    # Define thresholds to test
+    thresholds = [
+        (100.0, "5/5 executions (strictest)"),
+        (60.0, "≥3/5 executions"),
+        (20.0, "≥1/5 execution (most permissive)")
+    ]
 
-    # Run analysis
-    results = analyzer.aggregate_across_clusters()
+    # Storage for comparative results
+    all_results = {}
 
-    # Save results
-    analyzer.save_results()
+    print("\n" + "="*80)
+    print("MULTI-THRESHOLD PASS RATE ANALYSIS")
+    print("="*80)
+    print("Running analysis with 3 different base code quality thresholds:")
+    for threshold, description in thresholds:
+        print(f"  - {threshold}%: {description}")
+    print("="*80)
 
-    # Print summary
-    analyzer.print_summary()
+    # Run analysis for each threshold
+    for threshold, description in thresholds:
+        print(f"\n{'#'*80}")
+        print(f"# THRESHOLD: {threshold}% ({description})")
+        print(f"{'#'*80}\n")
+
+        # Initialize analyzer with this threshold
+        analyzer = PassRateAnalyzer(min_pass_rate_threshold=threshold)
+
+        # Run analysis
+        results = analyzer.aggregate_across_clusters()
+
+        # Save results with threshold suffix
+        threshold_str = str(int(threshold))
+        output_file = analyzer.save_results(output_dir=f"execution_stats/pass_rate_threshold_{threshold_str}")
+
+        # ALSO save 100% threshold to standard location for visualizator compatibility
+        if threshold == 100.0:
+            analyzer.save_results(output_dir="execution_stats")
+            print("  ✓ Also saved to execution_stats/pass_rate_aggregated.json (for visualizator)")
+
+        # Store results for comparison
+        all_results[threshold] = {
+            'analyzer': analyzer,
+            'results': results,
+            'output_file': output_file
+        }
+
+    # Print comparative summary
+    print("\n" + "="*80)
+    print("COMPARATIVE FILTERING STATISTICS BY LANGUAGE")
+    print("="*80)
+    print("\nThreshold comparison:")
+    for threshold, description in thresholds:
+        print(f"  {int(threshold)}% = {description}")
+    print()
+
+    # Create comparison table
+    print(f"{'Language':<12} | {'Total':<8} | {'5/5 (100%)':<15} | {'≥3/5 (60%)':<15} | {'≥1/5 (20%)':<15}")
+    print("-" * 85)
+
+    # Get language list
+    languages = ['c', 'cpp', 'go', 'java', 'python', 'javascript', 'typescript']
+
+    for language in languages:
+        # Get total entries (same across all thresholds)
+        total = all_results[100.0]['results']['filtering_statistics']['total_entries_by_language'].get(language, 0)
+
+        # Get valid entries for each threshold
+        valid_100 = all_results[100.0]['results']['filtering_statistics']['valid_entries_by_language'].get(language, 0)
+        valid_60 = all_results[60.0]['results']['filtering_statistics']['valid_entries_by_language'].get(language, 0)
+        valid_20 = all_results[20.0]['results']['filtering_statistics']['valid_entries_by_language'].get(language, 0)
+
+        # Calculate percentages
+        pct_100 = (valid_100 / total * 100) if total > 0 else 0.0
+        pct_60 = (valid_60 / total * 100) if total > 0 else 0.0
+        pct_20 = (valid_20 / total * 100) if total > 0 else 0.0
+
+        print(f"{language.upper():<12} | {total:<8} | {valid_100:>4} ({pct_100:>5.1f}%)  | {valid_60:>4} ({pct_60:>5.1f}%)  | {valid_20:>4} ({pct_20:>5.1f}%)")
+
+    # Print totals
+    print("-" * 85)
+    total_100 = all_results[100.0]['results']['filtering_statistics']['total_entries']
+    valid_total_100 = all_results[100.0]['results']['filtering_statistics']['valid_entries']
+    valid_total_60 = all_results[60.0]['results']['filtering_statistics']['valid_entries']
+    valid_total_20 = all_results[20.0]['results']['filtering_statistics']['valid_entries']
+
+    pct_total_100 = all_results[100.0]['results']['filtering_statistics']['validity_percentage']
+    pct_total_60 = all_results[60.0]['results']['filtering_statistics']['validity_percentage']
+    pct_total_20 = all_results[20.0]['results']['filtering_statistics']['validity_percentage']
+
+    print(f"{'TOTAL':<12} | {total_100:<8} | {valid_total_100:>4} ({pct_total_100:>5.1f}%)  | {valid_total_60:>4} ({pct_total_60:>5.1f}%)  | {valid_total_20:>4} ({pct_total_20:>5.1f}%)")
+    print("="*85)
+
+    # Print JavaScript pass rate comparison (most critical language)
+    print("\n" + "="*80)
+    print("JAVASCRIPT LLM PASS RATE BY THRESHOLD")
+    print("="*80)
+    print("How does relaxing the base code quality threshold affect JavaScript LLM pass rate?\n")
+
+    print(f"{'Threshold':<25} | {'Base Mean':<12} | {'LLM Mean':<12} | {'Degradation':<12}")
+    print("-" * 65)
+
+    for threshold, description in thresholds:
+        js_stats = all_results[threshold]['results']['by_language'].get('javascript', {})
+        base_mean = js_stats.get('base', {}).get('mean')
+        llm_mean = js_stats.get('llm_aggregated', {}).get('mean')
+        degradation = js_stats.get('degradation_percent')
+
+        if base_mean is not None and llm_mean is not None:
+            print(f"{int(threshold)}% ({description[:18]}...) | {base_mean:>10.2f}% | {llm_mean:>10.2f}% | {degradation:>10.2f}%")
+        else:
+            print(f"{int(threshold)}% ({description[:18]}...) | {'No data':<12} | {'No data':<12} | {'No data':<12}")
+
+    print("="*80)
+    print("\nAnalysis complete! Results saved to execution_stats/pass_rate_threshold_*/")
 
 
 if __name__ == "__main__":

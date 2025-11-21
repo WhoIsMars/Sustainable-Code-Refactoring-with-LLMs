@@ -1,11 +1,18 @@
 {
-  "execution_date": "2025-11-16 22:59:50",
+  "execution_date": "2025-11-21 12:09:10",
   "execution_metadata": {
     "total_tests": 20,
     "successful_tests": 20,
     "execution_time": "00h 01m 06s",
     "cluster": "cluster_triangle",
-    "test_type": "llm_v4"
+    "test_type": "llm_v4",
+    "last_updated": "2025-11-21 12:09:10",
+    "selective_execution": {
+      "languages": [
+        "cpp"
+      ],
+      "timestamp": "2025-11-21 12:09:10"
+    }
   },
   "results": {
     "python": [
@@ -15,14 +22,50 @@
         "language": "python",
         "LLM_results": [
           {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/triangle/gemini/GeminiFlash_triangle_v4.py",
+            "log": "",
+            "execution_time_ms": 40.0,
+            "CPU_usage": 83.0,
+            "RAM_usage": 14080,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 1"
+          }
+        ]
+      },
+      {
+        "id": "triangle_36",
+        "filename": "triangle.py",
+        "language": "python",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/triangle/claude/ClaudeSonnet4_triangle_v4.py",
+            "log": "",
+            "execution_time_ms": 40.0,
+            "CPU_usage": 80.0,
+            "RAM_usage": 13952,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "triangle_36",
+        "filename": "triangle.py",
+        "language": "python",
+        "LLM_results": [
+          {
             "LLM_type": "openAI",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/triangle/openAI/ChatGPT4_triangle_v4.py",
             "log": "",
-            "execution_time_ms": 30,
-            "CPU_usage": 10.0,
+            "execution_time_ms": 50.0,
+            "CPU_usage": 82.0,
             "RAM_usage": 13952,
-            "regressionTestPassed": false,
-            "success": false,
+            "regressionTestPassed": true,
+            "success": true,
             "error_message": null
           }
         ]
@@ -657,6 +700,62 @@
             "RAM_usage": 80000,
             "regressionTestPassed": true,
             "success": null,
+            "error_message": null
+          }
+        ]
+      }
+    ],
+    "cpp": [
+      {
+        "id": "cpp_triangle_stungeye",
+        "filename": "triangle.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/triangle_exercism-stungeye/claude/ClaudeSonnet4_triangle_v4.cpp",
+            "log": "",
+            "execution_time_ms": 2.156342,
+            "CPU_usage": 73.0,
+            "RAM_usage": 10496,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "cpp_triangle_stungeye",
+        "filename": "triangle.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/triangle_exercism-stungeye/openAI/ChatGPT4_triangle_v4.cpp",
+            "log": "",
+            "execution_time_ms": 2.403302,
+            "CPU_usage": 64.0,
+            "RAM_usage": 10240,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "cpp_triangle_stungeye",
+        "filename": "triangle.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/triangle_exercism-stungeye/gemini/GeminiFlash_triangle_v4.cpp",
+            "log": "",
+            "execution_time_ms": 2.248343,
+            "CPU_usage": 67.0,
+            "RAM_usage": 10496,
+            "regressionTestPassed": true,
+            "success": true,
             "error_message": null
           }
         ]

@@ -5,37 +5,37 @@ This report summarizes the pass rate analysis for Thesis Section 4.1.
 ## Global Statistics
 
 - **Base Code Mean Pass Rate**: 100.00%
-- **LLM Aggregated Mean Pass Rate**: 93.56%
-- **Overall Degradation**: -6.44%
+- **LLM Aggregated Mean Pass Rate**: 90.52%
+- **Overall Degradation**: -9.48%
 
 ## Pass Rate by Language
 
 | Language | Base Code | LLM Aggregated | Degradation |
 |----------|-----------|----------------|-------------|
-| C | 100.00% | 85.03% | -14.97% |
-| C++ | 100.00% | 78.07% | -21.93% |
-| Go | 100.00% | 98.89% | -1.11% |
-| Java | 100.00% | 84.51% | -15.49% |
-| Python | 100.00% | 90.59% | -9.41% |
-| JavaScript | 100.00% | 59.46% | -40.54% |
-| TypeScript | 100.00% | 97.43% | -2.57% |
+| C | 100.00% | 83.92% | -16.08% |
+| C++ | 100.00% | 71.22% | -28.78% |
+| Go | 100.00% | 98.18% | -1.82% |
+| Java | 100.00% | 91.37% | -8.63% |
+| Python | 100.00% | 94.60% | -5.40% |
+| JavaScript | 100.00% | 75.49% | -24.51% |
+| TypeScript | 100.00% | 95.44% | -4.56% |
 
 ## Pass Rate by Model
 
 | Model | Mean Pass Rate |
 |-------|----------------|
-| OpenAI | 93.49% |
-| Claude | 93.56% |
-| Gemini | 93.66% |
+| OpenAI | 90.13% |
+| Claude | 91.42% |
+| Gemini | 89.99% |
 
 ## Pass Rate by Prompt Version
 
 | Prompt Version | Mean Pass Rate |
 |----------------|----------------|
-| V1 | 95.61% |
-| V2 | 95.56% |
-| V3 | 91.42% |
-| V4 | 91.67% |
+| V1 | 90.55% |
+| V2 | 91.23% |
+| V3 | 89.90% |
+| V4 | 90.39% |
 
 ## Generated Visualizations
 

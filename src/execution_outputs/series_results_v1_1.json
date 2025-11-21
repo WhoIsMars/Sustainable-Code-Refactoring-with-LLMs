@@ -1,11 +1,18 @@
 {
-  "execution_date": "2025-11-12 18:15:40",
+  "execution_date": "2025-11-21 11:49:08",
   "execution_metadata": {
     "total_tests": 4,
     "successful_tests": 4,
     "execution_time": "00h 00m 00s",
     "cluster": "cluster_series",
-    "test_type": "llm_v1"
+    "test_type": "llm_v1",
+    "last_updated": "2025-11-21 11:49:08",
+    "selective_execution": {
+      "languages": [
+        "cpp"
+      ],
+      "timestamp": "2025-11-21 11:49:08"
+    }
   },
   "results": {
     "python": [
@@ -15,14 +22,50 @@
         "language": "python",
         "LLM_results": [
           {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/series/openAI/ChatGPT4_series_v1.py",
+            "log": "",
+            "execution_time_ms": 50.0,
+            "CPU_usage": 50.0,
+            "RAM_usage": 13952,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "series_34",
+        "filename": "series.py",
+        "language": "python",
+        "LLM_results": [
+          {
             "LLM_type": "gemini",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/series/gemini/GeminiFlash_series_v1.py",
             "log": "",
-            "execution_time_ms": 40,
-            "CPU_usage": 15.0,
+            "execution_time_ms": 60.0,
+            "CPU_usage": 48.0,
             "RAM_usage": 13952,
-            "regressionTestPassed": false,
-            "success": false,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "series_34",
+        "filename": "series.py",
+        "language": "python",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/series/claude/ClaudeSonnet4_series_v1.py",
+            "log": "",
+            "execution_time_ms": 70.0,
+            "CPU_usage": 60.0,
+            "RAM_usage": 13696,
+            "regressionTestPassed": true,
+            "success": true,
             "error_message": null
           }
         ]
@@ -151,6 +194,61 @@
       }
     ],
     "c": [],
-    "cpp": []
+    "cpp": [
+      {
+        "id": "cpp_series_toemm",
+        "filename": "series.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/series_exercism-toemm/openAI/ChatGPT4_series_v1.cpp",
+            "log": "",
+            "execution_time_ms": 2.295643,
+            "CPU_usage": 61.0,
+            "RAM_usage": 10240,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "cpp_series_toemm",
+        "filename": "series.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/series_exercism-toemm/gemini/GeminiFlash_series_v1.cpp",
+            "log": "",
+            "execution_time_ms": 8.965029,
+            "CPU_usage": 18.0,
+            "RAM_usage": 10368,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "cpp_series_toemm",
+        "filename": "series.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/series_exercism-toemm/claude/ClaudeSonnet4_series_v1.cpp",
+            "log": "",
+            "execution_time_ms": 2.562187,
+            "CPU_usage": 62.0,
+            "RAM_usage": 10496,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      }
+    ]
   }
 }

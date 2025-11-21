@@ -65,3 +65,4 @@ export default {
 	bufferEmptyException,
 	bufferFullException,
 };
+export { buffer };

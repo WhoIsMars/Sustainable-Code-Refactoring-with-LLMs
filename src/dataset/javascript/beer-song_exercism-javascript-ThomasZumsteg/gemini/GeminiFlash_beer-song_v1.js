@@ -25,3 +25,4 @@ BeerSong.prototype.sing = function(start, stop) {
 };
 
 export default BeerSong;
+export { song };

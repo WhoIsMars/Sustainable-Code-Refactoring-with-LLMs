@@ -74,3 +74,6 @@ export default {
 	bufferEmptyException: bufferEmptyException,
 	bufferFullException: bufferFullException,
 };
+export { buffer };
+
+export { i };

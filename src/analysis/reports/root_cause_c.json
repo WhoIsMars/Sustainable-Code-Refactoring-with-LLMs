@@ -1,0 +1,56 @@
+{
+  "language": "c",
+  "entries_analyzed": 15,
+  "error_categories": {
+    "compilation_errors": {
+      "count": 6,
+      "entries": [
+        "c_two-fer_leleah",
+        "c_queen-attack_leleah",
+        "c_hello-world_BlameTroi",
+        "c_gigasecond_Manoloon",
+        "c_hamming_leleah",
+        "c_rna-transcription_leleah"
+      ],
+      "common_pattern": "Missing header file",
+      "example_snippet": "\ud83e\uddf9 Pulizia file precedenti...\n\ud83d\udd27 Detected Make build system\nrm -rf *.o *.out *.out.dSYM\n\ud83d\udd27 Compilazione...\n\ud83d\udd28 Attempting build with existing Makefile...\nmake: *** No rule to make target '*.c', needed by 'tests.out'.  Stop.\n\u26a0\ufe0f  Original Makefile failed, trying universal Makefile...\n\ud83d\udd28 Compiling gemini/GeminiFlash_two_fer_v1.c...\ngcc -std=c11 -Wall -Wextra -O0 -g0 -I./src -I. -I./src -I./test -I./include -I/usr/local/include -c gemini/GeminiFlash_two_fer_v1.c -o obj/gemini/GeminiFlash_two_fer_v1.o\n\ud83d\udd28 Co"
+    },
+    "unknown": {
+      "count": 9,
+      "entries": [
+        "c_bob_Exercism (ThomasZumsteg)",
+        "c_pangram_Exercism (paddydoyle)",
+        "c_hamming_Exercism (leleah)",
+        "c_collatz-conjecture_Manoloon",
+        "c_square_root_Exercism (HeitorMP)",
+        "c_pangram_Exercism (HeitorMP)",
+        "c_beer_song_Exercism (ThomasZumsteg)",
+        "c_pascals_triangle_Exercism (vlzware)",
+        "c_pangram_Exercism (m3g4d1v3r)"
+      ],
+      "common_pattern": "Unclassified error",
+      "example_snippet": "\ud83e\uddf9 Pulizia file precedenti...\n\ud83d\udd27 Detected Make build system\nrm -f src/*.o test/*.o tests.out\n\ud83d\udd27 Compilazione...\n\ud83d\udd28 Attempting build with existing Makefile...\ngcc -Isrc -Itest   -c -o src/bob.o src/bob.c\ngcc -Isrc -Itest   -c -o test/test_bob.o test/test_bob.c\ngcc -Isrc -Itest   -c -o test/unity.o test/unity.c\ngcc src/bob.o test/test_bob.o test/unity.o -o tests.out\nchmod +x tests.out\n\ud83e\uddea Esecuzione test con misurazione risorse...\n\n\ud83e\uddf9 Pulizia file precedenti...\n\ud83d\udd27 Detected Make build system\nrm -f src/*.o "
+    }
+  },
+  "recoverable_count": 6,
+  "unrecoverable_count": 9,
+  "recoverable_entries": [
+    "c_two-fer_leleah",
+    "c_queen-attack_leleah",
+    "c_hello-world_BlameTroi",
+    "c_gigasecond_Manoloon",
+    "c_hamming_leleah",
+    "c_rna-transcription_leleah"
+  ],
+  "unrecoverable_entries": [
+    "c_bob_Exercism (ThomasZumsteg)",
+    "c_pangram_Exercism (paddydoyle)",
+    "c_hamming_Exercism (leleah)",
+    "c_collatz-conjecture_Manoloon",
+    "c_square_root_Exercism (HeitorMP)",
+    "c_pangram_Exercism (HeitorMP)",
+    "c_beer_song_Exercism (ThomasZumsteg)",
+    "c_pascals_triangle_Exercism (vlzware)",
+    "c_pangram_Exercism (m3g4d1v3r)"
+  ]
+}

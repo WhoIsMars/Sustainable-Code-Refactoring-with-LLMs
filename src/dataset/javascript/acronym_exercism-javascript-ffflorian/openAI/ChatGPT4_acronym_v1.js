@@ -24,3 +24,4 @@ export function parse(text) {
   }
   return result;
 }
+export { parse };

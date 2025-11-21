@@ -1,17 +1,17 @@
 {
-  "execution_date": "2025-11-15 02:00:09",
+  "execution_date": "2025-11-19 01:06:27",
   "execution_metadata": {
     "total_tests": 18,
     "successful_tests": 18,
     "execution_time": "00h 00m 00s",
     "cluster": "cluster_matrix",
     "test_type": "llm_v1",
-    "last_updated": "2025-11-15 02:00:09",
+    "last_updated": "2025-11-19 01:06:27",
     "selective_execution": {
       "languages": [
-        "javascript"
+        "python"
       ],
-      "timestamp": "2025-11-15 02:00:09"
+      "timestamp": "2025-11-19 01:06:27"
     }
   },
   "results": {
@@ -22,12 +22,48 @@
         "language": "python",
         "LLM_results": [
           {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/matrix/openAI/ChatGPT4_matrix_v1.py",
+            "log": "",
+            "execution_time_ms": 60.0,
+            "CPU_usage": 68.0,
+            "RAM_usage": 13952,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "matrix_25",
+        "filename": "matrix.py",
+        "language": "python",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/matrix/gemini/GeminiFlash_matrix_v1.py",
+            "log": "",
+            "execution_time_ms": 70.0,
+            "CPU_usage": 62.0,
+            "RAM_usage": 13824,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "matrix_25",
+        "filename": "matrix.py",
+        "language": "python",
+        "LLM_results": [
+          {
             "LLM_type": "claude",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/matrix/claude/ClaudeSonnet4_matrix_v1.py",
             "log": "",
-            "execution_time_ms": 20,
-            "CPU_usage": 13.0,
-            "RAM_usage": 14080,
+            "execution_time_ms": 70.0,
+            "CPU_usage": 65.0,
+            "RAM_usage": 13824,
             "regressionTestPassed": false,
             "success": false,
             "error_message": "Docker exit code: 1"

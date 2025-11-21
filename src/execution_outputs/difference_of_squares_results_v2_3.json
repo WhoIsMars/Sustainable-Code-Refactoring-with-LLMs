@@ -1,17 +1,17 @@
 {
-  "execution_date": "2025-11-15 06:59:23",
+  "execution_date": "2025-11-21 00:21:58",
   "execution_metadata": {
     "total_tests": 85,
     "successful_tests": 81,
     "execution_time": "00h 00m 38s",
     "cluster": "cluster_difference_of_squares",
     "test_type": "llm_v2",
-    "last_updated": "2025-11-15 06:59:23",
+    "last_updated": "2025-11-21 00:21:58",
     "selective_execution": {
       "languages": [
-        "javascript"
+        "cpp"
       ],
-      "timestamp": "2025-11-15 06:59:23"
+      "timestamp": "2025-11-21 00:21:58"
     }
   },
   "results": {
@@ -22,14 +22,32 @@
         "language": "python",
         "LLM_results": [
           {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/difference-of-squares/openAI/ChatGPT4_difference-of-squares_v2.py",
+            "log": "",
+            "execution_time_ms": 50.0,
+            "CPU_usage": 83.0,
+            "RAM_usage": 13952,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "difference-of-squares_10",
+        "filename": "difference-of-squares.py",
+        "language": "python",
+        "LLM_results": [
+          {
             "LLM_type": "gemini",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/difference-of-squares/gemini/GeminiFlash_difference-of-squares_v2.py",
             "log": "",
-            "execution_time_ms": 40,
-            "CPU_usage": 37.0,
-            "RAM_usage": 13824,
-            "regressionTestPassed": false,
-            "success": false,
+            "execution_time_ms": 50.0,
+            "CPU_usage": 80.0,
+            "RAM_usage": 13952,
+            "regressionTestPassed": true,
+            "success": true,
             "error_message": null
           }
         ]
@@ -43,29 +61,11 @@
             "LLM_type": "claude",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/difference-of-squares/claude/ClaudeSonnet4_difference-of-squares_v2.py",
             "log": "",
-            "execution_time_ms": 30,
-            "CPU_usage": 37.0,
-            "RAM_usage": 13696,
-            "regressionTestPassed": false,
-            "success": false,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "difference-of-squares_10",
-        "filename": "difference-of-squares.py",
-        "language": "python",
-        "LLM_results": [
-          {
-            "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/difference-of-squares/openAI/ChatGPT4_difference-of-squares_v2.py",
-            "log": "",
-            "execution_time_ms": 40,
-            "CPU_usage": 46.0,
+            "execution_time_ms": 40.0,
+            "CPU_usage": 78.0,
             "RAM_usage": 13952,
-            "regressionTestPassed": false,
-            "success": false,
+            "regressionTestPassed": true,
+            "success": true,
             "error_message": null
           }
         ]
@@ -1236,24 +1236,6 @@
         "language": "cpp",
         "LLM_results": [
           {
-            "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/difference_of_squares_Exercism_thefullarcticfox/openAI/ChatGPT4_difference_of_squares_v2.cpp",
-            "log": "",
-            "execution_time_ms": null,
-            "CPU_usage": null,
-            "RAM_usage": null,
-            "regressionTestPassed": false,
-            "success": false,
-            "error_message": "Docker exit code: 1"
-          }
-        ]
-      },
-      {
-        "id": "cpp_difference_of_squares_Exercism (thefullarcticfox)",
-        "filename": "difference_of_squares.cpp",
-        "language": "cpp",
-        "LLM_results": [
-          {
             "LLM_type": "gemini",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/difference_of_squares_Exercism_thefullarcticfox/gemini/GeminiFlash_difference_of_squares_v2.cpp",
             "log": "",
@@ -1281,6 +1263,60 @@
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "cpp_difference-of-squares_stungeye",
+        "filename": "difference_of_squares.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "cpp/difference-of-squares_exercism-stungeye/openAI/ChatGPT4_difference_of_squares_v2.cpp",
+            "log": "",
+            "execution_time_ms": null,
+            "CPU_usage": null,
+            "RAM_usage": null,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 2"
+          }
+        ]
+      },
+      {
+        "id": "cpp_difference-of-squares_stungeye",
+        "filename": "difference_of_squares.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "cpp/difference-of-squares_exercism-stungeye/claude/ClaudeSonnet4_difference_of_squares_v2.cpp",
+            "log": "",
+            "execution_time_ms": 1.961556,
+            "CPU_usage": 65.0,
+            "RAM_usage": 10496,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "cpp_difference_of_squares_Exercism (thefullarcticfox)",
+        "filename": "difference_of_squares.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/difference_of_squares_Exercism_thefullarcticfox/openAI/ChatGPT4_difference_of_squares_v2.cpp",
+            "log": "",
+            "execution_time_ms": null,
+            "CPU_usage": null,
+            "RAM_usage": null,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 1"
           }
         ]
       }

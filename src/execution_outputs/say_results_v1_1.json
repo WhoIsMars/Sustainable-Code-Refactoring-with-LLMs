@@ -1,11 +1,18 @@
 {
-  "execution_date": "2025-11-12 18:15:38",
+  "execution_date": "2025-11-21 11:41:28",
   "execution_metadata": {
     "total_tests": 12,
     "successful_tests": 12,
     "execution_time": "00h 00m 00s",
     "cluster": "cluster_say",
-    "test_type": "llm_v1"
+    "test_type": "llm_v1",
+    "last_updated": "2025-11-21 11:41:28",
+    "selective_execution": {
+      "languages": [
+        "cpp"
+      ],
+      "timestamp": "2025-11-21 11:41:28"
+    }
   },
   "results": {
     "java": [
@@ -15,14 +22,32 @@
         "language": "java",
         "LLM_results": [
           {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/say_Exercism_java_rabestro/claude/ClaudeSonnet4_Say_v1.java",
+            "log": "",
+            "execution_time_ms": 620.0,
+            "CPU_usage": 86.0,
+            "RAM_usage": 80796,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "Java_say_Exercism (java_rabestro)",
+        "filename": "Say.java",
+        "language": "java",
+        "LLM_results": [
+          {
             "LLM_type": "openAI",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/say_Exercism_java_rabestro/openAI/ChatGPT4_Say_v1.java",
             "log": "",
-            "execution_time_ms": 690,
-            "CPU_usage": 7.0,
-            "RAM_usage": 78228,
-            "regressionTestPassed": false,
-            "success": null,
+            "execution_time_ms": 620.0,
+            "CPU_usage": 81.0,
+            "RAM_usage": 81616,
+            "regressionTestPassed": true,
+            "success": true,
             "error_message": null
           }
         ]
@@ -36,29 +61,11 @@
             "LLM_type": "gemini",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/say_Exercism_java_rabestro/gemini/GeminiFlash_Say_v1.java",
             "log": "",
-            "execution_time_ms": 580,
-            "CPU_usage": 38.0,
-            "RAM_usage": 79664,
+            "execution_time_ms": 649.9999999999999,
+            "CPU_usage": 83.0,
+            "RAM_usage": 80964,
             "regressionTestPassed": true,
-            "success": null,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "Java_say_Exercism (java_rabestro)",
-        "filename": "Say.java",
-        "language": "java",
-        "LLM_results": [
-          {
-            "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/say_Exercism_java_rabestro/claude/ClaudeSonnet4_Say_v1.java",
-            "log": "",
-            "execution_time_ms": 580,
-            "CPU_usage": 38.0,
-            "RAM_usage": 79664,
-            "regressionTestPassed": true,
-            "success": null,
+            "success": true,
             "error_message": null
           }
         ]
@@ -228,6 +235,61 @@
         ]
       }
     ],
-    "cpp": []
+    "cpp": [
+      {
+        "id": "cpp_say_stungeye",
+        "filename": "say.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/say_exercism-stungeye/gemini/GeminiFlash_say_v1.cpp",
+            "log": "",
+            "execution_time_ms": 4.931069,
+            "CPU_usage": 29.0,
+            "RAM_usage": 10496,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "cpp_say_stungeye",
+        "filename": "say.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/say_exercism-stungeye/openAI/ChatGPT4_say_v1.cpp",
+            "log": "",
+            "execution_time_ms": 4.946444,
+            "CPU_usage": 44.0,
+            "RAM_usage": 10496,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "cpp_say_stungeye",
+        "filename": "say.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/say_exercism-stungeye/claude/ClaudeSonnet4_say_v1.cpp",
+            "log": "",
+            "execution_time_ms": 5.09628,
+            "CPU_usage": 45.0,
+            "RAM_usage": 10496,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      }
+    ]
   }
 }

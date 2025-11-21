@@ -30,18 +30,23 @@ fi
 # Installa le dipendenze
 npm install
 
-# Avvia Jest
+# Avvia Jest con output visibile tramite tee
 if [ "$mode" = "esm" ]; then
   echo "▶️  Avvio Jest in modalità ESM"
   /usr/bin/time -v node --experimental-vm-modules ./node_modules/.bin/jest \
     --config=jest.config.js \
-    --silent=false > output.log 2>&1
+    --silent=false 2>&1 | tee output.log
 else
   echo "▶️  Avvio Jest in modalità CommonJS"
   /usr/bin/time -v ./node_modules/.bin/jest \
     --config=jest.config.js \
-    --silent=false > output.log 2>&1
+    --silent=false 2>&1 | tee output.log
 fi
+
+echo ""
+echo "==> Jest execution completed"
+echo "==> Output log summary (last 50 lines):"
+tail -50 output.log 2>/dev/null || echo "(output.log not found or empty)"
 
 # Ripristina il package.json originale
 mv package.json.bak package.json

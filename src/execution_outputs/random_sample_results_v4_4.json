@@ -1,11 +1,18 @@
 {
-  "execution_date": "2025-10-28 22:09:26",
+  "execution_date": "2025-11-19 02:01:40",
   "execution_metadata": {
     "total_tests": 1,
     "successful_tests": 1,
     "execution_time": "00h 00m 00s",
     "cluster": "cluster_random_sample",
-    "test_type": "llm_v4"
+    "test_type": "llm_v4",
+    "last_updated": "2025-11-19 02:01:40",
+    "selective_execution": {
+      "languages": [
+        "python"
+      ],
+      "timestamp": "2025-11-19 02:01:40"
+    }
   },
   "results": {
     "python": [
@@ -15,14 +22,50 @@
         "language": "python",
         "LLM_results": [
           {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/random_sample/claude/ClaudeSonnet4_random_sample_v4.py",
+            "log": "",
+            "execution_time_ms": 40.0,
+            "CPU_usage": 75.0,
+            "RAM_usage": 14208,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "random_sample_188",
+        "filename": "random_sample.py",
+        "language": "python",
+        "LLM_results": [
+          {
             "LLM_type": "gemini",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/random_sample/gemini/GeminiFlash_random_sample_v4.py",
             "log": "",
-            "execution_time_ms": 30,
-            "CPU_usage": 26.0,
+            "execution_time_ms": 50.0,
+            "CPU_usage": 72.0,
             "RAM_usage": 14208,
-            "regressionTestPassed": false,
-            "success": false,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "random_sample_188",
+        "filename": "random_sample.py",
+        "language": "python",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/random_sample/openAI/ChatGPT4_random_sample_v4.py",
+            "log": "",
+            "execution_time_ms": 50.0,
+            "CPU_usage": 76.0,
+            "RAM_usage": 14208,
+            "regressionTestPassed": true,
+            "success": true,
             "error_message": null
           }
         ]

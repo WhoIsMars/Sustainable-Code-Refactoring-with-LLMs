@@ -1,11 +1,18 @@
 {
-  "execution_date": "2025-10-28 21:14:31",
+  "execution_date": "2025-11-19 01:08:00",
   "execution_metadata": {
     "total_tests": 1,
     "successful_tests": 1,
     "execution_time": "00h 00m 00s",
     "cluster": "cluster_odd_sum",
-    "test_type": "llm_v1"
+    "test_type": "llm_v1",
+    "last_updated": "2025-11-19 01:08:00",
+    "selective_execution": {
+      "languages": [
+        "python"
+      ],
+      "timestamp": "2025-11-19 01:08:00"
+    }
   },
   "results": {
     "python": [
@@ -17,34 +24,48 @@
           {
             "LLM_type": "openAI",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/odd_sum/openAI/ChatGPT4_odd_sum_v1.py",
-            "log": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/odd_sum/openAI/output.log",
-            "execution_time_ms": 30,
-            "CPU_usage": 78.0,
+            "log": "",
+            "execution_time_ms": 40.0,
+            "CPU_usage": 67.0,
             "RAM_usage": 13952,
             "regressionTestPassed": true,
-            "success": null,
+            "success": true,
             "error_message": null
-          },
-          {
-            "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/odd_sum/claude/ClaudeSonnet4_odd_sum_v1.py",
-            "log": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/odd_sum/claude/output.log",
-            "execution_time_ms": 30,
-            "CPU_usage": 82.0,
-            "RAM_usage": 13824,
-            "regressionTestPassed": true,
-            "success": null,
-            "error_message": null
-          },
+          }
+        ]
+      },
+      {
+        "id": "odd_sum_240",
+        "filename": "odd_sum.py",
+        "language": "python",
+        "LLM_results": [
           {
             "LLM_type": "gemini",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/odd_sum/gemini/GeminiFlash_odd_sum_v1.py",
-            "log": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/odd_sum/gemini/output.log",
-            "execution_time_ms": 20,
-            "CPU_usage": 81.0,
+            "log": "",
+            "execution_time_ms": 60.0,
+            "CPU_usage": 78.0,
             "RAM_usage": 13952,
             "regressionTestPassed": true,
-            "success": null,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "odd_sum_240",
+        "filename": "odd_sum.py",
+        "language": "python",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/odd_sum/claude/ClaudeSonnet4_odd_sum_v1.py",
+            "log": "",
+            "execution_time_ms": 60.0,
+            "CPU_usage": 75.0,
+            "RAM_usage": 13952,
+            "regressionTestPassed": true,
+            "success": true,
             "error_message": null
           }
         ]

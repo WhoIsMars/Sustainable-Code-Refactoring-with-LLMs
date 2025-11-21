@@ -1,11 +1,18 @@
 {
-  "execution_date": "2025-10-28 20:36:45",
+  "execution_date": "2025-11-21 10:34:17",
   "execution_metadata": {
     "total_tests": 7,
     "successful_tests": 7,
     "execution_time": "00h 00m 00s",
     "cluster": "cluster_list_ops",
-    "test_type": "llm_v4"
+    "test_type": "llm_v4",
+    "last_updated": "2025-11-21 10:34:17",
+    "selective_execution": {
+      "languages": [
+        "cpp"
+      ],
+      "timestamp": "2025-11-21 10:34:17"
+    }
   },
   "results": {
     "javascript": [
@@ -357,6 +364,62 @@
             "RAM_usage": 80000,
             "regressionTestPassed": true,
             "success": null,
+            "error_message": null
+          }
+        ]
+      }
+    ],
+    "cpp": [
+      {
+        "id": "cpp_list-ops_toemm",
+        "filename": "list_ops.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/list-ops_exercism-toemm/gemini/GeminiFlash_list_ops_v4.cpp",
+            "log": "",
+            "execution_time_ms": null,
+            "CPU_usage": null,
+            "RAM_usage": null,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 2"
+          }
+        ]
+      },
+      {
+        "id": "cpp_list-ops_toemm",
+        "filename": "list_ops.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/list-ops_exercism-toemm/openAI/ChatGPT4_list_ops_v4.cpp",
+            "log": "",
+            "execution_time_ms": 2.538228,
+            "CPU_usage": 75.0,
+            "RAM_usage": 10496,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "cpp_list-ops_toemm",
+        "filename": "list_ops.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/list-ops_exercism-toemm/claude/ClaudeSonnet4_list_ops_v4.cpp",
+            "log": "",
+            "execution_time_ms": 1.985173,
+            "CPU_usage": 74.0,
+            "RAM_usage": 10496,
+            "regressionTestPassed": true,
+            "success": true,
             "error_message": null
           }
         ]

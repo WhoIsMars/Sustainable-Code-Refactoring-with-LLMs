@@ -72,13 +72,14 @@ def extract_llm_type(file_path):
         return "unknown"
 
 
-def process_json_file(input_file_path, output_file_path=None):
+def process_json_file(input_file_path, output_file_path=None, languages=None):
     """
     Processa il file JSON aggiornando i metadati LLM.
 
     Args:
         input_file_path (str): Percorso del file JSON di input
         output_file_path (str): Percorso del file JSON di output (opzionale)
+        languages (list): Lista di linguaggi da processare (None = tutti)
     """
     # Se non specificato, sovrascrive il file originale
     if output_file_path is None:
@@ -95,6 +96,10 @@ def process_json_file(input_file_path, output_file_path=None):
 
         # Processa ogni linguaggio nel JSON
         for language, entries in data.items():
+            # Skip if language filter is set and this language is not in the list
+            if languages and language not in languages:
+                continue
+
             #print(f"\nProcessando linguaggio: {language}")
 
             for entry in entries:
@@ -181,7 +186,9 @@ def process_json_file(input_file_path, output_file_path=None):
         with open(output_file_path, "w", encoding="utf-8") as file:
             json.dump(data, file, indent=4, ensure_ascii=False)
 
-        if 'hashtag' in entry_id:
+        # Debug: print only for specific clusters
+        cluster_name = os.path.basename(input_file_path)
+        if 'hashtag' in cluster_name:
             print(f"\nFile JSON aggiornato salvato in: {output_file_path}")
 
     except FileNotFoundError:
@@ -210,13 +217,25 @@ def find_clusters_without_LLMs_data(cluster_paths):
 
     return report
 
-def main():
+def main(languages=None):
     """
     Funzione principale dello script.
+
+    Args:
+        languages (list): Lista di linguaggi da processare (None = tutti)
     """
     clusters_already_processed = []
-    
+
     clusters = []
+
+    print(f"\n{'='*80}")
+    print("ADJUST LLM METADATA IN CLUSTER JSON FILES")
+    print(f"{'='*80}")
+    if languages:
+        print(f"🎯 Language filter: {languages}")
+    else:
+        print("🌍 Processing all languages")
+    print()
 
     for cluster_name in os.listdir(
         utility_paths.CLUSTERS_DIR_FILEPATH
@@ -240,15 +259,51 @@ def main():
 
             clusters.append(cluster_path)
 
-    
-    
+    print(f"Found {len(clusters)} clusters to process")
+
+    processed = 0
     for cluster in clusters:
-        process_json_file(cluster)
+        process_json_file(cluster, languages=languages)
+        processed += 1
+        if processed % 50 == 0:
+            print(f"  Processed {processed}/{len(clusters)} clusters...")
+
+    print(f"\n✅ Completed processing {processed} clusters")
 
     report = find_clusters_without_LLMs_data(clusters)
-    print(f"Report of entries without LLMs ({len(report)}):\n")
-    for r in report :
-        print(f"\n{r}")
+    print(f"\nReport of entries without LLMs ({len(report)}):")
+    if report:
+        for r in report[:10]:
+            print(f"  {r['entry_id']} in {os.path.basename(r['cluster_path'])}")
+        if len(report) > 10:
+            print(f"  ... and {len(report) - 10} more")
 
 if __name__ == "__main__":
-    main()
+    import argparse
+
+    parser = argparse.ArgumentParser(
+        description="Adjust LLM metadata in cluster JSON files by scanning filesystem",
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        epilog="""
+Examples:
+  # Process all languages
+  python adjust_LLMs_datas.py
+
+  # Process only CPP
+  python adjust_LLMs_datas.py --languages cpp
+
+  # Process CPP and Python
+  python adjust_LLMs_datas.py --languages cpp python
+        """
+    )
+
+    parser.add_argument(
+        '--languages',
+        nargs='+',
+        choices=['c', 'cpp', 'go', 'java', 'python', 'javascript', 'typescript', 'rust'],
+        help='Filter by programming language(s). If not specified, all languages are processed.'
+    )
+
+    args = parser.parse_args()
+
+    main(languages=args.languages)

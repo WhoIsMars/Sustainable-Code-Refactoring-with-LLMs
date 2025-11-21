@@ -1,11 +1,18 @@
 {
-  "execution_date": "2025-11-12 18:16:51",
+  "execution_date": "2025-11-21 12:24:29",
   "execution_metadata": {
     "total_tests": 3,
     "successful_tests": 3,
     "execution_time": "00h 00m 00s",
     "cluster": "cluster_yacht",
-    "test_type": "llm_v1"
+    "test_type": "llm_v1",
+    "last_updated": "2025-11-21 12:24:29",
+    "selective_execution": {
+      "languages": [
+        "cpp"
+      ],
+      "timestamp": "2025-11-21 12:24:29"
+    }
   },
   "results": {
     "go": [
@@ -126,6 +133,62 @@
             "regressionTestPassed": true,
             "success": null,
             "error_message": null
+          }
+        ]
+      }
+    ],
+    "cpp": [
+      {
+        "id": "cpp_yacht_toemm",
+        "filename": "yacht.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/yacht_exercism-toemm/gemini/GeminiFlash_yacht_v1.cpp",
+            "log": "",
+            "execution_time_ms": null,
+            "CPU_usage": null,
+            "RAM_usage": null,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 2"
+          }
+        ]
+      },
+      {
+        "id": "cpp_yacht_toemm",
+        "filename": "yacht.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/yacht_exercism-toemm/openAI/ChatGPT4_yacht_v1.cpp",
+            "log": "",
+            "execution_time_ms": 2.478305,
+            "CPU_usage": 67.0,
+            "RAM_usage": 10496,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "cpp_yacht_toemm",
+        "filename": "yacht.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/yacht_exercism-toemm/claude/ClaudeSonnet4_yacht_v1.cpp",
+            "log": "",
+            "execution_time_ms": null,
+            "CPU_usage": null,
+            "RAM_usage": null,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 2"
           }
         ]
       }

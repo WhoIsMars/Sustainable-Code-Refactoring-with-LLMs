@@ -47,3 +47,4 @@ function processWord(word) {
     }
     return result;
 }
+export { parse };

@@ -1,11 +1,18 @@
 {
-  "execution_date": "2025-10-28 19:31:13",
+  "execution_date": "2025-11-19 01:22:04",
   "execution_metadata": {
     "total_tests": 1,
     "successful_tests": 1,
     "execution_time": "00h 00m 00s",
     "cluster": "cluster_generate_parentheses",
-    "test_type": "llm_v2"
+    "test_type": "llm_v2",
+    "last_updated": "2025-11-19 01:22:04",
+    "selective_execution": {
+      "languages": [
+        "python"
+      ],
+      "timestamp": "2025-11-19 01:22:04"
+    }
   },
   "results": {
     "python": [
@@ -15,37 +22,51 @@
         "language": "python",
         "LLM_results": [
           {
-            "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/generate_parentheses/openAI/ChatGPT4_generate_parentheses_v2.py",
-            "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
-            "regressionTestPassed": true,
-            "success": null,
-            "error_message": null
-          },
-          {
             "LLM_type": "claude",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/generate_parentheses/claude/ClaudeSonnet4_generate_parentheses_v2.py",
             "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
-            "regressionTestPassed": true,
-            "success": null,
-            "error_message": null
-          },
+            "execution_time_ms": 40.0,
+            "CPU_usage": 63.0,
+            "RAM_usage": 14080,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 1"
+          }
+        ]
+      },
+      {
+        "id": "generate_parentheses_136",
+        "filename": "generate_parentheses.py",
+        "language": "python",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/generate_parentheses/openAI/ChatGPT4_generate_parentheses_v2.py",
+            "log": "",
+            "execution_time_ms": 50.0,
+            "CPU_usage": 79.0,
+            "RAM_usage": 13952,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 1"
+          }
+        ]
+      },
+      {
+        "id": "generate_parentheses_136",
+        "filename": "generate_parentheses.py",
+        "language": "python",
+        "LLM_results": [
           {
             "LLM_type": "gemini",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/generate_parentheses/gemini/GeminiFlash_generate_parentheses_v2.py",
             "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
-            "regressionTestPassed": true,
-            "success": null,
-            "error_message": null
+            "execution_time_ms": 40.0,
+            "CPU_usage": 75.0,
+            "RAM_usage": 13952,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 1"
           }
         ]
       }

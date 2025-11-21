@@ -107,6 +107,10 @@ class PassRateVisualizator:
         base_rates = []
         llm_rates = []
         degradations = []
+        base_counts = []
+
+        # Get filtering statistics for entry counts
+        valid_entries_by_lang = self.data.get('filtering_statistics', {}).get('valid_entries_by_language', {})
 
         for lang in self.languages:
             if lang in self.data.get('by_language', {}):
@@ -115,12 +119,14 @@ class PassRateVisualizator:
                 base_mean = lang_data.get('base', {}).get('mean')
                 llm_mean = lang_data.get('llm_aggregated', {}).get('mean')
                 degradation = lang_data.get('degradation_percent')
+                base_count = valid_entries_by_lang.get(lang, 0)
 
                 if base_mean is not None and llm_mean is not None:
                     languages_to_plot.append(self.language_display_names[lang])
                     base_rates.append(base_mean)
                     llm_rates.append(llm_mean)
                     degradations.append(degradation if degradation is not None else 0)
+                    base_counts.append(base_count)
 
         if not languages_to_plot:
             print("    Warning: No data available for aggregated overview")
@@ -164,7 +170,11 @@ class PassRateVisualizator:
         ax.set_title('4.1.A - Pass Rate by Language (Aggregated LLM)',
                     fontweight='bold', pad=20)
         ax.set_xticks(x)
-        ax.set_xticklabels(languages_to_plot, rotation=0)
+
+        # Add entry counts to x-axis labels
+        labels_with_counts = [f'{lang}\n(n={count})' for lang, count in zip(languages_to_plot, base_counts)]
+        ax.set_xticklabels(labels_with_counts, rotation=0)
+
         ax.set_ylim(0, 110)
         ax.legend(loc='upper right', framealpha=0.9)
         ax.grid(axis='y', alpha=0.3)
