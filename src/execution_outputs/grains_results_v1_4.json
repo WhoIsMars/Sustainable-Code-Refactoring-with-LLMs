@@ -1,17 +1,23 @@
 {
-  "execution_date": "2025-11-21 09:58:22",
+  "execution_date": "2025-12-03 09:41:40",
   "execution_metadata": {
     "total_tests": 57,
     "successful_tests": 57,
     "execution_time": "00h 00m 00s",
     "cluster": "cluster_grains",
     "test_type": "llm_v1",
-    "last_updated": "2025-11-21 09:58:22",
+    "last_updated": "2025-12-03 09:41:40",
     "selective_execution": {
       "languages": [
-        "cpp"
+        "python",
+        "cpp",
+        "javascript",
+        "typescript",
+        "go",
+        "c",
+        "java"
       ],
-      "timestamp": "2025-11-21 09:58:22"
+      "timestamp": "2025-12-03 09:41:40"
     }
   },
   "results": {
@@ -22,11 +28,11 @@
         "language": "python",
         "LLM_results": [
           {
-            "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/grains/claude/ClaudeSonnet4_grains_v1.py",
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/grains/gemini/GeminiFlash_grains_v1.py",
             "log": "",
-            "execution_time_ms": 80.0,
-            "CPU_usage": 77.0,
+            "execution_time_ms": 70.0,
+            "CPU_usage": 27.0,
             "RAM_usage": 13952,
             "regressionTestPassed": true,
             "success": true,
@@ -43,9 +49,9 @@
             "LLM_type": "openAI",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/grains/openAI/ChatGPT4_grains_v1.py",
             "log": "",
-            "execution_time_ms": 80.0,
-            "CPU_usage": 75.0,
-            "RAM_usage": 13952,
+            "execution_time_ms": 70.0,
+            "CPU_usage": 29.0,
+            "RAM_usage": 13696,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -58,11 +64,65 @@
         "language": "python",
         "LLM_results": [
           {
-            "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/grains/gemini/GeminiFlash_grains_v1.py",
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/grains/claude/ClaudeSonnet4_grains_v1.py",
             "log": "",
             "execution_time_ms": 50.0,
-            "CPU_usage": 85.0,
+            "CPU_usage": 15.0,
+            "RAM_usage": 13696,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "python_grains_fruit-in",
+        "filename": "grains.py",
+        "language": "python",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "python/grains_exercism-fruit-in/openAI/ChatGPT4_grains_v1.py",
+            "log": "",
+            "execution_time_ms": 40.0,
+            "CPU_usage": 22.0,
+            "RAM_usage": 13952,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "python_grains_fruit-in",
+        "filename": "grains.py",
+        "language": "python",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "python/grains_exercism-fruit-in/claude/ClaudeSonnet4_grains_v1.py",
+            "log": "",
+            "execution_time_ms": 60.00000000000001,
+            "CPU_usage": 17.0,
+            "RAM_usage": 13824,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "python_grains_fruit-in",
+        "filename": "grains.py",
+        "language": "python",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "python/grains_exercism-fruit-in/gemini/GeminiFlash_grains_v1.py",
+            "log": "",
+            "execution_time_ms": 60.00000000000001,
+            "CPU_usage": 25.0,
             "RAM_usage": 13952,
             "regressionTestPassed": true,
             "success": true,
@@ -80,40 +140,188 @@
           {
             "LLM_type": "openAI",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/grains_aaron-contreras/openAI/ChatGPT4_Grains_v1.java",
-            "log": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/grains_aaron-contreras/openAI/output.log",
-            "execution_time_ms": 130,
-            "CPU_usage": 70.0,
-            "RAM_usage": 46540,
+            "log": "",
+            "execution_time_ms": 390.0,
+            "CPU_usage": 21.0,
+            "RAM_usage": 47280,
             "regressionTestPassed": true,
-            "success": null,
+            "success": true,
             "error_message": null
-          },
+          }
+        ]
+      },
+      {
+        "id": "java_grains_aaron-contreras",
+        "filename": "Grains.java",
+        "language": "java",
+        "LLM_results": [
           {
             "LLM_type": "claude",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/grains_aaron-contreras/claude/ClaudeSonnet4_Grains_v1.java",
-            "log": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/grains_aaron-contreras/claude/output.log",
-            "execution_time_ms": 99,
-            "CPU_usage": 80.0,
-            "RAM_usage": 45952,
+            "log": "",
+            "execution_time_ms": 370.0,
+            "CPU_usage": 23.0,
+            "RAM_usage": 47008,
             "regressionTestPassed": true,
-            "success": null,
+            "success": true,
             "error_message": null
-          },
+          }
+        ]
+      },
+      {
+        "id": "java_grains_aaron-contreras",
+        "filename": "Grains.java",
+        "language": "java",
+        "LLM_results": [
           {
             "LLM_type": "gemini",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/grains_aaron-contreras/gemini/GeminiFlash_Grains_v1.java",
-            "log": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/grains_aaron-contreras/gemini/output.log",
-            "execution_time_ms": 110,
-            "CPU_usage": 79.0,
-            "RAM_usage": 46528,
+            "log": "",
+            "execution_time_ms": 400.0,
+            "CPU_usage": 23.0,
+            "RAM_usage": 46976,
             "regressionTestPassed": true,
-            "success": null,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "java_grains_johannesrave-education",
+        "filename": "Grains.java",
+        "language": "java",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "java/grains_exercism-johannesrave-education/openAI/ChatGPT4_Grains_v1.java",
+            "log": "",
+            "execution_time_ms": 230.0,
+            "CPU_usage": 24.0,
+            "RAM_usage": 53176,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "java_grains_johannesrave-education",
+        "filename": "Grains.java",
+        "language": "java",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "java/grains_exercism-johannesrave-education/claude/ClaudeSonnet4_Grains_v1.java",
+            "log": "",
+            "execution_time_ms": 460.0,
+            "CPU_usage": 20.0,
+            "RAM_usage": 57220,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "java_grains_johannesrave-education",
+        "filename": "Grains.java",
+        "language": "java",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "java/grains_exercism-johannesrave-education/gemini/GeminiFlash_Grains_v1.java",
+            "log": "",
+            "execution_time_ms": 390.0,
+            "CPU_usage": 22.0,
+            "RAM_usage": 56836,
+            "regressionTestPassed": true,
+            "success": true,
             "error_message": null
           }
         ]
       }
     ],
     "Java": [
+      {
+        "id": "Java_grains_Exercism (java_tusktenon)",
+        "filename": "Grains.java",
+        "language": "Java",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/grains_Exercism_java_tusktenon/openAI/ChatGPT4_Grains_v1.java",
+            "log": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/grains_Exercism_java_tusktenon/openAI/output.log",
+            "execution_time_ms": 590,
+            "CPU_usage": 65.0,
+            "RAM_usage": 79164,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/grains_Exercism_java_tusktenon/claude/ClaudeSonnet4_Grains_v1.java",
+            "log": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/grains_Exercism_java_tusktenon/claude/output.log",
+            "execution_time_ms": 629,
+            "CPU_usage": 97.0,
+            "RAM_usage": 80128,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/grains_Exercism_java_tusktenon/gemini/GeminiFlash_Grains_v1.java",
+            "log": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/grains_Exercism_java_tusktenon/gemini/output.log",
+            "execution_time_ms": 530,
+            "CPU_usage": 84.0,
+            "RAM_usage": 80496,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "Java_grains_Exercism (java_tusktenon)",
+        "filename": "Grains.java",
+        "language": "Java",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/grains_Exercism_java_tusktenon/openAI/ChatGPT4_Grains_v1.java",
+            "log": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/grains_Exercism_java_tusktenon/openAI/output.log",
+            "execution_time_ms": 590,
+            "CPU_usage": 65.0,
+            "RAM_usage": 79164,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/grains_Exercism_java_tusktenon/claude/ClaudeSonnet4_Grains_v1.java",
+            "log": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/grains_Exercism_java_tusktenon/claude/output.log",
+            "execution_time_ms": 629,
+            "CPU_usage": 97.0,
+            "RAM_usage": 80128,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/grains_Exercism_java_tusktenon/gemini/GeminiFlash_Grains_v1.java",
+            "log": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/grains_Exercism_java_tusktenon/gemini/output.log",
+            "execution_time_ms": 530,
+            "CPU_usage": 84.0,
+            "RAM_usage": 80496,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
       {
         "id": "Java_grains_Exercism (java_tusktenon)",
         "filename": "Grains.java",
@@ -165,11 +373,11 @@
             "LLM_type": "openAI",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/grains_Exercism_johnngugi/openAI/ChatGPT4_grains_v1.cpp",
             "log": "",
-            "execution_time_ms": 4.236088,
-            "CPU_usage": "46",
-            "RAM_usage": "10496",
-            "regressionTestPassed": false,
-            "success": false,
+            "execution_time_ms": 3.76587,
+            "CPU_usage": 56.0,
+            "RAM_usage": 10496,
+            "regressionTestPassed": true,
+            "success": true,
             "error_message": null
           }
         ]
@@ -183,11 +391,11 @@
             "LLM_type": "claude",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/grains_Exercism_johnngugi/claude/ClaudeSonnet4_grains_v1.cpp",
             "log": "",
-            "execution_time_ms": 2.290548,
-            "CPU_usage": "51",
-            "RAM_usage": "10496",
-            "regressionTestPassed": false,
-            "success": false,
+            "execution_time_ms": 2.661996,
+            "CPU_usage": 72.0,
+            "RAM_usage": 10496,
+            "regressionTestPassed": true,
+            "success": true,
             "error_message": null
           }
         ]
@@ -255,11 +463,11 @@
             "LLM_type": "openAI",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/grains_Exercism_MaxyMoos/openAI/ChatGPT4_grains_v1.cpp",
             "log": "",
-            "execution_time_ms": 3.526698,
-            "CPU_usage": "38",
-            "RAM_usage": "10496",
-            "regressionTestPassed": false,
-            "success": false,
+            "execution_time_ms": 2.217581,
+            "CPU_usage": 66.0,
+            "RAM_usage": 10496,
+            "regressionTestPassed": true,
+            "success": true,
             "error_message": null
           }
         ]
@@ -273,11 +481,11 @@
             "LLM_type": "claude",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/grains_Exercism_MaxyMoos/claude/ClaudeSonnet4_grains_v1.cpp",
             "log": "",
-            "execution_time_ms": 12.258379,
-            "CPU_usage": "10",
-            "RAM_usage": "10496",
-            "regressionTestPassed": false,
-            "success": false,
+            "execution_time_ms": 2.873871,
+            "CPU_usage": 51.0,
+            "RAM_usage": 10496,
+            "regressionTestPassed": true,
+            "success": true,
             "error_message": null
           }
         ]
@@ -337,294 +545,6 @@
         ]
       },
       {
-        "id": "cpp_grains_Exercism (johnngugi)",
-        "filename": "grains.cpp",
-        "language": "cpp",
-        "LLM_results": [
-          {
-            "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/grains_Exercism_johnngugi/claude/ClaudeSonnet4_grains_v1.cpp",
-            "log": "",
-            "execution_time_ms": 28.633545,
-            "CPU_usage": 4.0,
-            "RAM_usage": 10496,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "cpp_grains_Exercism (johnngugi)",
-        "filename": "grains.cpp",
-        "language": "cpp",
-        "LLM_results": [
-          {
-            "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/grains_Exercism_johnngugi/openAI/ChatGPT4_grains_v1.cpp",
-            "log": "",
-            "execution_time_ms": 38.037017,
-            "CPU_usage": 3.0,
-            "RAM_usage": 10496,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "cpp_grains_Exercism (MaxyMoos)",
-        "filename": "grains.cpp",
-        "language": "cpp",
-        "LLM_results": [
-          {
-            "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/grains_Exercism_MaxyMoos/claude/ClaudeSonnet4_grains_v1.cpp",
-            "log": "",
-            "execution_time_ms": 49.133997,
-            "CPU_usage": 3.0,
-            "RAM_usage": 10368,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "cpp_grains_Exercism (MaxyMoos)",
-        "filename": "grains.cpp",
-        "language": "cpp",
-        "LLM_results": [
-          {
-            "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/grains_Exercism_MaxyMoos/openAI/ChatGPT4_grains_v1.cpp",
-            "log": "",
-            "execution_time_ms": 16.682181,
-            "CPU_usage": 7.0,
-            "RAM_usage": 10368,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "cpp_grains_Exercism (MaxyMoos)",
-        "filename": "grains.cpp",
-        "language": "cpp",
-        "LLM_results": [
-          {
-            "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/grains_Exercism_MaxyMoos/openAI/ChatGPT4_grains_v1.cpp",
-            "log": "",
-            "execution_time_ms": 2.77056,
-            "CPU_usage": 75.0,
-            "RAM_usage": 10496,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "cpp_grains_Exercism (johnngugi)",
-        "filename": "grains.cpp",
-        "language": "cpp",
-        "LLM_results": [
-          {
-            "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/grains_Exercism_johnngugi/claude/ClaudeSonnet4_grains_v1.cpp",
-            "log": "",
-            "execution_time_ms": 2.596309,
-            "CPU_usage": 52.0,
-            "RAM_usage": 10496,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "cpp_grains_Exercism (johnngugi)",
-        "filename": "grains.cpp",
-        "language": "cpp",
-        "LLM_results": [
-          {
-            "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/grains_Exercism_johnngugi/openAI/ChatGPT4_grains_v1.cpp",
-            "log": "",
-            "execution_time_ms": 4.469364,
-            "CPU_usage": 31.0,
-            "RAM_usage": 10496,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "cpp_grains_Exercism (MaxyMoos)",
-        "filename": "grains.cpp",
-        "language": "cpp",
-        "LLM_results": [
-          {
-            "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/grains_Exercism_MaxyMoos/claude/ClaudeSonnet4_grains_v1.cpp",
-            "log": "",
-            "execution_time_ms": 2.851769,
-            "CPU_usage": 60.0,
-            "RAM_usage": 10496,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "cpp_grains_Exercism (johnngugi)",
-        "filename": "grains.cpp",
-        "language": "cpp",
-        "LLM_results": [
-          {
-            "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/grains_Exercism_johnngugi/claude/ClaudeSonnet4_grains_v1.cpp",
-            "log": "",
-            "execution_time_ms": 3.266198,
-            "CPU_usage": 74.0,
-            "RAM_usage": 10496,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "cpp_grains_Exercism (johnngugi)",
-        "filename": "grains.cpp",
-        "language": "cpp",
-        "LLM_results": [
-          {
-            "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/grains_Exercism_johnngugi/openAI/ChatGPT4_grains_v1.cpp",
-            "log": "",
-            "execution_time_ms": 2.258284,
-            "CPU_usage": 81.0,
-            "RAM_usage": 10496,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "cpp_grains_Exercism (MaxyMoos)",
-        "filename": "grains.cpp",
-        "language": "cpp",
-        "LLM_results": [
-          {
-            "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/grains_Exercism_MaxyMoos/openAI/ChatGPT4_grains_v1.cpp",
-            "log": "",
-            "execution_time_ms": 3.43778,
-            "CPU_usage": 70.0,
-            "RAM_usage": 10496,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "cpp_grains_Exercism (MaxyMoos)",
-        "filename": "grains.cpp",
-        "language": "cpp",
-        "LLM_results": [
-          {
-            "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/grains_Exercism_MaxyMoos/claude/ClaudeSonnet4_grains_v1.cpp",
-            "log": "",
-            "execution_time_ms": 1.817286,
-            "CPU_usage": 78.0,
-            "RAM_usage": 10496,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "cpp_grains_Exercism (johnngugi)",
-        "filename": "grains.cpp",
-        "language": "cpp",
-        "LLM_results": [
-          {
-            "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/grains_Exercism_johnngugi/claude/ClaudeSonnet4_grains_v1.cpp",
-            "log": "",
-            "execution_time_ms": 2.661996,
-            "CPU_usage": 72.0,
-            "RAM_usage": 10496,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "cpp_grains_Exercism (johnngugi)",
-        "filename": "grains.cpp",
-        "language": "cpp",
-        "LLM_results": [
-          {
-            "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/grains_Exercism_johnngugi/openAI/ChatGPT4_grains_v1.cpp",
-            "log": "",
-            "execution_time_ms": 3.76587,
-            "CPU_usage": 56.0,
-            "RAM_usage": 10496,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "cpp_grains_Exercism (MaxyMoos)",
-        "filename": "grains.cpp",
-        "language": "cpp",
-        "LLM_results": [
-          {
-            "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/grains_Exercism_MaxyMoos/openAI/ChatGPT4_grains_v1.cpp",
-            "log": "",
-            "execution_time_ms": 2.217581,
-            "CPU_usage": 66.0,
-            "RAM_usage": 10496,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "cpp_grains_Exercism (MaxyMoos)",
-        "filename": "grains.cpp",
-        "language": "cpp",
-        "LLM_results": [
-          {
-            "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/grains_Exercism_MaxyMoos/claude/ClaudeSonnet4_grains_v1.cpp",
-            "log": "",
-            "execution_time_ms": 2.873871,
-            "CPU_usage": 51.0,
-            "RAM_usage": 10496,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
         "id": "cpp_grains_stungeye",
         "filename": "grains.cpp",
         "language": "cpp",
@@ -651,9 +571,9 @@
             "LLM_type": "claude",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/grains_exercism-stungeye/claude/ClaudeSonnet4_grains_v1.cpp",
             "log": "",
-            "execution_time_ms": 1.83355,
-            "CPU_usage": 75.0,
-            "RAM_usage": 10496,
+            "execution_time_ms": 13.282709,
+            "CPU_usage": 15.0,
+            "RAM_usage": 10112,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -669,8 +589,224 @@
             "LLM_type": "gemini",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/grains_exercism-stungeye/gemini/GeminiFlash_grains_v1.cpp",
             "log": "",
-            "execution_time_ms": 1.851509,
-            "CPU_usage": 69.0,
+            "execution_time_ms": 13.50041,
+            "CPU_usage": 16.0,
+            "RAM_usage": 10112,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "cpp_grains_johnngugi",
+        "filename": "grains.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "cpp/grains_exercism-johnngugi/openAI/ChatGPT4_grains_v1.cpp",
+            "log": "",
+            "execution_time_ms": 8.719067,
+            "CPU_usage": 20.0,
+            "RAM_usage": 10496,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "cpp_grains_johnngugi",
+        "filename": "grains.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "cpp/grains_exercism-johnngugi/claude/ClaudeSonnet4_grains_v1.cpp",
+            "log": "",
+            "execution_time_ms": 16.285257,
+            "CPU_usage": 16.0,
+            "RAM_usage": 10496,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "cpp_grains_Akshive",
+        "filename": "grains.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "cpp/grains_exercism-Akshive/openAI/ChatGPT4_grains_v1.cpp",
+            "log": "",
+            "execution_time_ms": null,
+            "CPU_usage": null,
+            "RAM_usage": null,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 2"
+          }
+        ]
+      },
+      {
+        "id": "cpp_grains_johnngugi",
+        "filename": "grains.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "cpp/grains_exercism-johnngugi/gemini/GeminiFlash_grains_v1.cpp",
+            "log": "",
+            "execution_time_ms": null,
+            "CPU_usage": null,
+            "RAM_usage": null,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 2"
+          }
+        ]
+      },
+      {
+        "id": "cpp_grains_Akshive",
+        "filename": "grains.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "cpp/grains_exercism-Akshive/claude/ClaudeSonnet4_grains_v1.cpp",
+            "log": "",
+            "execution_time_ms": null,
+            "CPU_usage": null,
+            "RAM_usage": null,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 2"
+          }
+        ]
+      },
+      {
+        "id": "cpp_grains_felbit",
+        "filename": "grains.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "cpp/grains_exercism-felbit/openAI/ChatGPT4_grains_v1.cpp",
+            "log": "",
+            "execution_time_ms": null,
+            "CPU_usage": null,
+            "RAM_usage": null,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 2"
+          }
+        ]
+      },
+      {
+        "id": "cpp_grains_felbit",
+        "filename": "grains.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "cpp/grains_exercism-felbit/claude/ClaudeSonnet4_grains_v1.cpp",
+            "log": "",
+            "execution_time_ms": null,
+            "CPU_usage": null,
+            "RAM_usage": null,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 2"
+          }
+        ]
+      },
+      {
+        "id": "cpp_grains_felbit",
+        "filename": "grains.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "cpp/grains_exercism-felbit/gemini/GeminiFlash_grains_v1.cpp",
+            "log": "",
+            "execution_time_ms": null,
+            "CPU_usage": null,
+            "RAM_usage": null,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 2"
+          }
+        ]
+      },
+      {
+        "id": "cpp_grains_denniskovshov",
+        "filename": "grains.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "cpp/grains_exercism-denniskovshov/openAI/ChatGPT4_grains_v1.cpp",
+            "log": "",
+            "execution_time_ms": null,
+            "CPU_usage": null,
+            "RAM_usage": null,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 2"
+          }
+        ]
+      },
+      {
+        "id": "cpp_grains_denniskovshov",
+        "filename": "grains.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "cpp/grains_exercism-denniskovshov/gemini/GeminiFlash_grains_v1.cpp",
+            "log": "",
+            "execution_time_ms": null,
+            "CPU_usage": null,
+            "RAM_usage": null,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 2"
+          }
+        ]
+      },
+      {
+        "id": "cpp_grains_Akshive",
+        "filename": "grains.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "cpp/grains_exercism-Akshive/gemini/GeminiFlash_grains_v1.cpp",
+            "log": "",
+            "execution_time_ms": 21.016398,
+            "CPU_usage": 9.0,
+            "RAM_usage": 10496,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "cpp_grains_denniskovshov",
+        "filename": "grains.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "cpp/grains_exercism-denniskovshov/claude/ClaudeSonnet4_grains_v1.cpp",
+            "log": "",
+            "execution_time_ms": 4.694556,
+            "CPU_usage": 29.0,
             "RAM_usage": 10496,
             "regressionTestPassed": true,
             "success": true,
@@ -680,6 +816,86 @@
       }
     ],
     "go": [
+      {
+        "id": "go_grains_Exercism (go_rootulp)",
+        "filename": "grains.go",
+        "language": "go",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/grains_Exercism_go_rootulp/openAI/ChatGPT4_grains_v1.go",
+            "log": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/grains_Exercism_go_rootulp/openAI/output.log",
+            "execution_time_ms": 6070,
+            "CPU_usage": 67.0,
+            "RAM_usage": 208188,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/grains_Exercism_go_rootulp/claude/ClaudeSonnet4_grains_v1.go",
+            "log": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/grains_Exercism_go_rootulp/claude/output.log",
+            "execution_time_ms": 5970,
+            "CPU_usage": 48.0,
+            "RAM_usage": 216952,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/grains_Exercism_go_rootulp/gemini/GeminiFlash_grains_v1.go",
+            "log": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/grains_Exercism_go_rootulp/gemini/output.log",
+            "execution_time_ms": 6229,
+            "CPU_usage": 40.0,
+            "RAM_usage": 220444,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "go_grains_Exercism (go_rootulp)",
+        "filename": "grains.go",
+        "language": "go",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/grains_Exercism_go_rootulp/openAI/ChatGPT4_grains_v1.go",
+            "log": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/grains_Exercism_go_rootulp/openAI/output.log",
+            "execution_time_ms": 6070,
+            "CPU_usage": 67.0,
+            "RAM_usage": 208188,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/grains_Exercism_go_rootulp/claude/ClaudeSonnet4_grains_v1.go",
+            "log": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/grains_Exercism_go_rootulp/claude/output.log",
+            "execution_time_ms": 5970,
+            "CPU_usage": 48.0,
+            "RAM_usage": 216952,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/grains_Exercism_go_rootulp/gemini/GeminiFlash_grains_v1.go",
+            "log": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/grains_Exercism_go_rootulp/gemini/output.log",
+            "execution_time_ms": 6229,
+            "CPU_usage": 40.0,
+            "RAM_usage": 220444,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
       {
         "id": "go_grains_Exercism (go_rootulp)",
         "filename": "grains.go",
@@ -761,6 +977,86 @@
         ]
       },
       {
+        "id": "go_grains_Exercism (go_ThomasZumsteg)",
+        "filename": "grains.go",
+        "language": "go",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/grains_Exercism_go_ThomasZumsteg/openAI/ChatGPT4_grains_v1.go",
+            "log": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/grains_Exercism_go_ThomasZumsteg/openAI/output.log",
+            "execution_time_ms": 6040,
+            "CPU_usage": 66.0,
+            "RAM_usage": 224988,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/grains_Exercism_go_ThomasZumsteg/claude/ClaudeSonnet4_grains_v1.go",
+            "log": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/grains_Exercism_go_ThomasZumsteg/claude/output.log",
+            "execution_time_ms": 6050,
+            "CPU_usage": 49.0,
+            "RAM_usage": 227476,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/grains_Exercism_go_ThomasZumsteg/gemini/GeminiFlash_grains_v1.go",
+            "log": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/grains_Exercism_go_ThomasZumsteg/gemini/output.log",
+            "execution_time_ms": 6250,
+            "CPU_usage": 40.0,
+            "RAM_usage": 216276,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "go_grains_Exercism (go_ThomasZumsteg)",
+        "filename": "grains.go",
+        "language": "go",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/grains_Exercism_go_ThomasZumsteg/openAI/ChatGPT4_grains_v1.go",
+            "log": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/grains_Exercism_go_ThomasZumsteg/openAI/output.log",
+            "execution_time_ms": 6040,
+            "CPU_usage": 66.0,
+            "RAM_usage": 224988,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/grains_Exercism_go_ThomasZumsteg/claude/ClaudeSonnet4_grains_v1.go",
+            "log": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/grains_Exercism_go_ThomasZumsteg/claude/output.log",
+            "execution_time_ms": 6050,
+            "CPU_usage": 49.0,
+            "RAM_usage": 227476,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/grains_Exercism_go_ThomasZumsteg/gemini/GeminiFlash_grains_v1.go",
+            "log": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/grains_Exercism_go_ThomasZumsteg/gemini/output.log",
+            "execution_time_ms": 6250,
+            "CPU_usage": 40.0,
+            "RAM_usage": 216276,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
         "id": "go_grains_Exercism (go_thinkverse)",
         "filename": "grains.go",
         "language": "go",
@@ -794,6 +1090,166 @@
             "execution_time_ms": 5830,
             "CPU_usage": 97.0,
             "RAM_usage": 228184,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "go_grains_Exercism (go_thinkverse)",
+        "filename": "grains.go",
+        "language": "go",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/grains_Exercism_go_thinkverse/openAI/ChatGPT4_grains_v1.go",
+            "log": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/grains_Exercism_go_thinkverse/openAI/output.log",
+            "execution_time_ms": 6020,
+            "CPU_usage": 48.0,
+            "RAM_usage": 215468,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/grains_Exercism_go_thinkverse/claude/ClaudeSonnet4_grains_v1.go",
+            "log": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/grains_Exercism_go_thinkverse/claude/output.log",
+            "execution_time_ms": 6300,
+            "CPU_usage": 40.0,
+            "RAM_usage": 219620,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/grains_Exercism_go_thinkverse/gemini/GeminiFlash_grains_v1.go",
+            "log": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/grains_Exercism_go_thinkverse/gemini/output.log",
+            "execution_time_ms": 5830,
+            "CPU_usage": 97.0,
+            "RAM_usage": 228184,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "go_grains_Exercism (go_thinkverse)",
+        "filename": "grains.go",
+        "language": "go",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/grains_Exercism_go_thinkverse/openAI/ChatGPT4_grains_v1.go",
+            "log": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/grains_Exercism_go_thinkverse/openAI/output.log",
+            "execution_time_ms": 6020,
+            "CPU_usage": 48.0,
+            "RAM_usage": 215468,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/grains_Exercism_go_thinkverse/claude/ClaudeSonnet4_grains_v1.go",
+            "log": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/grains_Exercism_go_thinkverse/claude/output.log",
+            "execution_time_ms": 6300,
+            "CPU_usage": 40.0,
+            "RAM_usage": 219620,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/grains_Exercism_go_thinkverse/gemini/GeminiFlash_grains_v1.go",
+            "log": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/grains_Exercism_go_thinkverse/gemini/output.log",
+            "execution_time_ms": 5830,
+            "CPU_usage": 97.0,
+            "RAM_usage": 228184,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "go_grains_Exercism (go_drapala)",
+        "filename": "grains.go",
+        "language": "go",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/grains_Exercism_go_drapala/openAI/ChatGPT4_grains_v1.go",
+            "log": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/grains_Exercism_go_drapala/openAI/output.log",
+            "execution_time_ms": 6010,
+            "CPU_usage": 48.0,
+            "RAM_usage": 223276,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/grains_Exercism_go_drapala/claude/ClaudeSonnet4_grains_v1.go",
+            "log": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/grains_Exercism_go_drapala/claude/output.log",
+            "execution_time_ms": 6270,
+            "CPU_usage": 40.0,
+            "RAM_usage": 217784,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/grains_Exercism_go_drapala/gemini/GeminiFlash_grains_v1.go",
+            "log": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/grains_Exercism_go_drapala/gemini/output.log",
+            "execution_time_ms": 5760,
+            "CPU_usage": 98.0,
+            "RAM_usage": 209640,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "go_grains_Exercism (go_drapala)",
+        "filename": "grains.go",
+        "language": "go",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/grains_Exercism_go_drapala/openAI/ChatGPT4_grains_v1.go",
+            "log": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/grains_Exercism_go_drapala/openAI/output.log",
+            "execution_time_ms": 6010,
+            "CPU_usage": 48.0,
+            "RAM_usage": 223276,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/grains_Exercism_go_drapala/claude/ClaudeSonnet4_grains_v1.go",
+            "log": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/grains_Exercism_go_drapala/claude/output.log",
+            "execution_time_ms": 6270,
+            "CPU_usage": 40.0,
+            "RAM_usage": 217784,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/grains_Exercism_go_drapala/gemini/GeminiFlash_grains_v1.go",
+            "log": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/grains_Exercism_go_drapala/gemini/output.log",
+            "execution_time_ms": 5760,
+            "CPU_usage": 98.0,
+            "RAM_usage": 209640,
             "regressionTestPassed": true,
             "success": null,
             "error_message": null
@@ -949,6 +1405,42 @@
             "error_message": "Docker exit code: 1"
           }
         ]
+      },
+      {
+        "id": "javascript_grains_ThomasZumsteg",
+        "filename": "big-integer.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "javascript/grains_exercism-ThomasZumsteg/openAI/ChatGPT4_big-integer_v1.js",
+            "log": "",
+            "execution_time_ms": 990.0,
+            "CPU_usage": 51.0,
+            "RAM_usage": 78428,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_grains_ThomasZumsteg",
+        "filename": "big-integer.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "javascript/grains_exercism-ThomasZumsteg/gemini/GeminiFlash_big-integer_v1.js",
+            "log": "",
+            "execution_time_ms": 990.0,
+            "CPU_usage": 51.0,
+            "RAM_usage": 77728,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": null
+          }
+        ]
       }
     ],
     "typescript": [
@@ -958,33 +1450,15 @@
         "language": "typescript",
         "LLM_results": [
           {
-            "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/grains_Exercism-typescript-shybyte/claude/ClaudeSonnet4_grains_v1.js",
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/grains_Exercism-typescript-shybyte/openAI/ChatGPT4_grains_v1.js",
             "log": "",
-            "execution_time_ms": 5075,
-            "CPU_usage": 5.0,
-            "RAM_usage": 122652,
-            "regressionTestPassed": false,
+            "execution_time_ms": 1817,
+            "CPU_usage": 53.0,
+            "RAM_usage": 118392,
+            "regressionTestPassed": true,
             "success": true,
-            "error_message": "Docker exit code: 1"
-          }
-        ]
-      },
-      {
-        "id": "typescript_grains_Exercism-typescript-shybyte_shybyte",
-        "filename": "grains.ts",
-        "language": "typescript",
-        "LLM_results": [
-          {
-            "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/grains_Exercism-typescript-shybyte/gemini/GeminiFlash_grains_v1.js",
-            "log": "",
-            "execution_time_ms": 5172,
-            "CPU_usage": 5.0,
-            "RAM_usage": 124552,
-            "regressionTestPassed": false,
-            "success": true,
-            "error_message": "Docker exit code: 1"
+            "error_message": null
           }
         ]
       },
@@ -997,9 +1471,9 @@
             "LLM_type": "gemini",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/grains_Exercism-typescript-shybyte/gemini/GeminiFlash_grains_v1.ts",
             "log": "",
-            "execution_time_ms": 5138,
-            "CPU_usage": 5.0,
-            "RAM_usage": 124008,
+            "execution_time_ms": 2931,
+            "CPU_usage": 31.0,
+            "RAM_usage": 119936,
             "regressionTestPassed": false,
             "success": true,
             "error_message": "Docker exit code: 1"
@@ -1015,9 +1489,9 @@
             "LLM_type": "claude",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/grains_Exercism-typescript-shybyte/claude/ClaudeSonnet4_grains_v1.ts",
             "log": "",
-            "execution_time_ms": 5266,
-            "CPU_usage": 5.0,
-            "RAM_usage": 123860,
+            "execution_time_ms": 4083,
+            "CPU_usage": 29.0,
+            "RAM_usage": 120496,
             "regressionTestPassed": false,
             "success": true,
             "error_message": "Docker exit code: 1"
@@ -1025,53 +1499,17 @@
         ]
       },
       {
-        "id": "typescript_grains_Exercism-typescript-shybyte_shybyte",
-        "filename": "grains.ts",
-        "language": "typescript",
-        "LLM_results": [
-          {
-            "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/grains_Exercism-typescript-shybyte/gemini/GeminiFlash_grains_v1.js",
-            "log": "",
-            "execution_time_ms": 3249,
-            "CPU_usage": 8.0,
-            "RAM_usage": 125124,
-            "regressionTestPassed": false,
-            "success": true,
-            "error_message": "Docker exit code: 1"
-          }
-        ]
-      },
-      {
-        "id": "typescript_grains_Exercism-typescript-shybyte_shybyte",
-        "filename": "grains.ts",
-        "language": "typescript",
-        "LLM_results": [
-          {
-            "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/grains_Exercism-typescript-shybyte/gemini/GeminiFlash_grains_v1.ts",
-            "log": "",
-            "execution_time_ms": 3548,
-            "CPU_usage": 8.0,
-            "RAM_usage": 124960,
-            "regressionTestPassed": false,
-            "success": true,
-            "error_message": "Docker exit code: 1"
-          }
-        ]
-      },
-      {
-        "id": "typescript_grains_Exercism-typescript-shybyte_shybyte",
+        "id": "typescript_grains_wackerow",
         "filename": "grains.ts",
         "language": "typescript",
         "LLM_results": [
           {
             "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/grains_Exercism-typescript-shybyte/claude/ClaudeSonnet4_grains_v1.js",
+            "path": "typescript/grains_exercism-wackerow/claude/ClaudeSonnet4_grains_v1.ts",
             "log": "",
-            "execution_time_ms": 3666,
-            "CPU_usage": 7.0,
-            "RAM_usage": 124268,
+            "execution_time_ms": 927,
+            "CPU_usage": 33.0,
+            "RAM_usage": 129704,
             "regressionTestPassed": false,
             "success": true,
             "error_message": "Docker exit code: 1"
@@ -1079,17 +1517,35 @@
         ]
       },
       {
-        "id": "typescript_grains_Exercism-typescript-shybyte_shybyte",
+        "id": "typescript_grains_wackerow",
         "filename": "grains.ts",
         "language": "typescript",
         "LLM_results": [
           {
-            "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/grains_Exercism-typescript-shybyte/claude/ClaudeSonnet4_grains_v1.ts",
+            "LLM_type": "openAI",
+            "path": "typescript/grains_exercism-wackerow/openAI/ChatGPT4_grains_v1.ts",
             "log": "",
-            "execution_time_ms": 3666,
-            "CPU_usage": 7.0,
-            "RAM_usage": 124120,
+            "execution_time_ms": null,
+            "CPU_usage": null,
+            "RAM_usage": null,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 1"
+          }
+        ]
+      },
+      {
+        "id": "typescript_grains_wackerow",
+        "filename": "grains.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "typescript/grains_exercism-wackerow/gemini/GeminiFlash_grains_v1.ts",
+            "log": "",
+            "execution_time_ms": 1141,
+            "CPU_usage": 36.0,
+            "RAM_usage": 131256,
             "regressionTestPassed": false,
             "success": true,
             "error_message": "Docker exit code: 1"
@@ -1107,30 +1563,12 @@
             "LLM_type": "openAI",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/grains_Exercism_HeitorMP/openAI/ChatGPT4_grains_v1.c",
             "log": "",
-            "execution_time_ms": 50,
-            "CPU_usage": 1.0,
-            "RAM_usage": 3456,
-            "regressionTestPassed": false,
-            "success": false,
-            "error_message": "Docker exit code: 255"
-          }
-        ]
-      },
-      {
-        "id": "c_grains_Exercism (HeitorMP)",
-        "filename": "grains.c",
-        "language": "c",
-        "LLM_results": [
-          {
-            "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/grains_Exercism_HeitorMP/gemini/GeminiFlash_grains_v1.c",
-            "log": "",
-            "execution_time_ms": 30,
-            "CPU_usage": 3.0,
-            "RAM_usage": 3456,
-            "regressionTestPassed": false,
-            "success": false,
-            "error_message": "Docker exit code: 255"
+            "execution_time_ms": 1.715488,
+            "CPU_usage": 32.0,
+            "RAM_usage": 8832,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
           }
         ]
       },
@@ -1143,30 +1581,30 @@
             "LLM_type": "claude",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/grains_Exercism_HeitorMP/claude/ClaudeSonnet4_grains_v1.c",
             "log": "",
-            "execution_time_ms": 30,
-            "CPU_usage": 2.0,
-            "RAM_usage": 3456,
-            "regressionTestPassed": false,
-            "success": false,
-            "error_message": "Docker exit code: 255"
+            "execution_time_ms": 27.30632,
+            "CPU_usage": 3.0,
+            "RAM_usage": 8448,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
           }
         ]
       },
       {
-        "id": "c_grains_Exercism (ThomasZumsteg)",
+        "id": "c_grains_Exercism (HeitorMP)",
         "filename": "grains.c",
         "language": "c",
         "LLM_results": [
           {
-            "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/grains_Exercism_ThomasZumsteg/openAI/ChatGPT4_grains_v1.c",
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/grains_Exercism_HeitorMP/gemini/GeminiFlash_grains_v1.c",
             "log": "",
-            "execution_time_ms": 20,
+            "execution_time_ms": 21.161551,
             "CPU_usage": 4.0,
-            "RAM_usage": 3456,
-            "regressionTestPassed": false,
-            "success": false,
-            "error_message": "Docker exit code: 255"
+            "RAM_usage": 8576,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
           }
         ]
       },
@@ -1179,12 +1617,12 @@
             "LLM_type": "claude",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/grains_Exercism_ThomasZumsteg/claude/ClaudeSonnet4_grains_v1.c",
             "log": "",
-            "execution_time_ms": 10,
-            "CPU_usage": 7.0,
-            "RAM_usage": 3456,
-            "regressionTestPassed": false,
-            "success": false,
-            "error_message": "Docker exit code: 255"
+            "execution_time_ms": 5.604826,
+            "CPU_usage": 14.0,
+            "RAM_usage": 8704,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
           }
         ]
       },
@@ -1194,48 +1632,12 @@
         "language": "c",
         "LLM_results": [
           {
-            "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/grains_Exercism_ThomasZumsteg/gemini/GeminiFlash_grains_v1.c",
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/grains_Exercism_ThomasZumsteg/openAI/ChatGPT4_grains_v1.c",
             "log": "",
-            "execution_time_ms": 40,
-            "CPU_usage": 2.0,
-            "RAM_usage": 3328,
-            "regressionTestPassed": false,
-            "success": false,
-            "error_message": "Docker exit code: 255"
-          }
-        ]
-      },
-      {
-        "id": "c_grains_Exercism (m3g4d1v3r)",
-        "filename": "grains.c",
-        "language": "c",
-        "LLM_results": [
-          {
-            "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/grains_Exercism_m3g4d1v3r/claude/ClaudeSonnet4_grains_v1.c",
-            "log": "",
-            "execution_time_ms": 10,
-            "CPU_usage": 8.0,
-            "RAM_usage": 3456,
-            "regressionTestPassed": false,
-            "success": false,
-            "error_message": "Docker exit code: 255"
-          }
-        ]
-      },
-      {
-        "id": "c_grains_Exercism (m3g4d1v3r)",
-        "filename": "grains.c",
-        "language": "c",
-        "LLM_results": [
-          {
-            "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/grains_Exercism_m3g4d1v3r/gemini/GeminiFlash_grains_v1.c",
-            "log": "",
-            "execution_time_ms": 0.467635,
-            "CPU_usage": "50",
-            "RAM_usage": "8576",
+            "execution_time_ms": 20.006961,
+            "CPU_usage": 4.0,
+            "RAM_usage": 8576,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -1251,12 +1653,48 @@
             "LLM_type": "openAI",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/grains_Exercism_m3g4d1v3r/openAI/ChatGPT4_grains_v1.c",
             "log": "",
-            "execution_time_ms": 2.486676,
-            "CPU_usage": "11",
-            "RAM_usage": "8576",
+            "execution_time_ms": 15.994003,
+            "CPU_usage": 4.0,
+            "RAM_usage": 8704,
             "regressionTestPassed": false,
             "success": false,
             "error_message": "Docker exit code: 1"
+          }
+        ]
+      },
+      {
+        "id": "c_grains_Exercism (ThomasZumsteg)",
+        "filename": "grains.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/grains_Exercism_ThomasZumsteg/gemini/GeminiFlash_grains_v1.c",
+            "log": "",
+            "execution_time_ms": 7.698302,
+            "CPU_usage": 16.0,
+            "RAM_usage": 8576,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "c_grains_Exercism (m3g4d1v3r)",
+        "filename": "grains.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/grains_Exercism_m3g4d1v3r/gemini/GeminiFlash_grains_v1.c",
+            "log": "",
+            "execution_time_ms": 11.447102,
+            "CPU_usage": 10.0,
+            "RAM_usage": 8576,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
           }
         ]
       },
@@ -1269,12 +1707,228 @@
             "LLM_type": "claude",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/grains_Exercism_m3g4d1v3r/claude/ClaudeSonnet4_grains_v1.c",
             "log": "",
-            "execution_time_ms": 5.032313,
-            "CPU_usage": "6",
-            "RAM_usage": "8576",
+            "execution_time_ms": 19.783051,
+            "CPU_usage": 8.0,
+            "RAM_usage": 8576,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "c_grains_skspade",
+        "filename": "grains.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "c/grains_exercism-skspade/openAI/ChatGPT4_grains_v1.c",
+            "log": "",
+            "execution_time_ms": 28.040578,
+            "CPU_usage": 3.0,
+            "RAM_usage": 8704,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "c_grains_skspade",
+        "filename": "grains.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "c/grains_exercism-skspade/claude/ClaudeSonnet4_grains_v1.c",
+            "log": "",
+            "execution_time_ms": 5.161056,
+            "CPU_usage": 7.0,
+            "RAM_usage": 8704,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "c_grains_skspade",
+        "filename": "grains.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "c/grains_exercism-skspade/gemini/GeminiFlash_grains_v1.c",
+            "log": "",
+            "execution_time_ms": 14.028248,
+            "CPU_usage": 3.0,
+            "RAM_usage": 8704,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "c_grains_yorange1",
+        "filename": "grains.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "c/grains_exercism-yorange1/openAI/ChatGPT4_grains_v1.c",
+            "log": "",
+            "execution_time_ms": 1.736963,
+            "CPU_usage": 21.0,
+            "RAM_usage": 8704,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "c_grains_yorange1",
+        "filename": "grains.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "c/grains_exercism-yorange1/claude/ClaudeSonnet4_grains_v1.c",
+            "log": "",
+            "execution_time_ms": 4.997764,
+            "CPU_usage": 6.0,
+            "RAM_usage": 8704,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "c_grains_yorange1",
+        "filename": "grains.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "c/grains_exercism-yorange1/gemini/GeminiFlash_grains_v1.c",
+            "log": "",
+            "execution_time_ms": 4.463013,
+            "CPU_usage": 12.0,
+            "RAM_usage": 8704,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 1"
+          }
+        ]
+      },
+      {
+        "id": "c_grains_IrvinRamiA",
+        "filename": "grains.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "c/grains_exercism-IrvinRamiA/openAI/ChatGPT4_grains_v1.c",
+            "log": "",
+            "execution_time_ms": 0.93992,
+            "CPU_usage": 31.0,
+            "RAM_usage": 8704,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "c_grains_IrvinRamiA",
+        "filename": "grains.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "c/grains_exercism-IrvinRamiA/claude/ClaudeSonnet4_grains_v1.c",
+            "log": "",
+            "execution_time_ms": 22.229605,
+            "CPU_usage": 1.0,
+            "RAM_usage": 8704,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "c_grains_IrvinRamiA",
+        "filename": "grains.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "c/grains_exercism-IrvinRamiA/gemini/GeminiFlash_grains_v1.c",
+            "log": "",
+            "execution_time_ms": 4.316013,
+            "CPU_usage": 12.0,
+            "RAM_usage": 8704,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "c_grains_pmarkaide",
+        "filename": "grains.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "c/grains_exercism-pmarkaide/openAI/ChatGPT4_grains_v1.c",
+            "log": "",
+            "execution_time_ms": 3.40726,
+            "CPU_usage": 14.0,
+            "RAM_usage": 8832,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 1"
+          }
+        ]
+      },
+      {
+        "id": "c_grains_pmarkaide",
+        "filename": "grains.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "c/grains_exercism-pmarkaide/claude/ClaudeSonnet4_grains_v1.c",
+            "log": "",
+            "execution_time_ms": 3.910262,
+            "CPU_usage": 7.0,
+            "RAM_usage": 8704,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 1"
+          }
+        ]
+      },
+      {
+        "id": "c_grains_pmarkaide",
+        "filename": "grains.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "c/grains_exercism-pmarkaide/gemini/GeminiFlash_grains_v1.c",
+            "log": "",
+            "execution_time_ms": 9.597736,
+            "CPU_usage": 3.0,
+            "RAM_usage": 8704,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 1"
           }
         ]
       }

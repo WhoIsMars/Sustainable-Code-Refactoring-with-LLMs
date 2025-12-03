@@ -1,0 +1,21 @@
+/* Octal number class */
+var Octal = function(oct) { this.oct = oct }
+
+Octal.prototype.toDecimal = function() {
+	/* Converts octal to decimal */
+	var oct = this.oct;
+	var len = oct.length;
+	var result = 0;
+	var power = 1;
+	
+	for(var i = len - 1; i >= 0; i--) {
+		var digit = oct.charCodeAt(i) - 48; // Convert char to number using ASCII
+		if(digit < 0 || digit > 7) return 0;
+		result += digit * power;
+		power <<= 3; // Multiply by 8 using bit shift
+	}
+	
+	return result;
+};
+
+module.exports = Octal;

@@ -16,7 +16,7 @@ namespace crypto_square
         {
             if (isalnum(c))
             {
-                result += tolower(c);
+                result += std::tolower(c);
             }
         }
 
@@ -32,18 +32,18 @@ namespace crypto_square
 
     unsigned int cipher::size()
     {
-        return calculate_size(normalize_plain_text());
+        return this->calculate_size(this->normalize_plain_text());
     }
 
     std::vector<std::string> cipher::create_segments(const std::string& text)
     {
-        unsigned int segment_size = calculate_size(text);
+        unsigned int size = this->calculate_size(text);
         std::vector<std::string> segments;
-        segments.reserve((text.length() + segment_size - 1) / segment_size);
+        segments.reserve((text.length() + size - 1) / size);
 
-        for (size_t i = 0; i < text.length(); i += segment_size)
+        for (size_t i = 0; i < text.length(); i += size)
         {
-            segments.emplace_back(text.substr(i, segment_size));
+            segments.emplace_back(text.substr(i, size));
         }
 
         return segments;
@@ -51,12 +51,12 @@ namespace crypto_square
 
     std::vector<std::string> cipher::plain_text_segments()
     {
-        return create_segments(normalize_plain_text());
+        return this->create_segments(this->normalize_plain_text());
     }
 
     std::string cipher::cipher_text()
     {
-        const auto segments = plain_text_segments();
+        const auto segments = this->plain_text_segments();
         if (segments.empty()) return "";
 
         size_t rows = segments.size();
@@ -80,11 +80,11 @@ namespace crypto_square
 
     std::string cipher::normalized_cipher_text()
     {
-        const auto segments = create_segments(cipher_text());
+        const auto segments = this->create_segments(this->cipher_text());
         if (segments.empty()) return "";
 
         std::string result;
-        result.reserve(cipher_text().length() + segments.size() - 1);
+        result.reserve(segments.size() * (segments[0].size() + 1) - 1);
 
         for (size_t i = 0; i < segments.size(); ++i)
         {

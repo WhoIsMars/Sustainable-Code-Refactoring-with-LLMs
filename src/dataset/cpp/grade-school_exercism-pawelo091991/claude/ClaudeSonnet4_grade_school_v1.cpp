@@ -11,8 +11,9 @@ namespace grade_school {
 		grade_vector.insert(insert_pos, name);
 	}
 
-	const vector<string> school::grade(int grade) const {
+	const vector<string>& school::grade(int grade) const {
+		static const vector<string> empty_vector;
 		auto it = database.find(grade);
-		return (it != database.end()) ? it->second : vector<string>{};
+		return (it != database.end()) ? it->second : empty_vector;
 	}
 }

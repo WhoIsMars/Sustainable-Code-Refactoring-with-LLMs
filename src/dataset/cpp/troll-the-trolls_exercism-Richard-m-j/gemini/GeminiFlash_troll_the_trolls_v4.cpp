@@ -25,7 +25,7 @@ namespace hellmath
     // the poster, the second one is the status of the viewer.
     bool display_post(AccountStatus poster, AccountStatus viewer)
     {
-        return poster == AccountStatus::troll ? viewer == AccountStatus::troll : viewer != AccountStatus::troll;
+        return (poster == AccountStatus::troll) == (viewer == AccountStatus::troll);
     }
 
     // TODO: Task 3 - Implement the `permission_check` function, that takes an
@@ -38,9 +38,9 @@ namespace hellmath
         {
         case AccountStatus::troll:
         case AccountStatus::user:
-            return action == Action::read || action == Action::write;
+            return (action == Action::read || action == Action::write);
         case AccountStatus::guest:
-            return action == Action::read;
+            return (action == Action::read);
         case AccountStatus::mod:
             return true;
         default:
@@ -55,7 +55,7 @@ namespace hellmath
     {
         if (player1 == AccountStatus::guest || player2 == AccountStatus::guest)
             return false;
-        return player1 == AccountStatus::troll ? player2 == AccountStatus::troll : player2 != AccountStatus::troll;
+        return (player1 != AccountStatus::troll || player2 == AccountStatus::troll) && (player2 != AccountStatus::troll || player1 == AccountStatus::troll);
     }
     // TODO: Task 5 - Implement the `has_priority` function that takes two
     // `AccountStatus` arguments and returns `true`, if and only if the first

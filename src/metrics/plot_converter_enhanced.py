@@ -4,7 +4,7 @@ Enhanced Plot Converter - PNG to PDF with Organization by Chapter
 This script converts all PNG plots to PDF format for LaTeX inclusion,
 organizing them by chapter according to thesis structure.
 
-Author: Claude Code
+
 Date: 2025-11-13
 """
 

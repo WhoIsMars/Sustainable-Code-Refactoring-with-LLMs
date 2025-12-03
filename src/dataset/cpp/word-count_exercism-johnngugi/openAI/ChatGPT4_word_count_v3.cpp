@@ -1,7 +1,7 @@
 #include <string>
 #include <map>
-#include <cctype>
 #include <iostream>
+#include <cctype>
 #include "word_count.h"
 using namespace std;
 
@@ -10,7 +10,7 @@ map<string, int> word_count::words(string sen)
     map<string, int> words;
     string store;
 
-    auto process_word = [&](string& word) {
+    auto process_word = [&](string &word) {
         if (!word.empty()) {
             if (word.back() == '\'') {
                 word.pop_back();

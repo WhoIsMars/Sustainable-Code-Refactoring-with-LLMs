@@ -16,7 +16,7 @@ void school::add(const string& n, int no)
 {
     auto& grade_level = grades[no];
     grade_level.push_back(n);
-    inplace_merge(grade_level.begin(), prev(grade_level.end()), grade_level.end());
+    sort(grade_level.begin(), grade_level.end());
 }
 
 vector<string> school::grade(int n) const

@@ -56,5 +56,4 @@ namespace space_age {
     {
         return m_earth_years / NEPTUNE_YEAR_RATIO;
     }
-
 }

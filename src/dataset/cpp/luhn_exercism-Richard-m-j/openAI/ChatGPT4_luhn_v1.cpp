@@ -1,7 +1,6 @@
 #include "luhn.h"
 #include <string>
 #include <cctype>
-
 namespace luhn
 {
     bool valid(std::string inputNumber)
@@ -31,6 +30,6 @@ namespace luhn
             ++digitCount;
         }
 
-        return digitCount > 1 && sum % 10 == 0;
+        return (sum % 10 == 0 && digitCount > 1);
     }
 }

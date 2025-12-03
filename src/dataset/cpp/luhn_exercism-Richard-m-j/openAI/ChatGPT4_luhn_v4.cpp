@@ -11,15 +11,20 @@ namespace luhn
 
         for (auto it = inputNumber.rbegin(); it != inputNumber.rend(); ++it)
         {
-            if (*it == ' ') continue;
-            if (!std::isdigit(*it)) return false;
+            if (*it == ' ')
+                continue;
+
+            if (!isdigit(*it))
+                return false;
 
             int digit = *it - '0';
             if (count % 2 == 1)
             {
                 digit *= 2;
-                if (digit > 9) digit -= 9;
+                if (digit > 9)
+                    digit -= 9;
             }
+
             sum += digit;
             ++count;
         }

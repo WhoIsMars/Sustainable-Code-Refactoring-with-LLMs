@@ -37,9 +37,7 @@ unsigned int cipher::size() {
 std::vector<std::string> cipher::create_segments(const std::string& text) {
   unsigned int segment_size = calculate_size(text);
   std::vector<std::string> segments;
-  segments.reserve(
-      (text.length() + segment_size - 1) /
-      segment_size); // Pre-allocate memory for segments
+  segments.reserve((text.length() + segment_size - 1) / segment_size); // Pre-allocate
 
   for (size_t i = 0; i < text.length(); i += segment_size) {
     segments.emplace_back(text.substr(i, segment_size));
@@ -60,7 +58,9 @@ std::string cipher::cipher_text() {
     normalized_text = normalize_plain_text();
   }
   const std::vector<std::string>& segments = plain_text_segments();
-  unsigned int columns = size();
+  if (segments.empty()) return "";
+
+  unsigned int columns = calculate_size(normalized_text.value());
   std::string result;
   result.reserve(normalized_text.value().length());
 
@@ -77,18 +77,14 @@ std::string cipher::cipher_text() {
 
 std::string cipher::normalized_cipher_text() {
   std::string encoded = cipher_text();
-  unsigned int segment_size = size();
+  unsigned int segment_size = calculate_size(encoded);
   std::string result;
-  result.reserve(encoded.length() +
-                   (encoded.length() / segment_size)); // Pre-allocate memory
-
   for (size_t i = 0; i < encoded.length(); ++i) {
     if (i > 0 && i % segment_size == 0) {
       result += ' ';
     }
     result += encoded[i];
   }
-
   return result;
 }
 

@@ -6,7 +6,7 @@
 
 using heaven::Vessel;
 
-Vessel Vessel::replicate(const std::string& name) {
+Vessel Vessel::replicate(const std::string& name) const {
     return Vessel{name, this->generation + 1, this->current_system};
 }
 

@@ -12,4 +12,4 @@ bool is_leap_year(const int year) {
   return true;
 }
 
-}  // namespace leap
+} // namespace leap

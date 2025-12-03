@@ -4,14 +4,13 @@ namespace squares
 {
 	int square_of_sum(int n)
 	{
-		int sum = n * (n + 1) / 2; // Using the formula for the sum of the first n natural numbers
+		int sum = n * (n + 1) / 2; // Using arithmetic series formula
 		return sum * sum;
 	}
 
 	int sum_of_squares(int n)
 	{
-		// Using the formula for the sum of the squares of the first n natural numbers
-		return n * (n + 1) * (2 * n + 1) / 6;
+		return n * (n + 1) * (2 * n + 1) / 6; // Using sum of squares formula
 	}
 
 	int difference(int n)

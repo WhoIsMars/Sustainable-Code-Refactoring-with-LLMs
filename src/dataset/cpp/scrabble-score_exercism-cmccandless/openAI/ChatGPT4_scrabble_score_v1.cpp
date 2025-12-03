@@ -10,8 +10,8 @@ int scrabble_score::score(const string& s)
 {
 	int sum = 0;
 	for (char ch : s) {
-		if (isalpha(ch)) {
-			sum += _scores[toupper(ch) - 'A'];
+		if (std::isalpha(ch)) {
+			sum += _scores[std::toupper(ch) - 'A'];
 		}
 	}
 	return sum;

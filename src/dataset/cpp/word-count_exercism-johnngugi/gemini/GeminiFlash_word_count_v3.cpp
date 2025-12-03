@@ -1,9 +1,8 @@
 #include <string>
 #include <map>
 #include <iostream>
-#include "word_count.h"
 #include <algorithm>
-#include <cctype>
+#include "word_count.h"
 
 using namespace std;
 
@@ -26,9 +25,8 @@ map<string, int> word_count::words(string sen) {
             if (it != word_counts.end()) {
                 it->second++;
             } else {
-                word_counts.emplace(current_word, 1);
+                word_counts[current_word] = 1;
             }
-
             current_word.clear();
         }
     }
@@ -42,7 +40,7 @@ map<string, int> word_count::words(string sen) {
         if (it != word_counts.end()) {
             it->second++;
         } else {
-            word_counts.emplace(current_word, 1);
+            word_counts[current_word] = 1;
         }
     }
 

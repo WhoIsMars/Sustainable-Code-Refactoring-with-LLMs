@@ -1,0 +1,56 @@
+import java.util.Random;
+import java.util.stream.IntStream;
+
+import static java.lang.Math.floor;
+
+class DnDCharacter {
+
+    private static final Random RANDOM = new Random();
+    private final int strength = ability();
+    private final int dexterity = ability();
+    private final int constitution = ability();
+    private final int intelligence = ability();
+    private final int wisdom = ability();
+    private final int charisma = ability();
+    private final int hitpoints = 10 + modifier(constitution);
+
+    int ability() {
+        return IntStream.generate(() -> RANDOM.nextInt(6) + 1)
+                .limit(4)
+                .sorted()
+                .skip(1)
+                .sum();
+    }
+
+    int modifier(int input) {
+        return (input - 10) / 2;
+    }
+
+    public int getStrength() {
+        return strength;
+    }
+
+    public int getDexterity() {
+        return dexterity;
+    }
+
+    public int getConstitution() {
+        return constitution;
+    }
+
+    public int getIntelligence() {
+        return intelligence;
+    }
+
+    public int getWisdom() {
+        return wisdom;
+    }
+
+    public int getCharisma() {
+        return charisma;
+    }
+
+    public int getHitpoints() {
+        return hitpoints;
+    }
+}

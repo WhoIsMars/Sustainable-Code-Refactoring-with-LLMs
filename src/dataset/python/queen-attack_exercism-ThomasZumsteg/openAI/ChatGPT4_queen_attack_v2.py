@@ -1,0 +1,24 @@
+"""Queen chess moves"""
+
+def validate(func):
+    """Ensures valid chess positions"""
+    def chess_checker(black, white):
+        if not (0 <= black[0] <= 7 and 0 <= black[1] <= 7 and
+                0 <= white[0] <= 7 and 0 <= white[1] <= 7) or black == white:
+            raise ValueError
+        return func(black, white)
+    return chess_checker
+
+@validate
+def board(white, black):
+    """Returns a board with the queens' locations"""
+    chess = ["_" * 8 for _ in range(8)]
+    chess = list(chess)
+    chess[white[0]] = chess[white[0]][:white[1]] + "W" + chess[white[0]][white[1] + 1:]
+    chess[black[0]] = chess[black[0]][:black[1]] + "B" + chess[black[0]][black[1] + 1:]
+    return chess
+
+@validate
+def can_attack(black, white):
+    """Checks if the two queens can attack each other"""
+    return black[0] == white[0] or black[1] == white[1] or abs(black[0] - white[0]) == abs(black[1] - white[1])

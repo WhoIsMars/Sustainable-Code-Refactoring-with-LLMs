@@ -23,12 +23,24 @@ namespace robot_name {
     }
 
     std::string robot::_generate_name() {
-        std::string name;
+        std::string name(5, '\0');
+
         do {
-            name = {static_cast<char>(_char_dist(_rng)), static_cast<char>(_char_dist(_rng)),
-                    static_cast<char>(_digit_dist(_rng)), static_cast<char>(_digit_dist(_rng)),
-                    static_cast<char>(_digit_dist(_rng))};
+            name[0] = _generate_rand_char();
+            name[1] = _generate_rand_char();
+            name[2] = _generate_rand_digit();
+            name[3] = _generate_rand_digit();
+            name[4] = _generate_rand_digit();
         } while (!robot::_existing_names.insert(name).second);
+
         return name;
+    }
+
+    char robot::_generate_rand_char() {
+        return static_cast<char>(_char_dist(_rng));
+    }
+
+    char robot::_generate_rand_digit() {
+        return static_cast<char>(_digit_dist(_rng));
     }
 }  // namespace robot_name

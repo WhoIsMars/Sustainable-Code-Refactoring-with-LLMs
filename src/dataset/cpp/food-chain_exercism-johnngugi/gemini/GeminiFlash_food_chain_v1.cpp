@@ -36,17 +36,13 @@ const string spider_line = "She swallowed the bird to catch the spider that wrig
 string food_chain::repetition(int n)
 {
 	string final;
-	final.reserve(n * 50); 
+	final.reserve(n * 60); 
 
-	for (int i = n; i > 1; --i)
+	for (int i = n; i > 2; --i)
 	{
-		if (i == 3) {
-			final += spider_line;
-		}
-		else {
-			final += "She swallowed the " + key_word[i] + " to catch the " + key_word[i - 1] + ".\n";
-		}
+		final += "She swallowed the " + key_word[i] + " to catch the " + key_word[i - 1] + ".\n";
 	}
+	final += spider_line;
 
 	return final;
 }
@@ -73,13 +69,12 @@ string food_chain::verse(int n)
 		result = first_sentence + second_line[n];
 		if (n < 8) {
 			result += response(n) + ending;
-		}
-		else {
+		} else {
 			result = "I know an old lady who swallowed a horse.\nShe's dead, of course!\n";
 		}
 	}
 
-	cout << result;
+	cout << result << endl;
 
 	return result;
 }
@@ -88,7 +83,7 @@ string food_chain::verses(int a, int b)
 {
 	string result = food_chain::verse(a) + "\n" + food_chain::verse(b) + "\n";
 
-	cout << result;
+	cout << result << endl;
 
 	return result;
 }
@@ -102,6 +97,5 @@ string food_chain::sing()
 			result += "\n";
 		}
 	}
-	cout << result;
 	return result;
 }

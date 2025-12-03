@@ -23,14 +23,16 @@ double annual_balance_update(double balance) {
 // years_until_desired_balance calculates the minimum number of years required
 // to reach the desired balance.
 int years_until_desired_balance(double balance, double target_balance) {
-    if (balance >= target_balance) return 0;
     int years = 0;
+    if (balance >= target_balance) {
+        return 0;
+    }
+
     double rate;
     while (balance < target_balance) {
         rate = interest_rate(balance);
         balance += balance * rate / 100.0;
         years++;
-        if (years > 1000) break; // Add a failsafe to prevent infinite loops
     }
     return years;
 }

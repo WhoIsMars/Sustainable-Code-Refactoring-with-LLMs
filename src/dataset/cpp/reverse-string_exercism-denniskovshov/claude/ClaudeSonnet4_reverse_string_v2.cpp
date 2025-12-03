@@ -15,8 +15,8 @@ namespace reverse_string {
         const size_t len = str.length();
         if (len <= 1) return str;
         
-        const size_t half_len = len >> 1;
-        for (size_t i = 0; i < half_len; ++i) {
+        const size_t half = len >> 1;
+        for (size_t i = 0; i < half; ++i) {
             std::swap(str[i], str[len - 1 - i]);
         }
         

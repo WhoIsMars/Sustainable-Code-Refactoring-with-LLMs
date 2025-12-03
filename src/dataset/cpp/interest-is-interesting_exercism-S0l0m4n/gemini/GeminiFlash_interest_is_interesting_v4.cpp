@@ -27,11 +27,8 @@ int years_until_desired_balance(double balance, double target_balance) {
     if (balance >= target_balance) {
         return 0;
     }
-
-    double rate;
     while (balance < target_balance) {
-        rate = interest_rate(balance);
-        balance += balance * rate / 100.0;
+        balance = annual_balance_update(balance);
         years++;
         if (years > 10000) return years; // Add a failsafe to prevent infinite loops
     }

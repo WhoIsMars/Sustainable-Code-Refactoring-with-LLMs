@@ -8,10 +8,11 @@ namespace hexadecimal
         int result = 0;
         for (char c : hex)
         {
+            result *= 16;
             if (std::isdigit(c))
-                result = result * 16 + (c - '0');
-            else if (std::isxdigit(c) && std::islower(c))
-                result = result * 16 + (c - 'a' + 10);
+                result += c - '0';
+            else if (std::isalpha(c) && c >= 'a' && c <= 'f')
+                result += c - 'a' + 10;
             else
                 return 0;
         }

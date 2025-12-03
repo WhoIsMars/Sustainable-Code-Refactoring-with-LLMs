@@ -1,10 +1,9 @@
 #include <algorithm>
 #include <stdexcept>
 #include "triangle.h"
-#include <cmath>
 
 namespace triangle {
-    flavor kind(double side1, double2, double side3) {
+    flavor kind(double side1, double side2, double side3) {
         validate(side1, side2, side3);
 
         if (side1 == side2) {
@@ -15,7 +14,7 @@ namespace triangle {
             }
         } else if (side1 == side3 || side2 == side3) {
             return flavor::isosceles;
-        } else if (std::abs(side1 + side2 - side3) < 1e-9 || std::abs(side1 + side3 - side2) < 1e-9 || std::abs(side2 + side3 - side1) < 1e-9) {
+        } else if (side1 + side2 == side3 || side1 + side3 == side2 || side2 + side3 == side1) {
             return flavor::degenerate;
         } else {
             return flavor::scalene;

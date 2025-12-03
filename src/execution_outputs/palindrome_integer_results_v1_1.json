@@ -1,17 +1,23 @@
 {
-  "execution_date": "2025-11-19 01:08:10",
+  "execution_date": "2025-11-28 01:15:54",
   "execution_metadata": {
     "total_tests": 1,
     "successful_tests": 1,
     "execution_time": "00h 00m 00s",
     "cluster": "cluster_palindrome_integer",
     "test_type": "llm_v1",
-    "last_updated": "2025-11-19 01:08:10",
+    "last_updated": "2025-11-28 01:15:54",
     "selective_execution": {
       "languages": [
-        "python"
+        "python",
+        "typescript",
+        "cpp",
+        "java",
+        "c",
+        "go",
+        "javascript"
       ],
-      "timestamp": "2025-11-19 01:08:10"
+      "timestamp": "2025-11-28 01:15:54"
     }
   },
   "results": {
@@ -22,11 +28,29 @@
         "language": "python",
         "LLM_results": [
           {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/palindrome_integer/gemini/GeminiFlash_palindrome_integer_v1.py",
+            "log": "",
+            "execution_time_ms": 60.0,
+            "CPU_usage": 58.0,
+            "RAM_usage": 13952,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "palindrome_integer_254",
+        "filename": "palindrome_integer.py",
+        "language": "python",
+        "LLM_results": [
+          {
             "LLM_type": "openAI",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/palindrome_integer/openAI/ChatGPT4_palindrome_integer_v1.py",
             "log": "",
-            "execution_time_ms": 60.0,
-            "CPU_usage": 78.0,
+            "execution_time_ms": 50.0,
+            "CPU_usage": 27.0,
             "RAM_usage": 13952,
             "regressionTestPassed": true,
             "success": true,
@@ -43,27 +67,9 @@
             "LLM_type": "claude",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/palindrome_integer/claude/ClaudeSonnet4_palindrome_integer_v1.py",
             "log": "",
-            "execution_time_ms": 60.0,
-            "CPU_usage": 69.0,
-            "RAM_usage": 13952,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "palindrome_integer_254",
-        "filename": "palindrome_integer.py",
-        "language": "python",
-        "LLM_results": [
-          {
-            "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/palindrome_integer/gemini/GeminiFlash_palindrome_integer_v1.py",
-            "log": "",
             "execution_time_ms": 50.0,
-            "CPU_usage": 43.0,
-            "RAM_usage": 13820,
+            "CPU_usage": 25.0,
+            "RAM_usage": 13696,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null

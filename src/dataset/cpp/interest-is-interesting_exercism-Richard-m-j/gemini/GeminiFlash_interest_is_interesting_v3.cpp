@@ -28,16 +28,15 @@ double annual_balance_update(double balance)
 // to reach the desired balance.
 int years_until_desired_balance(double balance, double target_balance)
 {
+    int years = 0;
     if (balance >= target_balance) return 0;
 
-    int years = 0;
     double rate;
-
     while (balance < target_balance) {
         rate = interest_rate(balance);
         balance += (rate / 100) * balance;
         years++;
-        if (years > 10000) return years; // Add a failsafe to prevent infinite loops
+        if (years > 10000) return -1; // Prevent infinite loop
     }
     return years;
 }

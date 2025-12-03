@@ -10,7 +10,8 @@ namespace grade_school {
     void school::add(const std::string& name, int grade) {
         auto& students = database[grade];
         if (std::find(students.begin(), students.end(), name) == students.end()) {
-            students.insert(std::upper_bound(students.begin(), students.end(), name), name);
+            students.push_back(name);
+            std::sort(students.begin(), students.end());
         }
     }
 

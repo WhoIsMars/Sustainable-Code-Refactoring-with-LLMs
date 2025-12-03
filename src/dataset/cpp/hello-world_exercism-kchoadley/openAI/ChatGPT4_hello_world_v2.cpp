@@ -1,8 +1,11 @@
 #include "hello_world.h"
 
+#include <string_view>
+
 namespace hello_world {
-    constexpr const char* hello()
+    std::string_view hello()
     {
-        return "Hello, World!";
+        static constexpr std::string_view message = "Hello, World!";
+        return message;
     }
 }

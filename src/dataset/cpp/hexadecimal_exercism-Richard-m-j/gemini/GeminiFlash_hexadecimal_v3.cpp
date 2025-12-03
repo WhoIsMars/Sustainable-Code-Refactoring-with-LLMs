@@ -7,11 +7,14 @@ namespace hexadecimal
     int convert(std::string hex)
     {
         int result = 0;
-        for (char c : hex)
+        size_t l = hex.length();
+
+        for (size_t i = 0; i < l; ++i)
         {
-            c = std::tolower(c);
+            unsigned char c = static_cast<unsigned char>(hex[i]);
             int digit;
-            if (c >= '0' && c <= '9')
+
+            if (std::isdigit(c))
             {
                 digit = c - '0';
             }
@@ -19,13 +22,20 @@ namespace hexadecimal
             {
                 digit = c - 'a' + 10;
             }
+            else if (c >= 'A' && c <= 'F')
+            {
+                digit = c - 'A' + 10;
+            }
             else
             {
                 return 0;
             }
+
             if (result > (INT_MAX / 16)) return 0;
+
             result = (result << 4) | digit;
         }
+
         return result;
     }
 } // namespace hexadecimal

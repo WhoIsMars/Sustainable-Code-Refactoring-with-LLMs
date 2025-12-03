@@ -35,7 +35,22 @@ int years_until_desired_balance(double balance, double target_balance) {
         balance = annual_balance_update(balance);
         years++;
 
-        if (years > 10000) return years; // Add a failsafe to prevent infinite loops
+        if (years > 1000) {
+            if (balance >= target_balance)
+                break;
+            double rate = interest_rate(balance) / 100.0;
+            if (rate <= 0)
+                return 10000;
+
+            double remaining_increase_needed = target_balance - balance;
+            double approximate_years = remaining_increase_needed / (balance * rate);
+
+            if (approximate_years < 0)
+                return years;
+
+            years += static_cast<int>(approximate_years * 0.9);
+            balance = balance * pow(1 + rate, static_cast<int>(approximate_years * 0.9));
+        }
     }
     return years;
 }

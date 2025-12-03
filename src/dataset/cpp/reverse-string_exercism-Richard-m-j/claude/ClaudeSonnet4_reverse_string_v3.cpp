@@ -2,13 +2,11 @@
 #include <string>
 #include <algorithm>
 
-using namespace std;
-
 namespace reverse_string
 {
-    string reverse_string(string input)
+    std::string reverse_string(std::string input)
     {
-        reverse(input.begin(), input.end());
+        std::reverse(input.begin(), input.end());
         return input;
     }
 }

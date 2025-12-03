@@ -1,17 +1,23 @@
 {
-  "execution_date": "2025-11-21 10:11:14",
+  "execution_date": "2025-12-02 18:54:21",
   "execution_metadata": {
     "total_tests": 20,
     "successful_tests": 20,
     "execution_time": "00h 00m 43s",
     "cluster": "cluster_isbn_verifier",
     "test_type": "llm_v3",
-    "last_updated": "2025-11-21 10:11:14",
+    "last_updated": "2025-12-02 18:54:21",
     "selective_execution": {
       "languages": [
-        "cpp"
+        "javascript",
+        "python",
+        "cpp",
+        "go",
+        "c",
+        "typescript",
+        "java"
       ],
-      "timestamp": "2025-11-21 10:11:14"
+      "timestamp": "2025-12-02 18:54:21"
     }
   },
   "results": {
@@ -22,11 +28,11 @@
         "language": "python",
         "LLM_results": [
           {
-            "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/isbn-verifier/gemini/GeminiFlash_isbn-verifier_v3.py",
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/isbn-verifier/openAI/ChatGPT4_isbn-verifier_v3.py",
             "log": "",
-            "execution_time_ms": 40.0,
-            "CPU_usage": 77.0,
+            "execution_time_ms": 50.0,
+            "CPU_usage": 31.0,
             "RAM_usage": 13952,
             "regressionTestPassed": true,
             "success": true,
@@ -43,9 +49,9 @@
             "LLM_type": "claude",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/isbn-verifier/claude/ClaudeSonnet4_isbn-verifier_v3.py",
             "log": "",
-            "execution_time_ms": 40.0,
-            "CPU_usage": 76.0,
-            "RAM_usage": 13952,
+            "execution_time_ms": 60.00000000000001,
+            "CPU_usage": 34.0,
+            "RAM_usage": 13696,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -58,11 +64,119 @@
         "language": "python",
         "LLM_results": [
           {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/isbn-verifier/gemini/GeminiFlash_isbn-verifier_v3.py",
+            "log": "",
+            "execution_time_ms": 30.0,
+            "CPU_usage": 26.0,
+            "RAM_usage": 13824,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "python_isbn-verifier_ThomasZumsteg",
+        "filename": "isbn_verifier.py",
+        "language": "python",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "python/isbn-verifier_exercism-ThomasZumsteg/gemini/GeminiFlash_isbn_verifier_v3.py",
+            "log": "",
+            "execution_time_ms": 50.0,
+            "CPU_usage": 18.0,
+            "RAM_usage": 13568,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "python_isbn-verifier_ThomasZumsteg",
+        "filename": "isbn_verifier.py",
+        "language": "python",
+        "LLM_results": [
+          {
             "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/isbn-verifier/openAI/ChatGPT4_isbn-verifier_v3.py",
+            "path": "python/isbn-verifier_exercism-ThomasZumsteg/openAI/ChatGPT4_isbn_verifier_v3.py",
+            "log": "",
+            "execution_time_ms": 60.00000000000001,
+            "CPU_usage": 28.0,
+            "RAM_usage": 14080,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 1"
+          }
+        ]
+      },
+      {
+        "id": "python_isbn-verifier_ThomasZumsteg",
+        "filename": "isbn_verifier.py",
+        "language": "python",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "python/isbn-verifier_exercism-ThomasZumsteg/claude/ClaudeSonnet4_isbn_verifier_v3.py",
+            "log": "",
+            "execution_time_ms": 50.0,
+            "CPU_usage": 15.0,
+            "RAM_usage": 14080,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 1"
+          }
+        ]
+      },
+      {
+        "id": "python_isbn-verifier_fruit-in",
+        "filename": "isbn_verifier.py",
+        "language": "python",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "python/isbn-verifier_exercism-fruit-in/openAI/ChatGPT4_isbn_verifier_v3.py",
             "log": "",
             "execution_time_ms": 40.0,
-            "CPU_usage": 77.0,
+            "CPU_usage": 15.0,
+            "RAM_usage": 14080,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "python_isbn-verifier_fruit-in",
+        "filename": "isbn_verifier.py",
+        "language": "python",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "python/isbn-verifier_exercism-fruit-in/claude/ClaudeSonnet4_isbn_verifier_v3.py",
+            "log": "",
+            "execution_time_ms": 40.0,
+            "CPU_usage": 30.0,
+            "RAM_usage": 13952,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "python_isbn-verifier_fruit-in",
+        "filename": "isbn_verifier.py",
+        "language": "python",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "python/isbn-verifier_exercism-fruit-in/gemini/GeminiFlash_isbn_verifier_v3.py",
+            "log": "",
+            "execution_time_ms": 50.0,
+            "CPU_usage": 16.0,
             "RAM_usage": 13952,
             "regressionTestPassed": true,
             "success": true,
@@ -310,6 +424,152 @@
         ]
       },
       {
+        "id": "typescript_isbn-verifier_Exercism-typescript-shybyte",
+        "filename": "isbn-verifier.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/isbn-verifier_Exercism-typescript-shybyte/openAI/ChatGPT4_isbn-verifier_v3.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/isbn-verifier_Exercism-typescript-shybyte/openAI/ChatGPT4_isbn-verifier_v3.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/isbn-verifier_Exercism-typescript-shybyte/claude/ClaudeSonnet4_isbn-verifier_v3.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/isbn-verifier_Exercism-typescript-shybyte/claude/ClaudeSonnet4_isbn-verifier_v3.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/isbn-verifier_Exercism-typescript-shybyte/gemini/GeminiFlash_isbn-verifier_v3.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/isbn-verifier_Exercism-typescript-shybyte/gemini/GeminiFlash_isbn-verifier_v3.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "typescript_isbn-verifier_Exercism-typescript-shybyte",
+        "filename": "isbn-verifier.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/isbn-verifier_Exercism-typescript-shybyte/openAI/ChatGPT4_isbn-verifier_v3.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/isbn-verifier_Exercism-typescript-shybyte/openAI/ChatGPT4_isbn-verifier_v3.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/isbn-verifier_Exercism-typescript-shybyte/claude/ClaudeSonnet4_isbn-verifier_v3.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/isbn-verifier_Exercism-typescript-shybyte/claude/ClaudeSonnet4_isbn-verifier_v3.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/isbn-verifier_Exercism-typescript-shybyte/gemini/GeminiFlash_isbn-verifier_v3.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/isbn-verifier_Exercism-typescript-shybyte/gemini/GeminiFlash_isbn-verifier_v3.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
         "id": "typescript_isbn-verifier_Exercism-typescript-FilipeCerejo",
         "filename": "isbn-verifier.ts",
         "language": "typescript",
@@ -372,6 +632,298 @@
           {
             "LLM_type": "gemini",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/isbn-verifier_Exercism-typescript-FilipeCerejo/gemini/GeminiFlash_isbn-verifier_v3.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "typescript_isbn-verifier_Exercism-typescript-FilipeCerejo",
+        "filename": "isbn-verifier.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/isbn-verifier_Exercism-typescript-FilipeCerejo/openAI/ChatGPT4_isbn-verifier_v3.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/isbn-verifier_Exercism-typescript-FilipeCerejo/openAI/ChatGPT4_isbn-verifier_v3.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/isbn-verifier_Exercism-typescript-FilipeCerejo/claude/ClaudeSonnet4_isbn-verifier_v3.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/isbn-verifier_Exercism-typescript-FilipeCerejo/claude/ClaudeSonnet4_isbn-verifier_v3.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/isbn-verifier_Exercism-typescript-FilipeCerejo/gemini/GeminiFlash_isbn-verifier_v3.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/isbn-verifier_Exercism-typescript-FilipeCerejo/gemini/GeminiFlash_isbn-verifier_v3.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "typescript_isbn-verifier_Exercism-typescript-FilipeCerejo",
+        "filename": "isbn-verifier.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/isbn-verifier_Exercism-typescript-FilipeCerejo/openAI/ChatGPT4_isbn-verifier_v3.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/isbn-verifier_Exercism-typescript-FilipeCerejo/openAI/ChatGPT4_isbn-verifier_v3.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/isbn-verifier_Exercism-typescript-FilipeCerejo/claude/ClaudeSonnet4_isbn-verifier_v3.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/isbn-verifier_Exercism-typescript-FilipeCerejo/claude/ClaudeSonnet4_isbn-verifier_v3.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/isbn-verifier_Exercism-typescript-FilipeCerejo/gemini/GeminiFlash_isbn-verifier_v3.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/isbn-verifier_Exercism-typescript-FilipeCerejo/gemini/GeminiFlash_isbn-verifier_v3.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "typescript_isbn-verifier_Exercism-typescript-shybyte_shybyte",
+        "filename": "isbn-verifier.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/isbn-verifier_Exercism-typescript-shybyte/openAI/ChatGPT4_isbn-verifier_v3.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/isbn-verifier_Exercism-typescript-shybyte/openAI/ChatGPT4_isbn-verifier_v3.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/isbn-verifier_Exercism-typescript-shybyte/claude/ClaudeSonnet4_isbn-verifier_v3.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/isbn-verifier_Exercism-typescript-shybyte/claude/ClaudeSonnet4_isbn-verifier_v3.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/isbn-verifier_Exercism-typescript-shybyte/gemini/GeminiFlash_isbn-verifier_v3.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/isbn-verifier_Exercism-typescript-shybyte/gemini/GeminiFlash_isbn-verifier_v3.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "typescript_isbn-verifier_Exercism-typescript-shybyte_shybyte",
+        "filename": "isbn-verifier.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/isbn-verifier_Exercism-typescript-shybyte/openAI/ChatGPT4_isbn-verifier_v3.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/isbn-verifier_Exercism-typescript-shybyte/openAI/ChatGPT4_isbn-verifier_v3.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/isbn-verifier_Exercism-typescript-shybyte/claude/ClaudeSonnet4_isbn-verifier_v3.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/isbn-verifier_Exercism-typescript-shybyte/claude/ClaudeSonnet4_isbn-verifier_v3.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/isbn-verifier_Exercism-typescript-shybyte/gemini/GeminiFlash_isbn-verifier_v3.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/isbn-verifier_Exercism-typescript-shybyte/gemini/GeminiFlash_isbn-verifier_v3.js",
             "log": "",
             "execution_time_ms": 1000,
             "CPU_usage": 50.0,
@@ -527,21 +1079,257 @@
             "error_message": null
           }
         ]
+      },
+      {
+        "id": "typescript_isbn-verifier_Exercism-typescript-FilipeCerejo_FilipeCerejo",
+        "filename": "isbn-verifier.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/isbn-verifier_Exercism-typescript-FilipeCerejo/openAI/ChatGPT4_isbn-verifier_v3.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/isbn-verifier_Exercism-typescript-FilipeCerejo/openAI/ChatGPT4_isbn-verifier_v3.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/isbn-verifier_Exercism-typescript-FilipeCerejo/claude/ClaudeSonnet4_isbn-verifier_v3.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/isbn-verifier_Exercism-typescript-FilipeCerejo/claude/ClaudeSonnet4_isbn-verifier_v3.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/isbn-verifier_Exercism-typescript-FilipeCerejo/gemini/GeminiFlash_isbn-verifier_v3.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/isbn-verifier_Exercism-typescript-FilipeCerejo/gemini/GeminiFlash_isbn-verifier_v3.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "typescript_isbn-verifier_Exercism-typescript-FilipeCerejo_FilipeCerejo",
+        "filename": "isbn-verifier.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/isbn-verifier_Exercism-typescript-FilipeCerejo/openAI/ChatGPT4_isbn-verifier_v3.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/isbn-verifier_Exercism-typescript-FilipeCerejo/openAI/ChatGPT4_isbn-verifier_v3.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/isbn-verifier_Exercism-typescript-FilipeCerejo/claude/ClaudeSonnet4_isbn-verifier_v3.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/isbn-verifier_Exercism-typescript-FilipeCerejo/claude/ClaudeSonnet4_isbn-verifier_v3.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/isbn-verifier_Exercism-typescript-FilipeCerejo/gemini/GeminiFlash_isbn-verifier_v3.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/isbn-verifier_Exercism-typescript-FilipeCerejo/gemini/GeminiFlash_isbn-verifier_v3.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "typescript_isbn-verifier_wackerow",
+        "filename": "isbn-verifier.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "typescript/isbn-verifier_exercism-wackerow/claude/ClaudeSonnet4_isbn-verifier_v3.ts",
+            "log": "",
+            "execution_time_ms": 1086,
+            "CPU_usage": 27.0,
+            "RAM_usage": 130084,
+            "regressionTestPassed": false,
+            "success": true,
+            "error_message": "Docker exit code: 1"
+          }
+        ]
+      },
+      {
+        "id": "typescript_isbn-verifier_wackerow",
+        "filename": "isbn-verifier.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "typescript/isbn-verifier_exercism-wackerow/openAI/ChatGPT4_isbn-verifier_v3.ts",
+            "log": "",
+            "execution_time_ms": 1017,
+            "CPU_usage": 26.0,
+            "RAM_usage": 128352,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "typescript_isbn-verifier_wackerow",
+        "filename": "isbn-verifier.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "typescript/isbn-verifier_exercism-wackerow/gemini/GeminiFlash_isbn-verifier_v3.ts",
+            "log": "",
+            "execution_time_ms": 1087,
+            "CPU_usage": 27.0,
+            "RAM_usage": 129288,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
       }
     ],
     "java": [
       {
         "id": "Java_isbn-verifier_exercism-java-blogscot",
-        "filename": "isbn-verifier.java",
+        "filename": "IsbnVerifier.java",
+        "language": "java",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/isbn-verifier_exercism-java-blogscot/openAI/ChatGPT4_isbn-verifier_v3.java",
+            "log": "",
+            "execution_time_ms": 180.0,
+            "CPU_usage": 27.0,
+            "RAM_usage": 46872,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "Java_isbn-verifier_exercism-java-blogscot",
+        "filename": "IsbnVerifier.java",
+        "language": "java",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/isbn-verifier_exercism-java-blogscot/claude/ClaudeSonnet4_isbn-verifier_v3.java",
+            "log": "",
+            "execution_time_ms": 150.0,
+            "CPU_usage": 25.0,
+            "RAM_usage": 46416,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "Java_isbn-verifier_exercism-java-blogscot",
+        "filename": "IsbnVerifier.java",
         "language": "java",
         "LLM_results": [
           {
             "LLM_type": "gemini",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/isbn-verifier_exercism-java-blogscot/gemini/GeminiFlash_isbn-verifier_v3.java",
             "log": "",
-            "execution_time_ms": 99.99999999999999,
-            "CPU_usage": 89.0,
-            "RAM_usage": 46660,
+            "execution_time_ms": 240.00000000000003,
+            "CPU_usage": 32.0,
+            "RAM_usage": 46180,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -550,16 +1338,34 @@
       },
       {
         "id": "Java_isbn-verifier_exercism-java-blogscot_blogscot",
-        "filename": "isbn-verifier.java",
+        "filename": "IsbnVerifier.java",
         "language": "java",
         "LLM_results": [
           {
             "LLM_type": "openAI",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/isbn-verifier_exercism-java-blogscot/openAI/ChatGPT4_isbn-verifier_v3.java",
             "log": "",
-            "execution_time_ms": 110.0,
-            "CPU_usage": 62.0,
-            "RAM_usage": 46172,
+            "execution_time_ms": 200.0,
+            "CPU_usage": 31.0,
+            "RAM_usage": 46580,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "Java_isbn-verifier_exercism-java-blogscot_blogscot",
+        "filename": "IsbnVerifier.java",
+        "language": "java",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/isbn-verifier_exercism-java-blogscot/claude/ClaudeSonnet4_isbn-verifier_v3.java",
+            "log": "",
+            "execution_time_ms": 170.0,
+            "CPU_usage": 21.0,
+            "RAM_usage": 46252,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -567,16 +1373,16 @@
         ]
       },
       {
-        "id": "Java_isbn-verifier_exercism-java-blogscot",
-        "filename": "isbn-verifier.java",
+        "id": "Java_isbn-verifier_exercism-java-blogscot_blogscot",
+        "filename": "IsbnVerifier.java",
         "language": "java",
         "LLM_results": [
           {
-            "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/isbn-verifier_exercism-java-blogscot/claude/ClaudeSonnet4_isbn-verifier_v3.java",
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/isbn-verifier_exercism-java-blogscot/gemini/GeminiFlash_isbn-verifier_v3.java",
             "log": "",
-            "execution_time_ms": 110.0,
-            "CPU_usage": 74.0,
+            "execution_time_ms": 160.0,
+            "CPU_usage": 26.0,
             "RAM_usage": 46176,
             "regressionTestPassed": true,
             "success": true,
@@ -585,35 +1391,53 @@
         ]
       },
       {
-        "id": "Java_isbn-verifier_exercism-java-blogscot",
-        "filename": "isbn-verifier.java",
+        "id": "java_isbn-verifier_johannesrave-education",
+        "filename": "IsbnVerifier.java",
         "language": "java",
         "LLM_results": [
           {
             "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/isbn-verifier_exercism-java-blogscot/openAI/ChatGPT4_isbn-verifier_v3.java",
+            "path": "java/isbn-verifier_exercism-johannesrave-education/openAI/ChatGPT4_IsbnVerifier_v3.java",
             "log": "",
-            "execution_time_ms": 110.0,
-            "CPU_usage": 81.0,
-            "RAM_usage": 46048,
-            "regressionTestPassed": true,
-            "success": true,
+            "execution_time_ms": 199.99999999999997,
+            "CPU_usage": 20.0,
+            "RAM_usage": 46708,
+            "regressionTestPassed": false,
+            "success": false,
             "error_message": null
           }
         ]
       },
       {
-        "id": "Java_isbn-verifier_exercism-java-blogscot_blogscot",
-        "filename": "isbn-verifier.java",
+        "id": "java_isbn-verifier_johannesrave-education",
+        "filename": "IsbnVerifier.java",
         "language": "java",
         "LLM_results": [
           {
             "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/isbn-verifier_exercism-java-blogscot/claude/ClaudeSonnet4_isbn-verifier_v3.java",
+            "path": "java/isbn-verifier_exercism-johannesrave-education/claude/ClaudeSonnet4_IsbnVerifier_v3.java",
             "log": "",
-            "execution_time_ms": 99.99999999999999,
-            "CPU_usage": 112.0,
-            "RAM_usage": 46432,
+            "execution_time_ms": 199.99999999999997,
+            "CPU_usage": 21.0,
+            "RAM_usage": 46640,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "java_isbn-verifier_johannesrave-education",
+        "filename": "IsbnVerifier.java",
+        "language": "java",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "java/isbn-verifier_exercism-johannesrave-education/gemini/GeminiFlash_IsbnVerifier_v3.java",
+            "log": "",
+            "execution_time_ms": 160.0,
+            "CPU_usage": 20.0,
+            "RAM_usage": 46284,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -621,17 +1445,53 @@
         ]
       },
       {
-        "id": "Java_isbn-verifier_exercism-java-blogscot_blogscot",
-        "filename": "isbn-verifier.java",
+        "id": "java_isbn-verifier_uzilan",
+        "filename": "IsbnVerifier.java",
+        "language": "java",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "java/isbn-verifier_exercism-uzilan/openAI/ChatGPT4_IsbnVerifier_v3.java",
+            "log": "",
+            "execution_time_ms": 170.0,
+            "CPU_usage": 20.0,
+            "RAM_usage": 46300,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "java_isbn-verifier_uzilan",
+        "filename": "IsbnVerifier.java",
+        "language": "java",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "java/isbn-verifier_exercism-uzilan/claude/ClaudeSonnet4_IsbnVerifier_v3.java",
+            "log": "",
+            "execution_time_ms": 139.99999999999997,
+            "CPU_usage": 34.0,
+            "RAM_usage": 46372,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "java_isbn-verifier_uzilan",
+        "filename": "IsbnVerifier.java",
         "language": "java",
         "LLM_results": [
           {
             "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/isbn-verifier_exercism-java-blogscot/gemini/GeminiFlash_isbn-verifier_v3.java",
+            "path": "java/isbn-verifier_exercism-uzilan/gemini/GeminiFlash_IsbnVerifier_v3.java",
             "log": "",
-            "execution_time_ms": 99.99999999999999,
-            "CPU_usage": 120.0,
-            "RAM_usage": 46304,
+            "execution_time_ms": 150.0,
+            "CPU_usage": 26.0,
+            "RAM_usage": 46156,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -640,6 +1500,86 @@
       }
     ],
     "Java": [
+      {
+        "id": "Java_isbn_verifier_Exercism (java_rabestro)",
+        "filename": "IsbnVerifier.java",
+        "language": "Java",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/isbn_verifier_Exercism_java_rabestro/openAI/ChatGPT4_IsbnVerifier_v3.java",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/isbn_verifier_Exercism_java_rabestro/claude/ClaudeSonnet4_IsbnVerifier_v3.java",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/isbn_verifier_Exercism_java_rabestro/gemini/GeminiFlash_IsbnVerifier_v3.java",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "Java_isbn_verifier_Exercism (java_rabestro)",
+        "filename": "IsbnVerifier.java",
+        "language": "Java",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/isbn_verifier_Exercism_java_rabestro/openAI/ChatGPT4_IsbnVerifier_v3.java",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/isbn_verifier_Exercism_java_rabestro/claude/ClaudeSonnet4_IsbnVerifier_v3.java",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/isbn_verifier_Exercism_java_rabestro/gemini/GeminiFlash_IsbnVerifier_v3.java",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
       {
         "id": "Java_isbn_verifier_Exercism (java_rabestro)",
         "filename": "IsbnVerifier.java",
@@ -712,6 +1652,166 @@
           {
             "LLM_type": "gemini",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/isbn_verifier_Exercism_go_rootulp/gemini/GeminiFlash_isbn_verifier_v3.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "go_isbn_verifier_Exercism (go_rootulp)",
+        "filename": "isbn_verifier.go",
+        "language": "go",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/isbn_verifier_Exercism_go_rootulp/openAI/ChatGPT4_isbn_verifier_v3.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/isbn_verifier_Exercism_go_rootulp/claude/ClaudeSonnet4_isbn_verifier_v3.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/isbn_verifier_Exercism_go_rootulp/gemini/GeminiFlash_isbn_verifier_v3.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "go_isbn_verifier_Exercism (go_rootulp)",
+        "filename": "isbn_verifier.go",
+        "language": "go",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/isbn_verifier_Exercism_go_rootulp/openAI/ChatGPT4_isbn_verifier_v3.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/isbn_verifier_Exercism_go_rootulp/claude/ClaudeSonnet4_isbn_verifier_v3.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/isbn_verifier_Exercism_go_rootulp/gemini/GeminiFlash_isbn_verifier_v3.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "go_isbn_verifier_Exercism (go_ThomasZumsteg)",
+        "filename": "isbn_verifier.go",
+        "language": "go",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/isbn_verifier_Exercism_go_ThomasZumsteg/openAI/ChatGPT4_isbn_verifier_v3.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/isbn_verifier_Exercism_go_ThomasZumsteg/claude/ClaudeSonnet4_isbn_verifier_v3.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/isbn_verifier_Exercism_go_ThomasZumsteg/gemini/GeminiFlash_isbn_verifier_v3.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "go_isbn_verifier_Exercism (go_ThomasZumsteg)",
+        "filename": "isbn_verifier.go",
+        "language": "go",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/isbn_verifier_Exercism_go_ThomasZumsteg/openAI/ChatGPT4_isbn_verifier_v3.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/isbn_verifier_Exercism_go_ThomasZumsteg/claude/ClaudeSonnet4_isbn_verifier_v3.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/isbn_verifier_Exercism_go_ThomasZumsteg/gemini/GeminiFlash_isbn_verifier_v3.go",
             "log": "",
             "execution_time_ms": 1000,
             "CPU_usage": 50.0,
@@ -801,6 +1901,86 @@
             "error_message": null
           }
         ]
+      },
+      {
+        "id": "go_isbn_verifier_Exercism (go_drapala)",
+        "filename": "isbn_verifier.go",
+        "language": "go",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/isbn_verifier_Exercism_go_drapala/openAI/ChatGPT4_isbn_verifier_v3.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/isbn_verifier_Exercism_go_drapala/claude/ClaudeSonnet4_isbn_verifier_v3.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/isbn_verifier_Exercism_go_drapala/gemini/GeminiFlash_isbn_verifier_v3.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "go_isbn_verifier_Exercism (go_drapala)",
+        "filename": "isbn_verifier.go",
+        "language": "go",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/isbn_verifier_Exercism_go_drapala/openAI/ChatGPT4_isbn_verifier_v3.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/isbn_verifier_Exercism_go_drapala/claude/ClaudeSonnet4_isbn_verifier_v3.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/isbn_verifier_Exercism_go_drapala/gemini/GeminiFlash_isbn_verifier_v3.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
       }
     ],
     "cpp": [
@@ -810,11 +1990,11 @@
         "language": "cpp",
         "LLM_results": [
           {
-            "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/isbn-verifier_exercism-chrisnp/claude/ClaudeSonnet4_isbn_verifier_v3.cpp",
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/isbn-verifier_exercism-chrisnp/openAI/ChatGPT4_isbn_verifier_v3.cpp",
             "log": "",
-            "execution_time_ms": 2.821039,
-            "CPU_usage": 75.0,
+            "execution_time_ms": 15.653279,
+            "CPU_usage": 13.0,
             "RAM_usage": 10496,
             "regressionTestPassed": true,
             "success": true,
@@ -828,12 +2008,12 @@
         "language": "cpp",
         "LLM_results": [
           {
-            "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/isbn-verifier_exercism-chrisnp/openAI/ChatGPT4_isbn_verifier_v3.cpp",
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/isbn-verifier_exercism-chrisnp/claude/ClaudeSonnet4_isbn_verifier_v3.cpp",
             "log": "",
-            "execution_time_ms": 1.87561,
-            "CPU_usage": 74.0,
-            "RAM_usage": 10496,
+            "execution_time_ms": 10.037831,
+            "CPU_usage": 17.0,
+            "RAM_usage": 10368,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null

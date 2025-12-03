@@ -1,17 +1,23 @@
 {
-  "execution_date": "2025-11-19 17:21:38",
+  "execution_date": "2025-12-01 22:18:05",
   "execution_metadata": {
     "total_tests": 93,
     "successful_tests": 93,
     "execution_time": "00h 00m 00s",
     "cluster": "cluster_anagram",
     "test_type": "llm_v1",
-    "last_updated": "2025-11-19 17:21:38",
+    "last_updated": "2025-12-01 22:18:05",
     "selective_execution": {
       "languages": [
-        "java"
+        "c",
+        "javascript",
+        "cpp",
+        "typescript",
+        "python",
+        "java",
+        "go"
       ],
-      "timestamp": "2025-11-19 17:21:38"
+      "timestamp": "2025-12-01 22:18:05"
     }
   },
   "results": {
@@ -22,29 +28,11 @@
         "language": "python",
         "LLM_results": [
           {
-            "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/anagram/openAI/ChatGPT4_anagram_v1.py",
-            "log": "",
-            "execution_time_ms": 50.0,
-            "CPU_usage": 65.0,
-            "RAM_usage": 13952,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "anagram_1",
-        "filename": "anagram.py",
-        "language": "python",
-        "LLM_results": [
-          {
             "LLM_type": "gemini",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/anagram/gemini/GeminiFlash_anagram_v1.py",
             "log": "",
-            "execution_time_ms": 40.0,
-            "CPU_usage": 67.0,
+            "execution_time_ms": 390.0,
+            "CPU_usage": 81.0,
             "RAM_usage": 13952,
             "regressionTestPassed": true,
             "success": true,
@@ -61,8 +49,80 @@
             "LLM_type": "claude",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/anagram/claude/ClaudeSonnet4_anagram_v1.py",
             "log": "",
-            "execution_time_ms": 40.0,
-            "CPU_usage": 67.0,
+            "execution_time_ms": 510.0,
+            "CPU_usage": 73.0,
+            "RAM_usage": 13696,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "anagram_1",
+        "filename": "anagram.py",
+        "language": "python",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/anagram/openAI/ChatGPT4_anagram_v1.py",
+            "log": "",
+            "execution_time_ms": 400.0,
+            "CPU_usage": 61.0,
+            "RAM_usage": 13696,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "python_anagram_ThomasZumsteg",
+        "filename": "anagram.py",
+        "language": "python",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "python/anagram_exercism-ThomasZumsteg/openAI/ChatGPT4_anagram_v1.py",
+            "log": "",
+            "execution_time_ms": 710.0,
+            "CPU_usage": 30.0,
+            "RAM_usage": 13824,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "python_anagram_ThomasZumsteg",
+        "filename": "anagram.py",
+        "language": "python",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "python/anagram_exercism-ThomasZumsteg/claude/ClaudeSonnet4_anagram_v1.py",
+            "log": "",
+            "execution_time_ms": 590.0,
+            "CPU_usage": 26.0,
+            "RAM_usage": 13696,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "python_anagram_ThomasZumsteg",
+        "filename": "anagram.py",
+        "language": "python",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "python/anagram_exercism-ThomasZumsteg/gemini/GeminiFlash_anagram_v1.py",
+            "log": "",
+            "execution_time_ms": 590.0,
+            "CPU_usage": 26.0,
             "RAM_usage": 13824,
             "regressionTestPassed": true,
             "success": true,
@@ -81,9 +141,9 @@
             "LLM_type": "openAI",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/anagram_exercism-javascript-bearguns/openAI/ChatGPT4_anagram_v1.js",
             "log": "",
-            "execution_time_ms": 470.00000000000006,
-            "CPU_usage": 13.0,
-            "RAM_usage": 83588,
+            "execution_time_ms": 1859.9999999999998,
+            "CPU_usage": 12.0,
+            "RAM_usage": 81844,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -99,27 +159,9 @@
             "LLM_type": "gemini",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/anagram_exercism-javascript-bearguns/gemini/GeminiFlash_anagram_v1.js",
             "log": "",
-            "execution_time_ms": 500.0,
-            "CPU_usage": 12.0,
-            "RAM_usage": 83116,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "javascript_anagram_exercism-javascript-ffflorian_ffflorian",
-        "filename": "anagram.js",
-        "language": "javascript",
-        "LLM_results": [
-          {
-            "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/anagram_exercism-javascript-ffflorian/openAI/ChatGPT4_anagram_v1.js",
-            "log": "",
-            "execution_time_ms": 480.0,
-            "CPU_usage": 15.0,
-            "RAM_usage": 83892,
+            "execution_time_ms": 1640.0000000000002,
+            "CPU_usage": 10.0,
+            "RAM_usage": 82984,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -135,9 +177,27 @@
             "LLM_type": "claude",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/anagram_exercism-javascript-bearguns/claude/ClaudeSonnet4_anagram_v1.js",
             "log": "",
-            "execution_time_ms": 490.0,
-            "CPU_usage": 12.0,
-            "RAM_usage": 83472,
+            "execution_time_ms": 1670.0,
+            "CPU_usage": 10.0,
+            "RAM_usage": 83256,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_anagram_exercism-javascript-ffflorian_ffflorian",
+        "filename": "anagram.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/anagram_exercism-javascript-ffflorian/openAI/ChatGPT4_anagram_v1.js",
+            "log": "",
+            "execution_time_ms": 1680.0000000000002,
+            "CPU_usage": 10.0,
+            "RAM_usage": 82920,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -153,45 +213,9 @@
             "LLM_type": "claude",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/anagram_exercism-javascript-ffflorian/claude/ClaudeSonnet4_anagram_v1.js",
             "log": "",
-            "execution_time_ms": 540.0,
-            "CPU_usage": 11.0,
-            "RAM_usage": 83212,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "javascript_anagram_exercism-javascript-ffflorian_ffflorian",
-        "filename": "anagram.js",
-        "language": "javascript",
-        "LLM_results": [
-          {
-            "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/anagram_exercism-javascript-ffflorian/gemini/GeminiFlash_anagram_v1.js",
-            "log": "",
-            "execution_time_ms": 630.0,
-            "CPU_usage": 12.0,
-            "RAM_usage": 81836,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "javascript_anagram_exercism-javascript-ThomasZumsteg_ThomasZumsteg",
-        "filename": "anagram.js",
-        "language": "javascript",
-        "LLM_results": [
-          {
-            "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/anagram_exercism-javascript-ThomasZumsteg/claude/ClaudeSonnet4_anagram_v1.js",
-            "log": "",
-            "execution_time_ms": 620.0,
-            "CPU_usage": 14.0,
-            "RAM_usage": 83424,
+            "execution_time_ms": 1400.0,
+            "CPU_usage": 27.0,
+            "RAM_usage": 82944,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -207,9 +231,45 @@
             "LLM_type": "openAI",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/anagram_exercism-javascript-ThomasZumsteg/openAI/ChatGPT4_anagram_v1.js",
             "log": "",
-            "execution_time_ms": 620.0,
-            "CPU_usage": 10.0,
-            "RAM_usage": 82260,
+            "execution_time_ms": 1330.0,
+            "CPU_usage": 26.0,
+            "RAM_usage": 83076,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_anagram_exercism-javascript-ffflorian_ffflorian",
+        "filename": "anagram.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/anagram_exercism-javascript-ffflorian/gemini/GeminiFlash_anagram_v1.js",
+            "log": "",
+            "execution_time_ms": 1310.0,
+            "CPU_usage": 27.0,
+            "RAM_usage": 83192,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_anagram_exercism-javascript-ThomasZumsteg_ThomasZumsteg",
+        "filename": "anagram.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/anagram_exercism-javascript-ThomasZumsteg/claude/ClaudeSonnet4_anagram_v1.js",
+            "log": "",
+            "execution_time_ms": 1290.0,
+            "CPU_usage": 27.0,
+            "RAM_usage": 83184,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -225,9 +285,63 @@
             "LLM_type": "gemini",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/anagram_exercism-javascript-ThomasZumsteg/gemini/GeminiFlash_anagram_v1.js",
             "log": "",
-            "execution_time_ms": 510.0,
-            "CPU_usage": 20.0,
-            "RAM_usage": 83284,
+            "execution_time_ms": 2190.0,
+            "CPU_usage": 18.0,
+            "RAM_usage": 82672,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_anagram_SLIB53",
+        "filename": "anagram.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "javascript/anagram_exercism-SLIB53/gemini/GeminiFlash_anagram_v1.js",
+            "log": "",
+            "execution_time_ms": 1060.0,
+            "CPU_usage": 18.0,
+            "RAM_usage": 82972,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_anagram_SLIB53",
+        "filename": "anagram.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "javascript/anagram_exercism-SLIB53/openAI/ChatGPT4_anagram_v1.js",
+            "log": "",
+            "execution_time_ms": 1089.9999999999998,
+            "CPU_usage": 22.0,
+            "RAM_usage": 81984,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_anagram_SLIB53",
+        "filename": "anagram.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "javascript/anagram_exercism-SLIB53/claude/ClaudeSonnet4_anagram_v1.js",
+            "log": "",
+            "execution_time_ms": 1030.0,
+            "CPU_usage": 19.0,
+            "RAM_usage": 82948,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -261,11 +375,11 @@
         "LLM_results": [
           {
             "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/anagram_exercism-javascript-samajammin/claude/ClaudeSonnet4_anagram_v1.js",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/anagram_exercism-javascript-samajammin/claude/ClaudeSonnet4_anagram_v1.ts",
             "log": "",
-            "execution_time_ms": 383,
-            "CPU_usage": 52.0,
-            "RAM_usage": 124192,
+            "execution_time_ms": 513,
+            "CPU_usage": 51.0,
+            "RAM_usage": 124020,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -284,60 +398,6 @@
             "execution_time_ms": 415,
             "CPU_usage": 45.0,
             "RAM_usage": 123104,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "typescript_anagram_exercism-javascript-samajammin",
-        "filename": "anagram.ts",
-        "language": "typescript",
-        "LLM_results": [
-          {
-            "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/anagram_exercism-javascript-samajammin/claude/ClaudeSonnet4_anagram_v1.ts",
-            "log": "",
-            "execution_time_ms": 513,
-            "CPU_usage": 51.0,
-            "RAM_usage": 124020,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "typescript_anagram_exercism-javascript-samajammin",
-        "filename": "anagram.ts",
-        "language": "typescript",
-        "LLM_results": [
-          {
-            "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/anagram_exercism-javascript-samajammin/gemini/GeminiFlash_anagram_v1.js",
-            "log": "",
-            "execution_time_ms": 291,
-            "CPU_usage": 62.0,
-            "RAM_usage": 126368,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "typescript_anagram_exercism-javascript-samajammin",
-        "filename": "anagram.ts",
-        "language": "typescript",
-        "LLM_results": [
-          {
-            "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/anagram_exercism-javascript-samajammin/gemini/GeminiFlash_anagram_v1.ts",
-            "log": "",
-            "execution_time_ms": 436,
-            "CPU_usage": 53.0,
-            "RAM_usage": 125664,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -387,65 +447,11 @@
         "LLM_results": [
           {
             "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/anagram_Exercism-typescript-FilipeCerejo/claude/ClaudeSonnet4_anagram_v1.js",
-            "log": "",
-            "execution_time_ms": 294,
-            "CPU_usage": 49.0,
-            "RAM_usage": 123856,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "typescript_anagram_Exercism-typescript-FilipeCerejo",
-        "filename": "anagram.ts",
-        "language": "typescript",
-        "LLM_results": [
-          {
-            "LLM_type": "claude",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/anagram_Exercism-typescript-FilipeCerejo/claude/ClaudeSonnet4_anagram_v1.ts",
             "log": "",
             "execution_time_ms": 472,
             "CPU_usage": 51.0,
             "RAM_usage": 123944,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "typescript_anagram_Exercism-typescript-FilipeCerejo",
-        "filename": "anagram.ts",
-        "language": "typescript",
-        "LLM_results": [
-          {
-            "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/anagram_Exercism-typescript-FilipeCerejo/gemini/GeminiFlash_anagram_v1.js",
-            "log": "",
-            "execution_time_ms": 453,
-            "CPU_usage": 45.0,
-            "RAM_usage": 122476,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "typescript_anagram_Exercism-typescript-FilipeCerejo",
-        "filename": "anagram.ts",
-        "language": "typescript",
-        "LLM_results": [
-          {
-            "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/anagram_Exercism-typescript-FilipeCerejo/gemini/GeminiFlash_anagram_v1.ts",
-            "log": "",
-            "execution_time_ms": 371,
-            "CPU_usage": 51.0,
-            "RAM_usage": 121348,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -495,65 +501,11 @@
         "LLM_results": [
           {
             "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/anagram_Exercism-typescript-alemarr/claude/ClaudeSonnet4_anagram_v1.js",
-            "log": "",
-            "execution_time_ms": 465,
-            "CPU_usage": 47.0,
-            "RAM_usage": 125712,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "typescript_anagram_Exercism-typescript-alemarr",
-        "filename": "anagram.ts",
-        "language": "typescript",
-        "LLM_results": [
-          {
-            "LLM_type": "claude",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/anagram_Exercism-typescript-alemarr/claude/ClaudeSonnet4_anagram_v1.ts",
             "log": "",
             "execution_time_ms": 447,
             "CPU_usage": 52.0,
             "RAM_usage": 125212,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "typescript_anagram_Exercism-typescript-alemarr",
-        "filename": "anagram.ts",
-        "language": "typescript",
-        "LLM_results": [
-          {
-            "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/anagram_Exercism-typescript-alemarr/gemini/GeminiFlash_anagram_v1.js",
-            "log": "",
-            "execution_time_ms": 448,
-            "CPU_usage": 49.0,
-            "RAM_usage": 125536,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "typescript_anagram_Exercism-typescript-alemarr",
-        "filename": "anagram.ts",
-        "language": "typescript",
-        "LLM_results": [
-          {
-            "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/anagram_Exercism-typescript-alemarr/gemini/GeminiFlash_anagram_v1.ts",
-            "log": "",
-            "execution_time_ms": 451,
-            "CPU_usage": 50.0,
-            "RAM_usage": 126684,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -572,42 +524,6 @@
             "execution_time_ms": 516,
             "CPU_usage": 43.0,
             "RAM_usage": 123516,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "typescript_anagram_Exercism-typescript-thewanionly_thewanionly",
-        "filename": "anagram.ts",
-        "language": "typescript",
-        "LLM_results": [
-          {
-            "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/anagram_Exercism-typescript-thewanionly/claude/ClaudeSonnet4_anagram_v1.js",
-            "log": "",
-            "execution_time_ms": 439,
-            "CPU_usage": 48.0,
-            "RAM_usage": 122884,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "typescript_anagram_Exercism-typescript-thewanionly_thewanionly",
-        "filename": "anagram.ts",
-        "language": "typescript",
-        "LLM_results": [
-          {
-            "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/anagram_Exercism-typescript-thewanionly/openAI/ChatGPT4_anagram_v1.ts",
-            "log": "",
-            "execution_time_ms": 468,
-            "CPU_usage": 44.0,
-            "RAM_usage": 124428,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -638,12 +554,12 @@
         "language": "typescript",
         "LLM_results": [
           {
-            "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/anagram_Exercism-typescript-thewanionly/gemini/GeminiFlash_anagram_v1.ts",
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/anagram_Exercism-typescript-thewanionly/openAI/ChatGPT4_anagram_v1.ts",
             "log": "",
-            "execution_time_ms": 452,
-            "CPU_usage": 46.0,
-            "RAM_usage": 124048,
+            "execution_time_ms": 468,
+            "CPU_usage": 44.0,
+            "RAM_usage": 124428,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -662,24 +578,6 @@
             "execution_time_ms": 438,
             "CPU_usage": 45.0,
             "RAM_usage": 123208,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "typescript_anagram_Exercism-typescript-thewanionly_thewanionly",
-        "filename": "anagram.ts",
-        "language": "typescript",
-        "LLM_results": [
-          {
-            "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/anagram_Exercism-typescript-thewanionly/gemini/GeminiFlash_anagram_v1.js",
-            "log": "",
-            "execution_time_ms": 516,
-            "CPU_usage": 43.0,
-            "RAM_usage": 123516,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -711,47 +609,11 @@
         "LLM_results": [
           {
             "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/anagram_Exercism-typescript-FilipeCerejo/claude/ClaudeSonnet4_anagram_v1.ts",
-            "log": "",
-            "execution_time_ms": 461,
-            "CPU_usage": 47.0,
-            "RAM_usage": 124804,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "typescript_anagram_Exercism-typescript-FilipeCerejo_FilipeCerejo",
-        "filename": "anagram.ts",
-        "language": "typescript",
-        "LLM_results": [
-          {
-            "LLM_type": "claude",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/anagram_Exercism-typescript-FilipeCerejo/claude/ClaudeSonnet4_anagram_v1.js",
             "log": "",
             "execution_time_ms": 453,
             "CPU_usage": 44.0,
             "RAM_usage": 124368,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "typescript_anagram_Exercism-typescript-FilipeCerejo_FilipeCerejo",
-        "filename": "anagram.ts",
-        "language": "typescript",
-        "LLM_results": [
-          {
-            "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/anagram_Exercism-typescript-FilipeCerejo/gemini/GeminiFlash_anagram_v1.js",
-            "log": "",
-            "execution_time_ms": 379,
-            "CPU_usage": 50.0,
-            "RAM_usage": 123176,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -777,24 +639,6 @@
         ]
       },
       {
-        "id": "typescript_anagram_Exercism-typescript-FilipeCerejo_FilipeCerejo",
-        "filename": "anagram.ts",
-        "language": "typescript",
-        "LLM_results": [
-          {
-            "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/anagram_Exercism-typescript-FilipeCerejo/gemini/GeminiFlash_anagram_v1.ts",
-            "log": "",
-            "execution_time_ms": 438,
-            "CPU_usage": 45.0,
-            "RAM_usage": 123208,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
         "id": "typescript_anagram_Exercism-typescript-alemarr_alemarr",
         "filename": "anagram.ts",
         "language": "typescript",
@@ -806,42 +650,6 @@
             "execution_time_ms": 500,
             "CPU_usage": 45.0,
             "RAM_usage": 124940,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "typescript_anagram_Exercism-typescript-alemarr_alemarr",
-        "filename": "anagram.ts",
-        "language": "typescript",
-        "LLM_results": [
-          {
-            "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/anagram_Exercism-typescript-alemarr/claude/ClaudeSonnet4_anagram_v1.js",
-            "log": "",
-            "execution_time_ms": 399,
-            "CPU_usage": 48.0,
-            "RAM_usage": 125044,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "typescript_anagram_Exercism-typescript-alemarr_alemarr",
-        "filename": "anagram.ts",
-        "language": "typescript",
-        "LLM_results": [
-          {
-            "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/anagram_Exercism-typescript-alemarr/gemini/GeminiFlash_anagram_v1.ts",
-            "log": "",
-            "execution_time_ms": 574,
-            "CPU_usage": 47.0,
-            "RAM_usage": 125608,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -885,24 +693,6 @@
         ]
       },
       {
-        "id": "typescript_anagram_Exercism-typescript-alemarr_alemarr",
-        "filename": "anagram.ts",
-        "language": "typescript",
-        "LLM_results": [
-          {
-            "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/anagram_Exercism-typescript-alemarr/claude/ClaudeSonnet4_anagram_v1.ts",
-            "log": "",
-            "execution_time_ms": 511,
-            "CPU_usage": 45.0,
-            "RAM_usage": 125168,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
         "id": "typescript_anagram_exercism-javascript-samajammin_samajammin",
         "filename": "anagram.ts",
         "language": "typescript",
@@ -914,24 +704,6 @@
             "execution_time_ms": 423,
             "CPU_usage": 46.0,
             "RAM_usage": 126228,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "typescript_anagram_exercism-javascript-samajammin_samajammin",
-        "filename": "anagram.ts",
-        "language": "typescript",
-        "LLM_results": [
-          {
-            "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/anagram_exercism-javascript-samajammin/claude/ClaudeSonnet4_anagram_v1.ts",
-            "log": "",
-            "execution_time_ms": 499,
-            "CPU_usage": 46.0,
-            "RAM_usage": 123992,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -957,17 +729,17 @@
         ]
       },
       {
-        "id": "typescript_anagram_exercism-javascript-samajammin_samajammin",
+        "id": "typescript_anagram_wackerow",
         "filename": "anagram.ts",
         "language": "typescript",
         "LLM_results": [
           {
-            "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/anagram_exercism-javascript-samajammin/gemini/GeminiFlash_anagram_v1.js",
+            "LLM_type": "openAI",
+            "path": "typescript/anagram_exercism-wackerow/openAI/ChatGPT4_anagram_v1.ts",
             "log": "",
-            "execution_time_ms": 426,
-            "CPU_usage": 50.0,
-            "RAM_usage": 124356,
+            "execution_time_ms": 1641,
+            "CPU_usage": 61.0,
+            "RAM_usage": 128276,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -975,17 +747,89 @@
         ]
       },
       {
-        "id": "typescript_anagram_exercism-javascript-samajammin_samajammin",
+        "id": "typescript_anagram_wackerow",
+        "filename": "anagram.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "typescript/anagram_exercism-wackerow/claude/ClaudeSonnet4_anagram_v1.ts",
+            "log": "",
+            "execution_time_ms": 503,
+            "CPU_usage": 84.0,
+            "RAM_usage": 128732,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "typescript_anagram_wackerow",
         "filename": "anagram.ts",
         "language": "typescript",
         "LLM_results": [
           {
             "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/anagram_exercism-javascript-samajammin/gemini/GeminiFlash_anagram_v1.ts",
+            "path": "typescript/anagram_exercism-wackerow/gemini/GeminiFlash_anagram_v1.ts",
             "log": "",
-            "execution_time_ms": 343,
-            "CPU_usage": 72.0,
-            "RAM_usage": 124472,
+            "execution_time_ms": 806,
+            "CPU_usage": 92.0,
+            "RAM_usage": 129708,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "typescript_anagram_samajammin",
+        "filename": "anagram.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "typescript/anagram_exercism-samajammin/openAI/ChatGPT4_anagram_v1.ts",
+            "log": "",
+            "execution_time_ms": 622,
+            "CPU_usage": 67.0,
+            "RAM_usage": 130240,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "typescript_anagram_samajammin",
+        "filename": "anagram.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "typescript/anagram_exercism-samajammin/gemini/GeminiFlash_anagram_v1.ts",
+            "log": "",
+            "execution_time_ms": 3757,
+            "CPU_usage": 33.0,
+            "RAM_usage": 129608,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "typescript_anagram_samajammin",
+        "filename": "anagram.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "typescript/anagram_exercism-samajammin/claude/ClaudeSonnet4_anagram_v1.ts",
+            "log": "",
+            "execution_time_ms": 668,
+            "CPU_usage": 87.0,
+            "RAM_usage": 129308,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -1000,30 +844,12 @@
         "language": "java",
         "LLM_results": [
           {
-            "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/anagram_joshiraez/claude/ClaudeSonnet4_Anagram_v1.java",
-            "log": "",
-            "execution_time_ms": 120.00000000000001,
-            "CPU_usage": 53.0,
-            "RAM_usage": 46440,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "Java_anagram_Exercism (java_rabestro)",
-        "filename": "Anagram.java",
-        "language": "java",
-        "LLM_results": [
-          {
             "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/anagram_Exercism_java_rabestro/openAI/ChatGPT4_Anagram_v1.java",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/anagram_joshiraez/openAI/ChatGPT4_Anagram_v1.java",
             "log": "",
-            "execution_time_ms": 169.99999999999997,
-            "CPU_usage": 50.0,
-            "RAM_usage": 53300,
+            "execution_time_ms": 340.0,
+            "CPU_usage": 27.0,
+            "RAM_usage": 46600,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -1036,12 +862,12 @@
         "language": "java",
         "LLM_results": [
           {
-            "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/anagram_joshiraez/openAI/ChatGPT4_Anagram_v1.java",
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/anagram_joshiraez/claude/ClaudeSonnet4_Anagram_v1.java",
             "log": "",
-            "execution_time_ms": 110.0,
-            "CPU_usage": 101.0,
-            "RAM_usage": 46672,
+            "execution_time_ms": 350.0,
+            "CPU_usage": 43.0,
+            "RAM_usage": 46660,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -1057,9 +883,9 @@
             "LLM_type": "gemini",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/anagram_joshiraez/gemini/GeminiFlash_Anagram_v1.java",
             "log": "",
-            "execution_time_ms": 110.0,
-            "CPU_usage": 68.0,
-            "RAM_usage": 46428,
+            "execution_time_ms": 1530.0,
+            "CPU_usage": 56.0,
+            "RAM_usage": 46736,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -1075,9 +901,9 @@
             "LLM_type": "gemini",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/anagram_Exercism_java_rabestro/gemini/GeminiFlash_Anagram_v1.java",
             "log": "",
-            "execution_time_ms": 660.0,
-            "CPU_usage": 92.0,
-            "RAM_usage": 56956,
+            "execution_time_ms": 450.0,
+            "CPU_usage": 35.0,
+            "RAM_usage": 57608,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -1093,9 +919,189 @@
             "LLM_type": "claude",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/anagram_Exercism_java_rabestro/claude/ClaudeSonnet4_Anagram_v1.java",
             "log": "",
-            "execution_time_ms": 250.0,
-            "CPU_usage": 96.0,
-            "RAM_usage": 53400,
+            "execution_time_ms": 460.0,
+            "CPU_usage": 34.0,
+            "RAM_usage": 57156,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "Java_anagram_Exercism (java_rabestro)",
+        "filename": "Anagram.java",
+        "language": "java",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/anagram_Exercism_java_rabestro/openAI/ChatGPT4_Anagram_v1.java",
+            "log": "",
+            "execution_time_ms": 450.0,
+            "CPU_usage": 36.0,
+            "RAM_usage": 57624,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "java_anagram_ThomasZumsteg",
+        "filename": "Anagram.java",
+        "language": "java",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "java/anagram_exercism-ThomasZumsteg/openAI/ChatGPT4_Anagram_v1.java",
+            "log": "",
+            "execution_time_ms": 340.0,
+            "CPU_usage": 45.0,
+            "RAM_usage": 53304,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "java_anagram_ThomasZumsteg",
+        "filename": "Anagram.java",
+        "language": "java",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "java/anagram_exercism-ThomasZumsteg/claude/ClaudeSonnet4_Anagram_v1.java",
+            "log": "",
+            "execution_time_ms": 440.0,
+            "CPU_usage": 43.0,
+            "RAM_usage": 53600,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "java_anagram_johannesrave-education",
+        "filename": "Anagram.java",
+        "language": "java",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "java/anagram_exercism-johannesrave-education/openAI/ChatGPT4_Anagram_v1.java",
+            "log": "",
+            "execution_time_ms": 350.0,
+            "CPU_usage": 72.0,
+            "RAM_usage": 53268,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "java_anagram_johannesrave-education",
+        "filename": "Anagram.java",
+        "language": "java",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "java/anagram_exercism-johannesrave-education/claude/ClaudeSonnet4_Anagram_v1.java",
+            "log": "",
+            "execution_time_ms": 360.0,
+            "CPU_usage": 51.0,
+            "RAM_usage": 54144,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "java_anagram_johannesrave-education",
+        "filename": "Anagram.java",
+        "language": "java",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "java/anagram_exercism-johannesrave-education/gemini/GeminiFlash_Anagram_v1.java",
+            "log": "",
+            "execution_time_ms": 360.0,
+            "CPU_usage": 61.0,
+            "RAM_usage": 57536,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "java_anagram_ThomasZumsteg",
+        "filename": "Anagram.java",
+        "language": "java",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "java/anagram_exercism-ThomasZumsteg/gemini/GeminiFlash_Anagram_v1.java",
+            "log": "",
+            "execution_time_ms": 350.0,
+            "CPU_usage": 47.0,
+            "RAM_usage": 53684,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "java_anagram_uzilan",
+        "filename": "Anagram.java",
+        "language": "java",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "java/anagram_exercism-uzilan/openAI/ChatGPT4_Anagram_v1.java",
+            "log": "",
+            "execution_time_ms": 360.0,
+            "CPU_usage": 34.0,
+            "RAM_usage": 47048,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "java_anagram_uzilan",
+        "filename": "Anagram.java",
+        "language": "java",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "java/anagram_exercism-uzilan/claude/ClaudeSonnet4_Anagram_v1.java",
+            "log": "",
+            "execution_time_ms": 350.0,
+            "CPU_usage": 31.0,
+            "RAM_usage": 46672,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "java_anagram_uzilan",
+        "filename": "Anagram.java",
+        "language": "java",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "java/anagram_exercism-uzilan/gemini/GeminiFlash_Anagram_v1.java",
+            "log": "",
+            "execution_time_ms": 370.0,
+            "CPU_usage": 37.0,
+            "RAM_usage": 46944,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -1105,53 +1111,89 @@
     ],
     "c": [
       {
-        "id": "c_anagram_Exercism (m3g4d1v3r)",
-        "filename": "anagram.c",
-        "language": "c",
-        "LLM_results": [
-          {
-            "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/anagram_Exercism_m3g4d1v3r/claude/ClaudeSonnet4_anagram_v1.c",
-            "log": "",
-            "execution_time_ms": 0.560543,
-            "CPU_usage": "44",
-            "RAM_usage": "8576",
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "c_anagram_Exercism (m3g4d1v3r)",
-        "filename": "anagram.c",
-        "language": "c",
-        "LLM_results": [
-          {
-            "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/anagram_Exercism_m3g4d1v3r/claude/ClaudeSonnet4_anagram_v1.c",
-            "log": "",
-            "execution_time_ms": 1.873714,
-            "CPU_usage": "20",
-            "RAM_usage": "8704",
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "c_anagram_Exercism (attilahorvath)",
+        "id": "c_anagram_Exercism (ThomasZumsteg)",
         "filename": "anagram.c",
         "language": "c",
         "LLM_results": [
           {
             "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/anagram_Exercism_attilahorvath/openAI/ChatGPT4_anagram_v1.c",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/anagram_Exercism_ThomasZumsteg/openAI/ChatGPT4_anagram_v1.c",
             "log": "",
-            "execution_time_ms": 0.609085,
-            "CPU_usage": "55",
-            "RAM_usage": "8704",
+            "execution_time_ms": null,
+            "CPU_usage": null,
+            "RAM_usage": null,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 1"
+          }
+        ]
+      },
+      {
+        "id": "c_anagram_Exercism (ThomasZumsteg)",
+        "filename": "anagram.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/anagram_Exercism_ThomasZumsteg/claude/ClaudeSonnet4_anagram_v1.c",
+            "log": "",
+            "execution_time_ms": null,
+            "CPU_usage": null,
+            "RAM_usage": null,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 1"
+          }
+        ]
+      },
+      {
+        "id": "c_anagram_Exercism (m3g4d1v3r)",
+        "filename": "anagram.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/anagram_Exercism_m3g4d1v3r/openAI/ChatGPT4_anagram_v1.c",
+            "log": "",
+            "execution_time_ms": 37.371684,
+            "CPU_usage": 11.0,
+            "RAM_usage": 8832,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "c_anagram_Exercism (ThomasZumsteg)",
+        "filename": "anagram.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/anagram_Exercism_ThomasZumsteg/gemini/GeminiFlash_anagram_v1.c",
+            "log": "",
+            "execution_time_ms": null,
+            "CPU_usage": null,
+            "RAM_usage": null,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 1"
+          }
+        ]
+      },
+      {
+        "id": "c_anagram_Exercism (m3g4d1v3r)",
+        "filename": "anagram.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/anagram_Exercism_m3g4d1v3r/claude/ClaudeSonnet4_anagram_v1.c",
+            "log": "",
+            "execution_time_ms": 13.373605,
+            "CPU_usage": 7.0,
+            "RAM_usage": 8576,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -1167,9 +1209,27 @@
             "LLM_type": "gemini",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/anagram_Exercism_m3g4d1v3r/gemini/GeminiFlash_anagram_v1.c",
             "log": "",
-            "execution_time_ms": 1.333753,
-            "CPU_usage": "24",
-            "RAM_usage": "8704",
+            "execution_time_ms": 31.149133,
+            "CPU_usage": 4.0,
+            "RAM_usage": 8448,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "c_anagram_Exercism (attilahorvath)",
+        "filename": "anagram.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/anagram_Exercism_attilahorvath/openAI/ChatGPT4_anagram_v1.c",
+            "log": "",
+            "execution_time_ms": 6.20351,
+            "CPU_usage": 32.0,
+            "RAM_usage": 8576,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -1185,29 +1245,11 @@
             "LLM_type": "claude",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/anagram_Exercism_attilahorvath/claude/ClaudeSonnet4_anagram_v1.c",
             "log": "",
-            "execution_time_ms": 0.805002,
-            "CPU_usage": "36",
-            "RAM_usage": "8704",
+            "execution_time_ms": 3.33038,
+            "CPU_usage": 26.0,
+            "RAM_usage": 8704,
             "regressionTestPassed": true,
             "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "c_anagram_Exercism (vlzware)",
-        "filename": "anagram.c",
-        "language": "c",
-        "LLM_results": [
-          {
-            "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/anagram_Exercism_vlzware/openAI/ChatGPT4_anagram_v1.c",
-            "log": "",
-            "execution_time_ms": 3.935053,
-            "CPU_usage": "7",
-            "RAM_usage": "8704",
-            "regressionTestPassed": false,
-            "success": false,
             "error_message": null
           }
         ]
@@ -1221,29 +1263,11 @@
             "LLM_type": "gemini",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/anagram_Exercism_attilahorvath/gemini/GeminiFlash_anagram_v1.c",
             "log": "",
-            "execution_time_ms": 0.460127,
-            "CPU_usage": "45",
-            "RAM_usage": "8704",
+            "execution_time_ms": 31.015091,
+            "CPU_usage": 4.0,
+            "RAM_usage": 8704,
             "regressionTestPassed": true,
             "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "c_anagram_Exercism (vlzware)",
-        "filename": "anagram.c",
-        "language": "c",
-        "LLM_results": [
-          {
-            "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/anagram_Exercism_vlzware/claude/ClaudeSonnet4_anagram_v1.c",
-            "log": "",
-            "execution_time_ms": 0.616918,
-            "CPU_usage": "44",
-            "RAM_usage": "8704",
-            "regressionTestPassed": false,
-            "success": false,
             "error_message": null
           }
         ]
@@ -1257,12 +1281,156 @@
             "LLM_type": "gemini",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/anagram_Exercism_vlzware/gemini/GeminiFlash_anagram_v1.c",
             "log": "",
-            "execution_time_ms": 3.499885,
-            "CPU_usage": "9",
-            "RAM_usage": "8704",
+            "execution_time_ms": 18.298988,
+            "CPU_usage": 9.0,
+            "RAM_usage": 8576,
             "regressionTestPassed": false,
             "success": false,
             "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "c_anagram_Exercism (vlzware)",
+        "filename": "anagram.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/anagram_Exercism_vlzware/openAI/ChatGPT4_anagram_v1.c",
+            "log": "",
+            "execution_time_ms": 5.183966,
+            "CPU_usage": 31.0,
+            "RAM_usage": 8832,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "c_anagram_Exercism (vlzware)",
+        "filename": "anagram.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/anagram_Exercism_vlzware/claude/ClaudeSonnet4_anagram_v1.c",
+            "log": "",
+            "execution_time_ms": 9.157098,
+            "CPU_usage": 18.0,
+            "RAM_usage": 8448,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "c_anagram_yorange1",
+        "filename": "anagram.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "c/anagram_exercism-yorange1/openAI/ChatGPT4_anagram_v1.c",
+            "log": "",
+            "execution_time_ms": 4.418236,
+            "CPU_usage": 12.0,
+            "RAM_usage": 8704,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "c_anagram_yorange1",
+        "filename": "anagram.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "c/anagram_exercism-yorange1/claude/ClaudeSonnet4_anagram_v1.c",
+            "log": "",
+            "execution_time_ms": 9.424309,
+            "CPU_usage": 14.0,
+            "RAM_usage": 8704,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "c_anagram_yorange1",
+        "filename": "anagram.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "c/anagram_exercism-yorange1/gemini/GeminiFlash_anagram_v1.c",
+            "log": "",
+            "execution_time_ms": 16.581395,
+            "CPU_usage": 5.0,
+            "RAM_usage": 8704,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "c_anagram_IrvinRamiA",
+        "filename": "anagram.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "c/anagram_exercism-IrvinRamiA/openAI/ChatGPT4_anagram_v1.c",
+            "log": "",
+            "execution_time_ms": 6.832543,
+            "CPU_usage": 10.0,
+            "RAM_usage": 8704,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "c_anagram_IrvinRamiA",
+        "filename": "anagram.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "c/anagram_exercism-IrvinRamiA/claude/ClaudeSonnet4_anagram_v1.c",
+            "log": "",
+            "execution_time_ms": 4.093025,
+            "CPU_usage": 21.0,
+            "RAM_usage": 8704,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "c_anagram_IrvinRamiA",
+        "filename": "anagram.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "c/anagram_exercism-IrvinRamiA/gemini/GeminiFlash_anagram_v1.c",
+            "log": "",
+            "execution_time_ms": 32.946372,
+            "CPU_usage": 18.0,
+            "RAM_usage": 8704,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 245"
           }
         ]
       }
@@ -1331,168 +1499,6 @@
             "LLM_type": "claude",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/anagram_Exercism_cmccandless/claude/ClaudeSonnet4_anagram_v1.cpp",
             "log": "",
-            "execution_time_ms": 5.215265,
-            "CPU_usage": "29",
-            "RAM_usage": "10496",
-            "regressionTestPassed": false,
-            "success": false,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "cpp_anagram_Exercism (MaxyMoos)",
-        "filename": "anagram.cpp",
-        "language": "cpp",
-        "LLM_results": [
-          {
-            "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/anagram_Exercism_MaxyMoos/openAI/ChatGPT4_anagram_v1.cpp",
-            "log": "",
-            "execution_time_ms": 2.057756,
-            "CPU_usage": "66",
-            "RAM_usage": "10496",
-            "regressionTestPassed": false,
-            "success": false,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "cpp_anagram_Exercism (MaxyMoos)",
-        "filename": "anagram.cpp",
-        "language": "cpp",
-        "LLM_results": [
-          {
-            "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/anagram_Exercism_MaxyMoos/claude/ClaudeSonnet4_anagram_v1.cpp",
-            "log": "",
-            "execution_time_ms": 3.069801,
-            "CPU_usage": "42",
-            "RAM_usage": "10496",
-            "regressionTestPassed": false,
-            "success": false,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "cpp_anagram_Exercism (MaxyMoos)",
-        "filename": "anagram.cpp",
-        "language": "cpp",
-        "LLM_results": [
-          {
-            "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/anagram_Exercism_MaxyMoos/openAI/ChatGPT4_anagram_v1.cpp",
-            "log": "",
-            "execution_time_ms": 6.482543,
-            "CPU_usage": 21.0,
-            "RAM_usage": 10368,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "cpp_anagram_Exercism (MaxyMoos)",
-        "filename": "anagram.cpp",
-        "language": "cpp",
-        "LLM_results": [
-          {
-            "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/anagram_Exercism_MaxyMoos/claude/ClaudeSonnet4_anagram_v1.cpp",
-            "log": "",
-            "execution_time_ms": 4.85072,
-            "CPU_usage": 27.0,
-            "RAM_usage": 10368,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "cpp_anagram_Exercism (cmccandless)",
-        "filename": "anagram.cpp",
-        "language": "cpp",
-        "LLM_results": [
-          {
-            "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/anagram_Exercism_cmccandless/claude/ClaudeSonnet4_anagram_v1.cpp",
-            "log": "",
-            "execution_time_ms": 3.192397,
-            "CPU_usage": 39.0,
-            "RAM_usage": 10240,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "cpp_anagram_Exercism (MaxyMoos)",
-        "filename": "anagram.cpp",
-        "language": "cpp",
-        "LLM_results": [
-          {
-            "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/anagram_Exercism_MaxyMoos/claude/ClaudeSonnet4_anagram_v1.cpp",
-            "log": "",
-            "execution_time_ms": 21.136548,
-            "CPU_usage": 7.0,
-            "RAM_usage": 10496,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "cpp_anagram_Exercism (MaxyMoos)",
-        "filename": "anagram.cpp",
-        "language": "cpp",
-        "LLM_results": [
-          {
-            "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/anagram_Exercism_MaxyMoos/openAI/ChatGPT4_anagram_v1.cpp",
-            "log": "",
-            "execution_time_ms": 27.834647,
-            "CPU_usage": 5.0,
-            "RAM_usage": 10496,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "cpp_anagram_Exercism (cmccandless)",
-        "filename": "anagram.cpp",
-        "language": "cpp",
-        "LLM_results": [
-          {
-            "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/anagram_Exercism_cmccandless/claude/ClaudeSonnet4_anagram_v1.cpp",
-            "log": "",
-            "execution_time_ms": 20.512546,
-            "CPU_usage": 8.0,
-            "RAM_usage": 10240,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "cpp_anagram_Exercism (cmccandless)",
-        "filename": "anagram.cpp",
-        "language": "cpp",
-        "LLM_results": [
-          {
-            "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/anagram_Exercism_cmccandless/claude/ClaudeSonnet4_anagram_v1.cpp",
-            "log": "",
             "execution_time_ms": 4.10832,
             "CPU_usage": 47.0,
             "RAM_usage": 10496,
@@ -1537,45 +1543,225 @@
             "error_message": null
           }
         ]
-      }
-    ],
-    "go": [
-      {
-        "id": "go_anagram_Exercism (go_rootulp)",
-        "filename": "anagram.go",
-        "language": "go",
-        "LLM_results": [
-          {
-            "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/anagram_Exercism_go_rootulp/gemini/GeminiFlash_anagram_v1.go",
-            "log": "",
-            "execution_time_ms": 6120,
-            "CPU_usage": 48.0,
-            "RAM_usage": 231656,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
       },
       {
-        "id": "go_anagram_Exercism (go_rootulp)",
-        "filename": "anagram.go",
-        "language": "go",
+        "id": "cpp_anagram_johnngugi",
+        "filename": "anagram.cpp",
+        "language": "cpp",
         "LLM_results": [
           {
             "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/anagram_Exercism_go_rootulp/claude/ClaudeSonnet4_anagram_v1.go",
+            "path": "cpp/anagram_exercism-johnngugi/claude/ClaudeSonnet4_anagram_v1.cpp",
             "log": "",
-            "execution_time_ms": 6149,
-            "CPU_usage": 48.0,
-            "RAM_usage": 224792,
+            "execution_time_ms": 4.710363,
+            "CPU_usage": 56.0,
+            "RAM_usage": 10496,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
           }
         ]
       },
+      {
+        "id": "cpp_anagram_johnngugi",
+        "filename": "anagram.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "cpp/anagram_exercism-johnngugi/openAI/ChatGPT4_anagram_v1.cpp",
+            "log": "",
+            "execution_time_ms": null,
+            "CPU_usage": null,
+            "RAM_usage": null,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 2"
+          }
+        ]
+      },
+      {
+        "id": "cpp_anagram_Akshive",
+        "filename": "anagram.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "cpp/anagram_exercism-Akshive/openAI/ChatGPT4_anagram_v1.cpp",
+            "log": "",
+            "execution_time_ms": null,
+            "CPU_usage": null,
+            "RAM_usage": null,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 2"
+          }
+        ]
+      },
+      {
+        "id": "cpp_anagram_johnngugi",
+        "filename": "anagram.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "cpp/anagram_exercism-johnngugi/gemini/GeminiFlash_anagram_v1.cpp",
+            "log": "",
+            "execution_time_ms": null,
+            "CPU_usage": null,
+            "RAM_usage": null,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 2"
+          }
+        ]
+      },
+      {
+        "id": "cpp_anagram_Akshive",
+        "filename": "anagram.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "cpp/anagram_exercism-Akshive/gemini/GeminiFlash_anagram_v1.cpp",
+            "log": "",
+            "execution_time_ms": null,
+            "CPU_usage": null,
+            "RAM_usage": null,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 2"
+          }
+        ]
+      },
+      {
+        "id": "cpp_anagram_nayefc",
+        "filename": "anagram.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "cpp/anagram_exercism-nayefc/openAI/ChatGPT4_anagram_v1.cpp",
+            "log": "",
+            "execution_time_ms": 10.998026,
+            "CPU_usage": 23.0,
+            "RAM_usage": 10496,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "cpp_anagram_nayefc",
+        "filename": "anagram.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "cpp/anagram_exercism-nayefc/claude/ClaudeSonnet4_anagram_v1.cpp",
+            "log": "",
+            "execution_time_ms": 9.852936,
+            "CPU_usage": 52.0,
+            "RAM_usage": 10496,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "cpp_anagram_nayefc",
+        "filename": "anagram.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "cpp/anagram_exercism-nayefc/gemini/GeminiFlash_anagram_v1.cpp",
+            "log": "",
+            "execution_time_ms": 12.269826,
+            "CPU_usage": 29.0,
+            "RAM_usage": 10496,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "cpp_anagram_Akshive",
+        "filename": "anagram.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "cpp/anagram_exercism-Akshive/claude/ClaudeSonnet4_anagram_v1.cpp",
+            "log": "",
+            "execution_time_ms": 5.643951,
+            "CPU_usage": 51.0,
+            "RAM_usage": 10240,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "cpp_anagram_tqa236",
+        "filename": "anagram.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "cpp/anagram_exercism-tqa236/openAI/ChatGPT4_anagram_v1.cpp",
+            "log": "",
+            "execution_time_ms": null,
+            "CPU_usage": null,
+            "RAM_usage": null,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 2"
+          }
+        ]
+      },
+      {
+        "id": "cpp_anagram_tqa236",
+        "filename": "anagram.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "cpp/anagram_exercism-tqa236/gemini/GeminiFlash_anagram_v1.cpp",
+            "log": "",
+            "execution_time_ms": null,
+            "CPU_usage": null,
+            "RAM_usage": null,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 2"
+          }
+        ]
+      },
+      {
+        "id": "cpp_anagram_tqa236",
+        "filename": "anagram.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "cpp/anagram_exercism-tqa236/claude/ClaudeSonnet4_anagram_v1.cpp",
+            "log": "",
+            "execution_time_ms": 29.188885,
+            "CPU_usage": 25.0,
+            "RAM_usage": 10496,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      }
+    ],
+    "go": [
       {
         "id": "go_anagram_Exercism (go_ThomasZumsteg)",
         "filename": "anagram.go",
@@ -1588,24 +1774,6 @@
             "execution_time_ms": 6110,
             "CPU_usage": 48.0,
             "RAM_usage": 229424,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "go_anagram_Exercism (go_rootulp)",
-        "filename": "anagram.go",
-        "language": "go",
-        "LLM_results": [
-          {
-            "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/anagram_Exercism_go_rootulp/gemini/GeminiFlash_anagram_v1.go",
-            "log": "",
-            "execution_time_ms": 6120,
-            "CPU_usage": 48.0,
-            "RAM_usage": 231656,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -1631,17 +1799,53 @@
         ]
       },
       {
-        "id": "go_anagram_Exercism (go_drapala)",
+        "id": "go_anagram_Exercism (go_rootulp)",
+        "filename": "anagram.go",
+        "language": "go",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/anagram_Exercism_go_rootulp/openAI/ChatGPT4_anagram_v1.go",
+            "log": "",
+            "execution_time_ms": 26280.0,
+            "CPU_usage": 95.0,
+            "RAM_usage": 201752,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "go_anagram_Exercism (go_rootulp)",
+        "filename": "anagram.go",
+        "language": "go",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/anagram_Exercism_go_rootulp/claude/ClaudeSonnet4_anagram_v1.go",
+            "log": "",
+            "execution_time_ms": 19189.999999999996,
+            "CPU_usage": 81.0,
+            "RAM_usage": 223208,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "go_anagram_Exercism (go_rootulp)",
         "filename": "anagram.go",
         "language": "go",
         "LLM_results": [
           {
             "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/anagram_Exercism_go_drapala/gemini/GeminiFlash_anagram_v1.go",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/anagram_Exercism_go_rootulp/gemini/GeminiFlash_anagram_v1.go",
             "log": "",
-            "execution_time_ms": 5790,
-            "CPU_usage": 178.0,
-            "RAM_usage": 206112,
+            "execution_time_ms": 17939.999999999996,
+            "CPU_usage": 87.0,
+            "RAM_usage": 221500,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -1657,9 +1861,9 @@
             "LLM_type": "openAI",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/anagram_Exercism_go_drapala/openAI/ChatGPT4_anagram_v1.go",
             "log": "",
-            "execution_time_ms": 6080,
-            "CPU_usage": 48.0,
-            "RAM_usage": 225312,
+            "execution_time_ms": 18350.0,
+            "CPU_usage": 68.0,
+            "RAM_usage": 234248,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -1667,17 +1871,17 @@
         ]
       },
       {
-        "id": "go_anagram_Exercism (go_ThomasZumsteg)",
+        "id": "go_anagram_Exercism (go_drapala)",
         "filename": "anagram.go",
         "language": "go",
         "LLM_results": [
           {
-            "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/anagram_Exercism_go_ThomasZumsteg/gemini/GeminiFlash_anagram_v1.go",
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/anagram_Exercism_go_drapala/claude/ClaudeSonnet4_anagram_v1.go",
             "log": "",
-            "execution_time_ms": 6110,
-            "CPU_usage": 48.0,
-            "RAM_usage": 229424,
+            "execution_time_ms": 17780.0,
+            "CPU_usage": 66.0,
+            "RAM_usage": 220640,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -1693,9 +1897,9 @@
             "LLM_type": "gemini",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/anagram_Exercism_go_drapala/gemini/GeminiFlash_anagram_v1.go",
             "log": "",
-            "execution_time_ms": 5790,
-            "CPU_usage": 178.0,
-            "RAM_usage": 206112,
+            "execution_time_ms": 17800.0,
+            "CPU_usage": 68.0,
+            "RAM_usage": 219772,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null

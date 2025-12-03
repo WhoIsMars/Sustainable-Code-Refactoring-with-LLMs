@@ -2,7 +2,7 @@ namespace targets {
 
 class Alien {
     public:
-        Alien(int x, int y) : x_coordinate(x), y_coordinate(y), health(3) {}
+        Alien(int x, int y) : x_coordinate(x), y_coordinate(y) {}
 
         int get_health() const {
             return health;
@@ -35,7 +35,7 @@ class Alien {
         int y_coordinate;
 
     private:
-        int health;
+        int health = 3;
 };
 
 }  // namespace targets

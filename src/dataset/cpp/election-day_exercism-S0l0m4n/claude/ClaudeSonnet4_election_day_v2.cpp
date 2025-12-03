@@ -38,8 +38,9 @@ void increment_vote_count(ElectionResult& result, int extra_votes) {
 ElectionResult& determine_result(vector<ElectionResult>& results) {
     ElectionResult* winner = &results[0];
     for (size_t i = 1; i < results.size(); ++i) {
-        if (results[i].votes > winner->votes)
+        if (results[i].votes > winner->votes) {
             winner = &results[i];
+        }
     }
     winner->name.insert(0, "President ");
     return *winner;

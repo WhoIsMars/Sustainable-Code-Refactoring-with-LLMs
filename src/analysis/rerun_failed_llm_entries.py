@@ -6,7 +6,7 @@ that failed regression tests to align LLM pass rates with base code improvements
 
 Focuses on Python LLM entries that failed regression tests.
 
-Author: Dataset Rebalancing Pipeline
+
 Date: 2025-11-18
 """
 
@@ -15,7 +15,7 @@ import subprocess
 import time
 from pathlib import Path
 from collections import defaultdict
-from typing import Dict, List, Set
+
 
 
 class FailedLLMRerunner:

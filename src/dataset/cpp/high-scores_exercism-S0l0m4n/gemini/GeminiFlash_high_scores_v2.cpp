@@ -2,7 +2,6 @@
 
 #include <algorithm>
 #include <vector>
-#include <limits> // Required for numeric_limits
 
 namespace arcade {
 
@@ -13,14 +12,12 @@ namespace arcade {
 
     int HighScores::latest_score() {
         // Return the latest score for this session.
-        return scores.empty() ? 0 : scores.back(); // Handle empty case
+        return scores.empty() ? 0 : scores.back();
     }
 
     int HighScores::personal_best() {
         // Return the highest score for this session.
-        if (scores.empty()) {
-            return 0; // Or throw an exception, depending on desired behavior for empty scores
-        }
+        if (scores.empty()) return 0;
         return *std::max_element(scores.begin(), scores.end());
     }
 
@@ -28,7 +25,7 @@ namespace arcade {
         // Return the top 3 scores for this session in descending order.
         std::vector<int> top_scores = scores;
         std::sort(top_scores.begin(), top_scores.end(), std::greater<int>());
-        top_scores.resize(std::min(3, (int)top_scores.size())); // Avoid out-of-bounds access
+        top_scores.resize(std::min<size_t>(3, top_scores.size()));
         return top_scores;
     }
 

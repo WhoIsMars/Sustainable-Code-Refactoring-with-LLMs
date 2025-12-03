@@ -23,8 +23,8 @@ namespace hexadecimal
             {
                 return 0;
             }
-            if (result > (INT_MAX / 16)) return 0; // Check for potential overflow before multiplication
-            result = (result << 4) | digit; // Use bitwise operations for faster multiplication by 16
+            if (result > (INT_MAX / 16)) return 0;
+            result = (result << 4) | digit;
         }
         return result;
     }

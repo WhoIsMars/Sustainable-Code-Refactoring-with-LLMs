@@ -1,17 +1,23 @@
 {
-  "execution_date": "2025-11-21 11:04:59",
+  "execution_date": "2025-12-03 01:14:43",
   "execution_metadata": {
     "total_tests": 16,
     "successful_tests": 16,
     "execution_time": "00h 00m 00s",
     "cluster": "cluster_phone_number",
     "test_type": "llm_v1",
-    "last_updated": "2025-11-21 11:04:59",
+    "last_updated": "2025-12-03 01:14:43",
     "selective_execution": {
       "languages": [
-        "cpp"
+        "python",
+        "c",
+        "javascript",
+        "java",
+        "go",
+        "cpp",
+        "typescript"
       ],
-      "timestamp": "2025-11-21 11:04:59"
+      "timestamp": "2025-12-03 01:14:43"
     }
   },
   "results": {
@@ -22,11 +28,29 @@
         "language": "python",
         "LLM_results": [
           {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/phone-number/openAI/ChatGPT4_phone-number_v1.py",
+            "log": "",
+            "execution_time_ms": 50.0,
+            "CPU_usage": 24.0,
+            "RAM_usage": 13952,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "phone-number_28",
+        "filename": "phone-number.py",
+        "language": "python",
+        "LLM_results": [
+          {
             "LLM_type": "claude",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/phone-number/claude/ClaudeSonnet4_phone-number_v1.py",
             "log": "",
             "execution_time_ms": 40.0,
-            "CPU_usage": 72.0,
+            "CPU_usage": 55.0,
             "RAM_usage": 13952,
             "regressionTestPassed": true,
             "success": true,
@@ -43,27 +67,9 @@
             "LLM_type": "gemini",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/phone-number/gemini/GeminiFlash_phone-number_v1.py",
             "log": "",
-            "execution_time_ms": 60.0,
-            "CPU_usage": 70.0,
-            "RAM_usage": 13952,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "phone-number_28",
-        "filename": "phone-number.py",
-        "language": "python",
-        "LLM_results": [
-          {
-            "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/phone-number/openAI/ChatGPT4_phone-number_v1.py",
-            "log": "",
-            "execution_time_ms": 70.0,
-            "CPU_usage": 69.0,
-            "RAM_usage": 13696,
+            "execution_time_ms": 40.0,
+            "CPU_usage": 25.0,
+            "RAM_usage": 13824,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -287,9 +293,263 @@
             "error_message": "Docker exit code: 1"
           }
         ]
+      },
+      {
+        "id": "javascript_phone-number_ThomasZumsteg",
+        "filename": "phone-number.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "javascript/phone-number_exercism-ThomasZumsteg/openAI/ChatGPT4_phone-number_v1.js",
+            "log": "",
+            "execution_time_ms": 430.0,
+            "CPU_usage": 38.0,
+            "RAM_usage": 81004,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_phone-number_ThomasZumsteg",
+        "filename": "phone-number.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "javascript/phone-number_exercism-ThomasZumsteg/claude/ClaudeSonnet4_phone-number_v1.js",
+            "log": "",
+            "execution_time_ms": 510.0,
+            "CPU_usage": 38.0,
+            "RAM_usage": 82500,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_phone-number_ThomasZumsteg",
+        "filename": "phone-number.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "javascript/phone-number_exercism-ThomasZumsteg/gemini/GeminiFlash_phone-number_v1.js",
+            "log": "",
+            "execution_time_ms": 490.0,
+            "CPU_usage": 41.0,
+            "RAM_usage": 82644,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_phone-number_SLIB53",
+        "filename": "babel.config.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "javascript/phone-number_exercism-SLIB53/openAI/ChatGPT4_babel_v1.js",
+            "log": "",
+            "execution_time_ms": 520.0,
+            "CPU_usage": 41.0,
+            "RAM_usage": 82336,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_phone-number_SLIB53",
+        "filename": "babel.config.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "javascript/phone-number_exercism-SLIB53/gemini/GeminiFlash_babel_v1.js",
+            "log": "",
+            "execution_time_ms": 459.99999999999994,
+            "CPU_usage": 38.0,
+            "RAM_usage": 81960,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_phone-number_SLIB53",
+        "filename": "babel.config.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "javascript/phone-number_exercism-SLIB53/claude/ClaudeSonnet4_babel_v1.js",
+            "log": "",
+            "execution_time_ms": 449.99999999999994,
+            "CPU_usage": 40.0,
+            "RAM_usage": 82684,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
       }
     ],
     "typescript": [
+      {
+        "id": "typescript_phone-number_Exercism-typescript-shybyte",
+        "filename": "phone-number.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/phone-number_Exercism-typescript-shybyte/openAI/ChatGPT4_phone-number_v1.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/phone-number_Exercism-typescript-shybyte/openAI/ChatGPT4_phone-number_v1.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/phone-number_Exercism-typescript-shybyte/claude/ClaudeSonnet4_phone-number_v1.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/phone-number_Exercism-typescript-shybyte/claude/ClaudeSonnet4_phone-number_v1.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/phone-number_Exercism-typescript-shybyte/gemini/GeminiFlash_phone-number_v1.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/phone-number_Exercism-typescript-shybyte/gemini/GeminiFlash_phone-number_v1.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "typescript_phone-number_Exercism-typescript-shybyte",
+        "filename": "phone-number.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/phone-number_Exercism-typescript-shybyte/openAI/ChatGPT4_phone-number_v1.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/phone-number_Exercism-typescript-shybyte/openAI/ChatGPT4_phone-number_v1.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/phone-number_Exercism-typescript-shybyte/claude/ClaudeSonnet4_phone-number_v1.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/phone-number_Exercism-typescript-shybyte/claude/ClaudeSonnet4_phone-number_v1.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/phone-number_Exercism-typescript-shybyte/gemini/GeminiFlash_phone-number_v1.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/phone-number_Exercism-typescript-shybyte/gemini/GeminiFlash_phone-number_v1.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
       {
         "id": "typescript_phone-number_Exercism-typescript-shybyte",
         "filename": "phone-number.ts",
@@ -435,6 +695,206 @@
             "error_message": null
           }
         ]
+      },
+      {
+        "id": "typescript_phone-number_Exercism-typescript-shybyte_shybyte",
+        "filename": "phone-number.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/phone-number_Exercism-typescript-shybyte/openAI/ChatGPT4_phone-number_v1.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/phone-number_Exercism-typescript-shybyte/openAI/ChatGPT4_phone-number_v1.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/phone-number_Exercism-typescript-shybyte/claude/ClaudeSonnet4_phone-number_v1.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/phone-number_Exercism-typescript-shybyte/claude/ClaudeSonnet4_phone-number_v1.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/phone-number_Exercism-typescript-shybyte/gemini/GeminiFlash_phone-number_v1.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/phone-number_Exercism-typescript-shybyte/gemini/GeminiFlash_phone-number_v1.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "typescript_phone-number_Exercism-typescript-shybyte_shybyte",
+        "filename": "phone-number.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/phone-number_Exercism-typescript-shybyte/openAI/ChatGPT4_phone-number_v1.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/phone-number_Exercism-typescript-shybyte/openAI/ChatGPT4_phone-number_v1.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/phone-number_Exercism-typescript-shybyte/claude/ClaudeSonnet4_phone-number_v1.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/phone-number_Exercism-typescript-shybyte/claude/ClaudeSonnet4_phone-number_v1.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/phone-number_Exercism-typescript-shybyte/gemini/GeminiFlash_phone-number_v1.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/phone-number_Exercism-typescript-shybyte/gemini/GeminiFlash_phone-number_v1.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "typescript_phone-number_wackerow",
+        "filename": "phone-number.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "typescript/phone-number_exercism-wackerow/claude/ClaudeSonnet4_phone-number_v1.ts",
+            "log": "",
+            "execution_time_ms": 429,
+            "CPU_usage": 45.0,
+            "RAM_usage": 127168,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "typescript_phone-number_wackerow",
+        "filename": "phone-number.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "typescript/phone-number_exercism-wackerow/openAI/ChatGPT4_phone-number_v1.ts",
+            "log": "",
+            "execution_time_ms": 462,
+            "CPU_usage": 45.0,
+            "RAM_usage": 129320,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "typescript_phone-number_wackerow",
+        "filename": "phone-number.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "typescript/phone-number_exercism-wackerow/gemini/GeminiFlash_phone-number_v1.ts",
+            "log": "",
+            "execution_time_ms": 286,
+            "CPU_usage": 85.0,
+            "RAM_usage": 128244,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
       }
     ],
     "java": [
@@ -444,12 +904,12 @@
         "language": "java",
         "LLM_results": [
           {
-            "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/phone-number_exercism-java-ThomasZumsteg/claude/ClaudeSonnet4_phone-number_v1.java",
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/phone-number_exercism-java-ThomasZumsteg/openAI/ChatGPT4_phone-number_v1.java",
             "log": "",
-            "execution_time_ms": 130.0,
-            "CPU_usage": 88.0,
-            "RAM_usage": 46660,
+            "execution_time_ms": 139.99999999999997,
+            "CPU_usage": 24.0,
+            "RAM_usage": 46464,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -462,12 +922,12 @@
         "language": "java",
         "LLM_results": [
           {
-            "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/phone-number_exercism-java-ThomasZumsteg/openAI/ChatGPT4_phone-number_v1.java",
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/phone-number_exercism-java-ThomasZumsteg/claude/ClaudeSonnet4_phone-number_v1.java",
             "log": "",
-            "execution_time_ms": 110.0,
-            "CPU_usage": 113.0,
-            "RAM_usage": 46688,
+            "execution_time_ms": 150.00000000000003,
+            "CPU_usage": 29.0,
+            "RAM_usage": 46684,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -483,9 +943,63 @@
             "LLM_type": "gemini",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/phone-number_exercism-java-ThomasZumsteg/gemini/GeminiFlash_phone-number_v1.java",
             "log": "",
-            "execution_time_ms": 110.0,
-            "CPU_usage": 93.0,
-            "RAM_usage": 46524,
+            "execution_time_ms": 169.99999999999997,
+            "CPU_usage": 29.0,
+            "RAM_usage": 46564,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "java_phone-number_ThomasZumsteg",
+        "filename": "PhoneNumber.java",
+        "language": "java",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "java/phone-number_exercism-ThomasZumsteg/openAI/ChatGPT4_PhoneNumber_v1.java",
+            "log": "",
+            "execution_time_ms": 120.0,
+            "CPU_usage": 64.0,
+            "RAM_usage": 46176,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "java_phone-number_ThomasZumsteg",
+        "filename": "PhoneNumber.java",
+        "language": "java",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "java/phone-number_exercism-ThomasZumsteg/claude/ClaudeSonnet4_PhoneNumber_v1.java",
+            "log": "",
+            "execution_time_ms": 160.0,
+            "CPU_usage": 86.0,
+            "RAM_usage": 46212,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "java_phone-number_ThomasZumsteg",
+        "filename": "PhoneNumber.java",
+        "language": "java",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "java/phone-number_exercism-ThomasZumsteg/gemini/GeminiFlash_PhoneNumber_v1.java",
+            "log": "",
+            "execution_time_ms": 150.0,
+            "CPU_usage": 53.0,
+            "RAM_usage": 46816,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -494,6 +1008,86 @@
       }
     ],
     "Java": [
+      {
+        "id": "Java_phone_number_Exercism (java_rabestro)",
+        "filename": "PhoneNumber.java",
+        "language": "Java",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/phone_number_Exercism_java_rabestro/openAI/ChatGPT4_PhoneNumber_v1.java",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/phone_number_Exercism_java_rabestro/claude/ClaudeSonnet4_PhoneNumber_v1.java",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/phone_number_Exercism_java_rabestro/gemini/GeminiFlash_PhoneNumber_v1.java",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "Java_phone_number_Exercism (java_rabestro)",
+        "filename": "PhoneNumber.java",
+        "language": "Java",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/phone_number_Exercism_java_rabestro/openAI/ChatGPT4_PhoneNumber_v1.java",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/phone_number_Exercism_java_rabestro/claude/ClaudeSonnet4_PhoneNumber_v1.java",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/phone_number_Exercism_java_rabestro/gemini/GeminiFlash_PhoneNumber_v1.java",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
       {
         "id": "Java_phone_number_Exercism (java_rabestro)",
         "filename": "PhoneNumber.java",
@@ -575,6 +1169,194 @@
             "error_message": null
           }
         ]
+      },
+      {
+        "id": "c_phone_number_Exercism (vlzware)",
+        "filename": "phone_number.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/phone_number_Exercism_vlzware/openAI/ChatGPT4_phone_number_v1.c",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/phone_number_Exercism_vlzware/claude/ClaudeSonnet4_phone_number_v1.c",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/phone_number_Exercism_vlzware/gemini/GeminiFlash_phone_number_v1.c",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "c_phone_number_Exercism (vlzware)",
+        "filename": "phone_number.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/phone_number_Exercism_vlzware/openAI/ChatGPT4_phone_number_v1.c",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/phone_number_Exercism_vlzware/claude/ClaudeSonnet4_phone_number_v1.c",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/phone_number_Exercism_vlzware/gemini/GeminiFlash_phone_number_v1.c",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "c_phone-number_maxclaus",
+        "filename": "phone_number.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/phone-number_exercism-maxclaus/openAI/ChatGPT4_phone_number_v1.c",
+            "log": "",
+            "execution_time_ms": 11.046126,
+            "CPU_usage": 4.0,
+            "RAM_usage": 8832,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "c_phone-number_maxclaus",
+        "filename": "phone_number.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/phone-number_exercism-maxclaus/claude/ClaudeSonnet4_phone_number_v1.c",
+            "log": "",
+            "execution_time_ms": 1.417922,
+            "CPU_usage": 22.0,
+            "RAM_usage": 8832,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "c_phone-number_maxclaus",
+        "filename": "phone_number.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/phone-number_exercism-maxclaus/gemini/GeminiFlash_phone_number_v1.c",
+            "log": "",
+            "execution_time_ms": 14.21893,
+            "CPU_usage": 13.0,
+            "RAM_usage": 8832,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 245"
+          }
+        ]
+      },
+      {
+        "id": "c_phone-number_yorange1",
+        "filename": "phone_number.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "c/phone-number_exercism-yorange1/openAI/ChatGPT4_phone_number_v1.c",
+            "log": "",
+            "execution_time_ms": 2.66776,
+            "CPU_usage": 10.0,
+            "RAM_usage": 8704,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 13"
+          }
+        ]
+      },
+      {
+        "id": "c_phone-number_yorange1",
+        "filename": "phone_number.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "c/phone-number_exercism-yorange1/claude/ClaudeSonnet4_phone_number_v1.c",
+            "log": "",
+            "execution_time_ms": 3.09822,
+            "CPU_usage": 12.0,
+            "RAM_usage": 8704,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "c_phone-number_yorange1",
+        "filename": "phone_number.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "c/phone-number_exercism-yorange1/gemini/GeminiFlash_phone_number_v1.c",
+            "log": "",
+            "execution_time_ms": 4.157848,
+            "CPU_usage": 15.0,
+            "RAM_usage": 8704,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
       }
     ],
     "cpp": [
@@ -619,6 +1401,166 @@
         ]
       },
       {
+        "id": "cpp_phone_number_Exercism (johnngugi)",
+        "filename": "phone_number.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/phone_number_Exercism_johnngugi/openAI/ChatGPT4_phone_number_v1.cpp",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/phone_number_Exercism_johnngugi/claude/ClaudeSonnet4_phone_number_v1.cpp",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/phone_number_Exercism_johnngugi/gemini/GeminiFlash_phone_number_v1.cpp",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "cpp_phone_number_Exercism (johnngugi)",
+        "filename": "phone_number.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/phone_number_Exercism_johnngugi/openAI/ChatGPT4_phone_number_v1.cpp",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/phone_number_Exercism_johnngugi/claude/ClaudeSonnet4_phone_number_v1.cpp",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/phone_number_Exercism_johnngugi/gemini/GeminiFlash_phone_number_v1.cpp",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "cpp_phone_number_Exercism (cmccandless)",
+        "filename": "phone_number.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/phone_number_Exercism_cmccandless/openAI/ChatGPT4_phone_number_v1.cpp",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/phone_number_Exercism_cmccandless/claude/ClaudeSonnet4_phone_number_v1.cpp",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/phone_number_Exercism_cmccandless/gemini/GeminiFlash_phone_number_v1.cpp",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "cpp_phone_number_Exercism (cmccandless)",
+        "filename": "phone_number.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/phone_number_Exercism_cmccandless/openAI/ChatGPT4_phone_number_v1.cpp",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/phone_number_Exercism_cmccandless/claude/ClaudeSonnet4_phone_number_v1.cpp",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/phone_number_Exercism_cmccandless/gemini/GeminiFlash_phone_number_v1.cpp",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
         "id": "cpp_phone_number_Exercism (cmccandless)",
         "filename": "phone_number.cpp",
         "language": "cpp",
@@ -699,13 +1641,93 @@
         ]
       },
       {
+        "id": "cpp_phone_number_Exercism (thefullarcticfox)",
+        "filename": "phone_number.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/phone_number_Exercism_thefullarcticfox/openAI/ChatGPT4_phone_number_v1.cpp",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/phone_number_Exercism_thefullarcticfox/claude/ClaudeSonnet4_phone_number_v1.cpp",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/phone_number_Exercism_thefullarcticfox/gemini/GeminiFlash_phone_number_v1.cpp",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "cpp_phone_number_Exercism (thefullarcticfox)",
+        "filename": "phone_number.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/phone_number_Exercism_thefullarcticfox/openAI/ChatGPT4_phone_number_v1.cpp",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/phone_number_Exercism_thefullarcticfox/claude/ClaudeSonnet4_phone_number_v1.cpp",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/phone_number_Exercism_thefullarcticfox/gemini/GeminiFlash_phone_number_v1.cpp",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
         "id": "cpp_phone-number_toemm",
         "filename": "phone_number.cpp",
         "language": "cpp",
         "LLM_results": [
           {
-            "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/phone-number_exercism-toemm/claude/ClaudeSonnet4_phone_number_v1.cpp",
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/phone-number_exercism-toemm/gemini/GeminiFlash_phone_number_v1.cpp",
             "log": "",
             "execution_time_ms": null,
             "CPU_usage": null,
@@ -722,8 +1744,8 @@
         "language": "cpp",
         "LLM_results": [
           {
-            "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/phone-number_exercism-toemm/gemini/GeminiFlash_phone_number_v1.cpp",
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/phone-number_exercism-toemm/claude/ClaudeSonnet4_phone_number_v1.cpp",
             "log": "",
             "execution_time_ms": null,
             "CPU_usage": null,
@@ -753,247 +1775,141 @@
         ]
       },
       {
-        "id": "cpp_phone_number_Exercism (johnngugi)",
+        "id": "cpp_phone-number_johnngugi",
         "filename": "phone_number.cpp",
         "language": "cpp",
         "LLM_results": [
           {
             "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/phone_number_Exercism_johnngugi/openAI/ChatGPT4_phone_number_v1.cpp",
+            "path": "cpp/phone-number_exercism-johnngugi/openAI/ChatGPT4_phone_number_v1.cpp",
             "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
-            "regressionTestPassed": true,
-            "success": null,
-            "error_message": null
-          },
+            "execution_time_ms": null,
+            "CPU_usage": null,
+            "RAM_usage": null,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 2"
+          }
+        ]
+      },
+      {
+        "id": "cpp_phone-number_johnngugi",
+        "filename": "phone_number.cpp",
+        "language": "cpp",
+        "LLM_results": [
           {
             "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/phone_number_Exercism_johnngugi/claude/ClaudeSonnet4_phone_number_v1.cpp",
+            "path": "cpp/phone-number_exercism-johnngugi/claude/ClaudeSonnet4_phone_number_v1.cpp",
             "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
+            "execution_time_ms": 3.181803,
+            "CPU_usage": 59.0,
+            "RAM_usage": 10368,
             "regressionTestPassed": true,
-            "success": null,
-            "error_message": null
-          },
-          {
-            "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/phone_number_Exercism_johnngugi/gemini/GeminiFlash_phone_number_v1.cpp",
-            "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
-            "regressionTestPassed": true,
-            "success": null,
+            "success": true,
             "error_message": null
           }
         ]
       },
       {
-        "id": "cpp_phone_number_Exercism (johnngugi)",
+        "id": "cpp_phone-number_johnngugi",
         "filename": "phone_number.cpp",
         "language": "cpp",
         "LLM_results": [
           {
-            "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/phone_number_Exercism_johnngugi/openAI/ChatGPT4_phone_number_v1.cpp",
-            "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
-            "regressionTestPassed": true,
-            "success": null,
-            "error_message": null
-          },
-          {
-            "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/phone_number_Exercism_johnngugi/claude/ClaudeSonnet4_phone_number_v1.cpp",
-            "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
-            "regressionTestPassed": true,
-            "success": null,
-            "error_message": null
-          },
-          {
             "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/phone_number_Exercism_johnngugi/gemini/GeminiFlash_phone_number_v1.cpp",
+            "path": "cpp/phone-number_exercism-johnngugi/gemini/GeminiFlash_phone_number_v1.cpp",
             "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
-            "regressionTestPassed": true,
-            "success": null,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "cpp_phone_number_Exercism (cmccandless)",
-        "filename": "phone_number.cpp",
-        "language": "cpp",
-        "LLM_results": [
-          {
-            "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/phone_number_Exercism_cmccandless/openAI/ChatGPT4_phone_number_v1.cpp",
-            "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
-            "regressionTestPassed": true,
-            "success": null,
-            "error_message": null
-          },
-          {
-            "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/phone_number_Exercism_cmccandless/claude/ClaudeSonnet4_phone_number_v1.cpp",
-            "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
-            "regressionTestPassed": true,
-            "success": null,
-            "error_message": null
-          },
-          {
-            "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/phone_number_Exercism_cmccandless/gemini/GeminiFlash_phone_number_v1.cpp",
-            "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
-            "regressionTestPassed": true,
-            "success": null,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "cpp_phone_number_Exercism (cmccandless)",
-        "filename": "phone_number.cpp",
-        "language": "cpp",
-        "LLM_results": [
-          {
-            "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/phone_number_Exercism_cmccandless/openAI/ChatGPT4_phone_number_v1.cpp",
-            "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
-            "regressionTestPassed": true,
-            "success": null,
-            "error_message": null
-          },
-          {
-            "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/phone_number_Exercism_cmccandless/claude/ClaudeSonnet4_phone_number_v1.cpp",
-            "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
-            "regressionTestPassed": true,
-            "success": null,
-            "error_message": null
-          },
-          {
-            "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/phone_number_Exercism_cmccandless/gemini/GeminiFlash_phone_number_v1.cpp",
-            "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
-            "regressionTestPassed": true,
-            "success": null,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "cpp_phone_number_Exercism (thefullarcticfox)",
-        "filename": "phone_number.cpp",
-        "language": "cpp",
-        "LLM_results": [
-          {
-            "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/phone_number_Exercism_thefullarcticfox/openAI/ChatGPT4_phone_number_v1.cpp",
-            "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
-            "regressionTestPassed": true,
-            "success": null,
-            "error_message": null
-          },
-          {
-            "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/phone_number_Exercism_thefullarcticfox/claude/ClaudeSonnet4_phone_number_v1.cpp",
-            "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
-            "regressionTestPassed": true,
-            "success": null,
-            "error_message": null
-          },
-          {
-            "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/phone_number_Exercism_thefullarcticfox/gemini/GeminiFlash_phone_number_v1.cpp",
-            "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
-            "regressionTestPassed": true,
-            "success": null,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "cpp_phone_number_Exercism (thefullarcticfox)",
-        "filename": "phone_number.cpp",
-        "language": "cpp",
-        "LLM_results": [
-          {
-            "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/phone_number_Exercism_thefullarcticfox/openAI/ChatGPT4_phone_number_v1.cpp",
-            "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
-            "regressionTestPassed": true,
-            "success": null,
-            "error_message": null
-          },
-          {
-            "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/phone_number_Exercism_thefullarcticfox/claude/ClaudeSonnet4_phone_number_v1.cpp",
-            "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
-            "regressionTestPassed": true,
-            "success": null,
-            "error_message": null
-          },
-          {
-            "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/phone_number_Exercism_thefullarcticfox/gemini/GeminiFlash_phone_number_v1.cpp",
-            "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
-            "regressionTestPassed": true,
-            "success": null,
-            "error_message": null
+            "execution_time_ms": null,
+            "CPU_usage": null,
+            "RAM_usage": null,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 2"
           }
         ]
       }
     ],
     "go": [
+      {
+        "id": "go_phone_number_Exercism (go_rootulp)",
+        "filename": "phone_number.go",
+        "language": "go",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/phone_number_Exercism_go_rootulp/openAI/ChatGPT4_phone_number_v1.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/phone_number_Exercism_go_rootulp/claude/ClaudeSonnet4_phone_number_v1.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/phone_number_Exercism_go_rootulp/gemini/GeminiFlash_phone_number_v1.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "go_phone_number_Exercism (go_rootulp)",
+        "filename": "phone_number.go",
+        "language": "go",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/phone_number_Exercism_go_rootulp/openAI/ChatGPT4_phone_number_v1.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/phone_number_Exercism_go_rootulp/claude/ClaudeSonnet4_phone_number_v1.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/phone_number_Exercism_go_rootulp/gemini/GeminiFlash_phone_number_v1.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
       {
         "id": "go_phone_number_Exercism (go_rootulp)",
         "filename": "phone_number.go",
@@ -1064,6 +1980,166 @@
           {
             "LLM_type": "gemini",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/phone_number_Exercism_go_ThomasZumsteg/gemini/GeminiFlash_phone_number_v1.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "go_phone_number_Exercism (go_ThomasZumsteg)",
+        "filename": "phone_number.go",
+        "language": "go",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/phone_number_Exercism_go_ThomasZumsteg/openAI/ChatGPT4_phone_number_v1.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/phone_number_Exercism_go_ThomasZumsteg/claude/ClaudeSonnet4_phone_number_v1.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/phone_number_Exercism_go_ThomasZumsteg/gemini/GeminiFlash_phone_number_v1.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "go_phone_number_Exercism (go_ThomasZumsteg)",
+        "filename": "phone_number.go",
+        "language": "go",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/phone_number_Exercism_go_ThomasZumsteg/openAI/ChatGPT4_phone_number_v1.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/phone_number_Exercism_go_ThomasZumsteg/claude/ClaudeSonnet4_phone_number_v1.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/phone_number_Exercism_go_ThomasZumsteg/gemini/GeminiFlash_phone_number_v1.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "go_phone_number_Exercism (go_drapala)",
+        "filename": "phone_number.go",
+        "language": "go",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/phone_number_Exercism_go_drapala/openAI/ChatGPT4_phone_number_v1.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/phone_number_Exercism_go_drapala/claude/ClaudeSonnet4_phone_number_v1.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/phone_number_Exercism_go_drapala/gemini/GeminiFlash_phone_number_v1.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "go_phone_number_Exercism (go_drapala)",
+        "filename": "phone_number.go",
+        "language": "go",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/phone_number_Exercism_go_drapala/openAI/ChatGPT4_phone_number_v1.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/phone_number_Exercism_go_drapala/claude/ClaudeSonnet4_phone_number_v1.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/phone_number_Exercism_go_drapala/gemini/GeminiFlash_phone_number_v1.go",
             "log": "",
             "execution_time_ms": 1000,
             "CPU_usage": 50.0,

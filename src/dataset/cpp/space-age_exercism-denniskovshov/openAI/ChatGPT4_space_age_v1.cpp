@@ -8,8 +8,7 @@ namespace space_age {
     }
 
     // public
-    space_age::space_age(age_in_seconds earth_age_in_seconds) 
-        : _earth_age_in_seconds(earth_age_in_seconds) {
+    space_age::space_age(age_in_seconds earth_age_in_seconds) : _earth_age_in_seconds(earth_age_in_seconds) {
         assert(earth_age_in_seconds >= 0);
     }
 
@@ -18,34 +17,42 @@ namespace space_age {
     }
 
     age_in_years space_age::on_earth() const {
-        return age_on_planet(earth_years_on_earth);
+        static constexpr double factor = 1.0 / secs_in_earth_year;
+        return _earth_age_in_seconds * factor;
     }
 
     age_in_years space_age::on_mercury() const {
-        return age_on_planet(earth_years_on_mercury);
+        static constexpr double factor = 1.0 / (secs_in_earth_year * earth_years_on_mercury);
+        return _earth_age_in_seconds * factor;
     }
 
     age_in_years space_age::on_venus() const {
-        return age_on_planet(earth_years_on_venus);
+        static constexpr double factor = 1.0 / (secs_in_earth_year * earth_years_on_venus);
+        return _earth_age_in_seconds * factor;
     }
 
     age_in_years space_age::on_mars() const {
-        return age_on_planet(earth_years_on_mars);
+        static constexpr double factor = 1.0 / (secs_in_earth_year * earth_years_on_mars);
+        return _earth_age_in_seconds * factor;
     }
 
     age_in_years space_age::on_jupiter() const {
-        return age_on_planet(earth_years_on_jupiter);
+        static constexpr double factor = 1.0 / (secs_in_earth_year * earth_years_on_jupiter);
+        return _earth_age_in_seconds * factor;
     }
 
     age_in_years space_age::on_saturn() const {
-        return age_on_planet(earth_years_on_saturn);
+        static constexpr double factor = 1.0 / (secs_in_earth_year * earth_years_on_saturn);
+        return _earth_age_in_seconds * factor;
     }
 
     age_in_years space_age::on_uranus() const {
-        return age_on_planet(earth_years_on_uranus);
+        static constexpr double factor = 1.0 / (secs_in_earth_year * earth_years_on_uranus);
+        return _earth_age_in_seconds * factor;
     }
 
     age_in_years space_age::on_neptune() const {
-        return age_on_planet(earth_years_on_neptune);
+        static constexpr double factor = 1.0 / (secs_in_earth_year * earth_years_on_neptune);
+        return _earth_age_in_seconds * factor;
     }
 }  // namespace space_age

@@ -29,7 +29,7 @@ static const string second_line[] = {
 
 static const string first_sentence = "I know an old lady who swallowed ";
 static const string ending = "I don't know why she swallowed the fly. Perhaps she'll die.\n";
-static const string bird_special = "She swallowed the bird to catch the spider that wriggled and jiggled and tickled inside her.\n";
+static const string special_bird_line = "She swallowed the bird to catch the spider that wriggled and jiggled and tickled inside her.\n";
 
 string food_chain::repetition(int n)
 {
@@ -41,8 +41,11 @@ string food_chain::repetition(int n)
 		result += "She swallowed the " + key_word[i] + " to catch the " + key_word[i-1] + ".\n";
 	}
 	
-	result += bird_special;
-	
+	if (n > 2)
+	{
+		result += special_bird_line;
+	}
+
 	return result;
 }
 
@@ -63,10 +66,10 @@ string food_chain::response(int n)
 string food_chain::verse(int n)
 {
 	string result;
-	
+	result.reserve(300); // Pre-allocate memory
+
 	if (n < 8)
 	{
-		result.reserve(300); // Pre-allocate memory
 		result = first_sentence + second_line[n] + response(n) + ending;
 	}
 	else

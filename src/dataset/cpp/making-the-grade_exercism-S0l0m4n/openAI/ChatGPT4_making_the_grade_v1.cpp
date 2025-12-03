@@ -41,7 +41,7 @@ std::array<int, 4> letter_grades(int highest_score) {
 std::vector<std::string> student_ranking(const std::vector<int>& student_scores, const std::vector<std::string>& student_names) {
     std::vector<std::string> rankings;
     rankings.reserve(student_names.size());
-    for (size_t i = 0; i < student_names.size(); ++i) {
+    for (size_t i = 0; i < student_names.size(); i++) {
         rankings.emplace_back(std::to_string(i + 1) + ". " + student_names[i] + ": " + std::to_string(student_scores[i]));
     }
     return rankings;
@@ -51,8 +51,5 @@ std::vector<std::string> student_ranking(const std::vector<int>& student_scores,
 std::string perfect_score(const std::vector<int>& student_scores, const std::vector<std::string>& student_names) {
     const int perfect = 100;
     auto it = std::find(student_scores.begin(), student_scores.end(), perfect);
-    if (it != student_scores.end()) {
-        return student_names[std::distance(student_scores.begin(), it)];
-    }
-    return "";
+    return (it != student_scores.end()) ? student_names[std::distance(student_scores.begin(), it)] : "";
 }

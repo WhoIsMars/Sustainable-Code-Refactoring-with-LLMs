@@ -22,8 +22,8 @@ void increment_vote_count(ElectionResult& result, int extra_votes) {
 
 ElectionResult& determine_result(vector<ElectionResult>& results) {
     if (results.empty()) {
-        static ElectionResult empty_result{"", 0};
-        return empty_result;
+        static ElectionResult dummy_result{"", 0};
+        return dummy_result;
     }
 
     ElectionResult* winner = &results[0];

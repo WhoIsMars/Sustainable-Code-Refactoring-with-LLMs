@@ -26,3 +26,4 @@ Hexadecimal.prototype.toDecimal = function() {
 };
 
 export default Hexadecimal;
+export { hex };

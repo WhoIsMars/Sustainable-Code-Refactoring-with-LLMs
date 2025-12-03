@@ -2,7 +2,6 @@
 #include <string>
 #include <vector>
 #include <algorithm>
-#include <unordered_map>
 using namespace std;
 
 vector<string> anagram::anagram::matches(vector<string> v)
@@ -10,27 +9,20 @@ vector<string> anagram::anagram::matches(vector<string> v)
     vector<string> result;
     result.reserve(v.size());
     
-    if (anagram::anagram::word.empty()) {
-        return result;
-    }
+    string sorted_word = anagram::anagram::word;
+    transform(sorted_word.begin(), sorted_word.end(), sorted_word.begin(), ::tolower);
+    sort(sorted_word.begin(), sorted_word.end());
     
-    unordered_map<char, int> word_freq;
-    for (char c : anagram::anagram::word) {
-        word_freq[tolower(c)]++;
-    }
-    
-    for (const string& candidate : v) {
-        if (candidate.length() != anagram::anagram::word.length() || 
-            candidate == anagram::anagram::word) {
+    for (const auto& candidate : v) {
+        if (candidate.length() != anagram::anagram::word.length()) {
             continue;
         }
         
-        unordered_map<char, int> candidate_freq;
-        for (char c : candidate) {
-            candidate_freq[tolower(c)]++;
-        }
+        string sorted_candidate = candidate;
+        transform(sorted_candidate.begin(), sorted_candidate.end(), sorted_candidate.begin(), ::tolower);
+        sort(sorted_candidate.begin(), sorted_candidate.end());
         
-        if (word_freq == candidate_freq) {
+        if (sorted_candidate == sorted_word && candidate != anagram::anagram::word) {
             result.push_back(candidate);
         }
     }

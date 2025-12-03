@@ -2,16 +2,22 @@
 
 char transcription::to_rna(char ch)
 {
-	static const char lookup[256] = { 
-		['C'] = 'G', ['G'] = 'C', ['A'] = 'U', ['T'] = 'A' 
-	};
-	return lookup[static_cast<unsigned char>(ch)];
+    switch (ch)
+    {
+    case 'C': return 'G';
+    case 'G': return 'C';
+    case 'A': return 'U';
+    case 'T': return 'A';
+    default: return '\0';
+    }
 }
 
 std::string transcription::to_rna(const std::string& s)
 {
-	std::string result;
-	result.reserve(s.size());
-	for (char ch : s) result += to_rna(ch);
-	return result;
+    std::string result;
+    result.reserve(s.size());
+    for (char ch : s) {
+        result.push_back(to_rna(ch));
+    }
+    return result;
 }

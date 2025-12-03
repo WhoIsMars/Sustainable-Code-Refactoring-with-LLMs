@@ -1,17 +1,23 @@
 {
-  "execution_date": "2025-11-21 09:50:31",
+  "execution_date": "2025-12-02 15:09:53",
   "execution_metadata": {
     "total_tests": 25,
     "successful_tests": 25,
     "execution_time": "00h 01m 14s",
     "cluster": "cluster_food_chain",
     "test_type": "llm_v3",
-    "last_updated": "2025-11-21 09:50:31",
+    "last_updated": "2025-12-02 15:09:53",
     "selective_execution": {
       "languages": [
-        "cpp"
+        "javascript",
+        "python",
+        "cpp",
+        "go",
+        "c",
+        "typescript",
+        "java"
       ],
-      "timestamp": "2025-11-21 09:50:31"
+      "timestamp": "2025-12-02 15:09:53"
     }
   },
   "results": {
@@ -22,15 +28,69 @@
         "language": "javascript",
         "LLM_results": [
           {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/food-chain_exercism-javascript-ThomasZumsteg/gemini/GeminiFlash_food-chain_v3.js",
+            "log": "",
+            "execution_time_ms": 980.0,
+            "CPU_usage": 19.0,
+            "RAM_usage": 84752,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_food-chain_exercism-javascript-ThomasZumsteg",
+        "filename": "food-chain.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
             "LLM_type": "openAI",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/food-chain_exercism-javascript-ThomasZumsteg/openAI/ChatGPT4_food-chain_v3.js",
             "log": "",
-            "execution_time_ms": 170,
-            "CPU_usage": 15.0,
-            "RAM_usage": 67112,
-            "regressionTestPassed": false,
-            "success": false,
-            "error_message": "Docker exit code: 1"
+            "execution_time_ms": 1120.0,
+            "CPU_usage": 16.0,
+            "RAM_usage": 82724,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_food-chain_exercism-javascript-ThomasZumsteg",
+        "filename": "food-chain.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/food-chain_exercism-javascript-ThomasZumsteg/claude/ClaudeSonnet4_food-chain_v3.js",
+            "log": "",
+            "execution_time_ms": 950.0,
+            "CPU_usage": 18.0,
+            "RAM_usage": 82628,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_food-chain_exercism-javascript-ffflorian",
+        "filename": "food-chain.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/food-chain_exercism-javascript-ffflorian/openAI/ChatGPT4_food-chain_v3.js",
+            "log": "",
+            "execution_time_ms": 1050.0,
+            "CPU_usage": 17.0,
+            "RAM_usage": 83320,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
           }
         ]
       },
@@ -43,12 +103,30 @@
             "LLM_type": "gemini",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/food-chain_exercism-javascript-ffflorian/gemini/GeminiFlash_food-chain_v3.js",
             "log": "",
-            "execution_time_ms": 180,
-            "CPU_usage": 13.0,
-            "RAM_usage": 66536,
+            "execution_time_ms": 1210.0,
+            "CPU_usage": 16.0,
+            "RAM_usage": 81920,
             "regressionTestPassed": false,
             "success": false,
-            "error_message": "Docker exit code: 1"
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_food-chain_exercism-javascript-ffflorian",
+        "filename": "food-chain.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/food-chain_exercism-javascript-ffflorian/claude/ClaudeSonnet4_food-chain_v3.js",
+            "log": "",
+            "execution_time_ms": 1089.9999999999998,
+            "CPU_usage": 18.0,
+            "RAM_usage": 81612,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
           }
         ]
       },
@@ -61,33 +139,29 @@
             "LLM_type": "openAI",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/food-chain_exercism-javascript-bearguns/openAI/ChatGPT4_food-chain_v3.js",
             "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
+            "execution_time_ms": 1030.0,
+            "CPU_usage": 17.0,
+            "RAM_usage": 83008,
             "regressionTestPassed": true,
-            "success": null,
+            "success": true,
             "error_message": null
-          },
+          }
+        ]
+      },
+      {
+        "id": "javascript_food-chain_exercism-javascript-bearguns",
+        "filename": "food-chain.js",
+        "language": "javascript",
+        "LLM_results": [
           {
             "LLM_type": "claude",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/food-chain_exercism-javascript-bearguns/claude/ClaudeSonnet4_food-chain_v3.js",
             "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
-            "regressionTestPassed": true,
-            "success": null,
-            "error_message": null
-          },
-          {
-            "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/food-chain_exercism-javascript-bearguns/gemini/GeminiFlash_food-chain_v3.js",
-            "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
-            "regressionTestPassed": true,
-            "success": null,
+            "execution_time_ms": 1020.0,
+            "CPU_usage": 17.0,
+            "RAM_usage": 81444,
+            "regressionTestPassed": false,
+            "success": false,
             "error_message": null
           }
         ]
@@ -101,33 +175,101 @@
             "LLM_type": "openAI",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/food-chain_exercism-javascript-bearguns/openAI/ChatGPT4_food-chain_v3.js",
             "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
+            "execution_time_ms": 1040.0,
+            "CPU_usage": 16.0,
+            "RAM_usage": 82828,
             "regressionTestPassed": true,
-            "success": null,
+            "success": true,
             "error_message": null
-          },
-          {
-            "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/food-chain_exercism-javascript-bearguns/claude/ClaudeSonnet4_food-chain_v3.js",
-            "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
-            "regressionTestPassed": true,
-            "success": null,
-            "error_message": null
-          },
+          }
+        ]
+      },
+      {
+        "id": "javascript_food-chain_exercism-javascript-bearguns",
+        "filename": "food-chain.js",
+        "language": "javascript",
+        "LLM_results": [
           {
             "LLM_type": "gemini",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/food-chain_exercism-javascript-bearguns/gemini/GeminiFlash_food-chain_v3.js",
             "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
+            "execution_time_ms": 1170.0,
+            "CPU_usage": 18.0,
+            "RAM_usage": 82056,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_food-chain_exercism-javascript-bearguns_bearguns",
+        "filename": "food-chain.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/food-chain_exercism-javascript-bearguns/claude/ClaudeSonnet4_food-chain_v3.js",
+            "log": "",
+            "execution_time_ms": 980.0,
+            "CPU_usage": 16.0,
+            "RAM_usage": 80548,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_food-chain_exercism-javascript-bearguns_bearguns",
+        "filename": "food-chain.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/food-chain_exercism-javascript-bearguns/gemini/GeminiFlash_food-chain_v3.js",
+            "log": "",
+            "execution_time_ms": 990.0,
+            "CPU_usage": 17.0,
+            "RAM_usage": 81604,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_food-chain_exercism-javascript-ffflorian_ffflorian",
+        "filename": "food-chain.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/food-chain_exercism-javascript-ffflorian/openAI/ChatGPT4_food-chain_v3.js",
+            "log": "",
+            "execution_time_ms": 929.9999999999999,
+            "CPU_usage": 19.0,
+            "RAM_usage": 82440,
             "regressionTestPassed": true,
-            "success": null,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_food-chain_exercism-javascript-ffflorian_ffflorian",
+        "filename": "food-chain.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/food-chain_exercism-javascript-ffflorian/claude/ClaudeSonnet4_food-chain_v3.js",
+            "log": "",
+            "execution_time_ms": 1089.9999999999998,
+            "CPU_usage": 18.0,
+            "RAM_usage": 82532,
+            "regressionTestPassed": true,
+            "success": true,
             "error_message": null
           }
         ]
@@ -141,119 +283,11 @@
             "LLM_type": "gemini",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/food-chain_exercism-javascript-ffflorian/gemini/GeminiFlash_food-chain_v3.js",
             "log": "",
-            "execution_time_ms": 180,
-            "CPU_usage": 18.0,
-            "RAM_usage": 66732,
-            "regressionTestPassed": false,
-            "success": false,
-            "error_message": "Docker exit code: 1"
-          }
-        ]
-      },
-      {
-        "id": "javascript_food-chain_exercism-javascript-ThomasZumsteg_ThomasZumsteg",
-        "filename": "food-chain.js",
-        "language": "javascript",
-        "LLM_results": [
-          {
-            "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/food-chain_exercism-javascript-ThomasZumsteg/claude/ClaudeSonnet4_food-chain_v3.js",
-            "log": "",
-            "execution_time_ms": 190,
+            "execution_time_ms": 1109.9999999999998,
             "CPU_usage": 15.0,
-            "RAM_usage": 67032,
+            "RAM_usage": 82112,
             "regressionTestPassed": false,
             "success": false,
-            "error_message": "Docker exit code: 1"
-          }
-        ]
-      },
-      {
-        "id": "javascript_food-chain_exercism-javascript-ThomasZumsteg",
-        "filename": "food-chain.js",
-        "language": "javascript",
-        "LLM_results": [
-          {
-            "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/food-chain_exercism-javascript-ThomasZumsteg/claude/ClaudeSonnet4_food-chain_v3.js",
-            "log": "",
-            "execution_time_ms": 660.0,
-            "CPU_usage": 18.0,
-            "RAM_usage": 80652,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "javascript_food-chain_exercism-javascript-ffflorian",
-        "filename": "food-chain.js",
-        "language": "javascript",
-        "LLM_results": [
-          {
-            "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/food-chain_exercism-javascript-ffflorian/openAI/ChatGPT4_food-chain_v3.js",
-            "log": "",
-            "execution_time_ms": 640.0,
-            "CPU_usage": 23.0,
-            "RAM_usage": 81800,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "javascript_food-chain_exercism-javascript-ffflorian",
-        "filename": "food-chain.js",
-        "language": "javascript",
-        "LLM_results": [
-          {
-            "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/food-chain_exercism-javascript-ffflorian/claude/ClaudeSonnet4_food-chain_v3.js",
-            "log": "",
-            "execution_time_ms": 679.9999999999999,
-            "CPU_usage": 19.0,
-            "RAM_usage": 82100,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "javascript_food-chain_exercism-javascript-ThomasZumsteg",
-        "filename": "food-chain.js",
-        "language": "javascript",
-        "LLM_results": [
-          {
-            "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/food-chain_exercism-javascript-ThomasZumsteg/gemini/GeminiFlash_food-chain_v3.js",
-            "log": "",
-            "execution_time_ms": 770.0,
-            "CPU_usage": 19.0,
-            "RAM_usage": 83536,
-            "regressionTestPassed": false,
-            "success": false,
-            "error_message": "Docker exit code: 1"
-          }
-        ]
-      },
-      {
-        "id": "javascript_food-chain_exercism-javascript-ffflorian_ffflorian",
-        "filename": "food-chain.js",
-        "language": "javascript",
-        "LLM_results": [
-          {
-            "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/food-chain_exercism-javascript-ffflorian/openAI/ChatGPT4_food-chain_v3.js",
-            "log": "",
-            "execution_time_ms": 810.0,
-            "CPU_usage": 17.0,
-            "RAM_usage": 81956,
-            "regressionTestPassed": true,
-            "success": true,
             "error_message": null
           }
         ]
@@ -267,9 +301,9 @@
             "LLM_type": "openAI",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/food-chain_exercism-javascript-ThomasZumsteg/openAI/ChatGPT4_food-chain_v3.js",
             "log": "",
-            "execution_time_ms": 740.0,
-            "CPU_usage": 18.0,
-            "RAM_usage": 80544,
+            "execution_time_ms": 1260.0,
+            "CPU_usage": 14.0,
+            "RAM_usage": 82624,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -277,17 +311,17 @@
         ]
       },
       {
-        "id": "javascript_food-chain_exercism-javascript-ffflorian_ffflorian",
+        "id": "javascript_food-chain_exercism-javascript-ThomasZumsteg_ThomasZumsteg",
         "filename": "food-chain.js",
         "language": "javascript",
         "LLM_results": [
           {
             "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/food-chain_exercism-javascript-ffflorian/claude/ClaudeSonnet4_food-chain_v3.js",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/food-chain_exercism-javascript-ThomasZumsteg/claude/ClaudeSonnet4_food-chain_v3.js",
             "log": "",
-            "execution_time_ms": 790.0,
-            "CPU_usage": 18.0,
-            "RAM_usage": 80576,
+            "execution_time_ms": 1480.0,
+            "CPU_usage": 15.0,
+            "RAM_usage": 82620,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -303,12 +337,66 @@
             "LLM_type": "gemini",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/food-chain_exercism-javascript-ThomasZumsteg/gemini/GeminiFlash_food-chain_v3.js",
             "log": "",
-            "execution_time_ms": 760.0,
-            "CPU_usage": 21.0,
-            "RAM_usage": 81856,
+            "execution_time_ms": 1490.0,
+            "CPU_usage": 15.0,
+            "RAM_usage": 84244,
             "regressionTestPassed": false,
             "success": false,
-            "error_message": "Docker exit code: 1"
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_food-chain_ThomasZumsteg",
+        "filename": "food-chain.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "javascript/food-chain_exercism-ThomasZumsteg/gemini/GeminiFlash_food-chain_v3.js",
+            "log": "",
+            "execution_time_ms": 1060.0,
+            "CPU_usage": 15.0,
+            "RAM_usage": 83468,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_food-chain_ThomasZumsteg",
+        "filename": "food-chain.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "javascript/food-chain_exercism-ThomasZumsteg/claude/ClaudeSonnet4_food-chain_v3.js",
+            "log": "",
+            "execution_time_ms": 1130.0,
+            "CPU_usage": 12.0,
+            "RAM_usage": 80528,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_food-chain_ThomasZumsteg",
+        "filename": "food-chain.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "javascript/food-chain_exercism-ThomasZumsteg/openAI/ChatGPT4_food-chain_v3.js",
+            "log": "",
+            "execution_time_ms": 1040.0,
+            "CPU_usage": 11.0,
+            "RAM_usage": 80140,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
           }
         ]
       }
@@ -321,69 +409,50 @@
         "LLM_results": [
           {
             "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/food-chain_Exercism-typescript-shybyte/openAI/ChatGPT4_food-chain_v3.ts",
-            "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
-            "regressionTestPassed": true,
-            "success": null,
-            "error_message": null
-          },
-          {
-            "LLM_type": "openAI",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/food-chain_Exercism-typescript-shybyte/openAI/ChatGPT4_food-chain_v3.js",
             "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
-            "regressionTestPassed": true,
-            "success": null,
-            "error_message": null
-          },
+            "execution_time_ms": 8700,
+            "CPU_usage": 26.0,
+            "RAM_usage": 121192,
+            "regressionTestPassed": false,
+            "success": true,
+            "error_message": "Docker exit code: 1"
+          }
+        ]
+      },
+      {
+        "id": "typescript_food-chain_Exercism-typescript-shybyte",
+        "filename": "food-chain.ts",
+        "language": "typescript",
+        "LLM_results": [
           {
             "LLM_type": "claude",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/food-chain_Exercism-typescript-shybyte/claude/ClaudeSonnet4_food-chain_v3.ts",
             "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
+            "execution_time_ms": 6897,
+            "CPU_usage": 26.0,
+            "RAM_usage": 120732,
             "regressionTestPassed": true,
-            "success": null,
+            "success": true,
             "error_message": null
-          },
-          {
-            "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/food-chain_Exercism-typescript-shybyte/claude/ClaudeSonnet4_food-chain_v3.js",
-            "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
-            "regressionTestPassed": true,
-            "success": null,
-            "error_message": null
-          },
+          }
+        ]
+      },
+      {
+        "id": "typescript_food-chain_Exercism-typescript-shybyte",
+        "filename": "food-chain.ts",
+        "language": "typescript",
+        "LLM_results": [
           {
             "LLM_type": "gemini",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/food-chain_Exercism-typescript-shybyte/gemini/GeminiFlash_food-chain_v3.js",
             "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
-            "regressionTestPassed": true,
-            "success": null,
-            "error_message": null
-          },
-          {
-            "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/food-chain_Exercism-typescript-shybyte/gemini/GeminiFlash_food-chain_v3.ts",
-            "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
-            "regressionTestPassed": true,
-            "success": null,
-            "error_message": null
+            "execution_time_ms": 8427,
+            "CPU_usage": 26.0,
+            "RAM_usage": 130416,
+            "regressionTestPassed": false,
+            "success": true,
+            "error_message": "Docker exit code: 1"
           }
         ]
       },
@@ -394,69 +463,50 @@
         "LLM_results": [
           {
             "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/food-chain_Exercism-typescript-shybyte/openAI/ChatGPT4_food-chain_v3.ts",
-            "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
-            "regressionTestPassed": true,
-            "success": null,
-            "error_message": null
-          },
-          {
-            "LLM_type": "openAI",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/food-chain_Exercism-typescript-shybyte/openAI/ChatGPT4_food-chain_v3.js",
             "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
-            "regressionTestPassed": true,
-            "success": null,
-            "error_message": null
-          },
+            "execution_time_ms": 7304,
+            "CPU_usage": 27.0,
+            "RAM_usage": 121844,
+            "regressionTestPassed": false,
+            "success": true,
+            "error_message": "Docker exit code: 1"
+          }
+        ]
+      },
+      {
+        "id": "typescript_food-chain_Exercism-typescript-shybyte_shybyte",
+        "filename": "food-chain.ts",
+        "language": "typescript",
+        "LLM_results": [
           {
             "LLM_type": "claude",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/food-chain_Exercism-typescript-shybyte/claude/ClaudeSonnet4_food-chain_v3.ts",
             "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
+            "execution_time_ms": 6953,
+            "CPU_usage": 26.0,
+            "RAM_usage": 119440,
             "regressionTestPassed": true,
-            "success": null,
+            "success": true,
             "error_message": null
-          },
-          {
-            "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/food-chain_Exercism-typescript-shybyte/claude/ClaudeSonnet4_food-chain_v3.js",
-            "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
-            "regressionTestPassed": true,
-            "success": null,
-            "error_message": null
-          },
+          }
+        ]
+      },
+      {
+        "id": "typescript_food-chain_Exercism-typescript-shybyte_shybyte",
+        "filename": "food-chain.ts",
+        "language": "typescript",
+        "LLM_results": [
           {
             "LLM_type": "gemini",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/food-chain_Exercism-typescript-shybyte/gemini/GeminiFlash_food-chain_v3.js",
             "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
-            "regressionTestPassed": true,
-            "success": null,
-            "error_message": null
-          },
-          {
-            "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/food-chain_Exercism-typescript-shybyte/gemini/GeminiFlash_food-chain_v3.ts",
-            "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
-            "regressionTestPassed": true,
-            "success": null,
-            "error_message": null
+            "execution_time_ms": 7869,
+            "CPU_usage": 28.0,
+            "RAM_usage": 130004,
+            "regressionTestPassed": false,
+            "success": true,
+            "error_message": "Docker exit code: 1"
           }
         ]
       },
@@ -469,66 +519,47 @@
             "LLM_type": "openAI",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/food-chain_Exercism-typescript-FilipeCerejo/openAI/ChatGPT4_food-chain_v3.ts",
             "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
-            "regressionTestPassed": true,
-            "success": null,
-            "error_message": null
-          },
-          {
-            "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/food-chain_Exercism-typescript-FilipeCerejo/openAI/ChatGPT4_food-chain_v3.js",
-            "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
-            "regressionTestPassed": true,
-            "success": null,
-            "error_message": null
-          },
+            "execution_time_ms": 6294,
+            "CPU_usage": 29.0,
+            "RAM_usage": 120576,
+            "regressionTestPassed": false,
+            "success": true,
+            "error_message": "Docker exit code: 1"
+          }
+        ]
+      },
+      {
+        "id": "typescript_food-chain_Exercism-typescript-FilipeCerejo_FilipeCerejo",
+        "filename": "food-chain.ts",
+        "language": "typescript",
+        "LLM_results": [
           {
             "LLM_type": "claude",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/food-chain_Exercism-typescript-FilipeCerejo/claude/ClaudeSonnet4_food-chain_v3.ts",
             "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
+            "execution_time_ms": 6577,
+            "CPU_usage": 28.0,
+            "RAM_usage": 118476,
             "regressionTestPassed": true,
-            "success": null,
+            "success": true,
             "error_message": null
-          },
-          {
-            "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/food-chain_Exercism-typescript-FilipeCerejo/claude/ClaudeSonnet4_food-chain_v3.js",
-            "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
-            "regressionTestPassed": true,
-            "success": null,
-            "error_message": null
-          },
+          }
+        ]
+      },
+      {
+        "id": "typescript_food-chain_Exercism-typescript-FilipeCerejo_FilipeCerejo",
+        "filename": "food-chain.ts",
+        "language": "typescript",
+        "LLM_results": [
           {
             "LLM_type": "gemini",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/food-chain_Exercism-typescript-FilipeCerejo/gemini/GeminiFlash_food-chain_v3.js",
             "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
+            "execution_time_ms": 7163,
+            "CPU_usage": 28.0,
+            "RAM_usage": 117940,
             "regressionTestPassed": true,
-            "success": null,
-            "error_message": null
-          },
-          {
-            "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/food-chain_Exercism-typescript-FilipeCerejo/gemini/GeminiFlash_food-chain_v3.ts",
-            "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
-            "regressionTestPassed": true,
-            "success": null,
+            "success": true,
             "error_message": null
           }
         ]
@@ -541,12 +572,12 @@
         "language": "java",
         "LLM_results": [
           {
-            "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/food-chain_aaron-contreras/gemini/GeminiFlash_FoodChain_v3.java",
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/food-chain_aaron-contreras/openAI/ChatGPT4_FoodChain_v3.java",
             "log": "",
-            "execution_time_ms": 140.0,
-            "CPU_usage": 76.0,
-            "RAM_usage": 46416,
+            "execution_time_ms": 480.0,
+            "CPU_usage": 24.0,
+            "RAM_usage": 46968,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -562,9 +593,9 @@
             "LLM_type": "claude",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/food-chain_aaron-contreras/claude/ClaudeSonnet4_FoodChain_v3.java",
             "log": "",
-            "execution_time_ms": 120.0,
-            "CPU_usage": 80.0,
-            "RAM_usage": 46924,
+            "execution_time_ms": 510.0,
+            "CPU_usage": 21.0,
+            "RAM_usage": 47436,
             "regressionTestPassed": false,
             "success": false,
             "error_message": null
@@ -577,12 +608,66 @@
         "language": "java",
         "LLM_results": [
           {
-            "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/food-chain_aaron-contreras/openAI/ChatGPT4_FoodChain_v3.java",
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/food-chain_aaron-contreras/gemini/GeminiFlash_FoodChain_v3.java",
             "log": "",
-            "execution_time_ms": 120.0,
-            "CPU_usage": 97.0,
-            "RAM_usage": 47096,
+            "execution_time_ms": 320.0,
+            "CPU_usage": 21.0,
+            "RAM_usage": 46168,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "java_food-chain_uzilan",
+        "filename": "FoodChain.java",
+        "language": "java",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "java/food-chain_exercism-uzilan/openAI/ChatGPT4_FoodChain_v3.java",
+            "log": "",
+            "execution_time_ms": 279.99999999999994,
+            "CPU_usage": 25.0,
+            "RAM_usage": 46412,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "java_food-chain_uzilan",
+        "filename": "FoodChain.java",
+        "language": "java",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "java/food-chain_exercism-uzilan/claude/ClaudeSonnet4_FoodChain_v3.java",
+            "log": "",
+            "execution_time_ms": 340.0,
+            "CPU_usage": 22.0,
+            "RAM_usage": 46924,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "java_food-chain_uzilan",
+        "filename": "FoodChain.java",
+        "language": "java",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "java/food-chain_exercism-uzilan/gemini/GeminiFlash_FoodChain_v3.java",
+            "log": "",
+            "execution_time_ms": 210.0,
+            "CPU_usage": 18.0,
+            "RAM_usage": 46560,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -591,6 +676,86 @@
       }
     ],
     "cpp": [
+      {
+        "id": "cpp_food_chain_Exercism (johnngugi)",
+        "filename": "food_chain.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/food_chain_Exercism_johnngugi/openAI/ChatGPT4_food_chain_v3.cpp",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/food_chain_Exercism_johnngugi/claude/ClaudeSonnet4_food_chain_v3.cpp",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/food_chain_Exercism_johnngugi/gemini/GeminiFlash_food_chain_v3.cpp",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "cpp_food_chain_Exercism (johnngugi)",
+        "filename": "food_chain.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/food_chain_Exercism_johnngugi/openAI/ChatGPT4_food_chain_v3.cpp",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/food_chain_Exercism_johnngugi/claude/ClaudeSonnet4_food_chain_v3.cpp",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/food_chain_Exercism_johnngugi/gemini/GeminiFlash_food_chain_v3.cpp",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
       {
         "id": "cpp_food_chain_Exercism (johnngugi)",
         "filename": "food_chain.cpp",
@@ -672,6 +837,86 @@
         ]
       },
       {
+        "id": "cpp_food_chain_Exercism (cmccandless)",
+        "filename": "food_chain.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/food_chain_Exercism_cmccandless/openAI/ChatGPT4_food_chain_v3.cpp",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/food_chain_Exercism_cmccandless/claude/ClaudeSonnet4_food_chain_v3.cpp",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/food_chain_Exercism_cmccandless/gemini/GeminiFlash_food_chain_v3.cpp",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "cpp_food_chain_Exercism (cmccandless)",
+        "filename": "food_chain.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/food_chain_Exercism_cmccandless/openAI/ChatGPT4_food_chain_v3.cpp",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/food_chain_Exercism_cmccandless/claude/ClaudeSonnet4_food_chain_v3.cpp",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/food_chain_Exercism_cmccandless/gemini/GeminiFlash_food_chain_v3.cpp",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
         "id": "cpp_food_chain_Exercism (MaxyMoos)",
         "filename": "food_chain.cpp",
         "language": "cpp",
@@ -701,6 +946,166 @@
           {
             "LLM_type": "gemini",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/food_chain_Exercism_MaxyMoos/gemini/GeminiFlash_food_chain_v3.cpp",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "cpp_food_chain_Exercism (MaxyMoos)",
+        "filename": "food_chain.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/food_chain_Exercism_MaxyMoos/openAI/ChatGPT4_food_chain_v3.cpp",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/food_chain_Exercism_MaxyMoos/claude/ClaudeSonnet4_food_chain_v3.cpp",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/food_chain_Exercism_MaxyMoos/gemini/GeminiFlash_food_chain_v3.cpp",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "cpp_food_chain_Exercism (MaxyMoos)",
+        "filename": "food_chain.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/food_chain_Exercism_MaxyMoos/openAI/ChatGPT4_food_chain_v3.cpp",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/food_chain_Exercism_MaxyMoos/claude/ClaudeSonnet4_food_chain_v3.cpp",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/food_chain_Exercism_MaxyMoos/gemini/GeminiFlash_food_chain_v3.cpp",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "cpp_food_chain_Exercism (thefullarcticfox)",
+        "filename": "food_chain.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/food_chain_Exercism_thefullarcticfox/openAI/ChatGPT4_food_chain_v3.cpp",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/food_chain_Exercism_thefullarcticfox/claude/ClaudeSonnet4_food_chain_v3.cpp",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/food_chain_Exercism_thefullarcticfox/gemini/GeminiFlash_food_chain_v3.cpp",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "cpp_food_chain_Exercism (thefullarcticfox)",
+        "filename": "food_chain.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/food_chain_Exercism_thefullarcticfox/openAI/ChatGPT4_food_chain_v3.cpp",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/food_chain_Exercism_thefullarcticfox/claude/ClaudeSonnet4_food_chain_v3.cpp",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/food_chain_Exercism_thefullarcticfox/gemini/GeminiFlash_food_chain_v3.cpp",
             "log": "",
             "execution_time_ms": 1000,
             "CPU_usage": 50.0,
@@ -778,9 +1183,9 @@
             "LLM_type": "claude",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/food-chain_exercism-toemm/claude/ClaudeSonnet4_food_chain_v3.cpp",
             "log": "",
-            "execution_time_ms": 4.040594,
-            "CPU_usage": 56.0,
-            "RAM_usage": 10368,
+            "execution_time_ms": 22.342237,
+            "CPU_usage": 14.0,
+            "RAM_usage": 10496,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -806,322 +1211,110 @@
         ]
       },
       {
-        "id": "cpp_food_chain_Exercism (johnngugi)",
+        "id": "cpp_food-chain_johnngugi",
+        "filename": "food_chain.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "cpp/food-chain_exercism-johnngugi/claude/ClaudeSonnet4_food_chain_v3.cpp",
+            "log": "",
+            "execution_time_ms": null,
+            "CPU_usage": null,
+            "RAM_usage": null,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 2"
+          }
+        ]
+      },
+      {
+        "id": "cpp_food-chain_tqa236",
         "filename": "food_chain.cpp",
         "language": "cpp",
         "LLM_results": [
           {
             "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/food_chain_Exercism_johnngugi/openAI/ChatGPT4_food_chain_v3.cpp",
+            "path": "cpp/food-chain_exercism-tqa236/openAI/ChatGPT4_food_chain_v3.cpp",
             "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
-            "regressionTestPassed": true,
-            "success": null,
-            "error_message": null
-          },
+            "execution_time_ms": null,
+            "CPU_usage": null,
+            "RAM_usage": null,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 2"
+          }
+        ]
+      },
+      {
+        "id": "cpp_food-chain_johnngugi",
+        "filename": "food_chain.cpp",
+        "language": "cpp",
+        "LLM_results": [
           {
-            "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/food_chain_Exercism_johnngugi/claude/ClaudeSonnet4_food_chain_v3.cpp",
+            "LLM_type": "openAI",
+            "path": "cpp/food-chain_exercism-johnngugi/openAI/ChatGPT4_food_chain_v3.cpp",
             "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
+            "execution_time_ms": 28.145394,
+            "CPU_usage": 7.0,
+            "RAM_usage": 10496,
             "regressionTestPassed": true,
-            "success": null,
-            "error_message": null
-          },
-          {
-            "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/food_chain_Exercism_johnngugi/gemini/GeminiFlash_food_chain_v3.cpp",
-            "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
-            "regressionTestPassed": true,
-            "success": null,
+            "success": true,
             "error_message": null
           }
         ]
       },
       {
-        "id": "cpp_food_chain_Exercism (johnngugi)",
+        "id": "cpp_food-chain_johnngugi",
         "filename": "food_chain.cpp",
         "language": "cpp",
         "LLM_results": [
           {
-            "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/food_chain_Exercism_johnngugi/openAI/ChatGPT4_food_chain_v3.cpp",
-            "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
-            "regressionTestPassed": true,
-            "success": null,
-            "error_message": null
-          },
-          {
-            "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/food_chain_Exercism_johnngugi/claude/ClaudeSonnet4_food_chain_v3.cpp",
-            "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
-            "regressionTestPassed": true,
-            "success": null,
-            "error_message": null
-          },
-          {
             "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/food_chain_Exercism_johnngugi/gemini/GeminiFlash_food_chain_v3.cpp",
+            "path": "cpp/food-chain_exercism-johnngugi/gemini/GeminiFlash_food_chain_v3.cpp",
             "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
-            "regressionTestPassed": true,
-            "success": null,
-            "error_message": null
+            "execution_time_ms": null,
+            "CPU_usage": null,
+            "RAM_usage": null,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 2"
           }
         ]
       },
       {
-        "id": "cpp_food_chain_Exercism (cmccandless)",
+        "id": "cpp_food-chain_tqa236",
         "filename": "food_chain.cpp",
         "language": "cpp",
         "LLM_results": [
           {
-            "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/food_chain_Exercism_cmccandless/openAI/ChatGPT4_food_chain_v3.cpp",
-            "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
-            "regressionTestPassed": true,
-            "success": null,
-            "error_message": null
-          },
-          {
-            "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/food_chain_Exercism_cmccandless/claude/ClaudeSonnet4_food_chain_v3.cpp",
-            "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
-            "regressionTestPassed": true,
-            "success": null,
-            "error_message": null
-          },
-          {
             "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/food_chain_Exercism_cmccandless/gemini/GeminiFlash_food_chain_v3.cpp",
+            "path": "cpp/food-chain_exercism-tqa236/gemini/GeminiFlash_food_chain_v3.cpp",
             "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
-            "regressionTestPassed": true,
-            "success": null,
-            "error_message": null
+            "execution_time_ms": null,
+            "CPU_usage": null,
+            "RAM_usage": null,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 2"
           }
         ]
       },
       {
-        "id": "cpp_food_chain_Exercism (cmccandless)",
+        "id": "cpp_food-chain_tqa236",
         "filename": "food_chain.cpp",
         "language": "cpp",
         "LLM_results": [
           {
-            "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/food_chain_Exercism_cmccandless/openAI/ChatGPT4_food_chain_v3.cpp",
-            "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
-            "regressionTestPassed": true,
-            "success": null,
-            "error_message": null
-          },
-          {
             "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/food_chain_Exercism_cmccandless/claude/ClaudeSonnet4_food_chain_v3.cpp",
+            "path": "cpp/food-chain_exercism-tqa236/claude/ClaudeSonnet4_food_chain_v3.cpp",
             "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
-            "regressionTestPassed": true,
-            "success": null,
-            "error_message": null
-          },
-          {
-            "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/food_chain_Exercism_cmccandless/gemini/GeminiFlash_food_chain_v3.cpp",
-            "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
-            "regressionTestPassed": true,
-            "success": null,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "cpp_food_chain_Exercism (MaxyMoos)",
-        "filename": "food_chain.cpp",
-        "language": "cpp",
-        "LLM_results": [
-          {
-            "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/food_chain_Exercism_MaxyMoos/openAI/ChatGPT4_food_chain_v3.cpp",
-            "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
-            "regressionTestPassed": true,
-            "success": null,
-            "error_message": null
-          },
-          {
-            "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/food_chain_Exercism_MaxyMoos/claude/ClaudeSonnet4_food_chain_v3.cpp",
-            "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
-            "regressionTestPassed": true,
-            "success": null,
-            "error_message": null
-          },
-          {
-            "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/food_chain_Exercism_MaxyMoos/gemini/GeminiFlash_food_chain_v3.cpp",
-            "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
-            "regressionTestPassed": true,
-            "success": null,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "cpp_food_chain_Exercism (MaxyMoos)",
-        "filename": "food_chain.cpp",
-        "language": "cpp",
-        "LLM_results": [
-          {
-            "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/food_chain_Exercism_MaxyMoos/openAI/ChatGPT4_food_chain_v3.cpp",
-            "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
-            "regressionTestPassed": true,
-            "success": null,
-            "error_message": null
-          },
-          {
-            "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/food_chain_Exercism_MaxyMoos/claude/ClaudeSonnet4_food_chain_v3.cpp",
-            "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
-            "regressionTestPassed": true,
-            "success": null,
-            "error_message": null
-          },
-          {
-            "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/food_chain_Exercism_MaxyMoos/gemini/GeminiFlash_food_chain_v3.cpp",
-            "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
-            "regressionTestPassed": true,
-            "success": null,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "cpp_food_chain_Exercism (thefullarcticfox)",
-        "filename": "food_chain.cpp",
-        "language": "cpp",
-        "LLM_results": [
-          {
-            "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/food_chain_Exercism_thefullarcticfox/openAI/ChatGPT4_food_chain_v3.cpp",
-            "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
-            "regressionTestPassed": true,
-            "success": null,
-            "error_message": null
-          },
-          {
-            "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/food_chain_Exercism_thefullarcticfox/claude/ClaudeSonnet4_food_chain_v3.cpp",
-            "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
-            "regressionTestPassed": true,
-            "success": null,
-            "error_message": null
-          },
-          {
-            "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/food_chain_Exercism_thefullarcticfox/gemini/GeminiFlash_food_chain_v3.cpp",
-            "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
-            "regressionTestPassed": true,
-            "success": null,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "cpp_food_chain_Exercism (thefullarcticfox)",
-        "filename": "food_chain.cpp",
-        "language": "cpp",
-        "LLM_results": [
-          {
-            "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/food_chain_Exercism_thefullarcticfox/openAI/ChatGPT4_food_chain_v3.cpp",
-            "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
-            "regressionTestPassed": true,
-            "success": null,
-            "error_message": null
-          },
-          {
-            "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/food_chain_Exercism_thefullarcticfox/claude/ClaudeSonnet4_food_chain_v3.cpp",
-            "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
-            "regressionTestPassed": true,
-            "success": null,
-            "error_message": null
-          },
-          {
-            "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/food_chain_Exercism_thefullarcticfox/gemini/GeminiFlash_food_chain_v3.cpp",
-            "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
-            "regressionTestPassed": true,
-            "success": null,
-            "error_message": null
+            "execution_time_ms": null,
+            "CPU_usage": null,
+            "RAM_usage": null,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 2"
           }
         ]
       }
@@ -1136,33 +1329,47 @@
             "LLM_type": "openAI",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/food_chain_Exercism_go_rootulp/openAI/ChatGPT4_food_chain_v3.go",
             "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
+            "execution_time_ms": 22830.0,
+            "CPU_usage": 32.0,
+            "RAM_usage": 230388,
             "regressionTestPassed": true,
-            "success": null,
+            "success": true,
             "error_message": null
-          },
+          }
+        ]
+      },
+      {
+        "id": "go_food_chain_Exercism (go_rootulp)",
+        "filename": "food_chain.go",
+        "language": "go",
+        "LLM_results": [
           {
             "LLM_type": "claude",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/food_chain_Exercism_go_rootulp/claude/ClaudeSonnet4_food_chain_v3.go",
             "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
+            "execution_time_ms": 18280.0,
+            "CPU_usage": 29.0,
+            "RAM_usage": 228532,
             "regressionTestPassed": true,
-            "success": null,
+            "success": true,
             "error_message": null
-          },
+          }
+        ]
+      },
+      {
+        "id": "go_food_chain_Exercism (go_rootulp)",
+        "filename": "food_chain.go",
+        "language": "go",
+        "LLM_results": [
           {
             "LLM_type": "gemini",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/food_chain_Exercism_go_rootulp/gemini/GeminiFlash_food_chain_v3.go",
             "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
-            "regressionTestPassed": true,
-            "success": null,
+            "execution_time_ms": 18669.999999999996,
+            "CPU_usage": 28.0,
+            "RAM_usage": 220748,
+            "regressionTestPassed": false,
+            "success": false,
             "error_message": null
           }
         ]
@@ -1176,33 +1383,47 @@
             "LLM_type": "openAI",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/food_chain_Exercism_go_ThomasZumsteg/openAI/ChatGPT4_food_chain_v3.go",
             "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
+            "execution_time_ms": 18049.999999999996,
+            "CPU_usage": 29.0,
+            "RAM_usage": 239368,
             "regressionTestPassed": true,
-            "success": null,
+            "success": true,
             "error_message": null
-          },
+          }
+        ]
+      },
+      {
+        "id": "go_food_chain_Exercism (go_ThomasZumsteg)",
+        "filename": "food_chain.go",
+        "language": "go",
+        "LLM_results": [
           {
             "LLM_type": "claude",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/food_chain_Exercism_go_ThomasZumsteg/claude/ClaudeSonnet4_food_chain_v3.go",
             "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
+            "execution_time_ms": 18930.0,
+            "CPU_usage": 29.0,
+            "RAM_usage": 230220,
             "regressionTestPassed": true,
-            "success": null,
+            "success": true,
             "error_message": null
-          },
+          }
+        ]
+      },
+      {
+        "id": "go_food_chain_Exercism (go_ThomasZumsteg)",
+        "filename": "food_chain.go",
+        "language": "go",
+        "LLM_results": [
           {
             "LLM_type": "gemini",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/food_chain_Exercism_go_ThomasZumsteg/gemini/GeminiFlash_food_chain_v3.go",
             "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
+            "execution_time_ms": 22700.000000000004,
+            "CPU_usage": 30.0,
+            "RAM_usage": 227396,
             "regressionTestPassed": true,
-            "success": null,
+            "success": true,
             "error_message": null
           }
         ]
@@ -1216,34 +1437,158 @@
             "LLM_type": "openAI",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/food_chain_Exercism_go_drapala/openAI/ChatGPT4_food_chain_v3.go",
             "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
-            "regressionTestPassed": true,
-            "success": null,
+            "execution_time_ms": 22640.0,
+            "CPU_usage": 30.0,
+            "RAM_usage": 228032,
+            "regressionTestPassed": false,
+            "success": false,
             "error_message": null
-          },
+          }
+        ]
+      },
+      {
+        "id": "go_food_chain_Exercism (go_drapala)",
+        "filename": "food_chain.go",
+        "language": "go",
+        "LLM_results": [
           {
             "LLM_type": "claude",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/food_chain_Exercism_go_drapala/claude/ClaudeSonnet4_food_chain_v3.go",
             "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
+            "execution_time_ms": 21470.0,
+            "CPU_usage": 29.0,
+            "RAM_usage": 229096,
             "regressionTestPassed": true,
-            "success": null,
+            "success": true,
             "error_message": null
-          },
+          }
+        ]
+      },
+      {
+        "id": "go_food_chain_Exercism (go_drapala)",
+        "filename": "food_chain.go",
+        "language": "go",
+        "LLM_results": [
           {
             "LLM_type": "gemini",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/food_chain_Exercism_go_drapala/gemini/GeminiFlash_food_chain_v3.go",
             "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
-            "regressionTestPassed": true,
-            "success": null,
+            "execution_time_ms": 20780.0,
+            "CPU_usage": 32.0,
+            "RAM_usage": 225876,
+            "regressionTestPassed": false,
+            "success": false,
             "error_message": null
+          }
+        ]
+      }
+    ],
+    "python": [
+      {
+        "id": "python_food-chain_ThomasZumsteg",
+        "filename": "food_chain.py",
+        "language": "python",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "python/food-chain_exercism-ThomasZumsteg/openAI/ChatGPT4_food_chain_v3.py",
+            "log": "",
+            "execution_time_ms": 80.0,
+            "CPU_usage": 25.0,
+            "RAM_usage": 13824,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "python_food-chain_ThomasZumsteg",
+        "filename": "food_chain.py",
+        "language": "python",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "python/food-chain_exercism-ThomasZumsteg/claude/ClaudeSonnet4_food_chain_v3.py",
+            "log": "",
+            "execution_time_ms": 50.0,
+            "CPU_usage": 20.0,
+            "RAM_usage": 13696,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "python_food-chain_ThomasZumsteg",
+        "filename": "food_chain.py",
+        "language": "python",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "python/food-chain_exercism-ThomasZumsteg/gemini/GeminiFlash_food_chain_v3.py",
+            "log": "",
+            "execution_time_ms": 50.0,
+            "CPU_usage": 24.0,
+            "RAM_usage": 13696,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "python_food-chain_fruit-in",
+        "filename": "food_chain.py",
+        "language": "python",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "python/food-chain_exercism-fruit-in/openAI/ChatGPT4_food_chain_v3.py",
+            "log": "",
+            "execution_time_ms": 60.00000000000001,
+            "CPU_usage": 27.0,
+            "RAM_usage": 14080,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 1"
+          }
+        ]
+      },
+      {
+        "id": "python_food-chain_fruit-in",
+        "filename": "food_chain.py",
+        "language": "python",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "python/food-chain_exercism-fruit-in/claude/ClaudeSonnet4_food_chain_v3.py",
+            "log": "",
+            "execution_time_ms": 60.00000000000001,
+            "CPU_usage": 23.0,
+            "RAM_usage": 13824,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "python_food-chain_fruit-in",
+        "filename": "food_chain.py",
+        "language": "python",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "python/food-chain_exercism-fruit-in/gemini/GeminiFlash_food_chain_v3.py",
+            "log": "",
+            "execution_time_ms": 50.0,
+            "CPU_usage": 21.0,
+            "RAM_usage": 14080,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 1"
           }
         ]
       }

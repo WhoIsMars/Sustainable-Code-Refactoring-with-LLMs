@@ -10,7 +10,7 @@ class Alien {
 
         inline bool hit() {
             if (health > 0) {
-                health--;
+                --health;
                 return true;
             }
             return false;

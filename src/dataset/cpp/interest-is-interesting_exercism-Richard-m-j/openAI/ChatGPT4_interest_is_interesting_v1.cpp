@@ -8,12 +8,12 @@ double interest_rate(double balance)
 
 double yearly_interest(double balance)
 {
-    return (interest_rate(balance) * balance) / 100.0;
+    return (interest_rate(balance) * balance) / 100;
 }
 
 double annual_balance_update(double balance)
 {
-    return balance * (1.0 + interest_rate(balance) / 100.0);
+    return balance * (1 + interest_rate(balance) / 100);
 }
 
 int years_until_desired_balance(double balance, double target_balance)
@@ -21,7 +21,7 @@ int years_until_desired_balance(double balance, double target_balance)
     int years = 0;
     while (balance < target_balance)
     {
-        balance *= (1.0 + interest_rate(balance) / 100.0);
+        balance *= (1 + interest_rate(balance) / 100);
         ++years;
     }
     return years;

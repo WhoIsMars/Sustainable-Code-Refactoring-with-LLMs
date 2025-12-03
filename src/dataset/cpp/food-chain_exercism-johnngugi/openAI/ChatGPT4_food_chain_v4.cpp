@@ -45,7 +45,7 @@ string food_chain::response(int n) {
 	if (n > 2 && n < 8) {
 		return repetition(n);
 	}
-	return "";
+	return n == 2 ? "She swallowed the spider to catch the fly.\n" : "";
 }
 
 string food_chain::verse(int n) {
@@ -58,8 +58,8 @@ string food_chain::verse(int n) {
 string food_chain::verses(int a, int b) {
 	string result;
 	for (int i = a; i <= b; ++i) {
+		if (i > a) result += "\n";
 		result += verse(i);
-		if (i < b) result += "\n";
 	}
 	return result;
 }

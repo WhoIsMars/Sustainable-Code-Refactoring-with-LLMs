@@ -2,26 +2,30 @@
 #include <map>
 #include <vector>
 #include <string>
-#include <algorithm>
+#include <set>
 using namespace std;
 using namespace grade_school;
 
-map<int, vector<string>> school::roster() const
-{
-    return grades;
-}
+map<int, set<string>> grades;
 
-void school::add(const string& n, int no)
+map<int, vector<string>> school::roster()
 {
-    auto& students = grades[no];
-    auto it = lower_bound(students.begin(), students.end(), n);
-    if (it == students.end() || *it != n) {
-        students.insert(it, n);
+    map<int, vector<string>> result;
+    for (const auto& [grade, names] : grades) {
+        result[grade] = vector<string>(names.begin(), names.end());
     }
+    return result;
 }
 
-vector<string> school::grade(int n) const
+void school::add(string n, int no)
 {
-    auto it = grades.find(n);
-    return it != grades.end() ? it->second : vector<string>{};
+    grades[no].insert(move(n));
+}
+
+vector<string> school::grade(int n)
+{
+    if (grades.find(n) != grades.end()) {
+        return vector<string>(grades[n].begin(), grades[n].end());
+    }
+    return {};
 }

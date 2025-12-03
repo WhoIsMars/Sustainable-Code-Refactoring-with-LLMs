@@ -1,17 +1,23 @@
 {
-  "execution_date": "2025-11-19 09:57:06",
+  "execution_date": "2025-12-01 19:33:33",
   "execution_metadata": {
     "total_tests": 23,
     "successful_tests": 21,
     "execution_time": "00h 05m 00s",
     "cluster": "cluster_alphametics",
     "test_type": "llm_v1",
-    "last_updated": "2025-11-19 09:57:06",
+    "last_updated": "2025-12-01 19:33:33",
     "selective_execution": {
       "languages": [
-        "javascript"
+        "typescript",
+        "cpp",
+        "javascript",
+        "java",
+        "c",
+        "python",
+        "go"
       ],
-      "timestamp": "2025-11-19 09:57:06"
+      "timestamp": "2025-12-01 19:33:33"
     }
   },
   "results": {
@@ -31,6 +37,24 @@
             "regressionTestPassed": false,
             "success": false,
             "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_alphametics_exercism-javascript-ThomasZumsteg",
+        "filename": "alphametics.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/alphametics_exercism-javascript-ThomasZumsteg/claude/ClaudeSonnet4_alphametics_v1.js",
+            "log": "",
+            "execution_time_ms": 180,
+            "CPU_usage": 22.0,
+            "RAM_usage": 67324,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 1"
           }
         ]
       },
@@ -69,24 +93,6 @@
             "error_message": "Test execution timeout (300s)"
           }
         ]
-      },
-      {
-        "id": "javascript_alphametics_exercism-javascript-ThomasZumsteg",
-        "filename": "alphametics.js",
-        "language": "javascript",
-        "LLM_results": [
-          {
-            "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/alphametics_exercism-javascript-ThomasZumsteg/claude/ClaudeSonnet4_alphametics_v1.js",
-            "log": "",
-            "execution_time_ms": 180,
-            "CPU_usage": 22.0,
-            "RAM_usage": 67324,
-            "regressionTestPassed": false,
-            "success": false,
-            "error_message": "Docker exit code: 1"
-          }
-        ]
       }
     ],
     "typescript": [
@@ -96,48 +102,12 @@
         "language": "typescript",
         "LLM_results": [
           {
-            "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/alphametics_Exercism-typescript-FilipeCerejo/openAI/ChatGPT4_alphametics_v1.ts",
-            "log": "",
-            "execution_time_ms": 838,
-            "CPU_usage": 32.0,
-            "RAM_usage": 124272,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "typescript_alphametics_Exercism-typescript-FilipeCerejo_FilipeCerejo",
-        "filename": "alphametics.ts",
-        "language": "typescript",
-        "LLM_results": [
-          {
-            "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/alphametics_Exercism-typescript-FilipeCerejo/openAI/ChatGPT4_alphametics_v1.js",
-            "log": "",
-            "execution_time_ms": 849,
-            "CPU_usage": 31.0,
-            "RAM_usage": 122520,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "typescript_alphametics_Exercism-typescript-FilipeCerejo_FilipeCerejo",
-        "filename": "alphametics.ts",
-        "language": "typescript",
-        "LLM_results": [
-          {
             "LLM_type": "claude",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/alphametics_Exercism-typescript-FilipeCerejo/claude/ClaudeSonnet4_alphametics_v1.js",
             "log": "",
-            "execution_time_ms": 670,
-            "CPU_usage": 33.0,
-            "RAM_usage": 124336,
+            "execution_time_ms": 17313,
+            "CPU_usage": 41.0,
+            "RAM_usage": 120364,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -150,12 +120,12 @@
         "language": "typescript",
         "LLM_results": [
           {
-            "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/alphametics_Exercism-typescript-FilipeCerejo/claude/ClaudeSonnet4_alphametics_v1.ts",
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/alphametics_Exercism-typescript-FilipeCerejo/openAI/ChatGPT4_alphametics_v1.ts",
             "log": "",
-            "execution_time_ms": 875,
-            "CPU_usage": 28.0,
-            "RAM_usage": 125164,
+            "execution_time_ms": 6195,
+            "CPU_usage": 36.0,
+            "RAM_usage": 120236,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -171,27 +141,9 @@
             "LLM_type": "gemini",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/alphametics_Exercism-typescript-FilipeCerejo/gemini/GeminiFlash_alphametics_v1.ts",
             "log": "",
-            "execution_time_ms": 780,
-            "CPU_usage": 29.0,
-            "RAM_usage": 124108,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "typescript_alphametics_Exercism-typescript-FilipeCerejo_FilipeCerejo",
-        "filename": "alphametics.ts",
-        "language": "typescript",
-        "LLM_results": [
-          {
-            "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/alphametics_Exercism-typescript-FilipeCerejo/gemini/GeminiFlash_alphametics_v1.js",
-            "log": "",
-            "execution_time_ms": 839,
-            "CPU_usage": 29.0,
-            "RAM_usage": 124984,
+            "execution_time_ms": 4643,
+            "CPU_usage": 64.0,
+            "RAM_usage": 119936,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -201,60 +153,6 @@
     ],
     "go": [
       {
-        "id": "go_alphametics_Exercism (go_rootulp)",
-        "filename": "alphametics.go",
-        "language": "go",
-        "LLM_results": [
-          {
-            "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/alphametics_Exercism_go_rootulp/openAI/ChatGPT4_alphametics_v1.go",
-            "log": "",
-            "execution_time_ms": 5979,
-            "CPU_usage": 32.0,
-            "RAM_usage": 227120,
-            "regressionTestPassed": false,
-            "success": false,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "go_alphametics_Exercism (go_rootulp)",
-        "filename": "alphametics.go",
-        "language": "go",
-        "LLM_results": [
-          {
-            "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/alphametics_Exercism_go_rootulp/claude/ClaudeSonnet4_alphametics_v1.go",
-            "log": "",
-            "execution_time_ms": 6380,
-            "CPU_usage": 32.0,
-            "RAM_usage": 225716,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "go_alphametics_Exercism (go_rootulp)",
-        "filename": "alphametics.go",
-        "language": "go",
-        "LLM_results": [
-          {
-            "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/alphametics_Exercism_go_rootulp/gemini/GeminiFlash_alphametics_v1.go",
-            "log": "",
-            "execution_time_ms": 9730,
-            "CPU_usage": 33.0,
-            "RAM_usage": 227452,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
         "id": "go_alphametics_Exercism (go_ThomasZumsteg)",
         "filename": "alphametics.go",
         "language": "go",
@@ -263,9 +161,9 @@
             "LLM_type": "claude",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/alphametics_Exercism_go_ThomasZumsteg/claude/ClaudeSonnet4_alphametics_v1.go",
             "log": "",
-            "execution_time_ms": 5899,
-            "CPU_usage": 32.0,
-            "RAM_usage": 219508,
+            "execution_time_ms": 6050.000000000001,
+            "CPU_usage": 19.0,
+            "RAM_usage": 225776,
             "regressionTestPassed": false,
             "success": false,
             "error_message": null
@@ -327,17 +225,17 @@
         ]
       },
       {
-        "id": "go_alphametics_Exercism (go_ThomasZumsteg)",
+        "id": "go_alphametics_Exercism (go_rootulp)",
         "filename": "alphametics.go",
         "language": "go",
         "LLM_results": [
           {
-            "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/alphametics_Exercism_go_ThomasZumsteg/claude/ClaudeSonnet4_alphametics_v1.go",
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/alphametics_Exercism_go_rootulp/openAI/ChatGPT4_alphametics_v1.go",
             "log": "",
-            "execution_time_ms": 5920.0,
-            "CPU_usage": 33.0,
-            "RAM_usage": 219280,
+            "execution_time_ms": 26759.999999999996,
+            "CPU_usage": 60.0,
+            "RAM_usage": 230376,
             "regressionTestPassed": false,
             "success": false,
             "error_message": null
@@ -345,19 +243,37 @@
         ]
       },
       {
-        "id": "go_alphametics_Exercism (go_ThomasZumsteg)",
+        "id": "go_alphametics_Exercism (go_rootulp)",
         "filename": "alphametics.go",
         "language": "go",
         "LLM_results": [
           {
             "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/alphametics_Exercism_go_ThomasZumsteg/claude/ClaudeSonnet4_alphametics_v1.go",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/alphametics_Exercism_go_rootulp/claude/ClaudeSonnet4_alphametics_v1.go",
             "log": "",
-            "execution_time_ms": 6050.000000000001,
-            "CPU_usage": 19.0,
-            "RAM_usage": 225776,
-            "regressionTestPassed": false,
-            "success": false,
+            "execution_time_ms": 25820.0,
+            "CPU_usage": 59.0,
+            "RAM_usage": 214048,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "go_alphametics_Exercism (go_rootulp)",
+        "filename": "alphametics.go",
+        "language": "go",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/alphametics_Exercism_go_rootulp/gemini/GeminiFlash_alphametics_v1.go",
+            "log": "",
+            "execution_time_ms": 29100.0,
+            "CPU_usage": 55.0,
+            "RAM_usage": 230100,
+            "regressionTestPassed": true,
+            "success": true,
             "error_message": null
           }
         ]
@@ -395,6 +311,118 @@
             "regressionTestPassed": false,
             "success": false,
             "error_message": "Test execution timeout"
+          }
+        ]
+      }
+    ],
+    "python": [
+      {
+        "id": "python_alphametics_ThomasZumsteg",
+        "filename": "alphametics.py",
+        "language": "python",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "python/alphametics_exercism-ThomasZumsteg/gemini/GeminiFlash_alphametics_v1.py",
+            "log": "",
+            "execution_time_ms": 12780.0,
+            "CPU_usage": 62.0,
+            "RAM_usage": 13696,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "python_alphametics_ThomasZumsteg",
+        "filename": "alphametics.py",
+        "language": "python",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "python/alphametics_exercism-ThomasZumsteg/openAI/ChatGPT4_alphametics_v1.py",
+            "log": "",
+            "execution_time_ms": 34860.0,
+            "CPU_usage": 54.0,
+            "RAM_usage": 13824,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "python_alphametics_ThomasZumsteg",
+        "filename": "alphametics.py",
+        "language": "python",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "python/alphametics_exercism-ThomasZumsteg/claude/ClaudeSonnet4_alphametics_v1.py",
+            "log": "",
+            "execution_time_ms": 17140.0,
+            "CPU_usage": 56.0,
+            "RAM_usage": 13696,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      }
+    ],
+    "java": [
+      {
+        "id": "java_alphametics_uzilan",
+        "filename": "Alphametics.java",
+        "language": "java",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "java/alphametics_exercism-uzilan/openAI/ChatGPT4_Alphametics_v1.java",
+            "log": "",
+            "execution_time_ms": null,
+            "CPU_usage": null,
+            "RAM_usage": null,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 1"
+          }
+        ]
+      },
+      {
+        "id": "java_alphametics_uzilan",
+        "filename": "Alphametics.java",
+        "language": "java",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "java/alphametics_exercism-uzilan/claude/ClaudeSonnet4_Alphametics_v1.java",
+            "log": "",
+            "execution_time_ms": 1650.0,
+            "CPU_usage": 60.0,
+            "RAM_usage": 130092,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "java_alphametics_uzilan",
+        "filename": "Alphametics.java",
+        "language": "java",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "java/alphametics_exercism-uzilan/gemini/GeminiFlash_Alphametics_v1.java",
+            "log": "",
+            "execution_time_ms": 2430.0,
+            "CPU_usage": 52.0,
+            "RAM_usage": 129008,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
           }
         ]
       }

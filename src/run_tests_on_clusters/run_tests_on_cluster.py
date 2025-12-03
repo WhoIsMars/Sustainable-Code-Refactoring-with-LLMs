@@ -44,7 +44,7 @@ except ImportError as e:
 
 # Import outlier filter module
 try:
-    from outlier_filter import OutlierFilter, ResultMerger
+    from outlier_selective_runner import OutlierFilter, ResultMerger
 
     OUTLIER_FILTER_AVAILABLE = True
 except ImportError as e:
@@ -999,7 +999,8 @@ class TestExecutor:
 
     def _setup_javascript(self, dockerfile_path: Path, mount_path: Path):
         """Setup JavaScript environment"""
-        files_to_copy = ["package.json", "jest.config.js"]
+        # Include both ESM (jest.config.js) and CommonJS (jest.config.cjs) configs
+        files_to_copy = ["package.json", "jest.config.js", "jest.config.cjs"]
         for filename in files_to_copy:
             src_file = dockerfile_path / filename
             dest_file = mount_path / filename
@@ -1072,8 +1073,8 @@ class TestExecutor:
                 self.logger.debug(f"Copied tsconfig.json from {tsconfig_src}")
                 break
 
-        # Copy package.json and jest config
-        files_to_copy = ["package.json", "jest.config.js"]
+        # Copy package.json and jest configs (both ESM and CommonJS)
+        files_to_copy = ["package.json", "jest.config.js", "jest.config.cjs"]
         for filename in files_to_copy:
             src_file = dockerfile_path / filename
             dest_file = mount_path / filename
@@ -2772,7 +2773,7 @@ def run_cleanup():
     except Exception as e:
         print(f"ERRORE inatteso durante il cleanup_docker: {e}")
 
-atexit.register(run_cleanup)
+# atexit.register(run_cleanup)  # Disabilitato: causa cleanup indesiderato quando il modulo viene solo importato
 
 
 def send_webhook_notification(webhook_url: str, results_summary: Dict):
@@ -3141,6 +3142,7 @@ def main():
                                 existing_data=existing_results,
                                 new_results=new_results_dicts,
                                 outlier_entry_ids=outlier_entry_ids,
+                                is_llm=True,  # LLM results
                             )
                             total_merged = sum(
                                 len(entries)
@@ -3229,6 +3231,7 @@ def main():
                             existing_data=existing_results,
                             new_results=new_results_dicts,
                             outlier_entry_ids=outlier_entry_ids,
+                            is_llm=False,  # Base results
                         )
                         total_merged = sum(
                             len(entries)
@@ -3407,6 +3410,7 @@ def main():
                                 existing_data=existing_results,
                                 new_results=new_results_dicts,
                                 outlier_entry_ids=entry_ids,
+                                is_llm=True,  # LLM results
                             )
                             total_merged = sum(len(e) for e in merged_data.get("results", {}).values())
                             print(f"    Merged: {len(executed_results)} new, {total_merged} total")
@@ -3484,6 +3488,7 @@ def main():
                                 existing_data=existing_results,
                                 new_results=new_results_dicts,
                                 outlier_entry_ids=entry_ids,
+                                is_llm=False,  # Base results
                             )
                             total_merged = sum(len(e) for e in merged_data.get("results", {}).values())
                             print(f"    Merged: {len(executed_results)} new, {total_merged} total")
@@ -3643,7 +3648,7 @@ def main():
 
                             # Create backup if file exists
                             if output_path.exists():
-                                backup_path = merger.create_backup(output_path)
+                                backup_path = merger.create_backup(output_path, utility_paths.BACKUP_EXECUTION_DIR)
                                 if backup_path:
                                     report.backup_file = str(backup_path)
 
@@ -3720,7 +3725,7 @@ def main():
 
                         # Create backup if file exists
                         if output_path.exists():
-                            backup_path = merger.create_backup(output_path)
+                            backup_path = merger.create_backup(output_path, utility_paths.BACKUP_EXECUTION_DIR)
                             if backup_path:
                                 report.backup_file = str(backup_path)
 
@@ -3771,7 +3776,7 @@ def main():
 
             # Save execution report for this cluster
             report_filename = f"{cluster_name}_entry_execution_{int(time.time())}.json"
-            report_path = args.execution_report_dir / report_filename
+            report_path = utility_paths.ENTRY_EXEC_REPORTS / report_filename
             report.save_to_file(report_path)
             print(f"  ✓ Report saved to: {report_path}")
 
@@ -3866,7 +3871,7 @@ def main():
                             continue
 
                         # Create backup
-                        backup_path = merger.create_backup(output_path)
+                        backup_path = merger.create_backup(output_path, utility_paths.BACKUP_EXECUTION_DIR)
                         if backup_path:
                             report.backup_file = str(backup_path)
 
@@ -3975,7 +3980,7 @@ def main():
                         continue
 
                     # Create backup
-                    backup_path = merger.create_backup(output_path)
+                    backup_path = merger.create_backup(output_path, utility_paths.BACKUP_EXECUTION_DIR)
                     if backup_path:
                         report.backup_file = str(backup_path)
 
@@ -4052,7 +4057,7 @@ def main():
         report_filename = (
             f"{args.cluster_name}_selective_execution_{int(time.time())}.json"
         )
-        report_path = args.execution_report_dir / report_filename
+        report_path = utility_paths.SELECTIVE_EXECUTION_DIR / report_filename
         report.save_to_file(report_path)
 
         # Print summary

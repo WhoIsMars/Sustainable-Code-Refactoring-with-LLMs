@@ -1,12 +1,13 @@
 #include <string>
 #include <map>
 #include <cctype>
+#include <unordered_map>
 #include "word_count.h"
 using namespace std;
 
-map<string, int> word_count::words(string sen)
+map<string, int> word_count::words(const string& sen)
 {
-    map<string, int> words;
+    unordered_map<string, int> word_freq;
     string store;
 
     for (char c : sen)
@@ -22,9 +23,10 @@ map<string, int> word_count::words(string sen)
         else if (!store.empty())
         {
             if (store.back() == '\'')
+            {
                 store.pop_back();
-
-            ++words[store];
+            }
+            ++word_freq[store];
             store.clear();
         }
     }
@@ -32,10 +34,11 @@ map<string, int> word_count::words(string sen)
     if (!store.empty())
     {
         if (store.back() == '\'')
+        {
             store.pop_back();
-
-        ++words[store];
+        }
+        ++word_freq[store];
     }
 
-    return words;
+    return map<string, int>(word_freq.begin(), word_freq.end());
 }

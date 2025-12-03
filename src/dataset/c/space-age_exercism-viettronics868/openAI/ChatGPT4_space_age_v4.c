@@ -1,0 +1,28 @@
+#include "space_age.h"
+#include <stdint.h>
+
+static const float PLANET_YEAR_FACTORS[] = {
+    0.2408467,  // MERCURY
+    0.61519726, // VENUS
+    1.0,        // EARTH
+    1.8808158,  // MARS
+    11.862615,  // JUPITER
+    29.447498,  // SATURN
+    84.016846,  // URANUS
+    164.79132   // NEPTUNE
+};
+
+float seconds_to_Earth_year(uint64_t seconds) {
+    return seconds / 31557600.0f; // Direct conversion to Earth years
+}
+
+float planet_to_Earth_year(planet_t planet) {
+    if (planet < MERCURY || planet > NEPTUNE) return -1.0f;
+    return PLANET_YEAR_FACTORS[planet];
+}
+
+float age(planet_t planet, uint64_t seconds) {
+    float planet_year_factor = planet_to_Earth_year(planet);
+    if (planet_year_factor == -1.0f) return -1.0f;
+    return seconds_to_Earth_year(seconds) / planet_year_factor;
+}

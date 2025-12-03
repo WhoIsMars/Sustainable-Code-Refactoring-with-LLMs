@@ -2,6 +2,7 @@
 #include <string>
 #include <vector>
 #include <algorithm>
+#include <unordered_map>
 using namespace std;
 
 vector<string> anagram::anagram::matches(vector<string> v)
@@ -12,14 +13,14 @@ vector<string> anagram::anagram::matches(vector<string> v)
 
     for (const auto& candidate : v)
     {
-        if (candidate.length() == sorted_word.length())
+        if (candidate.length() != anagram::anagram::word.length()) continue;
+
+        string sorted_candidate = candidate;
+        sort(sorted_candidate.begin(), sorted_candidate.end());
+
+        if (sorted_candidate == sorted_word)
         {
-            string sorted_candidate = candidate;
-            sort(sorted_candidate.begin(), sorted_candidate.end());
-            if (sorted_candidate == sorted_word)
-            {
-                result.push_back(candidate);
-            }
+            result.push_back(candidate);
         }
     }
 

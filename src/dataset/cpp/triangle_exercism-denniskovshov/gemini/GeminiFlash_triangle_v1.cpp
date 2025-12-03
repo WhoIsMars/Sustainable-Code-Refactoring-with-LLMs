@@ -1,10 +1,9 @@
-#include <stdexcept>
 #include <algorithm>
 #include <cmath>
+#include <stdexcept>
 #include "triangle.h"
 
 namespace triangle {
-
     flavor kind(double side1, double side2, double side3) {
         validate(side1, side2, side3);
 
@@ -16,9 +15,10 @@ namespace triangle {
             }
         } else if (side1 == side3 || side2 == side3) {
             return flavor::isosceles;
-        } else if (std::fabs(side1 + side2 - side3) < 1e-9 || std::fabs(side1 + side3 - side2) < 1e-9 || std::fabs(side2 + side3 - side1) < 1e-9) {
+        } else if (std::abs(side1 + side2 - side3) < 1e-9 || std::abs(side1 + side3 - side2) < 1e-9 || std::abs(side2 + side3 - side1) < 1e-9) {
             return flavor::degenerate;
-        } else {
+        }
+        else {
             return flavor::scalene;
         }
     }
@@ -28,8 +28,11 @@ namespace triangle {
             throw std::domain_error("All sides must be > 0");
         }
 
-        if (side1 + side2 <= side3 || side1 + side3 <= side2 || side2 + side3 <= side1) {
-            throw std::domain_error("Sum of any two sides must be >= to the third side");
+        double sides[3] = {side1, side2, side3};
+        std::sort(sides, sides + 3);
+
+        if (sides[0] + sides[1] <= sides[2]) {
+            throw std::domain_error("Sum of any two sides must be > to the third side");
         }
     }
 }  // namespace triangle

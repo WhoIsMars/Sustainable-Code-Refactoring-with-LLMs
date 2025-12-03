@@ -1,17 +1,23 @@
 {
-  "execution_date": "2025-11-19 01:57:00",
+  "execution_date": "2025-12-01 00:35:53",
   "execution_metadata": {
     "total_tests": 1,
     "successful_tests": 1,
     "execution_time": "00h 00m 00s",
     "cluster": "cluster_find_unpaired",
     "test_type": "llm_v4",
-    "last_updated": "2025-11-19 01:57:00",
+    "last_updated": "2025-12-01 00:35:53",
     "selective_execution": {
       "languages": [
-        "python"
+        "python",
+        "typescript",
+        "java",
+        "go",
+        "javascript",
+        "c",
+        "cpp"
       ],
-      "timestamp": "2025-11-19 01:57:00"
+      "timestamp": "2025-12-01 00:35:53"
     }
   },
   "results": {
@@ -22,12 +28,30 @@
         "language": "python",
         "LLM_results": [
           {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/find_unpaired/gemini/GeminiFlash_find_unpaired_v4.py",
+            "log": "",
+            "execution_time_ms": 80.0,
+            "CPU_usage": 34.0,
+            "RAM_usage": 13952,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "find_unpaired_159",
+        "filename": "find_unpaired.py",
+        "language": "python",
+        "LLM_results": [
+          {
             "LLM_type": "claude",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/find_unpaired/claude/ClaudeSonnet4_find_unpaired_v4.py",
             "log": "",
-            "execution_time_ms": 50.0,
-            "CPU_usage": 82.0,
-            "RAM_usage": 13824,
+            "execution_time_ms": 80.0,
+            "CPU_usage": 26.0,
+            "RAM_usage": 13696,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -43,30 +67,12 @@
             "LLM_type": "openAI",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/find_unpaired/openAI/ChatGPT4_find_unpaired_v4.py",
             "log": "",
-            "execution_time_ms": 40.0,
-            "CPU_usage": 77.0,
+            "execution_time_ms": 100.0,
+            "CPU_usage": 45.0,
             "RAM_usage": 14080,
             "regressionTestPassed": false,
             "success": false,
             "error_message": "Docker exit code: 1"
-          }
-        ]
-      },
-      {
-        "id": "find_unpaired_159",
-        "filename": "find_unpaired.py",
-        "language": "python",
-        "LLM_results": [
-          {
-            "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/find_unpaired/gemini/GeminiFlash_find_unpaired_v4.py",
-            "log": "",
-            "execution_time_ms": 40.0,
-            "CPU_usage": 73.0,
-            "RAM_usage": 13952,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
           }
         ]
       }

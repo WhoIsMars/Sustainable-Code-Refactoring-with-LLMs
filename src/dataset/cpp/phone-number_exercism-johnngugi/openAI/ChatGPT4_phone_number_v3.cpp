@@ -4,9 +4,9 @@
 
 phone_number::phone_number(const std::string& n) {
     final.reserve(n.size());
-    for (char ch : n) {
-        if (std::isdigit(ch)) {
-            final += ch;
+    for (char c : n) {
+        if (std::isdigit(c)) {
+            final += c;
         }
     }
 }
@@ -22,11 +22,11 @@ std::string phone_number::check_valid(const std::string& n) const {
 }
 
 std::string phone_number::area_code() const {
-    return check_valid(final).substr(0, 3);
+    return final.size() >= 10 ? final.substr(0, 3) : "000";
 }
 
 phone_number::operator std::string() const {
-    const std::string valid_number = number();
+    std::string valid_number = number();
     return "(" + valid_number.substr(0, 3) + ") " + valid_number.substr(3, 3) + "-" + valid_number.substr(6);
 }
 

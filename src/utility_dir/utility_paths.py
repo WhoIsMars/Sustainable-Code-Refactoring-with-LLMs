@@ -23,16 +23,25 @@ LLM_CONFIGS_FILEPATH = SRC_DIR / "llm_configs.json"
 
 PROMPTS_DIR_FILEPATH = SRC_DIR / "prompts"
 
-METRICS_DIR_FILEPATH = SRC_DIR / 'metrics'
+METRICS_DIR_FILEPATH = SRC_DIR / "metrics"
 SIMILARITY_METRICS_DIR_FILEPATH = METRICS_DIR_FILEPATH / "similarity"
-ENERGY_METRICS_REPORTS_DIR_FILEPATH = METRICS_DIR_FILEPATH / 'energy_metrics_reports'
+ENERGY_METRICS_REPORTS_DIR_FILEPATH = METRICS_DIR_FILEPATH / "energy_metrics_reports"
 
 PATTERN_REPORTS_DIR = METRICS_DIR_FILEPATH / "patterns"
-CLUSTERS_IMPROVEMENTS_DATA_FILEPATH = METRICS_DIR_FILEPATH / "energy_improvements" / "clusters_improvements_data"
+CLUSTERS_IMPROVEMENTS_DATA_FILEPATH = (
+    METRICS_DIR_FILEPATH / "energy_improvements" / "clusters_improvements_data"
+)
 
 SANITY_CHECKS_DIR = SRC_DIR / "execution_sanity_checks"
 CLUSTERS_SANITY_CHECKS_DIR = SANITY_CHECKS_DIR / "clusters"
 SANITY_CHECKS_METADATA_JSON_FILE_PATH = SANITY_CHECKS_DIR / "metadata.json"
+
+ANALISYS_REPORT_FILE_PATH = SRC_DIR / "analysis" / "reports"
+
+BACKUP_EXECUTION_DIR = SRC_DIR / "backup_executions"
+ENTRY_EXEC_REPORTS = SRC_DIR / "entry_execution_reports"
+SELECTIVE_EXECUTION_DIR = SRC_DIR / "selective_executions"
+EXEC_FULL_RES_DIR = SRC_DIR / "exec_full_results"
 
 if __name__ == "__main__":
     print(f"Current file directory: {CURRENT_FILE_DIR}")

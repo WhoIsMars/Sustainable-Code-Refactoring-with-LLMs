@@ -5,7 +5,7 @@ namespace prime_factors
 {
     std::vector<int> of(int n)
     {
-        std::vector<int> result;
+        std::vector<int> result {};
         if (n < 2) return result;
 
         while (n % 2 == 0) {

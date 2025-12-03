@@ -3,14 +3,17 @@
 
 namespace space_age {
 
-    // Constants for planet orbital periods relative to Earth.
-    constexpr double earth_years_on_mercury_val = 0.2408467;
-    constexpr double earth_years_on_venus_val = 0.61519726;
-    constexpr double earth_years_on_mars_val = 1.8808158;
-    constexpr double earth_years_on_jupiter_val = 11.862615;
-    constexpr double earth_years_on_saturn_val = 29.447498;
-    constexpr double earth_years_on_uranus_val = 84.016846;
-    constexpr double earth_years_on_neptune_val = 164.79132;
+    // Constants are now static const members, initialized at compile time.
+    const double space_age::secs_in_earth_year = 31557600.0;
+    const double space_age::earth_years_on_earth = 1.0;
+    const double space_age::earth_years_on_mercury = 0.2408467;
+    const double space_age::earth_years_on_venus = 0.61519726;
+    const double space_age::earth_years_on_mars = 1.8808158;
+    const double space_age::earth_years_on_jupiter = 11.862615;
+    const double space_age::earth_years_on_saturn = 29.447498;
+    const double space_age::earth_years_on_uranus = 84.016846;
+    const double space_age::earth_years_on_neptune = 164.79132;
+
 
     space_age::space_age(age_in_seconds earth_age_in_seconds) : _earth_age_in_seconds(earth_age_in_seconds) {
         assert(earth_age_in_seconds >= 0);
@@ -21,34 +24,34 @@ namespace space_age {
     }
 
     age_in_years space_age::on_earth() const {
-        return static_cast<age_in_years>(_earth_age_in_seconds / secs_in_earth_year);
+        return _earth_age_in_seconds / secs_in_earth_year;
     }
 
     age_in_years space_age::on_mercury() const {
-        return static_cast<age_in_years>(_earth_age_in_seconds / secs_in_earth_year / earth_years_on_mercury_val);
+        return _earth_age_in_seconds / secs_in_earth_year / earth_years_on_mercury;
     }
 
     age_in_years space_age::on_venus() const {
-        return static_cast<age_in_years>(_earth_age_in_seconds / secs_in_earth_year / earth_years_on_venus_val);
+        return _earth_age_in_seconds / secs_in_earth_year / earth_years_on_venus;
     }
 
     age_in_years space_age::on_mars() const {
-        return static_cast<age_in_years>(_earth_age_in_seconds / secs_in_earth_year / earth_years_on_mars_val);
+        return _earth_age_in_seconds / secs_in_earth_year / earth_years_on_mars;
     }
 
     age_in_years space_age::on_jupiter() const {
-        return static_cast<age_in_years>(_earth_age_in_seconds / secs_in_earth_year / earth_years_on_jupiter_val);
+        return _earth_age_in_seconds / secs_in_earth_year / earth_years_on_jupiter;
     }
 
     age_in_years space_age::on_saturn() const {
-        return static_cast<age_in_years>(_earth_age_in_seconds / secs_in_earth_year / earth_years_on_saturn_val);
+        return _earth_age_in_seconds / secs_in_earth_year / earth_years_on_saturn;
     }
 
     age_in_years space_age::on_uranus() const {
-        return static_cast<age_in_years>(_earth_age_in_seconds / secs_in_earth_year / earth_years_on_uranus_val);
+        return _earth_age_in_seconds / secs_in_earth_year / earth_years_on_uranus;
     }
 
     age_in_years space_age::on_neptune() const {
-        return static_cast<age_in_years>(_earth_age_in_seconds / secs_in_earth_year / earth_years_on_neptune_val);
+        return _earth_age_in_seconds / secs_in_earth_year / earth_years_on_neptune;
     }
 }  // namespace space_age

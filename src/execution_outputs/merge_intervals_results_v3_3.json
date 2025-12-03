@@ -1,17 +1,23 @@
 {
-  "execution_date": "2025-11-19 01:43:35",
+  "execution_date": "2025-11-27 23:29:51",
   "execution_metadata": {
     "total_tests": 1,
     "successful_tests": 1,
     "execution_time": "00h 00m 00s",
     "cluster": "cluster_merge_intervals",
     "test_type": "llm_v3",
-    "last_updated": "2025-11-19 01:43:35",
+    "last_updated": "2025-11-27 23:29:51",
     "selective_execution": {
       "languages": [
-        "python"
+        "python",
+        "typescript",
+        "cpp",
+        "java",
+        "c",
+        "go",
+        "javascript"
       ],
-      "timestamp": "2025-11-19 01:43:35"
+      "timestamp": "2025-11-27 23:29:51"
     }
   },
   "results": {
@@ -22,30 +28,12 @@
         "language": "python",
         "LLM_results": [
           {
-            "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/merge_intervals/claude/ClaudeSonnet4_merge_intervals_v3.py",
-            "log": "",
-            "execution_time_ms": 50.0,
-            "CPU_usage": 80.0,
-            "RAM_usage": 13824,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "merge_intervals_185",
-        "filename": "merge_intervals.py",
-        "language": "python",
-        "LLM_results": [
-          {
             "LLM_type": "gemini",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/merge_intervals/gemini/GeminiFlash_merge_intervals_v3.py",
             "log": "",
-            "execution_time_ms": 50.0,
-            "CPU_usage": 78.0,
-            "RAM_usage": 13952,
+            "execution_time_ms": 90.00000000000001,
+            "CPU_usage": 19.0,
+            "RAM_usage": 13824,
             "regressionTestPassed": false,
             "success": false,
             "error_message": "Docker exit code: 1"
@@ -61,8 +49,26 @@
             "LLM_type": "openAI",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/merge_intervals/openAI/ChatGPT4_merge_intervals_v3.py",
             "log": "",
-            "execution_time_ms": 50.0,
-            "CPU_usage": 56.0,
+            "execution_time_ms": 110.0,
+            "CPU_usage": 27.0,
+            "RAM_usage": 13952,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "merge_intervals_185",
+        "filename": "merge_intervals.py",
+        "language": "python",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/merge_intervals/claude/ClaudeSonnet4_merge_intervals_v3.py",
+            "log": "",
+            "execution_time_ms": 130.0,
+            "CPU_usage": 33.0,
             "RAM_usage": 13952,
             "regressionTestPassed": true,
             "success": true,

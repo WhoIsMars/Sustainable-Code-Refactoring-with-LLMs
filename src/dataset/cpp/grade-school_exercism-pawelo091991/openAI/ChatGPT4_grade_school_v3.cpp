@@ -10,7 +10,9 @@ namespace grade_school {
 	void school::add(string name, int grade) {
 		auto& students = database[grade];
 		auto it = std::lower_bound(students.begin(), students.end(), name);
-		students.insert(it, std::move(name));
+		if (it == students.end() || *it != name) {
+			students.insert(it, std::move(name));
+		}
 	}
 
 	vector<string> school::grade(int grade) const {

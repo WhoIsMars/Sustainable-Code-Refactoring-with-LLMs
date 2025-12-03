@@ -11,9 +11,8 @@ class Alien {
         bool hit() {
             if (health > 0) {
                 --health;
-                return true;
             }
-            return false;
+            return true;
         }
 
         bool is_alive() const {
@@ -35,7 +34,7 @@ class Alien {
         int y_coordinate;
 
     private:
-        int health {3};
+        int health = 3;
 };
 
 }  // namespace targets

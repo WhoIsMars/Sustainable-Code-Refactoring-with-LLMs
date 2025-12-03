@@ -1,17 +1,23 @@
 {
-  "execution_date": "2025-11-21 10:54:40",
+  "execution_date": "2025-12-03 01:15:10",
   "execution_metadata": {
     "total_tests": 48,
     "successful_tests": 44,
     "execution_time": "00h 00m 03s",
     "cluster": "cluster_pangram",
     "test_type": "llm_v3",
-    "last_updated": "2025-11-21 10:54:40",
+    "last_updated": "2025-12-03 01:15:10",
     "selective_execution": {
       "languages": [
-        "cpp"
+        "cpp",
+        "c",
+        "java",
+        "javascript",
+        "typescript",
+        "python",
+        "go"
       ],
-      "timestamp": "2025-11-21 10:54:40"
+      "timestamp": "2025-12-03 01:15:10"
     }
   },
   "results": {
@@ -22,12 +28,12 @@
         "language": "python",
         "LLM_results": [
           {
-            "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/pangram/claude/ClaudeSonnet4_pangram_v3.py",
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/pangram/gemini/GeminiFlash_pangram_v3.py",
             "log": "",
-            "execution_time_ms": 50.0,
-            "CPU_usage": 71.0,
-            "RAM_usage": 13696,
+            "execution_time_ms": 100.0,
+            "CPU_usage": 47.0,
+            "RAM_usage": 13952,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -43,8 +49,8 @@
             "LLM_type": "openAI",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/pangram/openAI/ChatGPT4_pangram_v3.py",
             "log": "",
-            "execution_time_ms": 40.0,
-            "CPU_usage": 75.0,
+            "execution_time_ms": 200.0,
+            "CPU_usage": 42.0,
             "RAM_usage": 13824,
             "regressionTestPassed": true,
             "success": true,
@@ -58,12 +64,66 @@
         "language": "python",
         "LLM_results": [
           {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/pangram/claude/ClaudeSonnet4_pangram_v3.py",
+            "log": "",
+            "execution_time_ms": 130.0,
+            "CPU_usage": 31.0,
+            "RAM_usage": 13696,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "python_pangram_ThomasZumsteg",
+        "filename": "pangram.py",
+        "language": "python",
+        "LLM_results": [
+          {
             "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/pangram/gemini/GeminiFlash_pangram_v3.py",
+            "path": "python/pangram_exercism-ThomasZumsteg/gemini/GeminiFlash_pangram_v3.py",
+            "log": "",
+            "execution_time_ms": 30.0,
+            "CPU_usage": 25.0,
+            "RAM_usage": 13696,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "python_pangram_ThomasZumsteg",
+        "filename": "pangram.py",
+        "language": "python",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "python/pangram_exercism-ThomasZumsteg/claude/ClaudeSonnet4_pangram_v3.py",
+            "log": "",
+            "execution_time_ms": 30.0,
+            "CPU_usage": 64.0,
+            "RAM_usage": 13952,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "python_pangram_ThomasZumsteg",
+        "filename": "pangram.py",
+        "language": "python",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "python/pangram_exercism-ThomasZumsteg/openAI/ChatGPT4_pangram_v3.py",
             "log": "",
             "execution_time_ms": 40.0,
-            "CPU_usage": 66.0,
-            "RAM_usage": 13824,
+            "CPU_usage": 57.0,
+            "RAM_usage": 13952,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -79,35 +139,13 @@
         "LLM_results": [
           {
             "LLM_type": "openAI",
-            "path": "javascript/pangram_exercism-javascript-bearguns/openAI/ChatGPT4_pangram_v3.js",
-            "log": "/Users/piccoletto/Desktop/everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/pangram_exercism-javascript-bearguns/openAI/output.log",
-            "execution_time_ms": 450,
-            "CPU_usage": 35.0,
-            "RAM_usage": 82576,
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/pangram_exercism-javascript-bearguns/openAI/ChatGPT4_pangram_v3.js",
+            "log": "",
+            "execution_time_ms": 560.0,
+            "CPU_usage": 22.0,
+            "RAM_usage": 81284,
             "regressionTestPassed": true,
-            "success": null,
-            "error_message": null
-          },
-          {
-            "LLM_type": "claude",
-            "path": "javascript/pangram_exercism-javascript-bearguns/claude/ClaudeSonnet4_pangram_v3.js",
-            "log": "/Users/piccoletto/Desktop/everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/pangram_exercism-javascript-bearguns/claude/output.log",
-            "execution_time_ms": 330,
-            "CPU_usage": 37.0,
-            "RAM_usage": 80908,
-            "regressionTestPassed": true,
-            "success": null,
-            "error_message": null
-          },
-          {
-            "LLM_type": "gemini",
-            "path": "javascript/pangram_exercism-javascript-bearguns/gemini/GeminiFlash_pangram_v3.js",
-            "log": "/Users/piccoletto/Desktop/everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/pangram_exercism-javascript-bearguns/gemini/output.log",
-            "execution_time_ms": 340,
-            "CPU_usage": 39.0,
-            "RAM_usage": 81652,
-            "regressionTestPassed": true,
-            "success": null,
+            "success": true,
             "error_message": null
           }
         ]
@@ -119,35 +157,103 @@
         "LLM_results": [
           {
             "LLM_type": "openAI",
-            "path": "javascript/pangram_exercism-javascript-PhymasSC/openAI/ChatGPT4_pangram_v3.js",
-            "log": "/Users/piccoletto/Desktop/everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/pangram_exercism-javascript-PhymasSC/openAI/output.log",
-            "execution_time_ms": 420,
-            "CPU_usage": 41.0,
-            "RAM_usage": 81500,
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/pangram_exercism-javascript-PhymasSC/openAI/ChatGPT4_pangram_v3.js",
+            "log": "",
+            "execution_time_ms": 740.0,
+            "CPU_usage": 22.0,
+            "RAM_usage": 81444,
             "regressionTestPassed": true,
-            "success": null,
+            "success": true,
             "error_message": null
-          },
+          }
+        ]
+      },
+      {
+        "id": "javascript_pangram_exercism-javascript-bearguns_bearguns",
+        "filename": "pangram.js",
+        "language": "javascript",
+        "LLM_results": [
           {
             "LLM_type": "claude",
-            "path": "javascript/pangram_exercism-javascript-PhymasSC/claude/ClaudeSonnet4_pangram_v3.js",
-            "log": "/Users/piccoletto/Desktop/everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/pangram_exercism-javascript-PhymasSC/claude/output.log",
-            "execution_time_ms": 310,
-            "CPU_usage": 50.0,
-            "RAM_usage": 82436,
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/pangram_exercism-javascript-bearguns/claude/ClaudeSonnet4_pangram_v3.js",
+            "log": "",
+            "execution_time_ms": 760.0,
+            "CPU_usage": 19.0,
+            "RAM_usage": 80332,
             "regressionTestPassed": true,
-            "success": null,
+            "success": true,
             "error_message": null
-          },
+          }
+        ]
+      },
+      {
+        "id": "javascript_pangram_exercism-javascript-bearguns_bearguns",
+        "filename": "pangram.js",
+        "language": "javascript",
+        "LLM_results": [
           {
             "LLM_type": "gemini",
-            "path": "javascript/pangram_exercism-javascript-PhymasSC/gemini/GeminiFlash_pangram_v3.js",
-            "log": "/Users/piccoletto/Desktop/everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/pangram_exercism-javascript-PhymasSC/gemini/output.log",
-            "execution_time_ms": 310,
-            "CPU_usage": 46.0,
-            "RAM_usage": 80172,
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/pangram_exercism-javascript-bearguns/gemini/GeminiFlash_pangram_v3.js",
+            "log": "",
+            "execution_time_ms": 900.0,
+            "CPU_usage": 20.0,
+            "RAM_usage": 81348,
             "regressionTestPassed": true,
-            "success": null,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_pangram_exercism-javascript-PhymasSC_PhymasSC",
+        "filename": "pangram.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/pangram_exercism-javascript-PhymasSC/claude/ClaudeSonnet4_pangram_v3.js",
+            "log": "",
+            "execution_time_ms": 580.0,
+            "CPU_usage": 22.0,
+            "RAM_usage": 81356,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_pangram_exercism-javascript-irvingbennett_irvingbennett",
+        "filename": "pangram.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/pangram_exercism-javascript-irvingbennett/claude/ClaudeSonnet4_pangram_v3.js",
+            "log": "",
+            "execution_time_ms": 720.0,
+            "CPU_usage": 26.0,
+            "RAM_usage": 81112,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_pangram_exercism-javascript-PhymasSC_PhymasSC",
+        "filename": "pangram.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/pangram_exercism-javascript-PhymasSC/gemini/GeminiFlash_pangram_v3.js",
+            "log": "",
+            "execution_time_ms": 700.0000000000001,
+            "CPU_usage": 18.0,
+            "RAM_usage": 82476,
+            "regressionTestPassed": true,
+            "success": true,
             "error_message": null
           }
         ]
@@ -159,35 +265,49 @@
         "LLM_results": [
           {
             "LLM_type": "openAI",
-            "path": "javascript/pangram_exercism-javascript-irvingbennett/openAI/ChatGPT4_pangram_v3.js",
-            "log": "/Users/piccoletto/Desktop/everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/pangram_exercism-javascript-irvingbennett/openAI/output.log",
-            "execution_time_ms": 430,
-            "CPU_usage": 39.0,
-            "RAM_usage": 81112,
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/pangram_exercism-javascript-irvingbennett/openAI/ChatGPT4_pangram_v3.js",
+            "log": "",
+            "execution_time_ms": 700.0,
+            "CPU_usage": 16.0,
+            "RAM_usage": 81644,
             "regressionTestPassed": true,
-            "success": null,
+            "success": true,
             "error_message": null
-          },
-          {
-            "LLM_type": "claude",
-            "path": "javascript/pangram_exercism-javascript-irvingbennett/claude/ClaudeSonnet4_pangram_v3.js",
-            "log": "/Users/piccoletto/Desktop/everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/pangram_exercism-javascript-irvingbennett/claude/output.log",
-            "execution_time_ms": 300,
-            "CPU_usage": 46.0,
-            "RAM_usage": 82104,
-            "regressionTestPassed": true,
-            "success": null,
-            "error_message": null
-          },
+          }
+        ]
+      },
+      {
+        "id": "javascript_pangram_exercism-javascript-irvingbennett_irvingbennett",
+        "filename": "pangram.js",
+        "language": "javascript",
+        "LLM_results": [
           {
             "LLM_type": "gemini",
-            "path": "javascript/pangram_exercism-javascript-irvingbennett/gemini/GeminiFlash_pangram_v3.js",
-            "log": "/Users/piccoletto/Desktop/everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/pangram_exercism-javascript-irvingbennett/gemini/output.log",
-            "execution_time_ms": 310,
-            "CPU_usage": 39.0,
-            "RAM_usage": 80700,
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/pangram_exercism-javascript-irvingbennett/gemini/GeminiFlash_pangram_v3.js",
+            "log": "",
+            "execution_time_ms": 620.0,
+            "CPU_usage": 16.0,
+            "RAM_usage": 83336,
             "regressionTestPassed": true,
-            "success": null,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_pangram_exercism-javascript-programmiri_programmiri",
+        "filename": "pangram.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/pangram_exercism-javascript-programmiri/claude/ClaudeSonnet4_pangram_v3.js",
+            "log": "",
+            "execution_time_ms": 580.0000000000001,
+            "CPU_usage": 16.0,
+            "RAM_usage": 81436,
+            "regressionTestPassed": true,
+            "success": true,
             "error_message": null
           }
         ]
@@ -199,35 +319,49 @@
         "LLM_results": [
           {
             "LLM_type": "openAI",
-            "path": "javascript/pangram_exercism-javascript-programmiri/openAI/ChatGPT4_pangram_v3.js",
-            "log": "/Users/piccoletto/Desktop/everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/pangram_exercism-javascript-programmiri/openAI/output.log",
-            "execution_time_ms": 390,
-            "CPU_usage": 42.0,
-            "RAM_usage": 81220,
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/pangram_exercism-javascript-programmiri/openAI/ChatGPT4_pangram_v3.js",
+            "log": "",
+            "execution_time_ms": 800.0,
+            "CPU_usage": 21.0,
+            "RAM_usage": 82728,
             "regressionTestPassed": true,
-            "success": null,
+            "success": true,
             "error_message": null
-          },
-          {
-            "LLM_type": "claude",
-            "path": "javascript/pangram_exercism-javascript-programmiri/claude/ClaudeSonnet4_pangram_v3.js",
-            "log": "/Users/piccoletto/Desktop/everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/pangram_exercism-javascript-programmiri/claude/output.log",
-            "execution_time_ms": 310,
-            "CPU_usage": 39.0,
-            "RAM_usage": 82204,
-            "regressionTestPassed": true,
-            "success": null,
-            "error_message": null
-          },
+          }
+        ]
+      },
+      {
+        "id": "javascript_pangram_exercism-javascript-programmiri_programmiri",
+        "filename": "pangram.js",
+        "language": "javascript",
+        "LLM_results": [
           {
             "LLM_type": "gemini",
-            "path": "javascript/pangram_exercism-javascript-programmiri/gemini/GeminiFlash_pangram_v3.js",
-            "log": "/Users/piccoletto/Desktop/everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/pangram_exercism-javascript-programmiri/gemini/output.log",
-            "execution_time_ms": 330,
-            "CPU_usage": 33.0,
-            "RAM_usage": 80156,
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/pangram_exercism-javascript-programmiri/gemini/GeminiFlash_pangram_v3.js",
+            "log": "",
+            "execution_time_ms": 750.0,
+            "CPU_usage": 18.0,
+            "RAM_usage": 81336,
             "regressionTestPassed": true,
-            "success": null,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_pangram_exercism-javascript-ffflorian_ffflorian",
+        "filename": "pangram.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/pangram_exercism-javascript-ffflorian/claude/ClaudeSonnet4_pangram_v3.js",
+            "log": "",
+            "execution_time_ms": 500.0,
+            "CPU_usage": 20.0,
+            "RAM_usage": 85124,
+            "regressionTestPassed": false,
+            "success": false,
             "error_message": null
           }
         ]
@@ -239,35 +373,31 @@
         "LLM_results": [
           {
             "LLM_type": "openAI",
-            "path": "javascript/pangram_exercism-javascript-ffflorian/openAI/ChatGPT4_pangram_v3.js",
-            "log": "/Users/piccoletto/Desktop/everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/pangram_exercism-javascript-ffflorian/openAI/output.log",
-            "execution_time_ms": 300,
-            "CPU_usage": 45.0,
-            "RAM_usage": 82180,
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/pangram_exercism-javascript-ffflorian/openAI/ChatGPT4_pangram_v3.js",
+            "log": "",
+            "execution_time_ms": 550.0,
+            "CPU_usage": 15.0,
+            "RAM_usage": 81072,
             "regressionTestPassed": true,
-            "success": null,
+            "success": true,
             "error_message": null
-          },
-          {
-            "LLM_type": "claude",
-            "path": "javascript/pangram_exercism-javascript-ffflorian/claude/ClaudeSonnet4_pangram_v3.js",
-            "log": "/Users/piccoletto/Desktop/everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/pangram_exercism-javascript-ffflorian/claude/output.log",
-            "execution_time_ms": 290,
-            "CPU_usage": 48.0,
-            "RAM_usage": 83800,
-            "regressionTestPassed": false,
-            "success": null,
-            "error_message": null
-          },
+          }
+        ]
+      },
+      {
+        "id": "javascript_pangram_exercism-javascript-ffflorian_ffflorian",
+        "filename": "pangram.js",
+        "language": "javascript",
+        "LLM_results": [
           {
             "LLM_type": "gemini",
-            "path": "javascript/pangram_exercism-javascript-ffflorian/gemini/GeminiFlash_pangram_v3.js",
-            "log": "/Users/piccoletto/Desktop/everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/pangram_exercism-javascript-ffflorian/gemini/output.log",
-            "execution_time_ms": 310,
-            "CPU_usage": 35.0,
-            "RAM_usage": 80524,
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/pangram_exercism-javascript-ffflorian/gemini/GeminiFlash_pangram_v3.js",
+            "log": "",
+            "execution_time_ms": 590.0000000000001,
+            "CPU_usage": 19.0,
+            "RAM_usage": 81480,
             "regressionTestPassed": true,
-            "success": null,
+            "success": true,
             "error_message": null
           }
         ]
@@ -279,35 +409,67 @@
         "LLM_results": [
           {
             "LLM_type": "openAI",
-            "path": "javascript/pangram_exercism-javascript-oguzsh/openAI/ChatGPT4_pangram_v3.js",
-            "log": "/Users/piccoletto/Desktop/everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/pangram_exercism-javascript-oguzsh/openAI/output.log",
-            "execution_time_ms": 310,
-            "CPU_usage": 37.0,
-            "RAM_usage": 81732,
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/pangram_exercism-javascript-oguzsh/openAI/ChatGPT4_pangram_v3.js",
+            "log": "",
+            "execution_time_ms": 530.0,
+            "CPU_usage": 20.0,
+            "RAM_usage": 82896,
             "regressionTestPassed": true,
-            "success": null,
+            "success": true,
             "error_message": null
-          },
+          }
+        ]
+      },
+      {
+        "id": "javascript_pangram_exercism-javascript-oguzsh_oguzsh",
+        "filename": "pangram.js",
+        "language": "javascript",
+        "LLM_results": [
           {
             "LLM_type": "claude",
-            "path": "javascript/pangram_exercism-javascript-oguzsh/claude/ClaudeSonnet4_pangram_v3.js",
-            "log": "/Users/piccoletto/Desktop/everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/pangram_exercism-javascript-oguzsh/claude/output.log",
-            "execution_time_ms": 300,
-            "CPU_usage": 39.0,
-            "RAM_usage": 81372,
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/pangram_exercism-javascript-oguzsh/claude/ClaudeSonnet4_pangram_v3.js",
+            "log": "",
+            "execution_time_ms": 510.0,
+            "CPU_usage": 21.0,
+            "RAM_usage": 82916,
             "regressionTestPassed": true,
-            "success": null,
+            "success": true,
             "error_message": null
-          },
+          }
+        ]
+      },
+      {
+        "id": "javascript_pangram_exercism-javascript-ThomasZumsteg_ThomasZumsteg",
+        "filename": "pangram.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/pangram_exercism-javascript-ThomasZumsteg/claude/ClaudeSonnet4_pangram_v3.js",
+            "log": "",
+            "execution_time_ms": 550.0,
+            "CPU_usage": 18.0,
+            "RAM_usage": 81368,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_pangram_exercism-javascript-oguzsh_oguzsh",
+        "filename": "pangram.js",
+        "language": "javascript",
+        "LLM_results": [
           {
             "LLM_type": "gemini",
-            "path": "javascript/pangram_exercism-javascript-oguzsh/gemini/GeminiFlash_pangram_v3.js",
-            "log": "/Users/piccoletto/Desktop/everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/pangram_exercism-javascript-oguzsh/gemini/output.log",
-            "execution_time_ms": 310,
-            "CPU_usage": 37.0,
-            "RAM_usage": 79956,
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/pangram_exercism-javascript-oguzsh/gemini/GeminiFlash_pangram_v3.js",
+            "log": "",
+            "execution_time_ms": 570.0,
+            "CPU_usage": 17.0,
+            "RAM_usage": 82232,
             "regressionTestPassed": true,
-            "success": null,
+            "success": true,
             "error_message": null
           }
         ]
@@ -319,35 +481,193 @@
         "LLM_results": [
           {
             "LLM_type": "openAI",
-            "path": "javascript/pangram_exercism-javascript-ThomasZumsteg/openAI/ChatGPT4_pangram_v3.js",
-            "log": "/Users/piccoletto/Desktop/everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/pangram_exercism-javascript-ThomasZumsteg/openAI/output.log",
-            "execution_time_ms": 310,
-            "CPU_usage": 43.0,
-            "RAM_usage": 81132,
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/pangram_exercism-javascript-ThomasZumsteg/openAI/ChatGPT4_pangram_v3.js",
+            "log": "",
+            "execution_time_ms": 540.0,
+            "CPU_usage": 16.0,
+            "RAM_usage": 81304,
             "regressionTestPassed": true,
-            "success": null,
+            "success": true,
             "error_message": null
-          },
-          {
-            "LLM_type": "claude",
-            "path": "javascript/pangram_exercism-javascript-ThomasZumsteg/claude/ClaudeSonnet4_pangram_v3.js",
-            "log": "/Users/piccoletto/Desktop/everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/pangram_exercism-javascript-ThomasZumsteg/claude/output.log",
-            "execution_time_ms": 310,
-            "CPU_usage": 35.0,
-            "RAM_usage": 81624,
-            "regressionTestPassed": true,
-            "success": null,
-            "error_message": null
-          },
+          }
+        ]
+      },
+      {
+        "id": "javascript_pangram_exercism-javascript-ThomasZumsteg_ThomasZumsteg",
+        "filename": "pangram.js",
+        "language": "javascript",
+        "LLM_results": [
           {
             "LLM_type": "gemini",
-            "path": "javascript/pangram_exercism-javascript-ThomasZumsteg/gemini/GeminiFlash_pangram_v3.js",
-            "log": "/Users/piccoletto/Desktop/everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/pangram_exercism-javascript-ThomasZumsteg/gemini/output.log",
-            "execution_time_ms": 329,
-            "CPU_usage": 35.0,
-            "RAM_usage": 81388,
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/pangram_exercism-javascript-ThomasZumsteg/gemini/GeminiFlash_pangram_v3.js",
+            "log": "",
+            "execution_time_ms": 890.0,
+            "CPU_usage": 23.0,
+            "RAM_usage": 82552,
             "regressionTestPassed": true,
-            "success": null,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_pangram_ThomasZumsteg",
+        "filename": "pangram.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "javascript/pangram_exercism-ThomasZumsteg/openAI/ChatGPT4_pangram_v3.js",
+            "log": "",
+            "execution_time_ms": 420.0,
+            "CPU_usage": 17.0,
+            "RAM_usage": 80040,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_pangram_ThomasZumsteg",
+        "filename": "pangram.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "javascript/pangram_exercism-ThomasZumsteg/claude/ClaudeSonnet4_pangram_v3.js",
+            "log": "",
+            "execution_time_ms": 390.0,
+            "CPU_usage": 45.0,
+            "RAM_usage": 80164,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_pangram_ThomasZumsteg",
+        "filename": "pangram.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "javascript/pangram_exercism-ThomasZumsteg/gemini/GeminiFlash_pangram_v3.js",
+            "log": "",
+            "execution_time_ms": 380.0,
+            "CPU_usage": 51.0,
+            "RAM_usage": 80832,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_pangram_SLIB53",
+        "filename": "babel.config.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "javascript/pangram_exercism-SLIB53/openAI/ChatGPT4_babel_v3.js",
+            "log": "",
+            "execution_time_ms": 430.0,
+            "CPU_usage": 55.0,
+            "RAM_usage": 80544,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_pangram_oguzsh",
+        "filename": "babel.config.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "javascript/pangram_exercism-oguzsh/openAI/ChatGPT4_babel_v3.js",
+            "log": "",
+            "execution_time_ms": 470.0,
+            "CPU_usage": 41.0,
+            "RAM_usage": 80388,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_pangram_oguzsh",
+        "filename": "babel.config.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "javascript/pangram_exercism-oguzsh/claude/ClaudeSonnet4_babel_v3.js",
+            "log": "",
+            "execution_time_ms": 440.0,
+            "CPU_usage": 41.0,
+            "RAM_usage": 82324,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_pangram_SLIB53",
+        "filename": "babel.config.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "javascript/pangram_exercism-SLIB53/claude/ClaudeSonnet4_babel_v3.js",
+            "log": "",
+            "execution_time_ms": 439.99999999999994,
+            "CPU_usage": 38.0,
+            "RAM_usage": 81068,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_pangram_SLIB53",
+        "filename": "babel.config.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "javascript/pangram_exercism-SLIB53/gemini/GeminiFlash_babel_v3.js",
+            "log": "",
+            "execution_time_ms": 449.99999999999994,
+            "CPU_usage": 36.0,
+            "RAM_usage": 81072,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_pangram_oguzsh",
+        "filename": "babel.config.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "javascript/pangram_exercism-oguzsh/gemini/GeminiFlash_babel_v3.js",
+            "log": "",
+            "execution_time_ms": 510.0,
+            "CPU_usage": 37.0,
+            "RAM_usage": 81816,
+            "regressionTestPassed": true,
+            "success": true,
             "error_message": null
           }
         ]
@@ -388,6 +708,166 @@
             "execution_time_ms": 2883,
             "CPU_usage": 43.0,
             "RAM_usage": 224876,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "typescript_pangram_Exercism-typescript-chriswilding",
+        "filename": "pangram.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "typescript/pangram_Exercism-typescript-chriswilding/openAI/ChatGPT4_pangram_v3.ts",
+            "log": "/Users/piccoletto/Desktop/everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/pangram_Exercism-typescript-chriswilding/openAI/output.log",
+            "execution_time_ms": 1763,
+            "CPU_usage": 69.0,
+            "RAM_usage": 222524,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "typescript/pangram_Exercism-typescript-chriswilding/claude/ClaudeSonnet4_pangram_v3.ts",
+            "log": "/Users/piccoletto/Desktop/everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/pangram_Exercism-typescript-chriswilding/claude/output.log",
+            "execution_time_ms": 2818,
+            "CPU_usage": 50.0,
+            "RAM_usage": 218832,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "typescript/pangram_Exercism-typescript-chriswilding/gemini/GeminiFlash_pangram_v3.ts",
+            "log": "/Users/piccoletto/Desktop/everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/pangram_Exercism-typescript-chriswilding/gemini/output.log",
+            "execution_time_ms": 2883,
+            "CPU_usage": 43.0,
+            "RAM_usage": 224876,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "typescript_pangram_Exercism-typescript-chriswilding",
+        "filename": "pangram.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "typescript/pangram_Exercism-typescript-chriswilding/openAI/ChatGPT4_pangram_v3.ts",
+            "log": "/Users/piccoletto/Desktop/everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/pangram_Exercism-typescript-chriswilding/openAI/output.log",
+            "execution_time_ms": 1763,
+            "CPU_usage": 69.0,
+            "RAM_usage": 222524,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "typescript/pangram_Exercism-typescript-chriswilding/claude/ClaudeSonnet4_pangram_v3.ts",
+            "log": "/Users/piccoletto/Desktop/everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/pangram_Exercism-typescript-chriswilding/claude/output.log",
+            "execution_time_ms": 2818,
+            "CPU_usage": 50.0,
+            "RAM_usage": 218832,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "typescript/pangram_Exercism-typescript-chriswilding/gemini/GeminiFlash_pangram_v3.ts",
+            "log": "/Users/piccoletto/Desktop/everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/pangram_Exercism-typescript-chriswilding/gemini/output.log",
+            "execution_time_ms": 2883,
+            "CPU_usage": 43.0,
+            "RAM_usage": 224876,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "typescript_pangram_Exercism-typescript-uzilan_uzilan",
+        "filename": "pangram.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "typescript/pangram_Exercism-typescript-uzilan/openAI/ChatGPT4_pangram_v3.ts",
+            "log": "/Users/piccoletto/Desktop/everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/pangram_Exercism-typescript-uzilan/openAI/output.log",
+            "execution_time_ms": 2091,
+            "CPU_usage": 51.0,
+            "RAM_usage": 216980,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "typescript/pangram_Exercism-typescript-uzilan/claude/ClaudeSonnet4_pangram_v3.ts",
+            "log": "/Users/piccoletto/Desktop/everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/pangram_Exercism-typescript-uzilan/claude/output.log",
+            "execution_time_ms": 2569,
+            "CPU_usage": 46.0,
+            "RAM_usage": 221744,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "typescript/pangram_Exercism-typescript-uzilan/gemini/GeminiFlash_pangram_v3.ts",
+            "log": "/Users/piccoletto/Desktop/everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/pangram_Exercism-typescript-uzilan/gemini/output.log",
+            "execution_time_ms": 2402,
+            "CPU_usage": 43.0,
+            "RAM_usage": 220220,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "typescript_pangram_Exercism-typescript-uzilan_uzilan",
+        "filename": "pangram.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "typescript/pangram_Exercism-typescript-uzilan/openAI/ChatGPT4_pangram_v3.ts",
+            "log": "/Users/piccoletto/Desktop/everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/pangram_Exercism-typescript-uzilan/openAI/output.log",
+            "execution_time_ms": 2091,
+            "CPU_usage": 51.0,
+            "RAM_usage": 216980,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "typescript/pangram_Exercism-typescript-uzilan/claude/ClaudeSonnet4_pangram_v3.ts",
+            "log": "/Users/piccoletto/Desktop/everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/pangram_Exercism-typescript-uzilan/claude/output.log",
+            "execution_time_ms": 2569,
+            "CPU_usage": 46.0,
+            "RAM_usage": 221744,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "typescript/pangram_Exercism-typescript-uzilan/gemini/GeminiFlash_pangram_v3.ts",
+            "log": "/Users/piccoletto/Desktop/everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/pangram_Exercism-typescript-uzilan/gemini/output.log",
+            "execution_time_ms": 2402,
+            "CPU_usage": 43.0,
+            "RAM_usage": 220220,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -475,6 +955,86 @@
         ]
       },
       {
+        "id": "typescript_pangram_Exercism-typescript-thewanionly_thewanionly",
+        "filename": "pangram.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "typescript/pangram_Exercism-typescript-thewanionly/openAI/ChatGPT4_pangram_v3.ts",
+            "log": "/Users/piccoletto/Desktop/everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/pangram_Exercism-typescript-thewanionly/openAI/output.log",
+            "execution_time_ms": 2619,
+            "CPU_usage": 43.0,
+            "RAM_usage": 221516,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "typescript/pangram_Exercism-typescript-thewanionly/claude/ClaudeSonnet4_pangram_v3.ts",
+            "log": "/Users/piccoletto/Desktop/everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/pangram_Exercism-typescript-thewanionly/claude/output.log",
+            "execution_time_ms": 2409,
+            "CPU_usage": 47.0,
+            "RAM_usage": 223136,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "typescript/pangram_Exercism-typescript-thewanionly/gemini/GeminiFlash_pangram_v3.ts",
+            "log": "/Users/piccoletto/Desktop/everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/pangram_Exercism-typescript-thewanionly/gemini/output.log",
+            "execution_time_ms": 2216,
+            "CPU_usage": 47.0,
+            "RAM_usage": 221592,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "typescript_pangram_Exercism-typescript-thewanionly_thewanionly",
+        "filename": "pangram.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "typescript/pangram_Exercism-typescript-thewanionly/openAI/ChatGPT4_pangram_v3.ts",
+            "log": "/Users/piccoletto/Desktop/everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/pangram_Exercism-typescript-thewanionly/openAI/output.log",
+            "execution_time_ms": 2619,
+            "CPU_usage": 43.0,
+            "RAM_usage": 221516,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "typescript/pangram_Exercism-typescript-thewanionly/claude/ClaudeSonnet4_pangram_v3.ts",
+            "log": "/Users/piccoletto/Desktop/everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/pangram_Exercism-typescript-thewanionly/claude/output.log",
+            "execution_time_ms": 2409,
+            "CPU_usage": 47.0,
+            "RAM_usage": 223136,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "typescript/pangram_Exercism-typescript-thewanionly/gemini/GeminiFlash_pangram_v3.ts",
+            "log": "/Users/piccoletto/Desktop/everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/pangram_Exercism-typescript-thewanionly/gemini/output.log",
+            "execution_time_ms": 2216,
+            "CPU_usage": 47.0,
+            "RAM_usage": 221592,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
         "id": "typescript_pangram_Exercism-typescript-shybyte_shybyte",
         "filename": "pangram.ts",
         "language": "typescript",
@@ -508,6 +1068,166 @@
             "execution_time_ms": 2489,
             "CPU_usage": 51.0,
             "RAM_usage": 222692,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "typescript_pangram_Exercism-typescript-shybyte_shybyte",
+        "filename": "pangram.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "typescript/pangram_Exercism-typescript-shybyte/openAI/ChatGPT4_pangram_v3.ts",
+            "log": "/Users/piccoletto/Desktop/everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/pangram_Exercism-typescript-shybyte/openAI/output.log",
+            "execution_time_ms": 2845,
+            "CPU_usage": 45.0,
+            "RAM_usage": 224368,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "typescript/pangram_Exercism-typescript-shybyte/claude/ClaudeSonnet4_pangram_v3.ts",
+            "log": "/Users/piccoletto/Desktop/everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/pangram_Exercism-typescript-shybyte/claude/output.log",
+            "execution_time_ms": 2998,
+            "CPU_usage": 44.0,
+            "RAM_usage": 220504,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "typescript/pangram_Exercism-typescript-shybyte/gemini/GeminiFlash_pangram_v3.ts",
+            "log": "/Users/piccoletto/Desktop/everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/pangram_Exercism-typescript-shybyte/gemini/output.log",
+            "execution_time_ms": 2489,
+            "CPU_usage": 51.0,
+            "RAM_usage": 222692,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "typescript_pangram_Exercism-typescript-shybyte_shybyte",
+        "filename": "pangram.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "typescript/pangram_Exercism-typescript-shybyte/openAI/ChatGPT4_pangram_v3.ts",
+            "log": "/Users/piccoletto/Desktop/everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/pangram_Exercism-typescript-shybyte/openAI/output.log",
+            "execution_time_ms": 2845,
+            "CPU_usage": 45.0,
+            "RAM_usage": 224368,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "typescript/pangram_Exercism-typescript-shybyte/claude/ClaudeSonnet4_pangram_v3.ts",
+            "log": "/Users/piccoletto/Desktop/everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/pangram_Exercism-typescript-shybyte/claude/output.log",
+            "execution_time_ms": 2998,
+            "CPU_usage": 44.0,
+            "RAM_usage": 220504,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "typescript/pangram_Exercism-typescript-shybyte/gemini/GeminiFlash_pangram_v3.ts",
+            "log": "/Users/piccoletto/Desktop/everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/pangram_Exercism-typescript-shybyte/gemini/output.log",
+            "execution_time_ms": 2489,
+            "CPU_usage": 51.0,
+            "RAM_usage": 222692,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "typescript_pangram_Exercism-typescript-chriswilding_chriswilding",
+        "filename": "pangram.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "typescript/pangram_Exercism-typescript-chriswilding/openAI/ChatGPT4_pangram_v3.ts",
+            "log": "/Users/piccoletto/Desktop/everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/pangram_Exercism-typescript-chriswilding/openAI/output.log",
+            "execution_time_ms": 3159,
+            "CPU_usage": 43.0,
+            "RAM_usage": 224332,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "typescript/pangram_Exercism-typescript-chriswilding/claude/ClaudeSonnet4_pangram_v3.ts",
+            "log": "/Users/piccoletto/Desktop/everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/pangram_Exercism-typescript-chriswilding/claude/output.log",
+            "execution_time_ms": 3163,
+            "CPU_usage": 47.0,
+            "RAM_usage": 222144,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "typescript/pangram_Exercism-typescript-chriswilding/gemini/GeminiFlash_pangram_v3.ts",
+            "log": "/Users/piccoletto/Desktop/everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/pangram_Exercism-typescript-chriswilding/gemini/output.log",
+            "execution_time_ms": 2610,
+            "CPU_usage": 54.0,
+            "RAM_usage": 224324,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "typescript_pangram_Exercism-typescript-chriswilding_chriswilding",
+        "filename": "pangram.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "typescript/pangram_Exercism-typescript-chriswilding/openAI/ChatGPT4_pangram_v3.ts",
+            "log": "/Users/piccoletto/Desktop/everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/pangram_Exercism-typescript-chriswilding/openAI/output.log",
+            "execution_time_ms": 3159,
+            "CPU_usage": 43.0,
+            "RAM_usage": 224332,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "typescript/pangram_Exercism-typescript-chriswilding/claude/ClaudeSonnet4_pangram_v3.ts",
+            "log": "/Users/piccoletto/Desktop/everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/pangram_Exercism-typescript-chriswilding/claude/output.log",
+            "execution_time_ms": 3163,
+            "CPU_usage": 47.0,
+            "RAM_usage": 222144,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "typescript/pangram_Exercism-typescript-chriswilding/gemini/GeminiFlash_pangram_v3.ts",
+            "log": "/Users/piccoletto/Desktop/everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/pangram_Exercism-typescript-chriswilding/gemini/output.log",
+            "execution_time_ms": 2610,
+            "CPU_usage": 54.0,
+            "RAM_usage": 224324,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -595,6 +1315,166 @@
         ]
       },
       {
+        "id": "typescript_pangram_Exercism-typescript-FilipeCerejo_FilipeCerejo",
+        "filename": "pangram.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "typescript/pangram_Exercism-typescript-FilipeCerejo/openAI/ChatGPT4_pangram_v3.ts",
+            "log": "/Users/piccoletto/Desktop/everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/pangram_Exercism-typescript-FilipeCerejo/openAI/output.log",
+            "execution_time_ms": 2356,
+            "CPU_usage": 45.0,
+            "RAM_usage": 220916,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "typescript/pangram_Exercism-typescript-FilipeCerejo/claude/ClaudeSonnet4_pangram_v3.ts",
+            "log": "/Users/piccoletto/Desktop/everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/pangram_Exercism-typescript-FilipeCerejo/claude/output.log",
+            "execution_time_ms": 2620,
+            "CPU_usage": 50.0,
+            "RAM_usage": 220932,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "typescript/pangram_Exercism-typescript-FilipeCerejo/gemini/GeminiFlash_pangram_v3.ts",
+            "log": "/Users/piccoletto/Desktop/everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/pangram_Exercism-typescript-FilipeCerejo/gemini/output.log",
+            "execution_time_ms": 1650,
+            "CPU_usage": 63.0,
+            "RAM_usage": 219728,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "typescript_pangram_Exercism-typescript-FilipeCerejo_FilipeCerejo",
+        "filename": "pangram.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "typescript/pangram_Exercism-typescript-FilipeCerejo/openAI/ChatGPT4_pangram_v3.ts",
+            "log": "/Users/piccoletto/Desktop/everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/pangram_Exercism-typescript-FilipeCerejo/openAI/output.log",
+            "execution_time_ms": 2356,
+            "CPU_usage": 45.0,
+            "RAM_usage": 220916,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "typescript/pangram_Exercism-typescript-FilipeCerejo/claude/ClaudeSonnet4_pangram_v3.ts",
+            "log": "/Users/piccoletto/Desktop/everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/pangram_Exercism-typescript-FilipeCerejo/claude/output.log",
+            "execution_time_ms": 2620,
+            "CPU_usage": 50.0,
+            "RAM_usage": 220932,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "typescript/pangram_Exercism-typescript-FilipeCerejo/gemini/GeminiFlash_pangram_v3.ts",
+            "log": "/Users/piccoletto/Desktop/everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/pangram_Exercism-typescript-FilipeCerejo/gemini/output.log",
+            "execution_time_ms": 1650,
+            "CPU_usage": 63.0,
+            "RAM_usage": 219728,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "typescript_pangram_Exercism-typescript-alemarr_alemarr",
+        "filename": "pangram.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "typescript/pangram_Exercism-typescript-alemarr/openAI/ChatGPT4_pangram_v3.ts",
+            "log": "/Users/piccoletto/Desktop/everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/pangram_Exercism-typescript-alemarr/openAI/output.log",
+            "execution_time_ms": 2396,
+            "CPU_usage": 47.0,
+            "RAM_usage": 219708,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "typescript/pangram_Exercism-typescript-alemarr/claude/ClaudeSonnet4_pangram_v3.ts",
+            "log": "/Users/piccoletto/Desktop/everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/pangram_Exercism-typescript-alemarr/claude/output.log",
+            "execution_time_ms": 2068,
+            "CPU_usage": 58.0,
+            "RAM_usage": 220632,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "typescript/pangram_Exercism-typescript-alemarr/gemini/GeminiFlash_pangram_v3.ts",
+            "log": "/Users/piccoletto/Desktop/everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/pangram_Exercism-typescript-alemarr/gemini/output.log",
+            "execution_time_ms": 2051,
+            "CPU_usage": 60.0,
+            "RAM_usage": 221260,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "typescript_pangram_Exercism-typescript-alemarr_alemarr",
+        "filename": "pangram.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "typescript/pangram_Exercism-typescript-alemarr/openAI/ChatGPT4_pangram_v3.ts",
+            "log": "/Users/piccoletto/Desktop/everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/pangram_Exercism-typescript-alemarr/openAI/output.log",
+            "execution_time_ms": 2396,
+            "CPU_usage": 47.0,
+            "RAM_usage": 219708,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "typescript/pangram_Exercism-typescript-alemarr/claude/ClaudeSonnet4_pangram_v3.ts",
+            "log": "/Users/piccoletto/Desktop/everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/pangram_Exercism-typescript-alemarr/claude/output.log",
+            "execution_time_ms": 2068,
+            "CPU_usage": 58.0,
+            "RAM_usage": 220632,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "typescript/pangram_Exercism-typescript-alemarr/gemini/GeminiFlash_pangram_v3.ts",
+            "log": "/Users/piccoletto/Desktop/everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/pangram_Exercism-typescript-alemarr/gemini/output.log",
+            "execution_time_ms": 2051,
+            "CPU_usage": 60.0,
+            "RAM_usage": 221260,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
         "id": "typescript_pangram_Exercism-typescript-alemarr_alemarr",
         "filename": "pangram.ts",
         "language": "typescript",
@@ -673,9 +1553,251 @@
             "error_message": null
           }
         ]
+      },
+      {
+        "id": "typescript_pangram_exercism-javascript-samajammin_samajammin",
+        "filename": "pangram.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "typescript/pangram_exercism-javascript-samajammin/openAI/ChatGPT4_pangram_v3.ts",
+            "log": "/Users/piccoletto/Desktop/everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/pangram_exercism-javascript-samajammin/openAI/output.log",
+            "execution_time_ms": 2495,
+            "CPU_usage": 49.0,
+            "RAM_usage": 220080,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "typescript/pangram_exercism-javascript-samajammin/claude/ClaudeSonnet4_pangram_v3.ts",
+            "log": "/Users/piccoletto/Desktop/everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/pangram_exercism-javascript-samajammin/claude/output.log",
+            "execution_time_ms": 2535,
+            "CPU_usage": 53.0,
+            "RAM_usage": 224124,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "typescript/pangram_exercism-javascript-samajammin/gemini/GeminiFlash_pangram_v3.ts",
+            "log": "/Users/piccoletto/Desktop/everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/pangram_exercism-javascript-samajammin/gemini/output.log",
+            "execution_time_ms": 1823,
+            "CPU_usage": 65.0,
+            "RAM_usage": 220480,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "typescript_pangram_exercism-javascript-samajammin_samajammin",
+        "filename": "pangram.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "typescript/pangram_exercism-javascript-samajammin/openAI/ChatGPT4_pangram_v3.ts",
+            "log": "/Users/piccoletto/Desktop/everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/pangram_exercism-javascript-samajammin/openAI/output.log",
+            "execution_time_ms": 2495,
+            "CPU_usage": 49.0,
+            "RAM_usage": 220080,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "typescript/pangram_exercism-javascript-samajammin/claude/ClaudeSonnet4_pangram_v3.ts",
+            "log": "/Users/piccoletto/Desktop/everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/pangram_exercism-javascript-samajammin/claude/output.log",
+            "execution_time_ms": 2535,
+            "CPU_usage": 53.0,
+            "RAM_usage": 224124,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "typescript/pangram_exercism-javascript-samajammin/gemini/GeminiFlash_pangram_v3.ts",
+            "log": "/Users/piccoletto/Desktop/everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/pangram_exercism-javascript-samajammin/gemini/output.log",
+            "execution_time_ms": 1823,
+            "CPU_usage": 65.0,
+            "RAM_usage": 220480,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "typescript_pangram_wackerow",
+        "filename": "pangram.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "typescript/pangram_exercism-wackerow/openAI/ChatGPT4_pangram_v3.ts",
+            "log": "",
+            "execution_time_ms": 335,
+            "CPU_usage": 79.0,
+            "RAM_usage": 128596,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "typescript_pangram_wackerow",
+        "filename": "pangram.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "typescript/pangram_exercism-wackerow/claude/ClaudeSonnet4_pangram_v3.ts",
+            "log": "",
+            "execution_time_ms": 289,
+            "CPU_usage": 83.0,
+            "RAM_usage": 129388,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "typescript_pangram_wackerow",
+        "filename": "pangram.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "typescript/pangram_exercism-wackerow/gemini/GeminiFlash_pangram_v3.ts",
+            "log": "",
+            "execution_time_ms": 240,
+            "CPU_usage": 90.0,
+            "RAM_usage": 127612,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "typescript_pangram_samajammin",
+        "filename": "pangram.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "typescript/pangram_exercism-samajammin/openAI/ChatGPT4_pangram_v3.ts",
+            "log": "",
+            "execution_time_ms": 342,
+            "CPU_usage": 80.0,
+            "RAM_usage": 125384,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "typescript_pangram_samajammin",
+        "filename": "pangram.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "typescript/pangram_exercism-samajammin/claude/ClaudeSonnet4_pangram_v3.ts",
+            "log": "",
+            "execution_time_ms": 454,
+            "CPU_usage": 66.0,
+            "RAM_usage": 128040,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "typescript_pangram_samajammin",
+        "filename": "pangram.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "typescript/pangram_exercism-samajammin/gemini/GeminiFlash_pangram_v3.ts",
+            "log": "",
+            "execution_time_ms": 435,
+            "CPU_usage": 61.0,
+            "RAM_usage": 127132,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
       }
     ],
     "Java": [
+      {
+        "id": "Java_pangram_exercism-java-blogscot_blogscot",
+        "filename": "PangramChecker.java",
+        "language": "java",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/pangram_exercism-java-blogscot/claude/ClaudeSonnet4_pangram_v3.java",
+            "log": "",
+            "execution_time_ms": 170.0,
+            "CPU_usage": 22.0,
+            "RAM_usage": 46296,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "Java_pangram_exercism-java-blogscot_blogscot",
+        "filename": "PangramChecker.java",
+        "language": "java",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/pangram_exercism-java-blogscot/gemini/GeminiFlash_pangram_v3.java",
+            "log": "",
+            "execution_time_ms": 280.0,
+            "CPU_usage": 30.0,
+            "RAM_usage": 46152,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "Java_pangram_exercism-java-blogscot_blogscot",
+        "filename": "PangramChecker.java",
+        "language": "java",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/pangram_exercism-java-blogscot/openAI/ChatGPT4_pangram_v3.java",
+            "log": "",
+            "execution_time_ms": 160.0,
+            "CPU_usage": 20.0,
+            "RAM_usage": 46276,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
       {
         "id": "Java_pangram_exercism-java-blogscot",
         "filename": "pangram.java",
@@ -717,25 +1839,261 @@
         ]
       },
       {
-        "id": "Java_pangram_exercism-java-blogscot_blogscot",
+        "id": "Java_pangram_exercism-java-blogscot",
         "filename": "pangram.java",
         "language": "Java",
-        "LLM_results": []
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "Java/pangram_exercism-java-blogscot/openAI/ChatGPT4_pangram_v3.java",
+            "log": "/Users/piccoletto/Desktop/everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/pangram_exercism-java-blogscot/openAI/output.log",
+            "execution_time_ms": 139,
+            "CPU_usage": 44.0,
+            "RAM_usage": 45912,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "Java/pangram_exercism-java-blogscot/claude/ClaudeSonnet4_pangram_v3.java",
+            "log": "/Users/piccoletto/Desktop/everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/pangram_exercism-java-blogscot/claude/output.log",
+            "execution_time_ms": 139,
+            "CPU_usage": 44.0,
+            "RAM_usage": 45912,
+            "regressionTestPassed": false,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "Java/pangram_exercism-java-blogscot/gemini/GeminiFlash_pangram_v3.java",
+            "log": "/Users/piccoletto/Desktop/everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/pangram_exercism-java-blogscot/gemini/output.log",
+            "execution_time_ms": 139,
+            "CPU_usage": 44.0,
+            "RAM_usage": 45912,
+            "regressionTestPassed": false,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "Java_pangram_exercism-java-blogscot",
+        "filename": "pangram.java",
+        "language": "Java",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "Java/pangram_exercism-java-blogscot/openAI/ChatGPT4_pangram_v3.java",
+            "log": "/Users/piccoletto/Desktop/everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/pangram_exercism-java-blogscot/openAI/output.log",
+            "execution_time_ms": 139,
+            "CPU_usage": 44.0,
+            "RAM_usage": 45912,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "Java/pangram_exercism-java-blogscot/claude/ClaudeSonnet4_pangram_v3.java",
+            "log": "/Users/piccoletto/Desktop/everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/pangram_exercism-java-blogscot/claude/output.log",
+            "execution_time_ms": 139,
+            "CPU_usage": 44.0,
+            "RAM_usage": 45912,
+            "regressionTestPassed": false,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "Java/pangram_exercism-java-blogscot/gemini/GeminiFlash_pangram_v3.java",
+            "log": "/Users/piccoletto/Desktop/everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/pangram_exercism-java-blogscot/gemini/output.log",
+            "execution_time_ms": 139,
+            "CPU_usage": 44.0,
+            "RAM_usage": 45912,
+            "regressionTestPassed": false,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "java_pangram_ThomasZumsteg",
+        "filename": "Pangrams.java",
+        "language": "java",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "java/pangram_exercism-ThomasZumsteg/openAI/ChatGPT4_Pangrams_v3.java",
+            "log": "",
+            "execution_time_ms": 110.0,
+            "CPU_usage": 39.0,
+            "RAM_usage": 46048,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "java_pangram_ThomasZumsteg",
+        "filename": "Pangrams.java",
+        "language": "java",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "java/pangram_exercism-ThomasZumsteg/gemini/GeminiFlash_Pangrams_v3.java",
+            "log": "",
+            "execution_time_ms": 130.0,
+            "CPU_usage": 44.0,
+            "RAM_usage": 46440,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "java_pangram_ThomasZumsteg",
+        "filename": "Pangrams.java",
+        "language": "java",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "java/pangram_exercism-ThomasZumsteg/claude/ClaudeSonnet4_Pangrams_v3.java",
+            "log": "",
+            "execution_time_ms": 120.0,
+            "CPU_usage": 43.0,
+            "RAM_usage": 46068,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "java_pangram_uzilan",
+        "filename": "PangramChecker.java",
+        "language": "java",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "java/pangram_exercism-uzilan/openAI/ChatGPT4_PangramChecker_v3.java",
+            "log": "",
+            "execution_time_ms": 140.0,
+            "CPU_usage": 43.0,
+            "RAM_usage": 46404,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "java_pangram_uzilan",
+        "filename": "PangramChecker.java",
+        "language": "java",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "java/pangram_exercism-uzilan/claude/ClaudeSonnet4_PangramChecker_v3.java",
+            "log": "",
+            "execution_time_ms": 140.0,
+            "CPU_usage": 35.0,
+            "RAM_usage": 46308,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "java_pangram_uzilan",
+        "filename": "PangramChecker.java",
+        "language": "java",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "java/pangram_exercism-uzilan/gemini/GeminiFlash_PangramChecker_v3.java",
+            "log": "",
+            "execution_time_ms": 150.0,
+            "CPU_usage": 41.0,
+            "RAM_usage": 46304,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "java_pangram_awsaf174",
+        "filename": "PangramChecker.java",
+        "language": "java",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "java/pangram_exercism-awsaf174/claude/ClaudeSonnet4_PangramChecker_v3.java",
+            "log": "",
+            "execution_time_ms": 130.0,
+            "CPU_usage": 44.0,
+            "RAM_usage": 46084,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "java_pangram_awsaf174",
+        "filename": "PangramChecker.java",
+        "language": "java",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "java/pangram_exercism-awsaf174/gemini/GeminiFlash_PangramChecker_v3.java",
+            "log": "",
+            "execution_time_ms": 150.0,
+            "CPU_usage": 51.0,
+            "RAM_usage": 45940,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "java_pangram_awsaf174",
+        "filename": "PangramChecker.java",
+        "language": "java",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "java/pangram_exercism-awsaf174/openAI/ChatGPT4_PangramChecker_v3.java",
+            "log": "",
+            "execution_time_ms": 130.0,
+            "CPU_usage": 47.0,
+            "RAM_usage": 46176,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
       }
     ],
     "c": [
       {
-        "id": "c_pangram_Exercism (ThomasZumsteg)",
+        "id": "c_pangram_Exercism (HeitorMP)",
         "filename": "pangram.c",
         "language": "c",
         "LLM_results": [
           {
             "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/pangram_Exercism_ThomasZumsteg/openAI/ChatGPT4_pangram_v3.c",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/pangram_Exercism_HeitorMP/openAI/ChatGPT4_pangram_v3.c",
             "log": "",
-            "execution_time_ms": 0.834757,
-            "CPU_usage": "24",
-            "RAM_usage": "8704",
+            "execution_time_ms": 6.55251,
+            "CPU_usage": 8.0,
+            "RAM_usage": 8832,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -751,27 +2109,9 @@
             "LLM_type": "gemini",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/pangram_Exercism_HeitorMP/gemini/GeminiFlash_pangram_v3.c",
             "log": "",
-            "execution_time_ms": 0.439004,
-            "CPU_usage": "53",
-            "RAM_usage": "8704",
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "c_pangram_Exercism (HeitorMP)",
-        "filename": "pangram.c",
-        "language": "c",
-        "LLM_results": [
-          {
-            "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/pangram_Exercism_HeitorMP/openAI/ChatGPT4_pangram_v3.c",
-            "log": "",
-            "execution_time_ms": 1.865348,
-            "CPU_usage": "13",
-            "RAM_usage": "8704",
+            "execution_time_ms": 4.755507,
+            "CPU_usage": 10.0,
+            "RAM_usage": 8832,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -787,9 +2127,9 @@
             "LLM_type": "claude",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/pangram_Exercism_HeitorMP/claude/ClaudeSonnet4_pangram_v3.c",
             "log": "",
-            "execution_time_ms": 0.475712,
-            "CPU_usage": "49",
-            "RAM_usage": "8704",
+            "execution_time_ms": 4.178965,
+            "CPU_usage": 10.0,
+            "RAM_usage": 8832,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -802,120 +2142,12 @@
         "language": "c",
         "LLM_results": [
           {
-            "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/pangram_Exercism_ThomasZumsteg/gemini/GeminiFlash_pangram_v3.c",
-            "log": "",
-            "execution_time_ms": 0.636838,
-            "CPU_usage": "48",
-            "RAM_usage": "8704",
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "c_pangram_Exercism (paddydoyle)",
-        "filename": "pangram.c",
-        "language": "c",
-        "LLM_results": [
-          {
             "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/pangram_Exercism_paddydoyle/openAI/ChatGPT4_pangram_v3.c",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/pangram_Exercism_ThomasZumsteg/openAI/ChatGPT4_pangram_v3.c",
             "log": "",
-            "execution_time_ms": 0.55488,
-            "CPU_usage": "48",
-            "RAM_usage": "8704",
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "c_pangram_Exercism (m3g4d1v3r)",
-        "filename": "pangram.c",
-        "language": "c",
-        "LLM_results": [
-          {
-            "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/pangram_Exercism_m3g4d1v3r/openAI/ChatGPT4_pangram_v3.c",
-            "log": "",
-            "execution_time_ms": 0.467962,
-            "CPU_usage": "51",
-            "RAM_usage": "8704",
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "c_pangram_Exercism (m3g4d1v3r)",
-        "filename": "pangram.c",
-        "language": "c",
-        "LLM_results": [
-          {
-            "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/pangram_Exercism_m3g4d1v3r/gemini/GeminiFlash_pangram_v3.c",
-            "log": "",
-            "execution_time_ms": 0.629796,
-            "CPU_usage": "52",
-            "RAM_usage": "8704",
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "c_pangram_Exercism (vlzware)",
-        "filename": "pangram.c",
-        "language": "c",
-        "LLM_results": [
-          {
-            "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/pangram_Exercism_vlzware/openAI/ChatGPT4_pangram_v3.c",
-            "log": "",
-            "execution_time_ms": 0.451587,
-            "CPU_usage": "52",
-            "RAM_usage": "8704",
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "c_pangram_Exercism (vlzware)",
-        "filename": "pangram.c",
-        "language": "c",
-        "LLM_results": [
-          {
-            "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/pangram_Exercism_vlzware/claude/ClaudeSonnet4_pangram_v3.c",
-            "log": "",
-            "execution_time_ms": 1.563679,
-            "CPU_usage": "16",
-            "RAM_usage": "8704",
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "c_pangram_Exercism (vlzware)",
-        "filename": "pangram.c",
-        "language": "c",
-        "LLM_results": [
-          {
-            "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/pangram_Exercism_vlzware/gemini/GeminiFlash_pangram_v3.c",
-            "log": "",
-            "execution_time_ms": 0.495004,
-            "CPU_usage": "51",
-            "RAM_usage": "8704",
+            "execution_time_ms": 5.601175,
+            "CPU_usage": 9.0,
+            "RAM_usage": 8832,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -941,6 +2173,42 @@
         ]
       },
       {
+        "id": "c_pangram_Exercism (ThomasZumsteg)",
+        "filename": "pangram.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/pangram_Exercism_ThomasZumsteg/gemini/GeminiFlash_pangram_v3.c",
+            "log": "",
+            "execution_time_ms": 5.4043,
+            "CPU_usage": 7.0,
+            "RAM_usage": 8576,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "c_pangram_Exercism (paddydoyle)",
+        "filename": "pangram.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/pangram_Exercism_paddydoyle/openAI/ChatGPT4_pangram_v3.c",
+            "log": "",
+            "execution_time_ms": 2.089044,
+            "CPU_usage": 18.0,
+            "RAM_usage": 8576,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
         "id": "c_pangram_Exercism (paddydoyle)",
         "filename": "pangram.c",
         "language": "c",
@@ -955,60 +2223,6 @@
             "regressionTestPassed": false,
             "success": false,
             "error_message": "Docker exit code: 1"
-          }
-        ]
-      },
-      {
-        "id": "c_pangram_Exercism (m3g4d1v3r)",
-        "filename": "pangram.c",
-        "language": "c",
-        "LLM_results": [
-          {
-            "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/pangram_Exercism_m3g4d1v3r/claude/ClaudeSonnet4_pangram_v3.c",
-            "log": "",
-            "execution_time_ms": null,
-            "CPU_usage": null,
-            "RAM_usage": null,
-            "regressionTestPassed": false,
-            "success": false,
-            "error_message": "Docker exit code: 1"
-          }
-        ]
-      },
-      {
-        "id": "c_pangram_Exercism (m3g4d1v3r)",
-        "filename": "pangram.c",
-        "language": "c",
-        "LLM_results": [
-          {
-            "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/pangram_Exercism_m3g4d1v3r/openAI/ChatGPT4_pangram_v3.c",
-            "log": "",
-            "execution_time_ms": 3.022946,
-            "CPU_usage": 10.0,
-            "RAM_usage": 8704,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "c_pangram_Exercism (ThomasZumsteg)",
-        "filename": "pangram.c",
-        "language": "c",
-        "LLM_results": [
-          {
-            "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/pangram_Exercism_ThomasZumsteg/openAI/ChatGPT4_pangram_v3.c",
-            "log": "",
-            "execution_time_ms": 5.527269,
-            "CPU_usage": 3.0,
-            "RAM_usage": 8576,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
           }
         ]
       },
@@ -1031,17 +2245,17 @@
         ]
       },
       {
-        "id": "c_pangram_Exercism (ThomasZumsteg)",
+        "id": "c_pangram_Exercism (m3g4d1v3r)",
         "filename": "pangram.c",
         "language": "c",
         "LLM_results": [
           {
-            "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/pangram_Exercism_ThomasZumsteg/gemini/GeminiFlash_pangram_v3.c",
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/pangram_Exercism_m3g4d1v3r/openAI/ChatGPT4_pangram_v3.c",
             "log": "",
-            "execution_time_ms": 15.819726,
-            "CPU_usage": 1.0,
-            "RAM_usage": 8704,
+            "execution_time_ms": 7.374678,
+            "CPU_usage": 12.0,
+            "RAM_usage": 8576,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -1057,8 +2271,116 @@
             "LLM_type": "gemini",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/pangram_Exercism_m3g4d1v3r/gemini/GeminiFlash_pangram_v3.c",
             "log": "",
-            "execution_time_ms": 2.494698,
-            "CPU_usage": 10.0,
+            "execution_time_ms": 17.95982,
+            "CPU_usage": 3.0,
+            "RAM_usage": 8832,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "c_pangram_Exercism (m3g4d1v3r)",
+        "filename": "pangram.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/pangram_Exercism_m3g4d1v3r/claude/ClaudeSonnet4_pangram_v3.c",
+            "log": "",
+            "execution_time_ms": null,
+            "CPU_usage": null,
+            "RAM_usage": null,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 1"
+          }
+        ]
+      },
+      {
+        "id": "c_pangram_Exercism (vlzware)",
+        "filename": "pangram.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/pangram_Exercism_vlzware/claude/ClaudeSonnet4_pangram_v3.c",
+            "log": "",
+            "execution_time_ms": 12.037644,
+            "CPU_usage": 3.0,
+            "RAM_usage": 8576,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "c_pangram_Exercism (vlzware)",
+        "filename": "pangram.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/pangram_Exercism_vlzware/openAI/ChatGPT4_pangram_v3.c",
+            "log": "",
+            "execution_time_ms": 4.948758,
+            "CPU_usage": 9.0,
+            "RAM_usage": 8832,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "c_pangram_Exercism (vlzware)",
+        "filename": "pangram.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/pangram_Exercism_vlzware/gemini/GeminiFlash_pangram_v3.c",
+            "log": "",
+            "execution_time_ms": 2.837004,
+            "CPU_usage": 31.0,
+            "RAM_usage": 8576,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "c_pangram_yorange1",
+        "filename": "pangram.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "c/pangram_exercism-yorange1/claude/ClaudeSonnet4_pangram_v3.c",
+            "log": "",
+            "execution_time_ms": 0.653502,
+            "CPU_usage": 38.0,
+            "RAM_usage": 8576,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "c_pangram_yorange1",
+        "filename": "pangram.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "c/pangram_exercism-yorange1/openAI/ChatGPT4_pangram_v3.c",
+            "log": "",
+            "execution_time_ms": 1.262588,
+            "CPU_usage": 24.0,
             "RAM_usage": 8704,
             "regressionTestPassed": true,
             "success": true,
@@ -1067,16 +2389,232 @@
         ]
       },
       {
-        "id": "c_pangram_Exercism (paddydoyle)",
+        "id": "c_pangram_yorange1",
+        "filename": "pangram.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "c/pangram_exercism-yorange1/gemini/GeminiFlash_pangram_v3.c",
+            "log": "",
+            "execution_time_ms": 0.398168,
+            "CPU_usage": 54.0,
+            "RAM_usage": 8704,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "c_pangram_viettronics868",
         "filename": "pangram.c",
         "language": "c",
         "LLM_results": [
           {
             "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/pangram_Exercism_paddydoyle/openAI/ChatGPT4_pangram_v3.c",
+            "path": "c/pangram_exercism-viettronics868/openAI/ChatGPT4_pangram_v3.c",
             "log": "",
-            "execution_time_ms": 1.094037,
-            "CPU_usage": 21.0,
+            "execution_time_ms": 0.664752,
+            "CPU_usage": 49.0,
+            "RAM_usage": 8704,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "c_pangram_viettronics868",
+        "filename": "pangram.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "c/pangram_exercism-viettronics868/claude/ClaudeSonnet4_pangram_v3.c",
+            "log": "",
+            "execution_time_ms": null,
+            "CPU_usage": null,
+            "RAM_usage": null,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 1"
+          }
+        ]
+      },
+      {
+        "id": "c_pangram_viettronics868",
+        "filename": "pangram.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "c/pangram_exercism-viettronics868/gemini/GeminiFlash_pangram_v3.c",
+            "log": "",
+            "execution_time_ms": null,
+            "CPU_usage": null,
+            "RAM_usage": null,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 1"
+          }
+        ]
+      },
+      {
+        "id": "c_pangram_EzequielMarcelo",
+        "filename": "pangram.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "c/pangram_exercism-EzequielMarcelo/openAI/ChatGPT4_pangram_v3.c",
+            "log": "",
+            "execution_time_ms": 0.533835,
+            "CPU_usage": 39.0,
+            "RAM_usage": 8704,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "c_pangram_EzequielMarcelo",
+        "filename": "pangram.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "c/pangram_exercism-EzequielMarcelo/claude/ClaudeSonnet4_pangram_v3.c",
+            "log": "",
+            "execution_time_ms": null,
+            "CPU_usage": null,
+            "RAM_usage": null,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 1"
+          }
+        ]
+      },
+      {
+        "id": "c_pangram_IrvinRamiA",
+        "filename": "pangram.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "c/pangram_exercism-IrvinRamiA/claude/ClaudeSonnet4_pangram_v3.c",
+            "log": "",
+            "execution_time_ms": null,
+            "CPU_usage": null,
+            "RAM_usage": null,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 1"
+          }
+        ]
+      },
+      {
+        "id": "c_pangram_IrvinRamiA",
+        "filename": "pangram.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "c/pangram_exercism-IrvinRamiA/gemini/GeminiFlash_pangram_v3.c",
+            "log": "",
+            "execution_time_ms": null,
+            "CPU_usage": null,
+            "RAM_usage": null,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 1"
+          }
+        ]
+      },
+      {
+        "id": "c_pangram_EzequielMarcelo",
+        "filename": "pangram.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "c/pangram_exercism-EzequielMarcelo/gemini/GeminiFlash_pangram_v3.c",
+            "log": "",
+            "execution_time_ms": 2.3343,
+            "CPU_usage": 11.0,
+            "RAM_usage": 8704,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "c_pangram_IrvinRamiA",
+        "filename": "pangram.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "c/pangram_exercism-IrvinRamiA/openAI/ChatGPT4_pangram_v3.c",
+            "log": "",
+            "execution_time_ms": 0.891295,
+            "CPU_usage": 33.0,
+            "RAM_usage": 8576,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "c_pangram_fiplox",
+        "filename": "pangram.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "c/pangram_exercism-fiplox/claude/ClaudeSonnet4_pangram_v3.c",
+            "log": "",
+            "execution_time_ms": 2.83601,
+            "CPU_usage": 12.0,
+            "RAM_usage": 8448,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "c_pangram_fiplox",
+        "filename": "pangram.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "c/pangram_exercism-fiplox/openAI/ChatGPT4_pangram_v3.c",
+            "log": "",
+            "execution_time_ms": 23.83838,
+            "CPU_usage": 1.0,
+            "RAM_usage": 8704,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "c_pangram_fiplox",
+        "filename": "pangram.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "c/pangram_exercism-fiplox/gemini/GeminiFlash_pangram_v3.c",
+            "log": "",
+            "execution_time_ms": 1.629756,
+            "CPU_usage": 23.0,
             "RAM_usage": 8704,
             "regressionTestPassed": true,
             "success": true,
@@ -1200,12 +2738,30 @@
         "language": "cpp",
         "LLM_results": [
           {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/pangram_exercism-stungeye/openAI/ChatGPT4_pangram_v3.cpp",
+            "log": "",
+            "execution_time_ms": 2.75288,
+            "CPU_usage": 50.0,
+            "RAM_usage": 10368,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "cpp_pangram_stungeye",
+        "filename": "pangram.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
             "LLM_type": "gemini",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/pangram_exercism-stungeye/gemini/GeminiFlash_pangram_v3.cpp",
             "log": "",
-            "execution_time_ms": 2.379008,
-            "CPU_usage": 65.0,
-            "RAM_usage": 10496,
+            "execution_time_ms": 3.054505,
+            "CPU_usage": 49.0,
+            "RAM_usage": 10240,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -1221,8 +2777,98 @@
             "LLM_type": "claude",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/pangram_exercism-stungeye/claude/ClaudeSonnet4_pangram_v3.cpp",
             "log": "",
-            "execution_time_ms": 4.588681,
-            "CPU_usage": 39.0,
+            "execution_time_ms": 6.654594,
+            "CPU_usage": 24.0,
+            "RAM_usage": 10368,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "cpp_pangram_pawelo091991",
+        "filename": "pangram.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "cpp/pangram_exercism-pawelo091991/openAI/ChatGPT4_pangram_v3.cpp",
+            "log": "",
+            "execution_time_ms": null,
+            "CPU_usage": null,
+            "RAM_usage": null,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 2"
+          }
+        ]
+      },
+      {
+        "id": "cpp_pangram_denniskovshov",
+        "filename": "pangram.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "cpp/pangram_exercism-denniskovshov/gemini/GeminiFlash_pangram_v3.cpp",
+            "log": "",
+            "execution_time_ms": null,
+            "CPU_usage": null,
+            "RAM_usage": null,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 2"
+          }
+        ]
+      },
+      {
+        "id": "cpp_pangram_pawelo091991",
+        "filename": "pangram.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "cpp/pangram_exercism-pawelo091991/claude/ClaudeSonnet4_pangram_v3.cpp",
+            "log": "",
+            "execution_time_ms": null,
+            "CPU_usage": null,
+            "RAM_usage": null,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 2"
+          }
+        ]
+      },
+      {
+        "id": "cpp_pangram_denniskovshov",
+        "filename": "pangram.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "cpp/pangram_exercism-denniskovshov/openAI/ChatGPT4_pangram_v3.cpp",
+            "log": "",
+            "execution_time_ms": 5.166019,
+            "CPU_usage": 27.0,
+            "RAM_usage": 10368,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "cpp_pangram_denniskovshov",
+        "filename": "pangram.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "cpp/pangram_exercism-denniskovshov/claude/ClaudeSonnet4_pangram_v3.cpp",
+            "log": "",
+            "execution_time_ms": 3.105053,
+            "CPU_usage": 45.0,
             "RAM_usage": 10496,
             "regressionTestPassed": true,
             "success": true,
@@ -1231,16 +2877,16 @@
         ]
       },
       {
-        "id": "cpp_pangram_stungeye",
+        "id": "cpp_pangram_pawelo091991",
         "filename": "pangram.cpp",
         "language": "cpp",
         "LLM_results": [
           {
-            "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/pangram_exercism-stungeye/openAI/ChatGPT4_pangram_v3.cpp",
+            "LLM_type": "gemini",
+            "path": "cpp/pangram_exercism-pawelo091991/gemini/GeminiFlash_pangram_v3.cpp",
             "log": "",
-            "execution_time_ms": 2.147632,
-            "CPU_usage": 64.0,
+            "execution_time_ms": 5.501937,
+            "CPU_usage": 37.0,
             "RAM_usage": 10496,
             "regressionTestPassed": true,
             "success": true,
@@ -1250,6 +2896,86 @@
       }
     ],
     "go": [
+      {
+        "id": "go_pangram_Exercism (go_rootulp)",
+        "filename": "pangram.go",
+        "language": "go",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "go/pangram_Exercism_go_rootulp/openAI/ChatGPT4_pangram_v3.go",
+            "log": "/Users/piccoletto/Desktop/everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/pangram_Exercism_go_rootulp/openAI/output.log",
+            "execution_time_ms": 6580,
+            "CPU_usage": 49.0,
+            "RAM_usage": 224328,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "go/pangram_Exercism_go_rootulp/claude/ClaudeSonnet4_pangram_v3.go",
+            "log": "/Users/piccoletto/Desktop/everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/pangram_Exercism_go_rootulp/claude/output.log",
+            "execution_time_ms": 6250,
+            "CPU_usage": 51.0,
+            "RAM_usage": 221504,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "go/pangram_Exercism_go_rootulp/gemini/GeminiFlash_pangram_v3.go",
+            "log": "/Users/piccoletto/Desktop/everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/pangram_Exercism_go_rootulp/gemini/output.log",
+            "execution_time_ms": 6180,
+            "CPU_usage": 49.0,
+            "RAM_usage": 225296,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "go_pangram_Exercism (go_rootulp)",
+        "filename": "pangram.go",
+        "language": "go",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "go/pangram_Exercism_go_rootulp/openAI/ChatGPT4_pangram_v3.go",
+            "log": "/Users/piccoletto/Desktop/everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/pangram_Exercism_go_rootulp/openAI/output.log",
+            "execution_time_ms": 6580,
+            "CPU_usage": 49.0,
+            "RAM_usage": 224328,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "go/pangram_Exercism_go_rootulp/claude/ClaudeSonnet4_pangram_v3.go",
+            "log": "/Users/piccoletto/Desktop/everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/pangram_Exercism_go_rootulp/claude/output.log",
+            "execution_time_ms": 6250,
+            "CPU_usage": 51.0,
+            "RAM_usage": 221504,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "go/pangram_Exercism_go_rootulp/gemini/GeminiFlash_pangram_v3.go",
+            "log": "/Users/piccoletto/Desktop/everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/pangram_Exercism_go_rootulp/gemini/output.log",
+            "execution_time_ms": 6180,
+            "CPU_usage": 49.0,
+            "RAM_usage": 225296,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
       {
         "id": "go_pangram_Exercism (go_rootulp)",
         "filename": "pangram.go",
@@ -1331,6 +3057,86 @@
         ]
       },
       {
+        "id": "go_pangram_Exercism (go_ThomasZumsteg)",
+        "filename": "pangram.go",
+        "language": "go",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "go/pangram_Exercism_go_ThomasZumsteg/openAI/ChatGPT4_pangram_v3.go",
+            "log": "/Users/piccoletto/Desktop/everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/pangram_Exercism_go_ThomasZumsteg/openAI/output.log",
+            "execution_time_ms": 6180,
+            "CPU_usage": 49.0,
+            "RAM_usage": 227336,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "go/pangram_Exercism_go_ThomasZumsteg/claude/ClaudeSonnet4_pangram_v3.go",
+            "log": "/Users/piccoletto/Desktop/everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/pangram_Exercism_go_ThomasZumsteg/claude/output.log",
+            "execution_time_ms": 6330,
+            "CPU_usage": 48.0,
+            "RAM_usage": 228228,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "go/pangram_Exercism_go_ThomasZumsteg/gemini/GeminiFlash_pangram_v3.go",
+            "log": "/Users/piccoletto/Desktop/everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/pangram_Exercism_go_ThomasZumsteg/gemini/output.log",
+            "execution_time_ms": 6060,
+            "CPU_usage": 52.0,
+            "RAM_usage": 227224,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "go_pangram_Exercism (go_ThomasZumsteg)",
+        "filename": "pangram.go",
+        "language": "go",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "go/pangram_Exercism_go_ThomasZumsteg/openAI/ChatGPT4_pangram_v3.go",
+            "log": "/Users/piccoletto/Desktop/everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/pangram_Exercism_go_ThomasZumsteg/openAI/output.log",
+            "execution_time_ms": 6180,
+            "CPU_usage": 49.0,
+            "RAM_usage": 227336,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "go/pangram_Exercism_go_ThomasZumsteg/claude/ClaudeSonnet4_pangram_v3.go",
+            "log": "/Users/piccoletto/Desktop/everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/pangram_Exercism_go_ThomasZumsteg/claude/output.log",
+            "execution_time_ms": 6330,
+            "CPU_usage": 48.0,
+            "RAM_usage": 228228,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "go/pangram_Exercism_go_ThomasZumsteg/gemini/GeminiFlash_pangram_v3.go",
+            "log": "/Users/piccoletto/Desktop/everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/pangram_Exercism_go_ThomasZumsteg/gemini/output.log",
+            "execution_time_ms": 6060,
+            "CPU_usage": 52.0,
+            "RAM_usage": 227224,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
         "id": "go_pangram_Exercism (go_thinkverse)",
         "filename": "pangram.go",
         "language": "go",
@@ -1364,6 +3170,166 @@
             "execution_time_ms": 6070,
             "CPU_usage": 53.0,
             "RAM_usage": 223640,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "go_pangram_Exercism (go_thinkverse)",
+        "filename": "pangram.go",
+        "language": "go",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "go/pangram_Exercism_go_thinkverse/openAI/ChatGPT4_pangram_v3.go",
+            "log": "/Users/piccoletto/Desktop/everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/pangram_Exercism_go_thinkverse/openAI/output.log",
+            "execution_time_ms": 6220,
+            "CPU_usage": 48.0,
+            "RAM_usage": 231440,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "go/pangram_Exercism_go_thinkverse/claude/ClaudeSonnet4_pangram_v3.go",
+            "log": "/Users/piccoletto/Desktop/everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/pangram_Exercism_go_thinkverse/claude/output.log",
+            "execution_time_ms": 6199,
+            "CPU_usage": 48.0,
+            "RAM_usage": 219028,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "go/pangram_Exercism_go_thinkverse/gemini/GeminiFlash_pangram_v3.go",
+            "log": "/Users/piccoletto/Desktop/everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/pangram_Exercism_go_thinkverse/gemini/output.log",
+            "execution_time_ms": 6070,
+            "CPU_usage": 53.0,
+            "RAM_usage": 223640,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "go_pangram_Exercism (go_thinkverse)",
+        "filename": "pangram.go",
+        "language": "go",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "go/pangram_Exercism_go_thinkverse/openAI/ChatGPT4_pangram_v3.go",
+            "log": "/Users/piccoletto/Desktop/everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/pangram_Exercism_go_thinkverse/openAI/output.log",
+            "execution_time_ms": 6220,
+            "CPU_usage": 48.0,
+            "RAM_usage": 231440,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "go/pangram_Exercism_go_thinkverse/claude/ClaudeSonnet4_pangram_v3.go",
+            "log": "/Users/piccoletto/Desktop/everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/pangram_Exercism_go_thinkverse/claude/output.log",
+            "execution_time_ms": 6199,
+            "CPU_usage": 48.0,
+            "RAM_usage": 219028,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "go/pangram_Exercism_go_thinkverse/gemini/GeminiFlash_pangram_v3.go",
+            "log": "/Users/piccoletto/Desktop/everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/pangram_Exercism_go_thinkverse/gemini/output.log",
+            "execution_time_ms": 6070,
+            "CPU_usage": 53.0,
+            "RAM_usage": 223640,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "go_pangram_Exercism (go_drapala)",
+        "filename": "pangram.go",
+        "language": "go",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "go/pangram_Exercism_go_drapala/openAI/ChatGPT4_pangram_v3.go",
+            "log": "/Users/piccoletto/Desktop/everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/pangram_Exercism_go_drapala/openAI/output.log",
+            "execution_time_ms": 6100,
+            "CPU_usage": 50.0,
+            "RAM_usage": 224648,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "go/pangram_Exercism_go_drapala/claude/ClaudeSonnet4_pangram_v3.go",
+            "log": "/Users/piccoletto/Desktop/everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/pangram_Exercism_go_drapala/claude/output.log",
+            "execution_time_ms": 5630,
+            "CPU_usage": 154.0,
+            "RAM_usage": 203912,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "go/pangram_Exercism_go_drapala/gemini/GeminiFlash_pangram_v3.go",
+            "log": "/Users/piccoletto/Desktop/everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/pangram_Exercism_go_drapala/gemini/output.log",
+            "execution_time_ms": 5550,
+            "CPU_usage": 182.0,
+            "RAM_usage": 220348,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "go_pangram_Exercism (go_drapala)",
+        "filename": "pangram.go",
+        "language": "go",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "go/pangram_Exercism_go_drapala/openAI/ChatGPT4_pangram_v3.go",
+            "log": "/Users/piccoletto/Desktop/everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/pangram_Exercism_go_drapala/openAI/output.log",
+            "execution_time_ms": 6100,
+            "CPU_usage": 50.0,
+            "RAM_usage": 224648,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "go/pangram_Exercism_go_drapala/claude/ClaudeSonnet4_pangram_v3.go",
+            "log": "/Users/piccoletto/Desktop/everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/pangram_Exercism_go_drapala/claude/output.log",
+            "execution_time_ms": 5630,
+            "CPU_usage": 154.0,
+            "RAM_usage": 203912,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "go/pangram_Exercism_go_drapala/gemini/GeminiFlash_pangram_v3.go",
+            "log": "/Users/piccoletto/Desktop/everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/pangram_Exercism_go_drapala/gemini/output.log",
+            "execution_time_ms": 5550,
+            "CPU_usage": 182.0,
+            "RAM_usage": 220348,
             "regressionTestPassed": true,
             "success": null,
             "error_message": null

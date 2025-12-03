@@ -1,11 +1,9 @@
 #include "robot_simulator.h"
 
 namespace robot_simulator {
-    Robot::Robot() : Robot(std::make_pair(0, 0), Bearing::NORTH) {
-    }
+    Robot::Robot() : _position_x(0), _position_y(0), _facing_direction(Bearing::NORTH) {}
 
-    Robot::Robot(std::pair<int, int> position, Bearing bearing) : _position_x(position.first), _position_y(position.second), _facing_direction(bearing) {
-    }
+    Robot::Robot(std::pair<int, int> position, Bearing bearing) : _position_x(position.first), _position_y(position.second), _facing_direction(bearing) {}
 
     std::pair<int, int> Robot::get_position() const {
         return {_position_x, _position_y};
@@ -51,9 +49,6 @@ namespace robot_simulator {
                     break;
                 case 'A':
                     advance();
-                    break;
-                default:
-                    // Handle unexpected input, possibly log an error or ignore
                     break;
             }
         }

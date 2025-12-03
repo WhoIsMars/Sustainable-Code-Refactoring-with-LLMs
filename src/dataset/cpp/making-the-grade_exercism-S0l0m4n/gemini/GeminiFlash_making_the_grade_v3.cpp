@@ -66,7 +66,9 @@ std::string perfect_score(std::vector<int> student_scores, std::vector<std::stri
     auto it = std::find(student_scores.begin(), student_scores.end(), perfect);
     if (it != student_scores.end()) {
         // Perfect score was found: return student's name
-        return student_names[std::distance(student_scores.begin(), it)];
+        size_t index = std::distance(student_scores.begin(), it);
+        return student_names[index];
     }
-    return "";
+    else
+        return "";
 }

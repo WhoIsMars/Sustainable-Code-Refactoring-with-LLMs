@@ -8,9 +8,7 @@ from utility_dir import utility_paths
 
 # === UTILS ===
 
-CLUSTER_ALREADY_CREATED = [
-   
-]
+CLUSTER_ALREADY_CREATED = []
 
 
 class ClusterCreator:

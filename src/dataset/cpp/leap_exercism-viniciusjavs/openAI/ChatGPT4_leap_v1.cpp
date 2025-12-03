@@ -6,4 +6,5 @@ bool is_leap_year(int year) {
   if (year % 100 != 0) return true;
   return year % 400 == 0;
 }
+
 } // namespace leap

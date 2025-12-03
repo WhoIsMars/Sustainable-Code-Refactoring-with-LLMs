@@ -1,6 +1,5 @@
 #include "bob.h"
 #include <string>
-#include <algorithm>
 #include <cctype>
 using namespace std;
 
@@ -8,9 +7,9 @@ namespace bob
 {
     string hey(string input)
     {
-        // Trim whitespace from both ends
-        input.erase(input.find_last_not_of(" \t\n\r") + 1);
-        input.erase(0, input.find_first_not_of(" \t\n\r"));
+        // Trim trailing whitespace for efficiency in checks
+        while (!input.empty() && isspace(input.back()))
+            input.pop_back();
 
         if (isSilence(input))
             return "Fine. Be that way!";
@@ -23,12 +22,12 @@ namespace bob
         return "Whatever.";
     }
 
-    bool isQuestion(const string& input)
+    bool isQuestion(const string &input)
     {
         return !input.empty() && input.back() == '?';
     }
 
-    bool isYelling(const string& input)
+    bool isYelling(const string &input)
     {
         bool hasLetters = false;
         for (char c : input)
@@ -43,7 +42,7 @@ namespace bob
         return hasLetters;
     }
 
-    bool isSilence(const string& input)
+    bool isSilence(const string &input)
     {
         return input.empty();
     }

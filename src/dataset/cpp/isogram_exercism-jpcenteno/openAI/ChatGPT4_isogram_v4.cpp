@@ -11,7 +11,9 @@ namespace isogram {
         for (char c : str) {
             if (std::isalpha(c)) {
                 char lowerC = std::tolower(c);
-                if (!seenChars.insert(lowerC).second) return false;
+                if (!seenChars.insert(lowerC).second) {
+                    return false;
+                }
             }
         }
 

@@ -3,15 +3,12 @@
 Main Entry Point - Sustainable Code Refactoring with LLMs
 Professional TUI (Text User Interface) for orchestrating research workflow
 
-Author: [Gabriele Marsili]
-Version: 2.0.0 (Post-Refactoring)
 Date: 2025-10-28
 """
 
 import sys
 import os
 from pathlib import Path
-from typing import Optional
 
 # Add src to path for imports
 sys.path.insert(0, str(Path(__file__).parent))
@@ -22,12 +19,9 @@ from rich.panel import Panel
 from rich.prompt import Prompt, Confirm
 from rich.table import Table
 from rich.text import Text
-from rich.layout import Layout
-from rich.live import Live
 from rich.progress import Progress, SpinnerColumn, TextColumn
 from rich import box
 from rich.rule import Rule
-from rich.style import Style
 from rich.theme import Theme
 
 # Custom theme
@@ -167,10 +161,10 @@ class MainTUI:
                 run_all_tests.main()
             else:
                 # Execute specific cluster
-                from run_tests_on_clusters import run_tests_on_cluster
+                #from run_tests_on_clusters import run_tests_on_cluster
 
-                base_only = (mode == "base")
-                llm_only = (mode == "llm")
+                #base_only = (mode == "base")
+                #llm_only = (mode == "llm")
 
                 self.console.print(f"[info]Esecuzione cluster: {cluster_name}[/info]")
                 self.console.print(f"[info]Modalità: {mode}, Esecuzioni: {num_executions}[/info]")
@@ -418,7 +412,7 @@ class MainTUI:
 
             if generate_plots:
                 self.console.print("\n[info]Generazione grafici...[/info]")
-                from metrics import execMetricStatsVisualizator
+                #from metrics import execMetricStatsVisualizator
                 self.console.print("[info]Grafici salvati in: metrics/execution_stats_plots/[/info]")
 
             self.console.print("\n[success]✓ Statistiche calcolate![/success]")

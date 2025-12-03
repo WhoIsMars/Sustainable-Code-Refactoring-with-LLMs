@@ -1,11 +1,10 @@
 """
-GitHub Ingestor for C/C++ Exercism Solutions
+GitHub Ingestor for Exercism Solutions
 
-This module automates the ingestion of C and C++ code-test pairs from GitHub repositories
+This module automates the ingestion of code-test pairs from GitHub repositories
 containing Exercism solutions. It validates completeness (source, tests, headers, build files),
 avoids duplicates, and integrates entries into the project's dataset and cluster structure.
 
-Author: AI Engineer for Sustainable Code Refactoring with LLMs
 """
 
 import requests
@@ -27,30 +26,33 @@ sys.path.append(str(Path(__file__).parent.parent))
 
 from utility_dir.utility_paths import (
     DATASET_DIR,
-    CLUSTERS_DIR_FILEPATH,    
+    CLUSTERS_DIR_FILEPATH,
 )
 from utility_dir.general_utils import (
     read_json,
     write_json,
     load_github_token,
-    RateLimiter
+    RateLimiter,
+    LANGUAGES,
+    get_ext_by_lang,
 )
+
 
 # Import test execution components
 try:
     from run_tests_on_clusters.run_tests_on_cluster import (
         TestExecutor,
-        ContainerManager,        
+        ContainerManager,
     )
+
     TEST_VALIDATION_AVAILABLE = True
-except ImportError as _e:    
+except ImportError as _e:
     TEST_VALIDATION_AVAILABLE = False
 
 
 # Configure logging
 logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+    level=logging.INFO, format="%(asctime)s - %(name)s - %(levelname)s - %(message)s"
 )
 logger = logging.getLogger(__name__)
 
@@ -58,14 +60,15 @@ logger = logging.getLogger(__name__)
 @dataclass
 class ExercismEntry:
     """Represents a validated Exercism exercise entry"""
+
     repo_name: str
     repo_owner: str
     exercise_name: str
-    language: str  # 'c' or 'cpp'
+    language: str
     source_files: List[Dict]  # List of source file metadata from GitHub API
     test_files: List[Dict]  # List of test file metadata
     header_files: List[Dict]  # List of header files (.h)
-    build_files: List[Dict]  # Makefile or CMakeLists.txt
+    build_files: List[Dict]  # list of files like Makefile or CMakeLists.txt
     license_type: str = "Unknown"
 
     def get_unique_id(self) -> str:
@@ -79,10 +82,11 @@ class GitHubAPIClient:
     def __init__(self, token: Optional[str] = None):
         if not token:
             from dotenv import load_dotenv
+
             # Load from src/.env (parent directory of this file's parent)
-            env_path = Path(__file__).parent.parent / '.env'
+            env_path = Path(__file__).parent.parent / ".env"
             load_dotenv(env_path)
-            token = os.getenv('GITHUB_TOKEN')
+            token = os.getenv("GITHUB_TOKEN")
             if not token:
                 logger.warning("GitHub token not found in .env file")
 
@@ -92,16 +96,20 @@ class GitHubAPIClient:
 
         # Set up headers
         self.headers = {
-            'Accept': 'application/vnd.github.v3+json',
-            'User-Agent': 'Sustainable-Code-Refactoring-LLM-Research'
+            "Accept": "application/vnd.github.v3+json",
+            "User-Agent": "Sustainable-Code-Refactoring-LLM-Research",
         }
         if self.token:
-            self.headers['Authorization'] = f'token {self.token}'
+            self.headers["Authorization"] = f"token {self.token}"
             logger.info("GitHub API client initialized with authentication token")
         else:
-            logger.warning("GitHub API client initialized WITHOUT token - rate limits will be strict")
+            logger.warning(
+                "GitHub API client initialized WITHOUT token - rate limits will be strict"
+            )
 
-    def search_repositories(self, query: str, language: str, per_page: int = 30) -> List[Dict]:
+    def search_repositories(
+        self, query: str, language: str, per_page: int = 30
+    ) -> List[Dict]:
         """
         Search GitHub repositories
 
@@ -117,18 +125,20 @@ class GitHubAPIClient:
 
         url = "https://api.github.com/search/repositories"
         params = {
-            'q': f'{query} language:{language}',
-            'sort': 'stars',
-            'order': 'desc',
-            'per_page': min(per_page, 100)
+            "q": f"{query} language:{language}",
+            "sort": "stars",
+            "order": "desc",
+            "per_page": min(per_page, 100),
         }
 
         try:
             response = self.session.get(url, headers=self.headers, params=params)
             response.raise_for_status()
             data = response.json()
-            logger.info(f"Found {data.get('total_count', 0)} repositories matching query")
-            return data.get('items', [])
+            logger.info(
+                f"Found {data.get('total_count', 0)} repositories matching query"
+            )
+            return data.get("items", [])
         except requests.RequestException as e:
             logger.error(f"Error searching repositories: {e}")
             return []
@@ -183,45 +193,92 @@ class GitHubAPIClient:
             response.raise_for_status()
 
             data = response.json()
-            if data.get('encoding') == 'base64':
-                content = base64.b64decode(data['content']).decode('utf-8', errors='ignore')
+            if data.get("encoding") == "base64":
+                content = base64.b64decode(data["content"]).decode(
+                    "utf-8", errors="ignore"
+                )
                 return content
-            return data.get('content', '')
+            return data.get("content", "")
         except Exception as e:
             logger.error(f"Error getting file content {file_path}: {e}")
             return None
 
 
 class ExercismValidator:
-    """Validates C/C++ Exercism entries for completeness"""
+    """Validates Exercism entries for completeness"""
 
     @staticmethod
     def is_source_file(filename: str, language: str) -> bool:
         """Check if file is a source code file"""
-        if language == 'c':
-            return filename.endswith('.c') and 'test' not in filename.lower()
-        elif language == 'cpp':
-            return filename.endswith('.cpp') and 'test' not in filename.lower()
-        return False
+        fn_lower = filename.lower()
+        match language:
+            case "c":
+                return filename.endswith(".c") and "test" not in fn_lower
+            case "cpp":
+                return filename.endswith(".cpp") and "test" not in fn_lower
+            case "python":
+                # Exclude test files: *_test.py, test_*.py, *test*.py
+                return filename.endswith(".py") and "test" not in fn_lower
+            case "go":
+                return filename.endswith(".go") and "test" not in fn_lower
+            case "typescript":
+                # Exclude .spec.ts, .test.ts
+                return filename.endswith(".ts") and "test" not in fn_lower and ".spec." not in fn_lower
+            case "javascript":
+                # Exclude .spec.js, .test.js - Exercism uses .spec.js for tests
+                return filename.endswith(".js") and "test" not in fn_lower and ".spec." not in fn_lower
+            case "java":
+                # Exclude Test*.java, *Test.java
+                return filename.endswith(".java") and "test" not in fn_lower
+            case _:
+                return False
 
     @staticmethod
     def is_test_file(filename: str, language: str) -> bool:
         """Check if file is a test file"""
-        if language == 'c':
-            return filename.endswith('.c') and 'test' in filename.lower()
-        elif language == 'cpp':
-            return (filename.endswith('.cpp') or filename.endswith('.cc')) and 'test' in filename.lower()
-        return False
+        fn_lower = filename.lower()
+        match language:
+            case "c":
+                return filename.endswith(".c") and "test" in fn_lower
+            case "cpp":
+                return (
+                    filename.endswith(".cpp") or filename.endswith(".cc")
+                ) and "test" in fn_lower
+            case "go":
+                # Go uses _test.go suffix
+                return filename.endswith("_test.go")
+            case "python":
+                # Python uses *_test.py or test_*.py
+                return filename.endswith(".py") and ("test" in fn_lower)
+            case "java":
+                # Java uses *Test.java or Test*.java
+                return filename.endswith(".java") and "test" in fn_lower
+            case "javascript":
+                # Exercism JavaScript uses .spec.js for tests
+                return filename.endswith(".spec.js") or (filename.endswith(".js") and "test" in fn_lower)
+            case "typescript":
+                # TypeScript uses .spec.ts or .test.ts
+                return filename.endswith(".spec.ts") or filename.endswith(".test.ts") or (
+                    filename.endswith(".ts") and "test" in fn_lower
+                )
+            case _:
+                return False
 
     @staticmethod
     def is_header_file(filename: str) -> bool:
         """Check if file is a header file"""
-        return filename.endswith('.h') or filename.endswith('.hpp')
+        return filename.endswith(".h") or filename.endswith(".hpp")
 
     @staticmethod
     def is_build_file(filename: str) -> bool:
         """Check if file is a build configuration file"""
-        return filename.lower() in ['makefile', 'cmakelists.txt']
+        return filename.lower() in [
+            "makefile",
+            "cmakelists.txt",
+            "package.json",
+            "package-lock.json",
+            "tsconfig.json",
+        ]  # "jest.config.js"
 
     @staticmethod
     def validate_entry(files: List[Dict], language: str) -> Tuple[bool, Dict]:
@@ -230,7 +287,7 @@ class ExercismValidator:
 
         Args:
             files: List of file metadata from GitHub API
-            language: 'c' or 'cpp'
+            language
 
         Returns:
             (is_valid, categorized_files) where categorized_files contains:
@@ -240,31 +297,35 @@ class ExercismValidator:
                 - build_files: list
         """
         categorized = {
-            'source_files': [],
-            'test_files': [],
-            'header_files': [],
-            'build_files': []
+            "source_files": [],
+            "test_files": [],
+            "header_files": [],
+            "build_files": [],
         }
 
         for file_meta in files:
-            if file_meta.get('type') != 'file':
+            if file_meta.get("type") != "file":
                 continue
 
-            filename = file_meta.get('name', '')
+            filename = file_meta.get("name", "")
 
             if ExercismValidator.is_source_file(filename, language):
-                categorized['source_files'].append(file_meta)
+                categorized["source_files"].append(file_meta)
             elif ExercismValidator.is_test_file(filename, language):
-                categorized['test_files'].append(file_meta)
+                categorized["test_files"].append(file_meta)
             elif ExercismValidator.is_header_file(filename):
-                categorized['header_files'].append(file_meta)
+                categorized["header_files"].append(file_meta)
             elif ExercismValidator.is_build_file(filename):
-                categorized['build_files'].append(file_meta)
+                categorized["build_files"].append(file_meta)
 
         # Validation rules
-        has_source = len(categorized['source_files']) > 0
-        has_tests = len(categorized['test_files']) > 0
-        has_build = len(categorized['build_files']) > 0
+        has_source = len(categorized["source_files"]) > 0
+        has_tests = len(categorized["test_files"]) > 0
+
+        if language in ["c", "cpp", "c++"]:
+            has_build = len(categorized["build_files"]) > 0
+        else:
+            has_build = True
 
         is_valid = has_source and has_tests and has_build
 
@@ -292,7 +353,9 @@ class DuplicateChecker:
     def _load_existing_entries(self):
         """Load all existing entries from cluster files"""
         cluster_files = list(self.clusters_dir.glob("cluster_*.json"))
-        logger.info(f"Loading existing entries from {len(cluster_files)} cluster files...")
+        logger.info(
+            f"Loading existing entries from {len(cluster_files)} cluster files..."
+        )
 
         for cluster_file in cluster_files:
             if "debug" in cluster_file.name or "bad_entries" in cluster_file.name:
@@ -301,16 +364,22 @@ class DuplicateChecker:
             try:
                 cluster_data = read_json(cluster_file)
                 for language, entries in cluster_data.items():
-                    if language in ['c', 'cpp']:
+                    if language in ["c", "cpp"]:
                         for entry in entries:
                             # Create entry identifier
-                            entry_id = entry.get('id', '')
-                            source = entry.get('source', '')
-                            exercise_name = entry.get('filename', '').replace('.c', '').replace('.cpp', '')
+                            entry_id = entry.get("id", "")
+                            source = entry.get("source", "")
+                            exercise_name = (
+                                entry.get("filename", "")
+                                .replace(".c", "")
+                                .replace(".cpp", "")
+                            )
 
                             # Add multiple identifiers to catch duplicates
                             self.existing_entries.add(entry_id)
-                            self.existing_entries.add(f"{language}_{exercise_name}_{source}")
+                            self.existing_entries.add(
+                                f"{language}_{exercise_name}_{source}"
+                            )
             except Exception as e:
                 logger.warning(f"Error reading cluster file {cluster_file}: {e}")
 
@@ -325,13 +394,15 @@ class DuplicateChecker:
 class GitHubIngestor:
     """Main ingestor class - orchestrates the entire process"""
 
-    def __init__(self, dataset_dir: Path, clusters_dir: Path, github_token: Optional[str] = None):
+    def __init__(
+        self, dataset_dir: Path, clusters_dir: Path, github_token: Optional[str] = None
+    ):
         self.dataset_dir = dataset_dir
         self.clusters_dir = clusters_dir
         self.api_client = GitHubAPIClient(github_token)
         self.validator = ExercismValidator()
         self.duplicate_checker = DuplicateChecker(clusters_dir)
-        self.ingested_count = {'c': 0, 'cpp': 0}
+        self.ingested_count = {"c": 0, "cpp": 0}
         self.cluster_write_lock = Lock()  # For thread-safe cluster JSON updates
 
     def generate_fallback_makefile(self, entry_dir: Path, language: str) -> bool:
@@ -346,7 +417,7 @@ class GitHubIngestor:
             True if Makefile created successfully, False otherwise
         """
         try:
-            if language == 'c':
+            if language == "c":
                 makefile_content = """# Auto-generated Makefile for C
 CC = gcc
 CFLAGS = -Wall -Wextra -std=c11 -g
@@ -400,7 +471,7 @@ clean:
 """
 
             makefile_path = entry_dir / "Makefile"
-            makefile_path.write_text(makefile_content, encoding='utf-8')
+            makefile_path.write_text(makefile_content, encoding="utf-8")
             logger.info(f"  ✓ Generated fallback Makefile for {language}")
             return True
 
@@ -414,7 +485,7 @@ clean:
 
         Args:
             entry_dir_name: Name of entry directory to remove
-            language: 'c' or 'cpp'
+            language:
 
         Returns:
             True if cleanup successful, False otherwise
@@ -439,53 +510,132 @@ clean:
         Search for Exercism repositories for a specific language
 
         Args:
-            language: 'c' or 'cpp'
+            language
             max_repos: Maximum repositories to search
 
         Returns:
             List of repository metadata
         """
-        search_lang = 'c' if language == 'c' else 'c++'
-        query = f"exercism {search_lang}"
+        if language == "cpp":
+            language = "c++"
+        query = f"exercism {language}"
 
         logger.info(f"Searching for Exercism {language.upper()} repositories...")
-        repos = self.api_client.search_repositories(query, search_lang, per_page=max_repos)
+        repos = self.api_client.search_repositories(query, language, per_page=max_repos)
 
-        # Filter for repos that likely contain exercism solutions
+        # Filter for repos that likely contain exercism solutions (not official exercism repos)
         filtered_repos = []
         for repo in repos:
-            repo_name = repo.get('name', '').lower()
-            repo_desc = repo.get('description', '').lower() if repo.get('description') else ''
+            repo_name = repo.get("name", "").lower()
+            repo_desc = (
+                repo.get("description", "").lower() if repo.get("description") else ""
+            )
+            repo_owner = repo.get("owner", {}).get("login", "").lower()
 
-            if 'exercism' in repo_name or 'exercism' in repo_desc:
+            # Skip official exercism repos - they contain only templates, not solutions
+            if repo_owner == "exercism":
+                logger.debug(f"Skipping official Exercism repo: {repo_owner}/{repo_name}")
+                continue
+
+            if "exercism" in repo_name or "exercism" in repo_desc:
                 filtered_repos.append(repo)
 
-        logger.info(f"Found {len(filtered_repos)} relevant Exercism repositories")
+        logger.info(f"Found {len(filtered_repos)} relevant Exercism repositories (excluding official)")
         return filtered_repos
 
-    def explore_repo_for_exercises(self, repo: Dict, language: str) -> List[ExercismEntry]:
+    def _explore_java_maven_structure(
+        self, owner: str, repo_name: str, base_path: str
+    ) -> List[Dict]:
+        """
+        Explore Java Maven/Gradle standard structure (src/main/java, src/test/java)
+
+        Args:
+            owner: Repository owner
+            repo_name: Repository name
+            base_path: Base path to explore (e.g., "java/exercise-name")
+
+        Returns:
+            List of file metadata from both src/main and src/test
+        """
+        all_files = []
+
+        # Try Maven/Gradle structure
+        maven_paths = [
+            f"{base_path}/src/main/java" if base_path else "src/main/java",
+            f"{base_path}/src/test/java" if base_path else "src/test/java",
+            f"{base_path}/src" if base_path else "src",
+        ]
+
+        for maven_path in maven_paths:
+            files = self._get_files_recursive(owner, repo_name, maven_path, max_depth=3)
+            all_files.extend(files)
+
+        return all_files
+
+    def _get_files_recursive(
+        self, owner: str, repo_name: str, path: str, max_depth: int = 2, current_depth: int = 0
+    ) -> List[Dict]:
+        """
+        Recursively get all files in a directory up to max_depth
+
+        Args:
+            owner: Repository owner
+            repo_name: Repository name
+            path: Path to explore
+            max_depth: Maximum recursion depth
+            current_depth: Current recursion depth
+
+        Returns:
+            List of file metadata dictionaries
+        """
+        if current_depth >= max_depth:
+            return []
+
+        files = []
+        contents = self.api_client.get_repo_contents(owner, repo_name, path)
+
+        if not contents:
+            return []
+
+        for item in contents:
+            if item.get("type") == "file":
+                files.append(item)
+            elif item.get("type") == "dir":
+                # Recurse into subdirectories
+                subdir_files = self._get_files_recursive(
+                    owner, repo_name, item["path"], max_depth, current_depth + 1
+                )
+                files.extend(subdir_files)
+
+        return files
+
+    def explore_repo_for_exercises(
+        self, repo: Dict, language: str
+    ) -> List[ExercismEntry]:
         """
         Explore repository structure to find valid Exercism exercises
 
         Args:
             repo: Repository metadata from GitHub API
-            language: 'c' or 'cpp'
+            language
 
         Returns:
             List of validated ExercismEntry objects
         """
-        owner = repo['owner']['login']
-        repo_name = repo['name']
+        owner = repo["owner"]["login"]
+        repo_name = repo["name"]
         valid_entries = []
 
-        logger.info(f"Exploring {owner}/{repo_name} for {language.upper()} exercises...")
+        logger.info(
+            f"Exploring {owner}/{repo_name} for {language.upper()} exercises..."
+        )
 
         # Common Exercism repo structures
         possible_paths = [
             f"{language}",
             f"exercism/{language}",
             f"{language}/exercises",
-            ""  # Root level
+            "",  # Root level
         ]
 
         for base_path in possible_paths:
@@ -496,23 +646,42 @@ clean:
 
             # Look for exercise directories
             for item in contents:
-                if item.get('type') != 'dir':
+                if item.get("type") != "dir":
                     continue
 
-                exercise_name = item['name']
-                exercise_path = item['path']
+                exercise_name = item["name"]
+                exercise_path = item["path"]
 
                 # Skip non-exercise directories
-                if exercise_name.startswith('.') or exercise_name in ['build', 'bin', 'obj', 'test', 'tests']:
+                if exercise_name.startswith(".") or exercise_name in [
+                    "build",
+                    "bin",
+                    "obj",
+                    "test",
+                    "tests",
+                ]:
                     continue
 
                 logger.debug(f"  Checking exercise: {exercise_name}")
 
                 # Get exercise directory contents
-                exercise_files = self.api_client.get_repo_contents(owner, repo_name, exercise_path)
+                exercise_files = self.api_client.get_repo_contents(
+                    owner, repo_name, exercise_path
+                )
+
+                # For Java, also try Maven/Gradle structure
+                if language == "java":
+                    maven_files = self._explore_java_maven_structure(
+                        owner, repo_name, exercise_path
+                    )
+                    if maven_files:
+                        exercise_files.extend(maven_files)
+                        logger.debug(f"    Found {len(maven_files)} files in Maven structure")
 
                 # Validate exercise
-                is_valid, categorized = self.validator.validate_entry(exercise_files, language)
+                is_valid, categorized = self.validator.validate_entry(
+                    exercise_files, language
+                )
 
                 if is_valid:
                     entry = ExercismEntry(
@@ -520,11 +689,13 @@ clean:
                         repo_owner=owner,
                         exercise_name=exercise_name,
                         language=language,
-                        source_files=categorized['source_files'],
-                        test_files=categorized['test_files'],
-                        header_files=categorized['header_files'],
-                        build_files=categorized['build_files'],
-                        license_type=repo.get('license', {}).get('name', 'Unknown') if repo.get('license') else 'Unknown'
+                        source_files=categorized["source_files"],
+                        test_files=categorized["test_files"],
+                        header_files=categorized["header_files"],
+                        build_files=categorized["build_files"],
+                        license_type=repo.get("license", {}).get("name", "Unknown")
+                        if repo.get("license")
+                        else "Unknown",
                     )
 
                     # Check for duplicates
@@ -540,7 +711,9 @@ clean:
         self,
         entry: ExercismEntry,
         entry_dir_name: str,
-        num_executions: int = 5
+        num_executions: int = 5,
+        code_file_name="",
+        test_file_name="",
     ) -> Tuple[bool, List]:
         """
         Validate entry by running tests multiple times (default: 5)
@@ -560,11 +733,22 @@ clean:
         """
         if not TEST_VALIDATION_AVAILABLE:
             logger.warning("Test validation not available - skipping validation")
-            return True, []  # Fallback: assume valid if validation unavailable
+            return False, []  # Fallback: assume invalid if validation unavailable
 
-        logger.info(f"🧪 Validating {entry.exercise_name} with {num_executions} test executions...")
+        logger.info(
+            f"🧪 Validating {entry.exercise_name} with {num_executions} test executions..."
+        )
 
         try:
+            is_c_or_cpp = False
+            if entry.language in ["c", "cpp", "c++"]:
+                is_c_or_cpp = True
+
+            if code_file_name == "" or test_file_name == "":
+                raise Exception(
+                    f"invalid :\ncode file name ={code_file_name}\ntest_file_name = {test_file_name}"
+                )
+
             # Setup test executor
             container_manager = ContainerManager()
             test_executor = TestExecutor(container_manager)
@@ -575,12 +759,24 @@ clean:
                 logger.error(f"  ✗ No source file found for {entry.exercise_name}")
                 return False, []
 
+            codeSnippetFilePath = f"{entry.language}/{entry_dir_name}"
+            if not is_c_or_cpp:
+                codeSnippetFilePath += f"/{code_file_name}"
+            else:
+                codeSnippetFilePath += "/src"
+
+            testUnitFilePath = f"{entry.language}/{entry_dir_name}"
+            if not is_c_or_cpp:
+                testUnitFilePath += f"/{test_file_name}"
+            else:
+                testUnitFilePath += "/test"
+
             entry_dict = {
                 "id": entry.get_unique_id(),
-                "filename": main_source_file['name'],
+                "filename": main_source_file["name"],
                 "language": entry.language,
-                "codeSnippetFilePath": f"{entry.language}/{entry_dir_name}/src",
-                "testUnitFilePath": f"{entry.language}/{entry_dir_name}/test"
+                "codeSnippetFilePath": codeSnippetFilePath,
+                "testUnitFilePath": testUnitFilePath,
             }
 
             # Verify directories exist
@@ -592,15 +788,18 @@ clean:
                 logger.error(f"  ✗ Source/test directories not found: {entry_dir_name}")
                 return False, []
 
-            # Check if Makefile exists, generate fallback if needed
-            makefile_path = entry_base_dir / "Makefile"
-            cmakelists_path = entry_base_dir / "CMakeLists.txt"
+            if is_c_or_cpp :
+                # Check if Makefile exists, generate fallback if needed
+                makefile_path = entry_base_dir / "Makefile"
+                cmakelists_path = entry_base_dir / "CMakeLists.txt"
 
-            if not makefile_path.exists() and not cmakelists_path.exists():
-                logger.warning("  ⚠️  No build file found, generating fallback Makefile...")
-                if not self.generate_fallback_makefile(entry_base_dir, entry.language):
-                    logger.error("  ✗ Failed to generate fallback Makefile")
-                    return False, []
+                if not makefile_path.exists() and not cmakelists_path.exists():
+                    logger.warning(
+                        "  ⚠️  No build file found, generating fallback Makefile..."
+                    )
+                    if not self.generate_fallback_makefile(entry_base_dir, entry.language):
+                        logger.error("  ✗ Failed to generate fallback Makefile")
+                        return False, []
 
             # Execute tests multiple times
             passed_count = 0
@@ -608,16 +807,17 @@ clean:
             results = []
 
             for i in range(num_executions):
-                logger.info(f"  Execution {i+1}/{num_executions}...")
+                logger.info(f"  Execution {i + 1}/{num_executions}...")
 
                 try:
+                    #execute test and get metrics (results) (not save result in .json file)
                     result = test_executor.execute_test(
                         entry=entry_dict,
                         language=entry.language,
                         test_type="base",
                         llm_info=None,
                         use_cache=True,
-                        debug_mode=False
+                        debug_mode=False,
                     )
 
                     results.append(result)
@@ -626,14 +826,14 @@ clean:
                     if result.regressionTestPassed and result.success:
                         passed_count += 1
                         logger.debug(
-                            f"    ✓ Execution {i+1}: PASS "
+                            f"    ✓ Execution {i + 1}: PASS "
                             f"(CPU: {result.CPU_usage:.2f}%, RAM: {result.RAM_usage} bytes, "
                             f"Time: {result.execution_time_ms}ms)"
                         )
                     else:
                         failed_count += 1
                         logger.warning(
-                            f"    ✗ Execution {i+1}: FAIL "
+                            f"    ✗ Execution {i + 1}: FAIL "
                             f"(passed={result.regressionTestPassed}, success={result.success}, "
                             f"error={result.error_message})"
                         )
@@ -641,19 +841,27 @@ clean:
                         break
 
                 except Exception as e:
-                    logger.error(f"    ✗ Execution {i+1} threw exception: {e}")
+                    logger.error(f"    ✗ Execution {i + 1} threw exception: {e}")
                     failed_count += 1
                     break
 
             # Calculate pass rate
-            pass_rate = (passed_count / num_executions) * 100 if num_executions > 0 else 0
+            pass_rate = (
+                (passed_count / num_executions) * 100 if num_executions > 0 else 0
+            )
 
             # Log summary
             if passed_count == num_executions:
                 # Calculate average metrics
-                avg_cpu = sum(r.CPU_usage for r in results if r.CPU_usage) / len(results)
-                avg_ram = sum(r.RAM_usage for r in results if r.RAM_usage) / len(results)
-                avg_time = sum(r.execution_time_ms for r in results if r.execution_time_ms) / len(results)
+                avg_cpu = sum(r.CPU_usage for r in results if r.CPU_usage) / len(
+                    results
+                )
+                avg_ram = sum(r.RAM_usage for r in results if r.RAM_usage) / len(
+                    results
+                )
+                avg_time = sum(
+                    r.execution_time_ms for r in results if r.execution_time_ms
+                ) / len(results)
 
                 logger.info(
                     f"  ✅ All tests passed ({passed_count}/{num_executions} = {pass_rate:.1f}%)\n"
@@ -671,7 +879,7 @@ clean:
             logger.error(f"  ✗ Validation error for {entry.exercise_name}: {e}")
             return False, []
 
-    def download_and_save_entry(self, entry: ExercismEntry) -> bool:
+    def download_and_save_entry(self, entry: ExercismEntry) -> object:
         """
         Download entry files and save to dataset structure
 
@@ -682,92 +890,130 @@ clean:
             True if successful, False otherwise
         """
         # Create directory structure: src/dataset/{language}/{exercise}_{source}/
-        source_clean = entry.repo_owner.replace(" ", "_").replace("(", "").replace(")", "")
+        source_clean = (
+            entry.repo_owner.replace(" ", "_").replace("(", "").replace(")", "")
+        )
         entry_dir_name = f"{entry.exercise_name}_exercism-{source_clean}"
         entry_base_dir = self.dataset_dir / entry.language / entry_dir_name
 
-        src_dir = entry_base_dir / "src"
-        test_dir = entry_base_dir / "test"
+        is_c_or_cpp = False
+
+        test_file_name = ""
+        code_file_name = ""
+
+        if entry.language in ["c", "cpp", "c++"]:
+            src_dir = entry_base_dir / "src"
+            test_dir = entry_base_dir / "test"
+            is_c_or_cpp = True
+        else:
+            src_dir = entry_base_dir
+            test_dir = entry_base_dir
 
         try:
-            # Create directories
-            src_dir.mkdir(parents=True, exist_ok=True)
-            test_dir.mkdir(parents=True, exist_ok=True)
+            ext = get_ext_by_lang(entry.language)
+
+            # Create directories for all languages
+            entry_base_dir.mkdir(parents=True, exist_ok=True)
+            if is_c_or_cpp:
+                src_dir.mkdir(parents=True, exist_ok=True)
+                test_dir.mkdir(parents=True, exist_ok=True)
 
             logger.info(f"Downloading files for {entry.exercise_name}...")
 
             # Download source files and their headers to src/
             for file_meta in entry.source_files + entry.header_files:
                 content = self.api_client.get_file_content(
-                    entry.repo_owner,
-                    entry.repo_name,
-                    file_meta['path']
+                    entry.repo_owner, entry.repo_name, file_meta["path"]
                 )
                 if content is None:
                     logger.error(f"  Failed to download {file_meta['name']}")
-                    return False
+                    return {"is_valid": False, "code_file_name": "", "test_file_name": ""}
 
-                file_path = src_dir / file_meta['name']
-                file_path.write_text(content, encoding='utf-8')
+                name = str(file_meta["name"])
+                # Case-insensitive check for exercise name in filename
+                # (handles CamelCase naming in Java, e.g., "Acronym.java" for "acronym")
+                exercise_normalized = entry.exercise_name.replace("-", "").lower()
+                name_normalized = name.replace("-", "").replace("_", "").lower()
+                if name.endswith(ext) and exercise_normalized in name_normalized:
+                    code_file_name = name
+
+                file_path = src_dir / file_meta["name"]
+                file_path.write_text(content, encoding="utf-8")
                 logger.debug(f"  ✓ {file_meta['name']} → src/")
 
             # Download test files to test/
             for file_meta in entry.test_files:
                 content = self.api_client.get_file_content(
-                    entry.repo_owner,
-                    entry.repo_name,
-                    file_meta['path']
+                    entry.repo_owner, entry.repo_name, file_meta["path"]
                 )
                 if content is None:
                     logger.error(f"  Failed to download {file_meta['name']}")
-                    return False
+                    return {"is_valid": False, "code_file_name": code_file_name, "test_file_name": ""}
 
-                file_path = test_dir / file_meta['name']
-                file_path.write_text(content, encoding='utf-8')
+                t_file_name: str = file_meta["name"]
+                if not is_c_or_cpp and "suite" not in t_file_name.lower():
+                    t_file_name = t_file_name.replace("test", "testSuite")
+
+                if ext in t_file_name:
+                    test_file_name = t_file_name
+
+                file_path = test_dir / t_file_name
+                file_path.write_text(content, encoding="utf-8")
                 logger.debug(f"  ✓ {file_meta['name']} → test/")
 
-            # Check if test directory needs header files (unity.h, catch.hpp, etc.)
-            # These are often in the test directory on Exercism
-            test_headers = [f for f in entry.header_files if 'test' in f.get('path', '').lower() or
-                           'unity' in f.get('name', '').lower() or
-                           'catch' in f.get('name', '').lower()]
+            if is_c_or_cpp:
+                # Check if test directory needs header files (unity.h, catch.hpp, etc.)
+                # These are often in the test directory on Exercism
+                test_headers = [
+                    f
+                    for f in entry.header_files
+                    if "test" in f.get("path", "").lower()
+                    or "unity" in f.get("name", "").lower()
+                    or "catch" in f.get("name", "").lower()
+                ]
 
-            for file_meta in test_headers:
-                content = self.api_client.get_file_content(
-                    entry.repo_owner,
-                    entry.repo_name,
-                    file_meta['path']
-                )
-                if content:
-                    file_path = test_dir / file_meta['name']
-                    file_path.write_text(content, encoding='utf-8')
-                    logger.debug(f"  ✓ {file_meta['name']} → test/")
+                for file_meta in test_headers:
+                    content = self.api_client.get_file_content(
+                        entry.repo_owner, entry.repo_name, file_meta["path"]
+                    )
+                    if content:
+                        file_path = test_dir / file_meta["name"]
+                        file_path.write_text(content, encoding="utf-8")
+                        logger.debug(f"  ✓ {file_meta['name']} → test/")
 
             # Download build files to root of entry directory
             for file_meta in entry.build_files:
                 content = self.api_client.get_file_content(
-                    entry.repo_owner,
-                    entry.repo_name,
-                    file_meta['path']
+                    entry.repo_owner, entry.repo_name, file_meta["path"]
                 )
                 if content is None:
                     logger.error(f"  Failed to download {file_meta['name']}")
-                    return False
+                    return {"is_valid": False, "code_file_name": code_file_name, "test_file_name": test_file_name}
 
-                file_path = entry_base_dir / file_meta['name']
-                file_path.write_text(content, encoding='utf-8')
+                file_path = entry_base_dir / file_meta["name"]
+                file_path.write_text(content, encoding="utf-8")
                 logger.debug(f"  ✓ {file_meta['name']} → ./")
 
             logger.info(f"✓ Successfully saved all files for {entry.exercise_name}")
-            return True
+            is_valid = code_file_name != "" and test_file_name != ""
+            return {
+                "is_valid": is_valid,
+                "code_file_name": code_file_name,
+                "test_file_name": test_file_name,
+            }
 
         except Exception as e:
             logger.error(f"Error saving entry {entry.exercise_name}: {e}")
             # Cleanup on failure
             if entry_base_dir.exists():
                 import shutil
+
                 shutil.rmtree(entry_base_dir, ignore_errors=True)
-            return False
+            return {
+                "is_valid": False,
+                "code_file_name": code_file_name,
+                "test_file_name": test_file_name,
+            }
 
     def update_cluster_json(self, entry: ExercismEntry, entry_dir_name: str) -> bool:
         """
@@ -797,33 +1043,37 @@ clean:
                     cluster_data[entry.language] = []
 
                 # Create new entry metadata
-                source_clean = entry.repo_owner.replace(" ", "_").replace("(", "").replace(")", "")
+                source_clean = (
+                    entry.repo_owner.replace(" ", "_").replace("(", "").replace(")", "")
+                )
 
                 # Find main source file
                 main_source_file = entry.source_files[0] if entry.source_files else None
                 main_test_file = entry.test_files[0] if entry.test_files else None
 
                 if not main_source_file or not main_test_file:
-                    logger.error(f"Missing source or test file for {entry.exercise_name}")
+                    logger.error(
+                        f"Missing source or test file for {entry.exercise_name}"
+                    )
                     return False
 
                 # Count characters and words
                 content = self.api_client.get_file_content(
-                    entry.repo_owner,
-                    entry.repo_name,
-                    main_source_file['path']
+                    entry.repo_owner, entry.repo_name, main_source_file["path"]
                 )
                 char_count = len(content) if content else 0
                 word_count = len(content.split()) if content else 0
 
                 # Reject entries with empty source files
                 if char_count == 0:
-                    logger.error(f"Source file is empty for {entry.exercise_name}. Skipping.")
+                    logger.error(
+                        f"Source file is empty for {entry.exercise_name}. Skipping."
+                    )
                     return False
 
                 new_entry = {
                     "id": entry.get_unique_id(),
-                    "filename": main_source_file['name'],
+                    "filename": main_source_file["name"],
                     "language": entry.language,
                     "source": f"exercism-{source_clean}",
                     "codeSnippetFilePath": f"{entry.language}/{entry_dir_name}/src",
@@ -832,7 +1082,7 @@ clean:
                     "characterQuantity": char_count,
                     "wordQuantity": word_count,
                     "licenseType": entry.license_type,
-                    "LLMs": []
+                    "LLMs": [],
                 }
 
                 # Add to cluster
@@ -845,14 +1095,16 @@ clean:
                 return True
 
             except Exception as e:
-                logger.error(f"Error updating cluster JSON for {entry.exercise_name}: {e}")
+                logger.error(
+                    f"Error updating cluster JSON for {entry.exercise_name}: {e}"
+                )
                 return False
 
     def save_base_test_results(
         self,
         entry: ExercismEntry,
         entry_dir_name: str,  # noqa: ARG002
-        test_results: List
+        test_results: List,
     ) -> bool:
         """
         Save base test execution results to execution_outputs directory
@@ -863,7 +1115,7 @@ clean:
         Args:
             entry: ExercismEntry object
             entry_dir_name: Directory name where files were saved
-            test_results: List of BaseEntryResult objects from validate_entry_with_tests
+            test_results: List of BaseEntryResult objects from validate entry with tests
 
         Returns:
             True if all results saved successfully, False otherwise
@@ -878,7 +1130,9 @@ clean:
             execution_outputs_dir.mkdir(parents=True, exist_ok=True)
 
             # Determine cluster name from exercise name
-            cluster_name = entry.exercise_name.lower().replace("-", "_").replace(" ", "_")
+            cluster_name = (
+                entry.exercise_name.lower().replace("-", "_").replace(" ", "_")
+            )
 
             # Save each execution result in AGGREGATED format
             saved_count = 0
@@ -898,7 +1152,7 @@ clean:
                     "RAM_usage": result.RAM_usage,
                     "regressionTestPassed": result.regressionTestPassed,
                     "success": result.success,
-                    "error_message": result.error_message
+                    "error_message": result.error_message,
                 }
 
                 # Load existing data if file exists and merge intelligently
@@ -909,7 +1163,9 @@ clean:
                     if not existing_data or "results" not in existing_data:
                         # File exists but wrong format or corrupted - create AGGREGATED structure
                         output_data = {"results": {}}
-                        logger.debug(f"  Converting {result_filename} to AGGREGATED format")
+                        logger.debug(
+                            f"  Converting {result_filename} to AGGREGATED format"
+                        )
                     else:
                         # Already in AGGREGATED format
                         output_data = existing_data
@@ -936,11 +1192,7 @@ clean:
 
                 else:
                     # New file - create AGGREGATED format structure
-                    output_data = {
-                        "results": {
-                            result.language: [result_entry]
-                        }
-                    }
+                    output_data = {"results": {result.language: [result_entry]}}
                     logger.debug(f"  ✓ Created new file: {result_filename}")
 
                 # Write to JSON file in AGGREGATED format
@@ -953,7 +1205,9 @@ clean:
             return True
 
         except Exception as e:
-            logger.error(f"Error saving base test results for {entry.exercise_name}: {e}")
+            logger.error(
+                f"Error saving base test results for {entry.exercise_name}: {e}"
+            )
             return False
 
     def save_ingestion_manifest(
@@ -962,7 +1216,7 @@ clean:
         ingested_clusters: List[str],
         ingested_count: int,
         validated_count: int,
-        failed_count: int
+        failed_count: int,
     ) -> bool:
         """
         Save ingestion manifest for pipeline tracking
@@ -971,7 +1225,7 @@ clean:
         including which clusters were modified and statistics.
 
         Args:
-            language: 'c' or 'cpp'
+            language
             ingested_clusters: List of cluster names that were modified
             ingested_count: Number of entries successfully ingested
             validated_count: Number of entries that passed validation
@@ -998,7 +1252,9 @@ clean:
                 "entry_count": ingested_count,
                 "validated_count": validated_count,
                 "failed_count": failed_count,
-                "success_rate": f"{(ingested_count / validated_count * 100):.1f}%" if validated_count > 0 else "0%"
+                "success_rate": f"{(ingested_count / validated_count * 100):.1f}%"
+                if validated_count > 0
+                else "0%",
             }
 
             # Save manifest
@@ -1014,83 +1270,93 @@ clean:
             return False
 
     def _process_single_entry(
-        self,
-        entry: ExercismEntry,
-        language: str
+        self, entry: ExercismEntry, language: str
     ) -> Tuple[bool, str, Dict]:
         """
         Process a single entry: download, validate, and update cluster
 
         Args:
             entry: ExercismEntry object
-            language: 'c' or 'cpp'
+            language
 
         Returns:
             Tuple of (success, entry_dir_name, stats_dict)
         """
-        source_clean = entry.repo_owner.replace(" ", "_").replace("(", "").replace(")", "")
+        source_clean = (
+            entry.repo_owner.replace(" ", "_").replace("(", "").replace(")", "")
+        )
         entry_dir_name = f"{entry.exercise_name}_exercism-{source_clean}"
 
         stats = {
-            'entry_name': entry.exercise_name,
-            'downloaded': False,
-            'validated': False,
-            'ingested': False,
-            'error': None
+            "entry_name": entry.exercise_name,
+            "downloaded": False,
+            "validated": False,
+            "ingested": False,
+            "error": None,
         }
 
         try:
             # Step 1: Download files
-            logger.info(f"📥 Downloading: {entry.exercise_name}")
-            if not self.download_and_save_entry(entry):
-                stats['error'] = 'Download failed'
+            logger.info(f"Downloading: {entry.exercise_name}")
+            res = self.download_and_save_entry(entry)
+            valid = res["is_valid"]
+            test_file_name = res["test_file_name"]
+            code_file_name = res["code_file_name"]
+            if not valid:
+                stats["error"] = "Download failed"
                 logger.error(f"  ❌ Download failed: {entry.exercise_name}")
                 return False, entry_dir_name, stats
 
-            stats['downloaded'] = True
+            stats["downloaded"] = True
 
             # Step 2: Validate with tests (5 executions)
             logger.info(f"🧪 Validating: {entry.exercise_name}")
             validation_success, test_results = self.validate_entry_with_tests(
-                entry, entry_dir_name, num_executions=5
+                entry,
+                entry_dir_name,
+                num_executions=5,
+                code_file_name=code_file_name,
+                test_file_name=test_file_name,
             )
 
             if not validation_success:
-                stats['error'] = 'Test validation failed'
+                stats["error"] = "Test validation failed"
                 logger.warning(f"  ⚠️  Validation failed: {entry.exercise_name}")
 
                 # Cleanup failed entry
                 self.cleanup_failed_entry(entry_dir_name, language)
                 return False, entry_dir_name, stats
 
-            stats['validated'] = True
+            stats["validated"] = True
 
             # Step 3: Update cluster JSON (only if validation passed)
             logger.info(f"💾 Saving to cluster: {entry.exercise_name}")
             if not self.update_cluster_json(entry, entry_dir_name):
-                stats['error'] = 'Cluster update failed'
+                stats["error"] = "Cluster update failed"
                 logger.warning(f"  ⚠️  Cluster update failed: {entry.exercise_name}")
 
                 # Cleanup since it won't be in cluster
                 self.cleanup_failed_entry(entry_dir_name, language)
                 return False, entry_dir_name, stats
 
-            stats['ingested'] = True
+            stats["ingested"] = True
 
             # Step 4: Save base test results to execution_outputs (NEW!)
             logger.info(f"💾 Saving base test results: {entry.exercise_name}")
             if not self.save_base_test_results(entry, entry_dir_name, test_results):
                 logger.warning("  ⚠️  Failed to save test results (entry still valid)")
                 # Don't fail the entire process if saving results fails
-                stats['test_results_saved'] = False
+                stats["test_results_saved"] = False
             else:
-                stats['test_results_saved'] = True
+                stats["test_results_saved"] = True
 
-            logger.info(f"  ✅ Successfully ingested and validated: {entry.exercise_name}")
+            logger.info(
+                f"  ✅ Successfully ingested and validated: {entry.exercise_name}"
+            )
             return True, entry_dir_name, stats
 
         except Exception as e:
-            stats['error'] = str(e)
+            stats["error"] = str(e)
             logger.error(f"  ✗ Exception processing {entry.exercise_name}: {e}")
 
             # Cleanup on exception
@@ -1101,21 +1367,23 @@ clean:
 
             return False, entry_dir_name, stats
 
-    def ingest_entries(self, language: str, max_repos: int = 10, max_entries_per_lang: int = 20) -> int:
+    def ingest_entries(
+        self, language: str, max_repos: int = 10, max_entries_per_lang: int = 20
+    ) -> int:
         """
         Main ingestion workflow with test validation and parallelization
 
         Args:
-            language: 'c' or 'cpp'
+            language
             max_repos: Maximum repositories to search
             max_entries_per_lang: Maximum entries to ingest per language
 
         Returns:
             Number of entries successfully ingested
         """
-        logger.info(f"\n{'='*60}")
+        logger.info(f"\n{'=' * 60}")
         logger.info(f"Starting ingestion for {language.upper()} with test validation")
-        logger.info(f"{'='*60}\n")
+        logger.info(f"{'=' * 60}\n")
 
         # Search repositories
         repos = self.search_exercism_repos(language, max_repos)
@@ -1132,7 +1400,9 @@ clean:
 
             # Stop if we have enough candidates
             if len(all_valid_entries) >= max_entries_per_lang * 2:
-                logger.info(f"Collected {len(all_valid_entries)} candidates (enough for processing)")
+                logger.info(
+                    f"Collected {len(all_valid_entries)} candidates (enough for processing)"
+                )
                 break
 
         logger.info(f"Found {len(all_valid_entries)} total candidate entries")
@@ -1142,7 +1412,9 @@ clean:
             return 0
 
         # Limit to max_entries to process
-        entries_to_process = all_valid_entries[:max_entries_per_lang * 2]  # Process 2x to account for failures
+        entries_to_process = all_valid_entries[
+            : max_entries_per_lang * 2
+        ]  # Process 2x to account for failures
 
         # Statistics tracking
         ingested = 0
@@ -1153,7 +1425,9 @@ clean:
         ingested_clusters = set()  # Track unique cluster names
 
         # Process entries in parallel using ThreadPoolExecutor
-        logger.info(f"\n🚀 Processing {len(entries_to_process)} entries in parallel (max 3 workers)...\n")
+        logger.info(
+            f"\n🚀 Processing {len(entries_to_process)} entries in parallel (max 3 workers)...\n"
+        )
 
         with ThreadPoolExecutor(max_workers=3) as executor:
             # Submit all tasks
@@ -1168,27 +1442,33 @@ clean:
 
                 # Check if we've reached the limit
                 if ingested >= max_entries_per_lang:
-                    logger.info(f"✓ Reached target: {ingested}/{max_entries_per_lang} entries ingested")
+                    logger.info(
+                        f"✓ Reached target: {ingested}/{max_entries_per_lang} entries ingested"
+                    )
                     break
 
                 try:
                     success, _entry_dir_name, stats = future.result()
 
                     # Update statistics
-                    if stats['downloaded']:
+                    if stats["downloaded"]:
                         downloaded_count += 1
-                    if stats['validated']:
+                    if stats["validated"]:
                         validated_count += 1
-                    if stats['ingested']:
+                    if stats["ingested"]:
                         ingested += 1
                         self.ingested_count[language] += 1
 
                         # Track cluster name for manifest
-                        cluster_name = entry.exercise_name.lower().replace("-", "_").replace(" ", "_")
+                        cluster_name = (
+                            entry.exercise_name.lower()
+                            .replace("-", "_")
+                            .replace(" ", "_")
+                        )
                         ingested_clusters.add(cluster_name)
-                    elif stats['validated'] and not stats['ingested']:
+                    elif stats["validated"] and not stats["ingested"]:
                         failed_validation_count += 1
-                    elif not stats['downloaded']:
+                    elif not stats["downloaded"]:
                         failed_download_count += 1
 
                     # Log progress
@@ -1206,15 +1486,15 @@ clean:
                 time.sleep(0.5)
 
         # Final summary
-        logger.info(f"\n{'='*60}")
+        logger.info(f"\n{'=' * 60}")
         logger.info(f"INGESTION COMPLETE FOR {language.upper()}")
-        logger.info(f"{'='*60}")
+        logger.info(f"{'=' * 60}")
         logger.info(f"✅ Successfully ingested:      {ingested}/{max_entries_per_lang}")
         logger.info(f"📥 Downloaded:                 {downloaded_count}")
         logger.info(f"✓  Validated (passed tests):   {validated_count}")
         logger.info(f"✗  Failed validation:          {failed_validation_count}")
         logger.info(f"✗  Failed download:            {failed_download_count}")
-        logger.info(f"{'='*60}\n")
+        logger.info(f"{'=' * 60}\n")
 
         # Save ingestion manifest for pipeline tracking
         if ingested > 0:
@@ -1223,12 +1503,17 @@ clean:
                 ingested_clusters=sorted(list(ingested_clusters)),
                 ingested_count=ingested,
                 validated_count=validated_count,
-                failed_count=failed_validation_count + failed_download_count
+                failed_count=failed_validation_count + failed_download_count,
             )
 
         return ingested
 
-    def run(self, languages: List[str] = ['c', 'cpp'], max_repos: int = 10, max_entries: int = 20):
+    def run(
+        self,
+        languages: List[str] = [],
+        max_repos: int = 10,
+        max_entries: int = 20,
+    ):
         """
         Run the complete ingestion process
 
@@ -1237,14 +1522,18 @@ clean:
             max_repos: Maximum repositories per language
             max_entries: Maximum entries per language
         """
-        logger.info("="*60)
-        logger.info("GitHub Ingestor for C/C++ Exercism Solutions")
-        logger.info("="*60)
+
+        if len(languages) == 0:
+            raise Exception("Please choose at least one language")
+
+        logger.info("=" * 60)
+        logger.info("GitHub Ingestor for Exercism Solutions")
+        logger.info("=" * 60)
 
         total_ingested = 0
 
         for lang in languages:
-            if lang not in ['c', 'cpp']:
+            if lang not in LANGUAGES:
                 logger.warning(f"Unsupported language: {lang}. Skipping.")
                 continue
 
@@ -1252,13 +1541,13 @@ clean:
             total_ingested += count
 
         # Final summary
-        logger.info("\n" + "="*60)
+        logger.info("\n" + "=" * 60)
         logger.info("INGESTION SUMMARY")
-        logger.info("="*60)
+        logger.info("=" * 60)
         logger.info(f"Total new entries ingested: {total_ingested}")
-        logger.info(f"  - C:   {self.ingested_count.get('c', 0)}")
-        logger.info(f"  - C++: {self.ingested_count.get('cpp', 0)}")
-        logger.info("="*60)
+        for lang in LANGUAGES:
+            logger.info(f"  - {lang}:   {self.ingested_count.get(lang, 0)}")
+        logger.info("=" * 60)
 
 
 def main():
@@ -1266,36 +1555,36 @@ def main():
     import argparse
 
     parser = argparse.ArgumentParser(
-        description='GitHub Ingestor for C/C++ Exercism Solutions'
+        description="GitHub Ingestor for Exercism Solutions"
     )
     parser.add_argument(
-        '--languages',
-        nargs='+',
-        choices=['c', 'cpp'],
-        default=['c', 'cpp'],
-        help='Languages to process (default: c cpp)'
+        "--languages",
+        nargs="+",
+        choices=LANGUAGES,
+        default=LANGUAGES,
+        help="Languages to process (default: all 7 languages)",
     )
     parser.add_argument(
-        '--max-repos',
+        "--max-repos",
         type=int,
-        default=10,
-        help='Maximum repositories to search per language (default: 10)'
+        default=100,
+        help="Maximum repositories to search per language (default: 100)",
     )
     parser.add_argument(
-        '--max-entries',
+        "--max-entries",
         type=int,
-        default=20,
-        help='Maximum entries to ingest per language (default: 20)'
+        default=42,
+        help="Maximum entries to ingest per language (default: 42)",
     )
     parser.add_argument(
-        '--token',
+        "--token",
         type=str,
-        help='GitHub API token (optional, will try to load from .github_token if not provided)'
+        help="GitHub API token (optional, will try to load from .github_token if not provided)",
     )
     parser.add_argument(
-        '--no-interactive',
-        action='store_true',
-        help='Run without interactive prompts (for automation/scripts)'
+        "--no-interactive",
+        action="store_true",
+        help="Run without interactive prompts (for automation/scripts)",
     )
 
     args = parser.parse_args()
@@ -1303,24 +1592,18 @@ def main():
     # Get GitHub token (GitHubAPIClient will auto-load from .env if not provided)
     token = args.token
     if not token:
-        # Try legacy .github_token file for backward compatibility
         token = load_github_token()
-
-    # Note: If token is still None, GitHubAPIClient.__init__ will try loading from .env
-    # So we don't need to prompt here - let the client handle it
 
     # Initialize ingestor
     ingestor = GitHubIngestor(
-        dataset_dir=DATASET_DIR,
-        clusters_dir=CLUSTERS_DIR_FILEPATH,
-        github_token=token
+        dataset_dir=DATASET_DIR, clusters_dir=CLUSTERS_DIR_FILEPATH, github_token=token
     )
+
+    print(f"languages = {args.languages}")
 
     # Run ingestion
     ingestor.run(
-        languages=args.languages,
-        max_repos=args.max_repos,
-        max_entries=args.max_entries
+        languages=args.languages, max_repos=args.max_repos, max_entries=args.max_entries
     )
 
 

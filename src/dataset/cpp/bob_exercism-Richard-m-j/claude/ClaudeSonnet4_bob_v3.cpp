@@ -47,16 +47,14 @@ namespace bob
         }
         
         bool yelling = hasLetters && isAllUpper;
-        bool question = isQuestionMark;
-        bool silence = !hasNonWhitespace;
         
-        if (yelling && question)
+        if (yelling && isQuestionMark)
             return "Calm down, I know what I'm doing!";
         if (yelling)
             return "Whoa, chill out!";
-        if (question)
+        if (isQuestionMark)
             return "Sure.";
-        if (silence)
+        if (!hasNonWhitespace)
             return "Fine. Be that way!";
         return "Whatever.";
     }
@@ -79,9 +77,8 @@ namespace bob
     bool isYelling(const std::string& input)
     {
         bool hasLetters = false;
-        for (size_t i = 0; i < input.length(); ++i)
+        for (char c : input)
         {
-            char c = input[i];
             if (std::isalpha(c))
             {
                 hasLetters = true;
@@ -94,9 +91,8 @@ namespace bob
     
     bool isSilence(const std::string& input)
     {
-        for (size_t i = 0; i < input.length(); ++i)
+        for (char c : input)
         {
-            char c = input[i];
             if (c != ' ' && c != '\t' && c != '\n' && c != '\r')
                 return false;
         }

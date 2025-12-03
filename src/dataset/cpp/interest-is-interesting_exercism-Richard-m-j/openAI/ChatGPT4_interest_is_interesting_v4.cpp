@@ -9,13 +9,13 @@ inline double yearly_interest(double balance) {
 }
 
 inline double annual_balance_update(double balance) {
-    return balance + yearly_interest(balance);
+    return balance * (1 + interest_rate(balance) / 100);
 }
 
 int years_until_desired_balance(double balance, double target_balance) {
     int years = 0;
     while (balance < target_balance) {
-        balance += (interest_rate(balance) / 100) * balance;
+        balance *= (1 + interest_rate(balance) / 100);
         ++years;
     }
     return years;

@@ -1,17 +1,23 @@
 {
-  "execution_date": "2025-11-19 01:06:27",
+  "execution_date": "2025-12-02 23:55:29",
   "execution_metadata": {
     "total_tests": 18,
     "successful_tests": 18,
     "execution_time": "00h 00m 00s",
     "cluster": "cluster_matrix",
     "test_type": "llm_v1",
-    "last_updated": "2025-11-19 01:06:27",
+    "last_updated": "2025-12-02 23:55:29",
     "selective_execution": {
       "languages": [
-        "python"
+        "python",
+        "c",
+        "javascript",
+        "java",
+        "go",
+        "cpp",
+        "typescript"
       ],
-      "timestamp": "2025-11-19 01:06:27"
+      "timestamp": "2025-12-02 23:55:29"
     }
   },
   "results": {
@@ -25,27 +31,9 @@
             "LLM_type": "openAI",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/matrix/openAI/ChatGPT4_matrix_v1.py",
             "log": "",
-            "execution_time_ms": 60.0,
-            "CPU_usage": 68.0,
-            "RAM_usage": 13952,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "matrix_25",
-        "filename": "matrix.py",
-        "language": "python",
-        "LLM_results": [
-          {
-            "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/matrix/gemini/GeminiFlash_matrix_v1.py",
-            "log": "",
-            "execution_time_ms": 70.0,
-            "CPU_usage": 62.0,
-            "RAM_usage": 13824,
+            "execution_time_ms": 190.0,
+            "CPU_usage": 38.0,
+            "RAM_usage": 13696,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -61,12 +49,138 @@
             "LLM_type": "claude",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/matrix/claude/ClaudeSonnet4_matrix_v1.py",
             "log": "",
-            "execution_time_ms": 70.0,
-            "CPU_usage": 65.0,
-            "RAM_usage": 13824,
+            "execution_time_ms": 210.00000000000003,
+            "CPU_usage": 34.0,
+            "RAM_usage": 14080,
             "regressionTestPassed": false,
             "success": false,
             "error_message": "Docker exit code: 1"
+          }
+        ]
+      },
+      {
+        "id": "matrix_25",
+        "filename": "matrix.py",
+        "language": "python",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/matrix/gemini/GeminiFlash_matrix_v1.py",
+            "log": "",
+            "execution_time_ms": 220.0,
+            "CPU_usage": 19.0,
+            "RAM_usage": 13568,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "python_matrix_ThomasZumsteg",
+        "filename": "matrix.py",
+        "language": "python",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "python/matrix_exercism-ThomasZumsteg/gemini/GeminiFlash_matrix_v1.py",
+            "log": "",
+            "execution_time_ms": 50.0,
+            "CPU_usage": 48.0,
+            "RAM_usage": 13952,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "python_matrix_ThomasZumsteg",
+        "filename": "matrix.py",
+        "language": "python",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "python/matrix_exercism-ThomasZumsteg/openAI/ChatGPT4_matrix_v1.py",
+            "log": "",
+            "execution_time_ms": 40.0,
+            "CPU_usage": 59.0,
+            "RAM_usage": 13952,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "python_matrix_ThomasZumsteg",
+        "filename": "matrix.py",
+        "language": "python",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "python/matrix_exercism-ThomasZumsteg/claude/ClaudeSonnet4_matrix_v1.py",
+            "log": "",
+            "execution_time_ms": 30.0,
+            "CPU_usage": 51.0,
+            "RAM_usage": 13952,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "python_matrix_fruit-in",
+        "filename": "matrix.py",
+        "language": "python",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "python/matrix_exercism-fruit-in/openAI/ChatGPT4_matrix_v1.py",
+            "log": "",
+            "execution_time_ms": 40.0,
+            "CPU_usage": 47.0,
+            "RAM_usage": 13952,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "python_matrix_fruit-in",
+        "filename": "matrix.py",
+        "language": "python",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "python/matrix_exercism-fruit-in/claude/ClaudeSonnet4_matrix_v1.py",
+            "log": "",
+            "execution_time_ms": 50.0,
+            "CPU_usage": 40.0,
+            "RAM_usage": 13696,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "python_matrix_fruit-in",
+        "filename": "matrix.py",
+        "language": "python",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "python/matrix_exercism-fruit-in/gemini/GeminiFlash_matrix_v1.py",
+            "log": "",
+            "execution_time_ms": 40.0,
+            "CPU_usage": 28.0,
+            "RAM_usage": 13952,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
           }
         ]
       }
@@ -81,27 +195,9 @@
             "LLM_type": "openAI",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/matrix_exercism-javascript-ffflorian/openAI/ChatGPT4_matrix_v1.js",
             "log": "",
-            "execution_time_ms": 590.0,
-            "CPU_usage": 51.0,
-            "RAM_usage": 80988,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "javascript_matrix_exercism-javascript-oguzsh",
-        "filename": "matrix.js",
-        "language": "javascript",
-        "LLM_results": [
-          {
-            "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/matrix_exercism-javascript-oguzsh/gemini/GeminiFlash_matrix_v1.js",
-            "log": "",
-            "execution_time_ms": 560.0,
-            "CPU_usage": 47.0,
-            "RAM_usage": 79548,
+            "execution_time_ms": 1390.0000000000002,
+            "CPU_usage": 27.0,
+            "RAM_usage": 81664,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -117,9 +213,27 @@
             "LLM_type": "openAI",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/matrix_exercism-javascript-oguzsh/openAI/ChatGPT4_matrix_v1.js",
             "log": "",
-            "execution_time_ms": 550.0,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80540,
+            "execution_time_ms": 1560.0,
+            "CPU_usage": 20.0,
+            "RAM_usage": 80076,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_matrix_exercism-javascript-oguzsh",
+        "filename": "matrix.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/matrix_exercism-javascript-oguzsh/gemini/GeminiFlash_matrix_v1.js",
+            "log": "",
+            "execution_time_ms": 1569.9999999999998,
+            "CPU_usage": 21.0,
+            "RAM_usage": 81768,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -135,27 +249,9 @@
             "LLM_type": "claude",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/matrix_exercism-javascript-oguzsh/claude/ClaudeSonnet4_matrix_v1.js",
             "log": "",
-            "execution_time_ms": 550.0,
-            "CPU_usage": 48.0,
-            "RAM_usage": 81844,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "javascript_matrix_exercism-javascript-ffflorian",
-        "filename": "matrix.js",
-        "language": "javascript",
-        "LLM_results": [
-          {
-            "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/matrix_exercism-javascript-ffflorian/gemini/GeminiFlash_matrix_v1.js",
-            "log": "",
-            "execution_time_ms": 510.0,
-            "CPU_usage": 46.0,
-            "RAM_usage": 80580,
+            "execution_time_ms": 1780.0,
+            "CPU_usage": 22.0,
+            "RAM_usage": 80120,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -171,27 +267,9 @@
             "LLM_type": "claude",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/matrix_exercism-javascript-ffflorian/claude/ClaudeSonnet4_matrix_v1.js",
             "log": "",
-            "execution_time_ms": 550.0,
-            "CPU_usage": 45.0,
-            "RAM_usage": 80804,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "javascript_matrix_exercism-javascript-programmiri",
-        "filename": "matrix.js",
-        "language": "javascript",
-        "LLM_results": [
-          {
-            "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/matrix_exercism-javascript-programmiri/claude/ClaudeSonnet4_matrix_v1.js",
-            "log": "",
-            "execution_time_ms": 500.0,
-            "CPU_usage": 48.0,
-            "RAM_usage": 79488,
+            "execution_time_ms": 1450.0000000000002,
+            "CPU_usage": 20.0,
+            "RAM_usage": 82568,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -207,9 +285,99 @@
             "LLM_type": "openAI",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/matrix_exercism-javascript-programmiri/openAI/ChatGPT4_matrix_v1.js",
             "log": "",
-            "execution_time_ms": 540.0,
-            "CPU_usage": 46.0,
-            "RAM_usage": 80772,
+            "execution_time_ms": 1569.9999999999998,
+            "CPU_usage": 18.0,
+            "RAM_usage": 81184,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_matrix_exercism-javascript-ffflorian",
+        "filename": "matrix.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/matrix_exercism-javascript-ffflorian/gemini/GeminiFlash_matrix_v1.js",
+            "log": "",
+            "execution_time_ms": 1599.9999999999998,
+            "CPU_usage": 18.0,
+            "RAM_usage": 79792,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_matrix_exercism-javascript-programmiri",
+        "filename": "matrix.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/matrix_exercism-javascript-programmiri/claude/ClaudeSonnet4_matrix_v1.js",
+            "log": "",
+            "execution_time_ms": 1600.0,
+            "CPU_usage": 16.0,
+            "RAM_usage": 80168,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_matrix_exercism-javascript-irvingbennett",
+        "filename": "matrix.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/matrix_exercism-javascript-irvingbennett/claude/ClaudeSonnet4_matrix_v1.js",
+            "log": "",
+            "execution_time_ms": 1240.0,
+            "CPU_usage": 21.0,
+            "RAM_usage": 81708,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_matrix_exercism-javascript-irvingbennett",
+        "filename": "matrix.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/matrix_exercism-javascript-irvingbennett/openAI/ChatGPT4_matrix_v1.js",
+            "log": "",
+            "execution_time_ms": 1359.9999999999998,
+            "CPU_usage": 20.0,
+            "RAM_usage": 81104,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_matrix_exercism-javascript-irvingbennett",
+        "filename": "matrix.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/matrix_exercism-javascript-irvingbennett/gemini/GeminiFlash_matrix_v1.js",
+            "log": "",
+            "execution_time_ms": 1319.9999999999998,
+            "CPU_usage": 23.0,
+            "RAM_usage": 81328,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -225,81 +393,9 @@
             "LLM_type": "gemini",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/matrix_exercism-javascript-programmiri/gemini/GeminiFlash_matrix_v1.js",
             "log": "",
-            "execution_time_ms": 580.0000000000001,
-            "CPU_usage": 43.0,
-            "RAM_usage": 80892,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "javascript_matrix_exercism-javascript-irvingbennett",
-        "filename": "matrix.js",
-        "language": "javascript",
-        "LLM_results": [
-          {
-            "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/matrix_exercism-javascript-irvingbennett/openAI/ChatGPT4_matrix_v1.js",
-            "log": "",
-            "execution_time_ms": 560.0,
-            "CPU_usage": 45.0,
-            "RAM_usage": 80880,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "javascript_matrix_exercism-javascript-irvingbennett",
-        "filename": "matrix.js",
-        "language": "javascript",
-        "LLM_results": [
-          {
-            "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/matrix_exercism-javascript-irvingbennett/claude/ClaudeSonnet4_matrix_v1.js",
-            "log": "",
-            "execution_time_ms": 540.0,
-            "CPU_usage": 47.0,
-            "RAM_usage": 81944,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "javascript_matrix_exercism-javascript-irvingbennett",
-        "filename": "matrix.js",
-        "language": "javascript",
-        "LLM_results": [
-          {
-            "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/matrix_exercism-javascript-irvingbennett/gemini/GeminiFlash_matrix_v1.js",
-            "log": "",
-            "execution_time_ms": 600.0,
-            "CPU_usage": 43.0,
-            "RAM_usage": 81128,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "javascript_matrix_exercism-javascript-PhymasSC",
-        "filename": "matrix.js",
-        "language": "javascript",
-        "LLM_results": [
-          {
-            "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/matrix_exercism-javascript-PhymasSC/openAI/ChatGPT4_matrix_v1.js",
-            "log": "",
-            "execution_time_ms": 650.0,
-            "CPU_usage": 34.0,
-            "RAM_usage": 81004,
+            "execution_time_ms": 1490.0000000000002,
+            "CPU_usage": 20.0,
+            "RAM_usage": 80816,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -315,27 +411,9 @@
             "LLM_type": "openAI",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/matrix_exercism-javascript-PhymasSC/openAI/ChatGPT4_matrix_v1.js",
             "log": "",
-            "execution_time_ms": 620.0,
-            "CPU_usage": 42.0,
-            "RAM_usage": 80536,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "javascript_matrix_exercism-javascript-PhymasSC",
-        "filename": "matrix.js",
-        "language": "javascript",
-        "LLM_results": [
-          {
-            "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/matrix_exercism-javascript-PhymasSC/claude/ClaudeSonnet4_matrix_v1.js",
-            "log": "",
-            "execution_time_ms": 620.0,
-            "CPU_usage": 35.0,
-            "RAM_usage": 80584,
+            "execution_time_ms": 1550.0,
+            "CPU_usage": 20.0,
+            "RAM_usage": 81356,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -351,9 +429,9 @@
             "LLM_type": "gemini",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/matrix_exercism-javascript-PhymasSC/gemini/GeminiFlash_matrix_v1.js",
             "log": "",
-            "execution_time_ms": 770.0,
-            "CPU_usage": 39.0,
-            "RAM_usage": 80972,
+            "execution_time_ms": 1559.9999999999998,
+            "CPU_usage": 24.0,
+            "RAM_usage": 80824,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -361,7 +439,25 @@
         ]
       },
       {
-        "id": "javascript_matrix_exercism-javascript-PhymasSC_PhymasSC",
+        "id": "javascript_matrix_exercism-javascript-PhymasSC",
+        "filename": "matrix.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/matrix_exercism-javascript-PhymasSC/openAI/ChatGPT4_matrix_v1.js",
+            "log": "",
+            "execution_time_ms": 1619.9999999999998,
+            "CPU_usage": 21.0,
+            "RAM_usage": 82824,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_matrix_exercism-javascript-PhymasSC",
         "filename": "matrix.js",
         "language": "javascript",
         "LLM_results": [
@@ -369,9 +465,9 @@
             "LLM_type": "claude",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/matrix_exercism-javascript-PhymasSC/claude/ClaudeSonnet4_matrix_v1.js",
             "log": "",
-            "execution_time_ms": 600.0,
-            "CPU_usage": 39.0,
-            "RAM_usage": 80524,
+            "execution_time_ms": 1660.0,
+            "CPU_usage": 18.0,
+            "RAM_usage": 81276,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -387,9 +483,9 @@
             "LLM_type": "gemini",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/matrix_exercism-javascript-PhymasSC/gemini/GeminiFlash_matrix_v1.js",
             "log": "",
-            "execution_time_ms": 540.0,
-            "CPU_usage": 34.0,
-            "RAM_usage": 79612,
+            "execution_time_ms": 1960.0,
+            "CPU_usage": 17.0,
+            "RAM_usage": 81080,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -397,17 +493,17 @@
         ]
       },
       {
-        "id": "javascript_matrix_exercism-javascript-irvingbennett_irvingbennett",
+        "id": "javascript_matrix_exercism-javascript-PhymasSC_PhymasSC",
         "filename": "matrix.js",
         "language": "javascript",
         "LLM_results": [
           {
             "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/matrix_exercism-javascript-irvingbennett/claude/ClaudeSonnet4_matrix_v1.js",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/matrix_exercism-javascript-PhymasSC/claude/ClaudeSonnet4_matrix_v1.js",
             "log": "",
-            "execution_time_ms": 560.0,
-            "CPU_usage": 39.0,
-            "RAM_usage": 78644,
+            "execution_time_ms": 2460.0,
+            "CPU_usage": 18.0,
+            "RAM_usage": 81560,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -423,9 +519,27 @@
             "LLM_type": "openAI",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/matrix_exercism-javascript-irvingbennett/openAI/ChatGPT4_matrix_v1.js",
             "log": "",
-            "execution_time_ms": 610.0,
-            "CPU_usage": 44.0,
-            "RAM_usage": 81208,
+            "execution_time_ms": 2760.0,
+            "CPU_usage": 17.0,
+            "RAM_usage": 80108,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_matrix_exercism-javascript-irvingbennett_irvingbennett",
+        "filename": "matrix.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/matrix_exercism-javascript-irvingbennett/claude/ClaudeSonnet4_matrix_v1.js",
+            "log": "",
+            "execution_time_ms": 2880.0,
+            "CPU_usage": 19.0,
+            "RAM_usage": 82500,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -441,9 +555,9 @@
             "LLM_type": "gemini",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/matrix_exercism-javascript-irvingbennett/gemini/GeminiFlash_matrix_v1.js",
             "log": "",
-            "execution_time_ms": 600.0,
-            "CPU_usage": 47.0,
-            "RAM_usage": 79280,
+            "execution_time_ms": 1390.0000000000002,
+            "CPU_usage": 24.0,
+            "RAM_usage": 82528,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -459,9 +573,9 @@
             "LLM_type": "openAI",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/matrix_exercism-javascript-programmiri/openAI/ChatGPT4_matrix_v1.js",
             "log": "",
-            "execution_time_ms": 560.0,
-            "CPU_usage": 44.0,
-            "RAM_usage": 79620,
+            "execution_time_ms": 1630.0,
+            "CPU_usage": 24.0,
+            "RAM_usage": 81504,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -477,9 +591,9 @@
             "LLM_type": "claude",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/matrix_exercism-javascript-programmiri/claude/ClaudeSonnet4_matrix_v1.js",
             "log": "",
-            "execution_time_ms": 590.0,
-            "CPU_usage": 45.0,
-            "RAM_usage": 82180,
+            "execution_time_ms": 1760.0,
+            "CPU_usage": 22.0,
+            "RAM_usage": 80224,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -495,9 +609,9 @@
             "LLM_type": "gemini",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/matrix_exercism-javascript-programmiri/gemini/GeminiFlash_matrix_v1.js",
             "log": "",
-            "execution_time_ms": 630.0,
-            "CPU_usage": 44.0,
-            "RAM_usage": 80768,
+            "execution_time_ms": 1840.0,
+            "CPU_usage": 19.0,
+            "RAM_usage": 81388,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -513,27 +627,9 @@
             "LLM_type": "openAI",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/matrix_exercism-javascript-ffflorian/openAI/ChatGPT4_matrix_v1.js",
             "log": "",
-            "execution_time_ms": 570.0,
-            "CPU_usage": 41.0,
-            "RAM_usage": 82464,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "javascript_matrix_exercism-javascript-ffflorian_ffflorian",
-        "filename": "matrix.js",
-        "language": "javascript",
-        "LLM_results": [
-          {
-            "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/matrix_exercism-javascript-ffflorian/gemini/GeminiFlash_matrix_v1.js",
-            "log": "",
-            "execution_time_ms": 510.0,
-            "CPU_usage": 48.0,
-            "RAM_usage": 81508,
+            "execution_time_ms": 1890.0,
+            "CPU_usage": 25.0,
+            "RAM_usage": 81360,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -549,9 +645,9 @@
             "LLM_type": "claude",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/matrix_exercism-javascript-ffflorian/claude/ClaudeSonnet4_matrix_v1.js",
             "log": "",
-            "execution_time_ms": 510.0,
-            "CPU_usage": 45.0,
-            "RAM_usage": 79968,
+            "execution_time_ms": 2120.0,
+            "CPU_usage": 21.0,
+            "RAM_usage": 82320,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -567,9 +663,9 @@
             "LLM_type": "openAI",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/matrix_exercism-javascript-oguzsh/openAI/ChatGPT4_matrix_v1.js",
             "log": "",
-            "execution_time_ms": 530.0,
-            "CPU_usage": 52.0,
-            "RAM_usage": 79692,
+            "execution_time_ms": 2160.0,
+            "CPU_usage": 20.0,
+            "RAM_usage": 81336,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -577,35 +673,17 @@
         ]
       },
       {
-        "id": "javascript_matrix_exercism-javascript-oguzsh_oguzsh",
-        "filename": "matrix.js",
-        "language": "javascript",
-        "LLM_results": [
-          {
-            "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/matrix_exercism-javascript-oguzsh/claude/ClaudeSonnet4_matrix_v1.js",
-            "log": "",
-            "execution_time_ms": 530.0,
-            "CPU_usage": 41.0,
-            "RAM_usage": 79888,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "javascript_matrix_exercism-javascript-oguzsh_oguzsh",
+        "id": "javascript_matrix_exercism-javascript-ffflorian_ffflorian",
         "filename": "matrix.js",
         "language": "javascript",
         "LLM_results": [
           {
             "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/matrix_exercism-javascript-oguzsh/gemini/GeminiFlash_matrix_v1.js",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/matrix_exercism-javascript-ffflorian/gemini/GeminiFlash_matrix_v1.js",
             "log": "",
-            "execution_time_ms": 510.0,
-            "CPU_usage": 44.0,
-            "RAM_usage": 82052,
+            "execution_time_ms": 2170.0,
+            "CPU_usage": 22.0,
+            "RAM_usage": 82436,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -621,9 +699,27 @@
             "LLM_type": "openAI",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/matrix_exercism-javascript-ThomasZumsteg/openAI/ChatGPT4_matrix_v1.js",
             "log": "",
-            "execution_time_ms": 500.0,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80716,
+            "execution_time_ms": 2130.0,
+            "CPU_usage": 26.0,
+            "RAM_usage": 80004,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_matrix_exercism-javascript-oguzsh_oguzsh",
+        "filename": "matrix.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/matrix_exercism-javascript-oguzsh/claude/ClaudeSonnet4_matrix_v1.js",
+            "log": "",
+            "execution_time_ms": 2210.0,
+            "CPU_usage": 22.0,
+            "RAM_usage": 82536,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -639,9 +735,27 @@
             "LLM_type": "claude",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/matrix_exercism-javascript-ThomasZumsteg/claude/ClaudeSonnet4_matrix_v1.js",
             "log": "",
-            "execution_time_ms": 520.0,
-            "CPU_usage": 51.0,
-            "RAM_usage": 81480,
+            "execution_time_ms": 2060.0,
+            "CPU_usage": 23.0,
+            "RAM_usage": 81640,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_matrix_exercism-javascript-oguzsh_oguzsh",
+        "filename": "matrix.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/matrix_exercism-javascript-oguzsh/gemini/GeminiFlash_matrix_v1.js",
+            "log": "",
+            "execution_time_ms": 1910.0,
+            "CPU_usage": 22.0,
+            "RAM_usage": 81380,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -657,9 +771,225 @@
             "LLM_type": "gemini",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/matrix_exercism-javascript-ThomasZumsteg/gemini/GeminiFlash_matrix_v1.js",
             "log": "",
-            "execution_time_ms": 490.0,
-            "CPU_usage": 78.0,
-            "RAM_usage": 82076,
+            "execution_time_ms": 1430.0000000000002,
+            "CPU_usage": 31.0,
+            "RAM_usage": 81560,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_matrix_ThomasZumsteg",
+        "filename": "matrix.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "javascript/matrix_exercism-ThomasZumsteg/openAI/ChatGPT4_matrix_v1.js",
+            "log": "",
+            "execution_time_ms": 510.0,
+            "CPU_usage": 16.0,
+            "RAM_usage": 81220,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_matrix_ThomasZumsteg",
+        "filename": "matrix.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "javascript/matrix_exercism-ThomasZumsteg/claude/ClaudeSonnet4_matrix_v1.js",
+            "log": "",
+            "execution_time_ms": 440.00000000000006,
+            "CPU_usage": 18.0,
+            "RAM_usage": 81068,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_matrix_ThomasZumsteg",
+        "filename": "matrix.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "javascript/matrix_exercism-ThomasZumsteg/gemini/GeminiFlash_matrix_v1.js",
+            "log": "",
+            "execution_time_ms": 449.99999999999994,
+            "CPU_usage": 18.0,
+            "RAM_usage": 81268,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_matrix_SLIB53",
+        "filename": "babel.config.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "javascript/matrix_exercism-SLIB53/openAI/ChatGPT4_babel_v1.js",
+            "log": "",
+            "execution_time_ms": 470.0,
+            "CPU_usage": 15.0,
+            "RAM_usage": 80876,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_matrix_SLIB53",
+        "filename": "babel.config.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "javascript/matrix_exercism-SLIB53/claude/ClaudeSonnet4_babel_v1.js",
+            "log": "",
+            "execution_time_ms": 550.0,
+            "CPU_usage": 22.0,
+            "RAM_usage": 81600,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_matrix_SLIB53",
+        "filename": "babel.config.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "javascript/matrix_exercism-SLIB53/gemini/GeminiFlash_babel_v1.js",
+            "log": "",
+            "execution_time_ms": 570.0000000000001,
+            "CPU_usage": 28.0,
+            "RAM_usage": 82912,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_matrix_oguzsh",
+        "filename": "babel.config.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "javascript/matrix_exercism-oguzsh/openAI/ChatGPT4_babel_v1.js",
+            "log": "",
+            "execution_time_ms": 530.0,
+            "CPU_usage": 36.0,
+            "RAM_usage": 81720,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_matrix_oguzsh",
+        "filename": "babel.config.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "javascript/matrix_exercism-oguzsh/claude/ClaudeSonnet4_babel_v1.js",
+            "log": "",
+            "execution_time_ms": 620.0,
+            "CPU_usage": 39.0,
+            "RAM_usage": 80872,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_matrix_oguzsh",
+        "filename": "babel.config.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "javascript/matrix_exercism-oguzsh/gemini/GeminiFlash_babel_v1.js",
+            "log": "",
+            "execution_time_ms": 410.00000000000006,
+            "CPU_usage": 58.0,
+            "RAM_usage": 81732,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_matrix_elenamountz",
+        "filename": "matrix.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "javascript/matrix_exercism-elenamountz/openAI/ChatGPT4_matrix_v1.js",
+            "log": "",
+            "execution_time_ms": 430.0,
+            "CPU_usage": 47.0,
+            "RAM_usage": 84048,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_matrix_elenamountz",
+        "filename": "matrix.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "javascript/matrix_exercism-elenamountz/gemini/GeminiFlash_matrix_v1.js",
+            "log": "",
+            "execution_time_ms": 439.99999999999994,
+            "CPU_usage": 50.0,
+            "RAM_usage": 85352,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_matrix_elenamountz",
+        "filename": "matrix.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "javascript/matrix_exercism-elenamountz/claude/ClaudeSonnet4_matrix_v1.js",
+            "log": "",
+            "execution_time_ms": 410.00000000000006,
+            "CPU_usage": 66.0,
+            "RAM_usage": 85088,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -670,6 +1000,298 @@
     "typescript": [
       {
         "id": "typescript_matrix_Exercism-typescript-thewanionly",
+        "filename": "matrix.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/matrix_Exercism-typescript-thewanionly/openAI/ChatGPT4_matrix_v1.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/matrix_Exercism-typescript-thewanionly/openAI/ChatGPT4_matrix_v1.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/matrix_Exercism-typescript-thewanionly/claude/ClaudeSonnet4_matrix_v1.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/matrix_Exercism-typescript-thewanionly/claude/ClaudeSonnet4_matrix_v1.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/matrix_Exercism-typescript-thewanionly/gemini/GeminiFlash_matrix_v1.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/matrix_Exercism-typescript-thewanionly/gemini/GeminiFlash_matrix_v1.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "typescript_matrix_Exercism-typescript-thewanionly",
+        "filename": "matrix.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/matrix_Exercism-typescript-thewanionly/openAI/ChatGPT4_matrix_v1.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/matrix_Exercism-typescript-thewanionly/openAI/ChatGPT4_matrix_v1.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/matrix_Exercism-typescript-thewanionly/claude/ClaudeSonnet4_matrix_v1.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/matrix_Exercism-typescript-thewanionly/claude/ClaudeSonnet4_matrix_v1.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/matrix_Exercism-typescript-thewanionly/gemini/GeminiFlash_matrix_v1.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/matrix_Exercism-typescript-thewanionly/gemini/GeminiFlash_matrix_v1.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "typescript_matrix_Exercism-typescript-thewanionly",
+        "filename": "matrix.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/matrix_Exercism-typescript-thewanionly/openAI/ChatGPT4_matrix_v1.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/matrix_Exercism-typescript-thewanionly/openAI/ChatGPT4_matrix_v1.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/matrix_Exercism-typescript-thewanionly/claude/ClaudeSonnet4_matrix_v1.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/matrix_Exercism-typescript-thewanionly/claude/ClaudeSonnet4_matrix_v1.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/matrix_Exercism-typescript-thewanionly/gemini/GeminiFlash_matrix_v1.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/matrix_Exercism-typescript-thewanionly/gemini/GeminiFlash_matrix_v1.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "typescript_matrix_Exercism-typescript-thewanionly_thewanionly",
+        "filename": "matrix.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/matrix_Exercism-typescript-thewanionly/openAI/ChatGPT4_matrix_v1.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/matrix_Exercism-typescript-thewanionly/openAI/ChatGPT4_matrix_v1.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/matrix_Exercism-typescript-thewanionly/claude/ClaudeSonnet4_matrix_v1.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/matrix_Exercism-typescript-thewanionly/claude/ClaudeSonnet4_matrix_v1.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/matrix_Exercism-typescript-thewanionly/gemini/GeminiFlash_matrix_v1.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/matrix_Exercism-typescript-thewanionly/gemini/GeminiFlash_matrix_v1.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "typescript_matrix_Exercism-typescript-thewanionly_thewanionly",
         "filename": "matrix.ts",
         "language": "typescript",
         "LLM_results": [
@@ -886,6 +1508,206 @@
             "error_message": null
           }
         ]
+      },
+      {
+        "id": "typescript_matrix_Exercism-typescript-FilipeCerejo_FilipeCerejo",
+        "filename": "matrix.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/matrix_Exercism-typescript-FilipeCerejo/openAI/ChatGPT4_matrix_v1.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/matrix_Exercism-typescript-FilipeCerejo/openAI/ChatGPT4_matrix_v1.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/matrix_Exercism-typescript-FilipeCerejo/claude/ClaudeSonnet4_matrix_v1.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/matrix_Exercism-typescript-FilipeCerejo/claude/ClaudeSonnet4_matrix_v1.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/matrix_Exercism-typescript-FilipeCerejo/gemini/GeminiFlash_matrix_v1.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/matrix_Exercism-typescript-FilipeCerejo/gemini/GeminiFlash_matrix_v1.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "typescript_matrix_Exercism-typescript-FilipeCerejo_FilipeCerejo",
+        "filename": "matrix.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/matrix_Exercism-typescript-FilipeCerejo/openAI/ChatGPT4_matrix_v1.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/matrix_Exercism-typescript-FilipeCerejo/openAI/ChatGPT4_matrix_v1.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/matrix_Exercism-typescript-FilipeCerejo/claude/ClaudeSonnet4_matrix_v1.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/matrix_Exercism-typescript-FilipeCerejo/claude/ClaudeSonnet4_matrix_v1.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/matrix_Exercism-typescript-FilipeCerejo/gemini/GeminiFlash_matrix_v1.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/matrix_Exercism-typescript-FilipeCerejo/gemini/GeminiFlash_matrix_v1.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "typescript_matrix_wackerow",
+        "filename": "matrix.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "typescript/matrix_exercism-wackerow/openAI/ChatGPT4_matrix_v1.ts",
+            "log": "",
+            "execution_time_ms": 217,
+            "CPU_usage": 110.0,
+            "RAM_usage": 128156,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "typescript_matrix_wackerow",
+        "filename": "matrix.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "typescript/matrix_exercism-wackerow/claude/ClaudeSonnet4_matrix_v1.ts",
+            "log": "",
+            "execution_time_ms": 268,
+            "CPU_usage": 102.0,
+            "RAM_usage": 128372,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "typescript_matrix_wackerow",
+        "filename": "matrix.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "typescript/matrix_exercism-wackerow/gemini/GeminiFlash_matrix_v1.ts",
+            "log": "",
+            "execution_time_ms": 277,
+            "CPU_usage": 109.0,
+            "RAM_usage": 128348,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
       }
     ],
     "go": [
@@ -919,6 +1741,166 @@
           {
             "LLM_type": "gemini",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/matrix_Exercism_go_rootulp/gemini/GeminiFlash_matrix_v1.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "go_matrix_Exercism (go_rootulp)",
+        "filename": "matrix.go",
+        "language": "go",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/matrix_Exercism_go_rootulp/openAI/ChatGPT4_matrix_v1.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/matrix_Exercism_go_rootulp/claude/ClaudeSonnet4_matrix_v1.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/matrix_Exercism_go_rootulp/gemini/GeminiFlash_matrix_v1.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "go_matrix_Exercism (go_rootulp)",
+        "filename": "matrix.go",
+        "language": "go",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/matrix_Exercism_go_rootulp/openAI/ChatGPT4_matrix_v1.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/matrix_Exercism_go_rootulp/claude/ClaudeSonnet4_matrix_v1.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/matrix_Exercism_go_rootulp/gemini/GeminiFlash_matrix_v1.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "go_matrix_Exercism (go_ThomasZumsteg)",
+        "filename": "matrix.go",
+        "language": "go",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/matrix_Exercism_go_ThomasZumsteg/openAI/ChatGPT4_matrix_v1.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/matrix_Exercism_go_ThomasZumsteg/claude/ClaudeSonnet4_matrix_v1.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/matrix_Exercism_go_ThomasZumsteg/gemini/GeminiFlash_matrix_v1.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "go_matrix_Exercism (go_ThomasZumsteg)",
+        "filename": "matrix.go",
+        "language": "go",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/matrix_Exercism_go_ThomasZumsteg/openAI/ChatGPT4_matrix_v1.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/matrix_Exercism_go_ThomasZumsteg/claude/ClaudeSonnet4_matrix_v1.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/matrix_Exercism_go_ThomasZumsteg/gemini/GeminiFlash_matrix_v1.go",
             "log": "",
             "execution_time_ms": 1000,
             "CPU_usage": 50.0,
@@ -1005,6 +1987,196 @@
             "RAM_usage": 80000,
             "regressionTestPassed": true,
             "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "go_matrix_Exercism (go_drapala)",
+        "filename": "matrix.go",
+        "language": "go",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/matrix_Exercism_go_drapala/openAI/ChatGPT4_matrix_v1.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/matrix_Exercism_go_drapala/claude/ClaudeSonnet4_matrix_v1.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/matrix_Exercism_go_drapala/gemini/GeminiFlash_matrix_v1.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "go_matrix_Exercism (go_drapala)",
+        "filename": "matrix.go",
+        "language": "go",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/matrix_Exercism_go_drapala/openAI/ChatGPT4_matrix_v1.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/matrix_Exercism_go_drapala/claude/ClaudeSonnet4_matrix_v1.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/matrix_Exercism_go_drapala/gemini/GeminiFlash_matrix_v1.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      }
+    ],
+    "java": [
+      {
+        "id": "java_matrix_johannesrave-education",
+        "filename": "Matrix.java",
+        "language": "java",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "java/matrix_exercism-johannesrave-education/openAI/ChatGPT4_Matrix_v1.java",
+            "log": "",
+            "execution_time_ms": 99.99999999999999,
+            "CPU_usage": 72.0,
+            "RAM_usage": 46308,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "java_matrix_johannesrave-education",
+        "filename": "Matrix.java",
+        "language": "java",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "java/matrix_exercism-johannesrave-education/claude/ClaudeSonnet4_Matrix_v1.java",
+            "log": "",
+            "execution_time_ms": 110.0,
+            "CPU_usage": 53.0,
+            "RAM_usage": 46216,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "java_matrix_johannesrave-education",
+        "filename": "Matrix.java",
+        "language": "java",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "java/matrix_exercism-johannesrave-education/gemini/GeminiFlash_Matrix_v1.java",
+            "log": "",
+            "execution_time_ms": 139.99999999999997,
+            "CPU_usage": 80.0,
+            "RAM_usage": 46272,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "java_matrix_uzilan",
+        "filename": "Matrix.java",
+        "language": "java",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "java/matrix_exercism-uzilan/openAI/ChatGPT4_Matrix_v1.java",
+            "log": "",
+            "execution_time_ms": 110.0,
+            "CPU_usage": 50.0,
+            "RAM_usage": 46088,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "java_matrix_uzilan",
+        "filename": "Matrix.java",
+        "language": "java",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "java/matrix_exercism-uzilan/claude/ClaudeSonnet4_Matrix_v1.java",
+            "log": "",
+            "execution_time_ms": 130.0,
+            "CPU_usage": 56.0,
+            "RAM_usage": 46052,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "java_matrix_uzilan",
+        "filename": "Matrix.java",
+        "language": "java",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "java/matrix_exercism-uzilan/gemini/GeminiFlash_Matrix_v1.java",
+            "log": "",
+            "execution_time_ms": 110.0,
+            "CPU_usage": 86.0,
+            "RAM_usage": 46564,
+            "regressionTestPassed": true,
+            "success": true,
             "error_message": null
           }
         ]

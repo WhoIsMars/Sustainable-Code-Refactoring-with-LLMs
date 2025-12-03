@@ -1,17 +1,23 @@
 {
-  "execution_date": "2025-11-21 11:37:35",
+  "execution_date": "2025-12-03 09:52:19",
   "execution_metadata": {
     "total_tests": 18,
     "successful_tests": 18,
     "execution_time": "00h 00m 30s",
     "cluster": "cluster_rotational_cipher",
     "test_type": "llm_v4",
-    "last_updated": "2025-11-21 11:37:35",
+    "last_updated": "2025-12-03 09:52:19",
     "selective_execution": {
       "languages": [
-        "cpp"
+        "python",
+        "cpp",
+        "javascript",
+        "typescript",
+        "go",
+        "c",
+        "java"
       ],
-      "timestamp": "2025-11-21 11:37:35"
+      "timestamp": "2025-12-03 09:52:19"
     }
   },
   "results": {
@@ -22,30 +28,12 @@
         "language": "python",
         "LLM_results": [
           {
-            "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/rotational-cipher/claude/ClaudeSonnet4_rotational-cipher_v4.py",
-            "log": "",
-            "execution_time_ms": 50.0,
-            "CPU_usage": 78.0,
-            "RAM_usage": 13824,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "rotational-cipher_32",
-        "filename": "rotational-cipher.py",
-        "language": "python",
-        "LLM_results": [
-          {
             "LLM_type": "openAI",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/rotational-cipher/openAI/ChatGPT4_rotational-cipher_v4.py",
             "log": "",
-            "execution_time_ms": 60.0,
-            "CPU_usage": 81.0,
-            "RAM_usage": 13952,
+            "execution_time_ms": 70.0,
+            "CPU_usage": 19.0,
+            "RAM_usage": 13696,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -61,9 +49,135 @@
             "LLM_type": "gemini",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/rotational-cipher/gemini/GeminiFlash_rotational-cipher_v4.py",
             "log": "",
+            "execution_time_ms": 50.0,
+            "CPU_usage": 47.0,
+            "RAM_usage": 13952,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "rotational-cipher_32",
+        "filename": "rotational-cipher.py",
+        "language": "python",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/rotational-cipher/claude/ClaudeSonnet4_rotational-cipher_v4.py",
+            "log": "",
+            "execution_time_ms": 50.0,
+            "CPU_usage": 56.0,
+            "RAM_usage": 13952,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "python_rotational-cipher_fruit-in",
+        "filename": "rotational_cipher.py",
+        "language": "python",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "python/rotational-cipher_exercism-fruit-in/openAI/ChatGPT4_rotational_cipher_v4.py",
+            "log": "",
             "execution_time_ms": 40.0,
-            "CPU_usage": 87.0,
+            "CPU_usage": 40.0,
+            "RAM_usage": 13696,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "python_rotational-cipher_ThomasZumsteg",
+        "filename": "rotational_cipher.py",
+        "language": "python",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "python/rotational-cipher_exercism-ThomasZumsteg/openAI/ChatGPT4_rotational_cipher_v4.py",
+            "log": "",
+            "execution_time_ms": 30.0,
+            "CPU_usage": 60.0,
+            "RAM_usage": 13952,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "python_rotational-cipher_ThomasZumsteg",
+        "filename": "rotational_cipher.py",
+        "language": "python",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "python/rotational-cipher_exercism-ThomasZumsteg/gemini/GeminiFlash_rotational_cipher_v4.py",
+            "log": "",
+            "execution_time_ms": 30.0,
+            "CPU_usage": 56.0,
             "RAM_usage": 13824,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "python_rotational-cipher_ThomasZumsteg",
+        "filename": "rotational_cipher.py",
+        "language": "python",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "python/rotational-cipher_exercism-ThomasZumsteg/claude/ClaudeSonnet4_rotational_cipher_v4.py",
+            "log": "",
+            "execution_time_ms": 40.0,
+            "CPU_usage": 75.0,
+            "RAM_usage": 13952,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "python_rotational-cipher_fruit-in",
+        "filename": "rotational_cipher.py",
+        "language": "python",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "python/rotational-cipher_exercism-fruit-in/claude/ClaudeSonnet4_rotational_cipher_v4.py",
+            "log": "",
+            "execution_time_ms": 50.0,
+            "CPU_usage": 28.0,
+            "RAM_usage": 13952,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "python_rotational-cipher_fruit-in",
+        "filename": "rotational_cipher.py",
+        "language": "python",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "python/rotational-cipher_exercism-fruit-in/gemini/GeminiFlash_rotational_cipher_v4.py",
+            "log": "",
+            "execution_time_ms": 50.0,
+            "CPU_usage": 23.0,
+            "RAM_usage": 13696,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -233,11 +347,227 @@
             "error_message": null
           }
         ]
+      },
+      {
+        "id": "javascript_rotational-cipher_ThomasZumsteg",
+        "filename": "rotational-cipher.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "javascript/rotational-cipher_exercism-ThomasZumsteg/openAI/ChatGPT4_rotational-cipher_v4.js",
+            "log": "",
+            "execution_time_ms": 540.0,
+            "CPU_usage": 22.0,
+            "RAM_usage": 79192,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_rotational-cipher_ThomasZumsteg",
+        "filename": "rotational-cipher.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "javascript/rotational-cipher_exercism-ThomasZumsteg/claude/ClaudeSonnet4_rotational-cipher_v4.js",
+            "log": "",
+            "execution_time_ms": 530.0,
+            "CPU_usage": 22.0,
+            "RAM_usage": 81048,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_rotational-cipher_ThomasZumsteg",
+        "filename": "rotational-cipher.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "javascript/rotational-cipher_exercism-ThomasZumsteg/gemini/GeminiFlash_rotational-cipher_v4.js",
+            "log": "",
+            "execution_time_ms": 550.0,
+            "CPU_usage": 25.0,
+            "RAM_usage": 80752,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_rotational-cipher_SLIB53",
+        "filename": "babel.config.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "javascript/rotational-cipher_exercism-SLIB53/openAI/ChatGPT4_babel_v4.js",
+            "log": "",
+            "execution_time_ms": 550.0,
+            "CPU_usage": 26.0,
+            "RAM_usage": 82100,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_rotational-cipher_SLIB53",
+        "filename": "babel.config.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "javascript/rotational-cipher_exercism-SLIB53/claude/ClaudeSonnet4_babel_v4.js",
+            "log": "",
+            "execution_time_ms": 610.0,
+            "CPU_usage": 24.0,
+            "RAM_usage": 81956,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_rotational-cipher_SLIB53",
+        "filename": "babel.config.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "javascript/rotational-cipher_exercism-SLIB53/gemini/GeminiFlash_babel_v4.js",
+            "log": "",
+            "execution_time_ms": 600.0,
+            "CPU_usage": 26.0,
+            "RAM_usage": 80772,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
       }
     ],
     "typescript": [
       {
-        "id": "typescript_rotational-cipher_exercism-javascript-samajammin",
+        "id": "typescript_rotational-cipher_Exercism-typescript-FilipeCerejo",
+        "filename": "rotational-cipher.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/rotational-cipher_Exercism-typescript-FilipeCerejo/openAI/ChatGPT4_rotational-cipher_v4.ts",
+            "log": "",
+            "execution_time_ms": 1482,
+            "CPU_usage": 63.0,
+            "RAM_usage": 118700,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "typescript_rotational-cipher_Exercism-typescript-FilipeCerejo",
+        "filename": "rotational-cipher.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/rotational-cipher_Exercism-typescript-FilipeCerejo/claude/ClaudeSonnet4_rotational-cipher_v4.ts",
+            "log": "",
+            "execution_time_ms": 1291,
+            "CPU_usage": 65.0,
+            "RAM_usage": 118060,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "typescript_rotational-cipher_Exercism-typescript-FilipeCerejo",
+        "filename": "rotational-cipher.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/rotational-cipher_Exercism-typescript-FilipeCerejo/gemini/GeminiFlash_rotational-cipher_v4.js",
+            "log": "",
+            "execution_time_ms": 1730,
+            "CPU_usage": 52.0,
+            "RAM_usage": 118816,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "typescript_rotational-cipher_Exercism-typescript-FilipeCerejo_FilipeCerejo",
+        "filename": "rotational-cipher.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/rotational-cipher_Exercism-typescript-FilipeCerejo/openAI/ChatGPT4_rotational-cipher_v4.ts",
+            "log": "",
+            "execution_time_ms": 2124,
+            "CPU_usage": 48.0,
+            "RAM_usage": 117976,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "typescript_rotational-cipher_Exercism-typescript-FilipeCerejo_FilipeCerejo",
+        "filename": "rotational-cipher.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/rotational-cipher_Exercism-typescript-FilipeCerejo/claude/ClaudeSonnet4_rotational-cipher_v4.js",
+            "log": "",
+            "execution_time_ms": 977,
+            "CPU_usage": 64.0,
+            "RAM_usage": 118056,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "typescript_rotational-cipher_Exercism-typescript-FilipeCerejo_FilipeCerejo",
+        "filename": "rotational-cipher.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/rotational-cipher_Exercism-typescript-FilipeCerejo/gemini/GeminiFlash_rotational-cipher_v4.js",
+            "log": "",
+            "execution_time_ms": 1098,
+            "CPU_usage": 65.0,
+            "RAM_usage": 117988,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "typescript_rotational-cipher_exercism-javascript-samajammin_samajammin",
         "filename": "rotational-cipher.ts",
         "language": "typescript",
         "LLM_results": [
@@ -299,225 +629,6 @@
           {
             "LLM_type": "gemini",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/rotational-cipher_exercism-javascript-samajammin/gemini/GeminiFlash_rotational-cipher_v4.ts",
-            "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
-            "regressionTestPassed": true,
-            "success": null,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "typescript_rotational-cipher_Exercism-typescript-FilipeCerejo",
-        "filename": "rotational-cipher.ts",
-        "language": "typescript",
-        "LLM_results": [
-          {
-            "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/rotational-cipher_Exercism-typescript-FilipeCerejo/openAI/ChatGPT4_rotational-cipher_v4.js",
-            "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
-            "regressionTestPassed": true,
-            "success": null,
-            "error_message": null
-          },
-          {
-            "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/rotational-cipher_Exercism-typescript-FilipeCerejo/openAI/ChatGPT4_rotational-cipher_v4.ts",
-            "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
-            "regressionTestPassed": true,
-            "success": null,
-            "error_message": null
-          },
-          {
-            "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/rotational-cipher_Exercism-typescript-FilipeCerejo/claude/ClaudeSonnet4_rotational-cipher_v4.ts",
-            "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
-            "regressionTestPassed": true,
-            "success": null,
-            "error_message": null
-          },
-          {
-            "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/rotational-cipher_Exercism-typescript-FilipeCerejo/claude/ClaudeSonnet4_rotational-cipher_v4.js",
-            "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
-            "regressionTestPassed": true,
-            "success": null,
-            "error_message": null
-          },
-          {
-            "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/rotational-cipher_Exercism-typescript-FilipeCerejo/gemini/GeminiFlash_rotational-cipher_v4.js",
-            "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
-            "regressionTestPassed": true,
-            "success": null,
-            "error_message": null
-          },
-          {
-            "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/rotational-cipher_Exercism-typescript-FilipeCerejo/gemini/GeminiFlash_rotational-cipher_v4.ts",
-            "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
-            "regressionTestPassed": true,
-            "success": null,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "typescript_rotational-cipher_Exercism-typescript-shybyte_shybyte",
-        "filename": "rotational-cipher.ts",
-        "language": "typescript",
-        "LLM_results": [
-          {
-            "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/rotational-cipher_Exercism-typescript-shybyte/openAI/ChatGPT4_rotational-cipher_v4.js",
-            "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
-            "regressionTestPassed": true,
-            "success": null,
-            "error_message": null
-          },
-          {
-            "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/rotational-cipher_Exercism-typescript-shybyte/openAI/ChatGPT4_rotational-cipher_v4.ts",
-            "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
-            "regressionTestPassed": true,
-            "success": null,
-            "error_message": null
-          },
-          {
-            "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/rotational-cipher_Exercism-typescript-shybyte/claude/ClaudeSonnet4_rotational-cipher_v4.ts",
-            "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
-            "regressionTestPassed": true,
-            "success": null,
-            "error_message": null
-          },
-          {
-            "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/rotational-cipher_Exercism-typescript-shybyte/claude/ClaudeSonnet4_rotational-cipher_v4.js",
-            "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
-            "regressionTestPassed": true,
-            "success": null,
-            "error_message": null
-          },
-          {
-            "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/rotational-cipher_Exercism-typescript-shybyte/gemini/GeminiFlash_rotational-cipher_v4.js",
-            "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
-            "regressionTestPassed": true,
-            "success": null,
-            "error_message": null
-          },
-          {
-            "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/rotational-cipher_Exercism-typescript-shybyte/gemini/GeminiFlash_rotational-cipher_v4.ts",
-            "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
-            "regressionTestPassed": true,
-            "success": null,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "typescript_rotational-cipher_Exercism-typescript-FilipeCerejo_FilipeCerejo",
-        "filename": "rotational-cipher.ts",
-        "language": "typescript",
-        "LLM_results": [
-          {
-            "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/rotational-cipher_Exercism-typescript-FilipeCerejo/openAI/ChatGPT4_rotational-cipher_v4.js",
-            "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
-            "regressionTestPassed": true,
-            "success": null,
-            "error_message": null
-          },
-          {
-            "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/rotational-cipher_Exercism-typescript-FilipeCerejo/openAI/ChatGPT4_rotational-cipher_v4.ts",
-            "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
-            "regressionTestPassed": true,
-            "success": null,
-            "error_message": null
-          },
-          {
-            "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/rotational-cipher_Exercism-typescript-FilipeCerejo/claude/ClaudeSonnet4_rotational-cipher_v4.ts",
-            "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
-            "regressionTestPassed": true,
-            "success": null,
-            "error_message": null
-          },
-          {
-            "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/rotational-cipher_Exercism-typescript-FilipeCerejo/claude/ClaudeSonnet4_rotational-cipher_v4.js",
-            "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
-            "regressionTestPassed": true,
-            "success": null,
-            "error_message": null
-          },
-          {
-            "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/rotational-cipher_Exercism-typescript-FilipeCerejo/gemini/GeminiFlash_rotational-cipher_v4.js",
-            "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
-            "regressionTestPassed": true,
-            "success": null,
-            "error_message": null
-          },
-          {
-            "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/rotational-cipher_Exercism-typescript-FilipeCerejo/gemini/GeminiFlash_rotational-cipher_v4.ts",
             "log": "",
             "execution_time_ms": 1000,
             "CPU_usage": 50.0,
@@ -600,6 +711,295 @@
             "error_message": null
           }
         ]
+      },
+      {
+        "id": "typescript_rotational-cipher_exercism-javascript-samajammin_samajammin",
+        "filename": "rotational-cipher.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/rotational-cipher_exercism-javascript-samajammin/openAI/ChatGPT4_rotational-cipher_v4.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/rotational-cipher_exercism-javascript-samajammin/openAI/ChatGPT4_rotational-cipher_v4.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/rotational-cipher_exercism-javascript-samajammin/claude/ClaudeSonnet4_rotational-cipher_v4.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/rotational-cipher_exercism-javascript-samajammin/claude/ClaudeSonnet4_rotational-cipher_v4.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/rotational-cipher_exercism-javascript-samajammin/gemini/GeminiFlash_rotational-cipher_v4.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/rotational-cipher_exercism-javascript-samajammin/gemini/GeminiFlash_rotational-cipher_v4.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "typescript_rotational-cipher_exercism-javascript-samajammin",
+        "filename": "rotational-cipher.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/rotational-cipher_exercism-javascript-samajammin/openAI/ChatGPT4_rotational-cipher_v4.ts",
+            "log": "",
+            "execution_time_ms": 2968,
+            "CPU_usage": 34.0,
+            "RAM_usage": 118276,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "typescript_rotational-cipher_exercism-javascript-samajammin",
+        "filename": "rotational-cipher.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/rotational-cipher_exercism-javascript-samajammin/claude/ClaudeSonnet4_rotational-cipher_v4.js",
+            "log": "",
+            "execution_time_ms": 2945,
+            "CPU_usage": 33.0,
+            "RAM_usage": 119224,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "typescript_rotational-cipher_exercism-javascript-samajammin",
+        "filename": "rotational-cipher.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/rotational-cipher_exercism-javascript-samajammin/gemini/GeminiFlash_rotational-cipher_v4.ts",
+            "log": "",
+            "execution_time_ms": 2799,
+            "CPU_usage": 31.0,
+            "RAM_usage": 120288,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "typescript_rotational-cipher_Exercism-typescript-shybyte_shybyte",
+        "filename": "rotational-cipher.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/rotational-cipher_Exercism-typescript-shybyte/openAI/ChatGPT4_rotational-cipher_v4.ts",
+            "log": "",
+            "execution_time_ms": 2782,
+            "CPU_usage": 34.0,
+            "RAM_usage": 118812,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "typescript_rotational-cipher_Exercism-typescript-shybyte_shybyte",
+        "filename": "rotational-cipher.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/rotational-cipher_Exercism-typescript-shybyte/claude/ClaudeSonnet4_rotational-cipher_v4.js",
+            "log": "",
+            "execution_time_ms": 3401,
+            "CPU_usage": 32.0,
+            "RAM_usage": 120152,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "typescript_rotational-cipher_Exercism-typescript-shybyte_shybyte",
+        "filename": "rotational-cipher.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/rotational-cipher_Exercism-typescript-shybyte/gemini/GeminiFlash_rotational-cipher_v4.js",
+            "log": "",
+            "execution_time_ms": 3343,
+            "CPU_usage": 30.0,
+            "RAM_usage": 119100,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "typescript_rotational-cipher_wackerow",
+        "filename": "rotational-cipher.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "typescript/rotational-cipher_exercism-wackerow/openAI/ChatGPT4_rotational-cipher_v4.ts",
+            "log": "",
+            "execution_time_ms": 468,
+            "CPU_usage": 45.0,
+            "RAM_usage": 127916,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "typescript_rotational-cipher_wackerow",
+        "filename": "rotational-cipher.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "typescript/rotational-cipher_exercism-wackerow/claude/ClaudeSonnet4_rotational-cipher_v4.ts",
+            "log": "",
+            "execution_time_ms": 729,
+            "CPU_usage": 44.0,
+            "RAM_usage": 127720,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "typescript_rotational-cipher_wackerow",
+        "filename": "rotational-cipher.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "typescript/rotational-cipher_exercism-wackerow/gemini/GeminiFlash_rotational-cipher_v4.ts",
+            "log": "",
+            "execution_time_ms": 422,
+            "CPU_usage": 65.0,
+            "RAM_usage": 130912,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "typescript_rotational-cipher_samajammin",
+        "filename": "rotational-cipher.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "typescript/rotational-cipher_exercism-samajammin/openAI/ChatGPT4_rotational-cipher_v4.ts",
+            "log": "",
+            "execution_time_ms": 444,
+            "CPU_usage": 63.0,
+            "RAM_usage": 129900,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "typescript_rotational-cipher_samajammin",
+        "filename": "rotational-cipher.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "typescript/rotational-cipher_exercism-samajammin/claude/ClaudeSonnet4_rotational-cipher_v4.ts",
+            "log": "",
+            "execution_time_ms": 404,
+            "CPU_usage": 58.0,
+            "RAM_usage": 128236,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "typescript_rotational-cipher_samajammin",
+        "filename": "rotational-cipher.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "typescript/rotational-cipher_exercism-samajammin/gemini/GeminiFlash_rotational-cipher_v4.ts",
+            "log": "",
+            "execution_time_ms": 370,
+            "CPU_usage": 61.0,
+            "RAM_usage": 128168,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
       }
     ],
     "go": [
@@ -612,33 +1012,29 @@
             "LLM_type": "openAI",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/rotational_cipher_Exercism_go_rootulp/openAI/ChatGPT4_rotational_cipher_v4.go",
             "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
+            "execution_time_ms": 8640.0,
+            "CPU_usage": 36.0,
+            "RAM_usage": 218268,
             "regressionTestPassed": true,
-            "success": null,
+            "success": true,
             "error_message": null
-          },
+          }
+        ]
+      },
+      {
+        "id": "go_rotational_cipher_Exercism (go_rootulp)",
+        "filename": "rotational_cipher.go",
+        "language": "go",
+        "LLM_results": [
           {
             "LLM_type": "claude",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/rotational_cipher_Exercism_go_rootulp/claude/ClaudeSonnet4_rotational_cipher_v4.go",
             "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
+            "execution_time_ms": 8650.0,
+            "CPU_usage": 36.0,
+            "RAM_usage": 225188,
             "regressionTestPassed": true,
-            "success": null,
-            "error_message": null
-          },
-          {
-            "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/rotational_cipher_Exercism_go_rootulp/gemini/GeminiFlash_rotational_cipher_v4.go",
-            "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
-            "regressionTestPassed": true,
-            "success": null,
+            "success": true,
             "error_message": null
           }
         ]
@@ -652,33 +1048,65 @@
             "LLM_type": "openAI",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/rotational_cipher_Exercism_go_ThomasZumsteg/openAI/ChatGPT4_rotational_cipher_v4.go",
             "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
+            "execution_time_ms": 8510.0,
+            "CPU_usage": 36.0,
+            "RAM_usage": 231840,
             "regressionTestPassed": true,
-            "success": null,
+            "success": true,
             "error_message": null
-          },
+          }
+        ]
+      },
+      {
+        "id": "go_rotational_cipher_Exercism (go_rootulp)",
+        "filename": "rotational_cipher.go",
+        "language": "go",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/rotational_cipher_Exercism_go_rootulp/gemini/GeminiFlash_rotational_cipher_v4.go",
+            "log": "",
+            "execution_time_ms": 8870.0,
+            "CPU_usage": 34.0,
+            "RAM_usage": 222360,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "go_rotational_cipher_Exercism (go_ThomasZumsteg)",
+        "filename": "rotational_cipher.go",
+        "language": "go",
+        "LLM_results": [
           {
             "LLM_type": "claude",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/rotational_cipher_Exercism_go_ThomasZumsteg/claude/ClaudeSonnet4_rotational_cipher_v4.go",
             "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
+            "execution_time_ms": 9640.0,
+            "CPU_usage": 31.0,
+            "RAM_usage": 238920,
             "regressionTestPassed": true,
-            "success": null,
+            "success": true,
             "error_message": null
-          },
+          }
+        ]
+      },
+      {
+        "id": "go_rotational_cipher_Exercism (go_ThomasZumsteg)",
+        "filename": "rotational_cipher.go",
+        "language": "go",
+        "LLM_results": [
           {
             "LLM_type": "gemini",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/rotational_cipher_Exercism_go_ThomasZumsteg/gemini/GeminiFlash_rotational_cipher_v4.go",
             "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
+            "execution_time_ms": 9360.0,
+            "CPU_usage": 32.0,
+            "RAM_usage": 207744,
             "regressionTestPassed": true,
-            "success": null,
+            "success": true,
             "error_message": null
           }
         ]
@@ -692,33 +1120,47 @@
             "LLM_type": "openAI",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/rotational_cipher_Exercism_go_drapala/openAI/ChatGPT4_rotational_cipher_v4.go",
             "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
+            "execution_time_ms": 9040.0,
+            "CPU_usage": 32.0,
+            "RAM_usage": 223380,
             "regressionTestPassed": true,
-            "success": null,
+            "success": true,
             "error_message": null
-          },
+          }
+        ]
+      },
+      {
+        "id": "go_rotational_cipher_Exercism (go_drapala)",
+        "filename": "rotational_cipher.go",
+        "language": "go",
+        "LLM_results": [
           {
             "LLM_type": "claude",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/rotational_cipher_Exercism_go_drapala/claude/ClaudeSonnet4_rotational_cipher_v4.go",
             "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
+            "execution_time_ms": 8770.0,
+            "CPU_usage": 32.0,
+            "RAM_usage": 223288,
             "regressionTestPassed": true,
-            "success": null,
+            "success": true,
             "error_message": null
-          },
+          }
+        ]
+      },
+      {
+        "id": "go_rotational_cipher_Exercism (go_drapala)",
+        "filename": "rotational_cipher.go",
+        "language": "go",
+        "LLM_results": [
           {
             "LLM_type": "gemini",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/rotational_cipher_Exercism_go_drapala/gemini/GeminiFlash_rotational_cipher_v4.go",
             "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
+            "execution_time_ms": 8340.0,
+            "CPU_usage": 39.0,
+            "RAM_usage": 224792,
             "regressionTestPassed": true,
-            "success": null,
+            "success": true,
             "error_message": null
           }
         ]
@@ -731,11 +1173,11 @@
         "language": "cpp",
         "LLM_results": [
           {
-            "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/rotational-cipher_exercism-toemm/claude/ClaudeSonnet4_rotational_cipher_v4.cpp",
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/rotational-cipher_exercism-toemm/openAI/ChatGPT4_rotational_cipher_v4.cpp",
             "log": "",
-            "execution_time_ms": 3.967506,
-            "CPU_usage": 47.0,
+            "execution_time_ms": 10.199479,
+            "CPU_usage": 15.0,
             "RAM_usage": 10496,
             "regressionTestPassed": true,
             "success": true,
@@ -749,11 +1191,11 @@
         "language": "cpp",
         "LLM_results": [
           {
-            "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/rotational-cipher_exercism-toemm/openAI/ChatGPT4_rotational_cipher_v4.cpp",
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/rotational-cipher_exercism-toemm/claude/ClaudeSonnet4_rotational_cipher_v4.cpp",
             "log": "",
-            "execution_time_ms": 2.774587,
-            "CPU_usage": 66.0,
+            "execution_time_ms": 10.083645,
+            "CPU_usage": 15.0,
             "RAM_usage": 10496,
             "regressionTestPassed": true,
             "success": true,
@@ -770,9 +1212,119 @@
             "LLM_type": "gemini",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/rotational-cipher_exercism-toemm/gemini/GeminiFlash_rotational_cipher_v4.cpp",
             "log": "",
-            "execution_time_ms": 2.301837,
-            "CPU_usage": 67.0,
+            "execution_time_ms": 4.031175,
+            "CPU_usage": 41.0,
             "RAM_usage": 10496,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      }
+    ],
+    "java": [
+      {
+        "id": "java_rotational-cipher_johannesrave-education",
+        "filename": "RotationalCipher.java",
+        "language": "java",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "java/rotational-cipher_exercism-johannesrave-education/openAI/ChatGPT4_RotationalCipher_v4.java",
+            "log": "",
+            "execution_time_ms": 140.0,
+            "CPU_usage": 41.0,
+            "RAM_usage": 46220,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "java_rotational-cipher_johannesrave-education",
+        "filename": "RotationalCipher.java",
+        "language": "java",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "java/rotational-cipher_exercism-johannesrave-education/claude/ClaudeSonnet4_RotationalCipher_v4.java",
+            "log": "",
+            "execution_time_ms": 139.99999999999997,
+            "CPU_usage": 47.0,
+            "RAM_usage": 46256,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "java_rotational-cipher_johannesrave-education",
+        "filename": "RotationalCipher.java",
+        "language": "java",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "java/rotational-cipher_exercism-johannesrave-education/gemini/GeminiFlash_RotationalCipher_v4.java",
+            "log": "",
+            "execution_time_ms": 150.0,
+            "CPU_usage": 46.0,
+            "RAM_usage": 46148,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "java_rotational-cipher_uzilan",
+        "filename": "RotationalCipher.java",
+        "language": "java",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "java/rotational-cipher_exercism-uzilan/openAI/ChatGPT4_RotationalCipher_v4.java",
+            "log": "",
+            "execution_time_ms": 130.0,
+            "CPU_usage": 48.0,
+            "RAM_usage": 45696,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "java_rotational-cipher_uzilan",
+        "filename": "RotationalCipher.java",
+        "language": "java",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "java/rotational-cipher_exercism-uzilan/claude/ClaudeSonnet4_RotationalCipher_v4.java",
+            "log": "",
+            "execution_time_ms": 130.0,
+            "CPU_usage": 73.0,
+            "RAM_usage": 46360,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "java_rotational-cipher_uzilan",
+        "filename": "RotationalCipher.java",
+        "language": "java",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "java/rotational-cipher_exercism-uzilan/gemini/GeminiFlash_RotationalCipher_v4.java",
+            "log": "",
+            "execution_time_ms": 120.00000000000001,
+            "CPU_usage": 99.0,
+            "RAM_usage": 46048,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null

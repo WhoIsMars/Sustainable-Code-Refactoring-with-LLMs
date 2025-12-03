@@ -8,7 +8,7 @@ namespace all_your_base
     int toDecimalNumber(unsigned int fromBase, const std::vector<unsigned int>& digits)
     {
         int num = 0;
-        for (const auto& digit : digits)
+        for (unsigned int digit : digits)
         {
             if (digit >= fromBase) throw std::invalid_argument("Input digits cannot be equal or greater than input base.");
             num = num * fromBase + digit;
@@ -20,7 +20,7 @@ namespace all_your_base
     {
         if (decimalNumber == 0) return {0};
         std::vector<unsigned int> digits;
-        while (decimalNumber)
+        while (decimalNumber > 0)
         {
             digits.push_back(decimalNumber % toBase);
             decimalNumber /= toBase;

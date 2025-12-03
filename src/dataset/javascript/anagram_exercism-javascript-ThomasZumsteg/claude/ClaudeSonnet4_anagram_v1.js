@@ -24,3 +24,4 @@ Anagram.prototype.matches = function( wordList) {
 };
 
 export default anagram;
+export { Anagram };

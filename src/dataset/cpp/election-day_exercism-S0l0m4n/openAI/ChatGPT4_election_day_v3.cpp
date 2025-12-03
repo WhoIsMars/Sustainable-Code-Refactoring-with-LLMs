@@ -22,9 +22,9 @@ void increment_vote_count(ElectionResult& result, int extra_votes) {
 
 ElectionResult& determine_result(vector<ElectionResult>& results) {
     auto winner = std::max_element(results.begin(), results.end(), 
-                                   [](const ElectionResult& a, const ElectionResult& b) {
-                                       return a.votes < b.votes;
-                                   });
+        [](const ElectionResult& a, const ElectionResult& b) {
+            return a.votes < b.votes;
+        });
     winner->name = "President " + winner->name;
     return *winner;
 }

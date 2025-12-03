@@ -4,7 +4,7 @@ Copy Fixed Prompt Analysis Plots to Scrittura Directory
 This script copies plots from src/metrics/fixed_prompt_plots/ to scrittura/plots/fixed_prompt_analysis/
 maintaining the same directory structure.
 
-Author: Claude Code
+
 Date: 2025-11-13
 """
 

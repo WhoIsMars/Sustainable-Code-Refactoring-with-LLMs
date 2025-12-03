@@ -1,4 +1,5 @@
 #include "grains.h"
+#include <cstdint>
 
 namespace grains
 {
@@ -9,6 +10,6 @@ namespace grains
     
     unsigned long long total()
     {
-        return (1ULL << 64) - 1;
+        return UINT64_MAX;
     }
 }

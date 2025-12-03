@@ -4,7 +4,7 @@ Energy and Carbon Footprint Analyzer for Sustainable Code Refactoring
 This module calculates absolute energy consumption (Joules) and carbon emissions (gCO2eq)
 from execution metrics (CPU%, RAM KB, execution time ms) using Green Computing methodologies.
 
-Author: Senior AI Engineer & Data Scientist
+
 Date: 2025-11-01
 Version: 1.0
 """

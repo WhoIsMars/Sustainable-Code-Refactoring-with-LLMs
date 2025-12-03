@@ -13,4 +13,4 @@ unsigned long long total() {
   return ~0ULL;
 }
 
-}  // namespace grains
+} // namespace grains

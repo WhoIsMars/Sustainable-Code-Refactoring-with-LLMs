@@ -31,7 +31,7 @@ string hey(string input) {
 
 bool isQuestion(const string& input) {
   if (input.empty()) return false;
-  for (int i = static_cast<int>(input.length()) - 1; i >= 0; --i) {
+  for (int i = (int)input.length() - 1; i >= 0; --i) {
     if (input[i] == ' ') continue;
     return input[i] == '?';
   }
@@ -41,17 +41,16 @@ bool isQuestion(const string& input) {
 bool isYelling(const string& input) {
   bool hasLetters = false;
   bool allUpper = true;
-
   for (char c : input) {
     if (isalpha(c)) {
       hasLetters = true;
       if (islower(c)) {
-        return false;
+        allUpper = false;
+        break;
       }
     }
   }
-
-  return hasLetters;
+  return hasLetters && allUpper;
 }
 
 bool isSilence(const string& input) { return input.empty(); }

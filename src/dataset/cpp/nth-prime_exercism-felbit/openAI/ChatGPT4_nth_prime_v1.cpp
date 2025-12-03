@@ -10,7 +10,7 @@ namespace prime {
         std::vector<int> primes;
         primes.reserve(n); // Reserve memory to avoid frequent reallocations
         primes.push_back(2); // Start with the first prime number
-
+        
         int candidate = 3;
 
         while (primes.size() < n)

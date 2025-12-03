@@ -113,3 +113,4 @@ export class Song {
     return song;
   }
 }
+export { song };

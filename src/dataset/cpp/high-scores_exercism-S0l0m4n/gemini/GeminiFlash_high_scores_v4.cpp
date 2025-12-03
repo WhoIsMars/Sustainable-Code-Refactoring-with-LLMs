@@ -19,20 +19,20 @@ namespace arcade {
     }
 
     std::vector<int> HighScores::top_three() {
-        std::vector<int> top_scores;
+        std::vector<int> top;
         size_t count = std::min(scores.size(), (size_t)3);
 
-        if (count == 0) return top_scores;
+        if (count == 0) return top;
 
         std::vector<int> sorted_scores = scores;
-        std::sort(sorted_scores.begin(), sorted_scores.end(), std::greater<int>());
+        std::partial_sort(sorted_scores.begin(), sorted_scores.begin() + count, sorted_scores.end(), std::greater<int>());
 
-        top_scores.reserve(count);
+        top.reserve(count);
         for (size_t i = 0; i < count; ++i) {
-            top_scores.push_back(sorted_scores[i]);
+            top.push_back(sorted_scores[i]);
         }
 
-        return top_scores;
+        return top;
     }
 
 }  // namespace arcade

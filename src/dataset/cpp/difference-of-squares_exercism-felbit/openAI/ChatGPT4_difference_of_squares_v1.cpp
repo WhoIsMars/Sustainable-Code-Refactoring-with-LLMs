@@ -13,7 +13,9 @@ namespace squares {
 
     unsigned long long int difference(const int n)
     {
-        return square_of_sum(n) - sum_of_squares(n);
+        unsigned long long int sum = static_cast<unsigned long long int>(n) * (n + 1) / 2;
+        unsigned long long int sum_sq = static_cast<unsigned long long int>(n) * (n + 1) * (2 * n + 1) / 6;
+        return sum * sum - sum_sq;
     }
 
 }

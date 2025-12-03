@@ -1,0 +1,47 @@
+import java.util.ArrayList;
+import java.util.List;
+
+class Sieve {
+
+    private final int maxPrime;
+    private final boolean[] isPrime;
+    private final List<Integer> primes;
+
+    Sieve(int maxPrime) {
+        this.maxPrime = maxPrime;
+        this.isPrime = new boolean[maxPrime + 1];
+        initializeSieve();
+        sieveOfEratosthenes();
+        this.primes = collectPrimes();
+    }
+
+    List<Integer> getPrimes() {
+        return primes;
+    }
+
+    private void initializeSieve() {
+        for (int i = 2; i <= maxPrime; i++) {
+            isPrime[i] = true;
+        }
+    }
+
+    private void sieveOfEratosthenes() {
+        for (int i = 2; i * i <= maxPrime; i++) {
+            if (isPrime[i]) {
+                for (int j = i * i; j <= maxPrime; j += i) {
+                    isPrime[j] = false;
+                }
+            }
+        }
+    }
+
+    private List<Integer> collectPrimes() {
+        List<Integer> result = new ArrayList<>();
+        for (int i = 2; i <= maxPrime; i++) {
+            if (isPrime[i]) {
+                result.add(i);
+            }
+        }
+        return result;
+    }
+}

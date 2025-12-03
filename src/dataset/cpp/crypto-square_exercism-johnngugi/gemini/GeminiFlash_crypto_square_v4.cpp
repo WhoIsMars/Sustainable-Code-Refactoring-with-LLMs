@@ -18,7 +18,7 @@ namespace crypto_square
             if (std::isalnum(c)) {
                 return std::tolower(c);
             }
-            return '\0'; // Or any character that will be filtered out
+            return '\0'; // Or any other character that will be filtered out
         });
 
         result.erase(std::remove(result.begin(), result.end(), '\0'), result.end());
@@ -68,7 +68,7 @@ namespace crypto_square
         if (normalized_text.empty()) {
             normalized_text = normalize_plain_text();
         }
-        unsigned int columns = size();
+        unsigned int columns = calculate_size(normalized_text);
         size_t rows = (normalized_text.length() + columns - 1) / columns;
         std::string result;
         result.reserve(normalized_text.length());
@@ -91,17 +91,16 @@ namespace crypto_square
     std::string cipher::normalized_cipher_text()
     {
         std::string encoded = cipher_text();
-        unsigned int segment_size = size();
-        std::string result;
-        result.reserve(encoded.length() + (encoded.length() / segment_size));
+        unsigned int segment_size = calculate_size(encoded);
+        std::vector<std::string> segments = create_segments(encoded);
 
-        for (size_t i = 0; i < encoded.length(); ++i)
+        std::string result;
+        result.reserve(encoded.length() + segments.size() - 1);
+        result = segments[0];
+
+        for (size_t i = 1; i < segments.size(); ++i)
         {
-            if (i > 0 && i % segment_size == 0)
-            {
-                result += ' ';
-            }
-            result += encoded[i];
+            result += " " + segments[i];
         }
 
         return result;

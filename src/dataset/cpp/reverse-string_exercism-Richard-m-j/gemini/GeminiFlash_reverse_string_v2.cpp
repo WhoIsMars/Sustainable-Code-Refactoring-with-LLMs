@@ -1,6 +1,6 @@
 #include "reverse_string.h"
-#include <algorithm>
 #include <string>
+#include <algorithm>
 
 using namespace std;
 
@@ -11,4 +11,4 @@ string reverse_string(string input) {
   return input;
 }
 
-} // namespace reverse_string
+}  // namespace reverse_string

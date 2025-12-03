@@ -1,17 +1,23 @@
 {
-  "execution_date": "2025-11-19 17:40:40",
+  "execution_date": "2025-12-01 16:35:06",
   "execution_metadata": {
     "total_tests": 29,
     "successful_tests": 29,
     "execution_time": "00h 00m 00s",
     "cluster": "cluster_accumulate",
     "test_type": "llm_v2",
-    "last_updated": "2025-11-19 17:40:40",
+    "last_updated": "2025-12-01 16:35:06",
     "selective_execution": {
       "languages": [
-        "java"
+        "typescript",
+        "cpp",
+        "javascript",
+        "java",
+        "c",
+        "python",
+        "go"
       ],
-      "timestamp": "2025-11-19 17:40:40"
+      "timestamp": "2025-12-01 16:35:06"
     }
   },
   "results": {
@@ -31,24 +37,6 @@
             "regressionTestPassed": false,
             "success": false,
             "error_message": "Docker exit code: 1"
-          }
-        ]
-      },
-      {
-        "id": "javascript_accumulate_exercism-javascript-ThomasZumsteg_ThomasZumsteg",
-        "filename": "accumulate.js",
-        "language": "javascript",
-        "LLM_results": [
-          {
-            "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/accumulate_exercism-javascript-ThomasZumsteg/openAI/ChatGPT4_accumulate_v2.js",
-            "log": "",
-            "execution_time_ms": 560.0,
-            "CPU_usage": 17.0,
-            "RAM_usage": 81760,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
           }
         ]
       },
@@ -94,12 +82,12 @@
         "language": "javascript",
         "LLM_results": [
           {
-            "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/accumulate_exercism-javascript-ThomasZumsteg/claude/ClaudeSonnet4_accumulate_v2.js",
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/accumulate_exercism-javascript-ThomasZumsteg/gemini/GeminiFlash_accumulate_v2.js",
             "log": "",
-            "execution_time_ms": 500.0,
-            "CPU_usage": 23.0,
-            "RAM_usage": 81292,
+            "execution_time_ms": 1220.0,
+            "CPU_usage": 17.0,
+            "RAM_usage": 81096,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -112,12 +100,84 @@
         "language": "javascript",
         "LLM_results": [
           {
-            "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/accumulate_exercism-javascript-ThomasZumsteg/gemini/GeminiFlash_accumulate_v2.js",
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/accumulate_exercism-javascript-ThomasZumsteg/claude/ClaudeSonnet4_accumulate_v2.js",
             "log": "",
-            "execution_time_ms": 590.0,
-            "CPU_usage": 21.0,
-            "RAM_usage": 80212,
+            "execution_time_ms": 1310.0,
+            "CPU_usage": 16.0,
+            "RAM_usage": 81456,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_accumulate_exercism-javascript-ThomasZumsteg_ThomasZumsteg",
+        "filename": "accumulate.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/accumulate_exercism-javascript-ThomasZumsteg/openAI/ChatGPT4_accumulate_v2.js",
+            "log": "",
+            "execution_time_ms": 1130.0,
+            "CPU_usage": 19.0,
+            "RAM_usage": 82780,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_accumulate_ThomasZumsteg",
+        "filename": "accumulate.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "javascript/accumulate_exercism-ThomasZumsteg/openAI/ChatGPT4_accumulate_v2.js",
+            "log": "",
+            "execution_time_ms": 1460.0,
+            "CPU_usage": 14.0,
+            "RAM_usage": 81104,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_accumulate_ThomasZumsteg",
+        "filename": "accumulate.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "javascript/accumulate_exercism-ThomasZumsteg/gemini/GeminiFlash_accumulate_v2.js",
+            "log": "",
+            "execution_time_ms": 1150.0,
+            "CPU_usage": 28.0,
+            "RAM_usage": 81352,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_accumulate_ThomasZumsteg",
+        "filename": "accumulate.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "javascript/accumulate_exercism-ThomasZumsteg/claude/ClaudeSonnet4_accumulate_v2.js",
+            "log": "",
+            "execution_time_ms": 1200.0,
+            "CPU_usage": 29.0,
+            "RAM_usage": 81612,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -133,47 +193,11 @@
         "LLM_results": [
           {
             "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/accumulate_Exercism-typescript-FilipeCerejo/openAI/ChatGPT4_accumulate_v2.ts",
-            "log": "",
-            "execution_time_ms": 527,
-            "CPU_usage": 50.0,
-            "RAM_usage": 123048,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "typescript_accumulate_Exercism-typescript-FilipeCerejo",
-        "filename": "accumulate.ts",
-        "language": "typescript",
-        "LLM_results": [
-          {
-            "LLM_type": "openAI",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/accumulate_Exercism-typescript-FilipeCerejo/openAI/ChatGPT4_accumulate_v2.js",
             "log": "",
-            "execution_time_ms": 518,
-            "CPU_usage": 49.0,
-            "RAM_usage": 123528,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "typescript_accumulate_Exercism-typescript-FilipeCerejo",
-        "filename": "accumulate.ts",
-        "language": "typescript",
-        "LLM_results": [
-          {
-            "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/accumulate_Exercism-typescript-FilipeCerejo/claude/ClaudeSonnet4_accumulate_v2.ts",
-            "log": "",
-            "execution_time_ms": 960,
-            "CPU_usage": 29.0,
-            "RAM_usage": 121480,
+            "execution_time_ms": 2722,
+            "CPU_usage": 75.0,
+            "RAM_usage": 119280,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -189,27 +213,9 @@
             "LLM_type": "claude",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/accumulate_Exercism-typescript-FilipeCerejo/claude/ClaudeSonnet4_accumulate_v2.js",
             "log": "",
-            "execution_time_ms": 828,
-            "CPU_usage": 25.0,
-            "RAM_usage": 125192,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "typescript_accumulate_Exercism-typescript-FilipeCerejo",
-        "filename": "accumulate.ts",
-        "language": "typescript",
-        "LLM_results": [
-          {
-            "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/accumulate_Exercism-typescript-FilipeCerejo/gemini/GeminiFlash_accumulate_v2.js",
-            "log": "",
-            "execution_time_ms": 806,
-            "CPU_usage": 35.0,
-            "RAM_usage": 123432,
+            "execution_time_ms": 1661,
+            "CPU_usage": 63.0,
+            "RAM_usage": 118308,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -225,27 +231,9 @@
             "LLM_type": "gemini",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/accumulate_Exercism-typescript-FilipeCerejo/gemini/GeminiFlash_accumulate_v2.ts",
             "log": "",
-            "execution_time_ms": 617,
-            "CPU_usage": 31.0,
-            "RAM_usage": 125508,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "typescript_accumulate_Exercism-typescript-FilipeCerejo_FilipeCerejo",
-        "filename": "accumulate.ts",
-        "language": "typescript",
-        "LLM_results": [
-          {
-            "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/accumulate_Exercism-typescript-FilipeCerejo/openAI/ChatGPT4_accumulate_v2.ts",
-            "log": "",
-            "execution_time_ms": 712,
-            "CPU_usage": 44.0,
-            "RAM_usage": 123884,
+            "execution_time_ms": 2534,
+            "CPU_usage": 62.0,
+            "RAM_usage": 117764,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -261,99 +249,45 @@
             "LLM_type": "openAI",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/accumulate_Exercism-typescript-FilipeCerejo/openAI/ChatGPT4_accumulate_v2.js",
             "log": "",
-            "execution_time_ms": 723,
-            "CPU_usage": 32.0,
-            "RAM_usage": 123284,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "typescript_accumulate_Exercism-typescript-FilipeCerejo_FilipeCerejo",
-        "filename": "accumulate.ts",
-        "language": "typescript",
-        "LLM_results": [
-          {
-            "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/accumulate_Exercism-typescript-FilipeCerejo/claude/ClaudeSonnet4_accumulate_v2.ts",
-            "log": "",
-            "execution_time_ms": 707,
-            "CPU_usage": 31.0,
-            "RAM_usage": 124864,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "typescript_accumulate_Exercism-typescript-FilipeCerejo_FilipeCerejo",
-        "filename": "accumulate.ts",
-        "language": "typescript",
-        "LLM_results": [
-          {
-            "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/accumulate_Exercism-typescript-FilipeCerejo/claude/ClaudeSonnet4_accumulate_v2.js",
-            "log": "",
-            "execution_time_ms": 746,
-            "CPU_usage": 29.0,
-            "RAM_usage": 123660,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "typescript_accumulate_Exercism-typescript-FilipeCerejo_FilipeCerejo",
-        "filename": "accumulate.ts",
-        "language": "typescript",
-        "LLM_results": [
-          {
-            "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/accumulate_Exercism-typescript-FilipeCerejo/gemini/GeminiFlash_accumulate_v2.js",
-            "log": "",
-            "execution_time_ms": 280,
-            "CPU_usage": 58.0,
-            "RAM_usage": 125600,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "typescript_accumulate_Exercism-typescript-FilipeCerejo_FilipeCerejo",
-        "filename": "accumulate.ts",
-        "language": "typescript",
-        "LLM_results": [
-          {
-            "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/accumulate_Exercism-typescript-FilipeCerejo/gemini/GeminiFlash_accumulate_v2.ts",
-            "log": "",
-            "execution_time_ms": 312,
-            "CPU_usage": 70.0,
-            "RAM_usage": 123088,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "typescript_accumulate_exercism-javascript-samajammin_samajammin",
-        "filename": "accumulate.ts",
-        "language": "typescript",
-        "LLM_results": [
-          {
-            "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/accumulate_exercism-javascript-samajammin/openAI/ChatGPT4_accumulate_v2.ts",
-            "log": "",
-            "execution_time_ms": 420,
+            "execution_time_ms": 4739,
             "CPU_usage": 46.0,
-            "RAM_usage": 122292,
+            "RAM_usage": 118748,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "typescript_accumulate_Exercism-typescript-FilipeCerejo_FilipeCerejo",
+        "filename": "accumulate.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/accumulate_Exercism-typescript-FilipeCerejo/claude/ClaudeSonnet4_accumulate_v2.js",
+            "log": "",
+            "execution_time_ms": 3991,
+            "CPU_usage": 44.0,
+            "RAM_usage": 120344,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "typescript_accumulate_Exercism-typescript-FilipeCerejo_FilipeCerejo",
+        "filename": "accumulate.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/accumulate_Exercism-typescript-FilipeCerejo/gemini/GeminiFlash_accumulate_v2.ts",
+            "log": "",
+            "execution_time_ms": 4742,
+            "CPU_usage": 52.0,
+            "RAM_usage": 119196,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -369,27 +303,9 @@
             "LLM_type": "openAI",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/accumulate_exercism-javascript-samajammin/openAI/ChatGPT4_accumulate_v2.js",
             "log": "",
-            "execution_time_ms": 361,
-            "CPU_usage": 52.0,
-            "RAM_usage": 124912,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "typescript_accumulate_exercism-javascript-samajammin_samajammin",
-        "filename": "accumulate.ts",
-        "language": "typescript",
-        "LLM_results": [
-          {
-            "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/accumulate_exercism-javascript-samajammin/claude/ClaudeSonnet4_accumulate_v2.ts",
-            "log": "",
-            "execution_time_ms": 800,
-            "CPU_usage": 32.0,
-            "RAM_usage": 123736,
+            "execution_time_ms": 4355,
+            "CPU_usage": 43.0,
+            "RAM_usage": 117964,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -405,9 +321,9 @@
             "LLM_type": "claude",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/accumulate_exercism-javascript-samajammin/claude/ClaudeSonnet4_accumulate_v2.js",
             "log": "",
-            "execution_time_ms": 798,
-            "CPU_usage": 29.0,
-            "RAM_usage": 122668,
+            "execution_time_ms": 2264,
+            "CPU_usage": 104.0,
+            "RAM_usage": 118356,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -423,9 +339,9 @@
             "LLM_type": "gemini",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/accumulate_exercism-javascript-samajammin/gemini/GeminiFlash_accumulate_v2.js",
             "log": "",
-            "execution_time_ms": 713,
-            "CPU_usage": 28.0,
-            "RAM_usage": 123272,
+            "execution_time_ms": 5280,
+            "CPU_usage": 50.0,
+            "RAM_usage": 117696,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -433,17 +349,53 @@
         ]
       },
       {
-        "id": "typescript_accumulate_exercism-javascript-samajammin_samajammin",
+        "id": "typescript_accumulate_samajammin",
+        "filename": "accumulate.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "typescript/accumulate_exercism-samajammin/openAI/ChatGPT4_accumulate_v2.ts",
+            "log": "",
+            "execution_time_ms": 1887,
+            "CPU_usage": 40.0,
+            "RAM_usage": 128372,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "typescript_accumulate_samajammin",
+        "filename": "accumulate.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "typescript/accumulate_exercism-samajammin/claude/ClaudeSonnet4_accumulate_v2.ts",
+            "log": "",
+            "execution_time_ms": 1037,
+            "CPU_usage": 42.0,
+            "RAM_usage": 127892,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "typescript_accumulate_samajammin",
         "filename": "accumulate.ts",
         "language": "typescript",
         "LLM_results": [
           {
             "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/accumulate_exercism-javascript-samajammin/gemini/GeminiFlash_accumulate_v2.ts",
+            "path": "typescript/accumulate_exercism-samajammin/gemini/GeminiFlash_accumulate_v2.ts",
             "log": "",
-            "execution_time_ms": 581,
-            "CPU_usage": 28.0,
-            "RAM_usage": 123928,
+            "execution_time_ms": 2389,
+            "CPU_usage": 43.0,
+            "RAM_usage": 126484,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -458,12 +410,30 @@
         "language": "java",
         "LLM_results": [
           {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/accumulate_exercism-java-ThomasZumsteg/claude/ClaudeSonnet4_accumulate_v2.java",
+            "log": "",
+            "execution_time_ms": 339.99999999999994,
+            "CPU_usage": 31.0,
+            "RAM_usage": 46156,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "Java_accumulate_exercism-java-ThomasZumsteg_ThomasZumsteg",
+        "filename": "accumulate.java",
+        "language": "java",
+        "LLM_results": [
+          {
             "LLM_type": "gemini",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/accumulate_exercism-java-ThomasZumsteg/gemini/GeminiFlash_accumulate_v2.java",
             "log": "",
-            "execution_time_ms": 110.0,
-            "CPU_usage": 107.0,
-            "RAM_usage": 46304,
+            "execution_time_ms": 250.0,
+            "CPU_usage": 33.0,
+            "RAM_usage": 46412,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -479,9 +449,63 @@
             "LLM_type": "openAI",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/accumulate_exercism-java-ThomasZumsteg/openAI/ChatGPT4_accumulate_v2.java",
             "log": "",
-            "execution_time_ms": 99.99999999999999,
-            "CPU_usage": 116.0,
-            "RAM_usage": 46304,
+            "execution_time_ms": 340.0,
+            "CPU_usage": 27.0,
+            "RAM_usage": 46308,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "java_accumulate_ThomasZumsteg",
+        "filename": "Accumulate.java",
+        "language": "java",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "java/accumulate_exercism-ThomasZumsteg/openAI/ChatGPT4_Accumulate_v2.java",
+            "log": "",
+            "execution_time_ms": 220.0,
+            "CPU_usage": 32.0,
+            "RAM_usage": 46160,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "java_accumulate_ThomasZumsteg",
+        "filename": "Accumulate.java",
+        "language": "java",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "java/accumulate_exercism-ThomasZumsteg/claude/ClaudeSonnet4_Accumulate_v2.java",
+            "log": "",
+            "execution_time_ms": 190.0,
+            "CPU_usage": 34.0,
+            "RAM_usage": 46448,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "java_accumulate_ThomasZumsteg",
+        "filename": "Accumulate.java",
+        "language": "java",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "java/accumulate_exercism-ThomasZumsteg/gemini/GeminiFlash_Accumulate_v2.java",
+            "log": "",
+            "execution_time_ms": 180.00000000000003,
+            "CPU_usage": 56.0,
+            "RAM_usage": 46112,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null

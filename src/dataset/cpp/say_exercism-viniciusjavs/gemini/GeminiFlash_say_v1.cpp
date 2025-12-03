@@ -63,13 +63,14 @@ namespace say {
         }
 
         if (number >= 20) {
-            result << tens[number - (number % 10)];
+            result << tens[number / 10 * 10];
             number %= 10;
             if (number > 0) {
                 result << "-";
-                result << below_20[number];
             }
-        } else if (number > 0) {
+        }
+
+        if (number > 0) {
             result << below_20[number];
         }
 

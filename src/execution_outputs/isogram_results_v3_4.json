@@ -1,17 +1,23 @@
 {
-  "execution_date": "2025-11-21 10:13:36",
+  "execution_date": "2025-12-03 09:41:24",
   "execution_metadata": {
     "total_tests": 29,
     "successful_tests": 29,
     "execution_time": "00h 00m 48s",
     "cluster": "cluster_isogram",
     "test_type": "llm_v3",
-    "last_updated": "2025-11-21 10:13:36",
+    "last_updated": "2025-12-03 09:41:24",
     "selective_execution": {
       "languages": [
-        "cpp"
+        "typescript",
+        "go",
+        "cpp",
+        "python",
+        "c",
+        "java",
+        "javascript"
       ],
-      "timestamp": "2025-11-21 10:13:36"
+      "timestamp": "2025-12-03 09:41:24"
     }
   },
   "results": {
@@ -22,12 +28,30 @@
         "language": "python",
         "LLM_results": [
           {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/isogram/openAI/ChatGPT4_isogram_v3.py",
+            "log": "",
+            "execution_time_ms": 70.0,
+            "CPU_usage": 37.0,
+            "RAM_usage": 13952,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "isogram_18",
+        "filename": "isogram.py",
+        "language": "python",
+        "LLM_results": [
+          {
             "LLM_type": "gemini",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/isogram/gemini/GeminiFlash_isogram_v3.py",
             "log": "",
             "execution_time_ms": 40.0,
-            "CPU_usage": 69.0,
-            "RAM_usage": 13952,
+            "CPU_usage": 26.0,
+            "RAM_usage": 13696,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -43,8 +67,8 @@
             "LLM_type": "claude",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/isogram/claude/ClaudeSonnet4_isogram_v3.py",
             "log": "",
-            "execution_time_ms": 40.0,
-            "CPU_usage": 72.0,
+            "execution_time_ms": 30.0,
+            "CPU_usage": 42.0,
             "RAM_usage": 13824,
             "regressionTestPassed": true,
             "success": true,
@@ -53,17 +77,107 @@
         ]
       },
       {
-        "id": "isogram_18",
+        "id": "python_isogram_ThomasZumsteg",
         "filename": "isogram.py",
         "language": "python",
         "LLM_results": [
           {
             "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/isogram/openAI/ChatGPT4_isogram_v3.py",
+            "path": "python/isogram_exercism-ThomasZumsteg/openAI/ChatGPT4_isogram_v3.py",
+            "log": "",
+            "execution_time_ms": 40.0,
+            "CPU_usage": 39.0,
+            "RAM_usage": 13696,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "python_isogram_ThomasZumsteg",
+        "filename": "isogram.py",
+        "language": "python",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "python/isogram_exercism-ThomasZumsteg/gemini/GeminiFlash_isogram_v3.py",
+            "log": "",
+            "execution_time_ms": 30.0,
+            "CPU_usage": 50.0,
+            "RAM_usage": 14080,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "python_isogram_ThomasZumsteg",
+        "filename": "isogram.py",
+        "language": "python",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "python/isogram_exercism-ThomasZumsteg/claude/ClaudeSonnet4_isogram_v3.py",
+            "log": "",
+            "execution_time_ms": 40.0,
+            "CPU_usage": 62.0,
+            "RAM_usage": 13952,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "python_isogram_fruit-in",
+        "filename": "isogram.py",
+        "language": "python",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "python/isogram_exercism-fruit-in/openAI/ChatGPT4_isogram_v3.py",
             "log": "",
             "execution_time_ms": 50.0,
-            "CPU_usage": 68.0,
+            "CPU_usage": 46.0,
             "RAM_usage": 13952,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "python_isogram_fruit-in",
+        "filename": "isogram.py",
+        "language": "python",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "python/isogram_exercism-fruit-in/claude/ClaudeSonnet4_isogram_v3.py",
+            "log": "",
+            "execution_time_ms": 40.0,
+            "CPU_usage": 50.0,
+            "RAM_usage": 13824,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "python_isogram_fruit-in",
+        "filename": "isogram.py",
+        "language": "python",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "python/isogram_exercism-fruit-in/gemini/GeminiFlash_isogram_v3.py",
+            "log": "",
+            "execution_time_ms": 50.0,
+            "CPU_usage": 57.0,
+            "RAM_usage": 13824,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -287,6 +401,114 @@
             "error_message": null
           }
         ]
+      },
+      {
+        "id": "javascript_isogram_ThomasZumsteg",
+        "filename": "isogram.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "javascript/isogram_exercism-ThomasZumsteg/openAI/ChatGPT4_isogram_v3.js",
+            "log": "",
+            "execution_time_ms": 610.0,
+            "CPU_usage": 10.0,
+            "RAM_usage": 81712,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_isogram_ThomasZumsteg",
+        "filename": "isogram.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "javascript/isogram_exercism-ThomasZumsteg/claude/ClaudeSonnet4_isogram_v3.js",
+            "log": "",
+            "execution_time_ms": 600.0000000000001,
+            "CPU_usage": 12.0,
+            "RAM_usage": 81872,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_isogram_ThomasZumsteg",
+        "filename": "isogram.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "javascript/isogram_exercism-ThomasZumsteg/gemini/GeminiFlash_isogram_v3.js",
+            "log": "",
+            "execution_time_ms": 620.0,
+            "CPU_usage": 14.0,
+            "RAM_usage": 81276,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_isogram_elenamountz",
+        "filename": "isogram.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "javascript/isogram_exercism-elenamountz/openAI/ChatGPT4_isogram_v3.js",
+            "log": "",
+            "execution_time_ms": 720.0,
+            "CPU_usage": 32.0,
+            "RAM_usage": 85744,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_isogram_elenamountz",
+        "filename": "isogram.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "javascript/isogram_exercism-elenamountz/claude/ClaudeSonnet4_isogram_v3.js",
+            "log": "",
+            "execution_time_ms": 610.0,
+            "CPU_usage": 33.0,
+            "RAM_usage": 85492,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_isogram_elenamountz",
+        "filename": "isogram.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "javascript/isogram_exercism-elenamountz/gemini/GeminiFlash_isogram_v3.js",
+            "log": "",
+            "execution_time_ms": 620.0,
+            "CPU_usage": 40.0,
+            "RAM_usage": 85452,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
       }
     ],
     "typescript": [
@@ -353,6 +575,298 @@
           {
             "LLM_type": "gemini",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/isogram_exercism-javascript-samajammin/gemini/GeminiFlash_isogram_v3.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "typescript_isogram_exercism-javascript-samajammin",
+        "filename": "isogram.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/isogram_exercism-javascript-samajammin/openAI/ChatGPT4_isogram_v3.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/isogram_exercism-javascript-samajammin/openAI/ChatGPT4_isogram_v3.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/isogram_exercism-javascript-samajammin/claude/ClaudeSonnet4_isogram_v3.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/isogram_exercism-javascript-samajammin/claude/ClaudeSonnet4_isogram_v3.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/isogram_exercism-javascript-samajammin/gemini/GeminiFlash_isogram_v3.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/isogram_exercism-javascript-samajammin/gemini/GeminiFlash_isogram_v3.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "typescript_isogram_exercism-javascript-samajammin",
+        "filename": "isogram.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/isogram_exercism-javascript-samajammin/openAI/ChatGPT4_isogram_v3.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/isogram_exercism-javascript-samajammin/openAI/ChatGPT4_isogram_v3.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/isogram_exercism-javascript-samajammin/claude/ClaudeSonnet4_isogram_v3.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/isogram_exercism-javascript-samajammin/claude/ClaudeSonnet4_isogram_v3.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/isogram_exercism-javascript-samajammin/gemini/GeminiFlash_isogram_v3.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/isogram_exercism-javascript-samajammin/gemini/GeminiFlash_isogram_v3.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "typescript_isogram_Exercism-typescript-thewanionly_thewanionly",
+        "filename": "isogram.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/isogram_Exercism-typescript-thewanionly/openAI/ChatGPT4_isogram_v3.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/isogram_Exercism-typescript-thewanionly/openAI/ChatGPT4_isogram_v3.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/isogram_Exercism-typescript-thewanionly/claude/ClaudeSonnet4_isogram_v3.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/isogram_Exercism-typescript-thewanionly/claude/ClaudeSonnet4_isogram_v3.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/isogram_Exercism-typescript-thewanionly/gemini/GeminiFlash_isogram_v3.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/isogram_Exercism-typescript-thewanionly/gemini/GeminiFlash_isogram_v3.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "typescript_isogram_Exercism-typescript-thewanionly_thewanionly",
+        "filename": "isogram.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/isogram_Exercism-typescript-thewanionly/openAI/ChatGPT4_isogram_v3.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/isogram_Exercism-typescript-thewanionly/openAI/ChatGPT4_isogram_v3.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/isogram_Exercism-typescript-thewanionly/claude/ClaudeSonnet4_isogram_v3.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/isogram_Exercism-typescript-thewanionly/claude/ClaudeSonnet4_isogram_v3.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/isogram_Exercism-typescript-thewanionly/gemini/GeminiFlash_isogram_v3.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/isogram_Exercism-typescript-thewanionly/gemini/GeminiFlash_isogram_v3.ts",
             "log": "",
             "execution_time_ms": 1000,
             "CPU_usage": 50.0,
@@ -510,6 +1024,298 @@
         ]
       },
       {
+        "id": "typescript_isogram_Exercism-typescript-shybyte_shybyte",
+        "filename": "isogram.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/isogram_Exercism-typescript-shybyte/openAI/ChatGPT4_isogram_v3.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/isogram_Exercism-typescript-shybyte/openAI/ChatGPT4_isogram_v3.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/isogram_Exercism-typescript-shybyte/claude/ClaudeSonnet4_isogram_v3.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/isogram_Exercism-typescript-shybyte/claude/ClaudeSonnet4_isogram_v3.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/isogram_Exercism-typescript-shybyte/gemini/GeminiFlash_isogram_v3.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/isogram_Exercism-typescript-shybyte/gemini/GeminiFlash_isogram_v3.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "typescript_isogram_Exercism-typescript-shybyte_shybyte",
+        "filename": "isogram.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/isogram_Exercism-typescript-shybyte/openAI/ChatGPT4_isogram_v3.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/isogram_Exercism-typescript-shybyte/openAI/ChatGPT4_isogram_v3.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/isogram_Exercism-typescript-shybyte/claude/ClaudeSonnet4_isogram_v3.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/isogram_Exercism-typescript-shybyte/claude/ClaudeSonnet4_isogram_v3.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/isogram_Exercism-typescript-shybyte/gemini/GeminiFlash_isogram_v3.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/isogram_Exercism-typescript-shybyte/gemini/GeminiFlash_isogram_v3.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "typescript_isogram_Exercism-typescript-FilipeCerejo_FilipeCerejo",
+        "filename": "isogram.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/isogram_Exercism-typescript-FilipeCerejo/openAI/ChatGPT4_isogram_v3.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/isogram_Exercism-typescript-FilipeCerejo/openAI/ChatGPT4_isogram_v3.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/isogram_Exercism-typescript-FilipeCerejo/claude/ClaudeSonnet4_isogram_v3.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/isogram_Exercism-typescript-FilipeCerejo/claude/ClaudeSonnet4_isogram_v3.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/isogram_Exercism-typescript-FilipeCerejo/gemini/GeminiFlash_isogram_v3.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/isogram_Exercism-typescript-FilipeCerejo/gemini/GeminiFlash_isogram_v3.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "typescript_isogram_Exercism-typescript-FilipeCerejo_FilipeCerejo",
+        "filename": "isogram.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/isogram_Exercism-typescript-FilipeCerejo/openAI/ChatGPT4_isogram_v3.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/isogram_Exercism-typescript-FilipeCerejo/openAI/ChatGPT4_isogram_v3.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/isogram_Exercism-typescript-FilipeCerejo/claude/ClaudeSonnet4_isogram_v3.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/isogram_Exercism-typescript-FilipeCerejo/claude/ClaudeSonnet4_isogram_v3.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/isogram_Exercism-typescript-FilipeCerejo/gemini/GeminiFlash_isogram_v3.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/isogram_Exercism-typescript-FilipeCerejo/gemini/GeminiFlash_isogram_v3.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
         "id": "typescript_isogram_Exercism-typescript-FilipeCerejo_FilipeCerejo",
         "filename": "isogram.ts",
         "language": "typescript",
@@ -589,68 +1395,103 @@
         "LLM_results": [
           {
             "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/isogram_exercism-javascript-samajammin/openAI/ChatGPT4_isogram_v3.ts",
-            "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
-            "regressionTestPassed": true,
-            "success": null,
-            "error_message": null
-          },
-          {
-            "LLM_type": "openAI",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/isogram_exercism-javascript-samajammin/openAI/ChatGPT4_isogram_v3.js",
             "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
+            "execution_time_ms": 1134,
+            "CPU_usage": 76.0,
+            "RAM_usage": 118960,
             "regressionTestPassed": true,
-            "success": null,
+            "success": true,
             "error_message": null
-          },
-          {
-            "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/isogram_exercism-javascript-samajammin/claude/ClaudeSonnet4_isogram_v3.js",
-            "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
-            "regressionTestPassed": true,
-            "success": null,
-            "error_message": null
-          },
+          }
+        ]
+      },
+      {
+        "id": "typescript_isogram_exercism-javascript-samajammin_samajammin",
+        "filename": "isogram.ts",
+        "language": "typescript",
+        "LLM_results": [
           {
             "LLM_type": "claude",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/isogram_exercism-javascript-samajammin/claude/ClaudeSonnet4_isogram_v3.ts",
             "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
+            "execution_time_ms": 1322,
+            "CPU_usage": 70.0,
+            "RAM_usage": 119488,
             "regressionTestPassed": true,
-            "success": null,
+            "success": true,
             "error_message": null
-          },
+          }
+        ]
+      },
+      {
+        "id": "typescript_isogram_exercism-javascript-samajammin_samajammin",
+        "filename": "isogram.ts",
+        "language": "typescript",
+        "LLM_results": [
           {
             "LLM_type": "gemini",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/isogram_exercism-javascript-samajammin/gemini/GeminiFlash_isogram_v3.js",
             "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
+            "execution_time_ms": 584,
+            "CPU_usage": 129.0,
+            "RAM_usage": 119840,
             "regressionTestPassed": true,
-            "success": null,
+            "success": true,
             "error_message": null
-          },
+          }
+        ]
+      },
+      {
+        "id": "typescript_isogram_samajammin",
+        "filename": "isogram.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "typescript/isogram_exercism-samajammin/openAI/ChatGPT4_isogram_v3.ts",
+            "log": "",
+            "execution_time_ms": 628,
+            "CPU_usage": 46.0,
+            "RAM_usage": 127248,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "typescript_isogram_samajammin",
+        "filename": "isogram.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "typescript/isogram_exercism-samajammin/claude/ClaudeSonnet4_isogram_v3.ts",
+            "log": "",
+            "execution_time_ms": 481,
+            "CPU_usage": 66.0,
+            "RAM_usage": 130436,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "typescript_isogram_samajammin",
+        "filename": "isogram.ts",
+        "language": "typescript",
+        "LLM_results": [
           {
             "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/isogram_exercism-javascript-samajammin/gemini/GeminiFlash_isogram_v3.ts",
+            "path": "typescript/isogram_exercism-samajammin/gemini/GeminiFlash_isogram_v3.ts",
             "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
+            "execution_time_ms": 520,
+            "CPU_usage": 53.0,
+            "RAM_usage": 128588,
             "regressionTestPassed": true,
-            "success": null,
+            "success": true,
             "error_message": null
           }
         ]
@@ -659,34 +1500,16 @@
     "java": [
       {
         "id": "Java_isogram_exercism-java-uzilan_robiworks",
-        "filename": "isogram.java",
-        "language": "java",
-        "LLM_results": [
-          {
-            "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/isogram_exercism-java-uzilan_robiworks/gemini/GeminiFlash_isogram_v3.java",
-            "log": "",
-            "execution_time_ms": 120.0,
-            "CPU_usage": 65.0,
-            "RAM_usage": 46160,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "Java_isogram_exercism-java-uzilan_robiworks",
-        "filename": "isogram.java",
+        "filename": "IsogramChecker.java",
         "language": "java",
         "LLM_results": [
           {
             "LLM_type": "openAI",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/isogram_exercism-java-uzilan_robiworks/openAI/ChatGPT4_isogram_v3.java",
             "log": "",
-            "execution_time_ms": 180.0,
-            "CPU_usage": 94.0,
-            "RAM_usage": 46304,
+            "execution_time_ms": 110.0,
+            "CPU_usage": 23.0,
+            "RAM_usage": 46136,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -695,16 +1518,34 @@
       },
       {
         "id": "Java_isogram_exercism-java-uzilan_robiworks",
-        "filename": "isogram.java",
+        "filename": "IsogramChecker.java",
         "language": "java",
         "LLM_results": [
           {
             "LLM_type": "claude",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/isogram_exercism-java-uzilan_robiworks/claude/ClaudeSonnet4_isogram_v3.java",
             "log": "",
-            "execution_time_ms": 169.99999999999997,
-            "CPU_usage": 99.0,
-            "RAM_usage": 46212,
+            "execution_time_ms": 130.0,
+            "CPU_usage": 23.0,
+            "RAM_usage": 46416,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "Java_isogram_exercism-java-uzilan_robiworks",
+        "filename": "IsogramChecker.java",
+        "language": "java",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/isogram_exercism-java-uzilan_robiworks/gemini/GeminiFlash_isogram_v3.java",
+            "log": "",
+            "execution_time_ms": 110.0,
+            "CPU_usage": 29.0,
+            "RAM_usage": 46084,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -713,15 +1554,141 @@
       },
       {
         "id": "Java_isogram_exercism-java-blogscot_blogscot",
-        "filename": "isogram.java",
+        "filename": "IsogramChecker.java",
         "language": "java",
         "LLM_results": [
           {
             "LLM_type": "openAI",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/isogram_exercism-java-blogscot/openAI/ChatGPT4_isogram_v3.java",
             "log": "",
+            "execution_time_ms": 130.0,
+            "CPU_usage": 29.0,
+            "RAM_usage": 46012,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "Java_isogram_exercism-java-blogscot_blogscot",
+        "filename": "IsogramChecker.java",
+        "language": "java",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/isogram_exercism-java-blogscot/claude/ClaudeSonnet4_isogram_v3.java",
+            "log": "",
             "execution_time_ms": 160.0,
-            "CPU_usage": 71.0,
+            "CPU_usage": 25.0,
+            "RAM_usage": 46032,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "Java_isogram_exercism-java-blogscot_blogscot",
+        "filename": "IsogramChecker.java",
+        "language": "java",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/isogram_exercism-java-blogscot/gemini/GeminiFlash_isogram_v3.java",
+            "log": "",
+            "execution_time_ms": 210.0,
+            "CPU_usage": 33.0,
+            "RAM_usage": 46056,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "java_isogram_johannesrave-education",
+        "filename": "IsogramChecker.java",
+        "language": "java",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "java/isogram_exercism-johannesrave-education/claude/ClaudeSonnet4_IsogramChecker_v3.java",
+            "log": "",
+            "execution_time_ms": 130.0,
+            "CPU_usage": 41.0,
+            "RAM_usage": 46108,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "java_isogram_johannesrave-education",
+        "filename": "IsogramChecker.java",
+        "language": "java",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "java/isogram_exercism-johannesrave-education/openAI/ChatGPT4_IsogramChecker_v3.java",
+            "log": "",
+            "execution_time_ms": 150.00000000000003,
+            "CPU_usage": 43.0,
+            "RAM_usage": 46196,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "java_isogram_johannesrave-education",
+        "filename": "IsogramChecker.java",
+        "language": "java",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "java/isogram_exercism-johannesrave-education/gemini/GeminiFlash_IsogramChecker_v3.java",
+            "log": "",
+            "execution_time_ms": 110.0,
+            "CPU_usage": 92.0,
+            "RAM_usage": 45696,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "java_isogram_uzilan",
+        "filename": "IsogramChecker.java",
+        "language": "java",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "java/isogram_exercism-uzilan/openAI/ChatGPT4_IsogramChecker_v3.java",
+            "log": "",
+            "execution_time_ms": 110.0,
+            "CPU_usage": 84.0,
+            "RAM_usage": 46416,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "java_isogram_uzilan",
+        "filename": "IsogramChecker.java",
+        "language": "java",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "java/isogram_exercism-uzilan/claude/ClaudeSonnet4_IsogramChecker_v3.java",
+            "log": "",
+            "execution_time_ms": 130.0,
+            "CPU_usage": 67.0,
             "RAM_usage": 46304,
             "regressionTestPassed": true,
             "success": true,
@@ -730,35 +1697,17 @@
         ]
       },
       {
-        "id": "Java_isogram_exercism-java-blogscot_blogscot",
-        "filename": "isogram.java",
-        "language": "java",
-        "LLM_results": [
-          {
-            "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/isogram_exercism-java-blogscot/claude/ClaudeSonnet4_isogram_v3.java",
-            "log": "",
-            "execution_time_ms": 90.0,
-            "CPU_usage": 101.0,
-            "RAM_usage": 46432,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "Java_isogram_exercism-java-blogscot_blogscot",
-        "filename": "isogram.java",
+        "id": "java_isogram_uzilan",
+        "filename": "IsogramChecker.java",
         "language": "java",
         "LLM_results": [
           {
             "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/isogram_exercism-java-blogscot/gemini/GeminiFlash_isogram_v3.java",
+            "path": "java/isogram_exercism-uzilan/gemini/GeminiFlash_IsogramChecker_v3.java",
             "log": "",
             "execution_time_ms": 110.0,
-            "CPU_usage": 133.0,
-            "RAM_usage": 46432,
+            "CPU_usage": 90.0,
+            "RAM_usage": 46104,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -808,13 +1757,31 @@
         ]
       },
       {
-        "id": "c_isogram_Exercism (chriswilding)",
+        "id": "c_isogram_Exercism (ThomasZumsteg)",
+        "filename": "isogram.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/isogram_Exercism_ThomasZumsteg/claude/ClaudeSonnet4_isogram_v3.c",
+            "log": "",
+            "execution_time_ms": 0.919394,
+            "CPU_usage": 52.0,
+            "RAM_usage": 8832,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "c_isogram_Exercism (ThomasZumsteg)",
         "filename": "isogram.c",
         "language": "c",
         "LLM_results": [
           {
             "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/isogram_Exercism_chriswilding/openAI/ChatGPT4_isogram_v3.c",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/isogram_Exercism_ThomasZumsteg/openAI/ChatGPT4_isogram_v3.c",
             "log": "",
             "execution_time_ms": 1000,
             "CPU_usage": 50.0,
@@ -825,7 +1792,7 @@
           },
           {
             "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/isogram_Exercism_chriswilding/claude/ClaudeSonnet4_isogram_v3.c",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/isogram_Exercism_ThomasZumsteg/claude/ClaudeSonnet4_isogram_v3.c",
             "log": "",
             "execution_time_ms": 1000,
             "CPU_usage": 50.0,
@@ -836,7 +1803,141 @@
           },
           {
             "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/isogram_Exercism_ThomasZumsteg/gemini/GeminiFlash_isogram_v3.c",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "c_isogram_Exercism (chriswilding)",
+        "filename": "isogram.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/isogram_Exercism_chriswilding/openAI/ChatGPT4_isogram_v3.c",
+            "log": "",
+            "execution_time_ms": 0.80085,
+            "CPU_usage": 38.0,
+            "RAM_usage": 8832,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "c_isogram_Exercism (chriswilding)",
+        "filename": "isogram.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/isogram_Exercism_chriswilding/claude/ClaudeSonnet4_isogram_v3.c",
+            "log": "",
+            "execution_time_ms": 1.944541,
+            "CPU_usage": 24.0,
+            "RAM_usage": 8832,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "c_isogram_Exercism (chriswilding)",
+        "filename": "isogram.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/isogram_Exercism_chriswilding/gemini/GeminiFlash_isogram_v3.c",
+            "log": "",
+            "execution_time_ms": 4.92731,
+            "CPU_usage": 8.0,
+            "RAM_usage": 8832,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "c_isogram_Exercism (paddydoyle)",
+        "filename": "isogram.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/isogram_Exercism_paddydoyle/openAI/ChatGPT4_isogram_v3.c",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/isogram_Exercism_paddydoyle/claude/ClaudeSonnet4_isogram_v3.c",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/isogram_Exercism_paddydoyle/gemini/GeminiFlash_isogram_v3.c",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "c_isogram_Exercism (paddydoyle)",
+        "filename": "isogram.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/isogram_Exercism_paddydoyle/openAI/ChatGPT4_isogram_v3.c",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/isogram_Exercism_paddydoyle/claude/ClaudeSonnet4_isogram_v3.c",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/isogram_Exercism_paddydoyle/gemini/GeminiFlash_isogram_v3.c",
             "log": "",
             "execution_time_ms": 1000,
             "CPU_usage": 50.0,
@@ -896,6 +1997,494 @@
             "LLM_type": "openAI",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/isogram_Exercism_vlzware/openAI/ChatGPT4_isogram_v3.c",
             "log": "",
+            "execution_time_ms": 2.66776,
+            "CPU_usage": 13.0,
+            "RAM_usage": 8576,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "c_isogram_Exercism (vlzware)",
+        "filename": "isogram.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/isogram_Exercism_vlzware/claude/ClaudeSonnet4_isogram_v3.c",
+            "log": "",
+            "execution_time_ms": 6.568271,
+            "CPU_usage": 5.0,
+            "RAM_usage": 8832,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "c_isogram_Exercism (vlzware)",
+        "filename": "isogram.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/isogram_Exercism_vlzware/gemini/GeminiFlash_isogram_v3.c",
+            "log": "",
+            "execution_time_ms": 2.386383,
+            "CPU_usage": 13.0,
+            "RAM_usage": 8832,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "c_isogram_Manoloon",
+        "filename": "isogram.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/isogram_exercism-Manoloon/openAI/ChatGPT4_isogram_v3.c",
+            "log": "",
+            "execution_time_ms": 3.256099,
+            "CPU_usage": 35.0,
+            "RAM_usage": 8832,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "c_isogram_Manoloon",
+        "filename": "isogram.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/isogram_exercism-Manoloon/claude/ClaudeSonnet4_isogram_v3.c",
+            "log": "",
+            "execution_time_ms": null,
+            "CPU_usage": null,
+            "RAM_usage": null,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 1"
+          }
+        ]
+      },
+      {
+        "id": "c_isogram_Manoloon",
+        "filename": "isogram.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/isogram_exercism-Manoloon/gemini/GeminiFlash_isogram_v3.c",
+            "log": "",
+            "execution_time_ms": 33.362056,
+            "CPU_usage": 1.0,
+            "RAM_usage": 8832,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "c_isogram_yorange1",
+        "filename": "isogram.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "c/isogram_exercism-yorange1/openAI/ChatGPT4_isogram_v3.c",
+            "log": "",
+            "execution_time_ms": 1.185547,
+            "CPU_usage": 45.0,
+            "RAM_usage": 8704,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "c_isogram_yorange1",
+        "filename": "isogram.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "c/isogram_exercism-yorange1/claude/ClaudeSonnet4_isogram_v3.c",
+            "log": "",
+            "execution_time_ms": 1.054713,
+            "CPU_usage": 30.0,
+            "RAM_usage": 8704,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "c_isogram_yorange1",
+        "filename": "isogram.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "c/isogram_exercism-yorange1/gemini/GeminiFlash_isogram_v3.c",
+            "log": "",
+            "execution_time_ms": 1.071671,
+            "CPU_usage": 26.0,
+            "RAM_usage": 8704,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "c_isogram_chriswilding",
+        "filename": "isogram.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "c/isogram_exercism-chriswilding/openAI/ChatGPT4_isogram_v3.c",
+            "log": "",
+            "execution_time_ms": 1.67659,
+            "CPU_usage": 28.0,
+            "RAM_usage": 8704,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "c_isogram_chriswilding",
+        "filename": "isogram.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "c/isogram_exercism-chriswilding/gemini/GeminiFlash_isogram_v3.c",
+            "log": "",
+            "execution_time_ms": 1.223839,
+            "CPU_usage": 26.0,
+            "RAM_usage": 8704,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "c_isogram_chriswilding",
+        "filename": "isogram.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "c/isogram_exercism-chriswilding/claude/ClaudeSonnet4_isogram_v3.c",
+            "log": "",
+            "execution_time_ms": 1.779507,
+            "CPU_usage": 27.0,
+            "RAM_usage": 8704,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "c_isogram_viettronics868",
+        "filename": "isogram.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "c/isogram_exercism-viettronics868/openAI/ChatGPT4_isogram_v3.c",
+            "log": "",
+            "execution_time_ms": 5.766024,
+            "CPU_usage": 6.0,
+            "RAM_usage": 8704,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "c_isogram_viettronics868",
+        "filename": "isogram.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "c/isogram_exercism-viettronics868/claude/ClaudeSonnet4_isogram_v3.c",
+            "log": "",
+            "execution_time_ms": 0.859795,
+            "CPU_usage": 41.0,
+            "RAM_usage": 8704,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "c_isogram_viettronics868",
+        "filename": "isogram.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "c/isogram_exercism-viettronics868/gemini/GeminiFlash_isogram_v3.c",
+            "log": "",
+            "execution_time_ms": 5.568981,
+            "CPU_usage": 6.0,
+            "RAM_usage": 8704,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "c_isogram_EzequielMarcelo",
+        "filename": "isogram.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "c/isogram_exercism-EzequielMarcelo/openAI/ChatGPT4_isogram_v3.c",
+            "log": "",
+            "execution_time_ms": 1.367714,
+            "CPU_usage": 21.0,
+            "RAM_usage": 8704,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "c_isogram_EzequielMarcelo",
+        "filename": "isogram.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "c/isogram_exercism-EzequielMarcelo/claude/ClaudeSonnet4_isogram_v3.c",
+            "log": "",
+            "execution_time_ms": null,
+            "CPU_usage": null,
+            "RAM_usage": null,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 1"
+          }
+        ]
+      },
+      {
+        "id": "c_isogram_EzequielMarcelo",
+        "filename": "isogram.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "c/isogram_exercism-EzequielMarcelo/gemini/GeminiFlash_isogram_v3.c",
+            "log": "",
+            "execution_time_ms": 4.642561,
+            "CPU_usage": 7.0,
+            "RAM_usage": 8704,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "c_isogram_IrvinRamiA",
+        "filename": "isogram.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "c/isogram_exercism-IrvinRamiA/openAI/ChatGPT4_isogram_v3.c",
+            "log": "",
+            "execution_time_ms": 1.903758,
+            "CPU_usage": 23.0,
+            "RAM_usage": 8704,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "c_isogram_IrvinRamiA",
+        "filename": "isogram.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "c/isogram_exercism-IrvinRamiA/gemini/GeminiFlash_isogram_v3.c",
+            "log": "",
+            "execution_time_ms": 1.384465,
+            "CPU_usage": 23.0,
+            "RAM_usage": 8704,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "c_isogram_pmarkaide",
+        "filename": "isogram.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "c/isogram_exercism-pmarkaide/claude/ClaudeSonnet4_isogram_v3.c",
+            "log": "",
+            "execution_time_ms": 0.670836,
+            "CPU_usage": 43.0,
+            "RAM_usage": 8448,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "c_isogram_IrvinRamiA",
+        "filename": "isogram.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "c/isogram_exercism-IrvinRamiA/claude/ClaudeSonnet4_isogram_v3.c",
+            "log": "",
+            "execution_time_ms": 1.453548,
+            "CPU_usage": 16.0,
+            "RAM_usage": 8704,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "c_isogram_pmarkaide",
+        "filename": "isogram.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "c/isogram_exercism-pmarkaide/openAI/ChatGPT4_isogram_v3.c",
+            "log": "",
+            "execution_time_ms": 3.557848,
+            "CPU_usage": 7.0,
+            "RAM_usage": 8704,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "c_isogram_pmarkaide",
+        "filename": "isogram.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "c/isogram_exercism-pmarkaide/gemini/GeminiFlash_isogram_v3.c",
+            "log": "",
+            "execution_time_ms": null,
+            "CPU_usage": null,
+            "RAM_usage": null,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 1"
+          }
+        ]
+      },
+      {
+        "id": "c_isogram_fiplox",
+        "filename": "isogram.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "c/isogram_exercism-fiplox/openAI/ChatGPT4_isogram_v3.c",
+            "log": "",
+            "execution_time_ms": 1.858424,
+            "CPU_usage": 16.0,
+            "RAM_usage": 8704,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "c_isogram_fiplox",
+        "filename": "isogram.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "c/isogram_exercism-fiplox/claude/ClaudeSonnet4_isogram_v3.c",
+            "log": "",
+            "execution_time_ms": null,
+            "CPU_usage": null,
+            "RAM_usage": null,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 1"
+          }
+        ]
+      },
+      {
+        "id": "c_isogram_fiplox",
+        "filename": "isogram.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "c/isogram_exercism-fiplox/gemini/GeminiFlash_isogram_v3.c",
+            "log": "",
+            "execution_time_ms": 12.978804,
+            "CPU_usage": 3.0,
+            "RAM_usage": 8704,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      }
+    ],
+    "cpp": [
+      {
+        "id": "cpp_isogram_Exercism (thefullarcticfox)",
+        "filename": "isogram.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/isogram_Exercism_thefullarcticfox/openAI/ChatGPT4_isogram_v3.cpp",
+            "log": "",
             "execution_time_ms": 1000,
             "CPU_usage": 50.0,
             "RAM_usage": 80000,
@@ -905,7 +2494,7 @@
           },
           {
             "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/isogram_Exercism_vlzware/claude/ClaudeSonnet4_isogram_v3.c",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/isogram_Exercism_thefullarcticfox/claude/ClaudeSonnet4_isogram_v3.cpp",
             "log": "",
             "execution_time_ms": 1000,
             "CPU_usage": 50.0,
@@ -916,7 +2505,7 @@
           },
           {
             "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/isogram_Exercism_vlzware/gemini/GeminiFlash_isogram_v3.c",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/isogram_Exercism_thefullarcticfox/gemini/GeminiFlash_isogram_v3.cpp",
             "log": "",
             "execution_time_ms": 1000,
             "CPU_usage": 50.0,
@@ -926,9 +2515,47 @@
             "error_message": null
           }
         ]
-      }
-    ],
-    "cpp": [
+      },
+      {
+        "id": "cpp_isogram_Exercism (thefullarcticfox)",
+        "filename": "isogram.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/isogram_Exercism_thefullarcticfox/openAI/ChatGPT4_isogram_v3.cpp",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/isogram_Exercism_thefullarcticfox/claude/ClaudeSonnet4_isogram_v3.cpp",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/isogram_Exercism_thefullarcticfox/gemini/GeminiFlash_isogram_v3.cpp",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
       {
         "id": "cpp_isogram_Exercism (thefullarcticfox)",
         "filename": "isogram.cpp",
@@ -978,26 +2605,8 @@
             "LLM_type": "openAI",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/isogram_exercism-stungeye/openAI/ChatGPT4_isogram_v3.cpp",
             "log": "",
-            "execution_time_ms": 2.260689,
-            "CPU_usage": 65.0,
-            "RAM_usage": 10496,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "cpp_isogram_stungeye",
-        "filename": "isogram.cpp",
-        "language": "cpp",
-        "LLM_results": [
-          {
-            "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/isogram_exercism-stungeye/gemini/GeminiFlash_isogram_v3.cpp",
-            "log": "",
-            "execution_time_ms": 1.915477,
-            "CPU_usage": 73.0,
+            "execution_time_ms": 35.224814,
+            "CPU_usage": 4.0,
             "RAM_usage": 10496,
             "regressionTestPassed": true,
             "success": true,
@@ -1014,8 +2623,8 @@
             "LLM_type": "claude",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/isogram_exercism-stungeye/claude/ClaudeSonnet4_isogram_v3.cpp",
             "log": "",
-            "execution_time_ms": 2.136312,
-            "CPU_usage": 66.0,
+            "execution_time_ms": 2.163175,
+            "CPU_usage": 60.0,
             "RAM_usage": 10496,
             "regressionTestPassed": true,
             "success": true,
@@ -1024,13 +2633,249 @@
         ]
       },
       {
-        "id": "cpp_isogram_Exercism (thefullarcticfox)",
+        "id": "cpp_isogram_stungeye",
+        "filename": "isogram.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/isogram_exercism-stungeye/gemini/GeminiFlash_isogram_v3.cpp",
+            "log": "",
+            "execution_time_ms": 40.655297,
+            "CPU_usage": 6.0,
+            "RAM_usage": 10496,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "cpp_isogram_Akshive",
+        "filename": "isogram.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "cpp/isogram_exercism-Akshive/gemini/GeminiFlash_isogram_v3.cpp",
+            "log": "",
+            "execution_time_ms": 6.795361,
+            "CPU_usage": 22.0,
+            "RAM_usage": 10496,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "cpp_isogram_Akshive",
+        "filename": "isogram.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "cpp/isogram_exercism-Akshive/claude/ClaudeSonnet4_isogram_v3.cpp",
+            "log": "",
+            "execution_time_ms": 3.447015,
+            "CPU_usage": 57.0,
+            "RAM_usage": 10496,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "cpp_isogram_jpcenteno",
         "filename": "isogram.cpp",
         "language": "cpp",
         "LLM_results": [
           {
             "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/isogram_Exercism_thefullarcticfox/openAI/ChatGPT4_isogram_v3.cpp",
+            "path": "cpp/isogram_exercism-jpcenteno/openAI/ChatGPT4_isogram_v3.cpp",
+            "log": "",
+            "execution_time_ms": null,
+            "CPU_usage": null,
+            "RAM_usage": null,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 2"
+          }
+        ]
+      },
+      {
+        "id": "cpp_isogram_Akshive",
+        "filename": "isogram.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "cpp/isogram_exercism-Akshive/openAI/ChatGPT4_isogram_v3.cpp",
+            "log": "",
+            "execution_time_ms": null,
+            "CPU_usage": null,
+            "RAM_usage": null,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 2"
+          }
+        ]
+      },
+      {
+        "id": "cpp_isogram_jpcenteno",
+        "filename": "isogram.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "cpp/isogram_exercism-jpcenteno/claude/ClaudeSonnet4_isogram_v3.cpp",
+            "log": "",
+            "execution_time_ms": 6.202484,
+            "CPU_usage": 24.0,
+            "RAM_usage": 10496,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "cpp_isogram_cmccandless",
+        "filename": "isogram.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "cpp/isogram_exercism-cmccandless/claude/ClaudeSonnet4_isogram_v3.cpp",
+            "log": "",
+            "execution_time_ms": 5.787899,
+            "CPU_usage": 27.0,
+            "RAM_usage": 10496,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "cpp_isogram_jpcenteno",
+        "filename": "isogram.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "cpp/isogram_exercism-jpcenteno/gemini/GeminiFlash_isogram_v3.cpp",
+            "log": "",
+            "execution_time_ms": null,
+            "CPU_usage": null,
+            "RAM_usage": null,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 2"
+          }
+        ]
+      },
+      {
+        "id": "cpp_isogram_cmccandless",
+        "filename": "isogram.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "cpp/isogram_exercism-cmccandless/openAI/ChatGPT4_isogram_v3.cpp",
+            "log": "",
+            "execution_time_ms": 4.284017,
+            "CPU_usage": 63.0,
+            "RAM_usage": 10496,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "cpp_isogram_tqa236",
+        "filename": "isogram.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "cpp/isogram_exercism-tqa236/claude/ClaudeSonnet4_isogram_v3.cpp",
+            "log": "",
+            "execution_time_ms": null,
+            "CPU_usage": null,
+            "RAM_usage": null,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 2"
+          }
+        ]
+      },
+      {
+        "id": "cpp_isogram_cmccandless",
+        "filename": "isogram.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "cpp/isogram_exercism-cmccandless/gemini/GeminiFlash_isogram_v3.cpp",
+            "log": "",
+            "execution_time_ms": null,
+            "CPU_usage": null,
+            "RAM_usage": null,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 2"
+          }
+        ]
+      },
+      {
+        "id": "cpp_isogram_tqa236",
+        "filename": "isogram.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "cpp/isogram_exercism-tqa236/openAI/ChatGPT4_isogram_v3.cpp",
+            "log": "",
+            "execution_time_ms": 15.059895,
+            "CPU_usage": 46.0,
+            "RAM_usage": 10496,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "cpp_isogram_tqa236",
+        "filename": "isogram.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "cpp/isogram_exercism-tqa236/gemini/GeminiFlash_isogram_v3.cpp",
+            "log": "",
+            "execution_time_ms": 8.672577,
+            "CPU_usage": 46.0,
+            "RAM_usage": 10496,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      }
+    ],
+    "go": [
+      {
+        "id": "go_isogram_Exercism (go_rootulp)",
+        "filename": "isogram.go",
+        "language": "go",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/isogram_Exercism_go_rootulp/openAI/ChatGPT4_isogram_v3.go",
             "log": "",
             "execution_time_ms": 1000,
             "CPU_usage": 50.0,
@@ -1041,7 +2886,7 @@
           },
           {
             "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/isogram_Exercism_thefullarcticfox/claude/ClaudeSonnet4_isogram_v3.cpp",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/isogram_Exercism_go_rootulp/claude/ClaudeSonnet4_isogram_v3.go",
             "log": "",
             "execution_time_ms": 1000,
             "CPU_usage": 50.0,
@@ -1052,7 +2897,7 @@
           },
           {
             "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/isogram_Exercism_thefullarcticfox/gemini/GeminiFlash_isogram_v3.cpp",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/isogram_Exercism_go_rootulp/gemini/GeminiFlash_isogram_v3.go",
             "log": "",
             "execution_time_ms": 1000,
             "CPU_usage": 50.0,
@@ -1064,13 +2909,13 @@
         ]
       },
       {
-        "id": "cpp_isogram_Exercism (thefullarcticfox)",
-        "filename": "isogram.cpp",
-        "language": "cpp",
+        "id": "go_isogram_Exercism (go_rootulp)",
+        "filename": "isogram.go",
+        "language": "go",
         "LLM_results": [
           {
             "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/isogram_Exercism_thefullarcticfox/openAI/ChatGPT4_isogram_v3.cpp",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/isogram_Exercism_go_rootulp/openAI/ChatGPT4_isogram_v3.go",
             "log": "",
             "execution_time_ms": 1000,
             "CPU_usage": 50.0,
@@ -1081,7 +2926,7 @@
           },
           {
             "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/isogram_Exercism_thefullarcticfox/claude/ClaudeSonnet4_isogram_v3.cpp",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/isogram_Exercism_go_rootulp/claude/ClaudeSonnet4_isogram_v3.go",
             "log": "",
             "execution_time_ms": 1000,
             "CPU_usage": 50.0,
@@ -1092,7 +2937,7 @@
           },
           {
             "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/isogram_Exercism_thefullarcticfox/gemini/GeminiFlash_isogram_v3.cpp",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/isogram_Exercism_go_rootulp/gemini/GeminiFlash_isogram_v3.go",
             "log": "",
             "execution_time_ms": 1000,
             "CPU_usage": 50.0,
@@ -1102,9 +2947,7 @@
             "error_message": null
           }
         ]
-      }
-    ],
-    "go": [
+      },
       {
         "id": "go_isogram_Exercism (go_rootulp)",
         "filename": "isogram.go",
@@ -1186,6 +3029,86 @@
         ]
       },
       {
+        "id": "go_isogram_Exercism (go_ThomasZumsteg)",
+        "filename": "isogram.go",
+        "language": "go",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/isogram_Exercism_go_ThomasZumsteg/openAI/ChatGPT4_isogram_v3.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/isogram_Exercism_go_ThomasZumsteg/claude/ClaudeSonnet4_isogram_v3.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/isogram_Exercism_go_ThomasZumsteg/gemini/GeminiFlash_isogram_v3.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "go_isogram_Exercism (go_ThomasZumsteg)",
+        "filename": "isogram.go",
+        "language": "go",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/isogram_Exercism_go_ThomasZumsteg/openAI/ChatGPT4_isogram_v3.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/isogram_Exercism_go_ThomasZumsteg/claude/ClaudeSonnet4_isogram_v3.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/isogram_Exercism_go_ThomasZumsteg/gemini/GeminiFlash_isogram_v3.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
         "id": "go_isogram_Exercism (go_thinkverse)",
         "filename": "isogram.go",
         "language": "go",
@@ -1215,6 +3138,166 @@
           {
             "LLM_type": "gemini",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/isogram_Exercism_go_thinkverse/gemini/GeminiFlash_isogram_v3.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "go_isogram_Exercism (go_thinkverse)",
+        "filename": "isogram.go",
+        "language": "go",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/isogram_Exercism_go_thinkverse/openAI/ChatGPT4_isogram_v3.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/isogram_Exercism_go_thinkverse/claude/ClaudeSonnet4_isogram_v3.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/isogram_Exercism_go_thinkverse/gemini/GeminiFlash_isogram_v3.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "go_isogram_Exercism (go_thinkverse)",
+        "filename": "isogram.go",
+        "language": "go",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/isogram_Exercism_go_thinkverse/openAI/ChatGPT4_isogram_v3.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/isogram_Exercism_go_thinkverse/claude/ClaudeSonnet4_isogram_v3.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/isogram_Exercism_go_thinkverse/gemini/GeminiFlash_isogram_v3.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "go_isogram_Exercism (go_drapala)",
+        "filename": "isogram.go",
+        "language": "go",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/isogram_Exercism_go_drapala/openAI/ChatGPT4_isogram_v3.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/isogram_Exercism_go_drapala/claude/ClaudeSonnet4_isogram_v3.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/isogram_Exercism_go_drapala/gemini/GeminiFlash_isogram_v3.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "go_isogram_Exercism (go_drapala)",
+        "filename": "isogram.go",
+        "language": "go",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/isogram_Exercism_go_drapala/openAI/ChatGPT4_isogram_v3.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/isogram_Exercism_go_drapala/claude/ClaudeSonnet4_isogram_v3.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/isogram_Exercism_go_drapala/gemini/GeminiFlash_isogram_v3.go",
             "log": "",
             "execution_time_ms": 1000,
             "CPU_usage": 50.0,

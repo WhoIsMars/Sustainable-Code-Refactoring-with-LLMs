@@ -9,7 +9,6 @@ namespace grains {
         if (square_num < min_square_num || square_num > max_square_num) {
             throw std::domain_error("Square number must be >= 1 and <= 64");
         }
-
         return 1ULL << (square_num - 1);
     }
 

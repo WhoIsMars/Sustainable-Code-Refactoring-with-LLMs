@@ -17,7 +17,9 @@ bool is_pangram(const std::string& text) {
             if (!letters[index]) {
                 letters[index] = true;
                 count++;
-                if (count == 26) return true;
+                if (count == 26) {
+                    return true;
+                }
             }
         }
     }

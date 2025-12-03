@@ -40,3 +40,4 @@ function hex_digit_value(digit) {
 }
 
 export default Hexadecimal;
+export { hex };

@@ -41,7 +41,7 @@ ElectionResult& determine_result(vector<ElectionResult>& results) {
         [](const ElectionResult& a, const ElectionResult& b) {
             return a.votes < b.votes;
         });
-    winner->name = "President " + winner->name;
+    winner->name.insert(0, "President ");
     return *winner;
 }
 

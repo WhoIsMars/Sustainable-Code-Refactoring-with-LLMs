@@ -13,3 +13,4 @@ class Diamond {
 }
 
 export default Diamond;
+export { diamond };

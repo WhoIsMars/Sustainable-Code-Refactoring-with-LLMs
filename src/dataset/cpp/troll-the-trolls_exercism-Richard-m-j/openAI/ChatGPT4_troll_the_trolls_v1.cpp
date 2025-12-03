@@ -26,7 +26,7 @@ namespace hellmath
         {
         case AccountStatus::troll:
         case AccountStatus::user:
-            return action != Action::remove;
+            return action == Action::read || action == Action::write;
         case AccountStatus::guest:
             return action == Action::read;
         case AccountStatus::mod:

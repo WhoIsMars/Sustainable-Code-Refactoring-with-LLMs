@@ -10,10 +10,7 @@ namespace hamming {
         if (a.size() != b.size()) 
             throw std::domain_error("Nucleotides are of different length.");
 
-        int point_mutations = 0;
-        for (size_t i = 0, n = a.size(); i < n; ++i) 
-            point_mutations += (a[i] != b[i]);
-        return point_mutations;
+        return std::inner_product(a.begin(), a.end(), b.begin(), 0, std::plus<>(), std::not_equal_to<>());
     }
 
 }

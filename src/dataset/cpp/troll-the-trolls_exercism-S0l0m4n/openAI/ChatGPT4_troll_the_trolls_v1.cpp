@@ -14,8 +14,7 @@ enum class Action {
 };
 
 bool display_post(AccountStatus s1, AccountStatus s2) {
-    return (s1 != AccountStatus::troll || s2 == AccountStatus::troll) && 
-           (s1 == AccountStatus::troll || s2 != AccountStatus::troll);
+    return (s1 == AccountStatus::troll) ? (s2 == AccountStatus::troll) : (s2 != AccountStatus::troll);
 }
 
 bool permission_check(Action action, AccountStatus status) {

@@ -31,7 +31,8 @@ inline bool permission_check(Action action, AccountStatus status) {
 }
 
 inline bool valid_player_combination(AccountStatus s1, AccountStatus s2) {
-    return !(s1 == AccountStatus::guest || s2 == AccountStatus::guest || (s1 == AccountStatus::troll) != (s2 == AccountStatus::troll));
+    return !(s1 == AccountStatus::guest || s2 == AccountStatus::guest || 
+             ((s1 == AccountStatus::troll) ^ (s2 == AccountStatus::troll)));
 }
 
 inline bool has_priority(AccountStatus s1, AccountStatus s2) {

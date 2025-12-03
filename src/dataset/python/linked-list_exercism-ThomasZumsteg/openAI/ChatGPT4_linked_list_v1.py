@@ -1,0 +1,66 @@
+class Node:
+    __slots__ = 'value', 'next', 'previous'
+
+    def __init__(self, value, next=None, previous=None):
+        self.value = value
+        self.next = next
+        self.previous = previous
+
+
+class LinkedList:
+    __slots__ = 'head', '_len'
+
+    def __init__(self):
+        self.head = None
+        self._len = 0
+
+    def __len__(self):
+        return self._len
+
+    def __iter__(self):
+        p = self.head
+        if not p:
+            return
+        while True:
+            yield p.value
+            p = p.previous
+            if p == self.head:
+                break
+
+    def push(self, value):
+        node = Node(value)
+        if self.head is None:
+            node.next = node.previous = node
+            self.head = node
+        else:
+            node.next, node.previous = self.head, self.head.previous
+            self.head.previous.next = node
+            self.head.previous = node
+            self.head = node
+        self._len += 1
+
+    def pop(self):
+        if not self.head:
+            return None
+        node = self.head
+        if self.head.next == self.head:
+            self.head = None
+        else:
+            node.previous.next = node.next
+            node.next.previous = node.previous
+            self.head = node.next
+        self._len -= 1
+        return node.value
+
+    def shift(self):
+        if not self.head:
+            return None
+        self.head = self.head.previous
+        return self.pop()
+
+    def unshift(self, value):
+        if self.head:
+            self.head = self.head.previous
+        self.push(value)
+        if self.head:
+            self.head = self.head.next

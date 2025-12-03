@@ -13,10 +13,10 @@ inline double annual_balance_update(double balance) {
 }
 
 int years_until_desired_balance(double balance, double target_balance) {
-    int years = 0;
+    int n = 0;
     while (balance < target_balance) {
         balance += balance * interest_rate(balance) * 0.01;
-        ++years;
+        ++n;
     }
-    return years;
+    return n;
 }

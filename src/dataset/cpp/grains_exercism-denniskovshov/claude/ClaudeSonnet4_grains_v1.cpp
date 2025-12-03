@@ -4,7 +4,7 @@
 namespace grains {
     constexpr short min_square_num = 1;
     constexpr short max_square_num = 64;
-    constexpr unsigned long long total_grains_value = 18446744073709551615ULL; // 2^64 - 1
+    constexpr unsigned long long max_total = 18446744073709551615ULL; // 2^64 - 1
     
     auto square_func = square_bit_shift;
 
@@ -12,8 +12,8 @@ namespace grains {
         if (square_num < min_square_num || square_num > max_square_num) [[unlikely]] {
             throw std::domain_error("Square number must be >= 1 and <= 64");
         }
-
-        return square_func(square_num);
+        
+        return 1ULL << (square_num - 1);
     }
 
     unsigned long long square_bit_shift(short square_num) {
@@ -25,11 +25,11 @@ namespace grains {
     }
 
     unsigned long long total() {
-        return total_grains_value;
+        return max_total;
     }
 
     void validate(short square_num) {
-        if (square_num < min_square_num || square_num > max_square_num) {
+        if (square_num < min_square_num || square_num > max_square_num) [[unlikely]] {
             throw std::domain_error("Square number must be >= 1 and <= 64");
         }
     }

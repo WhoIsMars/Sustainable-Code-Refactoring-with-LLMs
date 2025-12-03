@@ -10,8 +10,7 @@ namespace matching_brackets {
         stack<char> st;
         for(char ch : seq)
         {
-            switch(ch)
-            {
+            switch(ch) {
                 case '(':
                 case '{':
                 case '[':

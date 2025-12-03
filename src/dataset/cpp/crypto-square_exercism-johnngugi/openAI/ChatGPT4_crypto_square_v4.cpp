@@ -13,8 +13,8 @@ namespace crypto_square
         result.reserve(initial.size());
         for (char c : initial)
         {
-            if (std::isalnum(c))
-                result += std::tolower(c);
+            if (isalnum(c))
+                result += tolower(c);
         }
         initial = result;
         return result;
@@ -65,9 +65,7 @@ namespace crypto_square
             for (size_t row = 0; row < rows; ++row)
             {
                 if (column < segments[row].length())
-                {
                     result += segments[row][column];
-                }
             }
         }
 

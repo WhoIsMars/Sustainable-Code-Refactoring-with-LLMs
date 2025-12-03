@@ -9,7 +9,7 @@ This script:
 4. Creates backups before modification
 5. Generates detailed removal report
 
-Author: Sustainable Code Refactoring Research Project
+
 Date: 2025-10-30
 """
 

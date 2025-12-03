@@ -49,7 +49,7 @@ ElectionResult& determine_result(vector<ElectionResult>& results) {
         }
     }
 
-    winner->name.reserve(10 + winner->name.size());
+    winner->name.reserve(winner->name.size() + 10);
     winner->name = "President " + winner->name;
     return *winner;
 }

@@ -9,7 +9,7 @@ It creates:
 4. Frequency distribution of improvements
 5. Plots for appendix (v2 and v3)
 
-Author: Claude Code
+
 Date: 2025-11-13
 """
 

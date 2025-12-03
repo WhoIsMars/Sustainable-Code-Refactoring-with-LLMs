@@ -46,9 +46,6 @@ string food_chain::response(int n) {
 	if (n > 2 && n < 8) {
 		return repetition(n);
 	}
-	if (n == 2) {
-		return "She swallowed the " + key_word[n] + " to catch the " + key_word[n - 1] + ".\n";
-	}
 	return "";
 }
 

@@ -1,17 +1,23 @@
 {
-  "execution_date": "2025-11-21 11:02:09",
+  "execution_date": "2025-12-03 09:46:33",
   "execution_metadata": {
     "total_tests": 14,
     "successful_tests": 14,
     "execution_time": "00h 00m 00s",
     "cluster": "cluster_perfect_numbers",
     "test_type": "llm_v1",
-    "last_updated": "2025-11-21 11:02:09",
+    "last_updated": "2025-12-03 09:46:33",
     "selective_execution": {
       "languages": [
-        "cpp"
+        "python",
+        "cpp",
+        "javascript",
+        "typescript",
+        "go",
+        "c",
+        "java"
       ],
-      "timestamp": "2025-11-21 11:02:09"
+      "timestamp": "2025-12-03 09:46:33"
     }
   },
   "results": {
@@ -22,11 +28,11 @@
         "language": "python",
         "LLM_results": [
           {
-            "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/perfect-numbers/gemini/GeminiFlash_perfect-numbers_v1.py",
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/perfect-numbers/claude/ClaudeSonnet4_perfect-numbers_v1.py",
             "log": "",
             "execution_time_ms": 50.0,
-            "CPU_usage": 74.0,
+            "CPU_usage": 33.0,
             "RAM_usage": 13952,
             "regressionTestPassed": true,
             "success": true,
@@ -40,11 +46,11 @@
         "language": "python",
         "LLM_results": [
           {
-            "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/perfect-numbers/claude/ClaudeSonnet4_perfect-numbers_v1.py",
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/perfect-numbers/gemini/GeminiFlash_perfect-numbers_v1.py",
             "log": "",
-            "execution_time_ms": 90.0,
-            "CPU_usage": 64.0,
+            "execution_time_ms": 40.0,
+            "CPU_usage": 30.0,
             "RAM_usage": 13952,
             "regressionTestPassed": true,
             "success": true,
@@ -62,8 +68,8 @@
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/perfect-numbers/openAI/ChatGPT4_perfect-numbers_v1.py",
             "log": "",
             "execution_time_ms": 50.0,
-            "CPU_usage": 69.0,
-            "RAM_usage": 13952,
+            "CPU_usage": 24.0,
+            "RAM_usage": 13696,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -78,12 +84,156 @@
         "language": "typescript",
         "LLM_results": [
           {
-            "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/perfect-numbers_Exercism-typescript-shybyte/gemini/GeminiFlash_perfect-numbers_v1.js",
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/perfect-numbers_Exercism-typescript-shybyte/openAI/ChatGPT4_perfect-numbers_v1.js",
             "log": "",
-            "execution_time_ms": 907,
-            "CPU_usage": 24.0,
-            "RAM_usage": 123048,
+            "execution_time_ms": 1875,
+            "CPU_usage": 37.0,
+            "RAM_usage": 120188,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "typescript_perfect-numbers_Exercism-typescript-shybyte_shybyte",
+        "filename": "perfect-numbers.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/perfect-numbers_Exercism-typescript-shybyte/claude/ClaudeSonnet4_perfect-numbers_v1.ts",
+            "log": "",
+            "execution_time_ms": 2032,
+            "CPU_usage": 38.0,
+            "RAM_usage": 120204,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "typescript_perfect-numbers_Exercism-typescript-shybyte_shybyte",
+        "filename": "perfect-numbers.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/perfect-numbers_Exercism-typescript-shybyte/gemini/GeminiFlash_perfect-numbers_v1.ts",
+            "log": "",
+            "execution_time_ms": 1458,
+            "CPU_usage": 48.0,
+            "RAM_usage": 119284,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "typescript_perfect-numbers_wackerow",
+        "filename": "perfect-numbers.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "typescript/perfect-numbers_exercism-wackerow/openAI/ChatGPT4_perfect-numbers_v1.ts",
+            "log": "",
+            "execution_time_ms": 518,
+            "CPU_usage": 76.0,
+            "RAM_usage": 128672,
+            "regressionTestPassed": false,
+            "success": true,
+            "error_message": "Docker exit code: 1"
+          }
+        ]
+      },
+      {
+        "id": "typescript_perfect-numbers_wackerow",
+        "filename": "perfect-numbers.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "typescript/perfect-numbers_exercism-wackerow/claude/ClaudeSonnet4_perfect-numbers_v1.ts",
+            "log": "",
+            "execution_time_ms": 393,
+            "CPU_usage": 70.0,
+            "RAM_usage": 126584,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "typescript_perfect-numbers_wackerow",
+        "filename": "perfect-numbers.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "typescript/perfect-numbers_exercism-wackerow/gemini/GeminiFlash_perfect-numbers_v1.ts",
+            "log": "",
+            "execution_time_ms": 530,
+            "CPU_usage": 78.0,
+            "RAM_usage": 129568,
+            "regressionTestPassed": false,
+            "success": true,
+            "error_message": "Docker exit code: 1"
+          }
+        ]
+      },
+      {
+        "id": "typescript_perfect-numbers_samajammin",
+        "filename": "perfect-numbers.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "typescript/perfect-numbers_exercism-samajammin/openAI/ChatGPT4_perfect-numbers_v1.ts",
+            "log": "",
+            "execution_time_ms": 462,
+            "CPU_usage": 76.0,
+            "RAM_usage": 128856,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "typescript_perfect-numbers_samajammin",
+        "filename": "perfect-numbers.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "typescript/perfect-numbers_exercism-samajammin/claude/ClaudeSonnet4_perfect-numbers_v1.ts",
+            "log": "",
+            "execution_time_ms": 633,
+            "CPU_usage": 47.0,
+            "RAM_usage": 128576,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "typescript_perfect-numbers_samajammin",
+        "filename": "perfect-numbers.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "typescript/perfect-numbers_exercism-samajammin/gemini/GeminiFlash_perfect-numbers_v1.ts",
+            "log": "",
+            "execution_time_ms": 719,
+            "CPU_usage": 45.0,
+            "RAM_usage": 129184,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -100,34 +250,48 @@
           {
             "LLM_type": "openAI",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/perfect_numbers_Exercism_go_rootulp/openAI/ChatGPT4_perfect_numbers_v1.go",
-            "log": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/perfect_numbers_Exercism_go_rootulp/openAI/output.log",
-            "execution_time_ms": 8680,
-            "CPU_usage": 126.0,
-            "RAM_usage": 211120,
-            "regressionTestPassed": true,
-            "success": null,
+            "log": "",
+            "execution_time_ms": 8210.0,
+            "CPU_usage": 34.0,
+            "RAM_usage": 238040,
+            "regressionTestPassed": false,
+            "success": false,
             "error_message": null
-          },
+          }
+        ]
+      },
+      {
+        "id": "go_perfect_numbers_Exercism (go_rootulp)",
+        "filename": "perfect_numbers.go",
+        "language": "go",
+        "LLM_results": [
           {
             "LLM_type": "claude",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/perfect_numbers_Exercism_go_rootulp/claude/ClaudeSonnet4_perfect_numbers_v1.go",
-            "log": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/perfect_numbers_Exercism_go_rootulp/claude/output.log",
-            "execution_time_ms": 8340,
-            "CPU_usage": 65.0,
-            "RAM_usage": 219924,
+            "log": "",
+            "execution_time_ms": 8390.0,
+            "CPU_usage": 32.0,
+            "RAM_usage": 224456,
             "regressionTestPassed": true,
-            "success": null,
+            "success": true,
             "error_message": null
-          },
+          }
+        ]
+      },
+      {
+        "id": "go_perfect_numbers_Exercism (go_rootulp)",
+        "filename": "perfect_numbers.go",
+        "language": "go",
+        "LLM_results": [
           {
             "LLM_type": "gemini",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/perfect_numbers_Exercism_go_rootulp/gemini/GeminiFlash_perfect_numbers_v1.go",
-            "log": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/perfect_numbers_Exercism_go_rootulp/gemini/output.log",
-            "execution_time_ms": 8250,
-            "CPU_usage": 47.0,
-            "RAM_usage": 212788,
+            "log": "",
+            "execution_time_ms": 7760.0,
+            "CPU_usage": 33.0,
+            "RAM_usage": 233268,
             "regressionTestPassed": true,
-            "success": null,
+            "success": true,
             "error_message": null
           }
         ]
@@ -140,34 +304,48 @@
           {
             "LLM_type": "openAI",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/perfect_numbers_Exercism_go_ThomasZumsteg/openAI/ChatGPT4_perfect_numbers_v1.go",
-            "log": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/perfect_numbers_Exercism_go_ThomasZumsteg/openAI/output.log",
-            "execution_time_ms": 8330,
-            "CPU_usage": 64.0,
-            "RAM_usage": 226456,
+            "log": "",
+            "execution_time_ms": 7660.0,
+            "CPU_usage": 31.0,
+            "RAM_usage": 219300,
             "regressionTestPassed": true,
-            "success": null,
+            "success": true,
             "error_message": null
-          },
+          }
+        ]
+      },
+      {
+        "id": "go_perfect_numbers_Exercism (go_ThomasZumsteg)",
+        "filename": "perfect_numbers.go",
+        "language": "go",
+        "LLM_results": [
           {
             "LLM_type": "claude",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/perfect_numbers_Exercism_go_ThomasZumsteg/claude/ClaudeSonnet4_perfect_numbers_v1.go",
-            "log": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/perfect_numbers_Exercism_go_ThomasZumsteg/claude/output.log",
-            "execution_time_ms": 8080,
-            "CPU_usage": 46.0,
-            "RAM_usage": 217848,
+            "log": "",
+            "execution_time_ms": 7330.0,
+            "CPU_usage": 40.0,
+            "RAM_usage": 227452,
             "regressionTestPassed": true,
-            "success": null,
+            "success": true,
             "error_message": null
-          },
+          }
+        ]
+      },
+      {
+        "id": "go_perfect_numbers_Exercism (go_ThomasZumsteg)",
+        "filename": "perfect_numbers.go",
+        "language": "go",
+        "LLM_results": [
           {
             "LLM_type": "gemini",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/perfect_numbers_Exercism_go_ThomasZumsteg/gemini/GeminiFlash_perfect_numbers_v1.go",
-            "log": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/perfect_numbers_Exercism_go_ThomasZumsteg/gemini/output.log",
-            "execution_time_ms": 7990,
-            "CPU_usage": 97.0,
-            "RAM_usage": 213072,
+            "log": "",
+            "execution_time_ms": 7350.0,
+            "CPU_usage": 36.0,
+            "RAM_usage": 223120,
             "regressionTestPassed": true,
-            "success": null,
+            "success": true,
             "error_message": null
           }
         ]
@@ -180,34 +358,48 @@
           {
             "LLM_type": "openAI",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/perfect_numbers_Exercism_go_drapala/openAI/ChatGPT4_perfect_numbers_v1.go",
-            "log": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/perfect_numbers_Exercism_go_drapala/openAI/output.log",
-            "execution_time_ms": 8400,
-            "CPU_usage": 61.0,
-            "RAM_usage": 217356,
-            "regressionTestPassed": true,
-            "success": null,
+            "log": "",
+            "execution_time_ms": 7330.0,
+            "CPU_usage": 36.0,
+            "RAM_usage": 223588,
+            "regressionTestPassed": false,
+            "success": false,
             "error_message": null
-          },
+          }
+        ]
+      },
+      {
+        "id": "go_perfect_numbers_Exercism (go_drapala)",
+        "filename": "perfect_numbers.go",
+        "language": "go",
+        "LLM_results": [
           {
             "LLM_type": "claude",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/perfect_numbers_Exercism_go_drapala/claude/ClaudeSonnet4_perfect_numbers_v1.go",
-            "log": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/perfect_numbers_Exercism_go_drapala/claude/output.log",
-            "execution_time_ms": 8219,
-            "CPU_usage": 47.0,
-            "RAM_usage": 209840,
+            "log": "",
+            "execution_time_ms": 7320.0,
+            "CPU_usage": 36.0,
+            "RAM_usage": 232928,
             "regressionTestPassed": true,
-            "success": null,
+            "success": true,
             "error_message": null
-          },
+          }
+        ]
+      },
+      {
+        "id": "go_perfect_numbers_Exercism (go_drapala)",
+        "filename": "perfect_numbers.go",
+        "language": "go",
+        "LLM_results": [
           {
             "LLM_type": "gemini",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/perfect_numbers_Exercism_go_drapala/gemini/GeminiFlash_perfect_numbers_v1.go",
-            "log": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/perfect_numbers_Exercism_go_drapala/gemini/output.log",
-            "execution_time_ms": 8029,
-            "CPU_usage": 98.0,
-            "RAM_usage": 213540,
-            "regressionTestPassed": true,
-            "success": null,
+            "log": "",
+            "execution_time_ms": 7960.0,
+            "CPU_usage": 39.0,
+            "RAM_usage": 214184,
+            "regressionTestPassed": false,
+            "success": false,
             "error_message": null
           }
         ]
@@ -223,30 +415,12 @@
             "LLM_type": "claude",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/perfect_numbers_Exercism_m3g4d1v3r/claude/ClaudeSonnet4_perfect_numbers_v1.c",
             "log": "",
-            "execution_time_ms": 30,
-            "CPU_usage": 3.0,
-            "RAM_usage": 3456,
-            "regressionTestPassed": false,
-            "success": false,
-            "error_message": "Docker exit code: 255"
-          }
-        ]
-      },
-      {
-        "id": "c_perfect_numbers_Exercism (m3g4d1v3r)",
-        "filename": "perfect_numbers.c",
-        "language": "c",
-        "LLM_results": [
-          {
-            "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/perfect_numbers_Exercism_m3g4d1v3r/gemini/GeminiFlash_perfect_numbers_v1.c",
-            "log": "",
-            "execution_time_ms": 30,
-            "CPU_usage": 3.0,
-            "RAM_usage": 3456,
-            "regressionTestPassed": false,
-            "success": false,
-            "error_message": "Docker exit code: 255"
+            "execution_time_ms": 7.289014,
+            "CPU_usage": 8.0,
+            "RAM_usage": 8704,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
           }
         ]
       },
@@ -259,48 +433,12 @@
             "LLM_type": "openAI",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/perfect_numbers_Exercism_m3g4d1v3r/openAI/ChatGPT4_perfect_numbers_v1.c",
             "log": "",
-            "execution_time_ms": 20,
-            "CPU_usage": 0.0,
-            "RAM_usage": 3456,
-            "regressionTestPassed": false,
-            "success": false,
-            "error_message": "Docker exit code: 255"
-          }
-        ]
-      },
-      {
-        "id": "c_perfect_numbers_Exercism (leleah)",
-        "filename": "perfect_numbers.c",
-        "language": "c",
-        "LLM_results": [
-          {
-            "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/perfect_numbers_Exercism_leleah/gemini/GeminiFlash_perfect_numbers_v1.c",
-            "log": "",
-            "execution_time_ms": 60,
-            "CPU_usage": 5.0,
-            "RAM_usage": 3072,
-            "regressionTestPassed": false,
-            "success": false,
-            "error_message": "Docker exit code: 139"
-          }
-        ]
-      },
-      {
-        "id": "c_perfect_numbers_Exercism (leleah)",
-        "filename": "perfect_numbers.c",
-        "language": "c",
-        "LLM_results": [
-          {
-            "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/perfect_numbers_Exercism_leleah/claude/ClaudeSonnet4_perfect_numbers_v1.c",
-            "log": "",
-            "execution_time_ms": 21.705894,
-            "CPU_usage": 1.0,
+            "execution_time_ms": 5.889342,
+            "CPU_usage": 6.0,
             "RAM_usage": 8704,
-            "regressionTestPassed": false,
-            "success": false,
-            "error_message": "Docker exit code: 1"
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
           }
         ]
       },
@@ -313,8 +451,278 @@
             "LLM_type": "openAI",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/perfect_numbers_Exercism_leleah/openAI/ChatGPT4_perfect_numbers_v1.c",
             "log": "",
-            "execution_time_ms": 11.693548,
-            "CPU_usage": 2.0,
+            "execution_time_ms": 0.955587,
+            "CPU_usage": 38.0,
+            "RAM_usage": 8832,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "c_perfect_numbers_Exercism (leleah)",
+        "filename": "perfect_numbers.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/perfect_numbers_Exercism_leleah/claude/ClaudeSonnet4_perfect_numbers_v1.c",
+            "log": "",
+            "execution_time_ms": 0.671711,
+            "CPU_usage": 38.0,
+            "RAM_usage": 8832,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 1"
+          }
+        ]
+      },
+      {
+        "id": "c_perfect_numbers_Exercism (m3g4d1v3r)",
+        "filename": "perfect_numbers.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/perfect_numbers_Exercism_m3g4d1v3r/gemini/GeminiFlash_perfect_numbers_v1.c",
+            "log": "",
+            "execution_time_ms": 5.650731,
+            "CPU_usage": 9.0,
+            "RAM_usage": 8704,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "c_perfect_numbers_Exercism (leleah)",
+        "filename": "perfect_numbers.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/perfect_numbers_Exercism_leleah/gemini/GeminiFlash_perfect_numbers_v1.c",
+            "log": "",
+            "execution_time_ms": 3.888221,
+            "CPU_usage": 9.0,
+            "RAM_usage": 8832,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "c_perfect-numbers_yorange1",
+        "filename": "perfect_numbers.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "c/perfect-numbers_exercism-yorange1/claude/ClaudeSonnet4_perfect_numbers_v1.c",
+            "log": "",
+            "execution_time_ms": 3.033426,
+            "CPU_usage": 21.0,
+            "RAM_usage": 8704,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "c_perfect-numbers_yorange1",
+        "filename": "perfect_numbers.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "c/perfect-numbers_exercism-yorange1/openAI/ChatGPT4_perfect_numbers_v1.c",
+            "log": "",
+            "execution_time_ms": 6.421062,
+            "CPU_usage": 21.0,
+            "RAM_usage": 8704,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "c_perfect-numbers_yorange1",
+        "filename": "perfect_numbers.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "c/perfect-numbers_exercism-yorange1/gemini/GeminiFlash_perfect_numbers_v1.c",
+            "log": "",
+            "execution_time_ms": 5.85181,
+            "CPU_usage": 18.0,
+            "RAM_usage": 8704,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "c_perfect-numbers_chriswilding",
+        "filename": "perfect_numbers.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "c/perfect-numbers_exercism-chriswilding/openAI/ChatGPT4_perfect_numbers_v1.c",
+            "log": "",
+            "execution_time_ms": 5.601892,
+            "CPU_usage": 16.0,
+            "RAM_usage": 8576,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "c_perfect-numbers_chriswilding",
+        "filename": "perfect_numbers.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "c/perfect-numbers_exercism-chriswilding/claude/ClaudeSonnet4_perfect_numbers_v1.c",
+            "log": "",
+            "execution_time_ms": 2.313132,
+            "CPU_usage": 27.0,
+            "RAM_usage": 8704,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "c_perfect-numbers_chriswilding",
+        "filename": "perfect_numbers.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "c/perfect-numbers_exercism-chriswilding/gemini/GeminiFlash_perfect_numbers_v1.c",
+            "log": "",
+            "execution_time_ms": 2.223507,
+            "CPU_usage": 22.0,
+            "RAM_usage": 8448,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "c_perfect-numbers_viettronics868",
+        "filename": "perfect_numbers.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "c/perfect-numbers_exercism-viettronics868/openAI/ChatGPT4_perfect_numbers_v1.c",
+            "log": "",
+            "execution_time_ms": 76.728615,
+            "CPU_usage": 45.0,
+            "RAM_usage": 8704,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "c_perfect-numbers_viettronics868",
+        "filename": "perfect_numbers.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "c/perfect-numbers_exercism-viettronics868/claude/ClaudeSonnet4_perfect_numbers_v1.c",
+            "log": "",
+            "execution_time_ms": 1.113379,
+            "CPU_usage": 32.0,
+            "RAM_usage": 8704,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "c_perfect-numbers_viettronics868",
+        "filename": "perfect_numbers.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "c/perfect-numbers_exercism-viettronics868/gemini/GeminiFlash_perfect_numbers_v1.c",
+            "log": "",
+            "execution_time_ms": 3.134344,
+            "CPU_usage": 54.0,
+            "RAM_usage": 8704,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "c_perfect-numbers_EzequielMarcelo",
+        "filename": "perfect_numbers.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "c/perfect-numbers_exercism-EzequielMarcelo/openAI/ChatGPT4_perfect_numbers_v1.c",
+            "log": "",
+            "execution_time_ms": 1.938506,
+            "CPU_usage": 30.0,
+            "RAM_usage": 8704,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 1"
+          }
+        ]
+      },
+      {
+        "id": "c_perfect-numbers_EzequielMarcelo",
+        "filename": "perfect_numbers.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "c/perfect-numbers_exercism-EzequielMarcelo/gemini/GeminiFlash_perfect_numbers_v1.c",
+            "log": "",
+            "execution_time_ms": 1.423463,
+            "CPU_usage": 38.0,
+            "RAM_usage": 8448,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "c_perfect-numbers_EzequielMarcelo",
+        "filename": "perfect_numbers.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "c/perfect-numbers_exercism-EzequielMarcelo/claude/ClaudeSonnet4_perfect_numbers_v1.c",
+            "log": "",
+            "execution_time_ms": 1.868423,
+            "CPU_usage": 31.0,
             "RAM_usage": 8704,
             "regressionTestPassed": true,
             "success": true,
@@ -377,6 +785,114 @@
             "error_message": "Docker exit code: 1"
           }
         ]
+      },
+      {
+        "id": "javascript_perfect-numbers_ThomasZumsteg",
+        "filename": "perfect-numbers.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "javascript/perfect-numbers_exercism-ThomasZumsteg/gemini/GeminiFlash_perfect-numbers_v1.js",
+            "log": "",
+            "execution_time_ms": 700.0,
+            "CPU_usage": 25.0,
+            "RAM_usage": 82684,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_perfect-numbers_ThomasZumsteg",
+        "filename": "perfect-numbers.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "javascript/perfect-numbers_exercism-ThomasZumsteg/openAI/ChatGPT4_perfect-numbers_v1.js",
+            "log": "",
+            "execution_time_ms": 740.0,
+            "CPU_usage": 25.0,
+            "RAM_usage": 79888,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_perfect-numbers_SLIB53",
+        "filename": "babel.config.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "javascript/perfect-numbers_exercism-SLIB53/openAI/ChatGPT4_babel_v1.js",
+            "log": "",
+            "execution_time_ms": 889.9999999999999,
+            "CPU_usage": 35.0,
+            "RAM_usage": 82572,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_perfect-numbers_ThomasZumsteg",
+        "filename": "perfect-numbers.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "javascript/perfect-numbers_exercism-ThomasZumsteg/claude/ClaudeSonnet4_perfect-numbers_v1.js",
+            "log": "",
+            "execution_time_ms": 880.0000000000001,
+            "CPU_usage": 35.0,
+            "RAM_usage": 81592,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_perfect-numbers_SLIB53",
+        "filename": "babel.config.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "javascript/perfect-numbers_exercism-SLIB53/claude/ClaudeSonnet4_babel_v1.js",
+            "log": "",
+            "execution_time_ms": 740.0,
+            "CPU_usage": 42.0,
+            "RAM_usage": 81304,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_perfect-numbers_SLIB53",
+        "filename": "babel.config.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "javascript/perfect-numbers_exercism-SLIB53/gemini/GeminiFlash_babel_v1.js",
+            "log": "",
+            "execution_time_ms": 750.0,
+            "CPU_usage": 41.0,
+            "RAM_usage": 81912,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
       }
     ],
     "cpp": [
@@ -386,30 +902,12 @@
         "language": "cpp",
         "LLM_results": [
           {
-            "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/perfect-numbers_exercism-toemm/openAI/ChatGPT4_perfect_numbers_v1.cpp",
-            "log": "",
-            "execution_time_ms": 2.364087,
-            "CPU_usage": 74.0,
-            "RAM_usage": 10496,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "cpp_perfect-numbers_toemm",
-        "filename": "perfect_numbers.cpp",
-        "language": "cpp",
-        "LLM_results": [
-          {
             "LLM_type": "gemini",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/perfect-numbers_exercism-toemm/gemini/GeminiFlash_perfect_numbers_v1.cpp",
             "log": "",
-            "execution_time_ms": 4.768175,
-            "CPU_usage": 38.0,
-            "RAM_usage": 10496,
+            "execution_time_ms": 41.412589,
+            "CPU_usage": 5.0,
+            "RAM_usage": 10368,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -425,8 +923,26 @@
             "LLM_type": "claude",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/perfect-numbers_exercism-toemm/claude/ClaudeSonnet4_perfect_numbers_v1.cpp",
             "log": "",
-            "execution_time_ms": 10.163644,
-            "CPU_usage": 17.0,
+            "execution_time_ms": 3.677095,
+            "CPU_usage": 42.0,
+            "RAM_usage": 10496,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "cpp_perfect-numbers_toemm",
+        "filename": "perfect_numbers.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/perfect-numbers_exercism-toemm/openAI/ChatGPT4_perfect_numbers_v1.cpp",
+            "log": "",
+            "execution_time_ms": 12.835707,
+            "CPU_usage": 16.0,
             "RAM_usage": 10496,
             "regressionTestPassed": true,
             "success": true,

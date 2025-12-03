@@ -47,8 +47,9 @@ bool permission_check(Action action, AccountStatus status) {
 // checks if two players can join the same game. The function has two parameters
 // of type `AccountStatus` and returns a `bool`.
 bool valid_player_combination(AccountStatus s1, AccountStatus s2) {
-    if ((s1 == AccountStatus::guest) || (s2 == AccountStatus::guest))
+    if (s1 == AccountStatus::guest || s2 == AccountStatus::guest) {
         return false;
+    }
     return (s1 == AccountStatus::troll) == (s2 == AccountStatus::troll);
 }
 

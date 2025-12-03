@@ -6,10 +6,10 @@ namespace pangram {
         std::bitset<26> letter_flags;
         
         for (char ch : text) {
-            if (ch >= 'A' && ch <= 'Z') {
-                letter_flags.set(ch - 'A');
-            } else if (ch >= 'a' && ch <= 'z') {
+            if (ch >= 'a' && ch <= 'z') {
                 letter_flags.set(ch - 'a');
+            } else if (ch >= 'A' && ch <= 'Z') {
+                letter_flags.set(ch - 'A');
             }
             
             if (letter_flags.all()) {

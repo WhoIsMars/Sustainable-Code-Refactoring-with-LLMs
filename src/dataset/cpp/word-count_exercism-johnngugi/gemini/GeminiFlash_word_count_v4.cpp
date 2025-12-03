@@ -12,50 +12,35 @@ map<string, int> word_count::words(string sen)
     string store;
     store.reserve(sen.length());
 
-    for (char c : sen)
-    {
-        if (isalnum(c))
-        {
+    for (char c : sen) {
+        if (isalnum(c)) {
             store += tolower(c);
-        }
-        else if (c == '\'' && !store.empty())
-        {
+        } else if (c == '\'' && !store.empty()) {
             store += c;
-        }
-        else if (!store.empty())
-        {
-            if (store.back() == '\'')
-            {
+        } else if (!store.empty()) {
+            if (store.back() == '\'') {
                 store.pop_back();
             }
 
             auto it = words.find(store);
-            if (it != words.end())
-            {
+            if (it != words.end()) {
                 ++it->second;
-            }
-            else
-            {
+            } else {
                 words[store] = 1;
             }
             store.clear();
         }
     }
 
-    if (!store.empty())
-    {
-        if (store.back() == '\'')
-        {
+    if (!store.empty()) {
+        if (store.back() == '\'') {
             store.pop_back();
         }
 
         auto it = words.find(store);
-        if (it != words.end())
-        {
+        if (it != words.end()) {
             ++it->second;
-        }
-        else
-        {
+        } else {
             words[store] = 1;
         }
     }

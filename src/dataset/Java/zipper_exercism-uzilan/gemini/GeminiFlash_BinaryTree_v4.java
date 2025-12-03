@@ -1,0 +1,39 @@
+import java.util.Objects;
+
+public class BinaryTree {
+
+    private final Zipper root;
+
+    public BinaryTree(Zipper zipper) {
+        this.root = zipper;
+    }
+
+    public BinaryTree(int i) {
+        this(new Zipper(i));
+    }
+
+    public Zipper getRoot() {
+        return root;
+    }
+
+    public String printTree() {
+        return root.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == this) {
+            return true;
+        }
+        if (!(o instanceof BinaryTree)) {
+            return false;
+        }
+        BinaryTree other = (BinaryTree) o;
+        return Objects.equals(this.root, other.root);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(root);
+    }
+}

@@ -2,8 +2,8 @@
 
 namespace hello_world {
 
-const string& hello() {
-    static const string message = "Hello, World!";
+const std::string& hello() {
+    static const std::string message = "Hello, World!";
     return message;
 }
 

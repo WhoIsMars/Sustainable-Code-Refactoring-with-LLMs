@@ -4,7 +4,7 @@ Energy and Carbon Footprint Visualizator
 This module generates comprehensive visualizations for energy and carbon analysis,
 including box plots, bar plots, and summary reports.
 
-Author: Senior AI Engineer & Data Scientist
+
 Date: 2025-11-01
 Version: 1.0
 """

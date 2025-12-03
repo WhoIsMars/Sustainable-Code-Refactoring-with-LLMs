@@ -25,9 +25,8 @@ namespace hexadecimal
             {
                 return 0;
             }
-            if (result > (INT_MAX / 16)) return 0;
-            result = (result * 16) + digit;
-            if (result < 0) return 0;
+            if (result > (INT_MAX / 16)) return 0; // Check for potential overflow before multiplication
+            result = result * 16 + digit;
         }
         return result;
     }

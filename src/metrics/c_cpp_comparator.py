@@ -12,7 +12,7 @@ D. CodeDiffGenerator - Generates side-by-side diffs
 E. BuildConfigComparator - Compares build configurations
 F. ReportGenerator - Creates comprehensive markdown report
 
-Author: Generated for Thesis Analysis
+
 Date: 2025
 """
 

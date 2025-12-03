@@ -27,9 +27,8 @@ bool anagram::anagram::is_anagram(std::string possible_match) {
     if (possible_match.length() != word.length()) {
         return false;
     }
-    std::string lower_possible_match = possible_match;
-    boost::to_lower(lower_possible_match);
-    std::string sorted_possible_match = lower_possible_match;
+    std::string sorted_possible_match = possible_match;
+    boost::to_lower(sorted_possible_match);
     std::sort(sorted_possible_match.begin(), sorted_possible_match.end());
     return sorted == sorted_possible_match;
 }

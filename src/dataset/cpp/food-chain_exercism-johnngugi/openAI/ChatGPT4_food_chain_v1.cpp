@@ -1,5 +1,4 @@
 #include "food_chain.h"
-#include <vector>
 #include <iostream>
 using namespace std;
 
@@ -66,8 +65,8 @@ string food_chain::verses(int a, int b)
 	string result;
 	for (int i = a; i <= b; ++i)
 	{
+		if (i > a) result += "\n";
 		result += verse(i);
-		if (i != b) result += "\n";
 	}
 	return result;
 }

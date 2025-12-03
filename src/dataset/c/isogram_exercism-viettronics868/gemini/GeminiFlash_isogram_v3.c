@@ -1,0 +1,30 @@
+#include "isogram.h"
+#include <stdbool.h>
+#include <ctype.h>
+#include <string.h>
+
+bool is_isogram(const char phrase[]) {
+    if (phrase == NULL) {
+        return false;
+    }
+
+    size_t length = strlen(phrase);
+    if (length <= 1) {
+        return true;
+    }
+
+    bool seen[26] = {false}; 
+
+    for (size_t i = 0; i < length; i++) {
+        char c = tolower(phrase[i]);
+        if (isalpha(c)) {
+            int index = c - 'a';
+            if (seen[index]) {
+                return false;
+            }
+            seen[index] = true;
+        }
+    }
+
+    return true;
+}

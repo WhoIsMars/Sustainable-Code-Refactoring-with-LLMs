@@ -18,8 +18,49 @@ logger = logging.getLogger(__name__)
 
 METRICS = ["CPU_usage", "RAM_usage", "execution_time_ms"]
 LLM_METRICS = ["CPU_usage", "RAM_usage", "execution_time_ms", "regressionTestPassed"]
-
+LANGUAGES = ["c", "cpp", "java", "javascript", "go", "typescript", "python"]
 SKIP_PATTERNS = ['debug', 'test', 'bad_entries', 'focused_', 'with_metrics']
+
+
+def get_prompt_version_by_filename(filename:str)->int :     
+    name_without_ext = filename.rsplit('.', 1)[0]      
+    v_part = name_without_ext.rsplit('_', 1)[-1]   
+    
+    if v_part.startswith('v') and v_part[1:].isdigit():
+        num = int(v_part[1:])
+        if 1 <= num <= 4:
+            return num
+        else:
+            raise Exception("prompt V out of range (1-4)")
+
+def get_ext_by_lang(language)->str:
+    if language == "c++" :
+        language = "cpp" 
+    if language not in LANGUAGES : 
+        raise Exception(f"Language {language} not supported (get ext by lang)")
+    
+    match language :
+        case "c" :
+            return ".c"
+        case "python" :
+            return ".py"
+        case "cpp" :
+            return ".cpp"
+        case "go" :
+            return ".go"
+        case "javascript" :
+            return ".js"
+        case "typescript" :
+            return ".ts"
+        case "java" :
+            return ".java"
+        
+def skip_pattern_is_present(string:str) -> bool : 
+    for pattern in SKIP_PATTERNS : 
+        if pattern in string : 
+            return True
+        
+    return False
 
 
 def get_cluster_path_list(CLUSTERS_DIR_FILEPATH:Path) -> List[Path]:
@@ -51,7 +92,12 @@ def write_json(path: Path, data) -> None:
     except Exception as e:
         print(f"Error writing {path}:\n{e}")
 
-
+def get_cluster_name_by_result_cluster(filename:str) -> str :
+    parts = filename.rsplit("_results_", 1)
+    if len(parts) != 2:
+        raise Exception("Invalid filename")
+    
+    return parts[0]
 
 #model enties from cluster dir 
 @dataclass
@@ -72,7 +118,7 @@ class CodeEntry:
     source: str
     codeSnippetFilePath: str
     testUnitFilePath: str
-
+    downloadDate : str | None
     characterQuantity: int
     wordQuantity: int
     licenseType: str
@@ -93,6 +139,7 @@ class CodeEntry:
             characterQuantity=data.get("characterQuantity", -1),
             wordQuantity=data.get("wordQuantity", -1),
             licenseType=data.get("licenseType", ""),
+            downloadDate = data.get("downloadDate",""),
             LLMs=llms,
         )
 

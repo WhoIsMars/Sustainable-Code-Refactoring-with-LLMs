@@ -35,3 +35,4 @@ Allergies.prototype.allergicTo = function(item, index) {
 };
 
 export default Allergies;
+export { allergies };

@@ -12,18 +12,15 @@ bool check(std::string s) {
       stack.push(c);
       break;
     case '}':
-      if (stack.empty() || stack.top() != '{')
-        return false;
+      if (stack.empty() || stack.top() != '{') return false;
       stack.pop();
       break;
     case ']':
-      if (stack.empty() || stack.top() != '[')
-        return false;
+      if (stack.empty() || stack.top() != '[') return false;
       stack.pop();
       break;
     case ')':
-      if (stack.empty() || stack.top() != '(')
-        return false;
+      if (stack.empty() || stack.top() != '(') return false;
       stack.pop();
       break;
     default:

@@ -13,20 +13,20 @@ namespace anagram {
     anagram::anagram(string word) {
         transform(word.begin(), word.end(), word.begin(), ::tolower);
         sort(word.begin(), word.end());
-        this->key = word;
+        this->word = word;
     }
 
     vector<string> anagram::matches(list<string> words) {
         vector<string> ans;
-        for (const auto& word_to_match : words) {
-            string lower_word = word_to_match;
-            transform(lower_word.begin(), lower_word.end(), lower_word.begin(), ::tolower);
-            if (lower_word == this->key) continue;
+        for (const auto& candidate : words) {
+            string lower_candidate = candidate;
+            transform(lower_candidate.begin(), lower_candidate.end(), lower_candidate.begin(), ::tolower);
+            if (lower_candidate == word) continue;
 
-            string sorted_word = lower_word;
-            sort(sorted_word.begin(), sorted_word.end());
-            if (sorted_word == this->key) {
-                ans.push_back(word_to_match);
+            string sorted_candidate = lower_candidate;
+            sort(sorted_candidate.begin(), sorted_candidate.end());
+            if (sorted_candidate == word) {
+                ans.push_back(candidate);
             }
         }
         return ans;

@@ -41,3 +41,6 @@ Triplet.where = function(params) {
 };
 
 export default Triplet;
+export { triplets };
+
+export { triplet };

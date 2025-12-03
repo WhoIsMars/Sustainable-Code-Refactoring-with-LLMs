@@ -2,7 +2,7 @@
 
 namespace hello_world {
 
-inline const std::string& hello() {
+inline std::string hello() noexcept {
     static const std::string message = "Hello, World!";
     return message;
 }

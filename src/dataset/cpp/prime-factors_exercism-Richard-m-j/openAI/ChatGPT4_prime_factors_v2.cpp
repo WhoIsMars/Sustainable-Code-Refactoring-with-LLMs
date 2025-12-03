@@ -11,7 +11,13 @@ namespace prime_factors
 
     void factor(int n, vector<int> &result)
     {
-        for (int i = 2; i * i <= n; ++i)
+        while (n % 2 == 0)
+        {
+            result.push_back(2);
+            n /= 2;
+        }
+
+        for (int i = 3; i * i <= n; i += 2)
         {
             while (n % i == 0)
             {
@@ -19,6 +25,7 @@ namespace prime_factors
                 n /= i;
             }
         }
+
         if (n > 1)
         {
             result.push_back(n);

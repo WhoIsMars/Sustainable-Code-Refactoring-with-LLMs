@@ -6,7 +6,7 @@
 
 namespace robot_name {
     std::unordered_set<std::string> robot::_existing_names = {};
-    std::mt19937 robot::_rng(std::random_device{}());
+    std::mt19937 robot::_rng{std::random_device{}()};
     std::uniform_int_distribution<int> robot::_char_dist('A', 'Z');
     std::uniform_int_distribution<int> robot::_digit_dist('0', '9');
 

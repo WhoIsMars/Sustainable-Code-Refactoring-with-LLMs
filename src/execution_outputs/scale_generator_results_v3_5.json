@@ -1,11 +1,24 @@
 {
-  "execution_date": "2025-11-16 22:10:18",
+  "execution_date": "2025-12-03 05:17:46",
   "execution_metadata": {
     "total_tests": 5,
     "successful_tests": 5,
     "execution_time": "00h 00m 10s",
     "cluster": "cluster_scale_generator",
-    "test_type": "llm_v3"
+    "test_type": "llm_v3",
+    "last_updated": "2025-12-03 05:17:46",
+    "selective_execution": {
+      "languages": [
+        "cpp",
+        "c",
+        "java",
+        "javascript",
+        "typescript",
+        "python",
+        "go"
+      ],
+      "timestamp": "2025-12-03 05:17:46"
+    }
   },
   "results": {
     "javascript": [
@@ -18,12 +31,12 @@
             "LLM_type": "gemini",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/scale-generator_exercism-javascript-ffflorian/gemini/GeminiFlash_scale-generator_v3.js",
             "log": "",
-            "execution_time_ms": 180,
-            "CPU_usage": 18.0,
-            "RAM_usage": 67864,
-            "regressionTestPassed": false,
-            "success": false,
-            "error_message": "Docker exit code: 1"
+            "execution_time_ms": 620.0,
+            "CPU_usage": 25.0,
+            "RAM_usage": 83292,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
           }
         ]
       },
@@ -36,9 +49,9 @@
             "LLM_type": "claude",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/scale-generator_exercism-javascript-ffflorian/claude/ClaudeSonnet4_scale-generator_v3.js",
             "log": "",
-            "execution_time_ms": 390.0,
-            "CPU_usage": 49.0,
-            "RAM_usage": 81188,
+            "execution_time_ms": 610.0,
+            "CPU_usage": 24.0,
+            "RAM_usage": 81704,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -54,17 +67,97 @@
             "LLM_type": "openAI",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/scale-generator_exercism-javascript-ffflorian/openAI/ChatGPT4_scale-generator_v3.js",
             "log": "",
-            "execution_time_ms": 410.00000000000006,
-            "CPU_usage": 46.0,
-            "RAM_usage": 83224,
+            "execution_time_ms": 640.0,
+            "CPU_usage": 20.0,
+            "RAM_usage": 84424,
             "regressionTestPassed": false,
             "success": false,
-            "error_message": "Docker exit code: 1"
+            "error_message": null
           }
         ]
       }
     ],
     "go": [
+      {
+        "id": "go_scale_generator_Exercism (go_ThomasZumsteg)",
+        "filename": "scale_generator.go",
+        "language": "go",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/scale_generator_Exercism_go_ThomasZumsteg/openAI/ChatGPT4_scale_generator_v3.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/scale_generator_Exercism_go_ThomasZumsteg/claude/ClaudeSonnet4_scale_generator_v3.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/scale_generator_Exercism_go_ThomasZumsteg/gemini/GeminiFlash_scale_generator_v3.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "go_scale_generator_Exercism (go_ThomasZumsteg)",
+        "filename": "scale_generator.go",
+        "language": "go",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/scale_generator_Exercism_go_ThomasZumsteg/openAI/ChatGPT4_scale_generator_v3.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/scale_generator_Exercism_go_ThomasZumsteg/claude/ClaudeSonnet4_scale_generator_v3.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/scale_generator_Exercism_go_ThomasZumsteg/gemini/GeminiFlash_scale_generator_v3.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
       {
         "id": "go_scale_generator_Exercism (go_ThomasZumsteg)",
         "filename": "scale_generator.go",
@@ -142,6 +235,142 @@
             "regressionTestPassed": true,
             "success": null,
             "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "go_scale_generator_Exercism (go_drapala)",
+        "filename": "scale_generator.go",
+        "language": "go",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/scale_generator_Exercism_go_drapala/openAI/ChatGPT4_scale_generator_v3.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/scale_generator_Exercism_go_drapala/claude/ClaudeSonnet4_scale_generator_v3.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/scale_generator_Exercism_go_drapala/gemini/GeminiFlash_scale_generator_v3.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "go_scale_generator_Exercism (go_drapala)",
+        "filename": "scale_generator.go",
+        "language": "go",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/scale_generator_Exercism_go_drapala/openAI/ChatGPT4_scale_generator_v3.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/scale_generator_Exercism_go_drapala/claude/ClaudeSonnet4_scale_generator_v3.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/scale_generator_Exercism_go_drapala/gemini/GeminiFlash_scale_generator_v3.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      }
+    ],
+    "python": [
+      {
+        "id": "python_scale-generator_ThomasZumsteg",
+        "filename": "scale_generator.py",
+        "language": "python",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "python/scale-generator_exercism-ThomasZumsteg/claude/ClaudeSonnet4_scale_generator_v3.py",
+            "log": "",
+            "execution_time_ms": 50.0,
+            "CPU_usage": 62.0,
+            "RAM_usage": 14080,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 1"
+          }
+        ]
+      },
+      {
+        "id": "python_scale-generator_ThomasZumsteg",
+        "filename": "scale_generator.py",
+        "language": "python",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "python/scale-generator_exercism-ThomasZumsteg/openAI/ChatGPT4_scale_generator_v3.py",
+            "log": "",
+            "execution_time_ms": 50.0,
+            "CPU_usage": 47.0,
+            "RAM_usage": 13952,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "python_scale-generator_ThomasZumsteg",
+        "filename": "scale_generator.py",
+        "language": "python",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "python/scale-generator_exercism-ThomasZumsteg/gemini/GeminiFlash_scale_generator_v3.py",
+            "log": "",
+            "execution_time_ms": 30.0,
+            "CPU_usage": 58.0,
+            "RAM_usage": 14208,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 1"
           }
         ]
       }

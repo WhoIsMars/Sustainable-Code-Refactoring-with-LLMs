@@ -1,17 +1,18 @@
-constexpr int ovenTime() {
-    return 40;
+constexpr int OVEN_TIME = 40;
+constexpr int TIME_PER_LAYER = 2;
+
+inline int ovenTime() {
+    return OVEN_TIME;
 }
 
-constexpr int preparationTimePerLayer = 2;
-
-constexpr int remainingOvenTime(int actualMinutesInOven) {
-    return ovenTime() - actualMinutesInOven;
+inline int remainingOvenTime(int actualMinutesInOven) {
+    return OVEN_TIME - actualMinutesInOven;
 }
 
-constexpr int preparationTime(int numberOfLayers) {
-    return preparationTimePerLayer * numberOfLayers;
+inline int preparationTime(int numberOfLayers) {
+    return TIME_PER_LAYER * numberOfLayers;
 }
 
-constexpr int elapsedTime(int numberOfLayers, int actualMinutesInOven) {
-    return preparationTime(numberOfLayers) + actualMinutesInOven;
+inline int elapsedTime(int numberOfLayers, int actualMinutesInOven) {
+    return (TIME_PER_LAYER * numberOfLayers) + actualMinutesInOven;
 }

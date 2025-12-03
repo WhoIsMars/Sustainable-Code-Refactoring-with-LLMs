@@ -22,11 +22,6 @@ namespace space_age {
         return m_seconds / EARTH_YEAR_SECONDS;
     }
 
-    double space_age::per_earth_years(double planet_years) const
-    {
-        return m_seconds / (EARTH_YEAR_SECONDS * planet_years);
-    }
-
     double space_age::on_mercury() const
     {
         return m_seconds / (EARTH_YEAR_SECONDS * MERCURY_YEAR_RATIO);

@@ -9,7 +9,7 @@ const int fail_threshold = 40;
 std::vector<int> round_down_scores(const std::vector<double>& student_scores) {
     std::vector<int> rounded_scores;
     rounded_scores.reserve(student_scores.size());
-    for (const auto& score : student_scores)
+    for (const auto score : student_scores)
         rounded_scores.push_back(static_cast<int>(score));
     return rounded_scores;
 }
@@ -31,19 +31,28 @@ std::vector<int> above_threshold(const std::vector<int>& student_scores, int thr
 }
 
 // Create a list of grade thresholds based on the provided highest grade.
+// Assuming the highest score is 88, the range between this score and the fail
+// threshold (40) is divided into four equal ranges, i.e. 48/4 = 12 points in
+// each range. Then we have these ranges:
+//      40 - 52 : min D grade = 41
+//      52 - 64 : min C grade = 53
+//      64 - 76 : min B grade = 65
+//      76 - 88 : min A grade = 77
 std::array<int, 4> letter_grades(int highest_score) {
-    int grade_range = (highest_score - fail_threshold) / 4;
+    const int grade_range = (highest_score - fail_threshold) / 4;
     std::array<int, 4> grade_thresholds;
-    for (size_t i = 0; i < grade_thresholds.size(); i++)
-        grade_thresholds[i] = fail_threshold + static_cast<int>(i) * grade_range + 1;
+    for (int i = 0; i < 4; ++i)
+        grade_thresholds[i] = fail_threshold + i * grade_range + 1;
     return grade_thresholds;
 }
 
 // Organize the student's rank, name, and grade information in descending order.
+// The ranking is a string of the form: `<rank>. <name>: <score>`
+// Assume the scores are sorted from highest to lowest, with the names corresponding.
 std::vector<std::string> student_ranking(const std::vector<int>& student_scores, const std::vector<std::string>& student_names) {
     std::vector<std::string> rankings;
     rankings.reserve(student_names.size());
-    for (size_t i = 0; i < student_names.size(); i++) {
+    for (size_t i = 0; i < student_names.size(); ++i) {
         rankings.emplace_back(std::to_string(i + 1) + ". " + student_names[i] + ": " + std::to_string(student_scores[i]));
     }
     return rankings;
@@ -51,7 +60,7 @@ std::vector<std::string> student_ranking(const std::vector<int>& student_scores,
 
 // Create a string that contains the name of the first student to make a perfect score on the exam.
 std::string perfect_score(const std::vector<int>& student_scores, const std::vector<std::string>& student_names) {
-    const int perfect = 100;
+    constexpr int perfect = 100;
     auto it = std::find(student_scores.begin(), student_scores.end(), perfect);
     if (it != student_scores.end()) {
         auto index = std::distance(student_scores.begin(), it);

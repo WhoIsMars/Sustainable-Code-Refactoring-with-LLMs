@@ -8,7 +8,6 @@ Uses entry-level granularity with automatic result merging.
 
 Target languages: C, Python, JavaScript (Java excluded - mostly base code bugs)
 
-Author: Dataset Rebalancing Pipeline
 Date: 2025-11-18
 """
 

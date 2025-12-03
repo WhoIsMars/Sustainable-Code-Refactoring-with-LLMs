@@ -9,7 +9,7 @@ namespace reverse_string {
     }
 
     std::string reverse_string_iter(const std::string& str) {
-        return std::string(str.rbegin(), str.rend());
+        return {str.rbegin(), str.rend()};
     }
 
     std::string reverse_string_manual(std::string str) {

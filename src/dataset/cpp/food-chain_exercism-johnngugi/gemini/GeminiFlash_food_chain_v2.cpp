@@ -36,17 +36,16 @@ const string ending = "I don't know why she swallowed the fly. Perhaps she'll di
 string food_chain::repetition(int n)
 {
 	string final;
-	final.reserve(n * 60); // Approximate size to avoid reallocations
+	final.reserve(n * 60); 
 
 	for (int i = n; i > 1; --i)
 	{
-		final += "She swallowed the " + key_word[i] + " to catch the " + key_word[i - 1] + ".\n";
-	}
-
-	// Optimized spider line replacement
-	size_t pos = final.rfind("She swallowed the bird to catch the spider.\n");
-	if (pos != string::npos) {
-		final.replace(pos, string("She swallowed the bird to catch the spider.\n").length(), "She swallowed the bird to catch the spider that wriggled and jiggled and tickled inside her.\n");
+		if (i == 3) {
+			final += "She swallowed the bird to catch the spider that wriggled and jiggled and tickled inside her.\n";
+		}
+		else {
+			final += "She swallowed the " + key_word[i] + " to catch the " + key_word[i - 1] + ".\n";
+		}
 	}
 
 	return final;
@@ -70,34 +69,35 @@ string food_chain::response(int n)
 string food_chain::verse(int n)
 {
 	string result;
+	result.reserve(300);
 
 	if (n < 8)
-		result = first_sentence + second_line[n] + response(n) + ending;
+		result += first_sentence + second_line[n] + response(n) + ending;
 	else
 		result = "I know an old lady who swallowed a horse.\nShe's dead, of course!\n";
 
-	cout << result << endl;
+	cout << result;
 
 	return result;
 }
 
 string food_chain::verses(int a, int b)
 {
-	string result = verse(a) + "\n" + verse(b) + "\n";
+	string result;
+	result.reserve(600);
+	for (int i = a; i <= b; ++i) {
+		result += food_chain::verse(i);
+		if (i < b) {
+			result += "\n";
+		}
+	}
 
-	cout << result << endl;
+	cout << result;
 
 	return result;
 }
 
 string food_chain::sing()
 {
-	string result;
-	for (int i = 1; i <= 8; ++i) {
-		result += verse(i);
-		if (i < 8) {
-			result += "\n";
-		}
-	}
-	return result;
+	return food_chain::verses(1, 8);
 }

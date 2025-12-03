@@ -11,4 +11,4 @@ string reverse_string(string input) {
   return input;
 }
 
-}  // namespace reverse_string
+} // namespace reverse_string

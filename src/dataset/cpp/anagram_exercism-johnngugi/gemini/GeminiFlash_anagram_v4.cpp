@@ -16,7 +16,9 @@ vector<string> anagram::anagram::matches(vector<string> v) {
         string lower_candidate = candidate;
         transform(lower_candidate.begin(), lower_candidate.end(), lower_candidate.begin(), ::tolower);
 
-        if (lower_candidate.length() != word.length() || lower_candidate == lower_word) continue;
+        if (lower_candidate.length() != word.length() || lower_candidate == lower_word) {
+            continue;
+        }
 
         string sorted_candidate = lower_candidate;
         sort(sorted_candidate.begin(), sorted_candidate.end());

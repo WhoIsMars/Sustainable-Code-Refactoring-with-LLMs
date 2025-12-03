@@ -9,7 +9,7 @@ namespace squares {
 
     unsigned long long int sum_of_squares(const int n)
     {
-        // Use sum of squares formula: n(n+1)(2n+1)/6
+        // Use formula: sum of squares = n(n+1)(2n+1)/6
         const unsigned long long int n_ull = static_cast<unsigned long long int>(n);
         return n_ull * (n_ull + 1) * (2 * n_ull + 1) / 6;
     }

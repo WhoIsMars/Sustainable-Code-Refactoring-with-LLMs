@@ -42,3 +42,6 @@ class Triplet {
 }
 
 export default Triplet;
+export { triplets };
+
+export { triplet };

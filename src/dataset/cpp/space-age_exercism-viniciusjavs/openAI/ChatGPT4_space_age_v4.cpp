@@ -2,42 +2,23 @@
 
 namespace space_age {
 
-constexpr double EARTH_YEAR_SECONDS = 31557600.0;
+class SpaceAge {
+public:
+    explicit SpaceAge(long long seconds) : seconds_(seconds) {}
 
-inline double calculate_age(double seconds, double orbital_period) {
-    return seconds / (EARTH_YEAR_SECONDS * orbital_period);
-}
+    long long seconds() const { return seconds_; }
 
-double age_on_earth(double seconds) {
-    return calculate_age(seconds, 1.0);
-}
+    double on_earth() const { return seconds_ / 31557600.0; }
+    double on_mercury() const { return on_earth() / 0.2408467; }
+    double on_venus() const { return on_earth() / 0.61519726; }
+    double on_mars() const { return on_earth() / 1.8808158; }
+    double on_jupiter() const { return on_earth() / 11.862615; }
+    double on_saturn() const { return on_earth() / 29.447498; }
+    double on_uranus() const { return on_earth() / 84.016846; }
+    double on_neptune() const { return on_earth() / 164.79132; }
 
-double age_on_mercury(double seconds) {
-    return calculate_age(seconds, 0.2408467);
-}
-
-double age_on_venus(double seconds) {
-    return calculate_age(seconds, 0.61519726);
-}
-
-double age_on_mars(double seconds) {
-    return calculate_age(seconds, 1.8808158);
-}
-
-double age_on_jupiter(double seconds) {
-    return calculate_age(seconds, 11.862615);
-}
-
-double age_on_saturn(double seconds) {
-    return calculate_age(seconds, 29.447498);
-}
-
-double age_on_uranus(double seconds) {
-    return calculate_age(seconds, 84.016846);
-}
-
-double age_on_neptune(double seconds) {
-    return calculate_age(seconds, 164.79132);
-}
+private:
+    const long long seconds_;
+};
 
 }  // namespace space_age

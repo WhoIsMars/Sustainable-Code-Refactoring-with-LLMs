@@ -13,5 +13,5 @@ int preparationTime(int numberOfLayers) {
 }
 
 int elapsedTime(int numberOfLayers, int actualMinutesInOven) {
-    return (numberOfLayers << 1) + actualMinutesInOven; // Inline preparationTime for efficiency
+    return (numberOfLayers << 1) + actualMinutesInOven;
 }

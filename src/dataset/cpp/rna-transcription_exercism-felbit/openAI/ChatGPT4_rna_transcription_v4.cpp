@@ -11,13 +11,11 @@ namespace transcription {
         return it != dna_to_rna.end() ? it->second : 'A';
     }
 
-    std::string to_rna(const std::string& str)
+    std::string to_rna(std::string str)
     {
-        std::string result;
-        result.reserve(str.size());
-        for (char c : str) {
-            result.push_back(to_rna(c));
+        for (char &c : str) {
+            c = to_rna(c);
         }
-        return result;
+        return str;
     }
 }

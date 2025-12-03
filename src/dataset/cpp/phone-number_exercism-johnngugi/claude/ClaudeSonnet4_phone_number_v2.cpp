@@ -46,7 +46,7 @@ string phone_number::area_code() const
 
 phone_number::operator std::string() const
 {
-    return "(" + final.substr(0, 3) + ") " + final.substr(3, 3) + "-" + final.substr(6);
+    return "(" + final.substr(0, 3) + ") " + final.substr(3, 3) + "-" + final.substr(6, 4);
 }
 
 string phone_number::number() const

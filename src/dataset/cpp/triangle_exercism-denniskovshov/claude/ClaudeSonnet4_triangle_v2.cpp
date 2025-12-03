@@ -10,10 +10,14 @@ namespace triangle {
             return flavor::equilateral;
 
         // Check for degenerate (already computed sums in validate)
-        if (side1 + side2 == side3 || side1 + side3 == side2 || side2 + side3 == side1)
+        const double sum12 = side1 + side2;
+        const double sum13 = side1 + side3;
+        const double sum23 = side2 + side3;
+        
+        if (sum12 == side3 || sum13 == side2 || sum23 == side1)
             return flavor::degenerate;
 
-        // Check for isosceles (at least two sides equal)
+        // Check for isosceles (less restrictive than scalene)
         if (side1 == side2 || side1 == side3 || side2 == side3)
             return flavor::isosceles;
 
@@ -25,7 +29,11 @@ namespace triangle {
         if (side1 <= 0 || side2 <= 0 || side3 <= 0)
             throw std::domain_error("All sides must be > 0");
 
-        if (side1 + side2 < side3 || side1 + side3 < side2 || side2 + side3 < side1)
+        const double sum12 = side1 + side2;
+        const double sum13 = side1 + side3;
+        const double sum23 = side2 + side3;
+
+        if (sum12 < side3 || sum13 < side2 || sum23 < side1)
             throw std::domain_error("Sum of any two sides must be >= to the third side");
     }
 }  // namespace triangle

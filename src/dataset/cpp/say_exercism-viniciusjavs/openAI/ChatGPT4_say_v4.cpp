@@ -1,5 +1,5 @@
 #include "say.h"
 
 namespace say {
-    // No functionality provided to optimize.
+    // No implementation provided to optimize.
 } // namespace say

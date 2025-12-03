@@ -9,6 +9,6 @@ namespace grains
 
     constexpr unsigned long long total()
     {
-        return ~0ULL; // Maximum value for unsigned long long
+        return ~0ULL;
     }
 }

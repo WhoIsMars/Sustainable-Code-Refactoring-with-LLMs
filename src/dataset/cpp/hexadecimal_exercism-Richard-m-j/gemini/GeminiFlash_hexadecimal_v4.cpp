@@ -29,7 +29,7 @@ namespace hexadecimal
 
             if (result > (INT_MAX / 16)) return 0;
 
-            result = (result << 4) | digit;
+            result = result * 16 + digit;
         }
         return result;
     }

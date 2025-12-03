@@ -12,21 +12,19 @@ namespace roman
     string convert(int n)
     {
         string result;
-        result.reserve(16); // Reserve space for typical roman numeral length
+        result.reserve(16);
         
-        // Extract digits directly
-        int th = n / 1000;
+        int thousands_digit = n / 1000;
         n %= 1000;
-        int h = n / 100;
+        int hundreds_digit = n / 100;
         n %= 100;
-        int t = n / 10;
-        int o = n % 10;
+        int tens_digit = n / 10;
+        int ones_digit = n % 10;
         
-        // Build result string directly
-        result += thousands[th];
-        result += hundreds[h];
-        result += tens[t];
-        result += ones[o];
+        result += thousands[thousands_digit];
+        result += hundreds[hundreds_digit];
+        result += tens[tens_digit];
+        result += ones[ones_digit];
         
         return result;
     }

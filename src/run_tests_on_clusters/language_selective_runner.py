@@ -235,171 +235,167 @@ class LanguageSelectiveResultMerger:
         is_llm: bool = False
     ) -> Tuple[Dict[str, Any], LanguageExecutionReport]:
         """
-        Merge new results with existing data for selected languages
+        Merge new results with existing data using surgical replacement.
+
+        Policy:
+        - LLM: key = (entry_id, llm_type) - if exists, overwrite; else add
+        - Base: key = (entry_id) - if exists, overwrite; else add
+        - All other existing results are preserved unchanged
 
         Args:
             existing_data: Existing results data
             new_results: New results to merge
-            selected_languages: Set of languages to update
+            selected_languages: Set of languages (used for filtering new_results)
             is_llm: Whether these are LLM results
 
         Returns:
             Tuple of (merged_data, report)
         """
-        merged_data = existing_data.copy()
+        # Deep copy to avoid modifying original
+        merged_data = json.loads(json.dumps(existing_data)) if existing_data else {"results": {}}
+        if 'results' not in merged_data:
+            merged_data['results'] = {}
+
         existing_results = merged_data.get('results', {})
 
         # Create report
         report = LanguageExecutionReport(language="multi")
 
-        # Track results by language
+        # Convert new_results to dicts and group by language
         new_results_by_lang = defaultdict(list)
         for result in new_results:
-            lang = result.language if hasattr(result, 'language') else result.get('language')
-            if lang in selected_languages:
-                new_results_by_lang[lang].append(result)
+            result_dict = result.to_json() if hasattr(result, 'to_json') else result
+            lang = result_dict.get('language')
+            if lang:
+                new_results_by_lang[lang].append(result_dict)
 
-        # Process each selected language
-        for lang in selected_languages:
-            lang_key = self._normalize_language_key(lang, existing_results)
-            new_lang_results = new_results_by_lang.get(lang, [])
-
+        # Process each language that has new results
+        for lang, new_lang_results in new_results_by_lang.items():
             if not new_lang_results:
-                self.logger.info(f"No new results for language: {lang}")
                 continue
 
-            # Get existing results for this language
+            lang_key = self._normalize_language_key(lang, existing_results)
+
+            # Get existing results for this language (or empty list)
             existing_lang_results = existing_results.get(lang_key, [])
 
             if is_llm:
-                # For LLM results, track by (entry_id, llm_type) to preserve all variants
+                # === LLM MERGE: key = (entry_id, llm_type) ===
+                # Build index of ALL existing entries by (entry_id, llm_type)
                 existing_by_combo = {}
                 for entry in existing_lang_results:
-                    entry_id = entry['id']
+                    entry_id = entry.get('id')
                     for llm_result in entry.get('LLM_results', []):
                         llm_type = llm_result.get('LLM_type', 'unknown')
                         combo_key = (entry_id, llm_type)
                         existing_by_combo[combo_key] = entry
 
-                # Track which combos we've added (to avoid duplicates)
-                added_combos = set()
-                updated_results = []
-
-                # First, add all new results
-                for new_result in new_lang_results:
-                    new_result_dict = new_result.to_json() if hasattr(new_result, 'to_json') else new_result
+                # Build index of new results by (entry_id, llm_type)
+                new_by_combo = {}
+                for new_result_dict in new_lang_results:
                     entry_id = new_result_dict.get('id')
-
                     report.total_entries += 1
                     report.executed_entries += 1
 
-                    # Get LLM type for this result
                     llm_type = 'unknown'
                     if new_result_dict.get('LLM_results'):
                         llm_type = new_result_dict['LLM_results'][0].get('LLM_type', 'unknown')
 
                     combo_key = (entry_id, llm_type)
 
-                    # Validate new result
+                    # Validate and decide what to use
                     if self.validate_new_result(new_result_dict, is_llm):
-                        # Use new valid result
-                        updated_results.append(new_result_dict)
-                        added_combos.add(combo_key)
+                        new_by_combo[combo_key] = new_result_dict
                         report.successful_entries += 1
                         report.valid_new_results += 1
                         self.logger.debug(f"✓ Valid new result for {entry_id} ({llm_type})")
                     else:
-                        # New result invalid, preserve old if available
+                        # New result invalid
                         if combo_key in existing_by_combo:
-                            updated_results.append(existing_by_combo[combo_key])
-                            added_combos.add(combo_key)
+                            # Preserve old result (don't add to new_by_combo)
                             report.preserved_old_results += 1
                             report.invalid_new_results += 1
                             self.logger.warning(f"⚠ Invalid new result for {entry_id} ({llm_type}), preserved old")
-                            report.add_error(
-                                entry_id,
-                                "invalid_metrics",
-                                f"New result has invalid metrics for {llm_type}, preserved old result"
-                            )
+                            report.add_error(entry_id, "invalid_metrics",
+                                f"New result has invalid metrics for {llm_type}, preserved old result")
                         else:
-                            # No old result, keep invalid new one with error note
-                            updated_results.append(new_result_dict)
-                            added_combos.add(combo_key)
+                            # No old result, keep invalid new one
+                            new_by_combo[combo_key] = new_result_dict
                             report.failed_entries += 1
                             report.invalid_new_results += 1
                             self.logger.error(f"✗ Invalid new result for {entry_id} ({llm_type}), no old result available")
-                            report.add_error(
-                                entry_id,
-                                "invalid_metrics_no_fallback",
-                                f"New result invalid for {llm_type} and no previous result available"
-                            )
+                            report.add_error(entry_id, "invalid_metrics_no_fallback",
+                                f"New result invalid for {llm_type} and no previous result available")
 
-                # Then, preserve existing results for combos not in new results
-                for combo_key, existing_entry in existing_by_combo.items():
-                    if combo_key not in added_combos:
-                        updated_results.append(existing_entry)
-                        report.preserved_old_results += 1
-                        self.logger.debug(f"Preserved existing result for {combo_key[0]} ({combo_key[1]})")
+                # Merge: start with existing, overwrite/add with new
+                final_by_combo = existing_by_combo.copy()
+                for combo_key, new_entry in new_by_combo.items():
+                    if combo_key in final_by_combo:
+                        self.logger.debug(f"Overwriting existing result for {combo_key[0]} ({combo_key[1]})")
+                    else:
+                        self.logger.debug(f"Adding new result for {combo_key[0]} ({combo_key[1]})")
+                    final_by_combo[combo_key] = new_entry
+
+                # Convert back to list
+                updated_results = list(final_by_combo.values())
 
             else:
-                # For base results, use simple ID-based merging (original behavior)
-                existing_by_id = {
-                    entry['id']: entry
-                    for entry in existing_lang_results
-                }
+                # === BASE MERGE: key = (entry_id) ===
+                # Build index of existing entries by entry_id
+                existing_by_id = {entry.get('id'): entry for entry in existing_lang_results}
 
-                # Merge new results
-                updated_results = []
-                for new_result in new_lang_results:
-                    new_result_dict = new_result.to_json() if hasattr(new_result, 'to_json') else new_result
+                # Build index of new results by entry_id
+                new_by_id = {}
+                for new_result_dict in new_lang_results:
                     entry_id = new_result_dict.get('id')
-
                     report.total_entries += 1
                     report.executed_entries += 1
 
-                    # Validate new result
                     if self.validate_new_result(new_result_dict, is_llm):
-                        # Use new valid result
-                        updated_results.append(new_result_dict)
+                        new_by_id[entry_id] = new_result_dict
                         report.successful_entries += 1
                         report.valid_new_results += 1
                         self.logger.debug(f"✓ Valid new result for {entry_id}")
                     else:
-                        # New result invalid, preserve old if available
                         if entry_id in existing_by_id:
-                            updated_results.append(existing_by_id[entry_id])
+                            # Preserve old (don't add to new_by_id)
                             report.preserved_old_results += 1
                             report.invalid_new_results += 1
                             self.logger.warning(f"⚠ Invalid new result for {entry_id}, preserved old")
-                            report.add_error(
-                                entry_id,
-                                "invalid_metrics",
-                                "New result has invalid metrics, preserved old result"
-                            )
+                            report.add_error(entry_id, "invalid_metrics",
+                                "New result has invalid metrics, preserved old result")
                         else:
-                            # No old result, keep invalid new one with error note
-                            updated_results.append(new_result_dict)
+                            new_by_id[entry_id] = new_result_dict
                             report.failed_entries += 1
                             report.invalid_new_results += 1
                             self.logger.error(f"✗ Invalid new result for {entry_id}, no old result available")
-                            report.add_error(
-                                entry_id,
-                                "invalid_metrics_no_fallback",
-                                "New result invalid and no previous result available"
-                            )
+                            report.add_error(entry_id, "invalid_metrics_no_fallback",
+                                "New result invalid and no previous result available")
 
-            # Update merged data
+                # Merge: start with existing, overwrite/add with new
+                final_by_id = existing_by_id.copy()
+                for entry_id, new_entry in new_by_id.items():
+                    if entry_id in final_by_id:
+                        self.logger.debug(f"Overwriting existing result for {entry_id}")
+                    else:
+                        self.logger.debug(f"Adding new result for {entry_id}")
+                    final_by_id[entry_id] = new_entry
+
+                updated_results = list(final_by_id.values())
+
+            # Update merged data for this language
             merged_data['results'][lang_key] = updated_results
-            self.logger.info(f"Updated {len(updated_results)} results for language: {lang}")
+            self.logger.info(f"Merged {lang}: {len(existing_lang_results)} existing + {len(new_lang_results)} new → {len(updated_results)} total")
 
         # Update metadata
         merged_data['execution_date'] = time.strftime("%Y-%m-%d %H:%M:%S")
-        if 'execution_metadata' in merged_data:
-            merged_data['execution_metadata']['last_updated'] = time.strftime("%Y-%m-%d %H:%M:%S")
-            merged_data['execution_metadata']['selective_execution'] = {
-                'languages': list(selected_languages),
-                'timestamp': time.strftime("%Y-%m-%d %H:%M:%S")
-            }
+        if 'execution_metadata' not in merged_data:
+            merged_data['execution_metadata'] = {}
+        merged_data['execution_metadata']['last_updated'] = time.strftime("%Y-%m-%d %H:%M:%S")
+        merged_data['execution_metadata']['selective_execution'] = {
+            'languages': list(selected_languages),
+            'timestamp': time.strftime("%Y-%m-%d %H:%M:%S")
+        }
 
         return merged_data, report
 
@@ -417,13 +413,16 @@ class LanguageSelectiveResultMerger:
         # Return original if no match
         return lang
 
-    def create_backup(self, file_path: Path) -> Optional[Path]:
+    def create_backup(self, file_path: Path, backup_dir = "") -> Optional[Path]:
         """Create a backup of the existing file"""
         try:
             if not file_path.exists():
                 return None
+            
+            if backup_dir == "" :
+                backup_dir = file_path.parent
 
-            backup_path = file_path.parent / f"{file_path.stem}_backup_{int(time.time())}{file_path.suffix}"
+            backup_path = backup_dir / f"{file_path.stem}_backup_{int(time.time())}{file_path.suffix}"
             import shutil
             shutil.copy2(file_path, backup_path)
 

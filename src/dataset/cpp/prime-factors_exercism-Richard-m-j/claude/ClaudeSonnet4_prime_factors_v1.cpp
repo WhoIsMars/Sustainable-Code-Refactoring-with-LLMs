@@ -23,7 +23,7 @@ namespace prime_factors
             }
         }
         
-        // If n is still > 1, then it's a prime
+        // If n is still > 1, then it's a prime factor
         if (n > 1) {
             result.push_back(n);
         }
@@ -49,7 +49,7 @@ namespace prime_factors
             }
         }
         
-        // If n is still > 1, then it's a prime
+        // If n is still > 1, then it's a prime factor
         if (n > 1) {
             result.push_back(n);
         }

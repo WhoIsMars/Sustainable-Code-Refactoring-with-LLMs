@@ -1,17 +1,23 @@
 {
-  "execution_date": "2025-11-19 01:26:38",
+  "execution_date": "2025-11-28 05:29:11",
   "execution_metadata": {
     "total_tests": 1,
     "successful_tests": 1,
     "execution_time": "00h 00m 00s",
     "cluster": "cluster_ransom_note",
     "test_type": "llm_v2",
-    "last_updated": "2025-11-19 01:26:38",
+    "last_updated": "2025-11-28 05:29:11",
     "selective_execution": {
       "languages": [
-        "python"
+        "python",
+        "typescript",
+        "cpp",
+        "java",
+        "c",
+        "go",
+        "javascript"
       ],
-      "timestamp": "2025-11-19 01:26:38"
+      "timestamp": "2025-11-28 05:29:11"
     }
   },
   "results": {
@@ -22,11 +28,29 @@
         "language": "python",
         "LLM_results": [
           {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/ransom_note/claude/ClaudeSonnet4_ransom_note_v2.py",
+            "log": "",
+            "execution_time_ms": 50.0,
+            "CPU_usage": 26.0,
+            "RAM_usage": 13952,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "ransom_note_172",
+        "filename": "ransom_note.py",
+        "language": "python",
+        "LLM_results": [
+          {
             "LLM_type": "gemini",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/ransom_note/gemini/GeminiFlash_ransom_note_v2.py",
             "log": "",
-            "execution_time_ms": 60.0,
-            "CPU_usage": 67.0,
+            "execution_time_ms": 50.0,
+            "CPU_usage": 29.0,
             "RAM_usage": 13952,
             "regressionTestPassed": true,
             "success": true,
@@ -44,25 +68,7 @@
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/ransom_note/openAI/ChatGPT4_ransom_note_v2.py",
             "log": "",
             "execution_time_ms": 50.0,
-            "CPU_usage": 75.0,
-            "RAM_usage": 13952,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "ransom_note_172",
-        "filename": "ransom_note.py",
-        "language": "python",
-        "LLM_results": [
-          {
-            "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/ransom_note/claude/ClaudeSonnet4_ransom_note_v2.py",
-            "log": "",
-            "execution_time_ms": 40.0,
-            "CPU_usage": 72.0,
+            "CPU_usage": 22.0,
             "RAM_usage": 13952,
             "regressionTestPassed": true,
             "success": true,

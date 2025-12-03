@@ -23,3 +23,4 @@ class Anagram {
 }
 
 export default anagram;
+export { Anagram };

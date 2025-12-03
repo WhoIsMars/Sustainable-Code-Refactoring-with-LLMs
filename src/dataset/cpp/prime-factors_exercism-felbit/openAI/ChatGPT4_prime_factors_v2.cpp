@@ -20,7 +20,7 @@ namespace prime_factors
             }
         }
 
-        if (n > 1) {
+        if (n > 2) {
             result.push_back(n);
         }
 

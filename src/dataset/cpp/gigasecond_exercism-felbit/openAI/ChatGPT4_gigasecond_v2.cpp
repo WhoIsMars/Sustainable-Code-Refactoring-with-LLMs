@@ -2,7 +2,7 @@
 
 namespace gigasecond
 {
-    constexpr int GIGASECOND = 1000000000;
+    constexpr long GIGASECOND = 1000000000;
 
     boost::posix_time::ptime advance(const boost::posix_time::ptime& begin) noexcept
     {

@@ -27,7 +27,8 @@ class Alien {
         }
 
         bool collision_detection(const Alien& other) const {
-            return (x_coordinate == other.x_coordinate) && (y_coordinate == other.y_coordinate);
+            return  (x_coordinate == other.x_coordinate)
+                &&  (y_coordinate == other.y_coordinate);
         }
 
         int x_coordinate;

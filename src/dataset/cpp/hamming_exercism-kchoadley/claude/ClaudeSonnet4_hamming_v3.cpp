@@ -7,7 +7,7 @@ namespace hamming {
 
     int compute(std::string a, std::string b)
     {
-        const std::size_t len = a.length();
+        const auto len = a.length();
         if(len != b.length()) 
             throw std::domain_error("Nucleotides are of different length.");
 

@@ -1,5 +1,4 @@
 #include "prime_factors.h"
-#include <cmath>
 
 namespace prime_factors
 {
@@ -18,7 +17,7 @@ namespace prime_factors
             n /= 2;
         }
 
-        for (int i = 3; i <= std::sqrt(n); i += 2)
+        for (int i = 3; i * i <= n; i += 2)
         {
             while (n % i == 0)
             {

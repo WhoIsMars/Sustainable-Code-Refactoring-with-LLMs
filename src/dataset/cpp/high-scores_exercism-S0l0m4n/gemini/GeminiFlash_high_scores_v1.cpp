@@ -28,7 +28,7 @@ namespace arcade {
         // Return the top 3 scores for this session in descending order.
         std::vector<int> top_scores = scores;
         std::sort(top_scores.begin(), top_scores.end(), std::greater<int>());
-        top_scores.resize(std::min(3, (int)top_scores.size())); // Ensure size is not greater than 3
+        top_scores.resize(std::min(3, (int)top_scores.size())); // Avoid out-of-bounds access
         return top_scores;
     }
 

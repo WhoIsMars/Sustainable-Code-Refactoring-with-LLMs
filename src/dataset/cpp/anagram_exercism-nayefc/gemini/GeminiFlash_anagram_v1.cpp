@@ -19,7 +19,7 @@ std::vector<std::string> anagram::anagram::matches(std::vector<std::string> matc
     boost::to_lower(lower_word);
 
     for (const auto &match_word : match_list) {
-        if (!boost::iequals(match_word, lower_word) && is_anagram(match_word)) {
+        if (!boost::iequals(match_word, word) && is_anagram(match_word)) {
             all_matches.push_back(match_word);
         }
     }
@@ -33,10 +33,6 @@ bool anagram::anagram::is_anagram(std::string possible_match) {
 
     std::string lower_possible_match = possible_match;
     boost::to_lower(lower_possible_match);
-
-    if (lower_possible_match == word) {
-        return false;
-    }
 
     std::string sorted_possible_match = lower_possible_match;
     std::sort(sorted_possible_match.begin(), sorted_possible_match.end());

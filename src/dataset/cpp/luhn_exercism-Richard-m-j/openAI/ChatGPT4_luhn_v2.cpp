@@ -7,19 +7,18 @@ namespace luhn
     bool valid(const std::string& inputNumber)
     {
         int sum = 0;
-        int digitCount = 0;
-        bool doubleDigit = false;
+        int count = 0;
 
         for (auto it = inputNumber.rbegin(); it != inputNumber.rend(); ++it)
         {
             if (*it == ' ')
                 continue;
 
-            if (!std::isdigit(*it))
+            if (!isdigit(*it))
                 return false;
 
             int digit = *it - '0';
-            if (doubleDigit)
+            if (count % 2 == 1)
             {
                 digit *= 2;
                 if (digit > 9)
@@ -27,10 +26,9 @@ namespace luhn
             }
 
             sum += digit;
-            doubleDigit = !doubleDigit;
-            ++digitCount;
+            ++count;
         }
 
-        return digitCount > 1 && sum % 10 == 0;
+        return (count > 1 && sum % 10 == 0);
     }
 }

@@ -6,28 +6,30 @@
 
 namespace anagram {
 
-anagram::anagram(std::string word) : word(std::move(word)) {}
+anagram::anagram(const std::string& word) : word_(word) {}
 
-std::vector<std::string> anagram::matches(const std::list<std::string>& words) {
-    std::string key = this->word;
+std::vector<std::string> anagram::matches(const std::list<std::string>& words) const {
+    std::string key = word_;
     std::transform(key.begin(), key.end(), key.begin(), ::tolower);
     std::sort(key.begin(), key.end());
 
-    std::vector<std::string> ans;
+    std::vector<std::string> result;
     for (const auto& candidate : words) {
-        std::string word_to_match = candidate;
-        std::transform(word_to_match.begin(), word_to_match.end(), word_to_match.begin(), ::tolower);
+        std::string candidate_lower = candidate;
+        std::transform(candidate_lower.begin(), candidate_lower.end(), candidate_lower.begin(), ::tolower);
 
-        if (this->word.size() != candidate.size() || this->word == candidate) continue;
+        if (word_.size() != candidate.size() || word_ == candidate_lower) {
+            continue;
+        }
 
-        std::string sorted_candidate = word_to_match;
+        std::string sorted_candidate = candidate_lower;
         std::sort(sorted_candidate.begin(), sorted_candidate.end());
 
         if (key == sorted_candidate) {
-            ans.push_back(candidate);
+            result.push_back(candidate);
         }
     }
-    return ans;
+    return result;
 }
 
 } // namespace anagram

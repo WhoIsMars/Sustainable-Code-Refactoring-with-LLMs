@@ -1,17 +1,23 @@
 {
-  "execution_date": "2025-11-21 00:12:16",
+  "execution_date": "2025-12-02 08:22:53",
   "execution_metadata": {
     "total_tests": 32,
     "successful_tests": 31,
     "execution_time": "00h 00m 13s",
     "cluster": "cluster_collatz_conjecture",
     "test_type": "llm_v1",
-    "last_updated": "2025-11-21 00:12:16",
+    "last_updated": "2025-12-02 08:22:53",
     "selective_execution": {
       "languages": [
-        "cpp"
+        "go",
+        "java",
+        "typescript",
+        "c",
+        "python",
+        "cpp",
+        "javascript"
       ],
-      "timestamp": "2025-11-21 00:12:16"
+      "timestamp": "2025-12-02 08:22:53"
     }
   },
   "results": {
@@ -22,11 +28,11 @@
         "language": "python",
         "LLM_results": [
           {
-            "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/collatz-conjecture/claude/ClaudeSonnet4_collatz-conjecture_v1.py",
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/collatz-conjecture/gemini/GeminiFlash_collatz-conjecture_v1.py",
             "log": "",
-            "execution_time_ms": 40.0,
-            "CPU_usage": 74.0,
+            "execution_time_ms": 90.0,
+            "CPU_usage": 22.0,
             "RAM_usage": 13824,
             "regressionTestPassed": true,
             "success": true,
@@ -44,8 +50,8 @@
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/collatz-conjecture/openAI/ChatGPT4_collatz-conjecture_v1.py",
             "log": "",
             "execution_time_ms": 60.0,
-            "CPU_usage": 66.0,
-            "RAM_usage": 13696,
+            "CPU_usage": 25.0,
+            "RAM_usage": 13952,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -58,12 +64,120 @@
         "language": "python",
         "LLM_results": [
           {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/collatz-conjecture/claude/ClaudeSonnet4_collatz-conjecture_v1.py",
+            "log": "",
+            "execution_time_ms": 60.0,
+            "CPU_usage": 24.0,
+            "RAM_usage": 13952,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "python_collatz-conjecture_ThomasZumsteg",
+        "filename": "collatz_conjecture.py",
+        "language": "python",
+        "LLM_results": [
+          {
             "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/collatz-conjecture/gemini/GeminiFlash_collatz-conjecture_v1.py",
+            "path": "python/collatz-conjecture_exercism-ThomasZumsteg/gemini/GeminiFlash_collatz_conjecture_v1.py",
             "log": "",
             "execution_time_ms": 50.0,
-            "CPU_usage": 78.0,
-            "RAM_usage": 13952,
+            "CPU_usage": 43.0,
+            "RAM_usage": 13568,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "python_collatz-conjecture_ThomasZumsteg",
+        "filename": "collatz_conjecture.py",
+        "language": "python",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "python/collatz-conjecture_exercism-ThomasZumsteg/claude/ClaudeSonnet4_collatz_conjecture_v1.py",
+            "log": "",
+            "execution_time_ms": 50.0,
+            "CPU_usage": 44.0,
+            "RAM_usage": 13696,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "python_collatz-conjecture_fruit-in",
+        "filename": "collatz_conjecture.py",
+        "language": "python",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "python/collatz-conjecture_exercism-fruit-in/openAI/ChatGPT4_collatz_conjecture_v1.py",
+            "log": "",
+            "execution_time_ms": 40.0,
+            "CPU_usage": 56.0,
+            "RAM_usage": 13824,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "python_collatz-conjecture_ThomasZumsteg",
+        "filename": "collatz_conjecture.py",
+        "language": "python",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "python/collatz-conjecture_exercism-ThomasZumsteg/openAI/ChatGPT4_collatz_conjecture_v1.py",
+            "log": "",
+            "execution_time_ms": 40.0,
+            "CPU_usage": 64.0,
+            "RAM_usage": 13824,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "python_collatz-conjecture_fruit-in",
+        "filename": "collatz_conjecture.py",
+        "language": "python",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "python/collatz-conjecture_exercism-fruit-in/gemini/GeminiFlash_collatz_conjecture_v1.py",
+            "log": "",
+            "execution_time_ms": 30.0,
+            "CPU_usage": 73.0,
+            "RAM_usage": 13824,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "python_collatz-conjecture_fruit-in",
+        "filename": "collatz_conjecture.py",
+        "language": "python",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "python/collatz-conjecture_exercism-fruit-in/claude/ClaudeSonnet4_collatz_conjecture_v1.py",
+            "log": "",
+            "execution_time_ms": 30.0,
+            "CPU_usage": 71.0,
+            "RAM_usage": 13824,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -80,34 +194,48 @@
           {
             "LLM_type": "openAI",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/collatz_conjecture_Exercism_go_rootulp/openAI/ChatGPT4_collatz_conjecture_v1.go",
-            "log": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/collatz_conjecture_Exercism_go_rootulp/openAI/output.log",
-            "execution_time_ms": 6360,
-            "CPU_usage": 65.0,
-            "RAM_usage": 217428,
+            "log": "",
+            "execution_time_ms": 9250.0,
+            "CPU_usage": 28.0,
+            "RAM_usage": 218036,
             "regressionTestPassed": true,
-            "success": null,
+            "success": true,
             "error_message": null
-          },
+          }
+        ]
+      },
+      {
+        "id": "go_collatz_conjecture_Exercism (go_rootulp)",
+        "filename": "collatz_conjecture.go",
+        "language": "go",
+        "LLM_results": [
           {
             "LLM_type": "claude",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/collatz_conjecture_Exercism_go_rootulp/claude/ClaudeSonnet4_collatz_conjecture_v1.go",
-            "log": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/collatz_conjecture_Exercism_go_rootulp/claude/output.log",
-            "execution_time_ms": 6420,
-            "CPU_usage": 50.0,
-            "RAM_usage": 210572,
+            "log": "",
+            "execution_time_ms": 9040.000000000002,
+            "CPU_usage": 28.0,
+            "RAM_usage": 216864,
             "regressionTestPassed": true,
-            "success": null,
+            "success": true,
             "error_message": null
-          },
+          }
+        ]
+      },
+      {
+        "id": "go_collatz_conjecture_Exercism (go_rootulp)",
+        "filename": "collatz_conjecture.go",
+        "language": "go",
+        "LLM_results": [
           {
             "LLM_type": "gemini",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/collatz_conjecture_Exercism_go_rootulp/gemini/GeminiFlash_collatz_conjecture_v1.go",
-            "log": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/collatz_conjecture_Exercism_go_rootulp/gemini/output.log",
-            "execution_time_ms": 6210,
-            "CPU_usage": 50.0,
-            "RAM_usage": 218104,
+            "log": "",
+            "execution_time_ms": 9080.0,
+            "CPU_usage": 29.0,
+            "RAM_usage": 224512,
             "regressionTestPassed": true,
-            "success": null,
+            "success": true,
             "error_message": null
           }
         ]
@@ -120,34 +248,48 @@
           {
             "LLM_type": "openAI",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/collatz_conjecture_Exercism_go_ThomasZumsteg/openAI/ChatGPT4_collatz_conjecture_v1.go",
-            "log": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/collatz_conjecture_Exercism_go_ThomasZumsteg/openAI/output.log",
-            "execution_time_ms": 6340,
-            "CPU_usage": 66.0,
-            "RAM_usage": 227212,
+            "log": "",
+            "execution_time_ms": 10060.0,
+            "CPU_usage": 31.0,
+            "RAM_usage": 218632,
             "regressionTestPassed": true,
-            "success": null,
+            "success": true,
             "error_message": null
-          },
+          }
+        ]
+      },
+      {
+        "id": "go_collatz_conjecture_Exercism (go_ThomasZumsteg)",
+        "filename": "collatz_conjecture.go",
+        "language": "go",
+        "LLM_results": [
           {
             "LLM_type": "claude",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/collatz_conjecture_Exercism_go_ThomasZumsteg/claude/ClaudeSonnet4_collatz_conjecture_v1.go",
-            "log": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/collatz_conjecture_Exercism_go_ThomasZumsteg/claude/output.log",
-            "execution_time_ms": 6430,
-            "CPU_usage": 51.0,
-            "RAM_usage": 224180,
+            "log": "",
+            "execution_time_ms": 9970.0,
+            "CPU_usage": 33.0,
+            "RAM_usage": 219736,
             "regressionTestPassed": true,
-            "success": null,
+            "success": true,
             "error_message": null
-          },
+          }
+        ]
+      },
+      {
+        "id": "go_collatz_conjecture_Exercism (go_ThomasZumsteg)",
+        "filename": "collatz_conjecture.go",
+        "language": "go",
+        "LLM_results": [
           {
             "LLM_type": "gemini",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/collatz_conjecture_Exercism_go_ThomasZumsteg/gemini/GeminiFlash_collatz_conjecture_v1.go",
-            "log": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/collatz_conjecture_Exercism_go_ThomasZumsteg/gemini/output.log",
-            "execution_time_ms": 6250,
-            "CPU_usage": 50.0,
-            "RAM_usage": 227136,
+            "log": "",
+            "execution_time_ms": 10050.0,
+            "CPU_usage": 29.0,
+            "RAM_usage": 223612,
             "regressionTestPassed": true,
-            "success": null,
+            "success": true,
             "error_message": null
           }
         ]
@@ -160,34 +302,48 @@
           {
             "LLM_type": "openAI",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/collatz_conjecture_Exercism_go_thinkverse/openAI/ChatGPT4_collatz_conjecture_v1.go",
-            "log": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/collatz_conjecture_Exercism_go_thinkverse/openAI/output.log",
-            "execution_time_ms": 6140,
-            "CPU_usage": 62.0,
-            "RAM_usage": 217764,
+            "log": "",
+            "execution_time_ms": 9750.0,
+            "CPU_usage": 31.0,
+            "RAM_usage": 232048,
             "regressionTestPassed": true,
-            "success": null,
+            "success": true,
             "error_message": null
-          },
+          }
+        ]
+      },
+      {
+        "id": "go_collatz_conjecture_Exercism (go_thinkverse)",
+        "filename": "collatz_conjecture.go",
+        "language": "go",
+        "LLM_results": [
           {
             "LLM_type": "claude",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/collatz_conjecture_Exercism_go_thinkverse/claude/ClaudeSonnet4_collatz_conjecture_v1.go",
-            "log": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/collatz_conjecture_Exercism_go_thinkverse/claude/output.log",
-            "execution_time_ms": 6240,
-            "CPU_usage": 51.0,
-            "RAM_usage": 224088,
+            "log": "",
+            "execution_time_ms": 9890.0,
+            "CPU_usage": 26.0,
+            "RAM_usage": 226924,
             "regressionTestPassed": true,
-            "success": null,
+            "success": true,
             "error_message": null
-          },
+          }
+        ]
+      },
+      {
+        "id": "go_collatz_conjecture_Exercism (go_thinkverse)",
+        "filename": "collatz_conjecture.go",
+        "language": "go",
+        "LLM_results": [
           {
             "LLM_type": "gemini",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/collatz_conjecture_Exercism_go_thinkverse/gemini/GeminiFlash_collatz_conjecture_v1.go",
-            "log": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/collatz_conjecture_Exercism_go_thinkverse/gemini/output.log",
-            "execution_time_ms": 5970,
-            "CPU_usage": 74.0,
-            "RAM_usage": 213340,
+            "log": "",
+            "execution_time_ms": 9549.999999999998,
+            "CPU_usage": 26.0,
+            "RAM_usage": 219588,
             "regressionTestPassed": true,
-            "success": null,
+            "success": true,
             "error_message": null
           }
         ]
@@ -200,40 +356,90 @@
           {
             "LLM_type": "openAI",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/collatz_conjecture_Exercism_go_drapala/openAI/ChatGPT4_collatz_conjecture_v1.go",
-            "log": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/collatz_conjecture_Exercism_go_drapala/openAI/output.log",
-            "execution_time_ms": 6050,
-            "CPU_usage": 74.0,
-            "RAM_usage": 220448,
+            "log": "",
+            "execution_time_ms": 9440.0,
+            "CPU_usage": 27.0,
+            "RAM_usage": 216320,
             "regressionTestPassed": true,
-            "success": null,
+            "success": true,
             "error_message": null
-          },
+          }
+        ]
+      },
+      {
+        "id": "go_collatz_conjecture_Exercism (go_drapala)",
+        "filename": "collatz_conjecture.go",
+        "language": "go",
+        "LLM_results": [
           {
             "LLM_type": "claude",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/collatz_conjecture_Exercism_go_drapala/claude/ClaudeSonnet4_collatz_conjecture_v1.go",
-            "log": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/collatz_conjecture_Exercism_go_drapala/claude/output.log",
-            "execution_time_ms": 5670,
-            "CPU_usage": 181.0,
-            "RAM_usage": 219648,
+            "log": "",
+            "execution_time_ms": 9400.0,
+            "CPU_usage": 29.0,
+            "RAM_usage": 239684,
             "regressionTestPassed": true,
-            "success": null,
+            "success": true,
             "error_message": null
-          },
+          }
+        ]
+      },
+      {
+        "id": "go_collatz_conjecture_Exercism (go_drapala)",
+        "filename": "collatz_conjecture.go",
+        "language": "go",
+        "LLM_results": [
           {
             "LLM_type": "gemini",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/collatz_conjecture_Exercism_go_drapala/gemini/GeminiFlash_collatz_conjecture_v1.go",
-            "log": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/collatz_conjecture_Exercism_go_drapala/gemini/output.log",
-            "execution_time_ms": 5580,
-            "CPU_usage": 182.0,
-            "RAM_usage": 209928,
+            "log": "",
+            "execution_time_ms": 8830.0,
+            "CPU_usage": 66.0,
+            "RAM_usage": 226456,
             "regressionTestPassed": true,
-            "success": null,
+            "success": true,
             "error_message": null
           }
         ]
       }
     ],
     "c": [
+      {
+        "id": "c_collatz_conjecture_Exercism (ThomasZumsteg)",
+        "filename": "collatz_conjecture.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/collatz_conjecture_Exercism_ThomasZumsteg/openAI/ChatGPT4_collatz_conjecture_v1.c",
+            "log": "",
+            "execution_time_ms": 5.588312,
+            "CPU_usage": 11.0,
+            "RAM_usage": 8448,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "c_collatz_conjecture_Exercism (ThomasZumsteg)",
+        "filename": "collatz_conjecture.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/collatz_conjecture_Exercism_ThomasZumsteg/claude/ClaudeSonnet4_collatz_conjecture_v1.c",
+            "log": "",
+            "execution_time_ms": 9.807828,
+            "CPU_usage": 5.0,
+            "RAM_usage": 8320,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
       {
         "id": "c_collatz_conjecture_Exercism (m3g4d1v3r)",
         "filename": "collatz_conjecture.c",
@@ -243,9 +449,9 @@
             "LLM_type": "claude",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/collatz_conjecture_Exercism_m3g4d1v3r/claude/ClaudeSonnet4_collatz_conjecture_v1.c",
             "log": "",
-            "execution_time_ms": 0.782959,
-            "CPU_usage": 36.0,
-            "RAM_usage": 8704,
+            "execution_time_ms": 4.196057,
+            "CPU_usage": 26.0,
+            "RAM_usage": 8576,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -261,44 +467,8 @@
             "LLM_type": "openAI",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/collatz_conjecture_Exercism_m3g4d1v3r/openAI/ChatGPT4_collatz_conjecture_v1.c",
             "log": "",
-            "execution_time_ms": 1.285085,
-            "CPU_usage": 50.0,
-            "RAM_usage": 8704,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "c_collatz_conjecture_Exercism (ThomasZumsteg)",
-        "filename": "collatz_conjecture.c",
-        "language": "c",
-        "LLM_results": [
-          {
-            "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/collatz_conjecture_Exercism_ThomasZumsteg/openAI/ChatGPT4_collatz_conjecture_v1.c",
-            "log": "",
-            "execution_time_ms": 0.624334,
-            "CPU_usage": 33.0,
-            "RAM_usage": 8704,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "c_collatz_conjecture_Exercism (ThomasZumsteg)",
-        "filename": "collatz_conjecture.c",
-        "language": "c",
-        "LLM_results": [
-          {
-            "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/collatz_conjecture_Exercism_ThomasZumsteg/claude/ClaudeSonnet4_collatz_conjecture_v1.c",
-            "log": "",
-            "execution_time_ms": 1.069419,
-            "CPU_usage": 23.0,
+            "execution_time_ms": 19.880573,
+            "CPU_usage": 3.0,
             "RAM_usage": 8576,
             "regressionTestPassed": true,
             "success": true,
@@ -307,20 +477,20 @@
         ]
       },
       {
-        "id": "c_collatz_conjecture_Exercism (leleah)",
+        "id": "c_collatz_conjecture_Exercism (ThomasZumsteg)",
         "filename": "collatz_conjecture.c",
         "language": "c",
         "LLM_results": [
           {
-            "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/collatz_conjecture_Exercism_leleah/claude/ClaudeSonnet4_collatz_conjecture_v1.c",
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/collatz_conjecture_Exercism_ThomasZumsteg/gemini/GeminiFlash_collatz_conjecture_v1.c",
             "log": "",
-            "execution_time_ms": 0.519709,
-            "CPU_usage": 49.0,
-            "RAM_usage": 8704,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
+            "execution_time_ms": null,
+            "CPU_usage": null,
+            "RAM_usage": null,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 1"
           }
         ]
       },
@@ -333,63 +503,9 @@
             "LLM_type": "openAI",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/collatz_conjecture_Exercism_leleah/openAI/ChatGPT4_collatz_conjecture_v1.c",
             "log": "",
-            "execution_time_ms": 0.722418,
-            "CPU_usage": 45.0,
-            "RAM_usage": 8704,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "c_collatz_conjecture_Exercism (vlzware)",
-        "filename": "collatz_conjecture.c",
-        "language": "c",
-        "LLM_results": [
-          {
-            "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/collatz_conjecture_Exercism_vlzware/openAI/ChatGPT4_collatz_conjecture_v1.c",
-            "log": "",
-            "execution_time_ms": 0.483084,
-            "CPU_usage": 53.0,
-            "RAM_usage": 8704,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "c_collatz_conjecture_Exercism (vlzware)",
-        "filename": "collatz_conjecture.c",
-        "language": "c",
-        "LLM_results": [
-          {
-            "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/collatz_conjecture_Exercism_vlzware/claude/ClaudeSonnet4_collatz_conjecture_v1.c",
-            "log": "",
-            "execution_time_ms": 0.537042,
-            "CPU_usage": 47.0,
-            "RAM_usage": 8704,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "c_collatz_conjecture_Exercism (ThomasZumsteg)",
-        "filename": "collatz_conjecture.c",
-        "language": "c",
-        "LLM_results": [
-          {
-            "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/collatz_conjecture_Exercism_ThomasZumsteg/claude/ClaudeSonnet4_collatz_conjecture_v1.c",
-            "log": "",
-            "execution_time_ms": 3.150178,
-            "CPU_usage": 9.0,
-            "RAM_usage": 8704,
+            "execution_time_ms": 18.400108,
+            "CPU_usage": 1.0,
+            "RAM_usage": 8576,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -402,11 +518,29 @@
         "language": "c",
         "LLM_results": [
           {
-            "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/collatz_conjecture_Exercism_m3g4d1v3r/claude/ClaudeSonnet4_collatz_conjecture_v1.c",
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/collatz_conjecture_Exercism_m3g4d1v3r/gemini/GeminiFlash_collatz_conjecture_v1.c",
             "log": "",
-            "execution_time_ms": 11.177331,
-            "CPU_usage": 2.0,
+            "execution_time_ms": null,
+            "CPU_usage": null,
+            "RAM_usage": null,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 1"
+          }
+        ]
+      },
+      {
+        "id": "c_collatz_conjecture_Exercism (leleah)",
+        "filename": "collatz_conjecture.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/collatz_conjecture_Exercism_leleah/claude/ClaudeSonnet4_collatz_conjecture_v1.c",
+            "log": "",
+            "execution_time_ms": 9.078492,
+            "CPU_usage": 4.0,
             "RAM_usage": 8448,
             "regressionTestPassed": true,
             "success": true,
@@ -423,12 +557,30 @@
             "LLM_type": "openAI",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/collatz_conjecture_Exercism_vlzware/openAI/ChatGPT4_collatz_conjecture_v1.c",
             "log": "",
-            "execution_time_ms": 6.352439,
-            "CPU_usage": 3.0,
-            "RAM_usage": 8704,
+            "execution_time_ms": 18.844611,
+            "CPU_usage": 2.0,
+            "RAM_usage": 8576,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "c_collatz_conjecture_Exercism (leleah)",
+        "filename": "collatz_conjecture.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/collatz_conjecture_Exercism_leleah/gemini/GeminiFlash_collatz_conjecture_v1.c",
+            "log": "",
+            "execution_time_ms": null,
+            "CPU_usage": null,
+            "RAM_usage": null,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 1"
           }
         ]
       },
@@ -441,9 +593,9 @@
             "LLM_type": "claude",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/collatz_conjecture_Exercism_vlzware/claude/ClaudeSonnet4_collatz_conjecture_v1.c",
             "log": "",
-            "execution_time_ms": 7.492359,
-            "CPU_usage": 2.0,
-            "RAM_usage": 8704,
+            "execution_time_ms": 1.732423,
+            "CPU_usage": 19.0,
+            "RAM_usage": 8576,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -451,17 +603,53 @@
         ]
       },
       {
-        "id": "c_collatz_conjecture_Exercism (leleah)",
+        "id": "c_collatz_conjecture_Exercism (vlzware)",
+        "filename": "collatz_conjecture.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/collatz_conjecture_Exercism_vlzware/gemini/GeminiFlash_collatz_conjecture_v1.c",
+            "log": "",
+            "execution_time_ms": null,
+            "CPU_usage": null,
+            "RAM_usage": null,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 1"
+          }
+        ]
+      },
+      {
+        "id": "c_collatz-conjecture_leleah",
+        "filename": "collatz_conjecture.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/collatz-conjecture_exercism-leleah/gemini/GeminiFlash_collatz_conjecture_v1.c",
+            "log": "",
+            "execution_time_ms": null,
+            "CPU_usage": null,
+            "RAM_usage": null,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 1"
+          }
+        ]
+      },
+      {
+        "id": "c_collatz-conjecture_leleah",
         "filename": "collatz_conjecture.c",
         "language": "c",
         "LLM_results": [
           {
             "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/collatz_conjecture_Exercism_leleah/openAI/ChatGPT4_collatz_conjecture_v1.c",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/collatz-conjecture_exercism-leleah/openAI/ChatGPT4_collatz_conjecture_v1.c",
             "log": "",
-            "execution_time_ms": 11.00058,
-            "CPU_usage": 1.0,
-            "RAM_usage": 8704,
+            "execution_time_ms": 11.902418,
+            "CPU_usage": 4.0,
+            "RAM_usage": 8448,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -469,17 +657,17 @@
         ]
       },
       {
-        "id": "c_collatz_conjecture_Exercism (leleah)",
+        "id": "c_collatz-conjecture_leleah",
         "filename": "collatz_conjecture.c",
         "language": "c",
         "LLM_results": [
           {
             "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/collatz_conjecture_Exercism_leleah/claude/ClaudeSonnet4_collatz_conjecture_v1.c",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/collatz-conjecture_exercism-leleah/claude/ClaudeSonnet4_collatz_conjecture_v1.c",
             "log": "",
-            "execution_time_ms": 9.336824,
-            "CPU_usage": 2.0,
-            "RAM_usage": 8704,
+            "execution_time_ms": 2.833177,
+            "CPU_usage": 16.0,
+            "RAM_usage": 8576,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -487,17 +675,17 @@
         ]
       },
       {
-        "id": "c_collatz_conjecture_Exercism (m3g4d1v3r)",
+        "id": "c_collatz-conjecture_Manoloon",
         "filename": "collatz_conjecture.c",
         "language": "c",
         "LLM_results": [
           {
             "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/collatz_conjecture_Exercism_m3g4d1v3r/openAI/ChatGPT4_collatz_conjecture_v1.c",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/collatz-conjecture_exercism-Manoloon/openAI/ChatGPT4_collatz_conjecture_v1.c",
             "log": "",
-            "execution_time_ms": 21.076532,
-            "CPU_usage": 0.0,
-            "RAM_usage": 8704,
+            "execution_time_ms": 2.184383,
+            "CPU_usage": 17.0,
+            "RAM_usage": 8576,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -505,16 +693,250 @@
         ]
       },
       {
-        "id": "c_collatz_conjecture_Exercism (ThomasZumsteg)",
+        "id": "c_collatz-conjecture_Manoloon",
         "filename": "collatz_conjecture.c",
         "language": "c",
         "LLM_results": [
           {
-            "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/collatz_conjecture_Exercism_ThomasZumsteg/openAI/ChatGPT4_collatz_conjecture_v1.c",
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/collatz-conjecture_exercism-Manoloon/claude/ClaudeSonnet4_collatz_conjecture_v1.c",
             "log": "",
-            "execution_time_ms": 4.847559,
+            "execution_time_ms": 9.945662,
             "CPU_usage": 4.0,
+            "RAM_usage": 8576,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "c_collatz-conjecture_Manoloon",
+        "filename": "collatz_conjecture.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/collatz-conjecture_exercism-Manoloon/gemini/GeminiFlash_collatz_conjecture_v1.c",
+            "log": "",
+            "execution_time_ms": 2.123383,
+            "CPU_usage": 17.0,
+            "RAM_usage": 8576,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "c_collatz-conjecture_yorange1",
+        "filename": "collatz_conjecture.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "c/collatz-conjecture_exercism-yorange1/claude/ClaudeSonnet4_collatz_conjecture_v1.c",
+            "log": "",
+            "execution_time_ms": 4.799919,
+            "CPU_usage": 8.0,
+            "RAM_usage": 8320,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "c_collatz-conjecture_yorange1",
+        "filename": "collatz_conjecture.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "c/collatz-conjecture_exercism-yorange1/openAI/ChatGPT4_collatz_conjecture_v1.c",
+            "log": "",
+            "execution_time_ms": 1.243074,
+            "CPU_usage": 23.0,
+            "RAM_usage": 8192,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "c_collatz-conjecture_yorange1",
+        "filename": "collatz_conjecture.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "c/collatz-conjecture_exercism-yorange1/gemini/GeminiFlash_collatz_conjecture_v1.c",
+            "log": "",
+            "execution_time_ms": null,
+            "CPU_usage": null,
+            "RAM_usage": null,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 1"
+          }
+        ]
+      },
+      {
+        "id": "c_collatz-conjecture_viettronics868",
+        "filename": "collatz_conjecture.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "c/collatz-conjecture_exercism-viettronics868/claude/ClaudeSonnet4_collatz_conjecture_v1.c",
+            "log": "",
+            "execution_time_ms": 2.233527,
+            "CPU_usage": 31.0,
+            "RAM_usage": 8448,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "c_collatz-conjecture_viettronics868",
+        "filename": "collatz_conjecture.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "c/collatz-conjecture_exercism-viettronics868/openAI/ChatGPT4_collatz_conjecture_v1.c",
+            "log": "",
+            "execution_time_ms": 3.172119,
+            "CPU_usage": 26.0,
+            "RAM_usage": 8832,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "c_collatz-conjecture_viettronics868",
+        "filename": "collatz_conjecture.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "c/collatz-conjecture_exercism-viettronics868/gemini/GeminiFlash_collatz_conjecture_v1.c",
+            "log": "",
+            "execution_time_ms": 1.008955,
+            "CPU_usage": 42.0,
+            "RAM_usage": 8576,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "c_collatz-conjecture_EzequielMarcelo",
+        "filename": "collatz_conjecture.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "c/collatz-conjecture_exercism-EzequielMarcelo/openAI/ChatGPT4_collatz_conjecture_v1.c",
+            "log": "",
+            "execution_time_ms": 1.254886,
+            "CPU_usage": 28.0,
+            "RAM_usage": 8576,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "c_collatz-conjecture_EzequielMarcelo",
+        "filename": "collatz_conjecture.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "c/collatz-conjecture_exercism-EzequielMarcelo/gemini/GeminiFlash_collatz_conjecture_v1.c",
+            "log": "",
+            "execution_time_ms": null,
+            "CPU_usage": null,
+            "RAM_usage": null,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 1"
+          }
+        ]
+      },
+      {
+        "id": "c_collatz-conjecture_EzequielMarcelo",
+        "filename": "collatz_conjecture.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "c/collatz-conjecture_exercism-EzequielMarcelo/claude/ClaudeSonnet4_collatz_conjecture_v1.c",
+            "log": "",
+            "execution_time_ms": 1.387453,
+            "CPU_usage": 42.0,
+            "RAM_usage": 8576,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "c_collatz-conjecture_IrvinRamiA",
+        "filename": "collatz_conjecture.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "c/collatz-conjecture_exercism-IrvinRamiA/openAI/ChatGPT4_collatz_conjecture_v1.c",
+            "log": "",
+            "execution_time_ms": 4.917575,
+            "CPU_usage": 6.0,
+            "RAM_usage": 8576,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "c_collatz-conjecture_IrvinRamiA",
+        "filename": "collatz_conjecture.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "c/collatz-conjecture_exercism-IrvinRamiA/gemini/GeminiFlash_collatz_conjecture_v1.c",
+            "log": "",
+            "execution_time_ms": null,
+            "CPU_usage": null,
+            "RAM_usage": null,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 1"
+          }
+        ]
+      },
+      {
+        "id": "c_collatz-conjecture_IrvinRamiA",
+        "filename": "collatz_conjecture.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "c/collatz-conjecture_exercism-IrvinRamiA/claude/ClaudeSonnet4_collatz_conjecture_v1.c",
+            "log": "",
+            "execution_time_ms": 1.477671,
+            "CPU_usage": 19.0,
             "RAM_usage": 8704,
             "regressionTestPassed": true,
             "success": true,
@@ -533,134 +955,8 @@
             "LLM_type": "openAI",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/collatz_conjecture_Exercism_thefullarcticfox/openAI/ChatGPT4_collatz_conjecture_v1.cpp",
             "log": "",
-            "execution_time_ms": 1.745878,
-            "CPU_usage": 58.0,
-            "RAM_usage": 10496,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "cpp_collatz_conjecture_Exercism (thefullarcticfox)",
-        "filename": "collatz_conjecture.cpp",
-        "language": "cpp",
-        "LLM_results": [
-          {
-            "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/collatz_conjecture_Exercism_thefullarcticfox/claude/ClaudeSonnet4_collatz_conjecture_v1.cpp",
-            "log": "",
-            "execution_time_ms": 2.14842,
-            "CPU_usage": 54.0,
-            "RAM_usage": 10496,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "cpp_collatz_conjecture_Exercism (thefullarcticfox)",
-        "filename": "collatz_conjecture.cpp",
-        "language": "cpp",
-        "LLM_results": [
-          {
-            "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/collatz_conjecture_Exercism_thefullarcticfox/openAI/ChatGPT4_collatz_conjecture_v1.cpp",
-            "log": "",
-            "execution_time_ms": 7.590152,
-            "CPU_usage": 21.0,
-            "RAM_usage": 10368,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "cpp_collatz_conjecture_Exercism (thefullarcticfox)",
-        "filename": "collatz_conjecture.cpp",
-        "language": "cpp",
-        "LLM_results": [
-          {
-            "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/collatz_conjecture_Exercism_thefullarcticfox/claude/ClaudeSonnet4_collatz_conjecture_v1.cpp",
-            "log": "",
-            "execution_time_ms": 9.404158,
-            "CPU_usage": 14.0,
-            "RAM_usage": 10496,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "cpp_collatz_conjecture_Exercism (thefullarcticfox)",
-        "filename": "collatz_conjecture.cpp",
-        "language": "cpp",
-        "LLM_results": [
-          {
-            "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/collatz_conjecture_Exercism_thefullarcticfox/claude/ClaudeSonnet4_collatz_conjecture_v1.cpp",
-            "log": "",
-            "execution_time_ms": 5.486108,
-            "CPU_usage": 30.0,
-            "RAM_usage": 10496,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "cpp_collatz_conjecture_Exercism (thefullarcticfox)",
-        "filename": "collatz_conjecture.cpp",
-        "language": "cpp",
-        "LLM_results": [
-          {
-            "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/collatz_conjecture_Exercism_thefullarcticfox/openAI/ChatGPT4_collatz_conjecture_v1.cpp",
-            "log": "",
-            "execution_time_ms": 2.083493,
+            "execution_time_ms": 2.948256,
             "CPU_usage": 61.0,
-            "RAM_usage": 10496,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "cpp_collatz_conjecture_Exercism (thefullarcticfox)",
-        "filename": "collatz_conjecture.cpp",
-        "language": "cpp",
-        "LLM_results": [
-          {
-            "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/collatz_conjecture_Exercism_thefullarcticfox/openAI/ChatGPT4_collatz_conjecture_v1.cpp",
-            "log": "",
-            "execution_time_ms": 2.572156,
-            "CPU_usage": 64.0,
-            "RAM_usage": 10496,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "cpp_collatz_conjecture_Exercism (thefullarcticfox)",
-        "filename": "collatz_conjecture.cpp",
-        "language": "cpp",
-        "LLM_results": [
-          {
-            "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/collatz_conjecture_Exercism_thefullarcticfox/claude/ClaudeSonnet4_collatz_conjecture_v1.cpp",
-            "log": "",
-            "execution_time_ms": 3.783943,
-            "CPU_usage": 42.0,
             "RAM_usage": 10496,
             "regressionTestPassed": true,
             "success": true,
@@ -680,24 +976,6 @@
             "execution_time_ms": 5.628681,
             "CPU_usage": 42.0,
             "RAM_usage": 10240,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "cpp_collatz_conjecture_Exercism (thefullarcticfox)",
-        "filename": "collatz_conjecture.cpp",
-        "language": "cpp",
-        "LLM_results": [
-          {
-            "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/collatz_conjecture_Exercism_thefullarcticfox/openAI/ChatGPT4_collatz_conjecture_v1.cpp",
-            "log": "",
-            "execution_time_ms": 2.948256,
-            "CPU_usage": 61.0,
-            "RAM_usage": 10496,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -728,12 +1006,30 @@
         "language": "cpp",
         "LLM_results": [
           {
-            "LLM_type": "claude",
-            "path": "cpp/collatz-conjecture_exercism-stungeye/claude/ClaudeSonnet4_collatz_conjecture_v1.cpp",
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/collatz-conjecture_exercism-stungeye/gemini/GeminiFlash_collatz_conjecture_v1.cpp",
             "log": "",
-            "execution_time_ms": 2.024146,
-            "CPU_usage": 72.0,
-            "RAM_usage": 10496,
+            "execution_time_ms": null,
+            "CPU_usage": null,
+            "RAM_usage": null,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 2"
+          }
+        ]
+      },
+      {
+        "id": "cpp_collatz-conjecture_stungeye",
+        "filename": "collatz_conjecture.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/collatz-conjecture_exercism-stungeye/claude/ClaudeSonnet4_collatz_conjecture_v1.cpp",
+            "log": "",
+            "execution_time_ms": 13.016423,
+            "CPU_usage": 14.0,
+            "RAM_usage": 10240,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -755,6 +1051,388 @@
             "regressionTestPassed": false,
             "success": false,
             "error_message": "Docker exit code: 1"
+          }
+        ]
+      },
+      {
+        "id": "cpp_collatz-conjecture_tqa236",
+        "filename": "collatz_conjecture.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "cpp/collatz-conjecture_exercism-tqa236/gemini/GeminiFlash_collatz_conjecture_v1.cpp",
+            "log": "",
+            "execution_time_ms": null,
+            "CPU_usage": null,
+            "RAM_usage": null,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 2"
+          }
+        ]
+      },
+      {
+        "id": "cpp_collatz-conjecture_jpcenteno",
+        "filename": "collatz_conjecture.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "cpp/collatz-conjecture_exercism-jpcenteno/openAI/ChatGPT4_collatz_conjecture_v1.cpp",
+            "log": "",
+            "execution_time_ms": 7.056315,
+            "CPU_usage": 54.0,
+            "RAM_usage": 10240,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "cpp_collatz-conjecture_jpcenteno",
+        "filename": "collatz_conjecture.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "cpp/collatz-conjecture_exercism-jpcenteno/gemini/GeminiFlash_collatz_conjecture_v1.cpp",
+            "log": "",
+            "execution_time_ms": null,
+            "CPU_usage": null,
+            "RAM_usage": null,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 2"
+          }
+        ]
+      },
+      {
+        "id": "cpp_collatz-conjecture_jpcenteno",
+        "filename": "collatz_conjecture.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "cpp/collatz-conjecture_exercism-jpcenteno/claude/ClaudeSonnet4_collatz_conjecture_v1.cpp",
+            "log": "",
+            "execution_time_ms": 5.840398,
+            "CPU_usage": 56.0,
+            "RAM_usage": 10496,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "cpp_collatz-conjecture_tqa236",
+        "filename": "collatz_conjecture.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "cpp/collatz-conjecture_exercism-tqa236/openAI/ChatGPT4_collatz_conjecture_v1.cpp",
+            "log": "",
+            "execution_time_ms": 23.793231,
+            "CPU_usage": 38.0,
+            "RAM_usage": 10496,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "cpp_collatz-conjecture_tqa236",
+        "filename": "collatz_conjecture.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "cpp/collatz-conjecture_exercism-tqa236/claude/ClaudeSonnet4_collatz_conjecture_v1.cpp",
+            "log": "",
+            "execution_time_ms": 41.057469,
+            "CPU_usage": 22.0,
+            "RAM_usage": 10496,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      }
+    ],
+    "javascript": [
+      {
+        "id": "javascript_collatz-conjecture_ThomasZumsteg",
+        "filename": "collatz-conjecture.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "javascript/collatz-conjecture_exercism-ThomasZumsteg/openAI/ChatGPT4_collatz-conjecture_v1.js",
+            "log": "",
+            "execution_time_ms": 680.0,
+            "CPU_usage": 34.0,
+            "RAM_usage": 80620,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_collatz-conjecture_ThomasZumsteg",
+        "filename": "collatz-conjecture.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "javascript/collatz-conjecture_exercism-ThomasZumsteg/claude/ClaudeSonnet4_collatz-conjecture_v1.js",
+            "log": "",
+            "execution_time_ms": 680.0,
+            "CPU_usage": 33.0,
+            "RAM_usage": 81248,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_collatz-conjecture_ThomasZumsteg",
+        "filename": "collatz-conjecture.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "javascript/collatz-conjecture_exercism-ThomasZumsteg/gemini/GeminiFlash_collatz-conjecture_v1.js",
+            "log": "",
+            "execution_time_ms": 760.0,
+            "CPU_usage": 49.0,
+            "RAM_usage": 80720,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_collatz-conjecture_oguzsh",
+        "filename": "babel.config.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "javascript/collatz-conjecture_exercism-oguzsh/openAI/ChatGPT4_babel_v1.js",
+            "log": "",
+            "execution_time_ms": 740.0,
+            "CPU_usage": 45.0,
+            "RAM_usage": 81696,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_collatz-conjecture_oguzsh",
+        "filename": "babel.config.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "javascript/collatz-conjecture_exercism-oguzsh/gemini/GeminiFlash_babel_v1.js",
+            "log": "",
+            "execution_time_ms": 790.0,
+            "CPU_usage": 45.0,
+            "RAM_usage": 82136,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_collatz-conjecture_oguzsh",
+        "filename": "babel.config.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "javascript/collatz-conjecture_exercism-oguzsh/claude/ClaudeSonnet4_babel_v1.js",
+            "log": "",
+            "execution_time_ms": 720.0,
+            "CPU_usage": 41.0,
+            "RAM_usage": 83316,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_collatz-conjecture_elenamountz",
+        "filename": "collatz-conjecture.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "javascript/collatz-conjecture_exercism-elenamountz/claude/ClaudeSonnet4_collatz-conjecture_v1.js",
+            "log": "",
+            "execution_time_ms": 1120.0,
+            "CPU_usage": 30.0,
+            "RAM_usage": 83720,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_collatz-conjecture_elenamountz",
+        "filename": "collatz-conjecture.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "javascript/collatz-conjecture_exercism-elenamountz/openAI/ChatGPT4_collatz-conjecture_v1.js",
+            "log": "",
+            "execution_time_ms": 1250.0,
+            "CPU_usage": 31.0,
+            "RAM_usage": 84696,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_collatz-conjecture_elenamountz",
+        "filename": "collatz-conjecture.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "javascript/collatz-conjecture_exercism-elenamountz/gemini/GeminiFlash_collatz-conjecture_v1.js",
+            "log": "",
+            "execution_time_ms": 1020.0,
+            "CPU_usage": 55.0,
+            "RAM_usage": 83584,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      }
+    ],
+    "typescript": [
+      {
+        "id": "typescript_collatz-conjecture_wackerow",
+        "filename": "collatz-conjecture.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "typescript/collatz-conjecture_exercism-wackerow/openAI/ChatGPT4_collatz-conjecture_v1.ts",
+            "log": "",
+            "execution_time_ms": 841,
+            "CPU_usage": 60.0,
+            "RAM_usage": 128204,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "typescript_collatz-conjecture_wackerow",
+        "filename": "collatz-conjecture.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "typescript/collatz-conjecture_exercism-wackerow/claude/ClaudeSonnet4_collatz-conjecture_v1.ts",
+            "log": "",
+            "execution_time_ms": 943,
+            "CPU_usage": 57.0,
+            "RAM_usage": 129436,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "typescript_collatz-conjecture_wackerow",
+        "filename": "collatz-conjecture.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "typescript/collatz-conjecture_exercism-wackerow/gemini/GeminiFlash_collatz-conjecture_v1.ts",
+            "log": "",
+            "execution_time_ms": 880,
+            "CPU_usage": 54.0,
+            "RAM_usage": 127508,
+            "regressionTestPassed": false,
+            "success": true,
+            "error_message": "Docker exit code: 1"
+          }
+        ]
+      },
+      {
+        "id": "typescript_collatz-conjecture_samajammin",
+        "filename": "collatz-conjecture.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "typescript/collatz-conjecture_exercism-samajammin/openAI/ChatGPT4_collatz-conjecture_v1.ts",
+            "log": "",
+            "execution_time_ms": 559,
+            "CPU_usage": 61.0,
+            "RAM_usage": 130516,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "typescript_collatz-conjecture_samajammin",
+        "filename": "collatz-conjecture.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "typescript/collatz-conjecture_exercism-samajammin/claude/ClaudeSonnet4_collatz-conjecture_v1.ts",
+            "log": "",
+            "execution_time_ms": 689,
+            "CPU_usage": 61.0,
+            "RAM_usage": 127828,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "typescript_collatz-conjecture_samajammin",
+        "filename": "collatz-conjecture.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "typescript/collatz-conjecture_exercism-samajammin/gemini/GeminiFlash_collatz-conjecture_v1.ts",
+            "log": "",
+            "execution_time_ms": 563,
+            "CPU_usage": 56.0,
+            "RAM_usage": 128848,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
           }
         ]
       }

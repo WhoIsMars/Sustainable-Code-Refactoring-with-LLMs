@@ -2,16 +2,12 @@
 
 #include <stdexcept>
 #include <string>
-#include <sstream>
+#include <array>
 
 namespace say {
 
-    const std::string ones[10] = {"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
-    const std::string teens[10] = {"ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"};
-    const std::string tens[10] = {"", "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"};
-
     std::string in_english(long long number) {
-        if (number < 0 || number > 999999999999) {
+        if (number < 0 || number >= 1000000000000) {
             throw std::domain_error("Number must be between 0 and 999,999,999,999.");
         }
 
@@ -19,46 +15,80 @@ namespace say {
             return "zero";
         }
 
-        std::stringstream result;
+        std::string result;
 
+        // Define arrays for numbers up to 19 and tens
+        constexpr std::array<const char*, 20> ones = {
+            "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine",
+            "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"
+        };
+
+        constexpr std::array<const char*, 10> tens = {
+            "", "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"
+        };
+
+        // Helper function to convert numbers less than 1000
+        auto convert_less_than_1000 = [&](long long num) -> std::string {
+            std::string res;
+
+            if (num >= 100) {
+                res += ones[num / 100];
+                res += " hundred";
+                num %= 100;
+                if (num > 0) {
+                    res += " ";
+                }
+            }
+
+            if (num >= 20) {
+                res += tens[num / 10];
+                num %= 10;
+                if (num > 0) {
+                    res += "-";
+                }
+            }
+
+            if (num > 0) {
+                res += ones[num];
+            }
+
+            return res;
+        };
+
+        // Handle billions
         if (number >= 1000000000) {
-            result << in_english(number / 1000000000) << " billion";
+            result += convert_less_than_1000(number / 1000000000);
+            result += " billion";
             number %= 1000000000;
-            if (number > 0) result << " ";
+            if (number > 0) {
+                result += " ";
+            }
         }
 
+        // Handle millions
         if (number >= 1000000) {
-            result << in_english(number / 1000000) << " million";
+            result += convert_less_than_1000(number / 1000000);
+            result += " million";
             number %= 1000000;
-            if (number > 0) result << " ";
+            if (number > 0) {
+                result += " ";
+            }
         }
 
+        // Handle thousands
         if (number >= 1000) {
-            result << in_english(number / 1000) << " thousand";
+            result += convert_less_than_1000(number / 1000);
+            result += " thousand";
             number %= 1000;
-            if (number > 0) result << " ";
+            if (number > 0) {
+                result += " ";
+            }
         }
 
-        if (number >= 100) {
-            result << ones[number / 100] << " hundred";
-            number %= 100;
-            if (number > 0) result << " ";
-        }
+        // Handle remaining numbers less than 1000
+        result += convert_less_than_1000(number);
 
-        if (number >= 20) {
-            result << tens[number / 10];
-            number %= 10;
-            if (number > 0) result << "-";
-        } else if (number >= 10) {
-            result << teens[number - 10];
-            number = 0;
-        }
-
-        if (number > 0) {
-            result << ones[number];
-        }
-
-        return result.str();
+        return result;
     }
 
 } // namespace say

@@ -6,7 +6,10 @@ roster_t const &school::roster() const { return roster_; }
 
 void school::add(string name, int grade) {
   auto &students = roster_[grade];
-  students.insert(std::upper_bound(students.begin(), students.end(), name), std::move(name));
+  auto pos = std::lower_bound(students.begin(), students.end(), name);
+  if (pos == students.end() || *pos != name) {
+    students.insert(pos, std::move(name));
+  }
 }
 
 vector<string> school::grade(int grade) const {

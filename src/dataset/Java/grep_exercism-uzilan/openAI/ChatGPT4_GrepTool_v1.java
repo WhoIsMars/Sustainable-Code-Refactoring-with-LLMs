@@ -1,0 +1,73 @@
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+public class GrepTool {
+
+    public String grep(String text, List<String> flagList, List<String> fileNames) {
+        final Flags flags = new Flags(fileNames.size() > 1, flagList);
+
+        return fileNames.parallelStream()
+                .flatMap(file -> findInFile(text, file, flags))
+                .distinct()
+                .collect(Collectors.joining("\n"));
+    }
+
+    private Stream<String> findInFile(String text, String fileName, Flags flags) {
+        try (Stream<String> lines = Files.lines(Path.of(fileName))) {
+            return lines
+                    .filter(line -> matchLine(text, line, flags))
+                    .map(line -> getLine(fileName, line, flags))
+                    .limit(flags.containsOneMatchingLine ? 1 : Long.MAX_VALUE);
+        } catch (IOException e) {
+            e.printStackTrace();
+            return Stream.empty();
+        }
+    }
+
+    private boolean matchLine(String text, String line, Flags flags) {
+        boolean containsText = flags.matchEntireLines
+                ? flags.caseInsensitive ? line.equalsIgnoreCase(text) : line.equals(text)
+                : flags.caseInsensitive ? line.toLowerCase().contains(text.toLowerCase()) : line.contains(text);
+        return flags.invert != containsText;
+    }
+
+    private String getLine(String fileName, String line, Flags flags) {
+        if (flags.containsOneMatchingLine) {
+            return fileName;
+        }
+
+        StringBuilder sb = new StringBuilder();
+        if (flags.addFileName) {
+            sb.append(fileName).append(":");
+        }
+        if (flags.addRowNumber) {
+            sb.append(line).append(":");
+        }
+        sb.append(line);
+
+        return sb.toString();
+    }
+
+    class Flags {
+
+        final boolean addFileName;
+        final boolean addRowNumber;
+        final boolean containsOneMatchingLine;
+        final boolean caseInsensitive;
+        final boolean invert;
+        final boolean matchEntireLines;
+
+        private Flags(boolean addFileName, List<String> flagList) {
+            this.addFileName = addFileName;
+            this.addRowNumber = flagList.contains("-n");
+            this.containsOneMatchingLine = flagList.contains("-l");
+            this.caseInsensitive = flagList.contains("-i");
+            this.invert = flagList.contains("-v");
+            this.matchEntireLines = flagList.contains("-x");
+        }
+    }
+}

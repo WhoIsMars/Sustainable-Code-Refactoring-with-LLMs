@@ -4,13 +4,12 @@
  */
 
 #include "allergies.h"
-#include <array>
 
 using std::string;
 using std::unordered_set;
 
 namespace allergies {
-    constexpr std::array<const char*, 8> allergy_names {{
+    constexpr const char* allergy_names[] {
         "eggs",
         "peanuts",
         "shellfish",
@@ -19,22 +18,24 @@ namespace allergies {
         "chocolate",
         "pollen",
         "cats"
-    }};
+    };
+
+    constexpr auto allergy_names_size = sizeof(allergy_names) / sizeof(allergy_names[0]);
 
     allergy_test::allergy_test(int score_value) : score(score_value & 0xFF) {
         allergy_set.reserve(8);
-        for (int i = 0; i < 8; ++i) {
+        for (int i = 0; i < allergy_names_size; ++i) {
             if (score & (1 << i)) {
                 allergy_set.emplace(allergy_names[i]);
             }
         }
     }
 
-    bool allergy_test::is_allergic_to(string allergy_name) {
+    bool allergy_test::is_allergic_to(const string& allergy_name) const {
         return allergy_set.find(allergy_name) != allergy_set.end();
     }
 
-    unordered_set<string> allergy_test::get_allergies() {
+    const unordered_set<string>& allergy_test::get_allergies() const {
         return allergy_set;
     }
 }  // namespace allergies

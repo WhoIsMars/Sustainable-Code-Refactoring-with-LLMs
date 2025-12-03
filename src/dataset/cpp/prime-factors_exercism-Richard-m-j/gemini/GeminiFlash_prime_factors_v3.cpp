@@ -5,19 +5,28 @@ namespace prime_factors
     vector<int> of(int n)
     {
         vector<int> result;
-        int num = n;
-        for (int i = 2; i * i <= num; ++i)
-        {
-            while (num % i == 0)
-            {
+        factor(n, result);
+
+        return result;
+    }
+    void factor(int n, vector<int> &result)
+    {
+        if (n <= 1) return;
+
+        while (n % 2 == 0) {
+            result.push_back(2);
+            n /= 2;
+        }
+
+        for (int i = 3; i * i <= n; i += 2) {
+            while (n % i == 0) {
                 result.push_back(i);
-                num /= i;
+                n /= i;
             }
         }
-        if (num > 1)
-        {
-            result.push_back(num);
+
+        if (n > 2) {
+            result.push_back(n);
         }
-        return result;
     }
 } // namespace prime_factors

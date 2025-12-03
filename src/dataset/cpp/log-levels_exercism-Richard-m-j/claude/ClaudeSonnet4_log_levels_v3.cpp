@@ -21,7 +21,7 @@ namespace log_line {
         }
         
         string result;
-        result.reserve(log.length() + 3);
+        result.reserve(log.length() + 4);
         result.append(log, space_pos + 1, string::npos);
         result.append(" (");
         result.append(log, 1, bracket_pos - 1);

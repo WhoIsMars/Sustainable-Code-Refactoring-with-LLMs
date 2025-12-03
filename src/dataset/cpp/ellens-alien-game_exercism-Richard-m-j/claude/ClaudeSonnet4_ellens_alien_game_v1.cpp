@@ -15,12 +15,7 @@ namespace targets
         
         inline bool hit() noexcept
         {
-            if (health > 0)
-            {
-                health--;
-                return true;
-            }
-            return false;
+            return health > 0 ? (--health, true) : false;
         }
         
         inline bool is_alive() const noexcept
@@ -37,7 +32,7 @@ namespace targets
         
         inline bool collision_detection(const Alien& other) const noexcept
         {
-            return (x_coordinate == other.x_coordinate && y_coordinate == other.y_coordinate);
+            return x_coordinate == other.x_coordinate && y_coordinate == other.y_coordinate;
         }
 
     private:

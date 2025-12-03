@@ -1,5 +1,7 @@
 #include "grade_school.h"
-#include <algorithm>
+#include <map>
+#include <vector>
+#include <string>
 using namespace std;
 using namespace grade_school;
 

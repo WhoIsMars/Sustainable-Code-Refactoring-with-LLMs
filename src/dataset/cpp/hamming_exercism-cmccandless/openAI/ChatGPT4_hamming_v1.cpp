@@ -10,13 +10,5 @@ int hamming::compute(const string& a, const string& b)
         throw domain_error("a.size() != b.size()");
     }
 
-    int result = 0;
-    for (size_t i = 0, n = a.size(); i < n; ++i)
-    {
-        if (a[i] != b[i])
-        {
-            ++result;
-        }
-    }
-    return result;
+    return inner_product(a.begin(), a.end(), b.begin(), 0, plus<>(), not_equal_to<>());
 }

@@ -9,6 +9,6 @@ namespace grains
 
     unsigned long long total()
     {
-        return ~0ULL; // Equivalent to 2^64 - 1
+        return (1ULL << 64) - 1;
     }
 }

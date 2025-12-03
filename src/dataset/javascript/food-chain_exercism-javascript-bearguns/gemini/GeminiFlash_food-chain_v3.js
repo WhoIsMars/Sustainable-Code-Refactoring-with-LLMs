@@ -41,3 +41,4 @@ FoodChain.prototype.verses = function(a, b) {
 };
 
 export default FoodChain;
+export { song };

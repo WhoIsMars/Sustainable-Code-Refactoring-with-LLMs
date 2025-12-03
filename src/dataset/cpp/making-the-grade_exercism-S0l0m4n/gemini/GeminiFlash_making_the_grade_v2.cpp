@@ -9,25 +9,19 @@ const int fail_threshold = 40;
 // Round down all provided student scores.
 std::vector<int> round_down_scores(const std::vector<double>& student_scores) {
     std::vector<int> rounded_scores(student_scores.size());
-    std::transform(student_scores.begin(), student_scores.end(), rounded_scores.begin(), [](double score) {
-        return static_cast<int>(score);
-    });
+    std::transform(student_scores.begin(), student_scores.end(), rounded_scores.begin(), [](double score) { return static_cast<int>(score); });
     return rounded_scores;
 }
 
 // Count the number of failing students out of the group provided.
 int count_failed_students(const std::vector<int>& student_scores) {
-    return std::count_if(student_scores.begin(), student_scores.end(), [](int score) {
-        return score <= fail_threshold;
-    });
+    return std::count_if(student_scores.begin(), student_scores.end(), [](int score) { return score <= fail_threshold; });
 }
 
 // Determine how many of the provided student scores were 'the best' based on the provided threshold.
 std::vector<int> above_threshold(const std::vector<int>& student_scores, int threshold) {
     std::vector<int> best_scores;
-    std::copy_if(student_scores.begin(), student_scores.end(), std::back_inserter(best_scores), [threshold](int score) {
-        return score >= threshold;
-    });
+    std::copy_if(student_scores.begin(), student_scores.end(), std::back_inserter(best_scores), [threshold](int score) { return score >= threshold; });
     return best_scores;
 }
 
@@ -69,7 +63,6 @@ std::string perfect_score(const std::vector<int>& student_scores, const std::vec
         auto index = std::distance(student_scores.begin(), it);
         return student_names[index];
     }
-    else {
+    else
         return "";
-    }
 }

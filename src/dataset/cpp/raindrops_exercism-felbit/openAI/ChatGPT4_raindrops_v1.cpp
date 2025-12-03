@@ -8,7 +8,7 @@ namespace raindrops
         const bool divisible_by_5 = (number % 5 == 0);
         const bool divisible_by_7 = (number % 7 == 0);
 
-        if (!divisible_by_3 && !divisible_by_5 && !divisible_by_7)
+        if (!divisible_by_3 && !divisible_by_5 && !divisible_by_7) 
         {
             return std::to_string(number);
         }

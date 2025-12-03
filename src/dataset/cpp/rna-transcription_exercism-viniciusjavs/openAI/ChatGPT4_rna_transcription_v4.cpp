@@ -13,8 +13,8 @@ char to_rna(char dna) {
     }
 }
 
-std::string to_rna(const std::string& strand) {
-    std::string rna;
+string to_rna(const string& strand) {
+    string rna;
     rna.reserve(strand.size());
     for (char nucleotide : strand) {
         rna.push_back(to_rna(nucleotide));

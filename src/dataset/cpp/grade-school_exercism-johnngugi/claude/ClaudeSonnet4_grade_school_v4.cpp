@@ -6,7 +6,7 @@ using namespace grade_school;
 map<int, vector<string> > school::roster()
 {
 	for (auto& grade_pair : grades) {
-		if (!grade_pair.second.empty() && !is_sorted(grade_pair.second.begin(), grade_pair.second.end())) {
+		if (!is_sorted(grade_pair.second.begin(), grade_pair.second.end())) {
 			sort(grade_pair.second.begin(), grade_pair.second.end());
 		}
 	}
@@ -22,7 +22,7 @@ vector<string> school::grade(int n)
 {
 	auto it = grades.find(n);
 	if (it != grades.end()) {
-		if (!it->second.empty() && !is_sorted(it->second.begin(), it->second.end())) {
+		if (!is_sorted(it->second.begin(), it->second.end())) {
 			sort(it->second.begin(), it->second.end());
 		}
 		return it->second;

@@ -4,7 +4,7 @@
 
 int squares::square_of_sums(int n) {
     long long sum = static_cast<long long>(n) * (n + 1) / 2;
-    return sum * sum;
+    return static_cast<int>(sum * sum);
 }
 
 int squares::sum_of_squares(int n) {

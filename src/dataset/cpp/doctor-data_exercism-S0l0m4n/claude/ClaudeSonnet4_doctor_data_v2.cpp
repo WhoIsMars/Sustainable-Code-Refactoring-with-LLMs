@@ -7,7 +7,7 @@
 using heaven::Vessel;
 
 Vessel Vessel::replicate(std::string name) {
-    return {std::move(name), this->generation + 1, this->current_system};
+    return Vessel{std::move(name), this->generation + 1, this->current_system};
 }
 
 void Vessel::make_buster() {

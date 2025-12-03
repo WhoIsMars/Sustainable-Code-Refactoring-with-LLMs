@@ -22,9 +22,9 @@ std::vector<std::string> anagram::anagram::matches(const std::vector<std::string
 }
 
 bool anagram::anagram::is_anagram(const std::string& possible_match) {
-    if (possible_match.size() != this->word.size()) return false;
+    if (possible_match.size() != this->sorted.size()) return false;
     std::string lower_match = possible_match;
     std::transform(lower_match.begin(), lower_match.end(), lower_match.begin(), ::tolower);
     std::sort(lower_match.begin(), lower_match.end());
-    return sorted == lower_match;
+    return this->sorted == lower_match;
 }

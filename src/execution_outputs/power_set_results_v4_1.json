@@ -1,17 +1,23 @@
 {
-  "execution_date": "2025-11-19 02:01:05",
+  "execution_date": "2025-11-28 03:24:24",
   "execution_metadata": {
     "total_tests": 1,
     "successful_tests": 1,
     "execution_time": "00h 00m 00s",
     "cluster": "cluster_power_set",
     "test_type": "llm_v4",
-    "last_updated": "2025-11-19 02:01:05",
+    "last_updated": "2025-11-28 03:24:24",
     "selective_execution": {
       "languages": [
-        "python"
+        "python",
+        "typescript",
+        "cpp",
+        "java",
+        "c",
+        "go",
+        "javascript"
       ],
-      "timestamp": "2025-11-19 02:01:05"
+      "timestamp": "2025-11-28 03:24:24"
     }
   },
   "results": {
@@ -22,12 +28,30 @@
         "language": "python",
         "LLM_results": [
           {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/power_set/openAI/ChatGPT4_power_set_v4.py",
+            "log": "",
+            "execution_time_ms": 40.0,
+            "CPU_usage": 45.0,
+            "RAM_usage": 14080,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 1"
+          }
+        ]
+      },
+      {
+        "id": "power_set_258",
+        "filename": "power_set.py",
+        "language": "python",
+        "LLM_results": [
+          {
             "LLM_type": "claude",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/power_set/claude/ClaudeSonnet4_power_set_v4.py",
             "log": "",
-            "execution_time_ms": 60.0,
-            "CPU_usage": 78.0,
-            "RAM_usage": 14080,
+            "execution_time_ms": 30.0,
+            "CPU_usage": 26.0,
+            "RAM_usage": 13824,
             "regressionTestPassed": false,
             "success": false,
             "error_message": "Docker exit code: 1"
@@ -43,27 +67,9 @@
             "LLM_type": "gemini",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/power_set/gemini/GeminiFlash_power_set_v4.py",
             "log": "",
-            "execution_time_ms": 50.0,
-            "CPU_usage": 75.0,
+            "execution_time_ms": 40.0,
+            "CPU_usage": 26.0,
             "RAM_usage": 13824,
-            "regressionTestPassed": false,
-            "success": false,
-            "error_message": "Docker exit code: 1"
-          }
-        ]
-      },
-      {
-        "id": "power_set_258",
-        "filename": "power_set.py",
-        "language": "python",
-        "LLM_results": [
-          {
-            "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/power_set/openAI/ChatGPT4_power_set_v4.py",
-            "log": "",
-            "execution_time_ms": 60.0,
-            "CPU_usage": 74.0,
-            "RAM_usage": 13952,
             "regressionTestPassed": false,
             "success": false,
             "error_message": "Docker exit code: 1"

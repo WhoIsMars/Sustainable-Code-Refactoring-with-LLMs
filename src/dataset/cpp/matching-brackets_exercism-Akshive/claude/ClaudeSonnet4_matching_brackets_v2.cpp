@@ -31,7 +31,6 @@ namespace matching_brackets {
                     break;
             }
         }
-        
         return count_paren == 0 && count_brace == 0 && count_bracket == 0;
     }
 }  // namespace matching_brackets

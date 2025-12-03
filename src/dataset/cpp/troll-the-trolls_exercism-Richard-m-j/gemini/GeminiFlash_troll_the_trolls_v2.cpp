@@ -44,7 +44,7 @@ namespace hellmath
         case AccountStatus::mod:
             return true;
         default:
-            return false; // Added default case for safety
+            return false; // Handle unexpected cases.  Important for robustness.
         }
     }
 

@@ -9,4 +9,4 @@ std::string reverse_string(std::string sentence) {
   return sentence;
 }
 
-}  // namespace reverse_string
+}

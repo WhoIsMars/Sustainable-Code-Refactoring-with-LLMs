@@ -1,0 +1,23 @@
+#include "hamming.h"
+#include <string.h>
+
+int compute(const char *lhs, const char *rhs) 
+{
+    if (lhs == NULL || rhs == NULL) 
+        return -1;
+
+    size_t length1 = strlen(lhs);
+    size_t length2 = strlen(rhs);
+
+    if (length1 != length2) 
+        return -1;
+
+    int distance = 0;
+    for (size_t i = 0; i < length1; i++) 
+    {
+        if (lhs[i] != rhs[i]) 
+            distance++;
+    }
+
+    return distance;
+}

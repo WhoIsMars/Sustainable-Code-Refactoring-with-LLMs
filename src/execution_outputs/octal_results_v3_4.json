@@ -1,17 +1,23 @@
 {
-  "execution_date": "2025-11-19 18:17:05",
+  "execution_date": "2025-12-03 00:59:22",
   "execution_metadata": {
     "total_tests": 6,
     "successful_tests": 6,
     "execution_time": "00h 00m 09s",
     "cluster": "cluster_octal",
     "test_type": "llm_v3",
-    "last_updated": "2025-11-19 18:17:05",
+    "last_updated": "2025-12-03 00:59:22",
     "selective_execution": {
       "languages": [
-        "java"
+        "cpp",
+        "c",
+        "java",
+        "javascript",
+        "typescript",
+        "python",
+        "go"
       ],
-      "timestamp": "2025-11-19 18:17:05"
+      "timestamp": "2025-12-03 00:59:22"
     }
   },
   "results": {
@@ -22,30 +28,12 @@
         "language": "javascript",
         "LLM_results": [
           {
-            "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/octal_exercism-javascript-ThomasZumsteg/gemini/GeminiFlash_octal_v3.js",
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/octal_exercism-javascript-ThomasZumsteg/claude/ClaudeSonnet4_octal_v3.js",
             "log": "",
-            "execution_time_ms": 180,
-            "CPU_usage": 17.0,
-            "RAM_usage": 66924,
-            "regressionTestPassed": false,
-            "success": false,
-            "error_message": "Docker exit code: 1"
-          }
-        ]
-      },
-      {
-        "id": "javascript_octal_exercism-javascript-ThomasZumsteg_ThomasZumsteg",
-        "filename": "octal.js",
-        "language": "javascript",
-        "LLM_results": [
-          {
-            "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/octal_exercism-javascript-ThomasZumsteg/openAI/ChatGPT4_octal_v3.js",
-            "log": "",
-            "execution_time_ms": 560.0,
-            "CPU_usage": 49.0,
-            "RAM_usage": 82288,
+            "execution_time_ms": 820.0000000000001,
+            "CPU_usage": 21.0,
+            "RAM_usage": 82828,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -58,12 +46,84 @@
         "language": "javascript",
         "LLM_results": [
           {
-            "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/octal_exercism-javascript-ThomasZumsteg/claude/ClaudeSonnet4_octal_v3.js",
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/octal_exercism-javascript-ThomasZumsteg/gemini/GeminiFlash_octal_v3.js",
             "log": "",
-            "execution_time_ms": 490.0,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80740,
+            "execution_time_ms": 850.0000000000001,
+            "CPU_usage": 18.0,
+            "RAM_usage": 82772,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_octal_exercism-javascript-ThomasZumsteg_ThomasZumsteg",
+        "filename": "octal.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/octal_exercism-javascript-ThomasZumsteg/openAI/ChatGPT4_octal_v3.js",
+            "log": "",
+            "execution_time_ms": 850.0000000000001,
+            "CPU_usage": 20.0,
+            "RAM_usage": 83076,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_octal_ThomasZumsteg",
+        "filename": "octal.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "javascript/octal_exercism-ThomasZumsteg/gemini/GeminiFlash_octal_v3.js",
+            "log": "",
+            "execution_time_ms": 449.99999999999994,
+            "CPU_usage": 31.0,
+            "RAM_usage": 79096,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_octal_ThomasZumsteg",
+        "filename": "octal.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "javascript/octal_exercism-ThomasZumsteg/openAI/ChatGPT4_octal_v3.js",
+            "log": "",
+            "execution_time_ms": 449.99999999999994,
+            "CPU_usage": 29.0,
+            "RAM_usage": 80404,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_octal_ThomasZumsteg",
+        "filename": "octal.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "javascript/octal_exercism-ThomasZumsteg/claude/ClaudeSonnet4_octal_v3.js",
+            "log": "",
+            "execution_time_ms": 459.99999999999994,
+            "CPU_usage": 30.0,
+            "RAM_usage": 80648,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -191,33 +251,47 @@
             "LLM_type": "openAI",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/octal_Exercism_go_ThomasZumsteg/openAI/ChatGPT4_octal_v3.go",
             "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
+            "execution_time_ms": 12700.0,
+            "CPU_usage": 55.0,
+            "RAM_usage": 223136,
             "regressionTestPassed": true,
-            "success": null,
+            "success": true,
             "error_message": null
-          },
-          {
-            "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/octal_Exercism_go_ThomasZumsteg/claude/ClaudeSonnet4_octal_v3.go",
-            "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
-            "regressionTestPassed": true,
-            "success": null,
-            "error_message": null
-          },
+          }
+        ]
+      },
+      {
+        "id": "go_octal_Exercism (go_ThomasZumsteg)",
+        "filename": "octal.go",
+        "language": "go",
+        "LLM_results": [
           {
             "LLM_type": "gemini",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/octal_Exercism_go_ThomasZumsteg/gemini/GeminiFlash_octal_v3.go",
             "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
+            "execution_time_ms": 11810.0,
+            "CPU_usage": 52.0,
+            "RAM_usage": 227768,
             "regressionTestPassed": true,
-            "success": null,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "go_octal_Exercism (go_ThomasZumsteg)",
+        "filename": "octal.go",
+        "language": "go",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/octal_Exercism_go_ThomasZumsteg/claude/ClaudeSonnet4_octal_v3.go",
+            "log": "",
+            "execution_time_ms": 12100.000000000002,
+            "CPU_usage": 48.0,
+            "RAM_usage": 225708,
+            "regressionTestPassed": true,
+            "success": true,
             "error_message": null
           }
         ]

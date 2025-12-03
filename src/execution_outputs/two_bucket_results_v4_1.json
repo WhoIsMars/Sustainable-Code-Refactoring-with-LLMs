@@ -1,17 +1,23 @@
 {
-  "execution_date": "2025-11-21 12:16:39",
+  "execution_date": "2025-12-03 12:46:29",
   "execution_metadata": {
     "total_tests": 38,
     "successful_tests": 38,
     "execution_time": "00h 00m 23s",
     "cluster": "cluster_two_bucket",
     "test_type": "llm_v4",
-    "last_updated": "2025-11-21 12:16:39",
+    "last_updated": "2025-12-03 12:46:29",
     "selective_execution": {
       "languages": [
-        "cpp"
+        "python",
+        "cpp",
+        "javascript",
+        "typescript",
+        "go",
+        "c",
+        "java"
       ],
-      "timestamp": "2025-11-21 12:16:39"
+      "timestamp": "2025-12-03 12:46:29"
     }
   },
   "results": {
@@ -61,11 +67,11 @@
             "LLM_type": "openAI",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/two_bucket_Exercism_go_drapala/openAI/ChatGPT4_two_bucket_v4.go",
             "log": "",
-            "execution_time_ms": 6210,
-            "CPU_usage": 13.0,
-            "RAM_usage": 227424,
+            "execution_time_ms": 5860,
+            "CPU_usage": 11.0,
+            "RAM_usage": 233956,
             "regressionTestPassed": false,
-            "success": null,
+            "success": false,
             "error_message": null
           }
         ]
@@ -84,60 +90,6 @@
             "RAM_usage": 229320,
             "regressionTestPassed": false,
             "success": null,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "go_two_bucket_Exercism (go_drapala)",
-        "filename": "two_bucket.go",
-        "language": "go",
-        "LLM_results": [
-          {
-            "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/two_bucket_Exercism_go_drapala/claude/ClaudeSonnet4_two_bucket_v4.go",
-            "log": "",
-            "execution_time_ms": 6010,
-            "CPU_usage": 18.0,
-            "RAM_usage": 228596,
-            "regressionTestPassed": false,
-            "success": null,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "go_two_bucket_Exercism (go_drapala)",
-        "filename": "two_bucket.go",
-        "language": "go",
-        "LLM_results": [
-          {
-            "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/two_bucket_Exercism_go_drapala/gemini/GeminiFlash_two_bucket_v4.go",
-            "log": "",
-            "execution_time_ms": 6010,
-            "CPU_usage": 18.0,
-            "RAM_usage": 228596,
-            "regressionTestPassed": false,
-            "success": null,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "go_two_bucket_Exercism (go_drapala)",
-        "filename": "two_bucket.go",
-        "language": "go",
-        "LLM_results": [
-          {
-            "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/two_bucket_Exercism_go_drapala/openAI/ChatGPT4_two_bucket_v4.go",
-            "log": "",
-            "execution_time_ms": 5860,
-            "CPU_usage": 11.0,
-            "RAM_usage": 233956,
-            "regressionTestPassed": false,
-            "success": false,
             "error_message": null
           }
         ]
@@ -243,12 +195,12 @@
             "LLM_type": "gemini",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/two-bucket_exercism-javascript-ThomasZumsteg/gemini/GeminiFlash_two-bucket_v4.js",
             "log": "",
-            "execution_time_ms": 210,
-            "CPU_usage": 9.0,
-            "RAM_usage": 66364,
+            "execution_time_ms": 10,
+            "CPU_usage": 6.0,
+            "RAM_usage": 37504,
             "regressionTestPassed": false,
-            "success": false,
-            "error_message": "Docker exit code: 1"
+            "success": null,
+            "error_message": null
           }
         ]
       },
@@ -276,24 +228,6 @@
         "language": "javascript",
         "LLM_results": [
           {
-            "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/two-bucket_exercism-javascript-ThomasZumsteg/gemini/GeminiFlash_two-bucket_v4.js",
-            "log": "",
-            "execution_time_ms": 10,
-            "CPU_usage": 6.0,
-            "RAM_usage": 37504,
-            "regressionTestPassed": false,
-            "success": null,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "javascript_two-bucket_exercism-javascript-ThomasZumsteg_ThomasZumsteg",
-        "filename": "two-bucket.js",
-        "language": "javascript",
-        "LLM_results": [
-          {
             "LLM_type": "openAI",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/two-bucket_exercism-javascript-ThomasZumsteg/openAI/ChatGPT4_two-bucket_v4.js",
             "log": "",
@@ -303,6 +237,60 @@
             "regressionTestPassed": false,
             "success": false,
             "error_message": "Docker exit code: 1"
+          }
+        ]
+      },
+      {
+        "id": "javascript_two-bucket_ThomasZumsteg",
+        "filename": "two-bucket.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "javascript/two-bucket_exercism-ThomasZumsteg/openAI/ChatGPT4_two-bucket_v4.js",
+            "log": "",
+            "execution_time_ms": null,
+            "CPU_usage": null,
+            "RAM_usage": null,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Test execution timeout (300s)"
+          }
+        ]
+      },
+      {
+        "id": "javascript_two-bucket_ThomasZumsteg",
+        "filename": "two-bucket.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "javascript/two-bucket_exercism-ThomasZumsteg/claude/ClaudeSonnet4_two-bucket_v4.js",
+            "log": "",
+            "execution_time_ms": null,
+            "CPU_usage": null,
+            "RAM_usage": null,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Test execution timeout (300s)"
+          }
+        ]
+      },
+      {
+        "id": "javascript_two-bucket_ThomasZumsteg",
+        "filename": "two-bucket.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "javascript/two-bucket_exercism-ThomasZumsteg/gemini/GeminiFlash_two-bucket_v4.js",
+            "log": "",
+            "execution_time_ms": null,
+            "CPU_usage": null,
+            "RAM_usage": null,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Test execution timeout (300s)"
           }
         ]
       }
@@ -333,43 +321,7 @@
         "LLM_results": [
           {
             "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/two-bucket_Exercism-typescript-thewanionly/claude/ClaudeSonnet4_two-bucket_v4.ts",
-            "log": "",
-            "execution_time_ms": 48757,
-            "CPU_usage": 35.0,
-            "RAM_usage": 219420,
-            "regressionTestPassed": false,
-            "success": null,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "typescript_two-bucket_Exercism-typescript-thewanionly",
-        "filename": "two-bucket.ts",
-        "language": "typescript",
-        "LLM_results": [
-          {
-            "LLM_type": "claude",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/two-bucket_Exercism-typescript-thewanionly/claude/ClaudeSonnet4_two-bucket_v4.js",
-            "log": "",
-            "execution_time_ms": 48757,
-            "CPU_usage": 35.0,
-            "RAM_usage": 219420,
-            "regressionTestPassed": false,
-            "success": null,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "typescript_two-bucket_Exercism-typescript-thewanionly",
-        "filename": "two-bucket.ts",
-        "language": "typescript",
-        "LLM_results": [
-          {
-            "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/two-bucket_Exercism-typescript-thewanionly/gemini/GeminiFlash_two-bucket_v4.js",
             "log": "",
             "execution_time_ms": 48757,
             "CPU_usage": 35.0,
@@ -405,14 +357,14 @@
         "LLM_results": [
           {
             "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/two-bucket_Exercism-typescript-thewanionly/openAI/ChatGPT4_two-bucket_v4.ts",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/two-bucket_Exercism-typescript-thewanionly/openAI/ChatGPT4_two-bucket_v4.js",
             "log": "",
-            "execution_time_ms": 48757,
-            "CPU_usage": 35.0,
-            "RAM_usage": 219420,
+            "execution_time_ms": 55496,
+            "CPU_usage": 7.0,
+            "RAM_usage": 100512,
             "regressionTestPassed": false,
-            "success": null,
-            "error_message": null
+            "success": true,
+            "error_message": "Docker exit code: 1"
           }
         ]
       },
@@ -425,47 +377,11 @@
             "LLM_type": "claude",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/two-bucket_Exercism-typescript-thewanionly/claude/ClaudeSonnet4_two-bucket_v4.ts",
             "log": "",
-            "execution_time_ms": 48757,
-            "CPU_usage": 35.0,
-            "RAM_usage": 219420,
-            "regressionTestPassed": false,
-            "success": null,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "typescript_two-bucket_Exercism-typescript-thewanionly_thewanionly",
-        "filename": "two-bucket.ts",
-        "language": "typescript",
-        "LLM_results": [
-          {
-            "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/two-bucket_Exercism-typescript-thewanionly/claude/ClaudeSonnet4_two-bucket_v4.js",
-            "log": "",
-            "execution_time_ms": 48757,
-            "CPU_usage": 35.0,
-            "RAM_usage": 219420,
-            "regressionTestPassed": false,
-            "success": null,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "typescript_two-bucket_Exercism-typescript-thewanionly_thewanionly",
-        "filename": "two-bucket.ts",
-        "language": "typescript",
-        "LLM_results": [
-          {
-            "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/two-bucket_Exercism-typescript-thewanionly/gemini/GeminiFlash_two-bucket_v4.js",
-            "log": "",
-            "execution_time_ms": 48757,
-            "CPU_usage": 35.0,
-            "RAM_usage": 219420,
-            "regressionTestPassed": false,
-            "success": null,
+            "execution_time_ms": 44089,
+            "CPU_usage": 7.0,
+            "RAM_usage": 97292,
+            "regressionTestPassed": true,
+            "success": true,
             "error_message": null
           }
         ]
@@ -497,9 +413,9 @@
             "LLM_type": "gemini",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/two-bucket_Exercism-typescript-shybyte/gemini/GeminiFlash_two-bucket_v4.ts",
             "log": "",
-            "execution_time_ms": 3163,
-            "CPU_usage": 10.0,
-            "RAM_usage": 105052,
+            "execution_time_ms": 21391,
+            "CPU_usage": 9.0,
+            "RAM_usage": 107140,
             "regressionTestPassed": false,
             "success": true,
             "error_message": "Docker exit code: 1"
@@ -513,13 +429,13 @@
         "LLM_results": [
           {
             "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/two-bucket_Exercism-typescript-shybyte/openAI/ChatGPT4_two-bucket_v4.ts",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/two-bucket_Exercism-typescript-shybyte/openAI/ChatGPT4_two-bucket_v4.js",
             "log": "",
-            "execution_time_ms": 20519,
-            "CPU_usage": 58.0,
-            "RAM_usage": 218128,
-            "regressionTestPassed": false,
-            "success": null,
+            "execution_time_ms": 64612,
+            "CPU_usage": 8.0,
+            "RAM_usage": 93236,
+            "regressionTestPassed": true,
+            "success": true,
             "error_message": null
           }
         ]
@@ -533,83 +449,11 @@
             "LLM_type": "claude",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/two-bucket_Exercism-typescript-shybyte/claude/ClaudeSonnet4_two-bucket_v4.ts",
             "log": "",
-            "execution_time_ms": 20519,
-            "CPU_usage": 58.0,
-            "RAM_usage": 218128,
-            "regressionTestPassed": false,
-            "success": null,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "typescript_two-bucket_Exercism-typescript-shybyte_shybyte",
-        "filename": "two-bucket.ts",
-        "language": "typescript",
-        "LLM_results": [
-          {
-            "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/two-bucket_Exercism-typescript-shybyte/claude/ClaudeSonnet4_two-bucket_v4.js",
-            "log": "",
-            "execution_time_ms": 20519,
-            "CPU_usage": 58.0,
-            "RAM_usage": 218128,
-            "regressionTestPassed": false,
-            "success": null,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "typescript_two-bucket_Exercism-typescript-shybyte_shybyte",
-        "filename": "two-bucket.ts",
-        "language": "typescript",
-        "LLM_results": [
-          {
-            "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/two-bucket_Exercism-typescript-shybyte/gemini/GeminiFlash_two-bucket_v4.js",
-            "log": "",
-            "execution_time_ms": 20519,
-            "CPU_usage": 58.0,
-            "RAM_usage": 218128,
-            "regressionTestPassed": false,
-            "success": null,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "typescript_two-bucket_Exercism-typescript-shybyte_shybyte",
-        "filename": "two-bucket.ts",
-        "language": "typescript",
-        "LLM_results": [
-          {
-            "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/two-bucket_Exercism-typescript-shybyte/gemini/GeminiFlash_two-bucket_v4.ts",
-            "log": "",
-            "execution_time_ms": 20519,
-            "CPU_usage": 58.0,
-            "RAM_usage": 218128,
-            "regressionTestPassed": false,
-            "success": null,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "typescript_two-bucket_exercism-javascript-samajammin_samajammin",
-        "filename": "two-bucket.ts",
-        "language": "typescript",
-        "LLM_results": [
-          {
-            "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/two-bucket_exercism-javascript-samajammin/openAI/ChatGPT4_two-bucket_v4.ts",
-            "log": "",
-            "execution_time_ms": 10868,
-            "CPU_usage": 11.0,
-            "RAM_usage": 222076,
-            "regressionTestPassed": false,
-            "success": null,
+            "execution_time_ms": 39926,
+            "CPU_usage": 8.0,
+            "RAM_usage": 102516,
+            "regressionTestPassed": true,
+            "success": true,
             "error_message": null
           }
         ]
@@ -639,43 +483,7 @@
         "LLM_results": [
           {
             "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/two-bucket_exercism-javascript-samajammin/claude/ClaudeSonnet4_two-bucket_v4.ts",
-            "log": "",
-            "execution_time_ms": 10868,
-            "CPU_usage": 11.0,
-            "RAM_usage": 222076,
-            "regressionTestPassed": false,
-            "success": null,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "typescript_two-bucket_exercism-javascript-samajammin_samajammin",
-        "filename": "two-bucket.ts",
-        "language": "typescript",
-        "LLM_results": [
-          {
-            "LLM_type": "claude",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/two-bucket_exercism-javascript-samajammin/claude/ClaudeSonnet4_two-bucket_v4.js",
-            "log": "",
-            "execution_time_ms": 10868,
-            "CPU_usage": 11.0,
-            "RAM_usage": 222076,
-            "regressionTestPassed": false,
-            "success": null,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "typescript_two-bucket_exercism-javascript-samajammin_samajammin",
-        "filename": "two-bucket.ts",
-        "language": "typescript",
-        "LLM_results": [
-          {
-            "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/two-bucket_exercism-javascript-samajammin/gemini/GeminiFlash_two-bucket_v4.js",
             "log": "",
             "execution_time_ms": 10868,
             "CPU_usage": 11.0,
@@ -757,6 +565,172 @@
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
+          }
+        ]
+      }
+    ],
+    "c": [
+      {
+        "id": "c_two-bucket_Manoloon",
+        "filename": "two_bucket.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "c/two-bucket_exercism-Manoloon/openAI/ChatGPT4_two_bucket_v4.c",
+            "log": "",
+            "execution_time_ms": 11.020012,
+            "CPU_usage": 3.0,
+            "RAM_usage": 8704,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "c_two-bucket_Manoloon",
+        "filename": "two_bucket.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "c/two-bucket_exercism-Manoloon/claude/ClaudeSonnet4_two_bucket_v4.c",
+            "log": "",
+            "execution_time_ms": 0.682917,
+            "CPU_usage": 38.0,
+            "RAM_usage": 8704,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "c_two-bucket_yorange1",
+        "filename": "two_bucket.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "c/two-bucket_exercism-yorange1/openAI/ChatGPT4_two_bucket_v4.c",
+            "log": "",
+            "execution_time_ms": 11.537077,
+            "CPU_usage": 4.0,
+            "RAM_usage": 8704,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "c_two-bucket_Manoloon",
+        "filename": "two_bucket.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "c/two-bucket_exercism-Manoloon/gemini/GeminiFlash_two_bucket_v4.c",
+            "log": "",
+            "execution_time_ms": 1.401749,
+            "CPU_usage": 27.0,
+            "RAM_usage": 8704,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "c_two-bucket_yorange1",
+        "filename": "two_bucket.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "c/two-bucket_exercism-yorange1/claude/ClaudeSonnet4_two_bucket_v4.c",
+            "log": "",
+            "execution_time_ms": 0.715959,
+            "CPU_usage": 50.0,
+            "RAM_usage": 8576,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "c_two-bucket_yorange1",
+        "filename": "two_bucket.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "c/two-bucket_exercism-yorange1/gemini/GeminiFlash_two_bucket_v4.c",
+            "log": "",
+            "execution_time_ms": 2.887042,
+            "CPU_usage": 10.0,
+            "RAM_usage": 8704,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 3"
+          }
+        ]
+      }
+    ],
+    "python": [
+      {
+        "id": "python_two-bucket_ThomasZumsteg",
+        "filename": "two_bucket.py",
+        "language": "python",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "python/two-bucket_exercism-ThomasZumsteg/openAI/ChatGPT4_two_bucket_v4.py",
+            "log": "",
+            "execution_time_ms": 60.00000000000001,
+            "CPU_usage": 13.0,
+            "RAM_usage": 13952,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 1"
+          }
+        ]
+      },
+      {
+        "id": "python_two-bucket_ThomasZumsteg",
+        "filename": "two_bucket.py",
+        "language": "python",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "python/two-bucket_exercism-ThomasZumsteg/gemini/GeminiFlash_two_bucket_v4.py",
+            "log": "",
+            "execution_time_ms": 50.0,
+            "CPU_usage": 16.0,
+            "RAM_usage": 14080,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 1"
+          }
+        ]
+      },
+      {
+        "id": "python_two-bucket_ThomasZumsteg",
+        "filename": "two_bucket.py",
+        "language": "python",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "python/two-bucket_exercism-ThomasZumsteg/claude/ClaudeSonnet4_two_bucket_v4.py",
+            "log": "",
+            "execution_time_ms": 60.00000000000001,
+            "CPU_usage": 12.0,
+            "RAM_usage": 13824,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 1"
           }
         ]
       }

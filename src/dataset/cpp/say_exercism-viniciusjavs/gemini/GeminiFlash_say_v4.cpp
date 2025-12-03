@@ -1,5 +1,4 @@
 #include "say.h"
-
 #include <stdexcept>
 #include <string>
 #include <array>
@@ -30,51 +29,43 @@ namespace say {
             "", "thousand", "million", "billion"
         };
 
-        auto convert_chunk = [&](long long n) -> std::string {
-            std::string chunk_result;
-
-            if (n >= 100) {
-                chunk_result += ones[n / 100] + " hundred";
-                n %= 100;
-                if (n > 0) {
-                    chunk_result += " ";
-                }
-            }
-
-            if (n >= 20) {
-                chunk_result += tens[n / 10];
-                n %= 10;
-                if (n > 0) {
-                    chunk_result += "-";
-                }
-            }
-
-            if (n > 0) {
-                chunk_result += ones[n];
-            }
-
-            return chunk_result;
-        };
-
         for (int i = 0; number > 0; ++i) {
             long long chunk = number % 1000;
-            if (chunk > 0) {
-                std::string chunk_str = convert_chunk(chunk);
-                if (!result.empty()) {
-                    chunk_str += " ";
-                }
-                chunk_str += thousands[i];
-                if (!result.empty()) {
-                    chunk_str += ", ";
-                }
-                result.insert(0, chunk_str);
-            }
             number /= 1000;
-        }
 
-        // Remove trailing ", " if it exists
-        if (result.size() > 2 && result.substr(result.size() - 2) == ", ") {
-            result.resize(result.size() - 2);
+            if (chunk != 0) {
+                std::string chunk_str;
+
+                int hundred = chunk / 100;
+                if (hundred > 0) {
+                    chunk_str += ones[hundred] + " hundred";
+                    chunk %= 100;
+                    if (chunk > 0) {
+                        chunk_str += " ";
+                    }
+                }
+
+                if (chunk < 20) {
+                    chunk_str += ones[chunk];
+                } else {
+                    int ten = chunk / 10;
+                    chunk_str += tens[ten];
+                    chunk %= 10;
+                    if (chunk > 0) {
+                        chunk_str += "-" + ones[chunk];
+                    }
+                }
+
+                if (i > 0) {
+                    chunk_str += " " + thousands[i];
+                }
+
+                if (!result.empty()) {
+                    chunk_str += " " + result;
+                }
+
+                result = chunk_str;
+            }
         }
 
         return result;

@@ -33,7 +33,7 @@ namespace prime_factors
     
     void factor(int n, vector<int> &result)
     {
-        // Delegate to optimized implementation
+        // Keep original interface for compatibility
         vector<int> factors = of(n);
         result.insert(result.end(), factors.begin(), factors.end());
     }

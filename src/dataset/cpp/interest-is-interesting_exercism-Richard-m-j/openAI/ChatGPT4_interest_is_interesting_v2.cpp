@@ -1,18 +1,19 @@
-inline double interest_rate(double balance)
+double interest_rate(double balance)
 {
-    return (balance < 0) ? 3.213 :
-           (balance < 1000) ? 0.5 :
-           (balance < 5000) ? 1.621 : 2.475;
+    if (balance < 0) return 3.213;
+    if (balance < 1000) return 0.5;
+    if (balance < 5000) return 1.621;
+    return 2.475;
 }
 
-inline double yearly_interest(double balance)
+double yearly_interest(double balance)
 {
     return (interest_rate(balance) * balance) / 100.0;
 }
 
-inline double annual_balance_update(double balance)
+double annual_balance_update(double balance)
 {
-    return balance + yearly_interest(balance);
+    return balance * (1 + interest_rate(balance) / 100.0);
 }
 
 int years_until_desired_balance(double balance, double target_balance)
@@ -20,7 +21,7 @@ int years_until_desired_balance(double balance, double target_balance)
     int years = 0;
     while (balance < target_balance)
     {
-        balance += (interest_rate(balance) * balance) / 100.0;
+        balance *= (1 + interest_rate(balance) / 100.0);
         ++years;
     }
     return years;

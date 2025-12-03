@@ -35,7 +35,7 @@ namespace arcade {
         
         // Use partial_sort for optimal performance with 3 elements
         std::vector<int> temp(scores);
-        const size_t n = std::min(size, static_cast<size_t>(3));
+        const size_t n = std::min(size, size_t(3));
         std::partial_sort(temp.begin(), temp.begin() + n, temp.end(), std::greater<int>());
         
         return std::vector<int>(temp.begin(), temp.begin() + n);

@@ -5,7 +5,7 @@ namespace hello_world
 {
     const std::string& hello()
     {
-        static const std::string greeting = "Hello, World!";
-        return greeting;
+        static const std::string message = "Hello, World!";
+        return message;
     }
 }

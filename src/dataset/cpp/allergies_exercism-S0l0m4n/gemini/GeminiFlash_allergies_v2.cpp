@@ -25,16 +25,9 @@ namespace allergies {
     };
 
     allergy_test::allergy_test(int score_value) : score(score_value) {
-        int remaining_score = score_value;
         for (size_t i = 0; i < allergy_names.size(); ++i) {
-            int allergy_value = 1 << i;
-            if (remaining_score >= allergy_value) {
-                if (score_value & allergy_value) {
-                    allergy_set.insert(allergy_names[i]);
-                    remaining_score -= allergy_value;
-                }
-            } else {
-                break; // Optimization: No need to check further if allergy_value exceeds remaining_score
+            if (score_value & (1 << i)) {
+                allergy_set.insert(allergy_names[i]);
             }
         }
     }

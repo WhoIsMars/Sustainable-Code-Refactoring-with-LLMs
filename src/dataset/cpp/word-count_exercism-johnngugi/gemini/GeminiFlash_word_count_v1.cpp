@@ -10,10 +10,9 @@ using namespace std;
 map<string, int> word_count::words(string sen) {
     map<string, int> word_counts;
     string current_word;
-    sen.erase(remove_if(sen.begin(), sen.end(), [](unsigned char x){ return !isalnum(x) && x != '\'' && !isspace(x); }), sen.end());
+    sen += ' '; // Add a space to simplify the loop
 
-    for (size_t i = 0; i < sen.length(); ++i) {
-        char c = sen[i];
+    for (char c : sen) {
         if (isalnum(c)) {
             current_word += tolower(c);
         } else if (c == '\'' && !current_word.empty()) {
@@ -22,16 +21,15 @@ map<string, int> word_count::words(string sen) {
             if (current_word.back() == '\'') {
                 current_word.pop_back();
             }
-            word_counts[current_word]++;
+
+            auto it = word_counts.find(current_word);
+            if (it != word_counts.end()) {
+                it->second++;
+            } else {
+                word_counts[current_word] = 1;
+            }
             current_word.clear();
         }
-    }
-
-    if (!current_word.empty()) {
-        if (current_word.back() == '\'') {
-            current_word.pop_back();
-        }
-        word_counts[current_word]++;
     }
 
     return word_counts;

@@ -124,7 +124,7 @@ def main():
     logger.info(f"Entries removed: {total_stats['entries_removed']}")
 
     if total_stats['removed_ids']:
-        logger.info(f"\nRemoved entries:")
+        logger.info("\nRemoved entries:")
         for entry_id in total_stats['removed_ids']:
             logger.info(f"  - {entry_id}")
 

@@ -18,9 +18,7 @@ namespace crypto_square
         for (char c : initial)
         {
             if (isalnum(c))
-            {
                 result += tolower(c);
-            }
         }
 
         initial = result;
@@ -60,10 +58,9 @@ namespace crypto_square
     std::string cipher::cipher_text()
     {
         const std::vector<std::string> segments = this->plain_text_segments();
-        if (segments.empty()) return "";
-
         size_t rows = segments.size();
         size_t columns = segments[0].length();
+
         std::string result;
         result.reserve(rows * columns);
 
@@ -84,14 +81,14 @@ namespace crypto_square
     std::string cipher::normalized_cipher_text()
     {
         const std::vector<std::string> segments = this->create_segments(this->cipher_text());
-        if (segments.empty()) return "";
 
         std::string result;
-        result.reserve(segments.size() * (segments[0].length() + 1) - 1);
+        result.reserve(segments.size() * (segments[0].size() + 1) - 1);
 
         for (size_t i = 0; i < segments.size(); ++i)
         {
-            if (i > 0) result += " ";
+            if (i > 0)
+                result += " ";
             result += segments[i];
         }
 

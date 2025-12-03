@@ -8,8 +8,8 @@ namespace prime {
         if (n < 1) throw std::domain_error("Non positive number given!");
 
         std::vector<int> primes;
-        primes.reserve(n);
-        primes.push_back(2);
+        primes.reserve(n); // Reserve memory upfront to avoid reallocations
+        primes.push_back(2); // Start with the first prime number
 
         int candidate = 3;
 

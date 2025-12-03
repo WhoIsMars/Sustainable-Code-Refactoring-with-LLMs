@@ -8,18 +8,9 @@ namespace triangle {
             throw std::domain_error("Invalid triangle sides");
         }
 
-        if (side1 == side2 && side2 == side3) {
-            return flavor::equilateral;
-        }
-
-        if (side1 + side2 == side3 || side1 + side3 == side2 || side2 + side3 == side1) {
-            return flavor::degenerate;
-        }
-
-        if (side1 != side2 && side1 != side3 && side2 != side3) {
-            return flavor::scalene;
-        }
-
+        if (side1 == side2 && side2 == side3) return flavor::equilateral;
+        if (side1 + side2 == side3 || side1 + side3 == side2 || side2 + side3 == side1) return flavor::degenerate;
+        if (side1 != side2 && side1 != side3 && side2 != side3) return flavor::scalene;
         return flavor::isosceles;
     }
 }  // namespace triangle

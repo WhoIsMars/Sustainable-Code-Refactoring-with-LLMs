@@ -13,27 +13,27 @@ namespace all_your_base {
             throw std::invalid_argument("Output base must be 2 or greater.");
         }
 
-        // Convert to decimal
+        // Early exit for empty input
+        if (digits.empty()) {
+            return {0};
+        }
+
         unsigned int decimalNumber = 0;
         for (unsigned int digit : digits) {
             if (digit >= fromBase) {
                 throw std::invalid_argument("Input digits cannot be equal or greater than input base.");
             }
-            if (__builtin_mul_overflow(decimalNumber, fromBase, &decimalNumber)) {
-                throw std::overflow_error("Multiplication overflow during base conversion to decimal.");
+            if (decimalNumber > (UINT_MAX / fromBase)) {
+                throw std::overflow_error("Overflow during base conversion to decimal.");
             }
-            if (__builtin_add_overflow(decimalNumber, digit, &decimalNumber)) {
-                throw std::overflow_error("Addition overflow during base conversion to decimal.");
-            }
+            decimalNumber = decimalNumber * fromBase + digit;
         }
 
-        // Convert from decimal
-        std::vector<unsigned int> result;
         if (decimalNumber == 0) {
-            result.push_back(0);
-            return result;
+            return {0};
         }
 
+        std::vector<unsigned int> result;
         while (decimalNumber > 0) {
             result.push_back(decimalNumber % toBase);
             decimalNumber /= toBase;

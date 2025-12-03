@@ -1,0 +1,43 @@
+var Cipher = function(key) {
+	if( key !== undefined && !/^[a-z]+$/.test(key) )
+		throw Error("Bad key");
+	this.key = key || "aaaaaaaaaa";
+	this.keyLength = this.key.length;
+};
+
+var a_ascii = 'a'.charCodeAt(0);
+var z_ascii = 'z'.charCodeAt(0);
+var alphabetSize = z_ascii - a_ascii + 1;
+
+Cipher.prototype.encode = function(plainText) {
+	let result = "";
+	const key = this.key;
+	const keyLength = this.keyLength;
+
+	for (let i = 0; i < plainText.length; i++) {
+		const letter = plainText[i];
+		let c = letter.charCodeAt(0) + key[i % keyLength].charCodeAt(0);
+		c -= 2 * a_ascii;
+		c %= alphabetSize;
+		c += a_ascii;
+		result += String.fromCharCode(c);
+	}
+	return result;
+};
+
+Cipher.prototype.decode = function(cipherText) {
+	let result = "";
+	const key = this.key;
+	const keyLength = this.keyLength;
+
+	for (let i = 0; i < cipherText.length; i++) {
+		const letter = cipherText[i];
+		let c = letter.charCodeAt(0) - key[i % keyLength].charCodeAt(0);
+		c %= alphabetSize;
+		c += a_ascii;
+		result += String.fromCharCode(c);
+	}
+	return result;
+};
+
+module.exports = Cipher;

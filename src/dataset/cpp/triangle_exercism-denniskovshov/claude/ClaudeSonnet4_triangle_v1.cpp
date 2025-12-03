@@ -14,15 +14,15 @@ namespace triangle {
         const bool s1_eq_s3 = (side1 == side3);
         const bool s2_eq_s3 = (side2 == side3);
 
-        // Equilateral: all three sides equal
+        // An equilateral triangle has all three sides the same length
         if (s1_eq_s2 && s2_eq_s3)
             return flavor::equilateral;
 
-        // Isosceles: at least two sides equal
+        // An isosceles triangle has at least two sides the same length
         if (s1_eq_s2 || s1_eq_s3 || s2_eq_s3)
             return flavor::isosceles;
 
-        // Scalene: all sides different (default case)
+        // A scalene triangle has all sides of different lengths
         return flavor::scalene;
     }
 

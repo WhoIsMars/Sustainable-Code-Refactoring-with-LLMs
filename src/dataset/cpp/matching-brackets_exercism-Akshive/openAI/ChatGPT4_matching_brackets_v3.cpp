@@ -28,6 +28,8 @@ namespace matching_brackets {
                     if(st.empty() || st.top() != '[') return false;
                     st.pop();
                     break;
+                default:
+                    break;
             }
         }
         return st.empty();

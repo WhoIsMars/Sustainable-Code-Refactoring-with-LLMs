@@ -1,28 +1,26 @@
 #include "prime_factors.h"
 #include <cmath>
 
-namespace prime_factors
-{
-    vector<int> of(int n)
-    {
+namespace prime_factors {
+
+    vector<int> of(int n) {
         vector<int> result;
-        int divisor = 2;
-        while (n > 1 && divisor <= sqrt(n))
-        {
-            if (n % divisor == 0)
-            {
-                result.push_back(divisor);
-                n /= divisor;
-            }
-            else
-            {
-                divisor++;
+        while (n % 2 == 0) {
+            result.push_back(2);
+            n /= 2;
+        }
+
+        for (int i = 3; i <= sqrt(n); i += 2) {
+            while (n % i == 0) {
+                result.push_back(i);
+                n /= i;
             }
         }
-        if (n > 1)
-        {
+
+        if (n > 2) {
             result.push_back(n);
         }
+
         return result;
     }
-} // namespace prime_factors
+}  // namespace prime_factors

@@ -15,10 +15,7 @@ std::string phone_number::check_valid(const std::string& n) const {
     if (n.size() == 11 && n[0] == '1') {
         return n.substr(1);
     }
-    if (n.size() == 10) {
-        return n;
-    }
-    return "0000000000";
+    return (n.size() == 10) ? n : "0000000000";
 }
 
 std::string phone_number::area_code() const {

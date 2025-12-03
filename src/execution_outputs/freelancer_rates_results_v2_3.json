@@ -1,17 +1,23 @@
 {
-  "execution_date": "2025-11-21 09:52:23",
+  "execution_date": "2025-12-02 15:36:39",
   "execution_metadata": {
     "total_tests": 1,
     "successful_tests": 1,
     "execution_time": "00h 00m 00s",
     "cluster": "cluster_freelancer_rates",
     "test_type": "llm_v2",
-    "last_updated": "2025-11-21 09:52:23",
+    "last_updated": "2025-12-02 15:36:39",
     "selective_execution": {
       "languages": [
-        "cpp"
+        "go",
+        "java",
+        "typescript",
+        "c",
+        "python",
+        "cpp",
+        "javascript"
       ],
-      "timestamp": "2025-11-21 09:52:23"
+      "timestamp": "2025-12-02 15:36:39"
     }
   },
   "results": {
@@ -22,30 +28,12 @@
         "language": "javascript",
         "LLM_results": [
           {
-            "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/freelancer-rates_exercism-javascript-PhymasSC/openAI/ChatGPT4_freelancer-rates_v2.js",
-            "log": "",
-            "execution_time_ms": 520.0,
-            "CPU_usage": 10.0,
-            "RAM_usage": 83068,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "javascript_freelancer-rates_exercism-javascript-PhymasSC_PhymasSC",
-        "filename": "freelancer-rates.js",
-        "language": "javascript",
-        "LLM_results": [
-          {
             "LLM_type": "gemini",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/freelancer-rates_exercism-javascript-PhymasSC/gemini/GeminiFlash_freelancer-rates_v2.js",
             "log": "",
-            "execution_time_ms": 530.0,
-            "CPU_usage": 10.0,
-            "RAM_usage": 82596,
+            "execution_time_ms": 1630.0,
+            "CPU_usage": 15.0,
+            "RAM_usage": 83060,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -61,12 +49,30 @@
             "LLM_type": "claude",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/freelancer-rates_exercism-javascript-PhymasSC/claude/ClaudeSonnet4_freelancer-rates_v2.js",
             "log": "",
-            "execution_time_ms": 559.9999999999999,
-            "CPU_usage": 10.0,
-            "RAM_usage": 83560,
+            "execution_time_ms": 1520.0,
+            "CPU_usage": 15.0,
+            "RAM_usage": 83860,
             "regressionTestPassed": false,
             "success": false,
-            "error_message": "Docker exit code: 1"
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_freelancer-rates_exercism-javascript-PhymasSC_PhymasSC",
+        "filename": "freelancer-rates.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/freelancer-rates_exercism-javascript-PhymasSC/openAI/ChatGPT4_freelancer-rates_v2.js",
+            "log": "",
+            "execution_time_ms": 1299.9999999999998,
+            "CPU_usage": 17.0,
+            "RAM_usage": 82976,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
           }
         ]
       }
@@ -78,12 +84,30 @@
         "language": "cpp",
         "LLM_results": [
           {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/freelancer-rates_exercism-nenjotsu/openAI/ChatGPT4_freelancer_rates_v2.cpp",
+            "log": "",
+            "execution_time_ms": 17.205425,
+            "CPU_usage": 20.0,
+            "RAM_usage": 10496,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "cpp_freelancer-rates_nenjotsu",
+        "filename": "freelancer_rates.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
             "LLM_type": "claude",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/freelancer-rates_exercism-nenjotsu/claude/ClaudeSonnet4_freelancer_rates_v2.cpp",
             "log": "",
-            "execution_time_ms": 2.212105,
-            "CPU_usage": 68.0,
-            "RAM_usage": 10368,
+            "execution_time_ms": 5.648433,
+            "CPU_usage": 46.0,
+            "RAM_usage": 10496,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -99,9 +123,9 @@
             "LLM_type": "gemini",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/freelancer-rates_exercism-nenjotsu/gemini/GeminiFlash_freelancer_rates_v2.cpp",
             "log": "",
-            "execution_time_ms": 2.369979,
-            "CPU_usage": 67.0,
-            "RAM_usage": 10368,
+            "execution_time_ms": 61.629721,
+            "CPU_usage": 13.0,
+            "RAM_usage": 10240,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -109,16 +133,52 @@
         ]
       },
       {
-        "id": "cpp_freelancer-rates_nenjotsu",
+        "id": "cpp_freelancer-rates_tqa236",
+        "filename": "freelancer_rates.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "cpp/freelancer-rates_exercism-tqa236/claude/ClaudeSonnet4_freelancer_rates_v2.cpp",
+            "log": "",
+            "execution_time_ms": 14.040473,
+            "CPU_usage": 15.0,
+            "RAM_usage": 10496,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "cpp_freelancer-rates_tqa236",
         "filename": "freelancer_rates.cpp",
         "language": "cpp",
         "LLM_results": [
           {
             "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/freelancer-rates_exercism-nenjotsu/openAI/ChatGPT4_freelancer_rates_v2.cpp",
+            "path": "cpp/freelancer-rates_exercism-tqa236/openAI/ChatGPT4_freelancer_rates_v2.cpp",
             "log": "",
-            "execution_time_ms": 1.843151,
-            "CPU_usage": 70.0,
+            "execution_time_ms": 5.162188,
+            "CPU_usage": 32.0,
+            "RAM_usage": 10240,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "cpp_freelancer-rates_tqa236",
+        "filename": "freelancer_rates.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "cpp/freelancer-rates_exercism-tqa236/gemini/GeminiFlash_freelancer_rates_v2.cpp",
+            "log": "",
+            "execution_time_ms": 7.387738,
+            "CPU_usage": 22.0,
             "RAM_usage": 10496,
             "regressionTestPassed": true,
             "success": true,

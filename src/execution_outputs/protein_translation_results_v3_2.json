@@ -1,17 +1,23 @@
 {
-  "execution_date": "2025-11-21 11:11:53",
+  "execution_date": "2025-12-03 09:48:15",
   "execution_metadata": {
     "total_tests": 14,
     "successful_tests": 14,
     "execution_time": "00h 00m 00s",
     "cluster": "cluster_protein_translation",
     "test_type": "llm_v3",
-    "last_updated": "2025-11-21 11:11:53",
+    "last_updated": "2025-12-03 09:48:15",
     "selective_execution": {
       "languages": [
-        "cpp"
+        "typescript",
+        "go",
+        "cpp",
+        "python",
+        "c",
+        "java",
+        "javascript"
       ],
-      "timestamp": "2025-11-21 11:11:53"
+      "timestamp": "2025-12-03 09:48:15"
     }
   },
   "results": {
@@ -22,11 +28,29 @@
         "language": "python",
         "LLM_results": [
           {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/protein-translation/openAI/ChatGPT4_protein-translation_v3.py",
+            "log": "",
+            "execution_time_ms": 70.0,
+            "CPU_usage": 36.0,
+            "RAM_usage": 13824,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "protein-translation_29",
+        "filename": "protein-translation.py",
+        "language": "python",
+        "LLM_results": [
+          {
             "LLM_type": "gemini",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/protein-translation/gemini/GeminiFlash_protein-translation_v3.py",
             "log": "",
-            "execution_time_ms": 40.0,
-            "CPU_usage": 63.0,
+            "execution_time_ms": 80.0,
+            "CPU_usage": 18.0,
             "RAM_usage": 13952,
             "regressionTestPassed": true,
             "success": true,
@@ -43,8 +67,44 @@
             "LLM_type": "claude",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/protein-translation/claude/ClaudeSonnet4_protein-translation_v3.py",
             "log": "",
-            "execution_time_ms": 50.0,
-            "CPU_usage": 78.0,
+            "execution_time_ms": 100.0,
+            "CPU_usage": 24.0,
+            "RAM_usage": 13824,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "python_protein-translation_ThomasZumsteg",
+        "filename": "protein_translation.py",
+        "language": "python",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "python/protein-translation_exercism-ThomasZumsteg/gemini/GeminiFlash_protein_translation_v3.py",
+            "log": "",
+            "execution_time_ms": 40.0,
+            "CPU_usage": 46.0,
+            "RAM_usage": 13696,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "python_protein-translation_fruit-in",
+        "filename": "protein_translation.py",
+        "language": "python",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "python/protein-translation_exercism-fruit-in/openAI/ChatGPT4_protein_translation_v3.py",
+            "log": "",
+            "execution_time_ms": 30.0,
+            "CPU_usage": 67.0,
             "RAM_usage": 13952,
             "regressionTestPassed": true,
             "success": true,
@@ -53,17 +113,71 @@
         ]
       },
       {
-        "id": "protein-translation_29",
-        "filename": "protein-translation.py",
+        "id": "python_protein-translation_ThomasZumsteg",
+        "filename": "protein_translation.py",
         "language": "python",
         "LLM_results": [
           {
             "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/protein-translation/openAI/ChatGPT4_protein-translation_v3.py",
+            "path": "python/protein-translation_exercism-ThomasZumsteg/openAI/ChatGPT4_protein_translation_v3.py",
             "log": "",
             "execution_time_ms": 50.0,
+            "CPU_usage": 44.0,
+            "RAM_usage": 13824,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "python_protein-translation_ThomasZumsteg",
+        "filename": "protein_translation.py",
+        "language": "python",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "python/protein-translation_exercism-ThomasZumsteg/claude/ClaudeSonnet4_protein_translation_v3.py",
+            "log": "",
+            "execution_time_ms": 40.0,
             "CPU_usage": 70.0,
-            "RAM_usage": 13696,
+            "RAM_usage": 13952,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "python_protein-translation_fruit-in",
+        "filename": "protein_translation.py",
+        "language": "python",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "python/protein-translation_exercism-fruit-in/claude/ClaudeSonnet4_protein_translation_v3.py",
+            "log": "",
+            "execution_time_ms": 40.0,
+            "CPU_usage": 54.0,
+            "RAM_usage": 13824,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "python_protein-translation_fruit-in",
+        "filename": "protein_translation.py",
+        "language": "python",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "python/protein-translation_exercism-fruit-in/gemini/GeminiFlash_protein_translation_v3.py",
+            "log": "",
+            "execution_time_ms": 40.0,
+            "CPU_usage": 29.0,
+            "RAM_usage": 13440,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -146,7 +260,445 @@
         ]
       },
       {
+        "id": "typescript_protein-translation_exercism-javascript-samajammin",
+        "filename": "protein-translation.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/protein-translation_exercism-javascript-samajammin/openAI/ChatGPT4_protein-translation_v3.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/protein-translation_exercism-javascript-samajammin/openAI/ChatGPT4_protein-translation_v3.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/protein-translation_exercism-javascript-samajammin/claude/ClaudeSonnet4_protein-translation_v3.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/protein-translation_exercism-javascript-samajammin/claude/ClaudeSonnet4_protein-translation_v3.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/protein-translation_exercism-javascript-samajammin/gemini/GeminiFlash_protein-translation_v3.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/protein-translation_exercism-javascript-samajammin/gemini/GeminiFlash_protein-translation_v3.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "typescript_protein-translation_exercism-javascript-samajammin",
+        "filename": "protein-translation.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/protein-translation_exercism-javascript-samajammin/openAI/ChatGPT4_protein-translation_v3.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/protein-translation_exercism-javascript-samajammin/openAI/ChatGPT4_protein-translation_v3.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/protein-translation_exercism-javascript-samajammin/claude/ClaudeSonnet4_protein-translation_v3.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/protein-translation_exercism-javascript-samajammin/claude/ClaudeSonnet4_protein-translation_v3.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/protein-translation_exercism-javascript-samajammin/gemini/GeminiFlash_protein-translation_v3.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/protein-translation_exercism-javascript-samajammin/gemini/GeminiFlash_protein-translation_v3.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
         "id": "typescript_protein-translation_Exercism-typescript-thewanionly",
+        "filename": "protein-translation.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/protein-translation_Exercism-typescript-thewanionly/openAI/ChatGPT4_protein-translation_v3.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/protein-translation_Exercism-typescript-thewanionly/openAI/ChatGPT4_protein-translation_v3.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/protein-translation_Exercism-typescript-thewanionly/claude/ClaudeSonnet4_protein-translation_v3.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/protein-translation_Exercism-typescript-thewanionly/claude/ClaudeSonnet4_protein-translation_v3.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/protein-translation_Exercism-typescript-thewanionly/gemini/GeminiFlash_protein-translation_v3.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/protein-translation_Exercism-typescript-thewanionly/gemini/GeminiFlash_protein-translation_v3.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "typescript_protein-translation_Exercism-typescript-thewanionly",
+        "filename": "protein-translation.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/protein-translation_Exercism-typescript-thewanionly/openAI/ChatGPT4_protein-translation_v3.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/protein-translation_Exercism-typescript-thewanionly/openAI/ChatGPT4_protein-translation_v3.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/protein-translation_Exercism-typescript-thewanionly/claude/ClaudeSonnet4_protein-translation_v3.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/protein-translation_Exercism-typescript-thewanionly/claude/ClaudeSonnet4_protein-translation_v3.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/protein-translation_Exercism-typescript-thewanionly/gemini/GeminiFlash_protein-translation_v3.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/protein-translation_Exercism-typescript-thewanionly/gemini/GeminiFlash_protein-translation_v3.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "typescript_protein-translation_Exercism-typescript-thewanionly",
+        "filename": "protein-translation.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/protein-translation_Exercism-typescript-thewanionly/openAI/ChatGPT4_protein-translation_v3.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/protein-translation_Exercism-typescript-thewanionly/openAI/ChatGPT4_protein-translation_v3.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/protein-translation_Exercism-typescript-thewanionly/claude/ClaudeSonnet4_protein-translation_v3.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/protein-translation_Exercism-typescript-thewanionly/claude/ClaudeSonnet4_protein-translation_v3.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/protein-translation_Exercism-typescript-thewanionly/gemini/GeminiFlash_protein-translation_v3.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/protein-translation_Exercism-typescript-thewanionly/gemini/GeminiFlash_protein-translation_v3.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "typescript_protein-translation_Exercism-typescript-thewanionly_thewanionly",
+        "filename": "protein-translation.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/protein-translation_Exercism-typescript-thewanionly/openAI/ChatGPT4_protein-translation_v3.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/protein-translation_Exercism-typescript-thewanionly/openAI/ChatGPT4_protein-translation_v3.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/protein-translation_Exercism-typescript-thewanionly/claude/ClaudeSonnet4_protein-translation_v3.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/protein-translation_Exercism-typescript-thewanionly/claude/ClaudeSonnet4_protein-translation_v3.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/protein-translation_Exercism-typescript-thewanionly/gemini/GeminiFlash_protein-translation_v3.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/protein-translation_Exercism-typescript-thewanionly/gemini/GeminiFlash_protein-translation_v3.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "typescript_protein-translation_Exercism-typescript-thewanionly_thewanionly",
         "filename": "protein-translation.ts",
         "language": "typescript",
         "LLM_results": [
@@ -365,6 +917,298 @@
         ]
       },
       {
+        "id": "typescript_protein-translation_Exercism-typescript-chriswilding_chriswilding",
+        "filename": "protein-translation.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/protein-translation_Exercism-typescript-chriswilding/openAI/ChatGPT4_protein-translation_v3.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/protein-translation_Exercism-typescript-chriswilding/openAI/ChatGPT4_protein-translation_v3.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/protein-translation_Exercism-typescript-chriswilding/claude/ClaudeSonnet4_protein-translation_v3.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/protein-translation_Exercism-typescript-chriswilding/claude/ClaudeSonnet4_protein-translation_v3.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/protein-translation_Exercism-typescript-chriswilding/gemini/GeminiFlash_protein-translation_v3.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/protein-translation_Exercism-typescript-chriswilding/gemini/GeminiFlash_protein-translation_v3.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "typescript_protein-translation_Exercism-typescript-chriswilding_chriswilding",
+        "filename": "protein-translation.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/protein-translation_Exercism-typescript-chriswilding/openAI/ChatGPT4_protein-translation_v3.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/protein-translation_Exercism-typescript-chriswilding/openAI/ChatGPT4_protein-translation_v3.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/protein-translation_Exercism-typescript-chriswilding/claude/ClaudeSonnet4_protein-translation_v3.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/protein-translation_Exercism-typescript-chriswilding/claude/ClaudeSonnet4_protein-translation_v3.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/protein-translation_Exercism-typescript-chriswilding/gemini/GeminiFlash_protein-translation_v3.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/protein-translation_Exercism-typescript-chriswilding/gemini/GeminiFlash_protein-translation_v3.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "typescript_protein-translation_Exercism-typescript-FilipeCerejo_FilipeCerejo",
+        "filename": "protein-translation.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/protein-translation_Exercism-typescript-FilipeCerejo/openAI/ChatGPT4_protein-translation_v3.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/protein-translation_Exercism-typescript-FilipeCerejo/openAI/ChatGPT4_protein-translation_v3.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/protein-translation_Exercism-typescript-FilipeCerejo/claude/ClaudeSonnet4_protein-translation_v3.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/protein-translation_Exercism-typescript-FilipeCerejo/claude/ClaudeSonnet4_protein-translation_v3.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/protein-translation_Exercism-typescript-FilipeCerejo/gemini/GeminiFlash_protein-translation_v3.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/protein-translation_Exercism-typescript-FilipeCerejo/gemini/GeminiFlash_protein-translation_v3.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "typescript_protein-translation_Exercism-typescript-FilipeCerejo_FilipeCerejo",
+        "filename": "protein-translation.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/protein-translation_Exercism-typescript-FilipeCerejo/openAI/ChatGPT4_protein-translation_v3.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/protein-translation_Exercism-typescript-FilipeCerejo/openAI/ChatGPT4_protein-translation_v3.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/protein-translation_Exercism-typescript-FilipeCerejo/claude/ClaudeSonnet4_protein-translation_v3.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/protein-translation_Exercism-typescript-FilipeCerejo/claude/ClaudeSonnet4_protein-translation_v3.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/protein-translation_Exercism-typescript-FilipeCerejo/gemini/GeminiFlash_protein-translation_v3.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/protein-translation_Exercism-typescript-FilipeCerejo/gemini/GeminiFlash_protein-translation_v3.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
         "id": "typescript_protein-translation_Exercism-typescript-FilipeCerejo_FilipeCerejo",
         "filename": "protein-translation.ts",
         "language": "typescript",
@@ -509,21 +1353,165 @@
             "error_message": null
           }
         ]
-      }
-    ],
-    "java": [
+      },
       {
-        "id": "Java_protein-translation_exercism-java-blogscot",
-        "filename": "protein-translation.java",
-        "language": "java",
+        "id": "typescript_protein-translation_exercism-javascript-samajammin_samajammin",
+        "filename": "protein-translation.ts",
+        "language": "typescript",
         "LLM_results": [
           {
-            "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/protein-translation_exercism-java-blogscot/gemini/GeminiFlash_protein-translation_v3.java",
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/protein-translation_exercism-javascript-samajammin/openAI/ChatGPT4_protein-translation_v3.js",
             "log": "",
-            "execution_time_ms": 110.0,
-            "CPU_usage": 79.0,
-            "RAM_usage": 46544,
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/protein-translation_exercism-javascript-samajammin/openAI/ChatGPT4_protein-translation_v3.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/protein-translation_exercism-javascript-samajammin/claude/ClaudeSonnet4_protein-translation_v3.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/protein-translation_exercism-javascript-samajammin/claude/ClaudeSonnet4_protein-translation_v3.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/protein-translation_exercism-javascript-samajammin/gemini/GeminiFlash_protein-translation_v3.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/protein-translation_exercism-javascript-samajammin/gemini/GeminiFlash_protein-translation_v3.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "typescript_protein-translation_exercism-javascript-samajammin_samajammin",
+        "filename": "protein-translation.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/protein-translation_exercism-javascript-samajammin/openAI/ChatGPT4_protein-translation_v3.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/protein-translation_exercism-javascript-samajammin/openAI/ChatGPT4_protein-translation_v3.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/protein-translation_exercism-javascript-samajammin/claude/ClaudeSonnet4_protein-translation_v3.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/protein-translation_exercism-javascript-samajammin/claude/ClaudeSonnet4_protein-translation_v3.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/protein-translation_exercism-javascript-samajammin/gemini/GeminiFlash_protein-translation_v3.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/protein-translation_exercism-javascript-samajammin/gemini/GeminiFlash_protein-translation_v3.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "typescript_protein-translation_wackerow",
+        "filename": "protein-translation.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "typescript/protein-translation_exercism-wackerow/openAI/ChatGPT4_protein-translation_v3.ts",
+            "log": "",
+            "execution_time_ms": 257,
+            "CPU_usage": 98.0,
+            "RAM_usage": 129736,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -531,17 +1519,127 @@
         ]
       },
       {
-        "id": "Java_protein-translation_exercism-java-blogscot_blogscot",
-        "filename": "protein-translation.java",
+        "id": "typescript_protein-translation_wackerow",
+        "filename": "protein-translation.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "typescript/protein-translation_exercism-wackerow/claude/ClaudeSonnet4_protein-translation_v3.ts",
+            "log": "",
+            "execution_time_ms": 474,
+            "CPU_usage": 78.0,
+            "RAM_usage": 128496,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "typescript_protein-translation_wackerow",
+        "filename": "protein-translation.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "typescript/protein-translation_exercism-wackerow/gemini/GeminiFlash_protein-translation_v3.ts",
+            "log": "",
+            "execution_time_ms": 378,
+            "CPU_usage": 69.0,
+            "RAM_usage": 129108,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "typescript_protein-translation_samajammin",
+        "filename": "protein-translation.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "typescript/protein-translation_exercism-samajammin/openAI/ChatGPT4_protein-translation_v3.ts",
+            "log": "",
+            "execution_time_ms": 557,
+            "CPU_usage": 64.0,
+            "RAM_usage": 131372,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "typescript_protein-translation_samajammin",
+        "filename": "protein-translation.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "typescript/protein-translation_exercism-samajammin/claude/ClaudeSonnet4_protein-translation_v3.ts",
+            "log": "",
+            "execution_time_ms": 613,
+            "CPU_usage": 59.0,
+            "RAM_usage": 129960,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "typescript_protein-translation_samajammin",
+        "filename": "protein-translation.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "typescript/protein-translation_exercism-samajammin/gemini/GeminiFlash_protein-translation_v3.ts",
+            "log": "",
+            "execution_time_ms": 833,
+            "CPU_usage": 48.0,
+            "RAM_usage": 129492,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      }
+    ],
+    "java": [
+      {
+        "id": "Java_protein-translation_exercism-java-blogscot",
+        "filename": "ProteinTranslator.java",
         "language": "java",
         "LLM_results": [
           {
             "LLM_type": "openAI",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/protein-translation_exercism-java-blogscot/openAI/ChatGPT4_protein-translation_v3.java",
             "log": "",
-            "execution_time_ms": 110.0,
-            "CPU_usage": 72.0,
-            "RAM_usage": 46428,
+            "execution_time_ms": 140.0,
+            "CPU_usage": 17.0,
+            "RAM_usage": 46308,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "Java_protein-translation_exercism-java-blogscot",
+        "filename": "ProteinTranslator.java",
+        "language": "java",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/protein-translation_exercism-java-blogscot/gemini/GeminiFlash_protein-translation_v3.java",
+            "log": "",
+            "execution_time_ms": 150.0,
+            "CPU_usage": 49.0,
+            "RAM_usage": 46604,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -567,17 +1665,17 @@
         ]
       },
       {
-        "id": "Java_protein-translation_exercism-java-blogscot",
-        "filename": "protein-translation.java",
+        "id": "Java_protein-translation_exercism-java-blogscot_blogscot",
+        "filename": "ProteinTranslator.java",
         "language": "java",
         "LLM_results": [
           {
             "LLM_type": "openAI",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/protein-translation_exercism-java-blogscot/openAI/ChatGPT4_protein-translation_v3.java",
             "log": "",
-            "execution_time_ms": 130.0,
-            "CPU_usage": 85.0,
-            "RAM_usage": 46400,
+            "execution_time_ms": 160.0,
+            "CPU_usage": 18.0,
+            "RAM_usage": 46156,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -604,16 +1702,16 @@
       },
       {
         "id": "Java_protein-translation_exercism-java-blogscot_blogscot",
-        "filename": "protein-translation.java",
+        "filename": "ProteinTranslator.java",
         "language": "java",
         "LLM_results": [
           {
             "LLM_type": "gemini",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/protein-translation_exercism-java-blogscot/gemini/GeminiFlash_protein-translation_v3.java",
             "log": "",
-            "execution_time_ms": 110.0,
-            "CPU_usage": 117.0,
-            "RAM_usage": 46964,
+            "execution_time_ms": 160.0,
+            "CPU_usage": 24.0,
+            "RAM_usage": 46180,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -622,6 +1720,86 @@
       }
     ],
     "c": [
+      {
+        "id": "c_protein_translation_Exercism (m3g4d1v3r)",
+        "filename": "protein_translation.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/protein_translation_Exercism_m3g4d1v3r/openAI/ChatGPT4_protein_translation_v3.c",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/protein_translation_Exercism_m3g4d1v3r/claude/ClaudeSonnet4_protein_translation_v3.c",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/protein_translation_Exercism_m3g4d1v3r/gemini/GeminiFlash_protein_translation_v3.c",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "c_protein_translation_Exercism (m3g4d1v3r)",
+        "filename": "protein_translation.c",
+        "language": "c",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/protein_translation_Exercism_m3g4d1v3r/openAI/ChatGPT4_protein_translation_v3.c",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/protein_translation_Exercism_m3g4d1v3r/claude/ClaudeSonnet4_protein_translation_v3.c",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/c/protein_translation_Exercism_m3g4d1v3r/gemini/GeminiFlash_protein_translation_v3.c",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
       {
         "id": "c_protein_translation_Exercism (m3g4d1v3r)",
         "filename": "protein_translation.c",
@@ -705,6 +1883,86 @@
         ]
       },
       {
+        "id": "cpp_protein_translation_Exercism (thefullarcticfox)",
+        "filename": "protein_translation.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/protein_translation_Exercism_thefullarcticfox/openAI/ChatGPT4_protein_translation_v3.cpp",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/protein_translation_Exercism_thefullarcticfox/claude/ClaudeSonnet4_protein_translation_v3.cpp",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/protein_translation_Exercism_thefullarcticfox/gemini/GeminiFlash_protein_translation_v3.cpp",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "cpp_protein_translation_Exercism (thefullarcticfox)",
+        "filename": "protein_translation.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/protein_translation_Exercism_thefullarcticfox/openAI/ChatGPT4_protein_translation_v3.cpp",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/protein_translation_Exercism_thefullarcticfox/claude/ClaudeSonnet4_protein_translation_v3.cpp",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/protein_translation_Exercism_thefullarcticfox/gemini/GeminiFlash_protein_translation_v3.cpp",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
         "id": "cpp_protein-translation_toemm",
         "filename": "protein_translation.cpp",
         "language": "cpp",
@@ -713,8 +1971,8 @@
             "LLM_type": "claude",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/protein-translation_exercism-toemm/claude/ClaudeSonnet4_protein_translation_v3.cpp",
             "log": "",
-            "execution_time_ms": 2.620593,
-            "CPU_usage": 66.0,
+            "execution_time_ms": 5.087309,
+            "CPU_usage": 32.0,
             "RAM_usage": 10496,
             "regressionTestPassed": true,
             "success": true,
@@ -731,9 +1989,9 @@
             "LLM_type": "openAI",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/protein-translation_exercism-toemm/openAI/ChatGPT4_protein_translation_v3.cpp",
             "log": "",
-            "execution_time_ms": 2.634176,
-            "CPU_usage": 68.0,
-            "RAM_usage": 10496,
+            "execution_time_ms": 44.970733,
+            "CPU_usage": 10.0,
+            "RAM_usage": 10112,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -749,91 +2007,11 @@
             "LLM_type": "gemini",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/protein-translation_exercism-toemm/gemini/GeminiFlash_protein_translation_v3.cpp",
             "log": "",
-            "execution_time_ms": 2.610884,
-            "CPU_usage": 65.0,
+            "execution_time_ms": 5.318184,
+            "CPU_usage": 46.0,
             "RAM_usage": 10496,
             "regressionTestPassed": true,
             "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "cpp_protein_translation_Exercism (thefullarcticfox)",
-        "filename": "protein_translation.cpp",
-        "language": "cpp",
-        "LLM_results": [
-          {
-            "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/protein_translation_Exercism_thefullarcticfox/openAI/ChatGPT4_protein_translation_v3.cpp",
-            "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
-            "regressionTestPassed": true,
-            "success": null,
-            "error_message": null
-          },
-          {
-            "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/protein_translation_Exercism_thefullarcticfox/claude/ClaudeSonnet4_protein_translation_v3.cpp",
-            "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
-            "regressionTestPassed": true,
-            "success": null,
-            "error_message": null
-          },
-          {
-            "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/protein_translation_Exercism_thefullarcticfox/gemini/GeminiFlash_protein_translation_v3.cpp",
-            "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
-            "regressionTestPassed": true,
-            "success": null,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "cpp_protein_translation_Exercism (thefullarcticfox)",
-        "filename": "protein_translation.cpp",
-        "language": "cpp",
-        "LLM_results": [
-          {
-            "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/protein_translation_Exercism_thefullarcticfox/openAI/ChatGPT4_protein_translation_v3.cpp",
-            "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
-            "regressionTestPassed": true,
-            "success": null,
-            "error_message": null
-          },
-          {
-            "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/protein_translation_Exercism_thefullarcticfox/claude/ClaudeSonnet4_protein_translation_v3.cpp",
-            "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
-            "regressionTestPassed": true,
-            "success": null,
-            "error_message": null
-          },
-          {
-            "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/protein_translation_Exercism_thefullarcticfox/gemini/GeminiFlash_protein_translation_v3.cpp",
-            "log": "",
-            "execution_time_ms": 1000,
-            "CPU_usage": 50.0,
-            "RAM_usage": 80000,
-            "regressionTestPassed": true,
-            "success": null,
             "error_message": null
           }
         ]
@@ -849,11 +2027,91 @@
             "LLM_type": "gemini",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/protein_translation_Exercism_go_rootulp/gemini/GeminiFlash_protein_translation_v3.go",
             "log": "",
-            "execution_time_ms": 5909,
-            "CPU_usage": 22.0,
-            "RAM_usage": 228120,
+            "execution_time_ms": 8330.0,
+            "CPU_usage": 103.0,
+            "RAM_usage": 210232,
             "regressionTestPassed": true,
             "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "go_protein_translation_Exercism (go_ThomasZumsteg)",
+        "filename": "protein_translation.go",
+        "language": "go",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/protein_translation_Exercism_go_ThomasZumsteg/openAI/ChatGPT4_protein_translation_v3.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/protein_translation_Exercism_go_ThomasZumsteg/claude/ClaudeSonnet4_protein_translation_v3.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/protein_translation_Exercism_go_ThomasZumsteg/gemini/GeminiFlash_protein_translation_v3.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "go_protein_translation_Exercism (go_ThomasZumsteg)",
+        "filename": "protein_translation.go",
+        "language": "go",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/protein_translation_Exercism_go_ThomasZumsteg/openAI/ChatGPT4_protein_translation_v3.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/protein_translation_Exercism_go_ThomasZumsteg/claude/ClaudeSonnet4_protein_translation_v3.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/protein_translation_Exercism_go_ThomasZumsteg/gemini/GeminiFlash_protein_translation_v3.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
             "error_message": null
           }
         ]
@@ -934,6 +2192,232 @@
             "RAM_usage": 80000,
             "regressionTestPassed": true,
             "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "go_protein_translation_Exercism (go_drapala)",
+        "filename": "protein_translation.go",
+        "language": "go",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/protein_translation_Exercism_go_drapala/openAI/ChatGPT4_protein_translation_v3.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/protein_translation_Exercism_go_drapala/claude/ClaudeSonnet4_protein_translation_v3.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/protein_translation_Exercism_go_drapala/gemini/GeminiFlash_protein_translation_v3.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "go_protein_translation_Exercism (go_drapala)",
+        "filename": "protein_translation.go",
+        "language": "go",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/protein_translation_Exercism_go_drapala/openAI/ChatGPT4_protein_translation_v3.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/protein_translation_Exercism_go_drapala/claude/ClaudeSonnet4_protein_translation_v3.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/protein_translation_Exercism_go_drapala/gemini/GeminiFlash_protein_translation_v3.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "go_protein_translation_Exercism (go_rootulp)",
+        "filename": "protein_translation.go",
+        "language": "go",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/protein_translation_Exercism_go_rootulp/claude/ClaudeSonnet4_protein_translation_v3.go",
+            "log": "",
+            "execution_time_ms": 8350.0,
+            "CPU_usage": 94.0,
+            "RAM_usage": 218592,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "go_protein_translation_Exercism (go_rootulp)",
+        "filename": "protein_translation.go",
+        "language": "go",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/protein_translation_Exercism_go_rootulp/openAI/ChatGPT4_protein_translation_v3.go",
+            "log": "",
+            "execution_time_ms": 8309.999999999998,
+            "CPU_usage": 96.0,
+            "RAM_usage": 222552,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": null
+          }
+        ]
+      }
+    ],
+    "javascript": [
+      {
+        "id": "javascript_protein-translation_ThomasZumsteg",
+        "filename": "protein-translation.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "javascript/protein-translation_exercism-ThomasZumsteg/claude/ClaudeSonnet4_protein-translation_v3.js",
+            "log": "",
+            "execution_time_ms": 790.0,
+            "CPU_usage": 17.0,
+            "RAM_usage": 82216,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_protein-translation_ThomasZumsteg",
+        "filename": "protein-translation.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "javascript/protein-translation_exercism-ThomasZumsteg/openAI/ChatGPT4_protein-translation_v3.js",
+            "log": "",
+            "execution_time_ms": 800.0,
+            "CPU_usage": 17.0,
+            "RAM_usage": 81832,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_protein-translation_ThomasZumsteg",
+        "filename": "protein-translation.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "javascript/protein-translation_exercism-ThomasZumsteg/gemini/GeminiFlash_protein-translation_v3.js",
+            "log": "",
+            "execution_time_ms": 770.0,
+            "CPU_usage": 20.0,
+            "RAM_usage": 82508,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_protein-translation_SLIB53",
+        "filename": "protein-translation.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "javascript/protein-translation_exercism-SLIB53/openAI/ChatGPT4_protein-translation_v3.js",
+            "log": "",
+            "execution_time_ms": 720.0000000000001,
+            "CPU_usage": 32.0,
+            "RAM_usage": 82532,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_protein-translation_SLIB53",
+        "filename": "protein-translation.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "javascript/protein-translation_exercism-SLIB53/gemini/GeminiFlash_protein-translation_v3.js",
+            "log": "",
+            "execution_time_ms": 440.00000000000006,
+            "CPU_usage": 53.0,
+            "RAM_usage": 82184,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_protein-translation_SLIB53",
+        "filename": "protein-translation.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "javascript/protein-translation_exercism-SLIB53/claude/ClaudeSonnet4_protein-translation_v3.js",
+            "log": "",
+            "execution_time_ms": 439.99999999999994,
+            "CPU_usage": 52.0,
+            "RAM_usage": 82368,
+            "regressionTestPassed": true,
+            "success": true,
             "error_message": null
           }
         ]

@@ -7,7 +7,7 @@ namespace sieve {
         
         std::vector<bool> is_prime(n + 1, true);
         std::vector<int> result;
-        result.reserve(n / (std::log(n) + 1));
+        result.reserve(n / (std::log(n) > 0 ? std::log(n) : 1));
         
         is_prime[0] = is_prime[1] = false;
         

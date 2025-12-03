@@ -2,13 +2,14 @@
 double interest_rate(double balance) {
     if (balance < 0) {
         return 3.213;
-    } else if (balance < 1000) {
-        return 0.5;
-    } else if (balance < 5000) {
-        return 1.621;
-    } else {
-        return 2.475;
     }
+    if (balance < 1000) {
+        return 0.5;
+    }
+    if (balance < 5000) {
+        return 1.621;
+    }
+    return 2.475;
 }
 
 // yearly_interest calculates the yearly interest for the provided balance.
@@ -31,8 +32,10 @@ int years_until_desired_balance(double balance, double target_balance) {
     }
 
     int years = 0;
+    double rate;
     while (balance < target_balance) {
-        balance = annual_balance_update(balance);
+        rate = interest_rate(balance);
+        balance *= (1.0 + (rate / 100.0));
         years++;
 
         if (years > 1000) return years; // Add a failsafe to prevent infinite loops

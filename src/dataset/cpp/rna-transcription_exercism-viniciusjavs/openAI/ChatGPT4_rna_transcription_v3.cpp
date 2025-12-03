@@ -14,8 +14,8 @@ char to_rna(char dna) {
 }
 
 string to_rna(string strand) {
-    for (char& nucleotide : strand) {
-        nucleotide = to_rna(nucleotide);
+    for (char &c : strand) {
+        c = to_rna(c);
     }
     return strand;
 }

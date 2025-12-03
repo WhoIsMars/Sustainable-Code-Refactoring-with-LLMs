@@ -5,7 +5,7 @@ Generates:
 - 4.1.A: 2 overview graphs (aggregated + by model) for pass rate per language
 - 4.1.B: 28 drill-down graphs (7 languages × 4 prompt versions)
 
-Author: Generated for Thesis Analysis
+
 Date: 2025
 """
 

@@ -1,17 +1,23 @@
 {
-  "execution_date": "2025-11-21 10:41:35",
+  "execution_date": "2025-12-02 23:40:14",
   "execution_metadata": {
     "total_tests": 1,
     "successful_tests": 1,
     "execution_time": "00h 00m 00s",
     "cluster": "cluster_making_the_grade",
     "test_type": "llm_v4",
-    "last_updated": "2025-11-21 10:41:35",
+    "last_updated": "2025-12-02 23:40:14",
     "selective_execution": {
       "languages": [
-        "cpp"
+        "python",
+        "c",
+        "javascript",
+        "java",
+        "go",
+        "cpp",
+        "typescript"
       ],
-      "timestamp": "2025-11-21 10:41:35"
+      "timestamp": "2025-12-02 23:40:14"
     }
   },
   "results": {
@@ -22,12 +28,30 @@
         "language": "python",
         "LLM_results": [
           {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/making-the-grade/gemini/GeminiFlash_making-the-grade_v4.py",
+            "log": "",
+            "execution_time_ms": 230.0,
+            "CPU_usage": 21.0,
+            "RAM_usage": 13696,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "making-the-grade_23",
+        "filename": "making-the-grade.py",
+        "language": "python",
+        "LLM_results": [
+          {
             "LLM_type": "claude",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/making-the-grade/claude/ClaudeSonnet4_making-the-grade_v4.py",
             "log": "",
-            "execution_time_ms": 40.0,
-            "CPU_usage": 73.0,
-            "RAM_usage": 13696,
+            "execution_time_ms": 220.0,
+            "CPU_usage": 19.0,
+            "RAM_usage": 13568,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -43,27 +67,9 @@
             "LLM_type": "openAI",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/making-the-grade/openAI/ChatGPT4_making-the-grade_v4.py",
             "log": "",
-            "execution_time_ms": 40.0,
-            "CPU_usage": 77.0,
-            "RAM_usage": 13952,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "making-the-grade_23",
-        "filename": "making-the-grade.py",
-        "language": "python",
-        "LLM_results": [
-          {
-            "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/making-the-grade/gemini/GeminiFlash_making-the-grade_v4.py",
-            "log": "",
-            "execution_time_ms": 40.0,
-            "CPU_usage": 82.0,
-            "RAM_usage": 13952,
+            "execution_time_ms": 229.99999999999997,
+            "CPU_usage": 24.0,
+            "RAM_usage": 13824,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -81,8 +87,8 @@
             "LLM_type": "claude",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/making-the-grade_exercism-toemm/claude/ClaudeSonnet4_making_the_grade_v4.cpp",
             "log": "",
-            "execution_time_ms": 2.476818,
-            "CPU_usage": 72.0,
+            "execution_time_ms": 19.904214,
+            "CPU_usage": 16.0,
             "RAM_usage": 10496,
             "regressionTestPassed": true,
             "success": true,
@@ -99,8 +105,8 @@
             "LLM_type": "openAI",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/making-the-grade_exercism-toemm/openAI/ChatGPT4_making_the_grade_v4.cpp",
             "log": "",
-            "execution_time_ms": 4.998971,
-            "CPU_usage": 46.0,
+            "execution_time_ms": 8.776539,
+            "CPU_usage": 34.0,
             "RAM_usage": 10496,
             "regressionTestPassed": true,
             "success": true,
@@ -117,8 +123,116 @@
             "LLM_type": "gemini",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/making-the-grade_exercism-toemm/gemini/GeminiFlash_making_the_grade_v4.cpp",
             "log": "",
-            "execution_time_ms": 12.404842,
-            "CPU_usage": 17.0,
+            "execution_time_ms": 20.658467,
+            "CPU_usage": 18.0,
+            "RAM_usage": 10368,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "cpp_making-the-grade_S0l0m4n",
+        "filename": "making_the_grade.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "cpp/making-the-grade_exercism-S0l0m4n/claude/ClaudeSonnet4_making_the_grade_v4.cpp",
+            "log": "",
+            "execution_time_ms": 12.098799,
+            "CPU_usage": 25.0,
+            "RAM_usage": 10496,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "cpp_making-the-grade_S0l0m4n",
+        "filename": "making_the_grade.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "cpp/making-the-grade_exercism-S0l0m4n/gemini/GeminiFlash_making_the_grade_v4.cpp",
+            "log": "",
+            "execution_time_ms": 6.411735,
+            "CPU_usage": 27.0,
+            "RAM_usage": 10496,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "cpp_making-the-grade_tqa236",
+        "filename": "making_the_grade.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "cpp/making-the-grade_exercism-tqa236/openAI/ChatGPT4_making_the_grade_v4.cpp",
+            "log": "",
+            "execution_time_ms": 29.605747,
+            "CPU_usage": 10.0,
+            "RAM_usage": 10496,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "cpp_making-the-grade_S0l0m4n",
+        "filename": "making_the_grade.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "cpp/making-the-grade_exercism-S0l0m4n/openAI/ChatGPT4_making_the_grade_v4.cpp",
+            "log": "",
+            "execution_time_ms": 8.789619,
+            "CPU_usage": 23.0,
+            "RAM_usage": 10368,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "cpp_making-the-grade_tqa236",
+        "filename": "making_the_grade.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "cpp/making-the-grade_exercism-tqa236/claude/ClaudeSonnet4_making_the_grade_v4.cpp",
+            "log": "",
+            "execution_time_ms": 4.386934,
+            "CPU_usage": 65.0,
+            "RAM_usage": 10496,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "cpp_making-the-grade_tqa236",
+        "filename": "making_the_grade.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "cpp/making-the-grade_exercism-tqa236/gemini/GeminiFlash_making_the_grade_v4.cpp",
+            "log": "",
+            "execution_time_ms": 3.46889,
+            "CPU_usage": 54.0,
             "RAM_usage": 10496,
             "regressionTestPassed": true,
             "success": true,

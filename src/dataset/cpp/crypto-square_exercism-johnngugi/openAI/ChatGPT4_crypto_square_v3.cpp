@@ -14,7 +14,7 @@ namespace crypto_square
 
         for (char c : initial)
         {
-            if (isalnum(c))
+            if (std::isalnum(c))
                 result += std::tolower(c);
         }
 

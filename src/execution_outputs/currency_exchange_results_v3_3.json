@@ -1,17 +1,23 @@
 {
-  "execution_date": "2025-11-19 01:40:02",
+  "execution_date": "2025-11-30 14:44:13",
   "execution_metadata": {
     "total_tests": 1,
     "successful_tests": 1,
     "execution_time": "00h 00m 00s",
     "cluster": "cluster_currency_exchange",
     "test_type": "llm_v3",
-    "last_updated": "2025-11-19 01:40:02",
+    "last_updated": "2025-11-30 14:44:13",
     "selective_execution": {
       "languages": [
-        "python"
+        "python",
+        "typescript",
+        "java",
+        "go",
+        "javascript",
+        "c",
+        "cpp"
       ],
-      "timestamp": "2025-11-19 01:40:02"
+      "timestamp": "2025-11-30 14:44:13"
     }
   },
   "results": {
@@ -22,11 +28,29 @@
         "language": "python",
         "LLM_results": [
           {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/currency-exchange/gemini/GeminiFlash_currency-exchange_v3.py",
+            "log": "",
+            "execution_time_ms": 90.0,
+            "CPU_usage": 31.0,
+            "RAM_usage": 13952,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "currency-exchange_9",
+        "filename": "currency-exchange.py",
+        "language": "python",
+        "LLM_results": [
+          {
             "LLM_type": "openAI",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/currency-exchange/openAI/ChatGPT4_currency-exchange_v3.py",
             "log": "",
-            "execution_time_ms": 40.0,
-            "CPU_usage": 87.0,
+            "execution_time_ms": 60.0,
+            "CPU_usage": 50.0,
             "RAM_usage": 13952,
             "regressionTestPassed": true,
             "success": true,
@@ -43,27 +67,9 @@
             "LLM_type": "claude",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/currency-exchange/claude/ClaudeSonnet4_currency-exchange_v3.py",
             "log": "",
-            "execution_time_ms": 30.0,
-            "CPU_usage": 86.0,
-            "RAM_usage": 13952,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "currency-exchange_9",
-        "filename": "currency-exchange.py",
-        "language": "python",
-        "LLM_results": [
-          {
-            "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/currency-exchange/gemini/GeminiFlash_currency-exchange_v3.py",
-            "log": "",
-            "execution_time_ms": 30.0,
-            "CPU_usage": 88.0,
-            "RAM_usage": 13952,
+            "execution_time_ms": 100.0,
+            "CPU_usage": 21.0,
+            "RAM_usage": 13824,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null

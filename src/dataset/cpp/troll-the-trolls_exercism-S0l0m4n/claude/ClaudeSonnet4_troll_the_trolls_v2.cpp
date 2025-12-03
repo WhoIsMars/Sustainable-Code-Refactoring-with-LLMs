@@ -44,7 +44,7 @@ inline bool permission_check(Action action, AccountStatus status) noexcept {
 // checks if two players can join the same game. The function has two parameters
 // of type `AccountStatus` and returns a `bool`.
 inline bool valid_player_combination(AccountStatus s1, AccountStatus s2) noexcept {
-    return (s1 != AccountStatus::guest && s2 != AccountStatus::guest) &&
+    return (s1 != AccountStatus::guest) && (s2 != AccountStatus::guest) && 
            !((s1 == AccountStatus::troll) ^ (s2 == AccountStatus::troll));
 }
 

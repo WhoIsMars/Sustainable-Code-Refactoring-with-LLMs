@@ -1,17 +1,23 @@
 {
-  "execution_date": "2025-11-15 19:45:29",
+  "execution_date": "2025-12-01 20:43:32",
   "execution_metadata": {
     "total_tests": 8,
     "successful_tests": 8,
     "execution_time": "00h 00m 00s",
     "cluster": "cluster_amusement_park",
     "test_type": "llm_v4",
-    "last_updated": "2025-11-15 19:45:29",
+    "last_updated": "2025-12-01 20:43:32",
     "selective_execution": {
       "languages": [
-        "javascript"
+        "typescript",
+        "cpp",
+        "javascript",
+        "java",
+        "c",
+        "python",
+        "go"
       ],
-      "timestamp": "2025-11-15 19:45:29"
+      "timestamp": "2025-12-01 20:43:32"
     }
   },
   "results": {
@@ -22,12 +28,48 @@
         "language": "javascript",
         "LLM_results": [
           {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/amusement-park_exercism-javascript-PhymasSC/gemini/GeminiFlash_amusement-park_v4.js",
+            "log": "",
+            "execution_time_ms": 960.0,
+            "CPU_usage": 30.0,
+            "RAM_usage": 84380,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_amusement-park_exercism-javascript-PhymasSC",
+        "filename": "amusement-park.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/amusement-park_exercism-javascript-PhymasSC/openAI/ChatGPT4_amusement-park_v4.js",
+            "log": "",
+            "execution_time_ms": 1080.0,
+            "CPU_usage": 28.0,
+            "RAM_usage": 84532,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_amusement-park_exercism-javascript-PhymasSC",
+        "filename": "amusement-park.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
             "LLM_type": "claude",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/amusement-park_exercism-javascript-PhymasSC/claude/ClaudeSonnet4_amusement-park_v4.js",
             "log": "",
-            "execution_time_ms": 1240.0,
-            "CPU_usage": 7.0,
-            "RAM_usage": 84300,
+            "execution_time_ms": 980.0,
+            "CPU_usage": 28.0,
+            "RAM_usage": 83244,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -43,65 +85,11 @@
             "LLM_type": "openAI",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/amusement-park_exercism-javascript-PhymasSC/openAI/ChatGPT4_amusement-park_v4.js",
             "log": "",
-            "execution_time_ms": 1319.9999999999998,
-            "CPU_usage": 7.0,
-            "RAM_usage": 84968,
+            "execution_time_ms": 1020.0,
+            "CPU_usage": 30.0,
+            "RAM_usage": 84412,
             "regressionTestPassed": false,
             "success": false,
-            "error_message": "Docker exit code: 1"
-          }
-        ]
-      },
-      {
-        "id": "javascript_amusement-park_exercism-javascript-PhymasSC",
-        "filename": "amusement-park.js",
-        "language": "javascript",
-        "LLM_results": [
-          {
-            "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/amusement-park_exercism-javascript-PhymasSC/openAI/ChatGPT4_amusement-park_v4.js",
-            "log": "",
-            "execution_time_ms": 1420.0,
-            "CPU_usage": 8.0,
-            "RAM_usage": 84704,
-            "regressionTestPassed": false,
-            "success": false,
-            "error_message": "Docker exit code: 1"
-          }
-        ]
-      },
-      {
-        "id": "javascript_amusement-park_exercism-javascript-PhymasSC",
-        "filename": "amusement-park.js",
-        "language": "javascript",
-        "LLM_results": [
-          {
-            "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/amusement-park_exercism-javascript-PhymasSC/gemini/GeminiFlash_amusement-park_v4.js",
-            "log": "",
-            "execution_time_ms": 1230.0,
-            "CPU_usage": 7.0,
-            "RAM_usage": 83988,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "javascript_amusement-park_exercism-javascript-PhymasSC_PhymasSC",
-        "filename": "amusement-park.js",
-        "language": "javascript",
-        "LLM_results": [
-          {
-            "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/amusement-park_exercism-javascript-PhymasSC/gemini/GeminiFlash_amusement-park_v4.js",
-            "log": "",
-            "execution_time_ms": 1230.0,
-            "CPU_usage": 10.0,
-            "RAM_usage": 82544,
-            "regressionTestPassed": true,
-            "success": true,
             "error_message": null
           }
         ]
@@ -115,9 +103,27 @@
             "LLM_type": "claude",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/amusement-park_exercism-javascript-PhymasSC/claude/ClaudeSonnet4_amusement-park_v4.js",
             "log": "",
-            "execution_time_ms": 1250.0,
-            "CPU_usage": 8.0,
-            "RAM_usage": 82644,
+            "execution_time_ms": 1130.0,
+            "CPU_usage": 28.0,
+            "RAM_usage": 84428,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_amusement-park_exercism-javascript-PhymasSC_PhymasSC",
+        "filename": "amusement-park.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/amusement-park_exercism-javascript-PhymasSC/gemini/GeminiFlash_amusement-park_v4.js",
+            "log": "",
+            "execution_time_ms": 1020.0,
+            "CPU_usage": 28.0,
+            "RAM_usage": 83340,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null

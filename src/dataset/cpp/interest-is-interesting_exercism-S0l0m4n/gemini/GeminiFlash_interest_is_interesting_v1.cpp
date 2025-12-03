@@ -26,11 +26,13 @@ int years_until_desired_balance(double balance, double target_balance) {
     if (balance >= target_balance) {
         return 0;
     }
+
     int years = 0;
-    while (balance < target_balance) {
-        balance = annual_balance_update(balance);
+    double current_balance = balance;
+    while (current_balance < target_balance) {
+        current_balance = annual_balance_update(current_balance);
         years++;
-        if (years > 10000) return years; // Add a failsafe to prevent infinite loops
+        if (years > 10000) return years; // Adding a failsafe to prevent infinite loops
     }
     return years;
 }

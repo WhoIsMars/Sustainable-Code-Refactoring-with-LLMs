@@ -32,3 +32,4 @@ class FoodChain {
 }
 
 export default FoodChain;
+export { song };

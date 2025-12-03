@@ -12,12 +12,7 @@ namespace targets
 
         bool hit()
         {
-            if (health > 0)
-            {
-                --health;
-                return true;
-            }
-            return false;
+            return health > 0 ? (--health, true) : false;
         }
 
         bool is_alive() const
@@ -37,10 +32,9 @@ namespace targets
             return x_coordinate == other.x_coordinate && y_coordinate == other.y_coordinate;
         }
 
+    private:
         int x_coordinate;
         int y_coordinate;
-
-    private:
         int health;
     };
 } // namespace targets

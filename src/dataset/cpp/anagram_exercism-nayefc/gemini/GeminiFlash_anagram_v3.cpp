@@ -16,7 +16,7 @@ std::vector<std::string> anagram::anagram::matches(std::vector<std::string> matc
     std::vector<std::string> all_matches;
     all_matches.reserve(match_list.size()); // Pre-allocate memory
 
-    std::string lower_word = word;
+    std::string lower_word = this->word;
     boost::to_lower(lower_word);
 
     for (const auto &match_word : match_list) {
@@ -27,16 +27,16 @@ std::vector<std::string> anagram::anagram::matches(std::vector<std::string> matc
     return all_matches;
 }
 
-bool anagram::anagram::is_anagram(const std::string& possible_match) {
-    if (possible_match.length() != word.length()) {
+bool anagram::anagram::is_anagram(std::string possible_match) {
+    if (possible_match.length() != sorted.length()) {
         return false;
     }
 
-    std::string lower_match = possible_match;
-    boost::to_lower(lower_match);
+    std::string lower_possible_match = possible_match;
+    boost::to_lower(lower_possible_match);
 
-    std::string sorted_match = lower_match;
-    std::sort(sorted_match.begin(), sorted_match.end());
+    std::string sorted_possible_match = lower_possible_match;
+    std::sort(sorted_possible_match.begin(), sorted_possible_match.end());
 
-    return sorted == sorted_match;
+    return sorted == sorted_possible_match;
 }

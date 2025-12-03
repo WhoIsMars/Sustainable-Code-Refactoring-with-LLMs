@@ -11,7 +11,7 @@ namespace reverse_string {
         result.reserve(input_string.size());
         
         for (auto it = input_string.rbegin(); it != input_string.rend(); ++it) {
-            result += *it;
+            result.push_back(*it);
         }
         
         return result;

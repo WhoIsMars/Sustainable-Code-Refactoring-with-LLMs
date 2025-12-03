@@ -1,5 +1,5 @@
 #include "say.h"
 
 namespace say {
-    // No functionality provided to optimize. Placeholder namespace remains minimal.
+    // Empty namespace removed to reduce unnecessary compilation overhead
 } // namespace say

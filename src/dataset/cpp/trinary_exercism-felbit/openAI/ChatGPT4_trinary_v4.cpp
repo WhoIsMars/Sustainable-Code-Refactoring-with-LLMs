@@ -7,11 +7,15 @@ namespace trinary
     int to_decimal(const std::string& _trinary)
     {
         int _decimal = 0;
-        for (char c : _trinary)
+        int _multiplier = 1;
+
+        for (auto it = _trinary.rbegin(); it != _trinary.rend(); ++it)
         {
-            if (c < '0' || c > '2') return 0;
-            _decimal = _decimal * 3 + (c - '0');
+            if (*it < '0' || *it > '2') return 0;
+            _decimal += (*it - '0') * _multiplier;
+            _multiplier *= 3;
         }
+
         return _decimal;
     }
 

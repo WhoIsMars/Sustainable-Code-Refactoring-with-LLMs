@@ -15,7 +15,6 @@ phone_number::phone_number(const string n)
 	}
 	
 	int num_length = final.length();
-	
 	if (num_length == 11)
 	{
 		if (final[0] == '1')

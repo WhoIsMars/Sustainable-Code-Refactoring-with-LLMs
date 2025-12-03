@@ -1,17 +1,23 @@
 {
-  "execution_date": "2025-11-19 01:39:39",
+  "execution_date": "2025-11-30 13:45:07",
   "execution_metadata": {
     "total_tests": 1,
     "successful_tests": 1,
     "execution_time": "00h 00m 00s",
     "cluster": "cluster_count_consecutive_sums",
     "test_type": "llm_v3",
-    "last_updated": "2025-11-19 01:39:39",
+    "last_updated": "2025-11-30 13:45:07",
     "selective_execution": {
       "languages": [
-        "python"
+        "python",
+        "typescript",
+        "java",
+        "go",
+        "javascript",
+        "c",
+        "cpp"
       ],
-      "timestamp": "2025-11-19 01:39:39"
+      "timestamp": "2025-11-30 13:45:07"
     }
   },
   "results": {
@@ -22,12 +28,30 @@
         "language": "python",
         "LLM_results": [
           {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/count_consecutive_sums/gemini/GeminiFlash_count_consecutive_sums_v3.py",
+            "log": "",
+            "execution_time_ms": 250.0,
+            "CPU_usage": 21.0,
+            "RAM_usage": 13824,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 1"
+          }
+        ]
+      },
+      {
+        "id": "count_consecutive_sums_246",
+        "filename": "count_consecutive_sums.py",
+        "language": "python",
+        "LLM_results": [
+          {
             "LLM_type": "claude",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/count_consecutive_sums/claude/ClaudeSonnet4_count_consecutive_sums_v3.py",
             "log": "",
-            "execution_time_ms": 30.0,
-            "CPU_usage": 80.0,
-            "RAM_usage": 13824,
+            "execution_time_ms": 280.0,
+            "CPU_usage": 18.0,
+            "RAM_usage": 13564,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -43,30 +67,12 @@
             "LLM_type": "openAI",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/count_consecutive_sums/openAI/ChatGPT4_count_consecutive_sums_v3.py",
             "log": "",
-            "execution_time_ms": 40.0,
-            "CPU_usage": 70.0,
+            "execution_time_ms": 200.0,
+            "CPU_usage": 28.0,
             "RAM_usage": 13824,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "count_consecutive_sums_246",
-        "filename": "count_consecutive_sums.py",
-        "language": "python",
-        "LLM_results": [
-          {
-            "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/count_consecutive_sums/gemini/GeminiFlash_count_consecutive_sums_v3.py",
-            "log": "",
-            "execution_time_ms": 60.0,
-            "CPU_usage": 81.0,
-            "RAM_usage": 13824,
-            "regressionTestPassed": false,
-            "success": false,
-            "error_message": "Docker exit code: 1"
           }
         ]
       }

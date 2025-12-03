@@ -1,5 +1,5 @@
 #include "trinary.h"
-#include <string>
+#include <cctype>
 namespace trinary
 {
     int to_decimal(const std::string& trinary)
@@ -7,7 +7,7 @@ namespace trinary
         int decimal = 0;
         for (char c : trinary)
         {
-            if (!isdigit(c) || c < '0' || c > '2')
+            if (!std::isdigit(c))
                 return 0;
             decimal = decimal * 3 + (c - '0');
         }

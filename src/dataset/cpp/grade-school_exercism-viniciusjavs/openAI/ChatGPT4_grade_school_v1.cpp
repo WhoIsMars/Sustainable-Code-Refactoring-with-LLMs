@@ -1,6 +1,7 @@
 #include "grade_school.h"
 #include <algorithm>
 #include <map>
+#include <vector>
 
 namespace grade_school {
 roster_t const &school::roster() const { return roster_; }

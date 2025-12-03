@@ -21,7 +21,7 @@ namespace prime_factors
             }
         }
 
-        // If n is still greater than 1, it's a prime factor
+        // If n is still > 1, then it's a prime factor
         if (n > 1) {
             result.push_back(n);
         }

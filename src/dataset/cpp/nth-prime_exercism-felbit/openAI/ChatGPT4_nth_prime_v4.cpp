@@ -1,6 +1,6 @@
 #include "nth_prime.h"
-#include <cmath>
 #include <vector>
+#include <cmath>
 
 namespace prime {
 
@@ -9,8 +9,8 @@ namespace prime {
         if (n < 1) throw std::domain_error("Non positive number given!");
 
         std::vector<int> primes;
-        primes.reserve(n);
-        primes.push_back(2);
+        primes.reserve(n); // Reserve memory to avoid frequent reallocations
+        primes.push_back(2); // Start with the first prime number
 
         int candidate = 3;
 
@@ -18,6 +18,7 @@ namespace prime {
         {
             bool is_prime = true;
             int limit = static_cast<int>(std::sqrt(candidate));
+
             for (int p : primes)
             {
                 if (p > limit) break;
@@ -29,7 +30,8 @@ namespace prime {
             }
 
             if (is_prime) primes.push_back(candidate);
-            candidate += 2;
+
+            candidate += 2; // Skip even numbers
         }
 
         return primes.back();

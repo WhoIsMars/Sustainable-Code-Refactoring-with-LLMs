@@ -31,17 +31,17 @@ namespace allergies {
             int allergy_score = 1 << i;
             if (remaining_score >= allergy_score) {
                 if (remaining_score & allergy_score) {
-                    allergy_set.emplace(allergy_names[i]);
+                    allergy_set.insert(allergy_names[i]);
                     remaining_score -= allergy_score;
                 }
             } else {
-                break; // Optimization: No need to check further if the remaining score is less than the current allergy score
+                break; // Optimization: No need to check further if allergy_score exceeds remaining_score
             }
         }
     }
 
     bool allergy_test::is_allergic_to(string allergy_name) {
-        return allergy_set.find(allergy_name) != allergy_set.end();
+        return allergy_set.count(allergy_name) > 0;
     }
 
     unordered_set<string> allergy_test::get_allergies() {

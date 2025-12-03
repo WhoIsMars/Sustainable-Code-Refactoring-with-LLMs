@@ -4,26 +4,22 @@ namespace pascals_triangle
 {
     std::vector<std::vector<int>> generate_rows(int rowCount)
     {
-        std::vector<std::vector<int>> rows;
         if (rowCount <= 0)
         {
-            return rows;
+            return {};
         }
 
-        rows.reserve(rowCount);
-        rows.push_back({1});
+        std::vector<std::vector<int>> rows(rowCount);
+        rows[0] = {1};
 
         for (int i = 1; i < rowCount; ++i)
         {
-            const auto& previousRow = rows.back();
-            std::vector<int> row(i + 1, 1);
-
+            rows[i].resize(i + 1);
+            rows[i][0] = rows[i][i] = 1;
             for (int j = 1; j < i; ++j)
             {
-                row[j] = previousRow[j - 1] + previousRow[j];
+                rows[i][j] = rows[i - 1][j - 1] + rows[i - 1][j];
             }
-
-            rows.push_back(std::move(row));
         }
 
         return rows;

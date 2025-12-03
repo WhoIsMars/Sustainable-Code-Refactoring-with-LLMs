@@ -18,10 +18,10 @@ std::vector<std::string> anagram::anagram::matches(std::vector<std::string> matc
     std::vector<std::string> all_matches;
     all_matches.reserve(match_list.size());
     
-    const size_t word_length = word.size();
+    const std::size_t word_length = word.length();
     
     for (const auto &match_word : match_list) {
-        if (match_word.size() == word_length && 
+        if (match_word.length() == word_length && 
             !boost::iequals(match_word, word) && 
             is_anagram(match_word)) {
             all_matches.push_back(match_word);
@@ -31,7 +31,7 @@ std::vector<std::string> anagram::anagram::matches(std::vector<std::string> matc
 }
 
 bool anagram::anagram::is_anagram(std::string possible_match) {
-    if (possible_match.size() != sorted.size()) {
+    if (possible_match.length() != sorted.length()) {
         return false;
     }
     

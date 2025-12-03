@@ -4,17 +4,17 @@
 namespace trinary
 {
 
-    int to_decimal(const std::string& _trinary)
+    int to_decimal(const std::string& trinary)
     {
-        int _decimal = 0;
+        int decimal = 0;
 
-        for (char c : _trinary)
+        for (char c : trinary)
         {
             if (c < '0' || c > '2') return 0; // Validate input
-            _decimal = _decimal * 3 + (c - '0');
+            decimal = decimal * 3 + (c - '0');
         }
 
-        return _decimal;
+        return decimal;
     }
 
 } // namespace trinary

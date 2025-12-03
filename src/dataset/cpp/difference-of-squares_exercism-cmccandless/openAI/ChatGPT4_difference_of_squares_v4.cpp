@@ -15,9 +15,6 @@ namespace squares
 
 	int difference(int n)
 	{
-		int sum = n * (n + 1) / 2;
-		int square_of_sum = sum * sum;
-		int sum_of_squares = n * (n + 1) * (2 * n + 1) / 6;
-		return square_of_sum - sum_of_squares;
+		return square_of_sum(n) - sum_of_squares(n);
 	}
 }

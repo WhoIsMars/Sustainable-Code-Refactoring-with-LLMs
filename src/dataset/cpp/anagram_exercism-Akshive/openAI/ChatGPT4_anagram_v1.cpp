@@ -25,6 +25,7 @@ namespace anagram {
 
             string sorted_candidate = lower_candidate;
             sort(sorted_candidate.begin(), sorted_candidate.end());
+
             if (sorted_candidate == sorted_word) {
                 ans.push_back(candidate);
             }

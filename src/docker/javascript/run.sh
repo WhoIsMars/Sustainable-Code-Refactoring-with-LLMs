@@ -4,13 +4,19 @@ set -e
 echo "🕵️  Analisi file JS per determinare se usare ESM o CommonJS..."
 
 # Cerca tutti i file JS nel progetto
-all_js_files=$(find . -name "*.js")
+all_js_files=$(find . -name "*.js" -type f 2>/dev/null)
 
-# Rileva ESM se trovi almeno un `import` o `export` in qualsiasi file
-if grep -Eq '^[[:space:]]*(import|export)\s' $all_js_files; then
-  mode="esm"
-else
+# Default mode
+mode="commonjs"
+
+# Prima controlla se ci sono require() - indica CommonJS
+if echo "$all_js_files" | xargs grep -lE 'require\s*\(' 2>/dev/null | head -1 | grep -q .; then
+  echo "🔍 Trovato require() → CommonJS"
   mode="commonjs"
+# Poi controlla se ci sono ES Modules pattern (import from, export default/const/function)
+elif echo "$all_js_files" | xargs grep -lE '^\s*(import\s+.*\s+from|export\s+(default|const|function|class|let|var))' 2>/dev/null | head -1 | grep -q .; then
+  echo "🔍 Trovato ESM pattern → ESM"
+  mode="esm"
 fi
 
 # Backup del package.json
@@ -38,8 +44,9 @@ if [ "$mode" = "esm" ]; then
     --silent=false 2>&1 | tee output.log
 else
   echo "▶️  Avvio Jest in modalità CommonJS"
+  # Usa jest.config.cjs per CommonJS (module.exports invece di export default)
   /usr/bin/time -v ./node_modules/.bin/jest \
-    --config=jest.config.js \
+    --config=jest.config.cjs \
     --silent=false 2>&1 | tee output.log
 fi
 

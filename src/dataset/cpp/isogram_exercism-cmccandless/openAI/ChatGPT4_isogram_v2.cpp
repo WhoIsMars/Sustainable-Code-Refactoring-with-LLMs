@@ -1,5 +1,6 @@
 #include <unordered_set>
 #include <cctype>
+
 #include "isogram.h"
 
 namespace isogram

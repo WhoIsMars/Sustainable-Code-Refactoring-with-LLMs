@@ -1,0 +1,28 @@
+#include "rna_transcription.h"
+#include <algorithm>
+#include <string>
+#include <unordered_map>
+
+namespace transcription {
+
+    char to_rna(char dna) {
+        static const std::unordered_map<char, char> dna_to_rna = {
+            {'C', 'G'},
+            {'G', 'C'},
+            {'A', 'U'},
+            {'T', 'A'}
+        };
+
+        auto it = dna_to_rna.find(dna);
+        if (it != dna_to_rna.end()) {
+            return it->second;
+        } else {
+            return 'A';
+        }
+    }
+
+    std::string to_rna(std::string str) {
+        std::transform(str.begin(), str.end(), str.begin(), [](char c){ return to_rna(c); });
+        return str;
+    }
+}

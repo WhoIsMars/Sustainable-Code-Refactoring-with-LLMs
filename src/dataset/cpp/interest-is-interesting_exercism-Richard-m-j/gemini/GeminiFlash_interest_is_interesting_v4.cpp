@@ -29,12 +29,24 @@ int years_until_desired_balance(double balance, double target_balance) {
         return 0;
     }
 
+    double rate = 0.0;
+    if (balance < 0) {
+        rate = 3.213 / 100.0;
+    } else if (balance < 1000) {
+        rate = 0.5 / 100.0;
+    } else if (balance < 5000) {
+        rate = 1.621 / 100.0;
+    } else {
+        rate = 2.475 / 100.0;
+    }
+
+    if (rate <= 0.0) return -1;
+
     int years = 0;
     while (balance < target_balance) {
-        balance = annual_balance_update(balance);
+        balance += balance * rate;
         years++;
-
-        if (years > 1000) return years; // Add a failsafe to prevent infinite loops
+        if (years > 10000) return -1;
     }
     return years;
 }

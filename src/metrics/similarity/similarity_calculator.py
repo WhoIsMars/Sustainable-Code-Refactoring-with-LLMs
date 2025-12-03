@@ -41,21 +41,54 @@ class SimilarityCalculator:
                     final_code_path = final_code_path.replace("_codewars_solutions","")
                     entry['codeSnippetFilePath'] = final_code_path
 
-                if final_code_path.endswith("/src") : 
-                    match entry['language'] : 
-                        case "c" : 
-                            final_code_path += "/"+entry['filename']
-                        case "cpp" : 
-                            final_code_path += "/"+entry['filename']
-                        case _ : 
-                            pass
+                # Check if path needs filename appended (for all languages)
+                expected_extensions = {
+                    'c': '.c',
+                    'cpp': '.cpp',
+                    'java': '.java',
+                    'javascript': '.js',
+                    'typescript': '.ts',
+                    'python': '.py',
+                    'go': '.go',
+                    'rust': '.rs'
+                }
+
+                lang_lower = entry['language'].lower()
+                expected_ext = expected_extensions.get(lang_lower, '')
+
+                # If path doesn't end with expected extension, it's likely a directory
+                if expected_ext and not final_code_path.endswith(expected_ext):
+                    # Path is a directory - need to replace with actual filename
+                    # Remove trailing "/src" if present, then use parent directory
+                    from pathlib import Path
+                    path_obj = Path(final_code_path)
+                    if path_obj.name == "src":
+                        # Remove /src and use parent directory
+                        final_code_path = str(path_obj.parent / entry['filename'])
+                    else:
+                        # Just append filename
+                        final_code_path = str(path_obj / entry['filename'])
 
                 base_code_snippet_file_path = utility_paths.DATASET_DIR / final_code_path
+
+                #Sustainable-Code-Refactoring-with-LLMs/src/dataset/ cpp/anagram_exercism-Akshive/src/anagram.cpp
+                if lang_lower in ["c","cpp","c++"] and "src" not in str(final_code_path): 
+                    if lang_lower == "c++" : 
+                        lang_lower = "cpp"
+                        
+                    # cpp/anagram_exercism-Akshive/anagram.cpp -> cpp/anagram_exercism-Akshive/src/anagram.cpp                    
+                    parts = str(final_code_path).split("/")
+                    dir_name = parts[1]
+                    filename = parts[2]                    
+                    base_code_snippet_file_path = utility_paths.DATASET_DIR / lang_lower / dir_name / "src" / filename
+
                 try :
                     base_code = self.read_file(base_code_snippet_file_path)
                 except Exception as e :
-                    print(f"\n\nread file exception for cluster {cluster_name} - base_code_snippet_file_path : {base_code_snippet_file_path}\nfinal_code_path = {final_code_path}\n")
-                    raise e
+                    print(f"\n⚠️  SKIP: File base non trovato per entry {entry.get('id', 'NO_ID')}")
+                    print(f"    Path: {base_code_snippet_file_path}")
+                    print(f"    Errore: {e}\n")
+                    continue  # Skip this entry and continue with the next one
 
                 for llm in entry["LLMs"]:
                     llm_filepath = utility_paths.DATASET_DIR / llm["path"]

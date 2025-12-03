@@ -7,7 +7,7 @@ This module validates the completeness of execution data across all clusters.
 It ensures that every entry in every cluster has the complete set of execution
 results (5 runs for base, 5 runs x 4 prompt versions for LLM).
 
-Author: Sustainable Code Refactoring Research Project
+
 Date: 2025-10-28
 """
 

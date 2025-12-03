@@ -5,7 +5,7 @@ This module calculates pass rate statistics for:
 - Base code (always 100% by design)
 - LLM-generated code (per model, per prompt version, per language)
 
-Author: Generated for Thesis Analysis
+
 Date: 2025
 """
 

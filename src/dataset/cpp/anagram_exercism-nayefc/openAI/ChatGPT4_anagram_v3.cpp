@@ -12,21 +12,26 @@ anagram::anagram::anagram(std::string word) {
     std::sort(this->sorted.begin(), this->sorted.end());
 }
 
-std::vector<std::string> anagram::anagram::matches(std::vector<std::string> match_list) {
+std::vector<std::string> anagram::anagram::matches(const std::vector<std::string>& match_list) {
     std::vector<std::string> all_matches;
-    for (auto &match_word : match_list) {
-        if (match_word.size() == this->word.size()) {
-            std::string lower_match = match_word;
-            std::transform(lower_match.begin(), lower_match.end(), lower_match.begin(), ::tolower);
-            if (lower_match != this->word && this->is_anagram(lower_match)) {
+    all_matches.reserve(match_list.size());
+    for (const auto& match_word : match_list) {
+        if (this->is_anagram(match_word)) {
+            std::string lower_match_word = match_word;
+            std::transform(lower_match_word.begin(), lower_match_word.end(), lower_match_word.begin(), ::tolower);
+            if (lower_match_word != this->word) {
                 all_matches.push_back(match_word);
             }
         }
     }
+    all_matches.shrink_to_fit();
     return all_matches;
 }
 
-bool anagram::anagram::is_anagram(std::string possible_match) {
-    std::sort(possible_match.begin(), possible_match.end());
-    return sorted == possible_match;
+bool anagram::anagram::is_anagram(const std::string& possible_match) {
+    if (possible_match.size() != this->word.size()) return false;
+    std::string sorted_match = possible_match;
+    std::transform(sorted_match.begin(), sorted_match.end(), sorted_match.begin(), ::tolower);
+    std::sort(sorted_match.begin(), sorted_match.end());
+    return this->sorted == sorted_match;
 }

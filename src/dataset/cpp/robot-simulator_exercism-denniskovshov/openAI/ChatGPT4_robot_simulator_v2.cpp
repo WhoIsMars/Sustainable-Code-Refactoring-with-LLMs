@@ -1,12 +1,10 @@
 #include "robot_simulator.h"
 
 namespace robot_simulator {
-    Robot::Robot() : Robot({0, 0}, Bearing::NORTH) {
-    }
+    Robot::Robot() : Robot({0, 0}, Bearing::NORTH) {}
 
     Robot::Robot(std::pair<int, int> position, Bearing bearing)
-        : _position_x(position.first), _position_y(position.second), _facing_direction(bearing) {
-    }
+        : _position_x(position.first), _position_y(position.second), _facing_direction(bearing) {}
 
     std::pair<int, int> Robot::get_position() const {
         return {_position_x, _position_y};
@@ -32,7 +30,7 @@ namespace robot_simulator {
     }
 
     void Robot::execute_sequence(const std::string& sequence) {
-        for (const char command : sequence) {
+        for (char command : sequence) {
             if (command == 'R') {
                 turn_right();
             } else if (command == 'L') {

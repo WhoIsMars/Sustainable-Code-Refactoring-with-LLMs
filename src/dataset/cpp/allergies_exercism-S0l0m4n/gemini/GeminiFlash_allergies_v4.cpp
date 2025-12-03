@@ -7,13 +7,15 @@
 
 #include <algorithm>
 #include <array>
+#include <numeric>
 
 using std::string;
 using std::unordered_set;
+using std::array;
 
 namespace allergies {
 
-    const std::array<const char*, 8> allergy_names {
+    const array<string, 8> allergy_names {
         "eggs",
         "peanuts",
         "shellfish",
@@ -24,17 +26,10 @@ namespace allergies {
         "cats"
     };
 
-    allergy_test::allergy_test(int score_value) : score(score_value) {
-        int remaining_score = score;
+    allergy_test::allergy_test(int score_value) : score(score_value % 256) {
         for (size_t i = 0; i < allergy_names.size(); ++i) {
-            int allergy_value = 1 << i;
-            if (remaining_score >= allergy_value) {
-                if (remaining_score & allergy_value) {
-                    allergy_set.insert(allergy_names[i]);
-                    remaining_score -= allergy_value;
-                }
-            } else {
-                break; // Optimization: No need to check further if the remaining score is less than the current allergy value
+            if (score & (1 << i)) {
+                allergy_set.insert(allergy_names[i]);
             }
         }
     }

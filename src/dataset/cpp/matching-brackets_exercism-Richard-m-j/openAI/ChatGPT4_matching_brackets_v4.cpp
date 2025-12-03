@@ -5,25 +5,22 @@ namespace matching_brackets
     bool check(const string& s)
     {
         stack<char> stack;
-        for (char ch : s)
+        for (char c : s)
         {
-            switch (ch)
+            if (c == '{' || c == '[' || c == '(')
             {
-                case '{': case '[': case '(':
-                    stack.push(ch);
-                    break;
-                case '}':
-                    if (stack.empty() || stack.top() != '{') return false;
-                    stack.pop();
-                    break;
-                case ']':
-                    if (stack.empty() || stack.top() != '[') return false;
-                    stack.pop();
-                    break;
-                case ')':
-                    if (stack.empty() || stack.top() != '(') return false;
-                    stack.pop();
-                    break;
+                stack.push(c);
+            }
+            else if (c == '}' || c == ']' || c == ')')
+            {
+                if (stack.empty() || 
+                    (c == '}' && stack.top() != '{') || 
+                    (c == ']' && stack.top() != '[') || 
+                    (c == ')' && stack.top() != '('))
+                {
+                    return false;
+                }
+                stack.pop();
             }
         }
         return stack.empty();

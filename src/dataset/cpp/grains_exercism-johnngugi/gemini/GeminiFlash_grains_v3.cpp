@@ -13,6 +13,6 @@ namespace grains
 
     unsigned long long total()
     {
-        return (UINT64_MAX);
+        return (0xFFFFFFFFFFFFFFFFULL);
     }
 }

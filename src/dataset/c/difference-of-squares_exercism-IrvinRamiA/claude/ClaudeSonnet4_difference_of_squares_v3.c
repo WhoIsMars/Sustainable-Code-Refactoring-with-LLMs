@@ -1,0 +1,20 @@
+#include "difference_of_squares.h"
+#include <stdint.h>
+
+unsigned int sum_of_squares(unsigned int number)
+{
+    if (number == 0) return 0;
+    return (number * (number + 1) * (2 * number + 1)) / 6;
+}
+
+unsigned int square_of_sum(unsigned int number)
+{
+    if (number == 0) return 0;
+    uint32_t sum = (number * (number + 1)) / 2;
+    return sum * sum;
+}
+
+unsigned int difference_of_squares(unsigned int number)
+{
+    return square_of_sum(number) - sum_of_squares(number);
+}

@@ -1,0 +1,39 @@
+export default class BinarySearch {
+  private _array: number[] = [];
+
+  constructor(array: number[]) {
+    for (let i = 1; i < array.length; i++) {
+      if (array[i] < array[i-1]) {
+        return;
+      }
+    }
+    this._array = array;
+  }
+
+  get array() {
+    if (this._array.length === 0) { return undefined;}
+    return [...this._array];
+  }
+
+  public indexOf(target: number, iStart: number = 0, iEnd: number = this._array.length): number {
+    // Iterative approach to avoid recursion overhead
+    let start = iStart;
+    let end = iEnd;
+    
+    while (start < end) {
+      const indexToCheck = Math.floor((end + start) / 2);
+      
+      if (this._array[indexToCheck] === target) {
+        return indexToCheck;
+      }
+      
+      if (target > this._array[indexToCheck]) {
+        start = indexToCheck + 1;
+      } else {
+        end = indexToCheck;
+      }
+    }
+    
+    return -1;
+  }
+}

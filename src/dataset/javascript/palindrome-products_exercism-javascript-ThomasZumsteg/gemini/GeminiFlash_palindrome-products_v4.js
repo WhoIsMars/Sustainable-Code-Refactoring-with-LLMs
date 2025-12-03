@@ -66,3 +66,6 @@ function is_palindrome(num) {
 }
 
 export default Palindromes;
+export { smallest };
+
+export { largest };

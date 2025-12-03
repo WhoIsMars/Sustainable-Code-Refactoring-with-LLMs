@@ -20,7 +20,7 @@ namespace all_your_base
     {
         if (decimalNumber == 0) return {0};
         std::vector<unsigned int> digits;
-        while (decimalNumber > 0)
+        while (decimalNumber)
         {
             digits.push_back(decimalNumber % toBase);
             decimalNumber /= toBase;

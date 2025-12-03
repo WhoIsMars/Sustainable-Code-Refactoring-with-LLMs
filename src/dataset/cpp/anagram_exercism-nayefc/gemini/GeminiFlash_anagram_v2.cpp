@@ -19,17 +19,17 @@ std::vector<std::string> anagram::anagram::matches(std::vector<std::string> matc
     boost::to_lower(lower_word);
 
     for (const auto &match_word : match_list) {
-        if (match_word.length() != word.length()) continue; // Early exit if lengths differ
+        if (match_word.length() != word.length()) continue;
 
         std::string lower_match_word = match_word;
         boost::to_lower(lower_match_word);
 
-        if (lower_match_word == lower_word) continue; // Skip if same word (case-insensitive)
+        if (lower_match_word == lower_word) continue;
 
-        std::string sorted_match_word = lower_match_word;
-        std::sort(sorted_match_word.begin(), sorted_match_word.end());
+        std::string sorted_match = lower_match_word;
+        std::sort(sorted_match.begin(), sorted_match.end());
 
-        if (sorted == sorted_match_word) {
+        if (sorted == sorted_match) {
             all_matches.push_back(match_word);
         }
     }

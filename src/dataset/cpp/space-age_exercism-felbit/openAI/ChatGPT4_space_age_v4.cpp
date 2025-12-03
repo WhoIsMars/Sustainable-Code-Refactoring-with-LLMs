@@ -10,7 +10,7 @@ namespace space_age {
     constexpr double URANUS_YEAR_RATIO = 84.016846;
     constexpr double NEPTUNE_YEAR_RATIO = 164.79132;
 
-    space_age::space_age(unsigned long long int seconds) : m_seconds(seconds) {}
+    space_age::space_age(unsigned long long int seconds) : m_seconds(seconds), m_earth_years(seconds / EARTH_YEAR_SECONDS) {}
 
     unsigned long long int space_age::seconds() const
     {
@@ -19,41 +19,41 @@ namespace space_age {
 
     double space_age::on_earth() const
     {
-        return m_seconds / EARTH_YEAR_SECONDS;
+        return m_earth_years;
     }
 
     double space_age::on_mercury() const
     {
-        return m_seconds / (EARTH_YEAR_SECONDS * MERCURY_YEAR_RATIO);
+        return m_earth_years / MERCURY_YEAR_RATIO;
     }
 
     double space_age::on_venus() const
     {
-        return m_seconds / (EARTH_YEAR_SECONDS * VENUS_YEAR_RATIO);
+        return m_earth_years / VENUS_YEAR_RATIO;
     }
     
     double space_age::on_mars() const
     {
-        return m_seconds / (EARTH_YEAR_SECONDS * MARS_YEAR_RATIO);
+        return m_earth_years / MARS_YEAR_RATIO;
     }
 
     double space_age::on_jupiter() const
     {
-        return m_seconds / (EARTH_YEAR_SECONDS * JUPITER_YEAR_RATIO);
+        return m_earth_years / JUPITER_YEAR_RATIO;
     }
 
     double space_age::on_saturn() const
     {
-        return m_seconds / (EARTH_YEAR_SECONDS * SATURN_YEAR_RATIO);
+        return m_earth_years / SATURN_YEAR_RATIO;
     }
 
     double space_age::on_uranus() const
     {
-        return m_seconds / (EARTH_YEAR_SECONDS * URANUS_YEAR_RATIO);
+        return m_earth_years / URANUS_YEAR_RATIO;
     }
 
     double space_age::on_neptune() const
     {
-        return m_seconds / (EARTH_YEAR_SECONDS * NEPTUNE_YEAR_RATIO);
+        return m_earth_years / NEPTUNE_YEAR_RATIO;
     }
 }

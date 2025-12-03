@@ -5,7 +5,6 @@
 namespace hello_world {
     std::string_view hello()
     {
-        static constexpr std::string_view message = "Hello, World!";
-        return message;
+        return "Hello, World!";
     }
 }

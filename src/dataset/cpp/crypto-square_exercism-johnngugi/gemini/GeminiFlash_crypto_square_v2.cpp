@@ -1,100 +1,109 @@
 #include "crypto_square.h"
 #include <algorithm>
 #include <cctype>
+#include <cmath>
+#include <iostream>
 #include <string>
 #include <vector>
-#include <cmath>
 
-namespace crypto_square
-{
-    cipher::cipher(std::string text) : initial(std::move(text)) {}
+namespace crypto_square {
 
-    std::string cipher::normalize_plain_text()
-    {
-        std::string result;
-        result.reserve(initial.length()); // Reserve space to avoid reallocations
+cipher::cipher(std::string text) : initial(std::move(text)) {}
 
-        for (char c : initial)
-        {
-            if (isalnum(c))
-            {
-                result += static_cast<char>(std::tolower(c));
-            }
-        }
+std::string cipher::normalize_plain_text() {
+  std::string result;
+  result.reserve(initial.length()); // Reserve space to avoid reallocations
 
-        return normalized_text = result; // Store normalized text
+  for (char c : initial) {
+    if (std::isalnum(c)) {
+      result += std::tolower(c);
     }
+  }
 
-    unsigned int cipher::size()
-    {
-        if (normalized_text.empty()) {
-            normalize_plain_text();
-        }
-        size_t text_length = normalized_text.length();
-        return static_cast<unsigned int>(std::ceil(std::sqrt(text_length)));
-    }
-
-    std::vector<std::string> cipher::plain_text_segments()
-    {
-        if (normalized_text.empty()) {
-            normalize_plain_text();
-        }
-        unsigned int segment_size = size();
-        std::vector<std::string> segments;
-        size_t text_length = normalized_text.length();
-        size_t num_segments = (text_length + segment_size - 1) / segment_size; // Ceiling division
-        segments.reserve(num_segments);
-
-        for (size_t i = 0; i < text_length; i += segment_size)
-        {
-            segments.emplace_back(normalized_text.substr(i, segment_size));
-        }
-
-        return segments;
-    }
-
-    std::string cipher::cipher_text()
-    {
-        const std::vector<std::string> &segments = plain_text_segments();
-        size_t num_segments = segments.size();
-        if (num_segments == 0) return "";
-
-        size_t segment_size = segments[0].length();
-        std::string result;
-        result.reserve(num_segments * segment_size);
-
-        for (size_t col = 0; col < segment_size; ++col)
-        {
-            for (size_t row = 0; row < num_segments; ++row)
-            {
-                if (col < segments[row].length())
-                {
-                    result += segments[row][col];
-                }
-            }
-        }
-
-        return result;
-    }
-
-    std::string cipher::normalized_cipher_text()
-    {
-        std::string encoded = cipher_text();
-        size_t encoded_length = encoded.length();
-        unsigned int segment_size = size();
-        size_t num_segments = (encoded_length + segment_size - 1) / segment_size;
-
-        std::string result;
-        result.reserve(encoded_length + num_segments - 1); // Pre-allocate space for spaces
-
-        for (size_t i = 0; i < encoded_length; ++i)
-        {
-            result += encoded[i];
-            if ((i + 1) % segment_size == 0 && (i + 1) != encoded_length)
-            {
-                result += ' ';
-            }
-        }
-        return result;
-    }
+  return normalized_text = result; // Store normalized text
 }
+
+unsigned int cipher::size() {
+  if (normalized_text.empty()) {
+    normalize_plain_text(); // Ensure normalized_text is populated
+  }
+  if (cached_size == 0) {
+    cached_size = calculate_size(normalized_text);
+  }
+  return cached_size;
+}
+
+unsigned int cipher::calculate_size(const std::string& text) {
+  size_t text_length = text.length();
+  if (text_length == 0) return 0;
+  return static_cast<unsigned int>(std::ceil(std::sqrt(text_length)));
+}
+
+std::vector<std::string> cipher::plain_text_segments() {
+  if (normalized_text.empty()) {
+    normalize_plain_text();
+  }
+  if (!plain_segments.empty()) {
+    return plain_segments;
+  }
+
+  unsigned int segment_size = size();
+  std::vector<std::string> segments;
+  segments.reserve((normalized_text.length() + segment_size - 1) /
+                    segment_size); // Reserve space
+
+  for (size_t i = 0; i < normalized_text.length(); i += segment_size) {
+    segments.emplace_back(normalized_text.substr(i, segment_size));
+  }
+  plain_segments = segments;
+  return plain_segments;
+}
+
+std::string cipher::cipher_text() {
+  if (!cached_cipher_text.empty()) {
+    return cached_cipher_text;
+  }
+  const auto& segments = plain_text_segments();
+  if (segments.empty()) {
+    return "";
+  }
+
+  unsigned int rows = segments.size();
+  unsigned int columns = size();
+
+  std::string result;
+  result.reserve(normalized_text.length());
+
+  for (unsigned int column = 0; column < columns; ++column) {
+    for (unsigned int row = 0; row < rows; ++row) {
+      if (column < segments[row].length()) {
+        result += segments[row][column];
+      }
+    }
+  }
+  cached_cipher_text = result;
+  return result;
+}
+
+std::string cipher::normalized_cipher_text() {
+  if (!cached_normalized_cipher_text.empty()) {
+    return cached_normalized_cipher_text;
+  }
+  std::string encoded = cipher_text();
+  unsigned int segment_size = size();
+
+  std::string result;
+  result.reserve(encoded.length() +
+                   (encoded.length() / segment_size)); // Reserve space
+
+  for (size_t i = 0; i < encoded.length(); ++i) {
+    result += encoded[i];
+    if ((i + 1) % segment_size == 0 && i + 1 < encoded.length()) {
+      result += ' ';
+    }
+  }
+  cached_normalized_cipher_text = result;
+  return result;
+}
+
+} // namespace crypto_square

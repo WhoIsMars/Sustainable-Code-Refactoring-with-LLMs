@@ -10,5 +10,5 @@ int squares::sum_of_squares(int n) {
 }
 
 int squares::difference(int n) {
-    return squares::square_of_sums(n) - squares::sum_of_squares(n);
+    return square_of_sums(n) - sum_of_squares(n);
 }

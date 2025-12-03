@@ -4,7 +4,7 @@ namespace grains {
 
 unsigned long long square(int sq) {
   if (sq < 1 || sq > 64) {
-    return 0;
+    return 0; // Or throw an exception, depending on desired behavior for invalid input
   }
   return (1ULL << (sq - 1));
 }

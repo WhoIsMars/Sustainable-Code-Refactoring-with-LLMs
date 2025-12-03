@@ -1,0 +1,31 @@
+export class Allergies {
+  constructor(allergyScore) {
+    this.allergyScore = allergyScore;
+    this.allergens = [
+      'eggs',
+      'peanuts',
+      'shellfish',
+      'strawberries',
+      'tomatoes',
+      'chocolate',
+      'pollen',
+      'cats'
+    ];
+    this.allergenMap = new Map(this.allergens.map((allergen, i) => [allergen, 1 << i]));
+  }
+
+  list() {
+    const result = [];
+    for (let i = 0; i < this.allergens.length; i++) {
+      if (this.allergyScore & (1 << i)) {
+        result.push(this.allergens[i]);
+      }
+    }
+    return result;
+  }
+
+  allergicTo(item) {
+    const allergenBit = this.allergenMap.get(item);
+    return allergenBit ? !!(this.allergyScore & allergenBit) : false;
+  }
+}

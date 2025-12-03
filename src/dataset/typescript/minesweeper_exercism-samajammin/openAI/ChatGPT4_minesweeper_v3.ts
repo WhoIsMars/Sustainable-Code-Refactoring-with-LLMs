@@ -1,0 +1,24 @@
+export default class Minesweeper {
+  annotate(board: string[]): string[] {
+    const mineCell = '*';
+    const directions = [
+      [-1, -1], [-1, 0], [-1, 1],
+      [0, -1],          [0, 1],
+      [1, -1], [1, 0], [1, 1],
+    ];
+
+    return board.map((row, rowIdx) =>
+      row.split('').map((cell, colIdx) => {
+        if (cell === mineCell) return mineCell;
+
+        let cellValue = 0;
+        for (const [dr, dc] of directions) {
+          const r = rowIdx + dr, c = colIdx + dc;
+          if (board[r]?.[c] === mineCell) cellValue++;
+        }
+
+        return cellValue === 0 ? ' ' : cellValue.toString();
+      }).join('')
+    );
+  }
+}

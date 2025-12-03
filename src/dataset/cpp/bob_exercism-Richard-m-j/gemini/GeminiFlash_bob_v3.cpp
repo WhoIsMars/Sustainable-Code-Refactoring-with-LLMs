@@ -11,19 +11,16 @@ string hey(string input) {
   if (isSilence(input)) {
     return "Fine. Be that way!";
   }
-
-  bool yelling = isYelling(input);
-  bool question = isQuestion(input);
-
-  if (yelling && question) {
+  if (isYelling(input) && isQuestion(input)) {
     return "Calm down, I know what I'm doing!";
-  } else if (yelling) {
-    return "Whoa, chill out!";
-  } else if (question) {
-    return "Sure.";
-  } else {
-    return "Whatever.";
   }
+  if (isYelling(input)) {
+    return "Whoa, chill out!";
+  }
+  if (isQuestion(input)) {
+    return "Sure.";
+  }
+  return "Whatever.";
 }
 
 bool isQuestion(const string& input) {
@@ -44,18 +41,15 @@ bool isQuestion(const string& input) {
 bool isYelling(const string& input) {
   bool hasLetters = false;
   bool allUpper = true;
-
   for (char c : input) {
     if (isalpha(c)) {
       hasLetters = true;
       if (islower(c)) {
-        allUpper = false;
-        break;
+        return false;
       }
     }
   }
-
-  return hasLetters && allUpper;
+  return hasLetters;
 }
 
 bool isSilence(const string& input) {
@@ -64,4 +58,4 @@ bool isSilence(const string& input) {
   });
 }
 
-} // namespace bob
+}  // namespace bob

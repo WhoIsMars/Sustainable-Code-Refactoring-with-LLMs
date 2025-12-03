@@ -33,17 +33,20 @@ static const string bird_special = "She swallowed the bird to catch the spider t
 
 string food_chain::repetition(int n)
 {
-	string result;
-	result.reserve(200); // Pre-allocate memory
+	string final;
+	final.reserve(200); // Pre-allocate memory
 	
 	for (int i = n; i > 2; --i)
 	{
-		result += "She swallowed the " + key_word[i] + " to catch the " + key_word[i-1] + ".\n";
+		final += "She swallowed the " + key_word[i] + " to catch the " + key_word[i-1] + ".\n";
 	}
 	
-	result += bird_special;
-	
-	return result;
+	if (n > 2)
+	{
+		final += bird_special;
+	}
+
+	return final;
 }
 
 string food_chain::response(int n)
@@ -56,7 +59,6 @@ string food_chain::response(int n)
 	{
 		return repetition(n);
 	}
-	
 	return "";
 }
 
@@ -64,7 +66,7 @@ string food_chain::verse(int n)
 {
 	string result;
 	result.reserve(300); // Pre-allocate memory
-	
+
 	if (n < 8)
 	{
 		result = first_sentence + second_line[n] + response(n) + ending;
@@ -73,7 +75,7 @@ string food_chain::verse(int n)
 	{
 		result = "I know an old lady who swallowed a horse.\nShe's dead, of course!\n";
 	}
-	
+
 	cout << result << endl;
 	return result;
 }
@@ -83,7 +85,7 @@ string food_chain::verses(int a, int b)
 	string result;
 	result.reserve(600); // Pre-allocate memory
 	result = verse(a) + "\n" + verse(b) + "\n";
-	
+
 	cout << result << endl;
 	return result;
 }

@@ -12,7 +12,7 @@ vector<string> anagram::anagram::matches(vector<string> v)
 
     for (const auto& candidate : v)
     {
-        if (candidate.length() != anagram::anagram::word.length()) 
+        if (candidate.length() != anagram::anagram::word.length())
             continue;
 
         string sorted_candidate = candidate;

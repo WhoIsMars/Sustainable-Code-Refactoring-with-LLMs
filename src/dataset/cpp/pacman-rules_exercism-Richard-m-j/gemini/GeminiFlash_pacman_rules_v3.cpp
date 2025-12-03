@@ -28,6 +28,8 @@ bool lost(bool power_pellet_active, bool touching_ghost)
 bool won(bool has_eaten_all_dots, bool power_pellet_active,
          bool touching_ghost)
 {
-    if (!has_eaten_all_dots) return false;
+    if (!has_eaten_all_dots) {
+        return false;
+    }
     return !lost(power_pellet_active, touching_ghost);
 }

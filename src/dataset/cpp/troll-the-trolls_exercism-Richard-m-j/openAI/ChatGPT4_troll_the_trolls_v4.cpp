@@ -15,12 +15,12 @@ namespace hellmath
         remove
     };
 
-    inline bool display_post(AccountStatus poster, AccountStatus viewer)
+    bool display_post(AccountStatus poster, AccountStatus viewer)
     {
         return !(poster == AccountStatus::troll && viewer != AccountStatus::troll) && viewer != AccountStatus::troll;
     }
 
-    inline bool permission_check(Action action, AccountStatus status)
+    bool permission_check(Action action, AccountStatus status)
     {
         switch (status)
         {
@@ -36,15 +36,15 @@ namespace hellmath
         }
     }
 
-    inline bool valid_player_combination(AccountStatus player1, AccountStatus player2)
+    bool valid_player_combination(AccountStatus player1, AccountStatus player2)
     {
         return !(player1 == AccountStatus::guest || player2 == AccountStatus::guest || 
                  (player1 == AccountStatus::troll && player2 != AccountStatus::troll) || 
                  (player2 == AccountStatus::troll && player1 != AccountStatus::troll));
     }
 
-    inline bool has_priority(AccountStatus account1, AccountStatus account2)
+    bool has_priority(AccountStatus account1, AccountStatus account2)
     {
-        return static_cast<int>(account1) > static_cast<int>(account2);
+        return account1 > account2;
     }
 } // namespace hellmath

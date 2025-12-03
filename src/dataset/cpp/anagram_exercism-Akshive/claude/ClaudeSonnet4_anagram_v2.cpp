@@ -4,11 +4,12 @@ using namespace std;
 
 namespace anagram{
 
-        anagram::anagram(string word) : word(std::move(word))
+        anagram::anagram(string word)
         {
-            transform(this->word.begin(), this->word.end(), this->word.begin(), ::tolower);
-            key = this->word;
-            sort(key.begin(), key.end());
+            this->word = word;
+            transform(word.begin(), word.end(), word.begin(), ::tolower);
+            this->sorted_word = word;
+            sort(this->sorted_word.begin(), this->sorted_word.end());
         }
         
         vector<string> anagram::matches(list<string> words)
@@ -26,7 +27,7 @@ namespace anagram{
                 if(word == candidate_lower) continue;
                 
                 sort(candidate_lower.begin(), candidate_lower.end());
-                if(key == candidate_lower)
+                if(sorted_word == candidate_lower)
                 {
                     ans.push_back(candidate);
                 }
@@ -35,5 +36,5 @@ namespace anagram{
         }
 
 private:
-        string key;
+        string sorted_word;
 }

@@ -1,17 +1,23 @@
 {
-  "execution_date": "2025-11-21 10:35:13",
+  "execution_date": "2025-12-03 00:20:18",
   "execution_metadata": {
     "total_tests": 2,
     "successful_tests": 2,
     "execution_time": "00h 00m 00s",
     "cluster": "cluster_log_levels",
     "test_type": "llm_v1",
-    "last_updated": "2025-11-21 10:35:13",
+    "last_updated": "2025-12-03 00:20:18",
     "selective_execution": {
       "languages": [
-        "cpp"
+        "cpp",
+        "c",
+        "java",
+        "javascript",
+        "typescript",
+        "python",
+        "go"
       ],
-      "timestamp": "2025-11-21 10:35:13"
+      "timestamp": "2025-12-03 00:20:18"
     }
   },
   "results": {
@@ -22,30 +28,12 @@
         "language": "java",
         "LLM_results": [
           {
-            "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/log_levels_Exercism_java_rabestro/claude/ClaudeSonnet4_LogLevels_v1.java",
-            "log": "",
-            "execution_time_ms": 260.0,
-            "CPU_usage": 53.0,
-            "RAM_usage": 53324,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "Java_log_levels_Exercism (java_rabestro)",
-        "filename": "LogLevels.java",
-        "language": "java",
-        "LLM_results": [
-          {
             "LLM_type": "gemini",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/log_levels_Exercism_java_rabestro/gemini/GeminiFlash_LogLevels_v1.java",
             "log": "",
-            "execution_time_ms": 240.0,
-            "CPU_usage": 55.0,
-            "RAM_usage": 53412,
+            "execution_time_ms": 230.0,
+            "CPU_usage": 13.0,
+            "RAM_usage": 53636,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -58,12 +46,12 @@
         "language": "java",
         "LLM_results": [
           {
-            "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/log_levels_Exercism_java_rabestro/openAI/ChatGPT4_LogLevels_v1.java",
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/log_levels_Exercism_java_rabestro/claude/ClaudeSonnet4_LogLevels_v1.java",
             "log": "",
-            "execution_time_ms": 240.0,
-            "CPU_usage": 54.0,
-            "RAM_usage": 53328,
+            "execution_time_ms": 250.0,
+            "CPU_usage": 20.0,
+            "RAM_usage": 53456,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -79,9 +67,27 @@
             "LLM_type": "openAI",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/log_levels_Exercism_java_ValMati/openAI/ChatGPT4_LogLevels_v1.java",
             "log": "",
-            "execution_time_ms": 810.0,
-            "CPU_usage": 70.0,
-            "RAM_usage": 82528,
+            "execution_time_ms": 960.0,
+            "CPU_usage": 25.0,
+            "RAM_usage": 82484,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "Java_log_levels_Exercism (java_rabestro)",
+        "filename": "LogLevels.java",
+        "language": "java",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/log_levels_Exercism_java_rabestro/openAI/ChatGPT4_LogLevels_v1.java",
+            "log": "",
+            "execution_time_ms": 200.0,
+            "CPU_usage": 26.0,
+            "RAM_usage": 53444,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -97,9 +103,9 @@
             "LLM_type": "claude",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/log_levels_Exercism_java_ValMati/claude/ClaudeSonnet4_LogLevels_v1.java",
             "log": "",
-            "execution_time_ms": 810.0,
-            "CPU_usage": 97.0,
-            "RAM_usage": 82492,
+            "execution_time_ms": 870.0,
+            "CPU_usage": 24.0,
+            "RAM_usage": 84528,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -115,9 +121,171 @@
             "LLM_type": "gemini",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/Java/log_levels_Exercism_java_ValMati/gemini/GeminiFlash_LogLevels_v1.java",
             "log": "",
-            "execution_time_ms": 780.0,
-            "CPU_usage": 102.0,
-            "RAM_usage": 82548,
+            "execution_time_ms": 899.9999999999999,
+            "CPU_usage": 24.0,
+            "RAM_usage": 79220,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "java_log-levels_shashwata27",
+        "filename": "LogLevels.java",
+        "language": "java",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "java/log-levels_exercism-shashwata27/openAI/ChatGPT4_LogLevels_v1.java",
+            "log": "",
+            "execution_time_ms": null,
+            "CPU_usage": null,
+            "RAM_usage": null,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 1"
+          }
+        ]
+      },
+      {
+        "id": "java_log-levels_shashwata27",
+        "filename": "LogLevels.java",
+        "language": "java",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "java/log-levels_exercism-shashwata27/claude/ClaudeSonnet4_LogLevels_v1.java",
+            "log": "",
+            "execution_time_ms": 229.99999999999997,
+            "CPU_usage": 70.0,
+            "RAM_usage": 57692,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "java_log-levels_shashwata27",
+        "filename": "LogLevels.java",
+        "language": "java",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "java/log-levels_exercism-shashwata27/gemini/GeminiFlash_LogLevels_v1.java",
+            "log": "",
+            "execution_time_ms": 229.99999999999997,
+            "CPU_usage": 71.0,
+            "RAM_usage": 53508,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "java_log-levels_rodrigodsp",
+        "filename": "LogLevels.java",
+        "language": "java",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "java/log-levels_exercism-rodrigodsp/openAI/ChatGPT4_LogLevels_v1.java",
+            "log": "",
+            "execution_time_ms": 770.0,
+            "CPU_usage": 103.0,
+            "RAM_usage": 81712,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "java_log-levels_mollycarroll",
+        "filename": "LogLevels.java",
+        "language": "java",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "java/log-levels_exercism-mollycarroll/openAI/ChatGPT4_LogLevels_v1.java",
+            "log": "",
+            "execution_time_ms": 139.99999999999997,
+            "CPU_usage": 72.0,
+            "RAM_usage": 46096,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "java_log-levels_mollycarroll",
+        "filename": "LogLevels.java",
+        "language": "java",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "java/log-levels_exercism-mollycarroll/claude/ClaudeSonnet4_LogLevels_v1.java",
+            "log": "",
+            "execution_time_ms": 120.0,
+            "CPU_usage": 62.0,
+            "RAM_usage": 46016,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "java_log-levels_rodrigodsp",
+        "filename": "LogLevels.java",
+        "language": "java",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "java/log-levels_exercism-rodrigodsp/gemini/GeminiFlash_LogLevels_v1.java",
+            "log": "",
+            "execution_time_ms": 690.0000000000001,
+            "CPU_usage": 90.0,
+            "RAM_usage": 82428,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "java_log-levels_rodrigodsp",
+        "filename": "LogLevels.java",
+        "language": "java",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "java/log-levels_exercism-rodrigodsp/claude/ClaudeSonnet4_LogLevels_v1.java",
+            "log": "",
+            "execution_time_ms": 670.0,
+            "CPU_usage": 82.0,
+            "RAM_usage": 81252,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "java_log-levels_mollycarroll",
+        "filename": "LogLevels.java",
+        "language": "java",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "java/log-levels_exercism-mollycarroll/gemini/GeminiFlash_LogLevels_v1.java",
+            "log": "",
+            "execution_time_ms": 130.0,
+            "CPU_usage": 43.0,
+            "RAM_usage": 46208,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -135,26 +303,8 @@
             "LLM_type": "openAI",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/log-levels_exercism-nenjotsu/openAI/ChatGPT4_log_levels_v1.cpp",
             "log": "",
-            "execution_time_ms": 4.482305,
-            "CPU_usage": 32.0,
-            "RAM_usage": 10496,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "cpp_log-levels_nenjotsu",
-        "filename": "log_levels.cpp",
-        "language": "cpp",
-        "LLM_results": [
-          {
-            "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/log-levels_exercism-nenjotsu/gemini/GeminiFlash_log_levels_v1.cpp",
-            "log": "",
-            "execution_time_ms": 2.170214,
-            "CPU_usage": 62.0,
+            "execution_time_ms": 48.519398,
+            "CPU_usage": 4.0,
             "RAM_usage": 10496,
             "regressionTestPassed": true,
             "success": true,
@@ -171,12 +321,138 @@
             "LLM_type": "claude",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/log-levels_exercism-nenjotsu/claude/ClaudeSonnet4_log_levels_v1.cpp",
             "log": "",
-            "execution_time_ms": 2.219132,
-            "CPU_usage": 70.0,
+            "execution_time_ms": 3.912317,
+            "CPU_usage": 39.0,
+            "RAM_usage": 10240,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "cpp_log-levels_nenjotsu",
+        "filename": "log_levels.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/cpp/log-levels_exercism-nenjotsu/gemini/GeminiFlash_log_levels_v1.cpp",
+            "log": "",
+            "execution_time_ms": 2.83481,
+            "CPU_usage": 52.0,
+            "RAM_usage": 10240,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "cpp_log-levels_Richard-m-j",
+        "filename": "log_levels.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "cpp/log-levels_exercism-Richard-m-j/claude/ClaudeSonnet4_log_levels_v1.cpp",
+            "log": "",
+            "execution_time_ms": 2.796679,
+            "CPU_usage": 56.0,
             "RAM_usage": 10496,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "cpp_log-levels_Richard-m-j",
+        "filename": "log_levels.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "cpp/log-levels_exercism-Richard-m-j/openAI/ChatGPT4_log_levels_v1.cpp",
+            "log": "",
+            "execution_time_ms": 3.838059,
+            "CPU_usage": 60.0,
+            "RAM_usage": 10496,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "cpp_log-levels_Richard-m-j",
+        "filename": "log_levels.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "cpp/log-levels_exercism-Richard-m-j/gemini/GeminiFlash_log_levels_v1.cpp",
+            "log": "",
+            "execution_time_ms": 3.922601,
+            "CPU_usage": 46.0,
+            "RAM_usage": 10496,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "cpp_log-levels_tqa236",
+        "filename": "log_levels.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "cpp/log-levels_exercism-tqa236/openAI/ChatGPT4_log_levels_v1.cpp",
+            "log": "",
+            "execution_time_ms": 3.495557,
+            "CPU_usage": 67.0,
+            "RAM_usage": 10496,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "cpp_log-levels_tqa236",
+        "filename": "log_levels.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "cpp/log-levels_exercism-tqa236/claude/ClaudeSonnet4_log_levels_v1.cpp",
+            "log": "",
+            "execution_time_ms": null,
+            "CPU_usage": null,
+            "RAM_usage": null,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 2"
+          }
+        ]
+      },
+      {
+        "id": "cpp_log-levels_tqa236",
+        "filename": "log_levels.cpp",
+        "language": "cpp",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "cpp/log-levels_exercism-tqa236/gemini/GeminiFlash_log_levels_v1.cpp",
+            "log": "",
+            "execution_time_ms": null,
+            "CPU_usage": null,
+            "RAM_usage": null,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 2"
           }
         ]
       }

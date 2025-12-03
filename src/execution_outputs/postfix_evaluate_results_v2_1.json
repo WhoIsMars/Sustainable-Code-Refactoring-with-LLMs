@@ -1,17 +1,23 @@
 {
-  "execution_date": "2025-11-19 01:25:51",
+  "execution_date": "2025-11-28 03:20:46",
   "execution_metadata": {
     "total_tests": 1,
     "successful_tests": 1,
     "execution_time": "00h 00m 00s",
     "cluster": "cluster_postfix_evaluate",
     "test_type": "llm_v2",
-    "last_updated": "2025-11-19 01:25:51",
+    "last_updated": "2025-11-28 03:20:46",
     "selective_execution": {
       "languages": [
-        "python"
+        "python",
+        "typescript",
+        "cpp",
+        "java",
+        "c",
+        "go",
+        "javascript"
       ],
-      "timestamp": "2025-11-19 01:25:51"
+      "timestamp": "2025-11-28 03:20:46"
     }
   },
   "results": {
@@ -22,11 +28,29 @@
         "language": "python",
         "LLM_results": [
           {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/postfix_evaluate/gemini/GeminiFlash_postfix_evaluate_v2.py",
+            "log": "",
+            "execution_time_ms": 40.0,
+            "CPU_usage": 49.0,
+            "RAM_usage": 13824,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "postfix_evaluate_256",
+        "filename": "postfix_evaluate.py",
+        "language": "python",
+        "LLM_results": [
+          {
             "LLM_type": "openAI",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/postfix_evaluate/openAI/ChatGPT4_postfix_evaluate_v2.py",
             "log": "",
             "execution_time_ms": 40.0,
-            "CPU_usage": 73.0,
+            "CPU_usage": 67.0,
             "RAM_usage": 13952,
             "regressionTestPassed": true,
             "success": true,
@@ -43,27 +67,9 @@
             "LLM_type": "claude",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/postfix_evaluate/claude/ClaudeSonnet4_postfix_evaluate_v2.py",
             "log": "",
-            "execution_time_ms": 50.0,
-            "CPU_usage": 63.0,
-            "RAM_usage": 13952,
-            "regressionTestPassed": true,
-            "success": true,
-            "error_message": null
-          }
-        ]
-      },
-      {
-        "id": "postfix_evaluate_256",
-        "filename": "postfix_evaluate.py",
-        "language": "python",
-        "LLM_results": [
-          {
-            "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/python/postfix_evaluate/gemini/GeminiFlash_postfix_evaluate_v2.py",
-            "log": "",
             "execution_time_ms": 40.0,
-            "CPU_usage": 71.0,
-            "RAM_usage": 13824,
+            "CPU_usage": 23.0,
+            "RAM_usage": 13952,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null

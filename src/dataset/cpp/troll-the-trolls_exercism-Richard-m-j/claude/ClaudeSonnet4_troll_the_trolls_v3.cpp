@@ -17,21 +17,20 @@ namespace hellmath
 
     bool display_post(AccountStatus poster, AccountStatus viewer) noexcept
     {
-        return (poster == AccountStatus::troll) ? (viewer == AccountStatus::troll) 
-                                                : (viewer != AccountStatus::troll);
+        return (poster == AccountStatus::troll) ? (viewer == AccountStatus::troll) : (viewer != AccountStatus::troll);
     }
 
     bool permission_check(Action action, AccountStatus status) noexcept
     {
         switch (status)
         {
-            case AccountStatus::troll:
-            case AccountStatus::user:
-                return action != Action::remove;
-            case AccountStatus::guest:
-                return action == Action::read;
-            case AccountStatus::mod:
-                return true;
+        case AccountStatus::troll:
+        case AccountStatus::user:
+            return action != Action::remove;
+        case AccountStatus::guest:
+            return action == Action::read;
+        case AccountStatus::mod:
+            return true;
         }
         return false;
     }

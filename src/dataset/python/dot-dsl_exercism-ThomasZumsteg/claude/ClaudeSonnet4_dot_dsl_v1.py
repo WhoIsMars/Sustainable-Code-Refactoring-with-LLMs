@@ -1,0 +1,68 @@
+import functools
+
+NODE, EDGE, ATTR = range(3)
+
+
+class Node(object):
+    __slots__ = ('name', 'attrs')
+    
+    def __init__(self, name, attrs=None, *args):
+        self.name = name
+        self.attrs = attrs if attrs is not None else {}
+
+    def __eq__(self, other):
+        return self.name == other.name and self.attrs == other.attrs
+
+
+class Edge(object):
+    __slots__ = ('src', 'dst', 'attrs')
+    
+    def __init__(self, src, dst, attrs=None):
+        self.src = src
+        self.dst = dst
+        self.attrs = attrs if attrs is not None else {}
+
+    def __eq__(self, other):
+        return (self.src == other.src and
+                self.dst == other.dst and
+                self.attrs == other.attrs)
+
+
+class Graph(object):
+    __slots__ = ('nodes', 'edges', 'attrs', '_constructors')
+    
+    def __init__(self, data=None):
+        self.nodes = []
+        self.edges = []
+        self.attrs = {}
+        self._constructors = {
+            NODE: self._add_node,
+            EDGE: self._add_edge,
+            ATTR: self._add_attr,
+        }
+
+        if data:
+            for datum in data:
+                if not isinstance(datum, tuple) or len(datum) < 1:
+                    raise TypeError("Not a valid entry: {}".format(datum))
+                elif datum[0] not in self._constructors:
+                    raise ValueError("Not a known type")
+                
+                self._constructors[datum[0]](*datum[1:])
+
+    def _add_node(self, *args):
+        name, attrs = args
+        self.nodes.append(Node(name, attrs=attrs))
+
+    def _add_edge(self, *args):
+        src, dst, attrs = args
+        self.edges.append(Edge(src, dst, attrs=attrs))
+
+    def _add_attr(self, *args):
+        if len(args) != 2:
+            FORMAT = "(ATTR, key, val)"
+            if len(args) < 2:
+                raise TypeError("{} Not enough args: {}".format(FORMAT, args))
+            else:
+                raise ValueError("{} To many args: {}".format(FORMAT, args))
+        self.attrs[args[0]] = args[1]

@@ -3,9 +3,9 @@
 #include <string_view>
 
 namespace hello_world {
-    std::string_view hello()
+    std::string hello()
     {
         static constexpr std::string_view message = "Hello, World!";
-        return message;
+        return std::string(message);
     }
 }

@@ -9,10 +9,10 @@ int hamming::compute(const string& a, const string& b)
         throw domain_error("Error");
 
     int distance = 0;
-    for (size_t i = 0; i < a.size(); ++i)
-    {
-        if (a[i] != b[i])
+    for (size_t i = 0; i < a.size(); ++i) {
+        if (a[i] != b[i]) {
             ++distance;
+        }
     }
     return distance;
 }

@@ -1,0 +1,13 @@
+module.exports = {
+  presets: [
+    [
+      '@babel/preset-env',
+      {
+        targets: { node: 'current' },
+        bugfixes: true,
+        shippedProposals: true,
+      },
+    ],
+  ],
+  plugins: ['@babel/plugin-syntax-bigint'],
+};

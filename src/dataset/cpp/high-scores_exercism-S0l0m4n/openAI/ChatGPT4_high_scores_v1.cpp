@@ -1,7 +1,6 @@
 #include "high_scores.h"
 
 #include <algorithm>
-#include <numeric>
 
 namespace arcade {
 

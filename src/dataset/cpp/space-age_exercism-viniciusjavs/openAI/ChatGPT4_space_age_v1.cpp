@@ -15,40 +15,40 @@ constexpr double ORBITAL_PERIODS[] = {
     164.79132   // Neptune
 };
 
-inline double age_on_planet(double seconds, double orbital_period) {
+inline double calculate_age_on_planet(double seconds, double orbital_period) {
     return seconds / (EARTH_YEAR_IN_SECONDS * orbital_period);
 }
 
 double age_on_mercury(double seconds) {
-    return age_on_planet(seconds, ORBITAL_PERIODS[0]);
+    return calculate_age_on_planet(seconds, ORBITAL_PERIODS[0]);
 }
 
 double age_on_venus(double seconds) {
-    return age_on_planet(seconds, ORBITAL_PERIODS[1]);
+    return calculate_age_on_planet(seconds, ORBITAL_PERIODS[1]);
 }
 
 double age_on_earth(double seconds) {
-    return age_on_planet(seconds, ORBITAL_PERIODS[2]);
+    return calculate_age_on_planet(seconds, ORBITAL_PERIODS[2]);
 }
 
 double age_on_mars(double seconds) {
-    return age_on_planet(seconds, ORBITAL_PERIODS[3]);
+    return calculate_age_on_planet(seconds, ORBITAL_PERIODS[3]);
 }
 
 double age_on_jupiter(double seconds) {
-    return age_on_planet(seconds, ORBITAL_PERIODS[4]);
+    return calculate_age_on_planet(seconds, ORBITAL_PERIODS[4]);
 }
 
 double age_on_saturn(double seconds) {
-    return age_on_planet(seconds, ORBITAL_PERIODS[5]);
+    return calculate_age_on_planet(seconds, ORBITAL_PERIODS[5]);
 }
 
 double age_on_uranus(double seconds) {
-    return age_on_planet(seconds, ORBITAL_PERIODS[6]);
+    return calculate_age_on_planet(seconds, ORBITAL_PERIODS[6]);
 }
 
 double age_on_neptune(double seconds) {
-    return age_on_planet(seconds, ORBITAL_PERIODS[7]);
+    return calculate_age_on_planet(seconds, ORBITAL_PERIODS[7]);
 }
 
 }  // namespace space_age

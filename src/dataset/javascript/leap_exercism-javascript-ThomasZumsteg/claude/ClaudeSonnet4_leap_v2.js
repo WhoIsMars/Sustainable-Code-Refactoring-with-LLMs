@@ -10,3 +10,4 @@ class Year {
 }
 
 export default Year;
+export { year };

@@ -31,10 +31,9 @@ std::array<int, 4> letter_grades(int highest_score) {
 }
 
 std::vector<std::string> student_ranking(const std::vector<int>& student_scores, const std::vector<std::string>& student_names) {
-    std::vector<std::string> rankings;
-    rankings.reserve(student_names.size());
-    for (size_t i = 0; i < student_names.size(); ++i) {
-        rankings.emplace_back(std::to_string(i + 1) + ". " + student_names[i] + ": " + std::to_string(student_scores[i]));
+    std::vector<std::string> rankings(student_scores.size());
+    for (size_t i = 0; i < student_scores.size(); ++i) {
+        rankings[i] = std::to_string(i + 1) + ". " + student_names[i] + ": " + std::to_string(student_scores[i]);
     }
     return rankings;
 }

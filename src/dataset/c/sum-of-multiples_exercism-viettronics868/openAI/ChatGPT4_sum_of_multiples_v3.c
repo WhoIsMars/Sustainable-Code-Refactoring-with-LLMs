@@ -1,0 +1,37 @@
+#include "sum_of_multiples.h"
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+#include <errno.h>
+
+unsigned int sum(const unsigned int *factors, const size_t number_of_factors,
+                 const unsigned int limit) {
+    if (factors == NULL || limit == 0) {
+        return 0;
+    }
+
+    unsigned int sum = 0;
+    char *is_multiple = calloc(limit, sizeof(char));
+    if (is_multiple == NULL) {
+        fprintf(stderr, "Memory allocation failed: %s\n", strerror(errno));
+        exit(EXIT_FAILURE);
+    }
+
+    for (size_t i = 0; i < number_of_factors; i++) {
+        if (factors[i] == 0) {
+            continue;
+        }
+        for (unsigned int multiple = factors[i]; multiple < limit; multiple += factors[i]) {
+            is_multiple[multiple] = 1;
+        }
+    }
+
+    for (unsigned int i = 0; i < limit; i++) {
+        if (is_multiple[i]) {
+            sum += i;
+        }
+    }
+
+    free(is_multiple);
+    return sum;
+}

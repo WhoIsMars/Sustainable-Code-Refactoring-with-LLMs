@@ -1,5 +1,6 @@
 #include <unordered_set>
 #include <cctype>
+#include <string>
 
 #include "isogram.h"
 
@@ -13,8 +14,9 @@ bool is_isogram(const std::string& phrase)
         if (std::isalpha(ch))
         {
             char lower_ch = std::tolower(ch);
-            if (!seen_chars.insert(lower_ch).second)
+            if (seen_chars.find(lower_ch) != seen_chars.end())
                 return false;
+            seen_chars.insert(lower_ch);
         }
     }
     return true;

@@ -30,16 +30,18 @@ const array<string, 9> second_line = {
 
 const string first_sentence = "I know an old lady who swallowed ";
 const string ending = "I don't know why she swallowed the fly. Perhaps she'll die.\n";
-const string spider_line = "She swallowed the bird to catch the spider that wriggled and jiggled and tickled inside her.\n";
+const string spider_catch = "She swallowed the bird to catch the spider that wriggled and jiggled and tickled inside her.\n";
 
 string food_chain::repetition(int n) {
-    string result;
-    result.reserve(n * 60); 
-
-    for (int i = n; i > 2; --i) {
+    string result = "";
+    for (int i = n; i > 1; --i) {
         result += "She swallowed the " + key_word[i] + " to catch the " + key_word[i - 1] + ".\n";
     }
-    result += spider_line;
+
+    size_t pos = result.rfind("She swallowed the bird to catch the spider.\n");
+    if (pos != string::npos) {
+        result.replace(pos, string("She swallowed the bird to catch the spider.\n").length(), spider_catch);
+    }
 
     return result;
 }
@@ -47,7 +49,8 @@ string food_chain::repetition(int n) {
 string food_chain::response(int n) {
     if (n == 2) {
         return "She swallowed the " + key_word[n] + " to catch the " + key_word[n - 1] + ".\n";
-    } else if (n > 2 && n < 8) {
+    }
+    if (n > 2 && n < 8) {
         return repetition(n);
     }
     return "";
@@ -55,8 +58,11 @@ string food_chain::response(int n) {
 
 string food_chain::verse(int n) {
     string result;
-    if (n < 8) {
-        result = first_sentence + " " + second_line[n] + response(n) + ending;
+    if (n < 9) {
+        result = first_sentence + " " + second_line[n];
+        if (n < 8) {
+            result += response(n) + ending;
+        }
     } else {
         result = "I know an old lady who swallowed a horse.\nShe's dead, of course!\n";
     }

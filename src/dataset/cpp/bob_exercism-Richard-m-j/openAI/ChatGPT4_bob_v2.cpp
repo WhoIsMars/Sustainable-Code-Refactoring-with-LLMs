@@ -6,36 +6,43 @@ using namespace std;
 
 namespace bob
 {
-    string hey(string input)
+    string hey(const string& input)
     {
-        // Trim whitespace from both ends
-        input.erase(input.begin(), find_if(input.begin(), input.end(), [](unsigned char ch) { return !isspace(ch); }));
-        input.erase(find_if(input.rbegin(), input.rend(), [](unsigned char ch) { return !isspace(ch); }).base(), input.end());
-
-        if (input.empty())
-            return "Fine. Be that way!";
-        if (isYelling(input) && input.back() == '?')
+        if (isYelling(input) && isQuestion(input))
             return "Calm down, I know what I'm doing!";
         if (isYelling(input))
             return "Whoa, chill out!";
-        if (input.back() == '?')
+        if (isQuestion(input))
             return "Sure.";
+        if (isSilence(input))
+            return "Fine. Be that way!";
         return "Whatever.";
     }
 
-    bool isYelling(const string &input)
+    bool isQuestion(const string& input)
+    {
+        auto it = find_if(input.rbegin(), input.rend(), [](char c) { return !isspace(c); });
+        return it != input.rend() && *it == '?';
+    }
+
+    bool isYelling(const string& input)
     {
         bool hasLetters = false;
-        for (char ch : input)
+        for (char c : input)
         {
-            if (isalpha(ch))
+            if (isalpha(c))
             {
                 hasLetters = true;
-                if (islower(ch))
+                if (islower(c))
                     return false;
             }
         }
         return hasLetters;
+    }
+
+    bool isSilence(const string& input)
+    {
+        return all_of(input.begin(), input.end(), [](char c) { return isspace(c); });
     }
 
 } // namespace bob

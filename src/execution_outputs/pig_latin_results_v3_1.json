@@ -1,17 +1,23 @@
 {
-  "execution_date": "2025-11-19 18:18:32",
+  "execution_date": "2025-12-03 02:08:07",
   "execution_metadata": {
     "total_tests": 14,
     "successful_tests": 14,
     "execution_time": "00h 00m 19s",
     "cluster": "cluster_pig_latin",
     "test_type": "llm_v3",
-    "last_updated": "2025-11-19 18:18:32",
+    "last_updated": "2025-12-03 02:08:07",
     "selective_execution": {
       "languages": [
-        "java"
+        "cpp",
+        "c",
+        "java",
+        "javascript",
+        "typescript",
+        "python",
+        "go"
       ],
-      "timestamp": "2025-11-19 18:18:32"
+      "timestamp": "2025-12-03 02:08:07"
     }
   },
   "results": {
@@ -22,50 +28,14 @@
         "language": "javascript",
         "LLM_results": [
           {
-            "LLM_type": "gemini",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/pig-latin_exercism-javascript-ffflorian/gemini/GeminiFlash_pig-latin_v3.js",
-            "log": "",
-            "execution_time_ms": 190,
-            "CPU_usage": 12.0,
-            "RAM_usage": 63836,
-            "regressionTestPassed": false,
-            "success": false,
-            "error_message": "Docker exit code: 1"
-          }
-        ]
-      },
-      {
-        "id": "javascript_pig-latin_exercism-javascript-ThomasZumsteg_ThomasZumsteg",
-        "filename": "pig-latin.js",
-        "language": "javascript",
-        "LLM_results": [
-          {
             "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/pig-latin_exercism-javascript-ThomasZumsteg/claude/ClaudeSonnet4_pig-latin_v3.js",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/pig-latin_exercism-javascript-ffflorian/claude/ClaudeSonnet4_pig-latin_v3.js",
             "log": "",
-            "execution_time_ms": 170,
-            "CPU_usage": 18.0,
-            "RAM_usage": 65352,
+            "execution_time_ms": 459.99999999999994,
+            "CPU_usage": 19.0,
+            "RAM_usage": 84012,
             "regressionTestPassed": false,
             "success": false,
-            "error_message": "Docker exit code: 1"
-          }
-        ]
-      },
-      {
-        "id": "javascript_pig-latin_exercism-javascript-ffflorian_ffflorian",
-        "filename": "pig-latin.js",
-        "language": "javascript",
-        "LLM_results": [
-          {
-            "LLM_type": "openAI",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/pig-latin_exercism-javascript-ffflorian/openAI/ChatGPT4_pig-latin_v3.js",
-            "log": "",
-            "execution_time_ms": 580.0000000000001,
-            "CPU_usage": 22.0,
-            "RAM_usage": 82256,
-            "regressionTestPassed": true,
-            "success": true,
             "error_message": null
           }
         ]
@@ -79,9 +49,9 @@
             "LLM_type": "openAI",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/pig-latin_exercism-javascript-ThomasZumsteg/openAI/ChatGPT4_pig-latin_v3.js",
             "log": "",
-            "execution_time_ms": 610.0,
-            "CPU_usage": 23.0,
-            "RAM_usage": 82176,
+            "execution_time_ms": 459.99999999999994,
+            "CPU_usage": 19.0,
+            "RAM_usage": 82056,
             "regressionTestPassed": true,
             "success": true,
             "error_message": null
@@ -94,15 +64,33 @@
         "language": "javascript",
         "LLM_results": [
           {
-            "LLM_type": "claude",
-            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/pig-latin_exercism-javascript-ffflorian/claude/ClaudeSonnet4_pig-latin_v3.js",
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/pig-latin_exercism-javascript-ffflorian/openAI/ChatGPT4_pig-latin_v3.js",
             "log": "",
-            "execution_time_ms": 580.0000000000001,
+            "execution_time_ms": 520.0,
+            "CPU_usage": 21.0,
+            "RAM_usage": 81908,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_pig-latin_exercism-javascript-ffflorian_ffflorian",
+        "filename": "pig-latin.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/pig-latin_exercism-javascript-ffflorian/gemini/GeminiFlash_pig-latin_v3.js",
+            "log": "",
+            "execution_time_ms": 470.0,
             "CPU_usage": 22.0,
-            "RAM_usage": 82332,
-            "regressionTestPassed": false,
-            "success": false,
-            "error_message": "Docker exit code: 1"
+            "RAM_usage": 83108,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
           }
         ]
       },
@@ -115,12 +103,84 @@
             "LLM_type": "gemini",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/pig-latin_exercism-javascript-ThomasZumsteg/gemini/GeminiFlash_pig-latin_v3.js",
             "log": "",
-            "execution_time_ms": 590.0000000000001,
-            "CPU_usage": 22.0,
-            "RAM_usage": 83072,
+            "execution_time_ms": 480.0,
+            "CPU_usage": 33.0,
+            "RAM_usage": 82488,
             "regressionTestPassed": false,
             "success": false,
-            "error_message": "Docker exit code: 1"
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_pig-latin_exercism-javascript-ThomasZumsteg_ThomasZumsteg",
+        "filename": "pig-latin.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/javascript/pig-latin_exercism-javascript-ThomasZumsteg/claude/ClaudeSonnet4_pig-latin_v3.js",
+            "log": "",
+            "execution_time_ms": 510.0,
+            "CPU_usage": 24.0,
+            "RAM_usage": 82212,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_pig-latin_ThomasZumsteg",
+        "filename": "pig-latin.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "javascript/pig-latin_exercism-ThomasZumsteg/claude/ClaudeSonnet4_pig-latin_v3.js",
+            "log": "",
+            "execution_time_ms": 440.00000000000006,
+            "CPU_usage": 42.0,
+            "RAM_usage": 80580,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_pig-latin_ThomasZumsteg",
+        "filename": "pig-latin.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "javascript/pig-latin_exercism-ThomasZumsteg/openAI/ChatGPT4_pig-latin_v3.js",
+            "log": "",
+            "execution_time_ms": 440.00000000000006,
+            "CPU_usage": 37.0,
+            "RAM_usage": 79904,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "javascript_pig-latin_ThomasZumsteg",
+        "filename": "pig-latin.js",
+        "language": "javascript",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "javascript/pig-latin_exercism-ThomasZumsteg/gemini/GeminiFlash_pig-latin_v3.js",
+            "log": "",
+            "execution_time_ms": 449.99999999999994,
+            "CPU_usage": 40.0,
+            "RAM_usage": 81100,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": null
           }
         ]
       }
@@ -189,6 +249,298 @@
           {
             "LLM_type": "gemini",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/pig-latin_Exercism-typescript-shybyte/gemini/GeminiFlash_pig-latin_v3.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "typescript_pig-latin_Exercism-typescript-shybyte_shybyte",
+        "filename": "pig-latin.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/pig-latin_Exercism-typescript-shybyte/openAI/ChatGPT4_pig-latin_v3.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/pig-latin_Exercism-typescript-shybyte/openAI/ChatGPT4_pig-latin_v3.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/pig-latin_Exercism-typescript-shybyte/claude/ClaudeSonnet4_pig-latin_v3.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/pig-latin_Exercism-typescript-shybyte/claude/ClaudeSonnet4_pig-latin_v3.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/pig-latin_Exercism-typescript-shybyte/gemini/GeminiFlash_pig-latin_v3.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/pig-latin_Exercism-typescript-shybyte/gemini/GeminiFlash_pig-latin_v3.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "typescript_pig-latin_Exercism-typescript-shybyte_shybyte",
+        "filename": "pig-latin.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/pig-latin_Exercism-typescript-shybyte/openAI/ChatGPT4_pig-latin_v3.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/pig-latin_Exercism-typescript-shybyte/openAI/ChatGPT4_pig-latin_v3.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/pig-latin_Exercism-typescript-shybyte/claude/ClaudeSonnet4_pig-latin_v3.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/pig-latin_Exercism-typescript-shybyte/claude/ClaudeSonnet4_pig-latin_v3.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/pig-latin_Exercism-typescript-shybyte/gemini/GeminiFlash_pig-latin_v3.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/pig-latin_Exercism-typescript-shybyte/gemini/GeminiFlash_pig-latin_v3.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "typescript_pig-latin_Exercism-typescript-FilipeCerejo_FilipeCerejo",
+        "filename": "pig-latin.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/pig-latin_Exercism-typescript-FilipeCerejo/openAI/ChatGPT4_pig-latin_v3.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/pig-latin_Exercism-typescript-FilipeCerejo/openAI/ChatGPT4_pig-latin_v3.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/pig-latin_Exercism-typescript-FilipeCerejo/claude/ClaudeSonnet4_pig-latin_v3.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/pig-latin_Exercism-typescript-FilipeCerejo/claude/ClaudeSonnet4_pig-latin_v3.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/pig-latin_Exercism-typescript-FilipeCerejo/gemini/GeminiFlash_pig-latin_v3.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/pig-latin_Exercism-typescript-FilipeCerejo/gemini/GeminiFlash_pig-latin_v3.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "typescript_pig-latin_Exercism-typescript-FilipeCerejo_FilipeCerejo",
+        "filename": "pig-latin.ts",
+        "language": "typescript",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/pig-latin_Exercism-typescript-FilipeCerejo/openAI/ChatGPT4_pig-latin_v3.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/pig-latin_Exercism-typescript-FilipeCerejo/openAI/ChatGPT4_pig-latin_v3.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/pig-latin_Exercism-typescript-FilipeCerejo/claude/ClaudeSonnet4_pig-latin_v3.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/pig-latin_Exercism-typescript-FilipeCerejo/claude/ClaudeSonnet4_pig-latin_v3.js",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/pig-latin_Exercism-typescript-FilipeCerejo/gemini/GeminiFlash_pig-latin_v3.ts",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/typescript/pig-latin_Exercism-typescript-FilipeCerejo/gemini/GeminiFlash_pig-latin_v3.js",
             "log": "",
             "execution_time_ms": 1000,
             "CPU_usage": 50.0,
@@ -435,6 +787,168 @@
             "error_message": null
           }
         ]
+      },
+      {
+        "id": "java_pig-latin_ThomasZumsteg",
+        "filename": "PigLatin.java",
+        "language": "java",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "java/pig-latin_exercism-ThomasZumsteg/openAI/ChatGPT4_PigLatin_v3.java",
+            "log": "",
+            "execution_time_ms": 180.0,
+            "CPU_usage": 46.0,
+            "RAM_usage": 47880,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "java_pig-latin_ThomasZumsteg",
+        "filename": "PigLatin.java",
+        "language": "java",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "java/pig-latin_exercism-ThomasZumsteg/claude/ClaudeSonnet4_PigLatin_v3.java",
+            "log": "",
+            "execution_time_ms": 130.0,
+            "CPU_usage": 19.0,
+            "RAM_usage": 47204,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "java_pig-latin_ThomasZumsteg",
+        "filename": "PigLatin.java",
+        "language": "java",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "java/pig-latin_exercism-ThomasZumsteg/gemini/GeminiFlash_PigLatin_v3.java",
+            "log": "",
+            "execution_time_ms": 180.0,
+            "CPU_usage": 49.0,
+            "RAM_usage": 47488,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "java_pig-latin_uzilan",
+        "filename": "PigLatinTranslator.java",
+        "language": "java",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "java/pig-latin_exercism-uzilan/openAI/ChatGPT4_PigLatinTranslator_v3.java",
+            "log": "",
+            "execution_time_ms": 130.0,
+            "CPU_usage": 66.0,
+            "RAM_usage": 46764,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "java_pig-latin_uzilan",
+        "filename": "PigLatinTranslator.java",
+        "language": "java",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "java/pig-latin_exercism-uzilan/claude/ClaudeSonnet4_PigLatinTranslator_v3.java",
+            "log": "",
+            "execution_time_ms": 139.99999999999997,
+            "CPU_usage": 78.0,
+            "RAM_usage": 46520,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "java_pig-latin_uzilan",
+        "filename": "PigLatinTranslator.java",
+        "language": "java",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "java/pig-latin_exercism-uzilan/gemini/GeminiFlash_PigLatinTranslator_v3.java",
+            "log": "",
+            "execution_time_ms": 150.0,
+            "CPU_usage": 81.0,
+            "RAM_usage": 46768,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "java_pig-latin_johannesrave-education",
+        "filename": "PigLatinTranslator.java",
+        "language": "java",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "java/pig-latin_exercism-johannesrave-education/openAI/ChatGPT4_PigLatinTranslator_v3.java",
+            "log": "",
+            "execution_time_ms": 169.99999999999997,
+            "CPU_usage": 39.0,
+            "RAM_usage": 47104,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "java_pig-latin_johannesrave-education",
+        "filename": "PigLatinTranslator.java",
+        "language": "java",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "java/pig-latin_exercism-johannesrave-education/claude/ClaudeSonnet4_PigLatinTranslator_v3.java",
+            "log": "",
+            "execution_time_ms": 160.0,
+            "CPU_usage": 31.0,
+            "RAM_usage": 47052,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "java_pig-latin_johannesrave-education",
+        "filename": "PigLatinTranslator.java",
+        "language": "java",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "java/pig-latin_exercism-johannesrave-education/gemini/GeminiFlash_PigLatinTranslator_v3.java",
+            "log": "",
+            "execution_time_ms": 180.0,
+            "CPU_usage": 43.0,
+            "RAM_usage": 46924,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
       }
     ],
     "go": [
@@ -468,6 +982,166 @@
           {
             "LLM_type": "gemini",
             "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/pig_latin_Exercism_go_rootulp/gemini/GeminiFlash_pig_latin_v3.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "go_pig_latin_Exercism (go_rootulp)",
+        "filename": "pig_latin.go",
+        "language": "go",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/pig_latin_Exercism_go_rootulp/openAI/ChatGPT4_pig_latin_v3.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/pig_latin_Exercism_go_rootulp/claude/ClaudeSonnet4_pig_latin_v3.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/pig_latin_Exercism_go_rootulp/gemini/GeminiFlash_pig_latin_v3.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "go_pig_latin_Exercism (go_rootulp)",
+        "filename": "pig_latin.go",
+        "language": "go",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/pig_latin_Exercism_go_rootulp/openAI/ChatGPT4_pig_latin_v3.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/pig_latin_Exercism_go_rootulp/claude/ClaudeSonnet4_pig_latin_v3.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/pig_latin_Exercism_go_rootulp/gemini/GeminiFlash_pig_latin_v3.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "go_pig_latin_Exercism (go_ThomasZumsteg)",
+        "filename": "pig_latin.go",
+        "language": "go",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/pig_latin_Exercism_go_ThomasZumsteg/openAI/ChatGPT4_pig_latin_v3.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/pig_latin_Exercism_go_ThomasZumsteg/claude/ClaudeSonnet4_pig_latin_v3.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/pig_latin_Exercism_go_ThomasZumsteg/gemini/GeminiFlash_pig_latin_v3.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "go_pig_latin_Exercism (go_ThomasZumsteg)",
+        "filename": "pig_latin.go",
+        "language": "go",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/pig_latin_Exercism_go_ThomasZumsteg/openAI/ChatGPT4_pig_latin_v3.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/pig_latin_Exercism_go_ThomasZumsteg/claude/ClaudeSonnet4_pig_latin_v3.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/pig_latin_Exercism_go_ThomasZumsteg/gemini/GeminiFlash_pig_latin_v3.go",
             "log": "",
             "execution_time_ms": 1000,
             "CPU_usage": 50.0,
@@ -555,6 +1229,142 @@
             "regressionTestPassed": true,
             "success": null,
             "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "go_pig_latin_Exercism (go_drapala)",
+        "filename": "pig_latin.go",
+        "language": "go",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/pig_latin_Exercism_go_drapala/openAI/ChatGPT4_pig_latin_v3.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/pig_latin_Exercism_go_drapala/claude/ClaudeSonnet4_pig_latin_v3.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/pig_latin_Exercism_go_drapala/gemini/GeminiFlash_pig_latin_v3.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "go_pig_latin_Exercism (go_drapala)",
+        "filename": "pig_latin.go",
+        "language": "go",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/pig_latin_Exercism_go_drapala/openAI/ChatGPT4_pig_latin_v3.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "claude",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/pig_latin_Exercism_go_drapala/claude/ClaudeSonnet4_pig_latin_v3.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          },
+          {
+            "LLM_type": "gemini",
+            "path": "/Users/piccoletto/Desktop/Everything/pisa/tesi/Sustainable-Code-Refactoring-with-LLMs/src/dataset/go/pig_latin_Exercism_go_drapala/gemini/GeminiFlash_pig_latin_v3.go",
+            "log": "",
+            "execution_time_ms": 1000,
+            "CPU_usage": 50.0,
+            "RAM_usage": 80000,
+            "regressionTestPassed": true,
+            "success": null,
+            "error_message": null
+          }
+        ]
+      }
+    ],
+    "python": [
+      {
+        "id": "python_pig-latin_ThomasZumsteg",
+        "filename": "pig_latin.py",
+        "language": "python",
+        "LLM_results": [
+          {
+            "LLM_type": "openAI",
+            "path": "python/pig-latin_exercism-ThomasZumsteg/openAI/ChatGPT4_pig_latin_v3.py",
+            "log": "",
+            "execution_time_ms": 30.0,
+            "CPU_usage": 3.0,
+            "RAM_usage": 13696,
+            "regressionTestPassed": true,
+            "success": true,
+            "error_message": null
+          }
+        ]
+      },
+      {
+        "id": "python_pig-latin_ThomasZumsteg",
+        "filename": "pig_latin.py",
+        "language": "python",
+        "LLM_results": [
+          {
+            "LLM_type": "claude",
+            "path": "python/pig-latin_exercism-ThomasZumsteg/claude/ClaudeSonnet4_pig_latin_v3.py",
+            "log": "",
+            "execution_time_ms": 40.0,
+            "CPU_usage": 6.0,
+            "RAM_usage": 13952,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 1"
+          }
+        ]
+      },
+      {
+        "id": "python_pig-latin_ThomasZumsteg",
+        "filename": "pig_latin.py",
+        "language": "python",
+        "LLM_results": [
+          {
+            "LLM_type": "gemini",
+            "path": "python/pig-latin_exercism-ThomasZumsteg/gemini/GeminiFlash_pig_latin_v3.py",
+            "log": "",
+            "execution_time_ms": 40.0,
+            "CPU_usage": 58.0,
+            "RAM_usage": 13952,
+            "regressionTestPassed": false,
+            "success": false,
+            "error_message": "Docker exit code: 1"
           }
         ]
       }

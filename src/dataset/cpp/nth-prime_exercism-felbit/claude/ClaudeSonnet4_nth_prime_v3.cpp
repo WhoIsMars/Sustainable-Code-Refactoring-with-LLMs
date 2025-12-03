@@ -1,4 +1,5 @@
 #include "nth_prime.h"
+#include <cmath>
 
 namespace prime {
 
@@ -18,9 +19,9 @@ namespace prime {
             bool is_prime = true;
             int sqrt_candidate = static_cast<int>(std::sqrt(candidate));
             
-            for (int p : primes) {
-                if (p > sqrt_candidate) break;
-                if (candidate % p == 0) {
+            for (int prime : primes) {
+                if (prime > sqrt_candidate) break;
+                if (candidate % prime == 0) {
                     is_prime = false;
                     break;
                 }

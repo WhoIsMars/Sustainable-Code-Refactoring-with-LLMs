@@ -11,44 +11,29 @@ string hey(string input) {
   if (isSilence(input)) {
     return "Fine. Be that way!";
   }
-
-  bool yelling = isYelling(input);
-  bool question = isQuestion(input);
-
-  if (yelling && question) {
+  if (isYelling(input) && isQuestion(input)) {
     return "Calm down, I know what I'm doing!";
   }
-
-  if (yelling) {
+  if (isYelling(input)) {
     return "Whoa, chill out!";
   }
-
-  if (question) {
+  if (isQuestion(input)) {
     return "Sure.";
   }
-
   return "Whatever.";
 }
 
-bool isQuestion(const string& input) {
+bool isQuestion(string input) {
   size_t i = input.length();
-  while (i > 0) {
+  while (i > 0 && (input[i - 1] == ' ' || input[i - 1] == '\t')) {
     --i;
-    if (input[i] == ' ' || input[i] == '\t') {
-      continue;
-    } else if (input[i] == '?') {
-      return true;
-    } else {
-      return false;
-    }
   }
-  return false;
+  return (i > 0 && input[i - 1] == '?');
 }
 
-bool isYelling(const string& input) {
+bool isYelling(string input) {
   bool hasLetters = false;
   bool allUpper = true;
-
   for (char c : input) {
     if (isalpha(c)) {
       hasLetters = true;
@@ -58,11 +43,10 @@ bool isYelling(const string& input) {
       }
     }
   }
-
   return hasLetters && allUpper;
 }
 
-bool isSilence(const string& input) {
+bool isSilence(string input) {
   return all_of(input.begin(), input.end(), [](unsigned char c) {
     return isspace(c);
   });

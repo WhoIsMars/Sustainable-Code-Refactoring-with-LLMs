@@ -22,9 +22,9 @@ namespace queen_attack
 
     bool chess_board::can_attack() const
     {
-        const int dx = m_white.first - m_black.first;
-        const int dy = m_white.second - m_black.second;
+        const int row_diff = m_white.first - m_black.first;
+        const int col_diff = m_white.second - m_black.second;
         
-        return (dx == 0) || (dy == 0) || (dx == dy) || (dx == -dy);
+        return (row_diff == 0) || (col_diff == 0) || (row_diff == col_diff) || (row_diff == -col_diff);
     }
 }

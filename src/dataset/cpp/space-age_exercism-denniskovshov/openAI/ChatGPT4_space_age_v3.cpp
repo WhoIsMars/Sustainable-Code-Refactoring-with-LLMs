@@ -3,12 +3,12 @@
 
 namespace space_age {
     namespace {
-        constexpr double reciprocal_secs_in_earth_year = 1.0 / secs_in_earth_year;
+        constexpr double inverse_secs_in_earth_year = 1.0 / secs_in_earth_year;
     }
 
     // private
     age_in_years space_age::age_on_planet(double earth_years_on_planet) const {
-        return _earth_age_in_seconds * reciprocal_secs_in_earth_year / earth_years_on_planet;
+        return _earth_age_in_seconds * inverse_secs_in_earth_year / earth_years_on_planet;
     }
 
     // public

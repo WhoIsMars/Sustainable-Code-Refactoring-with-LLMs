@@ -11,7 +11,10 @@ namespace binary
 
         for (char c : n)
         {
-            if (c != '0' && c != '1') return 0;
+            if (c != '0' && c != '1')
+            {
+                return 0;
+            }
             sum = (sum << 1) + (c - '0');
         }
 

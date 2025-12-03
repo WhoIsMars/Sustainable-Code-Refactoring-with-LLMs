@@ -68,5 +68,6 @@ std::string perfect_score(std::vector<int> student_scores, std::vector<std::stri
         // Perfect score was found: return student's name
         return student_names[std::distance(student_scores.begin(), it)];
     }
-    return "";
+    else
+        return "";
 }
